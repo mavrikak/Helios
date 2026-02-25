@@ -1,0 +1,5 @@
+<map id="dyadic" name="dyadic">
+<area shape="rect" id="Node000001" title="Creates a dyadic product of two 3D vectors." alt="" coords="257,14,321,42"/>
+<area shape="rect" id="Node000002" href="$classGreenFLayered3D.html#aea3c88abd8cb25bd99d64a4eeda84a85" title="Evaluates the secondary terms for dipole incident field in layered background." alt="" coords="5,5,209,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="241,30,209,30,209,25,241,25"/>
+</map>

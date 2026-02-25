@@ -1,0 +1,17 @@
+<map id="adjustZRange" name="adjustZRange">
+<area shape="rect" id="Node000001" title="Adjusts the Z&#45;coordinate range with a margin while ensuring boundaries." alt="" coords="864,119,976,146"/>
+<area shape="rect" id="Node000002" href="$classDomainLayered3D.html#af0fc42edd76b3e69a326990cefcbcd37" title="Calculates the tabulation range for a group of points." alt="" coords="607,110,816,155"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="849,135,817,135,817,130,849,130"/>
+<area shape="rect" id="Node000003" href="$classDomainLayered3D.html#a5379311442fe1bbc7808308726ee510d" title="Computes the grid points for tabulation." alt="" coords="325,88,559,116"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="591,122,559,118,560,113,592,116"/>
+<area shape="rect" id="Node000008" href="$classDomainLayered3D.html#a9ca4f1cf49de04c5df6a664e656dbf85" title="Self&#45;test: tabulation range computation (prints to console)." alt="" coords="354,140,530,184"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="592,148,530,155,530,150,591,143"/>
+<area shape="rect" id="Node000004" href="$classDomainLayered3D.html#a6551ae7ca5dac2a5dda2d78b15d78ecc" title="Add a Dipole excitation in the layered medium." alt="" coords="32,5,250,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="388,85,276,48,224,36,225,31,277,43,390,80"/>
+<area shape="rect" id="Node000005" href="$classDomainLayered3D.html#ad0d867ee7289e485c4bc01077fbdb59a" title="Constructs a 3D layered domain with given material properties and geometry." alt="" coords="5,57,277,85"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="309,91,277,88,277,82,310,86"/>
+<area shape="rect" id="Node000006" href="$classDomainLayered3D.html#ab55a37fee77313a2f5e2bd4c2be927f0" title="Initialize the layered Green&#39;s function used for field evaluation." alt="" coords="29,109,253,154"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="310,117,254,123,253,118,309,112"/>
+<area shape="rect" id="Node000007" href="$classDomainLayered3D.html#acd442aab27d1f56d8211a164f85f341a" title="Self&#45;test: grid generation (prints to console)." alt="" coords="37,177,245,205"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="340,123,326,130,312,139,303,148,293,159,278,168,246,180,244,175,275,163,289,155,299,145,309,135,323,125,338,119"/>
+</map>

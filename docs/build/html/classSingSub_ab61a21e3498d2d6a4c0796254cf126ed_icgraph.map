@@ -1,0 +1,15 @@
+<map id="SingSub::K4" name="SingSub::K4">
+<area shape="rect" id="Node000001" title="K4(q) vector term." alt="" coords="289,169,387,197"/>
+<area shape="rect" id="Node000002" href="$classGreenFHom3D.html#a9cece8a4056d65455cfcc94c8c61decd" title="term at an observation point." alt="" coords="10,5,236,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="322,156,290,99,267,71,239,47,218,36,221,31,242,42,271,67,295,96,327,153"/>
+<area shape="rect" id="Node000003" href="$classGreenFHom3DPer2D.html#aadb534ef4509422e6f3e78a0e3999758" title="term at an observation point." alt="" coords="11,57,235,102"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="308,162,276,138,239,116,212,104,214,100,242,111,279,133,311,157"/>
+<area shape="rect" id="Node000004" href="$classGreenFHom3D.html#a48e8471aabb445e0e50a01c005ff3b98" title="Compute &#160;for all RWGs on a source triangle." alt="" coords="17,126,229,171"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="273,175,229,168,230,163,274,170"/>
+<area shape="rect" id="Node000005" href="$classGreenFHom3DPer2D.html#a84a8c855a27c895ff24f6771037284a5" title="Compute &#160;for all RWGs on a source triangle." alt="" coords="15,196,231,240"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="274,196,232,203,231,198,273,191"/>
+<area shape="rect" id="Node000006" href="$classGreenFHom3D.html#a419cbe00b5a2aed70ac546904a8a8d6f" title="Compute &#160;and &#160;for all RWG pairs on two triangles." alt="" coords="25,264,221,292"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="312,209,280,233,242,255,211,266,209,261,240,250,277,229,308,205"/>
+<area shape="rect" id="Node000007" href="$classGreenFHom3DPer2D.html#a1dc9dd84c93ee10b2fb4b1866103d957" title="Compute &#160;and &#160;for all RWG pairs on two triangles." alt="" coords="5,316,241,344"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="324,212,291,260,268,285,242,305,216,318,214,313,239,301,265,281,287,257,320,209"/>
+</map>

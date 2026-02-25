@@ -1,0 +1,39 @@
+\doxysection{Green\+FHom3\+DPer2\+D.\+h File Reference}
+\hypertarget{GreenFHom3DPer2D_8h}{}\label{GreenFHom3DPer2D_8h}\index{GreenFHom3DPer2D.h@{GreenFHom3DPer2D.h}}
+
+
+Periodic homogeneous 3D Green\textquotesingle{}s function with {\bfseries{2D in‑plane periodicity}}.  
+
+
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include "{}Green\+FHom3\+DPer.\+h"{}}\newline
+{\ttfamily \#include "{}globals.\+h"{}}\newline
+{\ttfamily \#include "{}math\+Functions.\+h"{}}\newline
+Include dependency graph for Green\+FHom3\+DPer2\+D.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{GreenFHom3DPer2D_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{GreenFHom3DPer2D_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classGreenFHom3DPer2D}{Green\+FHom3\+DPer2D}}
+\begin{DoxyCompactList}\small\item\em 2D‑periodic homogeneous 3D Green\textquotesingle{}s function with Ewald acceleration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Periodic homogeneous 3D Green\textquotesingle{}s function with {\bfseries{2D in‑plane periodicity}}. 
+
+Implements a Bloch‑periodic free‑space Green\textquotesingle{}s function for structures periodic along two lattice vectors (a1, a2) in an otherwise homogeneous medium. Convergence is accelerated via {\bfseries{Ewald splitting}} into a spatial (real‑space images) sum and a spectral (reciprocal‑lattice) sum. Both the scalar kernel and its source‑gradient are provided, together with RWG‑weighted triangle integrals used in the SIE formulation and post‑processing. 
+
+Definition in file \mbox{\hyperlink{GreenFHom3DPer2D_8h_source}{Green\+FHom3\+DPer2\+D.\+h}}.
+

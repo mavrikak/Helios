@@ -1,0 +1,449 @@
+\doxysection{Job\+Parser Class Reference}
+\hypertarget{classJobParser}{}\label{classJobParser}\index{JobParser@{JobParser}}
+
+
+Streaming, stack-\/based reader for simple tag-\/delimited job files.  
+
+
+
+
+{\ttfamily \#include $<$Job\+Parser.\+h$>$}
+
+
+
+Collaboration diagram for Job\+Parser\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classJobParser__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{Indent}\textbf{ Construction \& file control}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classJobParser_ac8680edbf18db57573b8f33a990ef7de}{Job\+Parser}} ()
+\begin{DoxyCompactList}\small\item\em Default-\/construct an empty parser (no file opened). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classJobParser_ad405a892507e7b62dd9c57f888bc2bb7}{Job\+Parser}} (std\+::string job\+File)
+\begin{DoxyCompactList}\small\item\em Construct and open a job file; prints an error on failure. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classJobParser_a3030319b0407051dc9919951a7b733c1}{open}} (std\+::string job\+File)
+\begin{DoxyCompactList}\small\item\em Open a job file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classJobParser_a5a48a87bc6f5e0a86efdc751bbaf0bc2}{close}} ()
+\begin{DoxyCompactList}\small\item\em Close the currently open file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Tag navigation}\par
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classJobParser_a83fe4cb0b8be6a82f39379fb516341ae}{read\+Tag}} ()
+\begin{DoxyCompactList}\small\item\em Read the next tag token and update the open-\/tag stack. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classJobParser_aa2ff54c559c616be63dc01dfbff29c91}{get\+Tag}} ()
+\begin{DoxyCompactList}\small\item\em Return the current open tag (stack top), or empty string if none. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classJobParser_aeab1ae1394fba1d3dd383754dd56bca3}{last\+Read}} ()
+\begin{DoxyCompactList}\small\item\em Return the most recently read raw tag token (without \textquotesingle{}\texorpdfstring{$>$}{>}\textquotesingle{}). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classJobParser_a02ccef107cb7825e1f1395abc3cd96fe}{end\+Of\+Tag}} ()
+\begin{DoxyCompactList}\small\item\em Skip tokens until the matching closing tag of the current block. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classJobParser_a2fb97b92acf2b3c534f9b893b5f5a9fe}{move\+Top}} ()
+\begin{DoxyCompactList}\small\item\em Seek the stream back to the beginning. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Value extraction}\par
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classJobParser_a7563873491eca6d7e0a5ba6f30755db8}{empty}} ()
+\begin{DoxyCompactList}\small\item\em True if there are no open tags on the stack. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Type$>$ }\\Type \mbox{\hyperlink{classJobParser_a3720bebdb618014cd72f8c02b05a2892}{read}} ()
+\begin{DoxyCompactList}\small\item\em Read a value of type {\ttfamily Type} from the stream using operator\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classJobParser_af200c604d924f86c8d97b33e105b915e}{next\+Char}} ()
+\begin{DoxyCompactList}\small\item\em Skip whitespace (ws); position on next non-\/ws. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ifstream \mbox{\hyperlink{classJobParser_aff7df7ddb19bd11d750d71f9fde0615d}{reader}}
+\begin{DoxyCompactList}\small\item\em Underlying input stream. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classJobParser_af35b727dfb4eea2261f21b34c5c15e8e}{tags}}
+\begin{DoxyCompactList}\small\item\em Stack of open tags. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classJobParser_a212c8345e32877a0c4afe6971c12aeda}{buffer}}
+\begin{DoxyCompactList}\small\item\em Scratch buffer. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classJobParser_afb7f2600703a9565010a52542b5d94fa}{tag}}
+\begin{DoxyCompactList}\small\item\em Most recently read tag token. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Streaming, stack-\/based reader for simple tag-\/delimited job files. 
+
+The parser operates directly on an std\+::ifstream. It tracks the current open tag using an internal stack ( {\ttfamily tags} ). Opening tags push onto the stack; closing tags pop it. The API exposes methods to open/close a file, read the next tag token, query the current tag, read a typed value, and skip to the end of the current tag block.
+
+\begin{DoxyWarning}{Warning}
+This is {\bfseries{not}} a full XML parser. It expects tokens separated by whitespace, with tags like {\ttfamily \texorpdfstring{$<$}{<}name\texorpdfstring{$>$}{>}} and {\ttfamily \texorpdfstring{$<$}{<}/name\texorpdfstring{$>$}{>}} appearing as single tokens. Attributes are not supported. 
+\end{DoxyWarning}
+
+
+Definition at line \mbox{\hyperlink{JobParser_8h_source_l00037}{37}} of file \mbox{\hyperlink{JobParser_8h_source}{Job\+Parser.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classJobParser_ac8680edbf18db57573b8f33a990ef7de}\index{JobParser@{JobParser}!JobParser@{JobParser}}
+\index{JobParser@{JobParser}!JobParser@{JobParser}}
+\doxysubsubsection{\texorpdfstring{JobParser()}{JobParser()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classJobParser_ac8680edbf18db57573b8f33a990ef7de} 
+Job\+Parser\+::\+Job\+Parser (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default-\/construct an empty parser (no file opened). 
+
+Default constructor\+: no file opened. 
+
+Definition at line \mbox{\hyperlink{JobParser_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{JobParser_8cpp_source}{Job\+Parser.\+cpp}}.
+
+\Hypertarget{classJobParser_ad405a892507e7b62dd9c57f888bc2bb7}\index{JobParser@{JobParser}!JobParser@{JobParser}}
+\index{JobParser@{JobParser}!JobParser@{JobParser}}
+\doxysubsubsection{\texorpdfstring{JobParser()}{JobParser()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classJobParser_ad405a892507e7b62dd9c57f888bc2bb7} 
+Job\+Parser\+::\+Job\+Parser (\begin{DoxyParamCaption}\item[{std\+::string}]{job\+File}{}\end{DoxyParamCaption})}
+
+
+
+Construct and open a job file; prints an error on failure. 
+
+Construct and attempt to open {\ttfamily job\+File}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em job\+File} & The name of the job file to open.\\
+\hline
+\end{DoxyParams}
+Prints an error message if the file cannot be opened; leaves the stream closed in that case. 
+
+Definition at line \mbox{\hyperlink{JobParser_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{JobParser_8cpp_source}{Job\+Parser.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classJobParser_a5a48a87bc6f5e0a86efdc751bbaf0bc2}\index{JobParser@{JobParser}!close@{close}}
+\index{close@{close}!JobParser@{JobParser}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily \label{classJobParser_a5a48a87bc6f5e0a86efdc751bbaf0bc2} 
+int Job\+Parser\+::close (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Close the currently open file. 
+
+Close the underlying stream.
+
+Always returns 0. \begin{DoxyReturn}{Returns}
+Always returns 0. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{JobParser_8cpp_source_l00032}{32}} of file \mbox{\hyperlink{JobParser_8cpp_source}{Job\+Parser.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{classJobParser_a5a48a87bc6f5e0a86efdc751bbaf0bc2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classJobParser_a7563873491eca6d7e0a5ba6f30755db8}\index{JobParser@{JobParser}!empty@{empty}}
+\index{empty@{empty}!JobParser@{JobParser}}
+\doxysubsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily \label{classJobParser_a7563873491eca6d7e0a5ba6f30755db8} 
+bool Job\+Parser\+::empty (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+True if there are no open tags on the stack. 
+
+True if there are no open tags.
+
+\begin{DoxyReturn}{Returns}
+True if there are no open tags on the stack. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{JobParser_8cpp_source_l00038}{38}} of file \mbox{\hyperlink{JobParser_8cpp_source}{Job\+Parser.\+cpp}}.
+
+\Hypertarget{classJobParser_a02ccef107cb7825e1f1395abc3cd96fe}\index{JobParser@{JobParser}!endOfTag@{endOfTag}}
+\index{endOfTag@{endOfTag}!JobParser@{JobParser}}
+\doxysubsubsection{\texorpdfstring{endOfTag()}{endOfTag()}}
+{\footnotesize\ttfamily \label{classJobParser_a02ccef107cb7825e1f1395abc3cd96fe} 
+int Job\+Parser\+::end\+Of\+Tag (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Skip tokens until the matching closing tag of the current block. 
+
+Consume tokens until the closing tag of the current block is found.
+
+Reads tokens using the stream extraction operator until {\ttfamily \texorpdfstring{$<$}{<}/get\+Tag()\texorpdfstring{$>$}{>}} is encountered, then returns. Intended to quickly skip over blocks you do not wish to parse. \begin{DoxyReturn}{Returns}
+0 on completion.
+\end{DoxyReturn}
+Builds the token {\ttfamily \texorpdfstring{$<$}{<}/get\+Tag()\texorpdfstring{$>$}{>}} and keeps reading whitespace-\/delimited tokens until an exact match is encountered. \begin{DoxyReturn}{Returns}
+0 when the closing tag token has been read (or EOF reached). 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{JobParser_8cpp_source_l00141}{141}} of file \mbox{\hyperlink{JobParser_8cpp_source}{Job\+Parser.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{classJobParser_a02ccef107cb7825e1f1395abc3cd96fe_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classJobParser_aa2ff54c559c616be63dc01dfbff29c91}\index{JobParser@{JobParser}!getTag@{getTag}}
+\index{getTag@{getTag}!JobParser@{JobParser}}
+\doxysubsubsection{\texorpdfstring{getTag()}{getTag()}}
+{\footnotesize\ttfamily \label{classJobParser_aa2ff54c559c616be63dc01dfbff29c91} 
+std\+::string Job\+Parser\+::get\+Tag (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Return the current open tag (stack top), or empty string if none. 
+
+\begin{DoxyReturn}{Returns}
+The name of the current open tag after the update, or an empty string if there are no open tags. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{JobParser_8cpp_source_l00122}{122}} of file \mbox{\hyperlink{JobParser_8cpp_source}{Job\+Parser.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classJobParser_aa2ff54c559c616be63dc01dfbff29c91_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classJobParser_aeab1ae1394fba1d3dd383754dd56bca3}\index{JobParser@{JobParser}!lastRead@{lastRead}}
+\index{lastRead@{lastRead}!JobParser@{JobParser}}
+\doxysubsubsection{\texorpdfstring{lastRead()}{lastRead()}}
+{\footnotesize\ttfamily \label{classJobParser_aeab1ae1394fba1d3dd383754dd56bca3} 
+std\+::string Job\+Parser\+::last\+Read (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Return the most recently read raw tag token (without \textquotesingle{}\texorpdfstring{$>$}{>}\textquotesingle{}). 
+
+The most recently read tag token (raw, without trailing \textquotesingle{}\texorpdfstring{$>$}{>}\textquotesingle{}).
+
+\begin{DoxyReturn}{Returns}
+The most recently read tag token (raw, without trailing \textquotesingle{}\texorpdfstring{$>$}{>}\textquotesingle{}). 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{JobParser_8cpp_source_l00103}{103}} of file \mbox{\hyperlink{JobParser_8cpp_source}{Job\+Parser.\+cpp}}.
+
+\Hypertarget{classJobParser_a2fb97b92acf2b3c534f9b893b5f5a9fe}\index{JobParser@{JobParser}!moveTop@{moveTop}}
+\index{moveTop@{moveTop}!JobParser@{JobParser}}
+\doxysubsubsection{\texorpdfstring{moveTop()}{moveTop()}}
+{\footnotesize\ttfamily \label{classJobParser_a2fb97b92acf2b3c534f9b893b5f5a9fe} 
+int Job\+Parser\+::move\+Top (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Seek the stream back to the beginning. 
+
+Seek to the beginning of the file (sets get pointer to beginning).
+
+\begin{DoxyReturn}{Returns}
+0 on success. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{JobParser_8cpp_source_l00150}{150}} of file \mbox{\hyperlink{JobParser_8cpp_source}{Job\+Parser.\+cpp}}.
+
+\Hypertarget{classJobParser_af200c604d924f86c8d97b33e105b915e}\index{JobParser@{JobParser}!nextChar@{nextChar}}
+\index{nextChar@{nextChar}!JobParser@{JobParser}}
+\doxysubsubsection{\texorpdfstring{nextChar()}{nextChar()}}
+{\footnotesize\ttfamily \label{classJobParser_af200c604d924f86c8d97b33e105b915e} 
+int Job\+Parser\+::next\+Char (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Skip whitespace (ws); position on next non-\/ws. 
+
+Advance the stream to the next non-\/whitespace character and back up one.
+
+\begin{DoxyReturn}{Returns}
+Always 0. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{JobParser_8cpp_source_l00110}{110}} of file \mbox{\hyperlink{JobParser_8cpp_source}{Job\+Parser.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classJobParser_af200c604d924f86c8d97b33e105b915e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classJobParser_a3030319b0407051dc9919951a7b733c1}\index{JobParser@{JobParser}!open@{open}}
+\index{open@{open}!JobParser@{JobParser}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily \label{classJobParser_a3030319b0407051dc9919951a7b733c1} 
+int Job\+Parser\+::open (\begin{DoxyParamCaption}\item[{std\+::string}]{job\+File}{}\end{DoxyParamCaption})}
+
+
+
+Open a job file. 
+
+Open {\ttfamily job\+File}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em job\+File} & The name of the job file to open. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, 1 on failure.
+
+0 on success; 1 on failure (and prints an error message). 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{JobParser_8cpp_source_l00050}{50}} of file \mbox{\hyperlink{JobParser_8cpp_source}{Job\+Parser.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{classJobParser_a3030319b0407051dc9919951a7b733c1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classJobParser_a3720bebdb618014cd72f8c02b05a2892}\index{JobParser@{JobParser}!read@{read}}
+\index{read@{read}!JobParser@{JobParser}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily \label{classJobParser_a3720bebdb618014cd72f8c02b05a2892} 
+template$<$class Type$>$ \\
+Type Job\+Parser\+::read (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Read a value of type {\ttfamily Type} from the stream using operator\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>}. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Type} & to read. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+The value read.
+\end{DoxyReturn}
+Consumes the next whitespace-\/delimited token from the underlying stream and converts it to {\ttfamily Type}. No comment handling or tag awareness is performed here; prefer to call this after \doxylink{classJobParser_a83fe4cb0b8be6a82f39379fb516341ae}{read\+Tag} has positioned you inside the right block. 
+
+Definition at line \mbox{\hyperlink{JobParser_8h_source_l00153}{153}} of file \mbox{\hyperlink{JobParser_8h_source}{Job\+Parser.\+h}}.
+
+\Hypertarget{classJobParser_a83fe4cb0b8be6a82f39379fb516341ae}\index{JobParser@{JobParser}!readTag@{readTag}}
+\index{readTag@{readTag}!JobParser@{JobParser}}
+\doxysubsubsection{\texorpdfstring{readTag()}{readTag()}}
+{\footnotesize\ttfamily \label{classJobParser_a83fe4cb0b8be6a82f39379fb516341ae} 
+std\+::string Job\+Parser\+::read\+Tag (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Read the next tag token and update the open-\/tag stack. 
+
+Read the next tag (opening or closing) and update the tag stack.
+
+If the next non-\/whitespace character is \textquotesingle{}\texorpdfstring{$<$}{<}\textquotesingle{}, the token following it is interpreted as a tag (with the trailing \textquotesingle{}\texorpdfstring{$>$}{>}\textquotesingle{} stripped). Opening tags are pushed to the stack; closing tags (starting with \textquotesingle{}/\textquotesingle{}) pop if they match the current top.
+
+\begin{DoxyReturn}{Returns}
+The name of the current open tag after the update, or an empty string if there are no open tags.
+\end{DoxyReturn}
+Inspects the next non-\/whitespace character; if it is \textquotesingle{}\texorpdfstring{$<$}{<}\textquotesingle{}, extracts the tag token (stripping the trailing \textquotesingle{}\texorpdfstring{$>$}{>}\textquotesingle{}). If the tag does not start with \textquotesingle{}/\textquotesingle{}, it is pushed onto the tag stack. Otherwise, the stack is popped if the closing tag matches the current top; if it does not, a warning is printed.
+
+\begin{DoxyReturn}{Returns}
+The name of the currently open tag (stack top) after processing, or an empty string if the stack becomes empty. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{JobParser_8cpp_source_l00075}{75}} of file \mbox{\hyperlink{JobParser_8cpp_source}{Job\+Parser.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{classJobParser_a83fe4cb0b8be6a82f39379fb516341ae_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{classJobParser_a83fe4cb0b8be6a82f39379fb516341ae_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classJobParser_a212c8345e32877a0c4afe6971c12aeda}\index{JobParser@{JobParser}!buffer@{buffer}}
+\index{buffer@{buffer}!JobParser@{JobParser}}
+\doxysubsubsection{\texorpdfstring{buffer}{buffer}}
+{\footnotesize\ttfamily \label{classJobParser_a212c8345e32877a0c4afe6971c12aeda} 
+std\+::string Job\+Parser\+::buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Scratch buffer. 
+
+
+
+Definition at line \mbox{\hyperlink{JobParser_8h_source_l00041}{41}} of file \mbox{\hyperlink{JobParser_8h_source}{Job\+Parser.\+h}}.
+
+\Hypertarget{classJobParser_aff7df7ddb19bd11d750d71f9fde0615d}\index{JobParser@{JobParser}!reader@{reader}}
+\index{reader@{reader}!JobParser@{JobParser}}
+\doxysubsubsection{\texorpdfstring{reader}{reader}}
+{\footnotesize\ttfamily \label{classJobParser_aff7df7ddb19bd11d750d71f9fde0615d} 
+std\+::ifstream Job\+Parser\+::reader\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Underlying input stream. 
+
+
+
+Definition at line \mbox{\hyperlink{JobParser_8h_source_l00039}{39}} of file \mbox{\hyperlink{JobParser_8h_source}{Job\+Parser.\+h}}.
+
+\Hypertarget{classJobParser_afb7f2600703a9565010a52542b5d94fa}\index{JobParser@{JobParser}!tag@{tag}}
+\index{tag@{tag}!JobParser@{JobParser}}
+\doxysubsubsection{\texorpdfstring{tag}{tag}}
+{\footnotesize\ttfamily \label{classJobParser_afb7f2600703a9565010a52542b5d94fa} 
+std\+::string Job\+Parser\+::tag\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Most recently read tag token. 
+
+
+
+Definition at line \mbox{\hyperlink{JobParser_8h_source_l00043}{43}} of file \mbox{\hyperlink{JobParser_8h_source}{Job\+Parser.\+h}}.
+
+\Hypertarget{classJobParser_af35b727dfb4eea2261f21b34c5c15e8e}\index{JobParser@{JobParser}!tags@{tags}}
+\index{tags@{tags}!JobParser@{JobParser}}
+\doxysubsubsection{\texorpdfstring{tags}{tags}}
+{\footnotesize\ttfamily \label{classJobParser_af35b727dfb4eea2261f21b34c5c15e8e} 
+std\+::vector$<$std\+::string$>$ Job\+Parser\+::tags\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Stack of open tags. 
+
+
+
+Definition at line \mbox{\hyperlink{JobParser_8h_source_l00040}{40}} of file \mbox{\hyperlink{JobParser_8h_source}{Job\+Parser.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{JobParser_8h}{Job\+Parser.\+h}}\item 
+\mbox{\hyperlink{JobParser_8cpp}{Job\+Parser.\+cpp}}\end{DoxyCompactItemize}

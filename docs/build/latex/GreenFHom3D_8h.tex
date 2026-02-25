@@ -1,0 +1,41 @@
+\doxysection{Green\+FHom3\+D.\+h File Reference}
+\hypertarget{GreenFHom3D_8h}{}\label{GreenFHom3D_8h}\index{GreenFHom3D.h@{GreenFHom3D.h}}
+
+
+3D scalar/dyadic Green\textquotesingle{}s function in a homogeneous background.  
+
+
+{\ttfamily \#include $<$blitz/array.\+h$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$tuple$>$}\newline
+{\ttfamily \#include "{}Gauss\+Quad.\+h"{}}\newline
+{\ttfamily \#include "{}Green\+F.\+h"{}}\newline
+{\ttfamily \#include "{}globals.\+h"{}}\newline
+Include dependency graph for Green\+FHom3\+D.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{GreenFHom3D_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{GreenFHom3D_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classGreenFHom3D}{Green\+FHom3D}}
+\begin{DoxyCompactList}\small\item\em Free‑space (homogeneous) Green\textquotesingle{}s function provider. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+3D scalar/dyadic Green\textquotesingle{}s function in a homogeneous background. 
+
+Concrete implementation of \doxylink{classGreenF}{GreenF} for a single, homogeneous, isotropic medium. Provides pointwise scalar, gradient, and dyadic evaluations as well as RWG‑weighted integrals used in matrix assembly (D/K) and post‑processing (delta/kappa). Includes singularity‑subtraction paths and accuracy control via Dunavant quadrature orders. 
+
+Definition in file \mbox{\hyperlink{GreenFHom3D_8h_source}{Green\+FHom3\+D.\+h}}.
+

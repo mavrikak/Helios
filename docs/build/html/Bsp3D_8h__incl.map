@@ -1,0 +1,21 @@
+<map id="Bsp3D.h" name="Bsp3D.h">
+<area shape="rect" id="Node000001" title="3D Binary Space Partitioning (BSP) utilities for triangle meshes." alt="" coords="120,5,196,33"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="20,81,80,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,36,83,74,80,70,137,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="119,157,181,184"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="157,34,146,81,145,112,148,142,143,142,140,113,141,81,151,33"/>
+<area shape="rect" id="Node000004" href="$Triangle_8h.html" title="Declaration of the Triangle class (surface element with cached geometry)." alt="" coords="156,81,240,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="167,32,186,66,181,69,163,35"/>
+<area shape="rect" id="Node000005" href="$globals_8h.html" title="Global numerical constants, fundamental types, and simple macros." alt="" coords="222,157,302,184"/>
+<area shape="poly" id="edge10_Node000001_Node000005" title=" " alt="" coords="194,31,227,50,242,64,255,80,266,110,268,141,262,141,261,111,250,82,239,67,224,55,191,36"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="192,111,169,145,165,142,187,108"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="211,107,243,143,239,147,207,111"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="5,232,103,260"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="226,187,106,229,104,224,224,182"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="127,232,248,260"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="251,187,213,223,210,219,247,183"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="272,232,401,260"/>
+<area shape="poly" id="edge8_Node000005_Node000008" title=" " alt="" coords="277,183,314,219,311,223,273,187"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="425,232,502,260"/>
+<area shape="poly" id="edge9_Node000005_Node000009" title=" " alt="" coords="299,182,414,224,412,229,297,187"/>
+</map>

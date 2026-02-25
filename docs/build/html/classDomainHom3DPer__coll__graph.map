@@ -1,0 +1,21 @@
+<map id="DomainHom3DPer" name="DomainHom3DPer">
+<area shape="rect" id="Node000001" title="Homogeneous medium with Bloch‑periodic excitation/Green&#39;s function." alt="" coords="226,2738,395,2832"/>
+<area shape="rect" id="Node000002" href="$classDomainHom3D.html" title="Concrete domain for homogeneous 3D media." alt="" coords="212,2259,408,2688"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="313,2703,313,2738,308,2738,308,2703"/>
+<area shape="rect" id="Node000003" href="$classDomain.html" title="Abstract base class for domains." alt="" coords="209,1757,411,2209"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="313,2224,313,2259,308,2259,308,2224"/>
+<area shape="rect" id="Node000004" href="$classBsp3D.html" title="Minimal 3D BSP tree for triangle meshes." alt="" coords="44,1084,160,1692"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="163,1554,228,1740,223,1742,158,1555"/>
+<area shape="poly" id="edge6_Node000004_Node000004" title=" " alt="" coords="162,1324,172,1331,180,1344,185,1363,187,1388,184,1419,176,1440,171,1438,179,1418,182,1388,180,1364,175,1346,168,1335,159,1328"/>
+<area shape="rect" id="Node000005" href="$structbspPolygon.html" title="Polygon wrapper carried through BSP splitting." alt="" coords="60,734,145,829"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="105,829,105,1067,100,1067,100,829"/>
+<area shape="rect" id="Node000006" href="$classTriangle.html" title="Triangular surface element with cached geometry and utilities." alt="" coords="5,5,199,480"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="105,480,105,718,100,718,100,480"/>
+<area shape="rect" id="Node000007" href="$classGreenF.html" title="Abstract base for Green&#39;s function kernels." alt="" coords="281,545,451,1019"/>
+<area shape="poly" id="edge7_Node000003_Node000007" title=" " alt="" coords="331,1019,325,1084,314,1255,309,1427,307,1740,302,1740,303,1427,309,1254,319,1084,326,1019"/>
+<area shape="rect" id="Node000009" href="$classSIEForm.html" title="Abstract base class for SIE formulations." alt="" coords="393,1285,595,1491"/>
+<area shape="poly" id="edge10_Node000009_Node000007" title=" " alt="" coords="419,1018,472,1268,467,1269,414,1019"/>
+<area shape="rect" id="Node000008" href="$classLookupTableBin.html" title="Represents a 2D lookup table for complex functions (binary format)." alt="" coords="297,117,435,368"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="369,368,369,528,364,528,364,368"/>
+<area shape="poly" id="edge9_Node000003_Node000009" title=" " alt="" coords="465,1492,388,1742,382,1741,460,1490"/>
+</map>

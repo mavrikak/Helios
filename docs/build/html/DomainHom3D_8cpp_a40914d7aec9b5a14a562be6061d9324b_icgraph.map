@@ -1,0 +1,9 @@
+<map id="realVecHom" name="realVecHom">
+<area shape="rect" id="Node000001" title="Extract the real part of each component of a complex 3&#45;vector." alt="" coords="269,57,369,85"/>
+<area shape="rect" id="Node000002" href="$classDomainHom3D.html#ad19635c8b33f69ebf6cb3cd8788f7f23" title="Absorption cross section via surface quadrature." alt="" coords="5,5,221,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="253,57,220,48,172,36,173,31,221,43,254,52"/>
+<area shape="rect" id="Node000003" href="$classDomainHom3D.html#aa6a76dafe56204c15b80e491e6a2b21d" title="Extinction cross section via surface quadrature." alt="" coords="7,57,219,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="253,74,219,74,219,68,253,68"/>
+<area shape="rect" id="Node000004" href="$classDomainHom3D.html#af51c0166dbce1642b143f7bf910b7c12" title="Scattering cross section via surface quadrature." alt="" coords="7,109,219,137"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="254,91,221,99,173,111,172,106,220,94,253,85"/>
+</map>

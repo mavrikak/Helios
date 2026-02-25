@@ -1,0 +1,14 @@
+<map id="SingCancellation::writeMatlabMatrixToTxt" name="SingCancellation::writeMatlabMatrixToTxt">
+<area shape="rect" id="Node000001" title="Write a single matrix column (chosen component) as a MATLAB style vector." alt="" coords="576,57,792,102"/>
+<area shape="rect" id="Node000002" href="$classSingCancellation.html#aa72d2a4d4365846ffcbee49b07a4baa7" title="Build paired quadrature for triangles sharing a common edge." alt="" coords="301,5,528,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="565,55,479,36,480,31,566,50"/>
+<area shape="rect" id="Node000004" href="$classSingCancellation.html#a7d4e2fb258f1a7a5923c823800863983" title="Build paired quadrature for identical triangles (common facet)." alt="" coords="317,57,512,102"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="560,82,512,82,512,76,560,76"/>
+<area shape="rect" id="Node000005" href="$classSingCancellation.html#ac1258c9e1d2e1981e9ceb22477312cfd" title="Build paired quadrature for triangles sharing a single vertex." alt="" coords="317,150,512,195"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="604,110,482,152,480,147,602,104"/>
+<area shape="rect" id="Node000003" href="$classSingCancellation.html#a8931df16b2dd06d74b1aa8a78eab4363" title="Construct and immediately generate the paired quadrature for a triangle pair." alt="" coords="5,65,253,93"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="331,39,199,67,198,62,330,34"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="301,82,253,82,253,76,301,76"/>
+<area shape="poly" id="edge7_Node000005_Node000003" title=" " alt="" coords="329,147,173,96,175,91,330,142"/>
+<area shape="poly" id="edge6_Node000005_Node000005" title=" " alt="" coords="458,137,442,131,414,129,389,131,373,136,367,142,368,149,363,150,362,140,370,131,388,125,414,124,443,126,460,132"/>
+</map>

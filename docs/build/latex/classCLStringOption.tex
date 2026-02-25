@@ -1,0 +1,194 @@
+\doxysection{CLString\+Option Class Reference}
+\hypertarget{classCLStringOption}{}\label{classCLStringOption}\index{CLStringOption@{CLStringOption}}
+
+
+Option that captures a string argument.  
+
+
+
+
+{\ttfamily \#include $<$CLParser.\+h$>$}
+
+
+
+Inheritance diagram for CLString\+Option\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{classCLStringOption__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CLString\+Option\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{classCLStringOption__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCLStringOption_a1b34fe91547f81abac032eee3c94e72e}{CLString\+Option}} (std\+::string opt, std\+::string \texorpdfstring{$\ast$}{*}targ)
+\begin{DoxyCompactList}\small\item\em Construct a string option bound to a user string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCLStringOption_af7e84e8bff6743836766864e69df4432}{CLString\+Option}} (const char \texorpdfstring{$\ast$}{*}opt, std\+::string \texorpdfstring{$\ast$}{*}targ)
+\begin{DoxyCompactList}\small\item\em Construct a string option bound to a user string. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classCLStringOption_ab2335589bd67a3f329860494bb3830bc}{\texorpdfstring{$\sim$}{\string~}\+CLString\+Option}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classCLStringOption_ae457cbbf263b06c9258c1e501f56c12d}{Parse}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Parse the option and copy the next token as a string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classCLParser}{CLParser}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCLParser_ae3702d514303a9f957e3381d71c4d6df}{CLParser}} (std\+::string opt)
+\begin{DoxyCompactList}\small\item\em Construct with an option token. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCLParser_ad84575776050c4cc5492815ef8eb5dd5}{CLParser}} (const char \texorpdfstring{$\ast$}{*}opt)
+\begin{DoxyCompactList}\small\item\em Construct with an option token. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classCLParser_a988eff2b562e1df1bc63e7a221a1e4dc}{\texorpdfstring{$\sim$}{\string~}\+CLParser}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCLStringOption_a8ff60cbcb6d19b4ea5b3d68ed5bfc18c}{target}}
+\begin{DoxyCompactList}\small\item\em Pointer to user string to be set. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classCLParser}{CLParser}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classCLParser_a2d671ec2fea71aaf31ead23092d05d41}{option}}
+\begin{DoxyCompactList}\small\item\em Option keyword to match against argv\mbox{[}\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Option that captures a string argument. 
+
+Example\+: "{}-\/j input.\+job"{} stores "{}input.\+job"{}. 
+
+Definition at line \mbox{\hyperlink{CLParser_8h_source_l00125}{125}} of file \mbox{\hyperlink{CLParser_8h_source}{CLParser.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCLStringOption_a1b34fe91547f81abac032eee3c94e72e}\index{CLStringOption@{CLStringOption}!CLStringOption@{CLStringOption}}
+\index{CLStringOption@{CLStringOption}!CLStringOption@{CLStringOption}}
+\doxysubsubsection{\texorpdfstring{CLStringOption()}{CLStringOption()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classCLStringOption_a1b34fe91547f81abac032eee3c94e72e} 
+CLString\+Option\+::\+CLString\+Option (\begin{DoxyParamCaption}\item[{std\+::string}]{opt}{, }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{targ}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a string option bound to a user string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em opt} & Option keyword. \\
+\hline
+{\em targ} & Pointer to target string. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{CLParser_8h_source_l00135}{135}} of file \mbox{\hyperlink{CLParser_8h_source}{CLParser.\+h}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCLStringOption_a1b34fe91547f81abac032eee3c94e72e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classCLStringOption_af7e84e8bff6743836766864e69df4432}\index{CLStringOption@{CLStringOption}!CLStringOption@{CLStringOption}}
+\index{CLStringOption@{CLStringOption}!CLStringOption@{CLStringOption}}
+\doxysubsubsection{\texorpdfstring{CLStringOption()}{CLStringOption()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classCLStringOption_af7e84e8bff6743836766864e69df4432} 
+CLString\+Option\+::\+CLString\+Option (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{opt}{, }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{targ}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a string option bound to a user string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em opt} & Option keyword. \\
+\hline
+{\em targ} & Pointer to target string. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{CLParser_8h_source_l00143}{143}} of file \mbox{\hyperlink{CLParser_8h_source}{CLParser.\+h}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCLStringOption_af7e84e8bff6743836766864e69df4432_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classCLStringOption_ab2335589bd67a3f329860494bb3830bc}\index{CLStringOption@{CLStringOption}!````~CLStringOption@{\texorpdfstring{$\sim$}{\string~}CLStringOption}}
+\index{````~CLStringOption@{\texorpdfstring{$\sim$}{\string~}CLStringOption}!CLStringOption@{CLStringOption}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CLStringOption()}{\string~CLStringOption()}}
+{\footnotesize\ttfamily \label{classCLStringOption_ab2335589bd67a3f329860494bb3830bc} 
+virtual CLString\+Option\+::\texorpdfstring{$\sim$}{\string~}\+CLString\+Option (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+Definition at line \mbox{\hyperlink{CLParser_8h_source_l00147}{147}} of file \mbox{\hyperlink{CLParser_8h_source}{CLParser.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCLStringOption_ae457cbbf263b06c9258c1e501f56c12d}\index{CLStringOption@{CLStringOption}!Parse@{Parse}}
+\index{Parse@{Parse}!CLStringOption@{CLStringOption}}
+\doxysubsubsection{\texorpdfstring{Parse()}{Parse()}}
+{\footnotesize\ttfamily \label{classCLStringOption_ae457cbbf263b06c9258c1e501f56c12d} 
+int CLString\+Option\+::\+Parse (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{argv}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Parse the option and copy the next token as a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Argument count. \\
+\hline
+{\em argv} & Argument vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if found and set, 0 if not present. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCLParser_a966387c58560ab2006b6158b62ea75ce}{CLParser}}.
+
+
+
+Definition at line \mbox{\hyperlink{CLParser_8h_source_l00155}{155}} of file \mbox{\hyperlink{CLParser_8h_source}{CLParser.\+h}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classCLStringOption_a8ff60cbcb6d19b4ea5b3d68ed5bfc18c}\index{CLStringOption@{CLStringOption}!target@{target}}
+\index{target@{target}!CLStringOption@{CLStringOption}}
+\doxysubsubsection{\texorpdfstring{target}{target}}
+{\footnotesize\ttfamily \label{classCLStringOption_a8ff60cbcb6d19b4ea5b3d68ed5bfc18c} 
+std\+::string\texorpdfstring{$\ast$}{*} CLString\+Option\+::target\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Pointer to user string to be set. 
+
+
+
+Definition at line \mbox{\hyperlink{CLParser_8h_source_l00127}{127}} of file \mbox{\hyperlink{CLParser_8h_source}{CLParser.\+h}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{CLParser_8h}{CLParser.\+h}}\end{DoxyCompactItemize}

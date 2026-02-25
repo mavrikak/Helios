@@ -1,0 +1,472 @@
+\doxysection{Integrand\+Intra Struct Reference}
+\hypertarget{structIntegrandIntra}{}\label{structIntegrandIntra}\index{IntegrandIntra@{IntegrandIntra}}
+
+
+Structure representing the integrand of the intra-\/layer interactions of Green\textquotesingle{}s function.  
+
+
+
+
+{\ttfamily \#include $<$Layered\+Media\+Utils.\+h$>$}
+
+
+
+Collaboration diagram for Integrand\+Intra\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=179pt]{structIntegrandIntra__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structIntegrandIntra}{Integrand\+Intra}} \mbox{\hyperlink{structIntegrandIntra_ab3708e0e57f4045baffd0f62f498c079}{operator-\/}} (const \mbox{\hyperlink{structIntegrandIntra}{Integrand\+Intra}} \&other) const
+\begin{DoxyCompactList}\small\item\em Overloaded subtraction operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structIntegrandIntra}{Integrand\+Intra}} \mbox{\hyperlink{structIntegrandIntra_ae90efd1a4b53a5aa3a88ea39106e61af}{flatten}} (const std\+::vector$<$ std\+::complex$<$ int $>$ $>$ \&ind\+Vec\+Complex) const
+\begin{DoxyCompactList}\small\item\em Function to create a flattened structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ \mbox{\hyperlink{structIntegrandIntra_a28546a21234b1a066cb056b36e8bd3f3}{te}}
+\begin{DoxyCompactList}\small\item\em TE intra-\/layer integrand. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ \mbox{\hyperlink{structIntegrandIntra_a782737a08e23a89edd99c3def6e7c07c}{tm}}
+\begin{DoxyCompactList}\small\item\em TM intra-\/layer integrand. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ \mbox{\hyperlink{structIntegrandIntra_a6e6af10064e420595b7fcffaadad524f}{tez}}
+\begin{DoxyCompactList}\small\item\em TE–Z intra-\/layer integrand. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ \mbox{\hyperlink{structIntegrandIntra_ae4e15bfe2866b1531499c2bf74a6e084}{tmz}}
+\begin{DoxyCompactList}\small\item\em TM–Z intra-\/layer integrand. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ \mbox{\hyperlink{structIntegrandIntra_a502069162f36db41abcc9bcf932e1def}{tezz}}
+\begin{DoxyCompactList}\small\item\em TE–\+ZZ intra-\/layer integrand. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ \mbox{\hyperlink{structIntegrandIntra_a51ac6d395917b3de939f261265843672}{tmzz}}
+\begin{DoxyCompactList}\small\item\em TM–\+ZZ intra-\/layer integrand. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ \mbox{\hyperlink{structIntegrandIntra_ac49a74d4f1dda100f89b34d7231eeefc}{tes}}
+\begin{DoxyCompactList}\small\item\em TE–S intra-\/layer integrand. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ \mbox{\hyperlink{structIntegrandIntra_a7c7d0f127811ac975df55daba41c2dd2}{tms}}
+\begin{DoxyCompactList}\small\item\em TM–S intra-\/layer integrand. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ \mbox{\hyperlink{structIntegrandIntra_a5a9455e0745cb4a2731ba9e06738dee8}{ter}}
+\begin{DoxyCompactList}\small\item\em TE–R intra-\/layer integrand. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ \mbox{\hyperlink{structIntegrandIntra_aa1d9cc377c1fb3a95ef8c49c627416ea}{tmr}}
+\begin{DoxyCompactList}\small\item\em TM–R intra-\/layer integrand. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ \mbox{\hyperlink{structIntegrandIntra_ac7cefda7217d0da64e8dc9063ae3181b}{terz}}
+\begin{DoxyCompactList}\small\item\em TE–\+RZ intra-\/layer integrand. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ \mbox{\hyperlink{structIntegrandIntra_ab65e2a1818182a74ae47172805f98a59}{tmrz}}
+\begin{DoxyCompactList}\small\item\em TM–\+RZ intra-\/layer integrand. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ \mbox{\hyperlink{structIntegrandIntra_aa1346f5db4418f246e38a86b47482af5}{flatten\+Vector}} (const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ \&matrix, const std\+::vector$<$ std\+::complex$<$ int $>$ $>$ \&ind\+Vec\+Complex) const
+\begin{DoxyCompactList}\small\item\em Helper function to extract selected elements from a 2D vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{structIntegrandIntra_af909e5fd6a7e84bf7688bbec4656326b}{get\+Value}} (const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ \&matrix, int i, int j) const
+\begin{DoxyCompactList}\small\item\em Helper function to safely access matrix elements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{structIntegrandIntra_a4e1dbae520885477083a8bc09dedfd56}{subtract\+Vector}} (std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ \&a, const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ \&b)
+\begin{DoxyCompactList}\small\item\em Helper function to subtract two 2D vectors element-\/wise. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{structIntegrandIntra_af91fd954fc29d3363e3ffed6d1a0d55b}{multiply\+Vector}} (std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ \&vec, const \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \&scalar)
+\begin{DoxyCompactList}\small\item\em Helper function to multiply a 2D vector by a scalar. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structIntegrandIntra}{Integrand\+Intra}} \mbox{\hyperlink{structIntegrandIntra_a1cab8cb7bdffb958fc76e2d4b8eb59cc}{operator\texorpdfstring{$\ast$}{*}}} (const \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \&scalar, const \mbox{\hyperlink{structIntegrandIntra}{Integrand\+Intra}} \&obj)
+\begin{DoxyCompactList}\small\item\em Overloaded multiplication operator (scalar \texorpdfstring{$\ast$}{*} structure). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure representing the integrand of the intra-\/layer interactions of Green\textquotesingle{}s function. 
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00196}{196}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structIntegrandIntra_ae90efd1a4b53a5aa3a88ea39106e61af}\index{IntegrandIntra@{IntegrandIntra}!flatten@{flatten}}
+\index{flatten@{flatten}!IntegrandIntra@{IntegrandIntra}}
+\doxysubsubsection{\texorpdfstring{flatten()}{flatten()}}
+{\footnotesize\ttfamily \label{structIntegrandIntra_ae90efd1a4b53a5aa3a88ea39106e61af} 
+\mbox{\hyperlink{structIntegrandIntra}{Integrand\+Intra}} Integrand\+Intra\+::flatten (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::complex$<$ int $>$ $>$ \&}]{ind\+Vec\+Complex}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Function to create a flattened structure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ind\+Vec\+Complex} & The indices of the flattened structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The flattened structure. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00260}{260}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structIntegrandIntra_ae90efd1a4b53a5aa3a88ea39106e61af_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structIntegrandIntra_ae90efd1a4b53a5aa3a88ea39106e61af_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structIntegrandIntra_aa1346f5db4418f246e38a86b47482af5}\index{IntegrandIntra@{IntegrandIntra}!flattenVector@{flattenVector}}
+\index{flattenVector@{flattenVector}!IntegrandIntra@{IntegrandIntra}}
+\doxysubsubsection{\texorpdfstring{flattenVector()}{flattenVector()}}
+{\footnotesize\ttfamily \label{structIntegrandIntra_aa1346f5db4418f246e38a86b47482af5} 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ Integrand\+Intra\+::flatten\+Vector (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ \&}]{matrix}{, }\item[{const std\+::vector$<$ std\+::complex$<$ int $>$ $>$ \&}]{ind\+Vec\+Complex}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Helper function to extract selected elements from a 2D vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & The 2D vector to extract from. \\
+\hline
+{\em ind\+Vec\+Complex} & The indices of the elements to extract. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00315}{315}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structIntegrandIntra_aa1346f5db4418f246e38a86b47482af5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structIntegrandIntra_aa1346f5db4418f246e38a86b47482af5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structIntegrandIntra_af909e5fd6a7e84bf7688bbec4656326b}\index{IntegrandIntra@{IntegrandIntra}!getValue@{getValue}}
+\index{getValue@{getValue}!IntegrandIntra@{IntegrandIntra}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily \label{structIntegrandIntra_af909e5fd6a7e84bf7688bbec4656326b} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Integrand\+Intra\+::get\+Value (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ \&}]{matrix}{, }\item[{int}]{i}{, }\item[{int}]{j}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Helper function to safely access matrix elements. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & The 2D vector to access. \\
+\hline
+{\em i} & The row index. \\
+\hline
+{\em j} & The column index. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00333}{333}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structIntegrandIntra_af909e5fd6a7e84bf7688bbec4656326b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structIntegrandIntra_af91fd954fc29d3363e3ffed6d1a0d55b}\index{IntegrandIntra@{IntegrandIntra}!multiplyVector@{multiplyVector}}
+\index{multiplyVector@{multiplyVector}!IntegrandIntra@{IntegrandIntra}}
+\doxysubsubsection{\texorpdfstring{multiplyVector()}{multiplyVector()}}
+{\footnotesize\ttfamily \label{structIntegrandIntra_af91fd954fc29d3363e3ffed6d1a0d55b} 
+static void Integrand\+Intra\+::multiply\+Vector (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ \&}]{vec}{, }\item[{const \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \&}]{scalar}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Helper function to multiply a 2D vector by a scalar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & The vector to multiply. \\
+\hline
+{\em scalar} & The scalar to multiply by. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00302}{302}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structIntegrandIntra_af91fd954fc29d3363e3ffed6d1a0d55b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structIntegrandIntra_ab3708e0e57f4045baffd0f62f498c079}\index{IntegrandIntra@{IntegrandIntra}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!IntegrandIntra@{IntegrandIntra}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \label{structIntegrandIntra_ab3708e0e57f4045baffd0f62f498c079} 
+\mbox{\hyperlink{structIntegrandIntra}{Integrand\+Intra}} Integrand\+Intra\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structIntegrandIntra}{Integrand\+Intra}} \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overloaded subtraction operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The other \doxylink{structIntegrandIntra}{Integrand\+Intra} to subtract. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The resulting \doxylink{structIntegrandIntra}{Integrand\+Intra} after subtraction. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00215}{215}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structIntegrandIntra_ab3708e0e57f4045baffd0f62f498c079_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{structIntegrandIntra_a4e1dbae520885477083a8bc09dedfd56}\index{IntegrandIntra@{IntegrandIntra}!subtractVector@{subtractVector}}
+\index{subtractVector@{subtractVector}!IntegrandIntra@{IntegrandIntra}}
+\doxysubsubsection{\texorpdfstring{subtractVector()}{subtractVector()}}
+{\footnotesize\ttfamily \label{structIntegrandIntra_a4e1dbae520885477083a8bc09dedfd56} 
+static void Integrand\+Intra\+::subtract\+Vector (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ \&}]{a}{, }\item[{const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ \&}]{b}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Helper function to subtract two 2D vectors element-\/wise. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & The first vector. \\
+\hline
+{\em b} & The second vector. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00286}{286}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structIntegrandIntra_a4e1dbae520885477083a8bc09dedfd56_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{structIntegrandIntra_a1cab8cb7bdffb958fc76e2d4b8eb59cc}\index{IntegrandIntra@{IntegrandIntra}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!IntegrandIntra@{IntegrandIntra}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}}{operator*}}
+{\footnotesize\ttfamily \label{structIntegrandIntra_a1cab8cb7bdffb958fc76e2d4b8eb59cc} 
+\mbox{\hyperlink{structIntegrandIntra}{Integrand\+Intra}} operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \&}]{scalar}{, }\item[{const \mbox{\hyperlink{structIntegrandIntra}{Integrand\+Intra}} \&}]{obj}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Overloaded multiplication operator (scalar \texorpdfstring{$\ast$}{*} structure). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & The scalar to multiply. \\
+\hline
+{\em obj} & The \doxylink{structIntegrandIntra}{Integrand\+Intra} to multiply. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The resulting \doxylink{structIntegrandIntra}{Integrand\+Intra} after multiplication. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00238}{238}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structIntegrandIntra_a28546a21234b1a066cb056b36e8bd3f3}\index{IntegrandIntra@{IntegrandIntra}!te@{te}}
+\index{te@{te}!IntegrandIntra@{IntegrandIntra}}
+\doxysubsubsection{\texorpdfstring{te}{te}}
+{\footnotesize\ttfamily \label{structIntegrandIntra_a28546a21234b1a066cb056b36e8bd3f3} 
+std\+::vector$<$std\+::vector$<$\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}$>$ $>$ Integrand\+Intra\+::te}
+
+
+
+TE intra-\/layer integrand. 
+
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00197}{197}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+\Hypertarget{structIntegrandIntra_a5a9455e0745cb4a2731ba9e06738dee8}\index{IntegrandIntra@{IntegrandIntra}!ter@{ter}}
+\index{ter@{ter}!IntegrandIntra@{IntegrandIntra}}
+\doxysubsubsection{\texorpdfstring{ter}{ter}}
+{\footnotesize\ttfamily \label{structIntegrandIntra_a5a9455e0745cb4a2731ba9e06738dee8} 
+std\+::vector$<$std\+::vector$<$\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}$>$ $>$ Integrand\+Intra\+::ter}
+
+
+
+TE–R intra-\/layer integrand. 
+
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00205}{205}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+\Hypertarget{structIntegrandIntra_ac7cefda7217d0da64e8dc9063ae3181b}\index{IntegrandIntra@{IntegrandIntra}!terz@{terz}}
+\index{terz@{terz}!IntegrandIntra@{IntegrandIntra}}
+\doxysubsubsection{\texorpdfstring{terz}{terz}}
+{\footnotesize\ttfamily \label{structIntegrandIntra_ac7cefda7217d0da64e8dc9063ae3181b} 
+std\+::vector$<$std\+::vector$<$\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}$>$ $>$ Integrand\+Intra\+::terz}
+
+
+
+TE–\+RZ intra-\/layer integrand. 
+
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00207}{207}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+\Hypertarget{structIntegrandIntra_ac49a74d4f1dda100f89b34d7231eeefc}\index{IntegrandIntra@{IntegrandIntra}!tes@{tes}}
+\index{tes@{tes}!IntegrandIntra@{IntegrandIntra}}
+\doxysubsubsection{\texorpdfstring{tes}{tes}}
+{\footnotesize\ttfamily \label{structIntegrandIntra_ac49a74d4f1dda100f89b34d7231eeefc} 
+std\+::vector$<$std\+::vector$<$\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}$>$ $>$ Integrand\+Intra\+::tes}
+
+
+
+TE–S intra-\/layer integrand. 
+
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00203}{203}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+\Hypertarget{structIntegrandIntra_a6e6af10064e420595b7fcffaadad524f}\index{IntegrandIntra@{IntegrandIntra}!tez@{tez}}
+\index{tez@{tez}!IntegrandIntra@{IntegrandIntra}}
+\doxysubsubsection{\texorpdfstring{tez}{tez}}
+{\footnotesize\ttfamily \label{structIntegrandIntra_a6e6af10064e420595b7fcffaadad524f} 
+std\+::vector$<$std\+::vector$<$\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}$>$ $>$ Integrand\+Intra\+::tez}
+
+
+
+TE–Z intra-\/layer integrand. 
+
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00199}{199}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+\Hypertarget{structIntegrandIntra_a502069162f36db41abcc9bcf932e1def}\index{IntegrandIntra@{IntegrandIntra}!tezz@{tezz}}
+\index{tezz@{tezz}!IntegrandIntra@{IntegrandIntra}}
+\doxysubsubsection{\texorpdfstring{tezz}{tezz}}
+{\footnotesize\ttfamily \label{structIntegrandIntra_a502069162f36db41abcc9bcf932e1def} 
+std\+::vector$<$std\+::vector$<$\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}$>$ $>$ Integrand\+Intra\+::tezz}
+
+
+
+TE–\+ZZ intra-\/layer integrand. 
+
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00201}{201}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+\Hypertarget{structIntegrandIntra_a782737a08e23a89edd99c3def6e7c07c}\index{IntegrandIntra@{IntegrandIntra}!tm@{tm}}
+\index{tm@{tm}!IntegrandIntra@{IntegrandIntra}}
+\doxysubsubsection{\texorpdfstring{tm}{tm}}
+{\footnotesize\ttfamily \label{structIntegrandIntra_a782737a08e23a89edd99c3def6e7c07c} 
+std\+::vector$<$std\+::vector$<$\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}$>$ $>$ Integrand\+Intra\+::tm}
+
+
+
+TM intra-\/layer integrand. 
+
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00198}{198}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+\Hypertarget{structIntegrandIntra_aa1d9cc377c1fb3a95ef8c49c627416ea}\index{IntegrandIntra@{IntegrandIntra}!tmr@{tmr}}
+\index{tmr@{tmr}!IntegrandIntra@{IntegrandIntra}}
+\doxysubsubsection{\texorpdfstring{tmr}{tmr}}
+{\footnotesize\ttfamily \label{structIntegrandIntra_aa1d9cc377c1fb3a95ef8c49c627416ea} 
+std\+::vector$<$std\+::vector$<$\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}$>$ $>$ Integrand\+Intra\+::tmr}
+
+
+
+TM–R intra-\/layer integrand. 
+
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00206}{206}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+\Hypertarget{structIntegrandIntra_ab65e2a1818182a74ae47172805f98a59}\index{IntegrandIntra@{IntegrandIntra}!tmrz@{tmrz}}
+\index{tmrz@{tmrz}!IntegrandIntra@{IntegrandIntra}}
+\doxysubsubsection{\texorpdfstring{tmrz}{tmrz}}
+{\footnotesize\ttfamily \label{structIntegrandIntra_ab65e2a1818182a74ae47172805f98a59} 
+std\+::vector$<$std\+::vector$<$\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}$>$ $>$ Integrand\+Intra\+::tmrz}
+
+
+
+TM–\+RZ intra-\/layer integrand. 
+
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00208}{208}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+\Hypertarget{structIntegrandIntra_a7c7d0f127811ac975df55daba41c2dd2}\index{IntegrandIntra@{IntegrandIntra}!tms@{tms}}
+\index{tms@{tms}!IntegrandIntra@{IntegrandIntra}}
+\doxysubsubsection{\texorpdfstring{tms}{tms}}
+{\footnotesize\ttfamily \label{structIntegrandIntra_a7c7d0f127811ac975df55daba41c2dd2} 
+std\+::vector$<$std\+::vector$<$\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}$>$ $>$ Integrand\+Intra\+::tms}
+
+
+
+TM–S intra-\/layer integrand. 
+
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00204}{204}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+\Hypertarget{structIntegrandIntra_ae4e15bfe2866b1531499c2bf74a6e084}\index{IntegrandIntra@{IntegrandIntra}!tmz@{tmz}}
+\index{tmz@{tmz}!IntegrandIntra@{IntegrandIntra}}
+\doxysubsubsection{\texorpdfstring{tmz}{tmz}}
+{\footnotesize\ttfamily \label{structIntegrandIntra_ae4e15bfe2866b1531499c2bf74a6e084} 
+std\+::vector$<$std\+::vector$<$\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}$>$ $>$ Integrand\+Intra\+::tmz}
+
+
+
+TM–Z intra-\/layer integrand. 
+
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00200}{200}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+\Hypertarget{structIntegrandIntra_a51ac6d395917b3de939f261265843672}\index{IntegrandIntra@{IntegrandIntra}!tmzz@{tmzz}}
+\index{tmzz@{tmzz}!IntegrandIntra@{IntegrandIntra}}
+\doxysubsubsection{\texorpdfstring{tmzz}{tmzz}}
+{\footnotesize\ttfamily \label{structIntegrandIntra_a51ac6d395917b3de939f261265843672} 
+std\+::vector$<$std\+::vector$<$\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}$>$ $>$ Integrand\+Intra\+::tmzz}
+
+
+
+TM–\+ZZ intra-\/layer integrand. 
+
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00202}{202}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{LayeredMediaUtils_8h}{Layered\+Media\+Utils.\+h}}\end{DoxyCompactItemize}

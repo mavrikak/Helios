@@ -1,0 +1,40 @@
+\doxysection{Dipole.\+h File Reference}
+\hypertarget{Dipole_8h}{}\label{Dipole_8h}\index{Dipole.h@{Dipole.h}}
+
+
+Incident field generator for electric dipole illumination in homogeneous or layered media.  
+
+
+{\ttfamily \#include "{}Gauss\+Quad.\+h"{}}\newline
+{\ttfamily \#include "{}Green\+FLayered3\+D.\+h"{}}\newline
+{\ttfamily \#include "{}Incident\+Field.\+h"{}}\newline
+{\ttfamily \#include "{}globals.\+h"{}}\newline
+{\ttfamily \#include "{}Layered\+Media\+Utils.\+h"{}}\newline
+Include dependency graph for Dipole.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Dipole_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Dipole_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classDipole}{Dipole}}
+\begin{DoxyCompactList}\small\item\em Point electric dipole excitation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Incident field generator for electric dipole illumination in homogeneous or layered media. 
+
+The {\bfseries{\doxylink{classDipole}{Dipole}}} class derives from \doxylink{classIncidentField}{Incident\+Field} and provides the complex electric and magnetic fields radiated by a point electric dipole. It supports both direct field evaluation at arbitrary observation points and RWG-\/based integrations needed during Mo\+M/\+SIE matrix assembly. For layered media, it can use tabulated Sommerfeld integrals via \doxylink{classGreenFLayered3D}{Green\+FLayered3D} and helper utilities provided by \doxylink{classLayeredMediaUtils}{Layered\+Media\+Utils}. 
+
+Definition in file \mbox{\hyperlink{Dipole_8h_source}{Dipole.\+h}}.
+

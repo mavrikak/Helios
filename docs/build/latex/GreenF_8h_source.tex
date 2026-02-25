@@ -1,0 +1,123 @@
+\doxysection{Green\+F.\+h}
+\hypertarget{GreenF_8h_source}{}\label{GreenF_8h_source}\index{GreenF.h@{GreenF.h}}
+\mbox{\hyperlink{GreenF_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00012}00012\ \textcolor{preprocessor}{\#ifndef\ GREENF\_H}}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00013}00013\ \textcolor{preprocessor}{\#define\ GREENF\_H}}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00015}00015\ \textcolor{preprocessor}{\#include\ <blitz/array.h>}}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00016}00016\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00017}00017\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00018}00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{GaussQuad_8h}{GaussQuad.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00019}00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{RWGFun_8h}{RWGFun.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00020}00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{SingSub_8h}{SingSub.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00021}00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{globals_8h}{globals.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00022}00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mathFunctions_8h}{mathFunctions.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00035}\mbox{\hyperlink{classGreenF}{00035}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classGreenF_a332ac24f39288170f77c18f37fde2c82}{GreenF}}\ \{}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00036}00036\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00037}00037\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00038}00038\ \ \ \textcolor{comment}{//\ Medium\ parameters}}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00039}00039\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00040}\mbox{\hyperlink{classGreenF_a551f07ab3b294c7b200eb578026bfa02}{00040}}\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classGreenF_a551f07ab3b294c7b200eb578026bfa02}{wavelength}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00041}\mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{00041}}\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00042}\mbox{\hyperlink{classGreenF_a8712c50916bb76ad1edd14ea8b27b1a0}{00042}}\ \ \ std::vector<dcmplx>\ \mbox{\hyperlink{classGreenF_a8712c50916bb76ad1edd14ea8b27b1a0}{k\_L}};\ \ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00044}00044\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00045}00045\ \ \ \textcolor{comment}{//\ erfc()\ lookup\ table\ (optional\ acceleration)}}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00046}00046\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00047}\mbox{\hyperlink{classGreenF_af4be67948114ed6bd9f273a3193c23e6}{00047}}\ \ \ \mbox{\hyperlink{classLookupTableBin}{LookupTableBin}}*\ \mbox{\hyperlink{classGreenF_af4be67948114ed6bd9f273a3193c23e6}{t}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00048}\mbox{\hyperlink{classGreenF_aa8b9f7c53607d829dacd82b657f65515}{00048}}\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classGreenF_aa8b9f7c53607d829dacd82b657f65515}{thereIsNoLookupTable}};\ \ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00050}00050\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00051}00051\ \ \ \textcolor{comment}{//\ Global\ switches}}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00052}00052\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00053}\mbox{\hyperlink{classGreenF_afb8bbc3614d84fa516766d49d71f5071}{00053}}\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classGreenF_afb8bbc3614d84fa516766d49d71f5071}{NeedsAccurate}};\ \ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00054}\mbox{\hyperlink{classGreenF_aa2f846b8735322f9e33660c443eb3910}{00054}}\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGreenF_aa2f846b8735322f9e33660c443eb3910}{Etm}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00056}00056\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00057}00057\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00058}00058\ \ \ \textcolor{comment}{//\ Construction\ \&\ lifetime}}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00059}00059\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00065}00065\ \ \ \mbox{\hyperlink{classGreenF_a332ac24f39288170f77c18f37fde2c82}{GreenF}}(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classGreenF_a551f07ab3b294c7b200eb578026bfa02}{wavelength}},\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ epsilonMedium);}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00066}00066\ \ \ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00072}00072\ \ \ \mbox{\hyperlink{classGreenF_a332ac24f39288170f77c18f37fde2c82}{GreenF}}(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classGreenF_a551f07ab3b294c7b200eb578026bfa02}{wavelength}},\ \textcolor{keyword}{const}\ std::vector<dcmplx>\&\ epsilonMedium);}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00073}00073\ \ \ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00080}00080\ \ \ \mbox{\hyperlink{classGreenF_a332ac24f39288170f77c18f37fde2c82}{GreenF}}(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classGreenF_a551f07ab3b294c7b200eb578026bfa02}{wavelength}},\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ epsilonMedium,\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ muMedium);}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00081}00081\ \ \ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00088}00088\ \ \ \mbox{\hyperlink{classGreenF_a332ac24f39288170f77c18f37fde2c82}{GreenF}}(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classGreenF_a551f07ab3b294c7b200eb578026bfa02}{wavelength}},\ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<dcmplx>\&\ epsilonMedium,\ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<dcmplx>\&\ muMedium);}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00093}00093\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classGreenF_ad60758ba43be153d6521e2f2e108334a}{\string~GreenF}}();}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00095}00095\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00096}00096\ \ \ \textcolor{comment}{//\ Pointwise\ kernel\ evaluation}}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00097}00097\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00104}\mbox{\hyperlink{classGreenF_ace035fbe9855e3f05caac9229e1f6b2a}{00104}}\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classGreenF_ace035fbe9855e3f05caac9229e1f6b2a}{Evaluate}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rp)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00112}\mbox{\hyperlink{classGreenF_a6edf9744ddc9670915e319901c8ec9fd}{00112}}\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ \mbox{\hyperlink{classGreenF_a6edf9744ddc9670915e319901c8ec9fd}{Gradient}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rp)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00120}\mbox{\hyperlink{classGreenF_a2541c9c8ed53e70c2ddd0f3603eca40d}{00120}}\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{globals_8h_ac062d767acbc2b8149a4039dc4a1a18f}{cdyad}}\ \mbox{\hyperlink{classGreenF_a2541c9c8ed53e70c2ddd0f3603eca40d}{EvaluateDyadic}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rp)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00122}00122\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00123}00123\ \ \ \textcolor{comment}{//\ RWG‑weighted\ integrals\ for\ MoM/SIE\ assembly}}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00124}00124\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00132}\mbox{\hyperlink{classGreenF_a6c12dde27af5c29efc4aa30dd0274f8d}{00132}}\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classGreenF_a6c12dde27af5c29efc4aa30dd0274f8d}{IntegrateD}}(\mbox{\hyperlink{classRWGFun}{RWGFun}}*\ f,\ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ fp)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00141}\mbox{\hyperlink{classGreenF_ab23558e114b6c84cb38d380fdb0d47b8}{00141}}\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classGreenF_ab23558e114b6c84cb38d380fdb0d47b8}{IntegrateK}}(\mbox{\hyperlink{classRWGFun}{RWGFun}}*\ f,\ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ fp)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00143}00143\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00144}00144\ \ \ \textcolor{comment}{//\ Post‑processing\ (fields\ from\ solved\ currents)}}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00145}00145\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00152}\mbox{\hyperlink{classGreenF_abea72f8596b233344eb6c6ab35e49b41}{00152}}\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ \mbox{\hyperlink{classGreenF_abea72f8596b233344eb6c6ab35e49b41}{IntegrateDelta}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r,\ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ fp)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00160}\mbox{\hyperlink{classGreenF_a0875ef994ae942ef623a49a5c6fc0f4d}{00160}}\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ \mbox{\hyperlink{classGreenF_a0875ef994ae942ef623a49a5c6fc0f4d}{IntegrateKappa}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r,\ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ fp)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00168}\mbox{\hyperlink{classGreenF_a99e706146fbd3da5b24ef605ed03deec}{00168}}\ \ \ \textcolor{keyword}{virtual}\ std::pair<dcmplx,\ dcmplx>\ \mbox{\hyperlink{classGreenF_a99e706146fbd3da5b24ef605ed03deec}{PairD}}(\mbox{\hyperlink{classRWGFun}{RWGFun}}*\ f,\ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ fp)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00176}\mbox{\hyperlink{classGreenF_a5bf93d82e80aef7c1d399fef001e7eaf}{00176}}\ \ \ \textcolor{keyword}{virtual}\ std::pair<dcmplx,\ dcmplx>\ \mbox{\hyperlink{classGreenF_a5bf93d82e80aef7c1d399fef001e7eaf}{PairK}}(\mbox{\hyperlink{classRWGFun}{RWGFun}}*\ f,\ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ fp)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00177}00177\ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00178}00178\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00179}00179\ \ \ \textcolor{comment}{//\ D\ and\ K\ matrix\ elements\ computation}}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00180}00180\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00187}\mbox{\hyperlink{classGreenF_a7968a039dbd8e597bf21973f72714ef8}{00187}}\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGreenF_a7968a039dbd8e597bf21973f72714ef8}{SameTriDK}}(\textcolor{keyword}{const}\ std::vector<RWGFun*>\&\ fvec,\ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<RWGFun*>\&\ fpvec,}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::vector<std::pair<dcmplx,\ dcmplx>>>\&\ DK)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00190}00190\ \ \ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00198}\mbox{\hyperlink{classGreenF_a2fb24564bc2011138ffcc29d0ae7fbb3}{00198}}\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGreenF_a2fb24564bc2011138ffcc29d0ae7fbb3}{SameTriDKG}}(\textcolor{keyword}{const}\ std::vector<RWGFun*>\&\ fvec,\ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<RWGFun*>\&\ fpvec,}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::vector<std::pair<dcmplx,\ dcmplx>>>\&\ DK,}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::vector<std::pair<cvec,\ cvec>>>\&\ DKG)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00202}00202\ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00209}\mbox{\hyperlink{classGreenF_ae0dabe2240b6e9d7ff628fc70971d3d1}{00209}}\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGreenF_ae0dabe2240b6e9d7ff628fc70971d3d1}{SameTriDeltaKappa}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r,\ \textcolor{keyword}{const}\ std::vector<RWGFun*>\&\ fpvec,}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::pair<cvec,\ cvec>>\&\ DeltaKappa)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00211}00211\ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00212}00212\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00213}00213\ \ \ \textcolor{comment}{//\ Utilities}}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00214}00214\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00218}00218\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classGreenF_a00b8e60822da0d787d66c4554c59189d}{WaveVec}}();}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00219}00219\ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00225}00225\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classGreenF_abf00726011a4eca4109bc43125218d30}{EvErfc}}(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ z);}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00226}00226\ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00232}00232\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGreenF_ae0c99d3bdbee9b75342be3e0664ba598}{InitLookupTable}}(\mbox{\hyperlink{classLookupTableBin}{LookupTableBin}}*\ \mbox{\hyperlink{classGreenF_af4be67948114ed6bd9f273a3193c23e6}{t}});}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00233}00233\ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00235}00235\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGreenF_ada52587b39995134c895324efbaf5919}{EnableAccurate}}();}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00236}00236\ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00240}00240\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classGreenF_ae8ee4d28ca884aab65018979e3d443ac}{RequiresAccurate}}();}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00241}00241\ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00246}00246\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGreenF_a0471f415be8e4d0f2fc7268e66ff38f5}{AssignEtm}}(\textcolor{keywordtype}{int}\ n);}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00247}00247\ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00254}00254\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classGreenF_a64c00505ed1ff4270d5c9ebcb76cc154}{GetLayerWavenumber}}(\textcolor{keywordtype}{size\_t}\ index)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00255}00255\ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00260}00260\ \ \ std::vector<dcmplx>\ \mbox{\hyperlink{classGreenF_a9b07899d8fa4d69ed69025bf785c64a4}{GetLayersWavenumbers}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00261}00261\ \};}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00262}00262\ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00271}00271\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{group__greenFunction_gac0a52dce23be7dacdf97c68653b6c137}{csqrt}}(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ arg);}
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00272}00272\ }
+\DoxyCodeLine{\Hypertarget{GreenF_8h_source_l00273}00273\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

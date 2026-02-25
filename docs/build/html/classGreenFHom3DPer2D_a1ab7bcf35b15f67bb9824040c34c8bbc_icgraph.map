@@ -1,0 +1,18 @@
+<map id="GreenFHom3DPer2D::GradientEwaldSpectral" name="GreenFHom3DPer2D::GradientEwaldSpectral">
+<area shape="rect" id="Node000001" title="Spectral part of the source&#45;gradient ." alt="" coords="545,109,765,154"/>
+<area shape="rect" id="Node000002" href="$classGreenFHom3DPer2D.html#afdc08576760ed0ae9a61dc378a7faac3" title="Ewald&#45;summed source&#45;gradient." alt="" coords="277,5,497,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="591,105,496,65,463,53,464,48,498,60,593,100"/>
+<area shape="rect" id="Node000004" href="$classGreenFHom3DPer2D.html#a86d2cbdfe3ecb724651159902fabcdad" title="Ewald&#45;summed smoothed source&#45;gradient." alt="" coords="277,75,497,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="529,118,497,114,498,109,530,113"/>
+<area shape="rect" id="Node000006" href="$classGreenFHom3DPer2D.html#a410f5349268917cf86215e766118032c" title="Smoothed source&#45;gradient for a specific translation." alt="" coords="277,144,497,189"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="530,151,498,155,497,149,529,145"/>
+<area shape="rect" id="Node000008" href="$classGreenFHom3DPer2D.html#abfe000753f5712d72cef880cd4a64b3a" title="Source&#45;gradient for a specific translation." alt="" coords="277,213,497,258"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="593,163,498,203,464,215,463,210,496,199,591,159"/>
+<area shape="rect" id="Node000003" href="$classGreenFHom3DPer2D.html#adff724f327912641a20c99fa4c9bb464" title="Source&#45;gradient ." alt="" coords="7,14,227,42"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="261,30,228,30,228,25,261,25"/>
+<area shape="rect" id="Node000005" href="$classGreenFHom3DPer2D.html#accc5e668a1b137a5279747db2ef0d560" title="Smoothed source&#45;gradient ." alt="" coords="7,75,227,119"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="261,100,228,100,228,94,261,94"/>
+<area shape="rect" id="Node000007" href="$classGreenFHom3DPer2D.html#aadb534ef4509422e6f3e78a0e3999758" title="term at an observation point." alt="" coords="5,179,229,223"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="261,185,230,189,229,184,261,180"/>
+<area shape="poly" id="edge8_Node000008_Node000007" title=" " alt="" coords="261,222,229,218,230,213,261,217"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="DomainLayered3D::DomainLayered3D" name="DomainLayered3D::DomainLayered3D">
+<area shape="rect" id="Node000001" title="Construct without creating Green&#39;s functions (owner/aggregate path)." alt="" coords="5,32,277,60"/>
+<area shape="rect" id="Node000002" href="$classDomain.html#a3f6f9e8ec932680440098679b6fe3300" title="Construct a domain over a mesh region at a given vacuum wavelength." alt="" coords="368,5,499,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="277,31,352,24,352,29,277,36"/>
+<area shape="rect" id="Node000005" href="$classDomainLayered3D.html#af630820f17df76fa4348a9dc121c70e7" title="Initialize per‑layer homogeneous Green&#39;s functions and the layered Green&#39;s function." alt="" coords="325,57,542,85"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="277,55,309,58,309,63,277,60"/>
+<area shape="rect" id="Node000003" href="$classDomain.html#a753296cc63cedb73b537311031521178" title="Add all boundary triangles belonging to region dIndex and build RWGs." alt="" coords="590,5,821,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="500,16,574,16,574,22,500,22"/>
+<area shape="rect" id="Node000004" href="$classSurfaceMesh.html#a7681019f61e9c1542c893c177117dac4" title="Triangles bordering a given domain (FRONT or BACK)." alt="" coords="869,5,1104,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="822,16,854,16,854,22,822,22"/>
+</map>

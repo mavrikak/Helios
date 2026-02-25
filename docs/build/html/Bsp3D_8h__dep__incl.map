@@ -1,0 +1,50 @@
+<map id="Bsp3D.h" name="Bsp3D.h">
+<area shape="rect" id="Node000001" title="3D Binary Space Partitioning (BSP) utilities for triangle meshes." alt="" coords="494,5,569,33"/>
+<area shape="rect" id="Node000002" href="$Bsp3D_8cpp.html" title="Implementation of a minimal 3D BSP tree for triangle meshes." alt="" coords="430,81,521,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="515,47,488,82,483,79,510,44"/>
+<area shape="rect" id="Node000003" href="$Domain_8h.html" title="Abstract simulation domain class for SIE scattering." alt="" coords="545,81,630,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="553,44,580,79,575,82,548,47"/>
+<area shape="rect" id="Node000004" href="$Domain_8cpp.html" title="Implementation of the Domain base class." alt="" coords="346,157,445,184"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="540,117,430,159,429,154,538,112"/>
+<area shape="rect" id="Node000005" href="$DomainHom3D_8h.html" title="Homogeneous 3D simulation domain (derived from Domain)." alt="" coords="469,157,602,184"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="572,123,547,158,543,155,567,120"/>
+<area shape="rect" id="Node000015" href="$DomainLayered3D_8h.html" title="Layered 3D simulation domain (derived from Domain)." alt="" coords="498,384,653,411"/>
+<area shape="poly" id="edge22_Node000003_Node000015" title=" " alt="" coords="605,122,617,156,627,206,631,247,629,287,617,337,604,363,589,385,585,382,600,361,612,335,623,286,626,247,622,207,612,157,600,124"/>
+<area shape="rect" id="Node000018" href="$SimJob_8h.html" title="Orchestrates a full simulation run: parse job/subjobs, build the linear system, solve it,..." alt="" coords="1030,157,1108,184"/>
+<area shape="poly" id="edge23_Node000003_Node000018" title=" " alt="" coords="646,102,1030,161,1029,166,645,108"/>
+<area shape="rect" id="Node000006" href="$DomainHom3D_8cpp.html" title="Implementation of the homogeneous 3D domain." alt="" coords="5,459,154,487"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="455,189,383,208,310,235,249,266,197,310,162,350,131,392,89,460,84,457,126,389,158,346,194,306,246,261,308,230,381,203,453,184"/>
+<area shape="rect" id="Node000007" href="$DomainHom3DPer_8h.html" title="Homogeneous 3D domain with in‑plane periodicity (derived from DomainHom3D)." alt="" coords="728,232,882,260"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="599,186,757,229,756,234,597,191"/>
+<area shape="rect" id="Node000009" href="$SimJob_8cpp.html" title="Implementation for the SimJob class." alt="" coords="669,459,762,487"/>
+<area shape="poly" id="edge9_Node000005_Node000009" title=" " alt="" coords="554,196,667,382,711,458,706,461,663,385,549,199"/>
+<area shape="rect" id="Node000010" href="$SommerfeldIntegrator_8h.html" title="Declaration of the SommerfeldIntegrator class, which evaluates Sommerfeld&#45;type integrals for layered ..." alt="" coords="321,232,497,260"/>
+<area shape="poly" id="edge10_Node000005_Node000010" title=" " alt="" coords="501,195,433,234,430,230,499,190"/>
+<area shape="rect" id="Node000008" href="$DomainHom3DPer_8cpp.html" title="Implementation of the homogeneous, periodically replicated 3D domain." alt="" coords="778,308,946,336"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="826,271,854,306,850,309,822,274"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="789,274,769,309,738,394,721,460,716,458,733,392,764,307,784,271"/>
+<area shape="rect" id="Node000011" href="$DomainLayered3D_8cpp.html" title="Implementation of the layered 3D domain." alt="" coords="178,459,347,487"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="306,266,264,284,227,310,206,334,194,356,192,381,201,410,219,437,243,457,239,461,215,440,196,412,187,382,189,355,202,331,223,306,261,279,304,261"/>
+<area shape="rect" id="Node000012" href="$GreenFLayered3D_8h.html" title="Layered‑medium 3D Green&#39;s function (scalar/gradient/dyadic) + RWG integrals." alt="" coords="236,308,387,336"/>
+<area shape="poly" id="edge12_Node000010_Node000012" title=" " alt="" coords="381,272,330,310,327,305,378,267"/>
+<area shape="rect" id="Node000017" href="$SommerfeldIntegrator_8cpp.html" title="Implementation of SommerfeldIntegrator: contour construction, integrand assembly, QUADPACK integratio..." alt="" coords="410,308,602,336"/>
+<area shape="poly" id="edge21_Node000010_Node000017" title=" " alt="" coords="440,267,491,305,487,310,436,272"/>
+<area shape="rect" id="Node000013" href="$Dipole_8h.html" title="Incident field generator for electric dipole illumination in homogeneous or layered media." alt="" coords="210,384,285,411"/>
+<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="292,349,261,385,257,381,288,346"/>
+<area shape="poly" id="edge17_Node000012_Node000015" title=" " alt="" coords="374,338,529,381,528,386,373,343"/>
+<area shape="rect" id="Node000016" href="$GreenFLayered3D_8cpp.html" title="Implementation of the 3D Green&#39;s Function class in a layered background." alt="" coords="309,384,474,411"/>
+<area shape="poly" id="edge20_Node000012_Node000016" title=" " alt="" coords="339,345,379,381,376,385,335,349"/>
+<area shape="poly" id="edge15_Node000013_Node000006" title=" " alt="" coords="205,420,110,461,108,456,203,415"/>
+<area shape="poly" id="edge16_Node000013_Node000011" title=" " alt="" coords="256,426,262,458,257,459,250,427"/>
+<area shape="rect" id="Node000014" href="$Dipole_8cpp.html" title="Implementation of the Dipole incident source." alt="" coords="370,459,461,487"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="292,415,387,456,385,461,290,420"/>
+<area shape="poly" id="edge19_Node000015_Node000009" title=" " alt="" coords="615,417,692,457,689,461,613,421"/>
+<area shape="poly" id="edge18_Node000015_Node000011" title=" " alt="" coords="505,418,319,461,318,456,504,413"/>
+<area shape="poly" id="edge24_Node000018_Node000009" title=" " alt="" coords="1045,196,1011,234,996,262,988,287,979,311,960,337,910,380,855,415,801,442,755,461,753,456,798,438,852,411,907,376,956,334,974,308,983,285,991,260,1007,231,1041,193"/>
+<area shape="rect" id="Node000019" href="$casimir_8cpp.html" title="Main entry point for the HELIOS Casimir force routine." alt="" coords="1021,232,1116,260"/>
+<area shape="poly" id="edge25_Node000018_Node000019" title=" " alt="" coords="1072,200,1072,232,1066,232,1066,200"/>
+<area shape="rect" id="Node000020" href="$main_8cpp.html" title="This is the main file for the HELIOS program." alt="" coords="1140,232,1222,260"/>
+<area shape="poly" id="edge26_Node000018_Node000020" title=" " alt="" coords="1103,191,1162,230,1160,234,1100,195"/>
+<area shape="rect" id="Node000021" href="$mainpp_8cpp.html" title="This is the main file for the HELIOS program, specifically the post&#45;processing portion." alt="" coords="1246,232,1343,260"/>
+<area shape="poly" id="edge27_Node000018_Node000021" title=" " alt="" coords="1124,187,1254,229,1253,234,1122,192"/>
+</map>

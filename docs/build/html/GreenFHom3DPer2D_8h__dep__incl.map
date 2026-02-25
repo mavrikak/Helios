@@ -1,0 +1,7 @@
+<map id="GreenFHom3DPer2D.h" name="GreenFHom3DPer2D.h">
+<area shape="rect" id="Node000001" title="Periodic homogeneous 3D Green&#39;s function with 2D in‑plane periodicity." alt="" coords="105,5,274,33"/>
+<area shape="rect" id="Node000002" href="$DomainHom3DPer_8cpp.html" title="Implementation of the homogeneous, periodically replicated 3D domain." alt="" coords="5,81,174,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,45,109,83,106,78,158,40"/>
+<area shape="rect" id="Node000003" href="$GreenFHom3DPer2D_8cpp.html" title="Implementation of the 2D&#45;periodic homogeneous 3D Green&#39;s function." alt="" coords="198,81,381,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="221,40,273,78,270,83,218,45"/>
+</map>

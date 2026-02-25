@@ -1,0 +1,5 @@
+<map id="Dipole::EvaluateH" name="Dipole::EvaluateH">
+<area shape="rect" id="Node000001" title="Evaluate the incident magnetic field &#160;in a homogeneous background." alt="" coords="276,5,414,33"/>
+<area shape="rect" id="Node000002" href="$classDipole.html#a5ffb98d7b929694cd41ec4e3a9593864" title="Evaluate &#160;in a stratified background." alt="" coords="5,5,228,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="260,22,228,22,228,16,260,16"/>
+</map>

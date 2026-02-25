@@ -1,0 +1,45 @@
+\doxysection{Domain.\+h File Reference}
+\hypertarget{Domain_8h}{}\label{Domain_8h}\index{Domain.h@{Domain.h}}
+
+
+Abstract simulation domain class for SIE scattering.  
+
+
+{\ttfamily \#include $<$blitz/array.\+h$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include "{}Bsp3\+D.\+h"{}}\newline
+{\ttfamily \#include "{}Green\+F.\+h"{}}\newline
+{\ttfamily \#include "{}Incident\+Field.\+h"{}}\newline
+{\ttfamily \#include "{}RWGFun.\+h"{}}\newline
+{\ttfamily \#include "{}SIEForm.\+h"{}}\newline
+{\ttfamily \#include "{}Surface\+Mesh.\+h"{}}\newline
+{\ttfamily \#include "{}Triangle.\+h"{}}\newline
+{\ttfamily \#include "{}globals.\+h"{}}\newline
+Include dependency graph for Domain.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Domain_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Domain_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classDomain}{Domain}}
+\begin{DoxyCompactList}\small\item\em Abstract base class for domains. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract simulation domain class for SIE scattering. 
+
+A \doxylink{classDomain}{Domain} represents a volumetric region bounded by a surface mesh on which Rao–\+Wilton–\+Glisson (RWG) basis functions live. It stores incident fields, constructs a BSP tree for robust inside/outside queries, and provides a Green\textquotesingle{}s function handle and a chosen SIE formulation to assemble the linear system. Concrete subclasses (e.\+g., homogeneous vs. layered) supply material properties and cross‑section computations. 
+
+Definition in file \mbox{\hyperlink{Domain_8h_source}{Domain.\+h}}.
+

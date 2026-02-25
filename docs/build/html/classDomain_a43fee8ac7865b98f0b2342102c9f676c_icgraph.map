@@ -1,0 +1,5 @@
+<map id="Domain::EnableAccurate" name="Domain::EnableAccurate">
+<area shape="rect" id="Node000001" title="Enable globally more accurate (and usually slower) evaluation." alt="" coords="108,5,289,33"/>
+<area shape="rect" id="Node000002" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Main driver routine for the HELIOS SIE simulation program." alt="" coords="5,5,60,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,22,60,22,60,16,92,16"/>
+</map>

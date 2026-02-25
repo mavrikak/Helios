@@ -1,0 +1,76 @@
+\doxysection{Gaussian.\+h}
+\hypertarget{Gaussian_8h_source}{}\label{Gaussian_8h_source}\index{Gaussian.h@{Gaussian.h}}
+\mbox{\hyperlink{Gaussian_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00017}00017\ \textcolor{preprocessor}{\#ifndef\ GAUSSIAN\_H}}
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00018}00018\ \textcolor{preprocessor}{\#define\ GAUSSIAN\_H}}
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00020}00020\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00021}00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{GaussQuad_8h}{GaussQuad.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00022}00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{IncidentField_8h}{IncidentField.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00023}00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{globals_8h}{globals.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00040}\mbox{\hyperlink{classGaussian}{00040}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classGaussian_a3621600be0f1a452bc426f15041d4ed4}{Gaussian}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classIncidentField}{IncidentField}}\ \{}
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00041}00041\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00042}00042\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00043}00043\ \ \ \textcolor{comment}{//\ Construction}}
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00044}00044\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00054}00054\ \ \ \mbox{\hyperlink{classGaussian_a3621600be0f1a452bc426f15041d4ed4}{Gaussian}}(\textcolor{keywordtype}{double}\ wavelength,\ \textcolor{keywordtype}{double}\ waist,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ focal\_point,}
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ epsilonMedium,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ propagationdirection,\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ polarisation);}
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00057}00057\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00058}00058\ \ \ \textcolor{comment}{//\ Pointwise\ evaluation}}
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00059}00059\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00065}00065\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ \mbox{\hyperlink{classGaussian_a0cccdedf53f0840888d57144566442b4}{EvaluateE}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r);}
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00072}00072\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ \mbox{\hyperlink{classGaussian_ad420298383fc00144d4f1dc9e87b8ee7}{EvaluateH}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r);}
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00073}00073\ \ \ }
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00080}00080\ \ \ std::vector<cvec>\ \mbox{\hyperlink{classGaussian_a92fa8f6f7a12c4b81b446903eb344bc3}{EvaluateLayeredEandH}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r);}
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00082}00082\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00083}00083\ \ \ \textcolor{comment}{//\ RWG‑weighted\ integrals\ (RHS\ contributions)}}
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00084}00084\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00092}00092\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classGaussian_a7c63c2889ab8b3c019c3d04c568c2ad4}{IntegrateE}}(\mbox{\hyperlink{classRWGFun}{RWGFun}}*\ f);}
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00101}00101\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classGaussian_a5a2bbd00d15351a497efe6cd5fb333d3}{IntegrateH}}(\mbox{\hyperlink{classRWGFun}{RWGFun}}*\ f);}
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00109}00109\ \ \ std::vector<dcmplx>\ \mbox{\hyperlink{classGaussian_a052cfe5b26791974210c2a3f46a0ea64}{IntegrateLayeredEandH}}(\mbox{\hyperlink{classRWGFun}{RWGFun}}*\ f);}
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00111}00111\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00112}00112\ \ \ \textcolor{comment}{//\ Accessors}}
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00113}00113\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00117}00117\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classGaussian_a25de64854de917ae29473a55cf09c0be}{Waist}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00122}00122\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ \mbox{\hyperlink{classGaussian_a7ea43a8584ebecc5b11f2bd4bde08aa7}{Polarisation}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00127}00127\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ \mbox{\hyperlink{classGaussian_abb1472c6129a7689057b98094d8bc68c}{Propagation}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00129}00129\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00130}00130\ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Derived/physical\ parameters\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00131}\mbox{\hyperlink{classGaussian_a5f0a417475abab2cff7a20518a32c19b}{00131}}\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classGaussian_a5f0a417475abab2cff7a20518a32c19b}{k}};\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00132}\mbox{\hyperlink{classGaussian_aec7b455b30364a4ad0bd134c77a38718}{00132}}\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ \mbox{\hyperlink{classGaussian_aec7b455b30364a4ad0bd134c77a38718}{prop}};\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00133}\mbox{\hyperlink{classGaussian_a232a8924d6c47879eaf1782b07249769}{00133}}\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ \mbox{\hyperlink{classGaussian_a232a8924d6c47879eaf1782b07249769}{p}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00134}\mbox{\hyperlink{classGaussian_ae3dbd384e89f118dd1eaf222f892c5a5}{00134}}\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classGaussian_ae3dbd384e89f118dd1eaf222f892c5a5}{w0}};\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00135}\mbox{\hyperlink{classGaussian_ac46c594c1c022605fe5fbc445afc42b4}{00135}}\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classGaussian_ac46c594c1c022605fe5fbc445afc42b4}{depth}};\ }
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00136}\mbox{\hyperlink{classGaussian_a89214ccbc460ca02bb3841ea828c31c0}{00136}}\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ \mbox{\hyperlink{classGaussian_a89214ccbc460ca02bb3841ea828c31c0}{focus}};\ \ \ }
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00137}\mbox{\hyperlink{classGaussian_a2a40a25156f53c86d40425807a956232}{00137}}\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classGaussian_a2a40a25156f53c86d40425807a956232}{z}};\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00139}\mbox{\hyperlink{classGaussian_a02f414f3ba03fac5477122c9668432eb}{00139}}\ \ \ \mbox{\hyperlink{classGaussQuad}{GaussQuad<Gaussian>}}\ \mbox{\hyperlink{classGaussian_a02f414f3ba03fac5477122c9668432eb}{gauss}};\ \ }
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00140}00140\ \ \ }
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00141}00141\ \ \ \textcolor{comment}{//\ -\/-\/-\/\ IncidentField\ type\ tags\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00145}\mbox{\hyperlink{classGaussian_a4cb678d885117a191d246ecb5e7f595a}{00145}}\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classGaussian_a4cb678d885117a191d246ecb5e7f595a}{IsPlaneWave}}()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00150}\mbox{\hyperlink{classGaussian_a18fb0a47d0bce2fccb93c2f594f743a6}{00150}}\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classGaussian_a18fb0a47d0bce2fccb93c2f594f743a6}{IsDipole}}()\ \ \ \ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00155}\mbox{\hyperlink{classGaussian_a9a094fdc95225f2ebaf4ade697908d3c}{00155}}\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classGaussian_a9a094fdc95225f2ebaf4ade697908d3c}{IsGaussian}}()\ \ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \ \}}
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00156}00156\ \ \ }
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00157}00157\ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Layered\ GF\ wiring\ (unsupported\ for\ this\ class)\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00164}00164\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGaussian_a045c0864d0ce2062c99cfb14680ccad3}{setGrnFunLayered}}(\mbox{\hyperlink{classGreenF}{GreenF}}\ *fGrnFields,\ std::vector<Grid>\ tabGrids);}
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00165}00165\ \};}
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{Gaussian_8h_source_l00167}00167\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,5 @@
+<map id="Dipole::setGrnFunLayered" name="Dipole::setGrnFunLayered">
+<area shape="rect" id="Node000001" title="Provide the layered‑media Green&#39;s function for post‑processing fields." alt="" coords="277,14,466,42"/>
+<area shape="rect" id="Node000002" href="$classDomainLayered3D.html#ab55a37fee77313a2f5e2bd4c2be927f0" title="Initialize the layered Green&#39;s function used for field evaluation." alt="" coords="5,5,229,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="261,30,229,30,229,25,261,25"/>
+</map>

@@ -1,0 +1,72 @@
+\doxysection{iofunctions.\+h}
+\hypertarget{iofunctions_8h_source}{}\label{iofunctions_8h_source}\index{iofunctions.h@{iofunctions.h}}
+\mbox{\hyperlink{iofunctions_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00020}00020\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00021}00021\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00022}00022\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00023}00023\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00025}00025\ \textcolor{comment}{//\ Only\ include\ this\ once\ during\ compiling}}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00026}00026\ \textcolor{preprocessor}{\#ifndef\ IOFUNCTIONS\_H}}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00027}00027\ \textcolor{preprocessor}{\#define\ IOFUNCTIONS\_H}}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00053}00053\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00054}\mbox{\hyperlink{group__driver_ga3859b179ce92396b3d9187e4437d8826}{00054}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__driver_ga3859b179ce92396b3d9187e4437d8826}{ReadCommented}}(std::ifstream\ *inStream,\ T\ *target)\ \{}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00055}00055\ \ \ std::string\ strRead;}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00056}00056\ \ \ std::stringstream\ strStream(std::stringstream::in);}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00058}00058\ \ \ \textcolor{keywordflow}{while}\ ((*inStream))\ \{}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00059}00059\ \ \ \ \ *inStream\ >>\ strRead;}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00060}00060\ \ \ \ \ \textcolor{keywordflow}{if}\ (strRead[0]\ ==\ \textcolor{charliteral}{'\#'})\ \{}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00061}00061\ \ \ \ \ \ \ std::getline(*inStream,\ strRead);}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00062}00062\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ ((*inStream))\ \{}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00063}00063\ \ \ \ \ \ \ strStream.str(strRead);}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00064}00064\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!(strStream\ >>\ *target))}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00066}00066\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00068}00068\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00069}00069\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00070}00070\ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00071}00071\ \}}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00085}00085\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00086}\mbox{\hyperlink{group__driver_ga3842e19dc8aa8af24b8d124aaed5b296}{00086}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__driver_ga3842e19dc8aa8af24b8d124aaed5b296}{ReadCommentedG}}(std::ifstream\ *inStream,\ T\ *target)\ \{}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00087}00087\ \ \ std::string\ strRead;}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00088}00088\ \ \ std::stringstream\ strStream(std::stringstream::in);}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00090}00090\ \ \ \textcolor{keywordflow}{while}\ ((*inStream))\ \{}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00091}00091\ \ \ \ \ *inStream\ >>\ strRead;}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00092}00092\ \ \ \ \ \textcolor{keywordflow}{if}\ (strRead[0]\ ==\ \textcolor{charliteral}{'\$'})\ \{}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00093}00093\ \ \ \ \ \ \ std::getline(*inStream,\ strRead);}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00094}00094\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ ((*inStream))\ \{}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00095}00095\ \ \ \ \ \ \ strStream.str(strRead);}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00096}00096\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!(strStream\ >>\ *target))}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00098}00098\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00099}00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00100}00100\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00101}00101\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00102}00102\ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00103}00103\ \}}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00117}00117\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00118}\mbox{\hyperlink{group__driver_ga3b2ef62f0ee5a558bf60dfa50d961d7a}{00118}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__driver_ga3b2ef62f0ee5a558bf60dfa50d961d7a}{ReadAndPrint}}(std::ifstream\ *inStream)\ \{}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00119}00119\ \ \ T\ tTmp;}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00120}00120\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{group__driver_ga3859b179ce92396b3d9187e4437d8826}{ReadCommented<T>}}(inStream,\ \&tTmp)\ !=\ 0)}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00121}00121\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00122}00122\ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00123}00123\ \ \ \ \ std::cout\ <<\ tTmp\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00124}00124\ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00125}00125\ \}}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00127}00127\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{iofunctions_8h_source_l00128}00128\ }
+
+\end{DoxyCode}

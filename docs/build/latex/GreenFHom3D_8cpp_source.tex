@@ -1,0 +1,567 @@
+\doxysection{Green\+FHom3\+D.\+cpp}
+\hypertarget{GreenFHom3D_8cpp_source}{}\label{GreenFHom3D_8cpp_source}\index{GreenFHom3D.cpp@{GreenFHom3D.cpp}}
+\mbox{\hyperlink{GreenFHom3D_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{GreenFHom3D_8h}{GreenFHom3D.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <tuple>}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{quadrature_8h}{quadrature.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00011}00011\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00012}00012\ \textcolor{comment}{//\ Construction}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00013}00013\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00014}\mbox{\hyperlink{classGreenFHom3D_a59f5ce23b99f97eaa6dedf90284ed6e3}{00014}}\ \mbox{\hyperlink{classGreenFHom3D_ac928f16e6e79c75c002d9a721a8858d8}{GreenFHom3D::GreenFHom3D}}(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ wvl,\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ eps)\ :\ \mbox{\hyperlink{classGreenF_a332ac24f39288170f77c18f37fde2c82}{GreenF}}(wvl,\ eps)\ \{\}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00016}\mbox{\hyperlink{classGreenFHom3D_a2947b2c6b81ce78024413a994702dad7}{00016}}\ \mbox{\hyperlink{classGreenFHom3D_ac928f16e6e79c75c002d9a721a8858d8}{GreenFHom3D::GreenFHom3D}}(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ wvl,\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ eps,\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ mu)}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00017}00017\ \ \ \ \ :\ \mbox{\hyperlink{classGreenF_a332ac24f39288170f77c18f37fde2c82}{GreenF}}(wvl,\ eps,\ mu)\ \{\}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00019}\mbox{\hyperlink{classGreenFHom3D_ac928f16e6e79c75c002d9a721a8858d8}{00019}}\ \mbox{\hyperlink{classGreenFHom3D_ac928f16e6e79c75c002d9a721a8858d8}{GreenFHom3D::GreenFHom3D}}()\ :\ \mbox{\hyperlink{classGreenF_a332ac24f39288170f77c18f37fde2c82}{GreenF}}(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(0,\ 0),\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(0,\ 0))\ \{\}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00021}00021\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00022}00022\ \textcolor{comment}{//\ Proximity\ tests\ (heuristics\ to\ pick\ smoothed\ vs.\ raw\ kernels)}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00023}00023\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00028}\mbox{\hyperlink{classGreenFHom3D_a139d04e746cd17d5b738a972dc5128ad}{00028}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classGreenFHom3D_a139d04e746cd17d5b738a972dc5128ad}{GreenFHom3D::AboveThreshold}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rp)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00029}00029\ \ \ \textcolor{keywordflow}{return}\ norm(\mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}})\ *\ dot(r\ -\/\ rp,\ r\ -\/\ rp)\ >\ 0.4;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00030}00030\ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00036}\mbox{\hyperlink{classGreenFHom3D_a2cd095383b467cb6ca12819e2cd5dc61}{00036}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classGreenFHom3D_a139d04e746cd17d5b738a972dc5128ad}{GreenFHom3D::AboveThreshold}}(\mbox{\hyperlink{classTriangle}{Triangle}}*\ T,\ \mbox{\hyperlink{classTriangle}{Triangle}}*\ Tp)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00037}00037\ \ \ \textcolor{keywordtype}{double}\ d\ =\ sqrt(dot(T-\/>\mbox{\hyperlink{classTriangle_ab78508a340ec5d345adf114b43563dbf}{Center}}()\ -\/\ Tp-\/>\mbox{\hyperlink{classTriangle_ab78508a340ec5d345adf114b43563dbf}{Center}}(),\ T-\/>\mbox{\hyperlink{classTriangle_ab78508a340ec5d345adf114b43563dbf}{Center}}()\ -\/\ Tp-\/>\mbox{\hyperlink{classTriangle_ab78508a340ec5d345adf114b43563dbf}{Center}}()));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00038}00038\ \ \ \textcolor{keywordtype}{double}\ psum\ =\ T-\/>\mbox{\hyperlink{classTriangle_a6e7daa074db3d147b33763bfd2a6e83b}{Perimeter}}()\ +\ Tp-\/>\mbox{\hyperlink{classTriangle_a6e7daa074db3d147b33763bfd2a6e83b}{Perimeter}}();}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00039}00039\ \ \ \textcolor{keywordflow}{return}\ d\ >\ psum\ /\ 2.;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00040}00040\ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00042}00042\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00043}00043\ \textcolor{comment}{//\ Pointwise\ kernels}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00044}00044\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00045}00045\ \textcolor{comment}{//\ Scalar\ Green's\ function\ G(r,r').}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00046}\mbox{\hyperlink{classGreenFHom3D_a049e83f08bff1b6c003a35f478973609}{00046}}\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classGreenFHom3D_a049e83f08bff1b6c003a35f478973609}{GreenFHom3D::Evaluate}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rp)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00047}00047\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ dif(r\ -\/\ rp);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00048}00048\ \ \ \textcolor{keywordtype}{double}\ dis(sqrt(dot(dif,\ dif)));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00049}00049\ \ \ \textcolor{keywordflow}{return}\ exp(\mbox{\hyperlink{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c}{I}}\ *\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ dis)\ /\ (4.\ *\ \mbox{\hyperlink{globals_8h_a952eac791b596a61bba0a133a3bb439f}{PI}}\ *\ dis);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00050}00050\ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00052}00052\ \textcolor{comment}{//\ Dyadic\ Green's\ function\ \(\backslash\)f\$\(\backslash\)overline\{\(\backslash\)overline\ G\}(r,r')\(\backslash\)f\$.}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00053}\mbox{\hyperlink{classGreenFHom3D_a0d4d8b30c9627e2a87edf329ecb5b2ab}{00053}}\ \mbox{\hyperlink{globals_8h_ac062d767acbc2b8149a4039dc4a1a18f}{cdyad}}\ \mbox{\hyperlink{classGreenFHom3D_a0d4d8b30c9627e2a87edf329ecb5b2ab}{GreenFHom3D::EvaluateDyadic}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rp)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00054}00054\ \ \ \textcolor{keywordtype}{double}\ dx(r(0)\ -\/\ rp(0));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00055}00055\ \ \ \textcolor{keywordtype}{double}\ dy(r(1)\ -\/\ rp(1));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00056}00056\ \ \ \textcolor{keywordtype}{double}\ dz(r(2)\ -\/\ rp(2));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00057}00057\ \ \ \textcolor{keywordtype}{double}\ rr(sqrt(dx\ *\ dx\ +\ dy\ *\ dy\ +\ dz\ *\ dz));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00058}00058\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ ff((\mbox{\hyperlink{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c}{I}}\ *\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ rr\ -\/\ 1.)\ /\ (\mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ rr\ *\ rr));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00059}00059\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ nf((3.\ -\/\ 3.\ *\ \mbox{\hyperlink{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c}{I}}\ *\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ rr\ -\/\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ rr\ *\ rr)\ /}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ rr\ *\ rr\ *\ rr\ *\ rr));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00061}00061\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{globals_8h_ac062d767acbc2b8149a4039dc4a1a18f}{cdyad}}(\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}(1.\ +\ ff\ +\ nf\ *\ dx\ *\ dx,\ nf\ *\ dx\ *\ dy,\ nf\ *\ dx\ *\ dz),}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}(nf\ *\ dy\ *\ dx,\ 1.\ +\ ff\ +\ nf\ *\ dy\ *\ dy,\ nf\ *\ dy\ *\ dz),}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}(nf\ *\ dz\ *\ dx,\ nf\ *\ dz\ *\ dy,\ 1.\ +\ ff\ +\ nf\ *\ dz\ *\ dz))\ *}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ exp(\mbox{\hyperlink{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c}{I}}\ *\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ rr)\ /\ (4.\ *\ \mbox{\hyperlink{globals_8h_a952eac791b596a61bba0a133a3bb439f}{PI}}\ *\ rr);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00065}00065\ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00073}\mbox{\hyperlink{classGreenFHom3D_adff9d901394dd07c05a111b607c89075}{00073}}\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classGreenFHom3D_adff9d901394dd07c05a111b607c89075}{GreenFHom3D::Smoothed}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rp)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00074}00074\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ dif(r\ -\/\ rp);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00075}00075\ \ \ \textcolor{keywordtype}{double}\ dis(sqrt(dot(dif,\ dif)));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00076}00076\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ out(\mbox{\hyperlink{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c}{I}}\ *\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ /\ (4.\ *\ \mbox{\hyperlink{globals_8h_a952eac791b596a61bba0a133a3bb439f}{PI}}));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00077}00077\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ id(1.,\ 0.);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00078}00078\ \ \ \textcolor{keywordflow}{if}\ (dis\ !=\ 0.)}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00079}00079\ \ \ \ \ out\ =\ 1.\ /\ (4.\ *\ \mbox{\hyperlink{globals_8h_a952eac791b596a61bba0a133a3bb439f}{PI}})\ *}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ ((exp(\mbox{\hyperlink{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c}{I}}\ *\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ dis)\ -\/\ \textcolor{keywordtype}{id})\ /\ dis\ +\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ dis\ /\ 2.);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00081}00081\ \ \ \textcolor{keywordflow}{return}\ out;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00082}00082\ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00089}\mbox{\hyperlink{classGreenFHom3D_a701791540c59726195148449d4adda07}{00089}}\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classGreenFHom3D_a701791540c59726195148449d4adda07}{GreenFHom3D::halfSmoothed}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rp)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00090}00090\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ dif(r\ -\/\ rp);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00091}00091\ \ \ \textcolor{keywordtype}{double}\ dis(sqrt(dot(dif,\ dif)));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00092}00092\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ out(\mbox{\hyperlink{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c}{I}}\ *\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ /\ (4.\ *\ \mbox{\hyperlink{globals_8h_a952eac791b596a61bba0a133a3bb439f}{PI}}));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00093}00093\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ id(1.,\ 0.);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00094}00094\ \ \ \textcolor{keywordflow}{if}\ (dis\ !=\ 0.)\ out\ =\ 1.\ /\ (4.\ *\ \mbox{\hyperlink{globals_8h_a952eac791b596a61bba0a133a3bb439f}{PI}})\ *\ ((exp(\mbox{\hyperlink{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c}{I}}\ *\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ dis)\ -\/\ \textcolor{keywordtype}{id})\ /\ dis);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00095}00095\ \ \ \textcolor{keywordflow}{return}\ out;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00096}00096\ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00101}\mbox{\hyperlink{classGreenFHom3D_a30fa3b981731ca85587da62ed511f547}{00101}}\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ \mbox{\hyperlink{classGreenFHom3D_a30fa3b981731ca85587da62ed511f547}{GreenFHom3D::Gradient}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rp)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00102}00102\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ dif(r\ -\/\ rp);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00103}00103\ \ \ \textcolor{keywordtype}{double}\ dis(sqrt(dot(dif,\ dif)));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00104}00104\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ out(-\/exp(\mbox{\hyperlink{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c}{I}}\ *\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ dis)\ /\ (4.\ *\ \mbox{\hyperlink{globals_8h_a952eac791b596a61bba0a133a3bb439f}{PI}}\ *\ dis\ *\ dis)\ *\ (-\/1.\ /\ dis\ +\ \mbox{\hyperlink{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c}{I}}\ *\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}})\ *}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ dif);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00106}00106\ \ \ \textcolor{keywordflow}{return}\ out;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00107}00107\ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00112}\mbox{\hyperlink{classGreenFHom3D_ac989f2a060436c41a08da43af35b5ab1}{00112}}\ std::tuple<dcmplx,\ cvec,\ cdyad>\ \mbox{\hyperlink{classGreenFHom3D_ac989f2a060436c41a08da43af35b5ab1}{GreenFHom3D::EvaluateAll}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rp)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00113}00113\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ dif(r\ -\/\ rp);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00114}00114\ \ \ \textcolor{keywordtype}{double}\ dx(dif(0));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00115}00115\ \ \ \textcolor{keywordtype}{double}\ dy(dif(1));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00116}00116\ \ \ \textcolor{keywordtype}{double}\ dz(dif(2));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00117}00117\ \ \ \textcolor{keywordtype}{double}\ rr(sqrt(dx\ *\ dx\ +\ dy\ *\ dy\ +\ dz\ *\ dz));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00118}00118\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ t1(exp(\mbox{\hyperlink{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c}{I}}\ *\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ rr)\ /\ (4.\ *\ \mbox{\hyperlink{globals_8h_a952eac791b596a61bba0a133a3bb439f}{PI}}\ *\ rr));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00119}00119\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ t2((\mbox{\hyperlink{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c}{I}}\ *\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ rr\ -\/\ 1.)\ /\ (rr\ *\ rr));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00120}00120\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ t3((3.\ -\/\ 3.\ *\ \mbox{\hyperlink{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c}{I}}\ *\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ rr\ -\/\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ rr\ *\ rr)\ /}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ (rr\ *\ rr\ *\ rr\ *\ rr));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00122}00122\ \ \ std::tuple<dcmplx,\ cvec,\ cdyad>\ ret;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00123}00123\ \ \ std::get<0>(ret)\ =\ t1;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00124}00124\ \ \ std::get<1>(ret)\ =\ -\/t1\ *\ t2\ *\ dif;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00125}00125\ \ \ std::get<2>(ret)\ =}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00126}00126\ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_ac062d767acbc2b8149a4039dc4a1a18f}{cdyad}}(\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}(t2\ +\ t3\ *\ dx\ *\ dx,\ t3\ *\ dx\ *\ dy,\ t3\ *\ dx\ *\ dz),}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}(t3\ *\ dy\ *\ dx,\ t2\ +\ t3\ *\ dy\ *\ dy,\ t3\ *\ dy\ *\ dz),}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}(t3\ *\ dz\ *\ dx,\ t3\ *\ dz\ *\ dy,\ t2\ +\ t3\ *\ dz\ *\ dz))\ *}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00129}00129\ \ \ \ \ \ \ t1;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00130}00130\ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00131}00131\ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00133}00133\ \textcolor{comment}{//\ Smoothed\ gradient\ kernel.}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00134}\mbox{\hyperlink{classGreenFHom3D_a39ccf7f27bff59110fb0d667bb74146f}{00134}}\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ \mbox{\hyperlink{classGreenFHom3D_a39ccf7f27bff59110fb0d667bb74146f}{GreenFHom3D::GradientSmoothed}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rp)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00135}00135\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ dif(r\ -\/\ rp);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00136}00136\ \ \ \textcolor{keywordtype}{double}\ dis(sqrt(dot(dif,\ dif)));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00137}00137\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ out(0.,\ 0.,\ 0.);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00138}00138\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ id(1.,\ 0.);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00139}00139\ \ \ \textcolor{keywordflow}{if}\ (dis\ !=\ 0)}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00140}00140\ \ \ \ \ out\ =\ -\/dif\ /\ (4.\ *\ \mbox{\hyperlink{globals_8h_a952eac791b596a61bba0a133a3bb439f}{PI}}\ *\ dis)\ *}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ ((-\/exp(\mbox{\hyperlink{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c}{I}}\ *\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ dis)\ +\ \textcolor{keywordtype}{id})\ /\ (dis\ *\ dis)\ +}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c}{I}}\ *\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ exp(\mbox{\hyperlink{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c}{I}}\ *\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ dis)\ /\ dis\ +\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ /\ 2.);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00143}00143\ \ \ \textcolor{keywordflow}{return}\ out;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00144}00144\ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00146}00146\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00147}00147\ \textcolor{comment}{//\ Triangle\ and\ post‑processing\ integrals}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00148}00148\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00149}\mbox{\hyperlink{classGreenFHom3D_adf7e68e58e5b082db653607d531217b8}{00149}}\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classGreenFHom3D_adf7e68e58e5b082db653607d531217b8}{GreenFHom3D::IntegrateD}}(\mbox{\hyperlink{classRWGFun}{RWGFun}}*\ \textcolor{comment}{/*f*/},\ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ \textcolor{comment}{/*fp*/})\ \{\ exit(1);\ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00150}\mbox{\hyperlink{classGreenFHom3D_a7cd319e7c9d680103117b7babce53438}{00150}}\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classGreenFHom3D_a7cd319e7c9d680103117b7babce53438}{GreenFHom3D::IntegrateK}}(\mbox{\hyperlink{classRWGFun}{RWGFun}}*\ \textcolor{comment}{/*f*/},\ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ \textcolor{comment}{/*fp*/})\ \{\ exit(1);\ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00157}\mbox{\hyperlink{classGreenFHom3D_aca136b03c44ad1da34acf91eb5a5e390}{00157}}\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ \mbox{\hyperlink{classGreenFHom3D_aca136b03c44ad1da34acf91eb5a5e390}{GreenFHom3D::IntegrateDelta}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r,\ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ fp)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00158}00158\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ out(0.,\ 0.,\ 0.);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00159}00159\ \ \ \mbox{\hyperlink{classTriangle}{Triangle}}*\ Tp\ =\ fp-\/>\mbox{\hyperlink{classRWGFun_a6d9c854fc60bc02cb51ffb60cf388ccc}{TrianglePtr}}();}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00160}00160\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rp[3];}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00161}00161\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00162}00162\ \ \ \ \ rp[i]\ =\ Tp-\/>\mbox{\hyperlink{classTriangle_a0752d2c9488c7c44b851b8f75abcaa79}{Node}}(i);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00163}00163\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00164}00164\ \ \ \textcolor{keywordtype}{double}\ Ap\ =\ Tp-\/>\mbox{\hyperlink{classTriangle_a1d3d08deeb999f339d2e821a877521ba}{Area}}(),\ perimp\ =\ Tp-\/>\mbox{\hyperlink{classTriangle_a6e7daa074db3d147b33763bfd2a6e83b}{Perimeter}}();}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00165}00165\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ Tc(Tp-\/>\mbox{\hyperlink{classTriangle_ab78508a340ec5d345adf114b43563dbf}{Center}}());}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00166}00166\ \ \ \textcolor{keywordtype}{double}\ dist\ =\ sqrt(dot(r\ -\/\ Tc,\ r\ -\/\ Tc));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00167}00167\ \ \ \textcolor{keywordtype}{double}\ kr\ =\ sqrt(norm(\mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}))\ *\ dist;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00169}00169\ \ \ \textcolor{keywordtype}{int}\ Ndunavant;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00170}00170\ \ \ double(*xdunavant)[3],\ *wdunavant;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00171}00171\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGreenF_afb8bbc3614d84fa516766d49d71f5071}{NeedsAccurate}})\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00172}00172\ \ \ \ \ Ndunavant\ =\ (dist\ <\ perimp)\ ?\ \mbox{\hyperlink{namespacedunavant_a0f2378187266872eb14ec62b81d41077}{dunavant::N17}}\ :\ \mbox{\hyperlink{namespacedunavant_a78db0b14f9330efb00cdec8e739b88ff}{dunavant::N5}};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00173}00173\ \ \ \ \ xdunavant\ =\ (dist\ <\ perimp)\ ?\ \mbox{\hyperlink{namespacedunavant_a0d2a36234283075f6fa987a93a9458dd}{dunavant::x17}}\ :\ \mbox{\hyperlink{namespacedunavant_a9802599aa0c185b6f570450941c5134d}{dunavant::x5}};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00174}00174\ \ \ \ \ wdunavant\ =\ (dist\ <\ perimp)\ ?\ \mbox{\hyperlink{namespacedunavant_afd3e81f1730c90be401a09bdff55e99d}{dunavant::w17}}\ :\ \mbox{\hyperlink{namespacedunavant_a9a7dd7b1990b8b02231ac6ad5b62062a}{dunavant::w5}};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00175}00175\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00176}00176\ \ \ \ \ Ndunavant\ =\ \mbox{\hyperlink{namespacedunavant_af58e993ed1b610dc1dfef3fe0952ea68}{dunavant::N1}};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00177}00177\ \ \ \ \ xdunavant\ =\ \mbox{\hyperlink{namespacedunavant_a1e043db830b4c85039542955acca52b8}{dunavant::x1}};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00178}00178\ \ \ \ \ wdunavant\ =\ \mbox{\hyperlink{namespacedunavant_aec3459816716d1a6ebed2975dd954f84}{dunavant::w1}};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00179}00179\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00180}00180\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00181}00181\ \ \ \textcolor{keywordtype}{bool}\ NeedsSingSub\ =\ (dist\ <\ perimp)\ ||\ (kr\ <\ 0.2\ *\ \mbox{\hyperlink{globals_8h_a952eac791b596a61bba0a133a3bb439f}{PI}});}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00182}00182\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ (\mbox{\hyperlink{classGreenFHom3D_ac928f16e6e79c75c002d9a721a8858d8}{GreenFHom3D}}::*Dfunction)(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rp)\ =}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00183}00183\ \ \ \ \ \ \ NeedsSingSub\ ?\ \&\mbox{\hyperlink{classGreenFHom3D_adff9d901394dd07c05a111b607c89075}{GreenFHom3D::Smoothed}}\ :\ \&\mbox{\hyperlink{classGreenFHom3D_a049e83f08bff1b6c003a35f478973609}{GreenFHom3D::Evaluate}};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00184}00184\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ (\mbox{\hyperlink{classGreenFHom3D_ac928f16e6e79c75c002d9a721a8858d8}{GreenFHom3D}}::*Kfunction)(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rp)\ =}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00185}00185\ \ \ \ \ \ \ NeedsSingSub\ ?\ \&\mbox{\hyperlink{classGreenFHom3D_a39ccf7f27bff59110fb0d667bb74146f}{GreenFHom3D::GradientSmoothed}}\ :\ \&\mbox{\hyperlink{classGreenFHom3D_a30fa3b981731ca85587da62ed511f547}{GreenFHom3D::Gradient}};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00186}00186\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00187}00187\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ Dtemp;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00188}00188\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ Ktemp;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00189}00189\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ Ndunavant;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00190}00190\ \ \ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ sp\ =\ rp[0]\ *\ xdunavant[i][0]\ +\ rp[1]\ *\ xdunavant[i][1]\ +}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rp[2]\ *\ xdunavant[i][2];}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00192}00192\ \ \ \ \ \textcolor{keywordtype}{double}\ dAp\ =\ Ap\ *\ wdunavant[i];}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00193}00193\ \ \ \ \ Dtemp\ =\ dAp\ *\ (this-\/>*Dfunction)(r,\ sp);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00194}00194\ \ \ \ \ Ktemp\ =\ dAp\ *\ (this-\/>*Kfunction)(r,\ sp);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00195}00195\ \ \ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ fpsp(fp-\/>\mbox{\hyperlink{classRWGFun_a7540ce2f84c6b42a29c2808504c47d42}{Evaluate}}(sp));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00196}00196\ \ \ \ \ out\ +=\ (fpsp\ *\ Dtemp\ -\/\ 1.\ /\ (\mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}})\ *\ fp-\/>\mbox{\hyperlink{classRWGFun_a7cd7779305937d48196453e53d0d4df8}{RWGPreFactor}}()\ *\ Ktemp);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00197}00197\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00198}00198\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00199}00199\ \ \ \textcolor{keywordflow}{if}\ (NeedsSingSub)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00200}00200\ \ \ \ \ \mbox{\hyperlink{classSingSub}{SingSub}}\ ss;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00201}00201\ \ \ \ \ ss.\mbox{\hyperlink{classSingSub_a20337fe20529d26c1775c8ba6d47cad0}{SetTriangleRWG}}(fp,\ r);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00202}00202\ \ \ \ \ out\ +=\ 1.\ /\ (4.\ *\ \mbox{\hyperlink{globals_8h_a952eac791b596a61bba0a133a3bb439f}{PI}})\ *\ (-\/1.\ /\ (\mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}})\ *\ fp-\/>\mbox{\hyperlink{classRWGFun_a7cd7779305937d48196453e53d0d4df8}{RWGPreFactor}}()\ *}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (ss.\mbox{\hyperlink{classSingSub_a3e9e0b5a61df98d8f8138544c7df3da0}{K3}}(-\/1)\ -\/\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ /\ 2.\ *\ ss.\mbox{\hyperlink{classSingSub_a3e9e0b5a61df98d8f8138544c7df3da0}{K3}}(1))\ +}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (ss.\mbox{\hyperlink{classSingSub_aed0bb257cd3c94dccd5b6cc0ecdd1c5e}{K2}}(-\/1)\ -\/\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ /\ 2.\ *\ ss.\mbox{\hyperlink{classSingSub_aed0bb257cd3c94dccd5b6cc0ecdd1c5e}{K2}}(1)));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00205}00205\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00206}00206\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00207}00207\ \ \ \textcolor{keywordflow}{return}\ out;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00208}00208\ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00209}00209\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00215}\mbox{\hyperlink{classGreenFHom3D_a9cece8a4056d65455cfcc94c8c61decd}{00215}}\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ \mbox{\hyperlink{classGreenFHom3D_a9cece8a4056d65455cfcc94c8c61decd}{GreenFHom3D::IntegrateKappa}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r,\ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ fp)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00216}00216\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ out(0.,\ 0.,\ 0.);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00217}00217\ \ \ \mbox{\hyperlink{classTriangle}{Triangle}}*\ Tp\ =\ fp-\/>\mbox{\hyperlink{classRWGFun_a6d9c854fc60bc02cb51ffb60cf388ccc}{TrianglePtr}}();}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00218}00218\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rp[3];}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00219}00219\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00220}00220\ \ \ \ \ rp[i]\ =\ Tp-\/>\mbox{\hyperlink{classTriangle_a0752d2c9488c7c44b851b8f75abcaa79}{Node}}(i);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00221}00221\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00222}00222\ \ \ \textcolor{keywordtype}{double}\ Ap\ =\ Tp-\/>\mbox{\hyperlink{classTriangle_a1d3d08deeb999f339d2e821a877521ba}{Area}}(),\ perimp\ =\ Tp-\/>\mbox{\hyperlink{classTriangle_a6e7daa074db3d147b33763bfd2a6e83b}{Perimeter}}();}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00223}00223\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ Tc(Tp-\/>\mbox{\hyperlink{classTriangle_ab78508a340ec5d345adf114b43563dbf}{Center}}());}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00224}00224\ \ \ \textcolor{keywordtype}{double}\ dist\ =\ sqrt(dot(r\ -\/\ Tc,\ r\ -\/\ Tc));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00225}00225\ \ \ \textcolor{keywordtype}{double}\ kr\ =\ sqrt(norm(\mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}))\ *\ dist;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00226}00226\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00227}00227\ \ \ \textcolor{keywordtype}{int}\ Ndunavant;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00228}00228\ \ \ double(*xdunavant)[3],\ *wdunavant;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00229}00229\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGreenF_afb8bbc3614d84fa516766d49d71f5071}{NeedsAccurate}})\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00230}00230\ \ \ \ \ Ndunavant\ =\ (dist\ <\ perimp)\ ?\ \mbox{\hyperlink{namespacedunavant_a0f2378187266872eb14ec62b81d41077}{dunavant::N17}}\ :\ \mbox{\hyperlink{namespacedunavant_a78db0b14f9330efb00cdec8e739b88ff}{dunavant::N5}};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00231}00231\ \ \ \ \ xdunavant\ =\ (dist\ <\ perimp)\ ?\ \mbox{\hyperlink{namespacedunavant_a0d2a36234283075f6fa987a93a9458dd}{dunavant::x17}}\ :\ \mbox{\hyperlink{namespacedunavant_a9802599aa0c185b6f570450941c5134d}{dunavant::x5}};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00232}00232\ \ \ \ \ wdunavant\ =\ (dist\ <\ perimp)\ ?\ \mbox{\hyperlink{namespacedunavant_afd3e81f1730c90be401a09bdff55e99d}{dunavant::w17}}\ :\ \mbox{\hyperlink{namespacedunavant_a9a7dd7b1990b8b02231ac6ad5b62062a}{dunavant::w5}};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00233}00233\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00234}00234\ \ \ \ \ Ndunavant\ =\ \mbox{\hyperlink{namespacedunavant_af58e993ed1b610dc1dfef3fe0952ea68}{dunavant::N1}};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00235}00235\ \ \ \ \ xdunavant\ =\ \mbox{\hyperlink{namespacedunavant_a1e043db830b4c85039542955acca52b8}{dunavant::x1}};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00236}00236\ \ \ \ \ wdunavant\ =\ \mbox{\hyperlink{namespacedunavant_aec3459816716d1a6ebed2975dd954f84}{dunavant::w1}};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00237}00237\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00238}00238\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00239}00239\ \ \ \textcolor{keywordtype}{bool}\ NeedsSingSub\ =\ (dist\ <\ perimp)\ ||\ (kr\ <\ 0.2\ *\ \mbox{\hyperlink{globals_8h_a952eac791b596a61bba0a133a3bb439f}{PI}});}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00240}00240\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ (\mbox{\hyperlink{classGreenFHom3D_ac928f16e6e79c75c002d9a721a8858d8}{GreenFHom3D}}::*Kfunction)(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rp)\ =}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00241}00241\ \ \ \ \ \ \ NeedsSingSub\ ?\ \&\mbox{\hyperlink{classGreenFHom3D_a39ccf7f27bff59110fb0d667bb74146f}{GreenFHom3D::GradientSmoothed}}\ :\ \&\mbox{\hyperlink{classGreenFHom3D_a30fa3b981731ca85587da62ed511f547}{GreenFHom3D::Gradient}};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00242}00242\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00243}00243\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ Dtemp;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00244}00244\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ Ktemp;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00245}00245\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ Ndunavant;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00246}00246\ \ \ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ sp\ =\ rp[0]\ *\ xdunavant[i][0]\ +\ rp[1]\ *\ xdunavant[i][1]\ +}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rp[2]\ *\ xdunavant[i][2];}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00248}00248\ \ \ \ \ \textcolor{keywordtype}{double}\ dAp\ =\ Ap\ *\ wdunavant[i];}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00249}00249\ \ \ \ \ Ktemp\ =\ dAp\ *\ (this-\/>*Kfunction)(r,\ sp);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00250}00250\ \ \ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ fpsp(fp-\/>\mbox{\hyperlink{classRWGFun_a7540ce2f84c6b42a29c2808504c47d42}{Evaluate}}(sp));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00251}00251\ \ \ \ \ out\ +=\ cross(Ktemp,\ (\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}})fpsp);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00252}00252\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00253}00253\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00254}00254\ \ \ \textcolor{keywordflow}{if}\ (NeedsSingSub)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00255}00255\ \ \ \ \ \textcolor{comment}{//\ Singularity\ subtraction\ for\ analytical\ integration\ on\ mesh\ triangles}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00256}00256\ \ \ \ \ \mbox{\hyperlink{classSingSub}{SingSub}}\ ss;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00257}00257\ \ \ \ \ ss.\mbox{\hyperlink{classSingSub_a20337fe20529d26c1775c8ba6d47cad0}{SetTriangleRWG}}(fp,\ r);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00258}00258\ \ \ \ \ out\ +=\ 1.\ /\ (4.\ *\ \mbox{\hyperlink{globals_8h_a952eac791b596a61bba0a133a3bb439f}{PI}})\ *\ (ss.\mbox{\hyperlink{classSingSub_ab61a21e3498d2d6a4c0796254cf126ed}{K4}}(-\/1)\ -\/\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ /\ 2.\ *\ ss.\mbox{\hyperlink{classSingSub_ab61a21e3498d2d6a4c0796254cf126ed}{K4}}(1));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00259}00259\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00260}00260\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00261}00261\ \ \ \textcolor{keywordflow}{return}\ out;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00262}00262\ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00263}00263\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00264}00264\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00265}00265\ \textcolor{comment}{//\ Pair\ utilities\ (matrix\ symmetry\ helpers)}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00266}00266\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00267}00267\ \textcolor{comment}{//\ D-\/pair\ (symmetric\ for\ this\ homogeneous\ case).}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00268}\mbox{\hyperlink{classGreenFHom3D_a1c0cf62c5d538dec5349f90a5a33028d}{00268}}\ std::pair<dcmplx,\ dcmplx>\ \mbox{\hyperlink{classGreenFHom3D_a1c0cf62c5d538dec5349f90a5a33028d}{GreenFHom3D::PairD}}(\mbox{\hyperlink{classRWGFun}{RWGFun}}*\ f,\ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ fp)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00269}00269\ \ \ \textcolor{comment}{//\ Don't\ care\ about\ symmetry,\ this\ is\ more\ exact!}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00270}00270\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ elem(\mbox{\hyperlink{classGreenFHom3D_adf7e68e58e5b082db653607d531217b8}{IntegrateD}}(f,\ fp));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00271}00271\ \ \ \textcolor{keywordflow}{if}\ (f\ ==\ fp)\ \textcolor{keywordflow}{return}\ std::pair<dcmplx,\ dcmplx>(elem,\ elem);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00272}00272\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ elem2(\mbox{\hyperlink{classGreenFHom3D_adf7e68e58e5b082db653607d531217b8}{IntegrateD}}(fp,\ f));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00273}00273\ \ \ \textcolor{keywordflow}{return}\ std::pair<dcmplx,\ dcmplx>(elem,\ elem2);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00274}00274\ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00275}00275\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00276}00276\ \textcolor{comment}{//\ K-\/pair\ (in\ general\ non-\/symmetric).}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00277}\mbox{\hyperlink{classGreenFHom3D_ad7549b4b2063b7a3658845fd0aab82bc}{00277}}\ std::pair<dcmplx,\ dcmplx>\ \mbox{\hyperlink{classGreenFHom3D_ad7549b4b2063b7a3658845fd0aab82bc}{GreenFHom3D::PairK}}(\mbox{\hyperlink{classRWGFun}{RWGFun}}*\ f,\ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ fp)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00278}00278\ \ \ \textcolor{comment}{//\ Unfortunately,\ IntegrateK\ is\ not\ symmetric.}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00279}00279\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ elem(\mbox{\hyperlink{classGreenFHom3D_a7cd319e7c9d680103117b7babce53438}{IntegrateK}}(f,\ fp));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00280}00280\ \ \ \textcolor{keywordflow}{if}\ (f\ ==\ fp)\ \textcolor{keywordflow}{return}\ std::pair<dcmplx,\ dcmplx>(elem,\ elem);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00281}00281\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ elem2(\mbox{\hyperlink{classGreenFHom3D_a7cd319e7c9d680103117b7babce53438}{IntegrateK}}(fp,\ f));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00282}00282\ \ \ \textcolor{keywordflow}{return}\ std::pair<dcmplx,\ dcmplx>(elem,\ elem2);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00283}00283\ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00284}00284\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00285}00285\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00286}00286\ \textcolor{comment}{//\ Assembly\ helpers}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00287}00287\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00293}\mbox{\hyperlink{classGreenFHom3D_a419cbe00b5a2aed70ac546904a8a8d6f}{00293}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGreenFHom3D_a419cbe00b5a2aed70ac546904a8a8d6f}{GreenFHom3D::SameTriDK}}(}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00294}00294\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<RWGFun*>\&\ fvec,\ \textcolor{keyword}{const}\ std::vector<RWGFun*>\&\ fpvec,}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00295}00295\ \ \ \ \ std::vector<std::vector<std::pair<dcmplx,\ dcmplx>>>\&\ DK)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00296}00296\ \ \ \mbox{\hyperlink{classTriangle}{Triangle}}\ *tPtr\ =\ fvec[0]-\/>TrianglePtr(),\ *tpPtr\ =\ fpvec[0]-\/>TrianglePtr();}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00297}00297\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r[3],\ rp[3];}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00298}00298\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00299}00299\ \ \ \ \ r[i]\ =\ tPtr-\/>\mbox{\hyperlink{classTriangle_a0752d2c9488c7c44b851b8f75abcaa79}{Node}}(i);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00300}00300\ \ \ \ \ rp[i]\ =\ tpPtr-\/>Node(i);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00301}00301\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00302}00302\ \ \ \textcolor{keywordtype}{double}\ A\ =\ tPtr-\/>\mbox{\hyperlink{classTriangle_a1d3d08deeb999f339d2e821a877521ba}{Area}}(),\ Ap\ =\ tpPtr-\/>Area();}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00303}00303\ \ \ \textcolor{keywordtype}{int}\ tristatus\ =\ tPtr-\/>\mbox{\hyperlink{classTriangle_a6a5a3532e273e1fbb69b26eea2f509c0}{FindAdjacency}}(tpPtr);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00304}00304\ \ \ \textcolor{comment}{//\ Singularity\ subtraction\ for\ analytical\ integration\ on\ mesh\ triangles}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00305}00305\ \ \ \mbox{\hyperlink{classSingSub}{SingSub}}\ ss;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00306}00306\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00307}00307\ \ \ \textcolor{keywordtype}{int}\ Ndunavant;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00308}00308\ \ \ double(*xdunavant)[3];}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00309}00309\ \ \ \textcolor{keywordtype}{double}*\ wdunavant;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00310}00310\ \ \ \textcolor{keywordtype}{bool}\ NeedsDanalytic(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00311}00311\ \ \ \textcolor{keywordtype}{bool}\ NeedsKIntegral(tristatus\ !=\ 3);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00312}00312\ \ \ \textcolor{keywordtype}{bool}\ NeedsKLineIntegral(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00313}00313\ \ \ \textcolor{keywordtype}{bool}\ NeedsSingSub;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00314}00314\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ (\mbox{\hyperlink{classGreenFHom3D_ac928f16e6e79c75c002d9a721a8858d8}{GreenFHom3D}}::*Kfunction)(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rp);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00315}00315\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ (\mbox{\hyperlink{classGreenFHom3D_ac928f16e6e79c75c002d9a721a8858d8}{GreenFHom3D}}::*Dfunction)(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rp);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00316}00316\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGreenF_afb8bbc3614d84fa516766d49d71f5071}{NeedsAccurate}})\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00317}00317\ \ \ \ \ Ndunavant\ =\ tristatus\ >\ 0\ ?\ \mbox{\hyperlink{namespacedunavant_a0f2378187266872eb14ec62b81d41077}{dunavant::N17}}\ :\ \mbox{\hyperlink{namespacedunavant_a78db0b14f9330efb00cdec8e739b88ff}{dunavant::N5}};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00318}00318\ \ \ \ \ xdunavant\ =\ tristatus\ >\ 0\ ?\ \mbox{\hyperlink{namespacedunavant_a0d2a36234283075f6fa987a93a9458dd}{dunavant::x17}}\ :\ \mbox{\hyperlink{namespacedunavant_a9802599aa0c185b6f570450941c5134d}{dunavant::x5}};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00319}00319\ \ \ \ \ wdunavant\ =\ tristatus\ >\ 0\ ?\ \mbox{\hyperlink{namespacedunavant_afd3e81f1730c90be401a09bdff55e99d}{dunavant::w17}}\ :\ \mbox{\hyperlink{namespacedunavant_a9a7dd7b1990b8b02231ac6ad5b62062a}{dunavant::w5}};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00320}00320\ \ \ \ \ NeedsDanalytic\ =\ tristatus\ ==\ 3;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00321}00321\ \ \ \ \ NeedsKLineIntegral\ =\ tristatus\ ==\ 2;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00322}00322\ \ \ \ \ \textcolor{keywordtype}{bool}\ DistantAboveThreshold\ =\ tristatus\ ==\ 0\ and\ \mbox{\hyperlink{classGreenFHom3D_a139d04e746cd17d5b738a972dc5128ad}{AboveThreshold}}(tPtr,\ tpPtr);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00323}00323\ \ \ \ \ NeedsSingSub\ =\ !(tristatus\ ==\ 3\ or\ DistantAboveThreshold);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00324}00324\ \ \ \ \ \textcolor{keywordflow}{if}\ (tristatus\ ==\ 3)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00325}00325\ \ \ \ \ \ \ Dfunction\ =\ \&\mbox{\hyperlink{classGreenFHom3D_a701791540c59726195148449d4adda07}{GreenFHom3D::halfSmoothed}};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00326}00326\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (!DistantAboveThreshold)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00327}00327\ \ \ \ \ \ \ Dfunction\ =\ \&\mbox{\hyperlink{classGreenFHom3D_adff9d901394dd07c05a111b607c89075}{GreenFHom3D::Smoothed}};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00328}00328\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00329}00329\ \ \ \ \ \ \ Dfunction\ =\ \&\mbox{\hyperlink{classGreenFHom3D_a049e83f08bff1b6c003a35f478973609}{GreenFHom3D::Evaluate}};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00330}00330\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00331}00331\ \ \ \ \ Kfunction\ =\ DistantAboveThreshold\ ?\ \&\mbox{\hyperlink{classGreenFHom3D_a30fa3b981731ca85587da62ed511f547}{GreenFHom3D::Gradient}}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00332}00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \&\mbox{\hyperlink{classGreenFHom3D_a39ccf7f27bff59110fb0d667bb74146f}{GreenFHom3D::GradientSmoothed}};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00333}00333\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00334}00334\ \ \ \ \ Ndunavant\ =\ \mbox{\hyperlink{namespacedunavant_af58e993ed1b610dc1dfef3fe0952ea68}{dunavant::N1}};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00335}00335\ \ \ \ \ xdunavant\ =\ \mbox{\hyperlink{namespacedunavant_a1e043db830b4c85039542955acca52b8}{dunavant::x1}};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00336}00336\ \ \ \ \ wdunavant\ =\ \mbox{\hyperlink{namespacedunavant_aec3459816716d1a6ebed2975dd954f84}{dunavant::w1}};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00337}00337\ \ \ \ \ NeedsSingSub\ =\ !\mbox{\hyperlink{classGreenFHom3D_a139d04e746cd17d5b738a972dc5128ad}{AboveThreshold}}(tPtr-\/>\mbox{\hyperlink{classTriangle_ab78508a340ec5d345adf114b43563dbf}{Center}}(),\ tpPtr-\/>Center());}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00338}00338\ \ \ \ \ Kfunction\ =}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00339}00339\ \ \ \ \ \ \ \ \ NeedsSingSub\ ?\ \&\mbox{\hyperlink{classGreenFHom3D_a39ccf7f27bff59110fb0d667bb74146f}{GreenFHom3D::GradientSmoothed}}\ :\ \&\mbox{\hyperlink{classGreenFHom3D_a30fa3b981731ca85587da62ed511f547}{GreenFHom3D::Gradient}};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00340}00340\ \ \ \ \ Dfunction\ =\ NeedsSingSub\ ?\ \&\mbox{\hyperlink{classGreenFHom3D_adff9d901394dd07c05a111b607c89075}{GreenFHom3D::Smoothed}}\ :\ \&\mbox{\hyperlink{classGreenFHom3D_a049e83f08bff1b6c003a35f478973609}{GreenFHom3D::Evaluate}};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00341}00341\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00342}00342\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00343}00343\ \ \ std::vector<rvec>\ svec(Ndunavant),\ spvec(Ndunavant);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00344}00344\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ Ndunavant;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00345}00345\ \ \ \ \ svec[i]\ =\ r[0]\ *\ xdunavant[i][0]\ +\ r[1]\ *\ xdunavant[i][1]\ +}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00346}00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r[2]\ *\ xdunavant[i][2];}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00347}00347\ \ \ \ \ spvec[i]\ =\ rp[0]\ *\ xdunavant[i][0]\ +\ rp[1]\ *\ xdunavant[i][1]\ +}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00348}00348\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rp[2]\ *\ xdunavant[i][2];}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00349}00349\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00350}00350\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00351}00351\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ Dtemp;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00352}00352\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ Ktemp;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00353}00353\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ Ndunavant;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00354}00354\ \ \ \ \ \textcolor{keywordtype}{double}\ dA\ =\ A\ *\ wdunavant[i];}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00355}00355\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ Ndunavant;\ ++j)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00356}00356\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ dAp\ =\ Ap\ *\ wdunavant[j];}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00357}00357\ \ \ \ \ \ \ Dtemp\ =\ dA\ *\ dAp\ *\ (this-\/>*Dfunction)(svec[i],\ spvec[j]);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00358}00358\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (NeedsKIntegral)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00359}00359\ \ \ \ \ \ \ \ \ Ktemp\ =\ dA\ *\ dAp\ *\ (this-\/>*Kfunction)(svec[i],\ spvec[j]);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00360}00360\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00361}00361\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ 0;\ k\ <\ (int)fvec.size();\ ++k)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00362}00362\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ f\ =\ fvec[k];}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00363}00363\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ fs(f-\/>\mbox{\hyperlink{classRWGFun_a7540ce2f84c6b42a29c2808504c47d42}{Evaluate}}(svec[i]));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00364}00364\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ divf(f-\/>\mbox{\hyperlink{classRWGFun_a7cd7779305937d48196453e53d0d4df8}{RWGPreFactor}}());}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00365}00365\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ l\ =\ 0;\ l\ <\ (int)fpvec.size();\ ++l)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00366}00366\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ fp\ =\ fpvec[l];}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00367}00367\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ fpsp(fp-\/>\mbox{\hyperlink{classRWGFun_a7540ce2f84c6b42a29c2808504c47d42}{Evaluate}}(spvec[j]));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00368}00368\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ divfp(fp-\/>\mbox{\hyperlink{classRWGFun_a7cd7779305937d48196453e53d0d4df8}{RWGPreFactor}}());}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00369}00369\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00370}00370\ \ \ \ \ \ \ \ \ \ \ DK[k][l].first\ +=}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00371}00371\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Dtemp\ *\ (dot(fs,\ fpsp)\ -\/\ 1.\ /\ (\mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}})\ *\ divf\ *\ divfp);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00372}00372\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00373}00373\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (NeedsKIntegral)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00374}00374\ \ \ \ \ \ \ \ \ \ \ \ \ DK[k][l].second\ +=\ dot(fs,\ cross(Ktemp,\ (\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}})fpsp));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00375}00375\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00376}00376\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00377}00377\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00378}00378\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00379}00379\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00380}00380\ \ \ \ \ \textcolor{keywordflow}{if}\ (NeedsSingSub)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00381}00381\ \ \ \ \ \ \ ss.\mbox{\hyperlink{classSingSub_a20337fe20529d26c1775c8ba6d47cad0}{SetTriangleRWG}}(fpvec[0],\ svec[i]);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00382}00382\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ l\ =\ 0;\ l\ <\ (int)fpvec.size();\ ++l)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00383}00383\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ fp\ =\ fpvec[l];}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00384}00384\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ divfp(fp-\/>\mbox{\hyperlink{classRWGFun_a7cd7779305937d48196453e53d0d4df8}{RWGPreFactor}}());}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00385}00385\ \ \ \ \ \ \ \ \ ss.\mbox{\hyperlink{classSingSub_a9d74100325023b4d1c156bd97ae240b3}{ChangeTriangleRWG}}(fp);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00386}00386\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ 0;\ k\ <\ (int)fvec.size();\ ++k)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00387}00387\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ f\ =\ fvec[k];}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00388}00388\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ divf(f-\/>\mbox{\hyperlink{classRWGFun_a7cd7779305937d48196453e53d0d4df8}{RWGPreFactor}}());}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00389}00389\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ fs(f-\/>\mbox{\hyperlink{classRWGFun_a7540ce2f84c6b42a29c2808504c47d42}{Evaluate}}(svec[i]));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00390}00390\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00391}00391\ \ \ \ \ \ \ \ \ \ \ DK[k][l].first\ +=}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00392}00392\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dA\ /\ (4.\ *\ \mbox{\hyperlink{globals_8h_a952eac791b596a61bba0a133a3bb439f}{PI}})\ *\ (-\/1.\ /\ (\mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}})\ *\ divf\ *}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00393}00393\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (ss.\mbox{\hyperlink{classSingSub_ac65ad1ad2d03f9de274b24d19f457f6e}{K1}}(-\/1)\ -\/\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ /\ 2.\ *\ ss.\mbox{\hyperlink{classSingSub_ac65ad1ad2d03f9de274b24d19f457f6e}{K1}}(1))\ +}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00394}00394\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dot(fs,\ ss.\mbox{\hyperlink{classSingSub_aed0bb257cd3c94dccd5b6cc0ecdd1c5e}{K2}}(-\/1)\ -\/\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ /\ 2.\ *\ ss.\mbox{\hyperlink{classSingSub_aed0bb257cd3c94dccd5b6cc0ecdd1c5e}{K2}}(1)));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00395}00395\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00396}00396\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (NeedsKLineIntegral)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00397}00397\ \ \ \ \ \ \ \ \ \ \ \ \ DK[k][l].second\ +=}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00398}00398\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dA\ /\ (4.\ *\ \mbox{\hyperlink{globals_8h_a952eac791b596a61bba0a133a3bb439f}{PI}})\ *}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00399}00399\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dot(fs,\ cross((\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}})(f-\/>\mbox{\hyperlink{classRWGFun_a44b3739f9b872e917c6101928a2888a3}{FreeVertex}}()\ -\/\ fp-\/>\mbox{\hyperlink{classRWGFun_a44b3739f9b872e917c6101928a2888a3}{FreeVertex}}()),}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00400}00400\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ss.\mbox{\hyperlink{classSingSub_aa4dc7cddb70399aab67741fe6b0a9397}{K3n}}(-\/1))\ *}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00401}00401\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ divfp\ /\ (-\/2.)\ -\/}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00402}00402\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ /\ 2.\ *\ ss.\mbox{\hyperlink{classSingSub_ab61a21e3498d2d6a4c0796254cf126ed}{K4}}(1));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00403}00403\ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (NeedsKIntegral)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00404}00404\ \ \ \ \ \ \ \ \ \ \ \ \ DK[k][l].second\ +=}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00405}00405\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dA\ /\ (4.\ *\ \mbox{\hyperlink{globals_8h_a952eac791b596a61bba0a133a3bb439f}{PI}})\ *\ dot(fs,\ ss.\mbox{\hyperlink{classSingSub_ab61a21e3498d2d6a4c0796254cf126ed}{K4}}(-\/1)\ -\/\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ /\ 2.\ *\ ss.\mbox{\hyperlink{classSingSub_ab61a21e3498d2d6a4c0796254cf126ed}{K4}}(1));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00406}00406\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00407}00407\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00408}00408\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00409}00409\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00410}00410\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00411}00411\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00412}00412\ \ \ \textcolor{keywordflow}{if}\ (NeedsKLineIntegral)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00413}00413\ \ \ \ \ \textcolor{comment}{//\ Line\ integral\ for\ surface\ gradient\ of\ 1/R}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00414}00414\ \ \ \ \ \textcolor{comment}{//\ Note\ that\ triangle\ order\ is\ reversed}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00415}00415\ \ \ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ n\ =\ cross((\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}})(rp[1]\ -\/\ rp[0]),\ (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}})(rp[2]\ -\/\ rp[0]));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00416}00416\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00417}00417\ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ \&p1\ =\ rp[i],\ \&p2\ =\ rp[(i\ +\ 1)\ \%\ 3];}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00418}00418\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ L\ =\ sqrt(dot(p2\ -\/\ p1,\ p2\ -\/\ p1));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00419}00419\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00420}00420\ \ \ \ \ \ \ \textcolor{comment}{//\ Outward\ normal\ on\ edge;}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00421}00421\ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ m\ =\ cross((\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}})(p2\ -\/\ p1),\ n);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00422}00422\ \ \ \ \ \ \ m\ =\ m\ /\ sqrt(dot(m,\ m));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00423}00423\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00424}00424\ \ \ \ \ \ \ \textcolor{comment}{//\ Line\ integral}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00425}00425\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ \mbox{\hyperlink{namespacegausslegendre_ae30057dbd0303df64fb275515addf70e}{gausslegendre::N17}};\ j++)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00426}00426\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ s\ =\ p1\ *\ \mbox{\hyperlink{namespacegausslegendre_aa92adf5bdcab9329d87424ed298c7375}{gausslegendre::x17}}[j][0]\ +\ p2\ *\ \mbox{\hyperlink{namespacegausslegendre_aa92adf5bdcab9329d87424ed298c7375}{gausslegendre::x17}}[j][1];}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00427}00427\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ dL\ =\ L\ *\ \mbox{\hyperlink{namespacegausslegendre_a3b01b696bf14d90839d420422c6689ce}{gausslegendre::w17}}[j];}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00428}00428\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00429}00429\ \ \ \ \ \ \ \ \ ss.\mbox{\hyperlink{classSingSub_a20337fe20529d26c1775c8ba6d47cad0}{SetTriangleRWG}}(fvec[0],\ s);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00430}00430\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ 0;\ k\ <\ (int)fvec.size();\ ++k)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00431}00431\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ f\ =\ fvec[k];}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00432}00432\ \ \ \ \ \ \ \ \ \ \ ss.\mbox{\hyperlink{classSingSub_a9d74100325023b4d1c156bd97ae240b3}{ChangeTriangleRWG}}(f);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00433}00433\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ l\ =\ 0;\ l\ <\ (int)fpvec.size();\ ++l)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00434}00434\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ fp\ =\ fpvec[l];}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00435}00435\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ pqm\ =\ cross((\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}})(f-\/>\mbox{\hyperlink{classRWGFun_a44b3739f9b872e917c6101928a2888a3}{FreeVertex}}()\ -\/\ fp-\/>\mbox{\hyperlink{classRWGFun_a44b3739f9b872e917c6101928a2888a3}{FreeVertex}}()),\ m);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00436}00436\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00437}00437\ \ \ \ \ \ \ \ \ \ \ \ \ DK[k][l].second\ +=}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00438}00438\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/dL\ /\ (4.\ *\ \mbox{\hyperlink{globals_8h_a952eac791b596a61bba0a133a3bb439f}{PI}})\ *\ fp-\/>\mbox{\hyperlink{classRWGFun_a7cd7779305937d48196453e53d0d4df8}{RWGPreFactor}}()\ /\ 2.\ *\ dot(pqm,\ ss.\mbox{\hyperlink{classSingSub_aed0bb257cd3c94dccd5b6cc0ecdd1c5e}{K2}}(-\/1));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00439}00439\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00440}00440\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00441}00441\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00442}00442\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00443}00443\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00444}00444\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00445}00445\ \ \ \textcolor{keywordflow}{if}\ (NeedsDanalytic)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00446}00446\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ 0;\ k\ <\ (int)fvec.size();\ ++k)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00447}00447\ \ \ \ \ \ \ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ f\ =\ fvec[k];}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00448}00448\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ divf(f-\/>\mbox{\hyperlink{classRWGFun_a7cd7779305937d48196453e53d0d4df8}{RWGPreFactor}}());}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00449}00449\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ l\ =\ 0;\ l\ <\ (int)fpvec.size();\ ++l)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00450}00450\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ fp\ =\ fpvec[l];}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00451}00451\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ divfp(fp-\/>\mbox{\hyperlink{classRWGFun_a7cd7779305937d48196453e53d0d4df8}{RWGPreFactor}}());}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00452}00452\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Analytical\ 4D\ integral\ for\ (div\ f)(div\ f')/(4\ pi\ r)}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00453}00453\ \ \ \ \ \ \ \ \ DK[k][l].first\ +=}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00454}00454\ \ \ \ \ \ \ \ \ \ \ \ \ -\/1.\ /\ (\mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}})\ *\ divf\ *\ divfp\ /\ (4\ *\ \mbox{\hyperlink{globals_8h_a952eac791b596a61bba0a133a3bb439f}{PI}})\ *\ tPtr-\/>\mbox{\hyperlink{classTriangle_aa83f57574ddbd7514530a554eb96bc0e}{getI1}}();}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00455}00455\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Analytical\ 4D\ integral\ for\ f\ dot\ f'/(4\ pi\ r)}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00456}00456\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Note\ that\ f=fp\ and\ f!=fp\ need\ to\ be\ treated\ differently}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00457}00457\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (f\ ==\ fp)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00458}00458\ \ \ \ \ \ \ \ \ \ \ DK[k][l].first\ +=}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00459}00459\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ divf\ *\ divfp\ /\ (16.\ *\ \mbox{\hyperlink{globals_8h_a952eac791b596a61bba0a133a3bb439f}{PI}})\ *\ tPtr-\/>\mbox{\hyperlink{classTriangle_a02693a813e9e7b1225be9f19e465d01e}{getI2}}(f-\/>\mbox{\hyperlink{classRWGFun_a4b60d75c2f221271c3915f20374c580f}{FreeVertexPtr}}());}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00460}00460\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00461}00461\ \ \ \ \ \ \ \ \ \ \ DK[k][l].first\ +=}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00462}00462\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ divf\ *\ divfp\ /\ (16.\ *\ \mbox{\hyperlink{globals_8h_a952eac791b596a61bba0a133a3bb439f}{PI}})\ *}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00463}00463\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tPtr-\/>\mbox{\hyperlink{classTriangle_a02693a813e9e7b1225be9f19e465d01e}{getI2}}(f-\/>\mbox{\hyperlink{classRWGFun_a4b60d75c2f221271c3915f20374c580f}{FreeVertexPtr}}(),\ fp-\/>\mbox{\hyperlink{classRWGFun_a4b60d75c2f221271c3915f20374c580f}{FreeVertexPtr}}());}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00464}00464\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00465}00465\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00466}00466\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00467}00467\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00468}00468\ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00469}00469\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00474}\mbox{\hyperlink{classGreenFHom3D_aee15ec1616a294e10b554f1afbb97845}{00474}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGreenFHom3D_aee15ec1616a294e10b554f1afbb97845}{GreenFHom3D::SameTriDKG}}(}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00475}00475\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<RWGFun*>\&\ fvec,\ \textcolor{keyword}{const}\ std::vector<RWGFun*>\&\ fpvec,}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00476}00476\ \ \ \ \ std::vector<std::vector<std::pair<dcmplx,\ dcmplx>>>\&\ DK,}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00477}00477\ \ \ \ \ std::vector<std::vector<std::pair<cvec,\ cvec>>>\&\ DKG)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00478}00478\ \ \ \textcolor{comment}{//\ Since\ DKG\ should\ be\ called\ only\ for\ different\ domains,\ we\ assume\ no\ need\ of}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00479}00479\ \ \ \textcolor{comment}{//\ singularity\ subtraction!}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00480}00480\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00481}00481\ \ \ \mbox{\hyperlink{classTriangle}{Triangle}}\ *tPtr\ =\ fvec[0]-\/>TrianglePtr(),\ *tpPtr\ =\ fpvec[0]-\/>TrianglePtr();}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00482}00482\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r[3],\ rp[3];}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00483}00483\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00484}00484\ \ \ \ \ r[i]\ =\ tPtr-\/>\mbox{\hyperlink{classTriangle_a0752d2c9488c7c44b851b8f75abcaa79}{Node}}(i);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00485}00485\ \ \ \ \ rp[i]\ =\ tpPtr-\/>Node(i);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00486}00486\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00487}00487\ \ \ \textcolor{keywordtype}{double}\ A\ =\ tPtr-\/>\mbox{\hyperlink{classTriangle_a1d3d08deeb999f339d2e821a877521ba}{Area}}(),\ Ap\ =\ tpPtr-\/>Area();}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00488}00488\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00489}00489\ \ \ \textcolor{keywordtype}{int}\ Ndunavant;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00490}00490\ \ \ double(*xdunavant)[3];}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00491}00491\ \ \ \textcolor{keywordtype}{double}*\ wdunavant;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00492}00492\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGreenF_afb8bbc3614d84fa516766d49d71f5071}{NeedsAccurate}})\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00493}00493\ \ \ \ \ Ndunavant\ =\ \mbox{\hyperlink{namespacedunavant_a78db0b14f9330efb00cdec8e739b88ff}{dunavant::N5}};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00494}00494\ \ \ \ \ xdunavant\ =\ \mbox{\hyperlink{namespacedunavant_a9802599aa0c185b6f570450941c5134d}{dunavant::x5}};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00495}00495\ \ \ \ \ wdunavant\ =\ \mbox{\hyperlink{namespacedunavant_a9a7dd7b1990b8b02231ac6ad5b62062a}{dunavant::w5}};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00496}00496\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00497}00497\ \ \ \ \ Ndunavant\ =\ \mbox{\hyperlink{namespacedunavant_af58e993ed1b610dc1dfef3fe0952ea68}{dunavant::N1}};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00498}00498\ \ \ \ \ xdunavant\ =\ \mbox{\hyperlink{namespacedunavant_a1e043db830b4c85039542955acca52b8}{dunavant::x1}};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00499}00499\ \ \ \ \ wdunavant\ =\ \mbox{\hyperlink{namespacedunavant_aec3459816716d1a6ebed2975dd954f84}{dunavant::w1}};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00500}00500\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00501}00501\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00502}00502\ \ \ std::vector<rvec>\ svec(Ndunavant),\ spvec(Ndunavant);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00503}00503\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ Ndunavant;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00504}00504\ \ \ \ \ svec[i]\ =\ r[0]\ *\ xdunavant[i][0]\ +\ r[1]\ *\ xdunavant[i][1]\ +}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00505}00505\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r[2]\ *\ xdunavant[i][2];}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00506}00506\ \ \ \ \ spvec[i]\ =\ rp[0]\ *\ xdunavant[i][0]\ +\ rp[1]\ *\ xdunavant[i][1]\ +}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00507}00507\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rp[2]\ *\ xdunavant[i][2];}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00508}00508\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00509}00509\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00510}00510\ \ \ std::tuple<dcmplx,\ cvec,\ cdyad>\ allG;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00511}00511\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ Ndunavant;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00512}00512\ \ \ \ \ \textcolor{keywordtype}{double}\ dA\ =\ A\ *\ wdunavant[i];}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00513}00513\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ Ndunavant;\ ++j)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00514}00514\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ dAp\ =\ Ap\ *\ wdunavant[j];}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00515}00515\ \ \ \ \ \ \ allG\ =\ \mbox{\hyperlink{classGreenFHom3D_ac989f2a060436c41a08da43af35b5ab1}{EvaluateAll}}(svec[i],\ spvec[j]);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00516}00516\ \ \ \ \ \ \ std::get<0>(allG)\ *=\ dA\ *\ dAp;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00517}00517\ \ \ \ \ \ \ std::get<1>(allG)\ *=\ dA\ *\ dAp;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00518}00518\ \ \ \ \ \ \ std::get<2>(allG)\ *=\ dA\ *\ dAp;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00519}00519\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ 0;\ k\ <\ (int)fvec.size();\ ++k)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00520}00520\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ f\ =\ fvec[k];}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00521}00521\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ fs(f-\/>\mbox{\hyperlink{classRWGFun_a7540ce2f84c6b42a29c2808504c47d42}{Evaluate}}(svec[i]));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00522}00522\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ divf(f-\/>\mbox{\hyperlink{classRWGFun_a7cd7779305937d48196453e53d0d4df8}{RWGPreFactor}}());}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00523}00523\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ l\ =\ 0;\ l\ <\ (int)fpvec.size();\ ++l)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00524}00524\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ fp\ =\ fpvec[l];}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00525}00525\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ fpsp(fp-\/>\mbox{\hyperlink{classRWGFun_a7540ce2f84c6b42a29c2808504c47d42}{Evaluate}}(spvec[j]));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00526}00526\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ divfp(fp-\/>\mbox{\hyperlink{classRWGFun_a7cd7779305937d48196453e53d0d4df8}{RWGPreFactor}}());}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00527}00527\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00528}00528\ \ \ \ \ \ \ \ \ \ \ DK[k][l].first\ +=\ std::get<0>(allG)\ *}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00529}00529\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (dot(fs,\ fpsp)\ -\/\ 1.\ /\ (\mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}})\ *\ divf\ *\ divfp);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00530}00530\ \ \ \ \ \ \ \ \ \ \ DK[k][l].second\ +=\ dot(fs,\ cross(std::get<1>(allG),\ (\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}})fpsp));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00531}00531\ \ \ \ \ \ \ \ \ \ \ DKG[k][l].first\ +=\ std::get<1>(allG)\ *}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00532}00532\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (dot(fs,\ fpsp)\ -\/\ 1.\ /\ (\mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}})\ *\ divf\ *\ divfp);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00533}00533\ \ \ \ \ \ \ \ \ \ \ DKG[k][l].second[0]\ +=}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00534}00534\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dot(fs,\ cross(std::get<2>(allG)[0],\ (\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}})fpsp));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00535}00535\ \ \ \ \ \ \ \ \ \ \ DKG[k][l].second[1]\ +=}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00536}00536\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dot(fs,\ cross(std::get<2>(allG)[1],\ (\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}})fpsp));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00537}00537\ \ \ \ \ \ \ \ \ \ \ DKG[k][l].second[2]\ +=}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00538}00538\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dot(fs,\ cross(std::get<2>(allG)[2],\ (\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}})fpsp));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00539}00539\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00540}00540\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00541}00541\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00542}00542\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00543}00543\ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00544}00544\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00545}00545\ \textcolor{comment}{//Compute\ delta\ and\ kappa\ vectors\ at\ an\ observation\ point\ for\ multiple\ RWGs\ on\ the\ same\ triangle.}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00546}\mbox{\hyperlink{classGreenFHom3D_a48e8471aabb445e0e50a01c005ff3b98}{00546}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGreenFHom3D_a48e8471aabb445e0e50a01c005ff3b98}{GreenFHom3D::SameTriDeltaKappa}}(}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00547}00547\ \ \ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r,\ \textcolor{keyword}{const}\ std::vector<RWGFun*>\&\ fpvec,}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00548}00548\ \ \ \ \ std::vector<std::pair<cvec,\ cvec>>\&\ DeltaKappa)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00549}00549\ \ \ \mbox{\hyperlink{classTriangle}{Triangle}}*\ Tp\ =\ fpvec[0]-\/>TrianglePtr();}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00550}00550\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rp[3];}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00551}00551\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00552}00552\ \ \ \ \ rp[i]\ =\ Tp-\/>\mbox{\hyperlink{classTriangle_a0752d2c9488c7c44b851b8f75abcaa79}{Node}}(i);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00553}00553\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00554}00554\ \ \ \textcolor{keywordtype}{double}\ Ap\ =\ Tp-\/>\mbox{\hyperlink{classTriangle_a1d3d08deeb999f339d2e821a877521ba}{Area}}(),\ perimp\ =\ Tp-\/>\mbox{\hyperlink{classTriangle_a6e7daa074db3d147b33763bfd2a6e83b}{Perimeter}}();}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00555}00555\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ Tc(Tp-\/>\mbox{\hyperlink{classTriangle_ab78508a340ec5d345adf114b43563dbf}{Center}}());}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00556}00556\ \ \ \textcolor{keywordtype}{double}\ dist\ =\ sqrt(dot(r\ -\/\ Tc,\ r\ -\/\ Tc));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00557}00557\ \ \ \textcolor{keywordtype}{double}\ kr\ =\ sqrt(norm(\mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}))\ *\ dist;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00558}00558\ \ \ \mbox{\hyperlink{classSingSub}{SingSub}}\ ss;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00559}00559\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00560}00560\ \ \ \textcolor{keywordtype}{int}\ Ndunavant;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00561}00561\ \ \ double(*xdunavant)[3],\ *wdunavant;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00562}00562\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classGreenF_afb8bbc3614d84fa516766d49d71f5071}{NeedsAccurate}})\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00563}00563\ \ \ \ \ Ndunavant\ =\ (dist\ <\ perimp)\ ?\ \mbox{\hyperlink{namespacedunavant_a0f2378187266872eb14ec62b81d41077}{dunavant::N17}}\ :\ \mbox{\hyperlink{namespacedunavant_a78db0b14f9330efb00cdec8e739b88ff}{dunavant::N5}};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00564}00564\ \ \ \ \ xdunavant\ =\ (dist\ <\ perimp)\ ?\ \mbox{\hyperlink{namespacedunavant_a0d2a36234283075f6fa987a93a9458dd}{dunavant::x17}}\ :\ \mbox{\hyperlink{namespacedunavant_a9802599aa0c185b6f570450941c5134d}{dunavant::x5}};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00565}00565\ \ \ \ \ wdunavant\ =\ (dist\ <\ perimp)\ ?\ \mbox{\hyperlink{namespacedunavant_afd3e81f1730c90be401a09bdff55e99d}{dunavant::w17}}\ :\ \mbox{\hyperlink{namespacedunavant_a9a7dd7b1990b8b02231ac6ad5b62062a}{dunavant::w5}};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00566}00566\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00567}00567\ \ \ \ \ Ndunavant\ =\ \mbox{\hyperlink{namespacedunavant_af58e993ed1b610dc1dfef3fe0952ea68}{dunavant::N1}};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00568}00568\ \ \ \ \ xdunavant\ =\ \mbox{\hyperlink{namespacedunavant_a1e043db830b4c85039542955acca52b8}{dunavant::x1}};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00569}00569\ \ \ \ \ wdunavant\ =\ \mbox{\hyperlink{namespacedunavant_aec3459816716d1a6ebed2975dd954f84}{dunavant::w1}};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00570}00570\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00571}00571\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00572}00572\ \ \ \textcolor{keywordtype}{bool}\ NeedsSingSub\ =\ (dist\ <\ perimp)\ ||\ (kr\ <\ 0.2\ *\ \mbox{\hyperlink{globals_8h_a952eac791b596a61bba0a133a3bb439f}{PI}});}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00573}00573\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ (\mbox{\hyperlink{classGreenFHom3D_ac928f16e6e79c75c002d9a721a8858d8}{GreenFHom3D}}::*Dfunction)(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rp)\ =}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00574}00574\ \ \ \ \ \ \ NeedsSingSub\ ?\ \&\mbox{\hyperlink{classGreenFHom3D_adff9d901394dd07c05a111b607c89075}{GreenFHom3D::Smoothed}}\ :\ \&\mbox{\hyperlink{classGreenFHom3D_a049e83f08bff1b6c003a35f478973609}{GreenFHom3D::Evaluate}};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00575}00575\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ (\mbox{\hyperlink{classGreenFHom3D_ac928f16e6e79c75c002d9a721a8858d8}{GreenFHom3D}}::*Kfunction)(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rp)\ =}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00576}00576\ \ \ \ \ \ \ NeedsSingSub\ ?\ \&\mbox{\hyperlink{classGreenFHom3D_a39ccf7f27bff59110fb0d667bb74146f}{GreenFHom3D::GradientSmoothed}}\ :\ \&\mbox{\hyperlink{classGreenFHom3D_a30fa3b981731ca85587da62ed511f547}{GreenFHom3D::Gradient}};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00577}00577\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00578}00578\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ Dtemp;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00579}00579\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ Ktemp;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00580}00580\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ Ndunavant;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00581}00581\ \ \ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ sp\ =\ rp[0]\ *\ xdunavant[i][0]\ +\ rp[1]\ *\ xdunavant[i][1]\ +}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00582}00582\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rp[2]\ *\ xdunavant[i][2];}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00583}00583\ \ \ \ \ \textcolor{keywordtype}{double}\ dAp\ =\ Ap\ *\ wdunavant[i];}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00584}00584\ \ \ \ \ Dtemp\ =\ dAp\ *\ (this-\/>*Dfunction)(r,\ sp);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00585}00585\ \ \ \ \ Ktemp\ =\ dAp\ *\ (this-\/>*Kfunction)(r,\ sp);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00586}00586\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ (int)fpvec.size();\ ++j)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00587}00587\ \ \ \ \ \ \ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ fp\ =\ fpvec[j];}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00588}00588\ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ fpsp(fp-\/>\mbox{\hyperlink{classRWGFun_a7540ce2f84c6b42a29c2808504c47d42}{Evaluate}}(sp));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00589}00589\ \ \ \ \ \ \ DeltaKappa[j].first\ +=}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00590}00590\ \ \ \ \ \ \ \ \ \ \ (fpsp\ *\ Dtemp\ -\/\ 1.\ /\ (\mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}})\ *\ fp-\/>\mbox{\hyperlink{classRWGFun_a7cd7779305937d48196453e53d0d4df8}{RWGPreFactor}}()\ *\ Ktemp);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00591}00591\ \ \ \ \ \ \ DeltaKappa[j].second\ +=\ cross(Ktemp,\ (\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}})fpsp);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00592}00592\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00593}00593\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00594}00594\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00595}00595\ \ \ \textcolor{keywordflow}{if}\ (NeedsSingSub)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00596}00596\ \ \ \ \ ss.\mbox{\hyperlink{classSingSub_a20337fe20529d26c1775c8ba6d47cad0}{SetTriangleRWG}}(fpvec[0],\ r);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00597}00597\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ (int)fpvec.size();\ ++j)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00598}00598\ \ \ \ \ \ \ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ fp\ =\ fpvec[j];}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00599}00599\ \ \ \ \ \ \ ss.\mbox{\hyperlink{classSingSub_a9d74100325023b4d1c156bd97ae240b3}{ChangeTriangleRWG}}(fp);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00600}00600\ \ \ \ \ \ \ DeltaKappa[j].first\ +=}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00601}00601\ \ \ \ \ \ \ \ \ \ \ 1.\ /\ (4.\ *\ \mbox{\hyperlink{globals_8h_a952eac791b596a61bba0a133a3bb439f}{PI}})\ *\ (-\/1.\ /\ (\mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}})\ *\ fp-\/>\mbox{\hyperlink{classRWGFun_a7cd7779305937d48196453e53d0d4df8}{RWGPreFactor}}()\ *}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00602}00602\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (ss.\mbox{\hyperlink{classSingSub_a3e9e0b5a61df98d8f8138544c7df3da0}{K3}}(-\/1)\ -\/\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ /\ 2.\ *\ ss.\mbox{\hyperlink{classSingSub_a3e9e0b5a61df98d8f8138544c7df3da0}{K3}}(1))\ +}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00603}00603\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (ss.\mbox{\hyperlink{classSingSub_aed0bb257cd3c94dccd5b6cc0ecdd1c5e}{K2}}(-\/1)\ -\/\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ /\ 2.\ *\ ss.\mbox{\hyperlink{classSingSub_aed0bb257cd3c94dccd5b6cc0ecdd1c5e}{K2}}(1)));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00604}00604\ \ \ \ \ \ \ DeltaKappa[j].second\ +=}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00605}00605\ \ \ \ \ \ \ \ \ \ \ 1.\ /\ (4.\ *\ \mbox{\hyperlink{globals_8h_a952eac791b596a61bba0a133a3bb439f}{PI}})\ *\ (ss.\mbox{\hyperlink{classSingSub_ab61a21e3498d2d6a4c0796254cf126ed}{K4}}(-\/1)\ -\/\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ *\ \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\_B}}\ /\ 2.\ *\ ss.\mbox{\hyperlink{classSingSub_ab61a21e3498d2d6a4c0796254cf126ed}{K4}}(1));}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00606}00606\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00607}00607\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3D_8cpp_source_l00608}00608\ \}}
+
+\end{DoxyCode}

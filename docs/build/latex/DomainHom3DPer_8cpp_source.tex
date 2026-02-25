@@ -1,0 +1,35 @@
+\doxysection{Domain\+Hom3\+DPer.\+cpp}
+\hypertarget{DomainHom3DPer_8cpp_source}{}\label{DomainHom3DPer_8cpp_source}\index{DomainHom3DPer.cpp@{DomainHom3DPer.cpp}}
+\mbox{\hyperlink{DomainHom3DPer_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{DomainHom3DPer_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{DomainHom3DPer_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{DomainHom3DPer_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{DomainHom3DPer_8h}{DomainHom3DPer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{DomainHom3DPer_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{DomainHom3DPer_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{GreenFHom3DPer2D_8h}{GreenFHom3DPer2D.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{DomainHom3DPer_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{DomainHom3DPer_8cpp_source_l00010}00010\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{DomainHom3DPer_8cpp_source_l00011}00011\ \textcolor{comment}{//\ Construction\ \&\ lifetime}}
+\DoxyCodeLine{\Hypertarget{DomainHom3DPer_8cpp_source_l00012}00012\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{DomainHom3DPer_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{DomainHom3DPer_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{DomainHom3DPer_8cpp_source_l00020}\mbox{\hyperlink{classDomainHom3DPer_a973f16aa5d1165725d3d0bdab331781f}{00020}}\ \mbox{\hyperlink{classDomainHom3DPer_a973f16aa5d1165725d3d0bdab331781f}{DomainHom3DPer::DomainHom3DPer}}(\mbox{\hyperlink{classSurfaceMesh}{SurfaceMesh}}\ *inMesh,\ \textcolor{keywordtype}{int}\ inDIndex,}
+\DoxyCodeLine{\Hypertarget{DomainHom3DPer_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ inEpsilon,\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ inMu,}
+\DoxyCodeLine{\Hypertarget{DomainHom3DPer_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ inVacuumWavelength,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ blochVector,}
+\DoxyCodeLine{\Hypertarget{DomainHom3DPer_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<rvec>\ latticeVectors)}
+\DoxyCodeLine{\Hypertarget{DomainHom3DPer_8cpp_source_l00024}00024\ \ \ \ \ :\ \mbox{\hyperlink{classDomainHom3D_ae2c7b0309cdbeda660e9e937de24c2b6}{DomainHom3D}}(inMesh,\ inDIndex,\ inEpsilon,\ inMu,\ inVacuumWavelength,\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{DomainHom3DPer_8cpp_source_l00025}00025\ \ \ \textcolor{keywordflow}{if}\ (latticeVectors.size()\ ==\ 2)\ \{}
+\DoxyCodeLine{\Hypertarget{DomainHom3DPer_8cpp_source_l00026}00026\ \ \ \ \ grnFun\ =\ new\ GreenFHom3DPer2D(vacuumWavelength,\ epsilon,\ mu,\ blochVector,}
+\DoxyCodeLine{\Hypertarget{DomainHom3DPer_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ latticeVectors[0],\ latticeVectors[1]);}
+\DoxyCodeLine{\Hypertarget{DomainHom3DPer_8cpp_source_l00028}00028\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{DomainHom3DPer_8cpp_source_l00029}00029\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Warning:\ number\ of\ lattice\ vectors\ different\ than\ 2"{}}}
+\DoxyCodeLine{\Hypertarget{DomainHom3DPer_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{DomainHom3DPer_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{comment}{//\ NOTE\ :\ This\ is\ where\ the\ call\ to\ periodic\ Green's\ functions\ in\ 1\ or\ 3}}
+\DoxyCodeLine{\Hypertarget{DomainHom3DPer_8cpp_source_l00032}00032\ \ \ \ \ \textcolor{comment}{//\ directions\ can\ be\ inserted}}
+\DoxyCodeLine{\Hypertarget{DomainHom3DPer_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{comment}{//\ In\ these\ cases,\ the\ size\ of\ latticeVectors\ would\ be\ either\ 1\ or\ 3}}
+\DoxyCodeLine{\Hypertarget{DomainHom3DPer_8cpp_source_l00034}00034\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DomainHom3DPer_8cpp_source_l00035}00035\ \}}
+\DoxyCodeLine{\Hypertarget{DomainHom3DPer_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{DomainHom3DPer_8cpp_source_l00037}\mbox{\hyperlink{classDomainHom3DPer_a26794cac91c772c16f60b2ce9018ee31}{00037}}\ \mbox{\hyperlink{classDomainHom3DPer_a26794cac91c772c16f60b2ce9018ee31}{DomainHom3DPer::\string~DomainHom3DPer}}()\ \{\ \textcolor{keyword}{delete}\ \mbox{\hyperlink{classDomain_a0735c67cde08e0a22bfd9e592f7933d3}{grnFun}};\ \}}
+
+\end{DoxyCode}

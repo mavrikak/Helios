@@ -1,0 +1,5 @@
+<map id="vecCrossDyad" name="vecCrossDyad">
+<area shape="rect" id="Node000001" title="Computes the cross product of a vector with each row or column of a dyad." alt="" coords="257,14,371,42"/>
+<area shape="rect" id="Node000002" href="$classGreenFLayered3D.html#aea3c88abd8cb25bd99d64a4eeda84a85" title="Evaluates the secondary terms for dipole incident field in layered background." alt="" coords="5,5,209,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="241,30,209,30,209,25,241,25"/>
+</map>

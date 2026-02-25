@@ -1,0 +1,30 @@
+<map id="DomainLayered3D::absorptionCS" name="DomainLayered3D::absorptionCS">
+<area shape="rect" id="Node000001" title="Absorption cross section." alt="" coords="5,213,242,241"/>
+<area shape="rect" id="Node000002" href="$classTriangle.html#ab78508a340ec5d345adf114b43563dbf" title="Centroid of the triangle." alt="" coords="333,5,456,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="131,211,155,177,190,131,235,84,288,44,317,30,319,35,291,48,239,88,194,135,159,180,136,214"/>
+<area shape="rect" id="Node000003" href="$DomainLayered3D_8cpp.html#a37aee72ef7a00576c814a1370473cce7" title="Compute the element&#45;wise complex conjugate of a 3&#45;vector." alt="" coords="356,57,434,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="137,211,199,155,242,123,289,95,339,78,341,83,291,100,245,127,203,159,141,215"/>
+<area shape="rect" id="Node000005" href="$classDomainLayered3D.html#a281513a4cb865b8c688dd920a6789955" title="Relative permittivity at a spatial location." alt="" coords="296,109,494,137"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="150,210,213,179,289,147,314,139,316,144,291,152,215,184,153,215"/>
+<area shape="rect" id="Node000007" href="$classTriangle.html#a691ff1d8d3f33df1fe0aae161d14ec49" title="FRONT/BACK normal: FRONT &#45;&gt; +normal, BACK &#45;&gt; −normal." alt="" coords="302,161,488,189"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="199,210,303,190,304,195,200,215"/>
+<area shape="rect" id="Node000008" href="$classDomainLayered3D.html#ae2e6a313e8a32a981d6d698a47e238cb" title="Total incident electric field at a point from all incident sources." alt="" coords="291,213,499,241"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="242,224,275,224,275,230,242,230"/>
+<area shape="rect" id="Node000009" href="$classDomainLayered3D.html#a1224cc02268d1cfe5b51ebf363cda79e" title="Total incident magnetic field at a point from all incident sources." alt="" coords="290,265,500,293"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="200,239,304,259,303,264,199,244"/>
+<area shape="rect" id="Node000010" href="$classDomainLayered3D.html#a295274a8176b2d6f9fc07c7aea9fd89c" title="Relative permeability at a spatial location." alt="" coords="310,317,480,345"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="153,239,215,270,291,302,316,310,314,315,289,307,213,275,150,244"/>
+<area shape="rect" id="Node000011" href="$classTriangle.html#a0752d2c9488c7c44b851b8f75abcaa79" title="Node position (by value) for local index 0..2." alt="" coords="338,369,452,397"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="141,240,203,295,245,327,291,354,323,367,321,372,289,359,242,331,199,300,137,244"/>
+<area shape="rect" id="Node000012" href="$DomainLayered3D_8cpp.html#a2c019c7f0fe35eb5871f0c0b1ae9bd96" title="Extract the real part of each component of a complex 3&#45;vector." alt="" coords="357,421,433,449"/>
+<area shape="poly" id="edge13_Node000001_Node000012" title=" " alt="" coords="136,240,159,274,194,319,239,366,291,406,316,418,342,425,341,431,314,423,288,411,235,370,190,323,155,277,131,243"/>
+<area shape="rect" id="Node000004" href="$Domain_8cpp.html#abbd88d15240455cf734121fcd73b3a03" title="Compute the element&#45;wise complex conjugate of a 3&#45;vector." alt="" coords="628,57,677,85"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="434,68,613,68,613,74,434,74"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="627,67,606,56,602,50,603,43,620,34,653,31,682,33,699,40,703,51,692,61,689,57,698,49,696,43,681,38,653,36,621,39,608,46,607,49,610,52,629,62"/>
+<area shape="rect" id="Node000006" href="$classDomainLayered3D.html#ae8e9daf2ca4d1ed649a1e0fe83880160" title="Returns the layer index corresponding to a spatial position." alt="" coords="548,209,757,254"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="463,135,501,147,555,172,603,198,601,203,552,177,499,152,461,140"/>
+<area shape="poly" id="edge11_Node000010_Node000006" title=" " alt="" coords="460,314,499,302,596,259,598,263,501,307,461,319"/>
+<area shape="rect" id="Node000013" href="$Domain_8cpp.html#aafa3e4fa6318b2f8740f4dbd50c367e5" title="Extract the real part of each component of a complex 3&#45;vector." alt="" coords="630,421,676,449"/>
+<area shape="poly" id="edge14_Node000012_Node000013" title=" " alt="" coords="433,432,614,432,614,438,433,438"/>
+<area shape="poly" id="edge15_Node000013_Node000013" title=" " alt="" coords="628,432,607,421,602,414,603,407,619,398,653,395,682,397,700,404,703,415,692,425,688,421,698,413,696,408,681,402,653,400,621,403,607,410,607,413,610,417,630,427"/>
+</map>

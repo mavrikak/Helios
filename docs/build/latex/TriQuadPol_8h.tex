@@ -1,0 +1,40 @@
+\doxysection{Tri\+Quad\+Pol.\+h File Reference}
+\hypertarget{TriQuadPol_8h}{}\label{TriQuadPol_8h}\index{TriQuadPol.h@{TriQuadPol.h}}
+
+
+Polar quadrature on a single triangle around an observation point.  
+
+
+{\ttfamily \#include "{}Triangle.\+h"{}}\newline
+{\ttfamily \#include "{}RWGFun.\+h"{}}\newline
+{\ttfamily \#include "{}quadrature.\+h"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$numeric$>$}\newline
+Include dependency graph for Tri\+Quad\+Pol.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{TriQuadPol_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{TriQuadPol_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classTriQuadPol}{Tri\+Quad\+Pol}}
+\begin{DoxyCompactList}\small\item\em Polar $(\rho, \theta)$ quadrature generator on a triangular facet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Polar quadrature on a single triangle around an observation point. 
+
+Builds angular–radial integration segments in the triangle\textquotesingle{}s plane, then expands them via 1D Gauss rules to produce barycentric nodes and weights suitable for integrating singular/near-\/singular kernels. 
+
+Definition in file \mbox{\hyperlink{TriQuadPol_8h_source}{Tri\+Quad\+Pol.\+h}}.
+

@@ -1,0 +1,77 @@
+\doxysection{casimir.\+cpp}
+\hypertarget{casimir_8cpp_source}{}\label{casimir_8cpp_source}\index{casimir.cpp@{casimir.cpp}}
+\mbox{\hyperlink{casimir_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{CLParser_8h}{CLParser.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{GreenF_8h}{GreenF.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{JobParser_8h}{JobParser.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00018}00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{SIEFormPMCHW_8h}{SIEFormPMCHW.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00019}00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{SimJob_8h}{SimJob.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00020}00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{SurfaceMesh_8h}{SurfaceMesh.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00041}\mbox{\hyperlink{casimir_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{00041}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{casimir_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}\ *argv[])\ \{}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00042}00042\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00043}00043\ \ \ \textcolor{comment}{//\ Defaults\ for\ arguments}}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00044}00044\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00045}00045\ \ \ std::string\ jobFile(\textcolor{stringliteral}{"{}input.job"{}});\ }
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00046}00046\ \ \ std::string\ outPrefix(\textcolor{stringliteral}{"{}"{}});\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00047}00047\ \ \ \textcolor{keywordtype}{bool}\ help(\textcolor{keyword}{false});\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00048}00048\ \ \ \textcolor{keywordtype}{bool}\ NeedsAccurate(\textcolor{keyword}{false});\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00049}00049\ \ \ \textcolor{keywordtype}{int}\ solver(2);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00050}00050\ \ \ \textcolor{keywordtype}{int}\ etm(1);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00051}00051\ \ \ std::string\ tableFile(\textcolor{stringliteral}{"{}"{}});\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00052}00052\ \ \ \textcolor{keywordtype}{int}\ threads(1);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00054}00054\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00055}00055\ \ \ \textcolor{comment}{//\ Declare\ supported\ CLI\ options}}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00056}00056\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00057}00057\ \ \ std::vector<CLParser\ *>\ clParser;}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00058}00058\ \ \ clParser.push\_back(\textcolor{keyword}{new}\ \mbox{\hyperlink{classCLStringOption}{CLStringOption}}(\textcolor{stringliteral}{"{}-\/j"{}},\ \&jobFile));}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00059}00059\ \ \ clParser.push\_back(\textcolor{keyword}{new}\ \mbox{\hyperlink{classCLStringOption}{CLStringOption}}(\textcolor{stringliteral}{"{}-\/op"{}},\ \&outPrefix));}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00060}00060\ \ \ clParser.push\_back(\textcolor{keyword}{new}\ \mbox{\hyperlink{classCLOption}{CLOption<int>}}(\textcolor{stringliteral}{"{}-\/l"{}},\ \&solver));}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00061}00061\ \ \ clParser.push\_back(\textcolor{keyword}{new}\ \mbox{\hyperlink{classCLStringOption}{CLStringOption}}(\textcolor{stringliteral}{"{}-\/t"{}},\ \&tableFile));}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00062}00062\ \ \ clParser.push\_back(\textcolor{keyword}{new}\ \mbox{\hyperlink{classCLFlag}{CLFlag}}(\textcolor{stringliteral}{"{}-\/-\/help"{}},\ \&help));}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00063}00063\ \ \ clParser.push\_back(\textcolor{keyword}{new}\ \mbox{\hyperlink{classCLFlag}{CLFlag}}(\textcolor{stringliteral}{"{}-\/a"{}},\ \&NeedsAccurate));}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00064}00064\ \ \ clParser.push\_back(\textcolor{keyword}{new}\ \mbox{\hyperlink{classCLOption}{CLOption<int>}}(\textcolor{stringliteral}{"{}-\/etm"{}},\ \&etm));}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00065}00065\ \ \ clParser.push\_back(\textcolor{keyword}{new}\ \mbox{\hyperlink{classCLOption}{CLOption<int>}}(\textcolor{stringliteral}{"{}-\/th"{}},\ \&threads));}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00067}00067\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00068}00068\ \ \ \textcolor{comment}{//\ Parse\ CLI\ and\ override\ defaults}}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00069}00069\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00070}00070\ \ \ \textcolor{keywordflow}{for}\ (std::vector<CLParser\ *>::iterator\ pIter\ =\ clParser.begin();}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ pIter\ !=\ clParser.end();\ pIter++)\ \{}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00072}00072\ \ \ \ \ (*pIter)-\/>Parse(argc,\ argv);}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00073}00073\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00075}00075\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00076}00076\ \ \ \textcolor{comment}{//\ Help\ or\ execution}}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00077}00077\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00078}00078\ \ \ \textcolor{keywordflow}{if}\ (help)\ \{}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00079}00079\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}HELIOS\ SIE\ program\ :\ Casimir\ computation"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00080}00080\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00081}00081\ \ \ \ \ \mbox{\hyperlink{classSimJob}{SimJob}}\ *job\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classSimJob}{SimJob}};}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00083}00083\ \ \ \ \ \textcolor{comment}{//\ Enable\ more\ accurate\ quadrature\ if\ requested}}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00084}00084\ \ \ \ \ \textcolor{keywordflow}{if}\ (NeedsAccurate)\ \mbox{\hyperlink{classGreenF_ada52587b39995134c895324efbaf5919}{GreenF::EnableAccurate}}();}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00086}00086\ \ \ \ \ \textcolor{comment}{//\ Sanitize\ thread\ count}}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00087}00087\ \ \ \ \ \textcolor{keywordflow}{if}\ (threads\ <\ 1\ or\ threads\ >\ std::thread::hardware\_concurrency())\ \{}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00088}00088\ \ \ \ \ \ \ threads\ =\ std::thread::hardware\_concurrency();}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00089}00089\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00090}00090\ \ \ \ \ \mbox{\hyperlink{classSIEFormPMCHW_a9d91e407f50e49fd90dd1bc25db22532}{SIEFormPMCHW::AssignThreads}}(threads);}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00091}00091\ \ \ \ \ \mbox{\hyperlink{classSimJob_a4ea29b8acaa7e36fbc9478c2ed9df0c6}{SimJob::AssignThreads}}(threads);}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00093}00093\ \ \ \ \ \textcolor{comment}{//\ Run\ Casimir\ computation}}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00094}00094\ \ \ \ \ \textcolor{keywordflow}{return}\ job-\/>\mbox{\hyperlink{classSimJob_a12a443329f3e49a5a94a6af72403d93b}{Casimir}}(jobFile,\ outPrefix);}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00095}00095\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00096}00096\ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00097}00097\ \}}
+\DoxyCodeLine{\Hypertarget{casimir_8cpp_source_l00098}00098\ }
+
+\end{DoxyCode}

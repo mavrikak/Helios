@@ -1,0 +1,9 @@
+<map id="PlaneWave::PlaneWave" name="PlaneWave::PlaneWave">
+<area shape="rect" id="Node000001" title="Construct a homogeneous plane wave." alt="" coords="266,57,439,85"/>
+<area shape="rect" id="Node000002" href="$classPlaneWave.html#abe7fa331497162f9b0e3cd59c3332c34" title="Integrate electric field against an RWG basis function." alt="" coords="27,5,196,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="269,56,179,36,180,31,271,51"/>
+<area shape="rect" id="Node000003" href="$classPlaneWave.html#a9b36a0f26c234a178795b1a431d53a03" title="Integrate magnetic field against an RWG basis function." alt="" coords="26,57,197,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="250,74,197,74,197,68,250,68"/>
+<area shape="rect" id="Node000004" href="$classPlaneWave.html#a80fe83d9acd52a14f7b2f0ea2317b036" title="Integrate layered E and H fields against an RWG basis function." alt="" coords="5,109,218,154"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="280,92,204,111,203,106,279,87"/>
+</map>

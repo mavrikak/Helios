@@ -1,0 +1,110 @@
+\doxysection{RWGFun.\+cpp}
+\hypertarget{RWGFun_8cpp_source}{}\label{RWGFun_8cpp_source}\index{RWGFun.cpp@{RWGFun.cpp}}
+\mbox{\hyperlink{RWGFun_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{RWGFun_8h}{RWGFun.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00014}\mbox{\hyperlink{classRWGFun_af8d988b7a0c653432dbe1d7c2415028a}{00014}}\ \mbox{\hyperlink{classRWGFun_af8d988b7a0c653432dbe1d7c2415028a}{RWGFun::RWGFun}}(\mbox{\hyperlink{classSurfaceMesh}{SurfaceMesh}}\ *inMesh,\ \mbox{\hyperlink{classTriangle}{Triangle}}\ *inTri,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ *inFreeVertex,}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ inSide)}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00016}00016\ \ \ \ \ :\ \mbox{\hyperlink{classRWGFun_a150b46dd79148e9e5b9ae766c96515fb}{triangle}}(inTri),\ \mbox{\hyperlink{classRWGFun_afe368ec58b3b5218f69c8f9ab684a657}{freeVertex}}(inFreeVertex),\ \mbox{\hyperlink{classRWGFun_ad1de069b036d36445390a677c7af3f4a}{mesh}}(inMesh),\ \mbox{\hyperlink{classRWGFun_af58dc7a2d730a0198b5a8b4de4398921}{side}}(inSide)\ \{}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00017}00017\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ *n1,\ *n2;}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00019}00019\ \ \ \textcolor{comment}{//\ Determine\ edge\ vertices}}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00020}00020\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classRWGFun_a150b46dd79148e9e5b9ae766c96515fb}{triangle}}-\/>NodePtr(0)\ ==\ \mbox{\hyperlink{classRWGFun_afe368ec58b3b5218f69c8f9ab684a657}{freeVertex}})\ \{}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00021}00021\ \ \ \ \ n1\ =\ triangle-\/>NodePtr(1);}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00022}00022\ \ \ \ \ n2\ =\ triangle-\/>NodePtr(2);}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00023}00023\ \ \ \}\ \textcolor{keywordflow}{else}\ if\ (\mbox{\hyperlink{classRWGFun_a150b46dd79148e9e5b9ae766c96515fb}{triangle}}-\/>NodePtr(1)\ ==\ \mbox{\hyperlink{classRWGFun_afe368ec58b3b5218f69c8f9ab684a657}{freeVertex}})\ \{}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00024}00024\ \ \ \ \ n1\ =\ triangle-\/>NodePtr(0);}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00025}00025\ \ \ \ \ n2\ =\ triangle-\/>NodePtr(2);}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00026}00026\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00027}00027\ \ \ \ \ n1\ =\ triangle-\/>NodePtr(0);}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00028}00028\ \ \ \ \ n2\ =\ triangle-\/>NodePtr(1);}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00029}00029\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00031}00031\ \ \ \textcolor{comment}{//\ Determine\ edge\ index}}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00032}00032\ \ \ \mbox{\hyperlink{classRWGFun_a3fb0aebadb4e76fe864c8631f360e07e}{edgeIndex}}\ =\ \mbox{\hyperlink{classRWGFun_ad1de069b036d36445390a677c7af3f4a}{mesh}}-\/>FindEdgeFB(n1,\ n2);}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00034}00034\ \ \ \textcolor{comment}{//\ If\ any\ boundary\ conditions\ on\ the\ mesh}}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00035}00035\ \ \ if\ (\mbox{\hyperlink{classRWGFun_a3fb0aebadb4e76fe864c8631f360e07e}{edgeIndex}}\ ==\ -\/1)\ \{}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00036}00036\ \ \ \ \ std::pair<int,\ SymmetryOperation\ *>\ result(\mbox{\hyperlink{classRWGFun_ad1de069b036d36445390a677c7af3f4a}{mesh}}-\/>FindEdgeBC(n1,\ n2));}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00037}00037\ \ \ \ \ \mbox{\hyperlink{classSymmetryOperation}{SymmetryOperation}}\ *s(result.second);}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00038}00038\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{comment}{//\ Map\ the\ free\ vertex\ across\ the\ symmetry\ and\ append\ as\ a\ new\ node}}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00040}00040\ \ \ \ \ \mbox{\hyperlink{classRWGFun_ad1de069b036d36445390a677c7af3f4a}{mesh}}-\/>AddNode(s-\/>\mbox{\hyperlink{classSymmetryOperation_a25060dd050f293e32a636234f1146188}{Apply}}(*\mbox{\hyperlink{classRWGFun_afe368ec58b3b5218f69c8f9ab684a657}{freeVertex}}));}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00041}00041\ \ \ \ \ \mbox{\hyperlink{classRWGFun_afe368ec58b3b5218f69c8f9ab684a657}{freeVertex}}\ =\ \mbox{\hyperlink{classRWGFun_ad1de069b036d36445390a677c7af3f4a}{mesh}}-\/>LastNode();}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00042}00042\ \ \ \ \ \mbox{\hyperlink{classRWGFun_a3fb0aebadb4e76fe864c8631f360e07e}{edgeIndex}}\ =\ result.first;}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{comment}{//\ Ensure\ (n1,\ n2)\ match\ the\ edge\ orientation\ just\ resolved}}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00045}00045\ \ \ \ \ std::pair<int,\ int>\ d(\mbox{\hyperlink{classRWGFun_a150b46dd79148e9e5b9ae766c96515fb}{triangle}}-\/>BorderingIndeces());}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00046}00046\ \ \ \ \ \textcolor{keywordtype}{double}\ eps(1.e-\/2);}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00047}00047\ \ \ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ dif(s-\/>\mbox{\hyperlink{classSymmetryOperation_a25060dd050f293e32a636234f1146188}{Apply}}(*n1)\ -\/\ *\mbox{\hyperlink{classRWGFun_ad1de069b036d36445390a677c7af3f4a}{mesh}}-\/>Edge(\mbox{\hyperlink{classRWGFun_a3fb0aebadb4e76fe864c8631f360e07e}{edgeIndex}}).node1);}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{keywordflow}{if}\ (dot(dif,\ dif)\ <\ eps)\ \{}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00049}00049\ \ \ \ \ \ \ n1\ =\ \mbox{\hyperlink{classRWGFun_ad1de069b036d36445390a677c7af3f4a}{mesh}}-\/>Edge(\mbox{\hyperlink{classRWGFun_a3fb0aebadb4e76fe864c8631f360e07e}{edgeIndex}}).node1;}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00050}00050\ \ \ \ \ \ \ n2\ =\ \mbox{\hyperlink{classRWGFun_ad1de069b036d36445390a677c7af3f4a}{mesh}}-\/>Edge(\mbox{\hyperlink{classRWGFun_a3fb0aebadb4e76fe864c8631f360e07e}{edgeIndex}}).node2;}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00051}00051\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00052}00052\ \ \ \ \ \ \ n1\ =\ \mbox{\hyperlink{classRWGFun_ad1de069b036d36445390a677c7af3f4a}{mesh}}-\/>Edge(\mbox{\hyperlink{classRWGFun_a3fb0aebadb4e76fe864c8631f360e07e}{edgeIndex}}).node2;}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00053}00053\ \ \ \ \ \ \ n2\ =\ \mbox{\hyperlink{classRWGFun_ad1de069b036d36445390a677c7af3f4a}{mesh}}-\/>Edge(\mbox{\hyperlink{classRWGFun_a3fb0aebadb4e76fe864c8631f360e07e}{edgeIndex}}).node1;}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00054}00054\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{comment}{//\ Create\ the\ mirrored\ triangle\ with\ consistent\ orientation}}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00057}00057\ \ \ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ normalVector(cross((\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}})(*n2\ -\/\ *n1),\ (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}})(*\mbox{\hyperlink{classRWGFun_afe368ec58b3b5218f69c8f9ab684a657}{freeVertex}}\ -\/\ *n1)));}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{keywordflow}{if}\ (dot(normalVector,\ \mbox{\hyperlink{classRWGFun_a150b46dd79148e9e5b9ae766c96515fb}{triangle}}-\/>FBNormalVector(\mbox{\hyperlink{globals_8h_ac25c6a324554f8ae267ad7c1638074a8}{FRONT}}))\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00059}00059\ \ \ \ \ \ \ \mbox{\hyperlink{classRWGFun_ad1de069b036d36445390a677c7af3f4a}{mesh}}-\/>AddTriangle(n1,\ n2,\ \mbox{\hyperlink{classRWGFun_afe368ec58b3b5218f69c8f9ab684a657}{freeVertex}},\ d.first,\ d.second);}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00060}00060\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00061}00061\ \ \ \ \ \ \ \mbox{\hyperlink{classRWGFun_ad1de069b036d36445390a677c7af3f4a}{mesh}}-\/>AddTriangle(n2,\ n1,\ \mbox{\hyperlink{classRWGFun_afe368ec58b3b5218f69c8f9ab684a657}{freeVertex}},\ d.first,\ d.second);}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00062}00062\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00063}00063\ \ \ \ \ \mbox{\hyperlink{classRWGFun_a150b46dd79148e9e5b9ae766c96515fb}{triangle}}\ =\ \mbox{\hyperlink{classRWGFun_ad1de069b036d36445390a677c7af3f4a}{mesh}}-\/>LastTriangle();}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00064}00064\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00066}00066\ \ \ \textcolor{comment}{//\ Determine\ sign\ of\ RWG\ function}}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00067}00067\ \ \ \textcolor{keywordflow}{if}\ (inSide\ ==\ \mbox{\hyperlink{globals_8h_ac25c6a324554f8ae267ad7c1638074a8}{FRONT}})}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00068}00068\ \ \ \ \ \mbox{\hyperlink{classRWGFun_adc441faebb01f2ca0d2c0fb393108302}{inverted}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00069}00069\ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00070}00070\ \ \ \ \ \mbox{\hyperlink{classRWGFun_adc441faebb01f2ca0d2c0fb393108302}{inverted}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00072}00072\ \ \ \textcolor{comment}{//\ Adjust\ orientation\ using\ geometric\ consistency}}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00073}00073\ \ \ \textcolor{keywordflow}{if}\ (dot(cross(\mbox{\hyperlink{classRWGFun_ad1de069b036d36445390a677c7af3f4a}{mesh}}-\/>EdgeVector(\mbox{\hyperlink{classRWGFun_a3fb0aebadb4e76fe864c8631f360e07e}{edgeIndex}}),\ \mbox{\hyperlink{classRWGFun_a150b46dd79148e9e5b9ae766c96515fb}{triangle}}-\/>RefNormalVector()),}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}})(*n1\ -\/\ *\mbox{\hyperlink{classRWGFun_afe368ec58b3b5218f69c8f9ab684a657}{freeVertex}}))\ <\ 0)}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00075}00075\ \ \ \ \ \mbox{\hyperlink{classRWGFun_adc441faebb01f2ca0d2c0fb393108302}{inverted}}\ =\ !\mbox{\hyperlink{classRWGFun_adc441faebb01f2ca0d2c0fb393108302}{inverted}};}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00076}00076\ \}}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00085}\mbox{\hyperlink{classRWGFun_a7540ce2f84c6b42a29c2808504c47d42}{00085}}\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ \mbox{\hyperlink{classRWGFun_a7540ce2f84c6b42a29c2808504c47d42}{RWGFun::Evaluate}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r)\ \{}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00086}00086\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classRWGFun_adc441faebb01f2ca0d2c0fb393108302}{inverted}})}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00087}00087\ \ \ \ \ \textcolor{keywordflow}{return}\ (*\mbox{\hyperlink{classRWGFun_afe368ec58b3b5218f69c8f9ab684a657}{freeVertex}}\ -\/\ r)\ *\ \mbox{\hyperlink{classRWGFun_ad1de069b036d36445390a677c7af3f4a}{mesh}}-\/>EdgeLength(\mbox{\hyperlink{classRWGFun_a3fb0aebadb4e76fe864c8631f360e07e}{edgeIndex}})\ /}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ (2.\ *\ \mbox{\hyperlink{classRWGFun_a150b46dd79148e9e5b9ae766c96515fb}{triangle}}-\/>Area());}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00089}00089\ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00090}00090\ \ \ \ \ \textcolor{keywordflow}{return}\ (r\ -\/\ *\mbox{\hyperlink{classRWGFun_afe368ec58b3b5218f69c8f9ab684a657}{freeVertex}})\ *\ \mbox{\hyperlink{classRWGFun_ad1de069b036d36445390a677c7af3f4a}{mesh}}-\/>EdgeLength(\mbox{\hyperlink{classRWGFun_a3fb0aebadb4e76fe864c8631f360e07e}{edgeIndex}})\ /}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ (2.\ *\ \mbox{\hyperlink{classRWGFun_a150b46dd79148e9e5b9ae766c96515fb}{triangle}}-\/>Area());}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00092}00092\ \}}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00094}00094\ \textcolor{comment}{//\ Owner\ triangle\ pointer.}}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00095}\mbox{\hyperlink{classRWGFun_a6d9c854fc60bc02cb51ffb60cf388ccc}{00095}}\ \mbox{\hyperlink{classTriangle}{Triangle}}\ *\mbox{\hyperlink{classRWGFun_a6d9c854fc60bc02cb51ffb60cf388ccc}{RWGFun::TrianglePtr}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classRWGFun_a150b46dd79148e9e5b9ae766c96515fb}{triangle}};\ \}}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00097}00097\ \textcolor{comment}{//\ Free\ vertex\ (by\ value).}}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00098}\mbox{\hyperlink{classRWGFun_a44b3739f9b872e917c6101928a2888a3}{00098}}\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ \mbox{\hyperlink{classRWGFun_a44b3739f9b872e917c6101928a2888a3}{RWGFun::FreeVertex}}()\ \{\ \textcolor{keywordflow}{return}\ *\mbox{\hyperlink{classRWGFun_afe368ec58b3b5218f69c8f9ab684a657}{freeVertex}};\ \}}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00100}00100\ \textcolor{comment}{//\ Free\ vertex\ pointer.}}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00101}\mbox{\hyperlink{classRWGFun_a4b60d75c2f221271c3915f20374c580f}{00101}}\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ *\mbox{\hyperlink{classRWGFun_a4b60d75c2f221271c3915f20374c580f}{RWGFun::FreeVertexPtr}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classRWGFun_afe368ec58b3b5218f69c8f9ab684a657}{freeVertex}};\ \}}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00103}00103\ \textcolor{comment}{//\ True\ if\ oriented\ towards\ the\ free\ vertex.}}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00104}\mbox{\hyperlink{classRWGFun_a70f64de5567b30165248fc93296016d9}{00104}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classRWGFun_a70f64de5567b30165248fc93296016d9}{RWGFun::Inverted}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classRWGFun_adc441faebb01f2ca0d2c0fb393108302}{inverted}};\ \}}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00110}\mbox{\hyperlink{classRWGFun_a7cd7779305937d48196453e53d0d4df8}{00110}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classRWGFun_a7cd7779305937d48196453e53d0d4df8}{RWGFun::RWGPreFactor}}()\ \{}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00111}00111\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classRWGFun_adc441faebb01f2ca0d2c0fb393108302}{inverted}})}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00112}00112\ \ \ \ \ \textcolor{keywordflow}{return}\ -\/\mbox{\hyperlink{classRWGFun_ad1de069b036d36445390a677c7af3f4a}{mesh}}-\/>EdgeLength(\mbox{\hyperlink{classRWGFun_a3fb0aebadb4e76fe864c8631f360e07e}{edgeIndex}})\ /\ \mbox{\hyperlink{classRWGFun_a150b46dd79148e9e5b9ae766c96515fb}{triangle}}-\/>Area();}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00113}00113\ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00114}00114\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classRWGFun_ad1de069b036d36445390a677c7af3f4a}{mesh}}-\/>EdgeLength(\mbox{\hyperlink{classRWGFun_a3fb0aebadb4e76fe864c8631f360e07e}{edgeIndex}})\ /\ \mbox{\hyperlink{classRWGFun_a150b46dd79148e9e5b9ae766c96515fb}{triangle}}-\/>Area();}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00115}00115\ \}}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00117}00117\ \textcolor{comment}{//\ Mesh\ edge\ index\ opposite\ the\ free\ vertex.}}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00118}\mbox{\hyperlink{classRWGFun_a828b9e623aca85f198dd9060c23c590f}{00118}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classRWGFun_a828b9e623aca85f198dd9060c23c590f}{RWGFun::EdgeIndex}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classRWGFun_a3fb0aebadb4e76fe864c8631f360e07e}{edgeIndex}};\ \}}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00120}00120\ \textcolor{comment}{//\ Mesh\ edge\ structure\ opposite\ the\ free\ vertex.}}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00121}\mbox{\hyperlink{classRWGFun_a86f9f0fedb0c62866a3f8f822de2f897}{00121}}\ \mbox{\hyperlink{structedge}{edge}}\ \mbox{\hyperlink{classRWGFun_a86f9f0fedb0c62866a3f8f822de2f897}{RWGFun::Edge}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classRWGFun_ad1de069b036d36445390a677c7af3f4a}{mesh}}-\/>Edge(\mbox{\hyperlink{classRWGFun_a3fb0aebadb4e76fe864c8631f360e07e}{edgeIndex}});\ \}}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00123}00123\ \textcolor{comment}{//\ Stored\ side\ passed\ at\ construction\ (FRONT/BACK).}}
+\DoxyCodeLine{\Hypertarget{RWGFun_8cpp_source_l00124}\mbox{\hyperlink{classRWGFun_a896dcb81d76b6fc18eba2f27f80f378e}{00124}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classRWGFun_a896dcb81d76b6fc18eba2f27f80f378e}{RWGFun::Side}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classRWGFun_af58dc7a2d730a0198b5a8b4de4398921}{side}};\ \}}
+
+\end{DoxyCode}

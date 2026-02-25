@@ -1,0 +1,36 @@
+<map id="SimJob::LoadFromFile" name="SimJob::LoadFromFile">
+<area shape="rect" id="Node000001" title="Parse a full &#160;block from the already&#45;open JobParser." alt="" coords="5,317,167,345"/>
+<area shape="rect" id="Node000002" href="$classSimJob.html#ae16a5d8bdcf14121a812acd22b3c573a" title="Parse and load dipole excitation from ." alt="" coords="245,57,392,85"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,316,101,273,126,213,162,150,186,121,213,96,230,85,232,90,216,100,190,125,167,153,130,216,106,275,93,318"/>
+<area shape="rect" id="Node000006" href="$classSimJob.html#a9a630e54dbd3c59d8d0c5872fe082478" title="Parse and load homogeneous domain definition from ." alt="" coords="241,109,397,137"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="91,316,107,281,133,236,169,188,213,148,225,141,227,145,216,152,173,192,138,239,112,284,96,318"/>
+<area shape="rect" id="Node000007" href="$classSimJob.html#a4aed0b2fa9b728b0fcb8834d6cd9c3fd" title="Parse and load layered&#45;media domain from ." alt="" coords="215,161,423,189"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="95,315,141,259,175,227,213,200,227,193,229,198,216,204,178,231,145,263,99,319"/>
+<area shape="rect" id="Node000008" href="$classSimJob.html#a9d261a88162a72dc73b70f0f71d69164" title="Parse and load periodic domain definition from ." alt="" coords="230,213,408,241"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="105,315,153,283,214,251,235,243,237,248,216,256,156,288,108,319"/>
+<area shape="rect" id="Node000010" href="$classSimJob.html#a762457879a5f323daff8a2802ee937bd" title="Parse and load Gaussian&#45;beam excitation from ." alt="" coords="236,265,402,293"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="151,314,238,294,239,300,152,319"/>
+<area shape="rect" id="Node000012" href="$classSimJob.html#a6d48eb7a13a50bdc8f9dc965165ed873" title="Parse and load simulation label from &#160;section." alt="" coords="249,317,389,345"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="167,328,233,328,233,334,167,334"/>
+<area shape="rect" id="Node000013" href="$classSimJob.html#a7bb5eda7b7e62f899d8bf72ba8f33742" title="Parse and load mesh data from &#160;(non&#45;periodic case)." alt="" coords="249,369,389,397"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="152,343,239,363,238,368,151,348"/>
+<area shape="rect" id="Node000014" href="$classSimJob.html#ac940b4b962fac361f3746deef6eb2e19" title="Parse and load periodic mesh from &#160;(applies symmetry operations)." alt="" coords="238,421,400,449"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="108,343,156,375,216,406,237,414,235,419,214,411,153,379,105,348"/>
+<area shape="rect" id="Node000015" href="$classSimJob.html#a99c23586a8ba7184a750c694da6d9628" title="Parse and load periodicity parameters from ." alt="" coords="232,473,406,501"/>
+<area shape="poly" id="edge15_Node000001_Node000015" title=" " alt="" coords="99,344,145,400,178,431,216,458,229,465,227,470,213,463,175,435,141,403,95,347"/>
+<area shape="rect" id="Node000016" href="$classSimJob.html#a9b33589923ea7f4e5b671e55ecf2b320" title="Parse and load plane&#45;wave excitation from ." alt="" coords="231,525,407,553"/>
+<area shape="poly" id="edge16_Node000001_Node000016" title=" " alt="" coords="96,344,112,379,138,424,173,471,216,510,226,516,223,521,213,515,169,474,133,427,107,381,91,347"/>
+<area shape="rect" id="Node000017" href="$classSimJob.html#a21c36c1d2aa7937ca484527515e35263" title="Parse and load wavelength from ." alt="" coords="228,577,410,605"/>
+<area shape="poly" id="edge17_Node000001_Node000017" title=" " alt="" coords="93,345,106,387,130,447,167,509,190,538,216,562,224,568,221,572,213,567,186,541,162,512,126,449,101,389,88,346"/>
+<area shape="rect" id="Node000003" href="$classDomain.html#a6a3c61914bab1ebbc02613a6ec8db802" title="Add a Dipole excitation (ownership transferred to Domain)." alt="" coords="495,5,642,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="388,54,483,34,484,39,390,59"/>
+<area shape="rect" id="Node000004" href="$classSimJob.html#ab3887eb9e217b1d6424ff85aec4b1793" title="Find which domain contains a point." alt="" coords="471,57,666,85"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="393,68,455,68,455,74,393,74"/>
+<area shape="rect" id="Node000005" href="$classDomain.html#a4ca094ed1d16b191f026d0c23e1fc75a" title="Return this domain&#39;s integer index." alt="" coords="510,109,627,137"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="390,83,496,105,495,111,388,88"/>
+<area shape="rect" id="Node000009" href="$classDomain.html#a2b8fcaa668f1959aa9864f7a016d3ee1" title="Provide an erfc lookup table to the Green&#39;s function implementation." alt="" coords="478,201,659,229"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="408,220,462,218,463,223,408,226"/>
+<area shape="rect" id="Node000011" href="$Domain_8cpp.html#aafa3e4fa6318b2f8740f4dbd50c367e5" title="Extract the real part of each component of a complex 3&#45;vector." alt="" coords="546,277,592,305"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="402,280,530,287,530,292,402,286"/>
+<area shape="poly" id="edge11_Node000011_Node000011" title=" " alt="" coords="544,287,524,276,519,270,521,263,536,254,569,251,597,253,614,260,618,270,608,281,604,277,613,269,610,263,596,258,569,256,538,259,525,266,525,269,527,272,546,282"/>
+</map>

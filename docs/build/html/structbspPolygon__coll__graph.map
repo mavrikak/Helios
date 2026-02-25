@@ -1,0 +1,5 @@
+<map id="bspPolygon" name="bspPolygon">
+<area shape="rect" id="Node000001" title="Polygon wrapper carried through BSP splitting." alt="" coords="60,545,145,639"/>
+<area shape="rect" id="Node000002" href="$classTriangle.html" title="Triangular surface element with cached geometry and utilities." alt="" coords="5,5,199,480"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,479,105,528,100,528,100,479"/>
+</map>

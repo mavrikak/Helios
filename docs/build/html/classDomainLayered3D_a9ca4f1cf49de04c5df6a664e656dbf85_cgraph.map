@@ -1,0 +1,13 @@
+<map id="DomainLayered3D::test_range" name="DomainLayered3D::test_range">
+<area shape="rect" id="Node000001" title="Self&#45;test: tabulation range computation (prints to console)." alt="" coords="5,65,181,110"/>
+<area shape="rect" id="Node000002" href="$classDomainLayered3D.html#af0fc42edd76b3e69a326990cefcbcd37" title="Calculates the tabulation range for a group of points." alt="" coords="229,5,438,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,63,226,52,227,57,182,68"/>
+<area shape="rect" id="Node000004" href="$DomainLayered3D_8cpp.html#ad63ce0a587a110740b2a7a51b927d893" title="Reads a set of 3D positions from a file." alt="" coords="251,74,416,102"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="181,85,235,85,235,90,181,90"/>
+<area shape="rect" id="Node000005" href="$classDomainLayered3D.html#a76fc8705ab75f3e6599693f9544821e9" title="Computes the slicing of points with respect to interfaces." alt="" coords="243,126,424,154"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="182,104,252,119,251,125,181,109"/>
+<area shape="rect" id="Node000003" href="$DomainLayered3D_8cpp.html#a83b3a83c01e3d7a487d4ae2ec65695f5" title="Adjusts the Z&#45;coordinate range with a margin while ensuring boundaries." alt="" coords="535,14,646,42"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="439,25,520,25,520,30,439,30"/>
+<area shape="rect" id="Node000006" href="$classDomainLayered3D.html#ae8e9daf2ca4d1ed649a1e0fe83880160" title="Returns the layer index corresponding to a spatial position." alt="" coords="486,117,695,162"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="424,137,471,137,471,142,424,142"/>
+</map>

@@ -1,0 +1,49 @@
+\doxysection{CLParser.\+h File Reference}
+\hypertarget{CLParser_8h}{}\label{CLParser_8h}\index{CLParser.h@{CLParser.h}}
+
+
+Minimal command-\/line argument parsing utilities.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for CLParser.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{CLParser_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{CLParser_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classCLParser}{CLParser}}
+\begin{DoxyCompactList}\small\item\em Abstract base for all command-\/line option parsers. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classCLOption}{CLOption$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em Typed option expecting a value (e.\+g., "{}-\/th 8"{}, "{}-\/l 2"{}). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classCLStringOption}{CLString\+Option}}
+\begin{DoxyCompactList}\small\item\em Option that captures a string argument. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classCLFlag}{CLFlag}}
+\begin{DoxyCompactList}\small\item\em Boolean flag option with no argument. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Minimal command-\/line argument parsing utilities. 
+
+This header defines a small hierarchy of parser classes to simplify reading options from {\ttfamily main} (int argc, char\texorpdfstring{$\ast$}{*} argv\mbox{[}\mbox{]}). It supports\+:
+\begin{DoxyItemize}
+\item Templated options bound to user variables (\doxylink{classCLOption}{CLOption$<$\+T$>$})
+\item String options (\doxylink{classCLStringOption}{CLString\+Option}) that may include spaces
+\item Flags (\doxylink{classCLFlag}{CLFlag}) that simply toggle a boolean when present 
+\end{DoxyItemize}
+
+Definition in file \mbox{\hyperlink{CLParser_8h_source}{CLParser.\+h}}.
+

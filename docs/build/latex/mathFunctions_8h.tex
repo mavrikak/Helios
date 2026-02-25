@@ -1,0 +1,527 @@
+\doxysection{math\+Functions.\+h File Reference}
+\hypertarget{mathFunctions_8h}{}\label{mathFunctions_8h}\index{mathFunctions.h@{mathFunctions.h}}
+
+
+Header file of the class that provides auxiliary mathematical functionalities for the SIE solver.  
+
+
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$complex$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include "{}globals.\+h"{}}\newline
+Include dependency graph for math\+Functions.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mathFunctions_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mathFunctions_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classLookupTable}{Lookup\+Table}}
+\begin{DoxyCompactList}\small\item\em Represents a 2D lookup table for complex functions (text format). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classLookupTableBin}{Lookup\+Table\+Bin}}
+\begin{DoxyCompactList}\small\item\em Represents a 2D lookup table for complex functions (binary format). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classSymmetryOperation}{Symmetry\+Operation}}
+\begin{DoxyCompactList}\small\item\em Abstract base class for spatial symmetry operations. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTranslation}{Translation}}
+\begin{DoxyCompactList}\small\item\em Concrete translation symmetry operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{mathFunctions_8h_abc57cde75234d7e165a9ebcdb45f2c29}{cerf}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} arg)
+\begin{DoxyCompactList}\small\item\em Error function for complex arguments. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{mathFunctions_8h_a7916c6b62310fe9cf38ec2a2890aaad4}{cerfc}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} arg)
+\begin{DoxyCompactList}\small\item\em Complementary error function for complex arguments. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{mathFunctions_8h_a08aa713aa80e71c4c0e2c81ff7d1df50}{Ei}} (const double \&x)
+\begin{DoxyCompactList}\small\item\em Exponential integral function {\ttfamily E1/\+Ei}(x). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{mathFunctions_8h_ad467dbbc9a8479eecf74b3c13d1384d9}{Ep}} (const double \&x, int p)
+\begin{DoxyCompactList}\small\item\em Exponential integral of $ p^{th} $ order. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{mathFunctions_8h_a7ca0205c081d7fe4c5b2d7637e556e2b}{factorial}} (int num)
+\begin{DoxyCompactList}\small\item\em Factorial. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ac062d767acbc2b8149a4039dc4a1a18f}{cdyad}} \mbox{\hyperlink{mathFunctions_8h_a3e09d80ae5d4038d0acf33eaa605bfe6}{transpose}} (\mbox{\hyperlink{globals_8h_ac062d767acbc2b8149a4039dc4a1a18f}{cdyad}} d)
+\begin{DoxyCompactList}\small\item\em Complex 3x3 dyadic and dot products. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Type$>$ }\\void \mbox{\hyperlink{mathFunctions_8h_a7cf7662731b62b1410616b0eecdb957d}{Fill\+Green\+Table}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp, Type(\texorpdfstring{$\ast$}{*}green\+Function)(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}))
+\begin{DoxyCompactList}\small\item\em Evaluate a Green\textquotesingle{}s function at given source and observation points. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Type$>$ }\\Type \mbox{\hyperlink{mathFunctions_8h_a6a44a67d00b12380d2bf85996378a609}{Interp\+Linear}} (double x0, Type i0, double x1, Type i1, float xp)
+\begin{DoxyCompactList}\small\item\em Perform linear interpolation between two samples. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Type$>$ }\\Type \mbox{\hyperlink{mathFunctions_8h_ab134c0b32844bf75bb6540646a280007}{Interp\+Bilinear}} (double x0, double y0, Type i0, double x1, double, Type i1, double x2, double, Type i2, double x3, double y3, Type i3, double xp, double yp)
+\begin{DoxyCompactList}\small\item\em Perform bilinear interpolation on a rectangular surface. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Type$>$ }\\Type \mbox{\hyperlink{mathFunctions_8h_af2d57dd49950bd18b3ca1b79e900d881}{Interp\+Trilinear}} (double x0, double y0, double z0, Type i0, double x1, double y1, double, Type i1, double x2, double y2, double, Type i2, double x3, double y3, double, Type i3, double x4, double y4, double z4, Type i4, double x5, double y5, double, Type i5, double x6, double y6, double, Type i6, double x7, double y7, double, Type i7, double xp, double yp, double zp)
+\begin{DoxyCompactList}\small\item\em Perform trilinear interpolation inside a cube. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{mathFunctions_8h_ab5ae92d9600ad72d4c0c18a49f876831}{Erfc\+Lookup\+Table}} (std\+::string filename, double max\+Re, double max\+Im, double inc\+Re, double inc\+Im)
+\begin{DoxyCompactList}\small\item\em Generate and save a text lookup table for {\ttfamily cerfc} over a complex grid. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{mathFunctions_8h_a619bd9a7be3251a7f44191aaeaa6ab7c}{Erfc\+Lookup\+Table\+Bin}} (std\+::string filename, double max\+Re, double max\+Im, double inc\+Re, double inc\+Im)
+\begin{DoxyCompactList}\small\item\em Generate and save a binary lookup table for {\ttfamily cerfc} over a complex grid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file of the class that provides auxiliary mathematical functionalities for the SIE solver. 
+
+These include\+:
+\begin{DoxyItemize}
+\item Lookup table management classes for complex-\/valued functions
+\item Special functions (erf/erfc, exponential integral)
+\item Factorials and dyadic algebra
+\item Symmetry operations (translations)
+\item Interpolation templates (linear, bilinear, trilinear)
+\item Table generators for error-\/function lookups (text and binary) 
+\end{DoxyItemize}
+
+Definition in file \mbox{\hyperlink{mathFunctions_8h_source}{math\+Functions.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{mathFunctions_8h_abc57cde75234d7e165a9ebcdb45f2c29}\index{mathFunctions.h@{mathFunctions.h}!cerf@{cerf}}
+\index{cerf@{cerf}!mathFunctions.h@{mathFunctions.h}}
+\doxysubsubsection{\texorpdfstring{cerf()}{cerf()}}
+{\footnotesize\ttfamily \label{mathFunctions_8h_abc57cde75234d7e165a9ebcdb45f2c29} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} cerf (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{arg}{}\end{DoxyParamCaption})}
+
+
+
+Error function for complex arguments. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & Complex argument of {\ttfamily \doxylink{mathFunctions_8h_abc57cde75234d7e165a9ebcdb45f2c29}{cerf()}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex result. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{mathFunctions_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{mathFunctions_8cpp_source}{math\+Functions.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mathFunctions_8h_abc57cde75234d7e165a9ebcdb45f2c29_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mathFunctions_8h_a7916c6b62310fe9cf38ec2a2890aaad4}\index{mathFunctions.h@{mathFunctions.h}!cerfc@{cerfc}}
+\index{cerfc@{cerfc}!mathFunctions.h@{mathFunctions.h}}
+\doxysubsubsection{\texorpdfstring{cerfc()}{cerfc()}}
+{\footnotesize\ttfamily \label{mathFunctions_8h_a7916c6b62310fe9cf38ec2a2890aaad4} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} cerfc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{arg}{}\end{DoxyParamCaption})}
+
+
+
+Complementary error function for complex arguments. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & Complex argument of {\ttfamily \doxylink{mathFunctions_8h_a7916c6b62310fe9cf38ec2a2890aaad4}{cerfc()}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex result. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{mathFunctions_8cpp_source_l00057}{57}} of file \mbox{\hyperlink{mathFunctions_8cpp_source}{math\+Functions.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{mathFunctions_8h_a7916c6b62310fe9cf38ec2a2890aaad4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mathFunctions_8h_a7916c6b62310fe9cf38ec2a2890aaad4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mathFunctions_8h_a08aa713aa80e71c4c0e2c81ff7d1df50}\index{mathFunctions.h@{mathFunctions.h}!Ei@{Ei}}
+\index{Ei@{Ei}!mathFunctions.h@{mathFunctions.h}}
+\doxysubsubsection{\texorpdfstring{Ei()}{Ei()}}
+{\footnotesize\ttfamily \label{mathFunctions_8h_a08aa713aa80e71c4c0e2c81ff7d1df50} 
+double Ei (\begin{DoxyParamCaption}\item[{const double \&}]{x}{}\end{DoxyParamCaption})}
+
+
+
+Exponential integral function {\ttfamily E1/\+Ei}(x). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Real argument of {\ttfamily \doxylink{mathFunctions_8h_a7916c6b62310fe9cf38ec2a2890aaad4}{cerfc()}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Real result. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{mathFunctions_8cpp_source_l00063}{63}} of file \mbox{\hyperlink{mathFunctions_8cpp_source}{math\+Functions.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=109pt]{mathFunctions_8h_a08aa713aa80e71c4c0e2c81ff7d1df50_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{mathFunctions_8h_a08aa713aa80e71c4c0e2c81ff7d1df50_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mathFunctions_8h_ad467dbbc9a8479eecf74b3c13d1384d9}\index{mathFunctions.h@{mathFunctions.h}!Ep@{Ep}}
+\index{Ep@{Ep}!mathFunctions.h@{mathFunctions.h}}
+\doxysubsubsection{\texorpdfstring{Ep()}{Ep()}}
+{\footnotesize\ttfamily \label{mathFunctions_8h_ad467dbbc9a8479eecf74b3c13d1384d9} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Ep (\begin{DoxyParamCaption}\item[{const double \&}]{x}{, }\item[{int}]{p}{}\end{DoxyParamCaption})}
+
+
+
+Exponential integral of $ p^{th} $ order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Real argument of integral. \\
+\hline
+{\em p} & Order of integral. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex result. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{mathFunctions_8cpp_source_l00083}{83}} of file \mbox{\hyperlink{mathFunctions_8cpp_source}{math\+Functions.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{mathFunctions_8h_ad467dbbc9a8479eecf74b3c13d1384d9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=109pt]{mathFunctions_8h_ad467dbbc9a8479eecf74b3c13d1384d9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mathFunctions_8h_ab5ae92d9600ad72d4c0c18a49f876831}\index{mathFunctions.h@{mathFunctions.h}!ErfcLookupTable@{ErfcLookupTable}}
+\index{ErfcLookupTable@{ErfcLookupTable}!mathFunctions.h@{mathFunctions.h}}
+\doxysubsubsection{\texorpdfstring{ErfcLookupTable()}{ErfcLookupTable()}}
+{\footnotesize\ttfamily \label{mathFunctions_8h_ab5ae92d9600ad72d4c0c18a49f876831} 
+int Erfc\+Lookup\+Table (\begin{DoxyParamCaption}\item[{std\+::string}]{filename}{, }\item[{double}]{max\+Re}{, }\item[{double}]{max\+Im}{, }\item[{double}]{inc\+Re}{, }\item[{double}]{inc\+Im}{}\end{DoxyParamCaption})}
+
+
+
+Generate and save a text lookup table for {\ttfamily cerfc} over a complex grid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Output text file name. \\
+\hline
+{\em max\+Re} & Maximum real value of the grid. \\
+\hline
+{\em max\+Im} & Maximum imaginary value of the grid. \\
+\hline
+{\em inc\+Re} & Increment along the real axis. \\
+\hline
+{\em inc\+Im} & Increment along the imaginary axis. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, nonzero on failure. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{mathFunctions_8cpp_source_l00130}{130}} of file \mbox{\hyperlink{mathFunctions_8cpp_source}{math\+Functions.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{mathFunctions_8h_ab5ae92d9600ad72d4c0c18a49f876831_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{mathFunctions_8h_ab5ae92d9600ad72d4c0c18a49f876831_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mathFunctions_8h_a619bd9a7be3251a7f44191aaeaa6ab7c}\index{mathFunctions.h@{mathFunctions.h}!ErfcLookupTableBin@{ErfcLookupTableBin}}
+\index{ErfcLookupTableBin@{ErfcLookupTableBin}!mathFunctions.h@{mathFunctions.h}}
+\doxysubsubsection{\texorpdfstring{ErfcLookupTableBin()}{ErfcLookupTableBin()}}
+{\footnotesize\ttfamily \label{mathFunctions_8h_a619bd9a7be3251a7f44191aaeaa6ab7c} 
+int Erfc\+Lookup\+Table\+Bin (\begin{DoxyParamCaption}\item[{std\+::string}]{filename}{, }\item[{double}]{max\+Re}{, }\item[{double}]{max\+Im}{, }\item[{double}]{inc\+Re}{, }\item[{double}]{inc\+Im}{}\end{DoxyParamCaption})}
+
+
+
+Generate and save a binary lookup table for {\ttfamily cerfc} over a complex grid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Output binary file name. \\
+\hline
+{\em max\+Re} & Maximum real value of the grid. \\
+\hline
+{\em max\+Im} & Maximum imaginary value of the grid. \\
+\hline
+{\em inc\+Re} & Increment along the real axis. \\
+\hline
+{\em inc\+Im} & Increment along the imaginary axis. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, nonzero on failure. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{mathFunctions_8cpp_source_l00198}{198}} of file \mbox{\hyperlink{mathFunctions_8cpp_source}{math\+Functions.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{mathFunctions_8h_a619bd9a7be3251a7f44191aaeaa6ab7c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{mathFunctions_8h_a619bd9a7be3251a7f44191aaeaa6ab7c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mathFunctions_8h_a7ca0205c081d7fe4c5b2d7637e556e2b}\index{mathFunctions.h@{mathFunctions.h}!factorial@{factorial}}
+\index{factorial@{factorial}!mathFunctions.h@{mathFunctions.h}}
+\doxysubsubsection{\texorpdfstring{factorial()}{factorial()}}
+{\footnotesize\ttfamily \label{mathFunctions_8h_a7ca0205c081d7fe4c5b2d7637e556e2b} 
+int factorial (\begin{DoxyParamCaption}\item[{int}]{num}{}\end{DoxyParamCaption})}
+
+
+
+Factorial. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & Integer argument of factorial. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Integer result. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{mathFunctions_8cpp_source_l00114}{114}} of file \mbox{\hyperlink{mathFunctions_8cpp_source}{math\+Functions.\+cpp}}.
+
+\Hypertarget{mathFunctions_8h_a7cf7662731b62b1410616b0eecdb957d}\index{mathFunctions.h@{mathFunctions.h}!FillGreenTable@{FillGreenTable}}
+\index{FillGreenTable@{FillGreenTable}!mathFunctions.h@{mathFunctions.h}}
+\doxysubsubsection{\texorpdfstring{FillGreenTable()}{FillGreenTable()}}
+{\footnotesize\ttfamily \label{mathFunctions_8h_a7cf7662731b62b1410616b0eecdb957d} 
+template$<$class Type$>$ \\
+void Fill\+Green\+Table (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{rp}{, }\item[{Type(\texorpdfstring{$\ast$}{*}}]{green\+Function~}{)(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}})}\end{DoxyParamCaption})}
+
+
+
+Evaluate a Green\textquotesingle{}s function at given source and observation points. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Type} & Return type of the Green\textquotesingle{}s function (e.\+g., complex or scalar). \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation point. \\
+\hline
+{\em rp} & Source point. \\
+\hline
+{\em green\+Function} & Pointer to the Green\textquotesingle{}s function to evaluate.\\
+\hline
+\end{DoxyParams}
+Prints the evaluated Green\textquotesingle{}s function value to standard output. 
+
+Definition at line \mbox{\hyperlink{mathFunctions_8h_source_l00187}{187}} of file \mbox{\hyperlink{mathFunctions_8h_source}{math\+Functions.\+h}}.
+
+\Hypertarget{mathFunctions_8h_ab134c0b32844bf75bb6540646a280007}\index{mathFunctions.h@{mathFunctions.h}!InterpBilinear@{InterpBilinear}}
+\index{InterpBilinear@{InterpBilinear}!mathFunctions.h@{mathFunctions.h}}
+\doxysubsubsection{\texorpdfstring{InterpBilinear()}{InterpBilinear()}}
+{\footnotesize\ttfamily \label{mathFunctions_8h_ab134c0b32844bf75bb6540646a280007} 
+template$<$class Type$>$ \\
+Type Interp\+Bilinear (\begin{DoxyParamCaption}\item[{double}]{x0}{, }\item[{double}]{y0}{, }\item[{Type}]{i0}{, }\item[{double}]{x1}{, }\item[{double}]{}{, }\item[{Type}]{i1}{, }\item[{double}]{x2}{, }\item[{double}]{}{, }\item[{Type}]{i2}{, }\item[{double}]{x3}{, }\item[{double}]{y3}{, }\item[{Type}]{i3}{, }\item[{double}]{xp}{, }\item[{double}]{yp}{}\end{DoxyParamCaption})}
+
+
+
+Perform bilinear interpolation on a rectangular surface. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Type} & Data type of interpolated values. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em x0,y0,i0} & Coordinates and value of first vertex. \\
+\hline
+{\em x1,i1} & Coordinates and value of second vertex. \\
+\hline
+{\em x2,i2} & Coordinates and value of third vertex. \\
+\hline
+{\em x3,y3,i3} & Coordinates and value of fourth vertex. \\
+\hline
+{\em xp,yp} & Query coordinates inside the quadrilateral. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Interpolated value at (xp, yp). 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{mathFunctions_8h_source_l00220}{220}} of file \mbox{\hyperlink{mathFunctions_8h_source}{math\+Functions.\+h}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{mathFunctions_8h_ab134c0b32844bf75bb6540646a280007_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{mathFunctions_8h_ab134c0b32844bf75bb6540646a280007_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mathFunctions_8h_a6a44a67d00b12380d2bf85996378a609}\index{mathFunctions.h@{mathFunctions.h}!InterpLinear@{InterpLinear}}
+\index{InterpLinear@{InterpLinear}!mathFunctions.h@{mathFunctions.h}}
+\doxysubsubsection{\texorpdfstring{InterpLinear()}{InterpLinear()}}
+{\footnotesize\ttfamily \label{mathFunctions_8h_a6a44a67d00b12380d2bf85996378a609} 
+template$<$class Type$>$ \\
+Type Interp\+Linear (\begin{DoxyParamCaption}\item[{double}]{x0}{, }\item[{Type}]{i0}{, }\item[{double}]{x1}{, }\item[{Type}]{i1}{, }\item[{float}]{xp}{}\end{DoxyParamCaption})}
+
+
+
+Perform linear interpolation between two samples. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Type} & Data type of interpolated values. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em x0} & First sample position. \\
+\hline
+{\em i0} & First sample value. \\
+\hline
+{\em x1} & Second sample position. \\
+\hline
+{\em i1} & Second sample value. \\
+\hline
+{\em xp} & Query position between x0 and x1. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Interpolated value at xp. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{mathFunctions_8h_source_l00205}{205}} of file \mbox{\hyperlink{mathFunctions_8h_source}{math\+Functions.\+h}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mathFunctions_8h_a6a44a67d00b12380d2bf85996378a609_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mathFunctions_8h_af2d57dd49950bd18b3ca1b79e900d881}\index{mathFunctions.h@{mathFunctions.h}!InterpTrilinear@{InterpTrilinear}}
+\index{InterpTrilinear@{InterpTrilinear}!mathFunctions.h@{mathFunctions.h}}
+\doxysubsubsection{\texorpdfstring{InterpTrilinear()}{InterpTrilinear()}}
+{\footnotesize\ttfamily \label{mathFunctions_8h_af2d57dd49950bd18b3ca1b79e900d881} 
+template$<$class Type$>$ \\
+Type Interp\+Trilinear (\begin{DoxyParamCaption}\item[{double}]{x0}{, }\item[{double}]{y0}{, }\item[{double}]{z0}{, }\item[{Type}]{i0}{, }\item[{double}]{x1}{, }\item[{double}]{y1}{, }\item[{double}]{}{, }\item[{Type}]{i1}{, }\item[{double}]{x2}{, }\item[{double}]{y2}{, }\item[{double}]{}{, }\item[{Type}]{i2}{, }\item[{double}]{x3}{, }\item[{double}]{y3}{, }\item[{double}]{}{, }\item[{Type}]{i3}{, }\item[{double}]{x4}{, }\item[{double}]{y4}{, }\item[{double}]{z4}{, }\item[{Type}]{i4}{, }\item[{double}]{x5}{, }\item[{double}]{y5}{, }\item[{double}]{}{, }\item[{Type}]{i5}{, }\item[{double}]{x6}{, }\item[{double}]{y6}{, }\item[{double}]{}{, }\item[{Type}]{i6}{, }\item[{double}]{x7}{, }\item[{double}]{y7}{, }\item[{double}]{}{, }\item[{Type}]{i7}{, }\item[{double}]{xp}{, }\item[{double}]{yp}{, }\item[{double}]{zp}{}\end{DoxyParamCaption})}
+
+
+
+Perform trilinear interpolation inside a cube. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Type} & Data type of interpolated values. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em x0,y0,z0,i0} & Coordinates and value of the 1st cube corner. \\
+\hline
+{\em x1,y1,i1} & Coordinates and value of the 2nd cube corner. \\
+\hline
+{\em x2,y2,i2} & Coordinates and value of the 3rd cube corner. \\
+\hline
+{\em x3,y3,i3} & Coordinates and value of the 4th cube corner. \\
+\hline
+{\em x4,y4,z4,i4} & Coordinates and value of the 5th cube corner. \\
+\hline
+{\em x5,y5,i5} & Coordinates and value of the 6th cube corner. \\
+\hline
+{\em x6,y6,i6} & Coordinates and value of the 7th cube corner. \\
+\hline
+{\em x7,y7,i7} & Coordinates and value of the 8th cube corner. \\
+\hline
+{\em xp,yp,zp} & Query coordinates inside the cube. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Interpolated value at (xp, yp, zp). 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{mathFunctions_8h_source_l00247}{247}} of file \mbox{\hyperlink{mathFunctions_8h_source}{math\+Functions.\+h}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mathFunctions_8h_af2d57dd49950bd18b3ca1b79e900d881_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mathFunctions_8h_a3e09d80ae5d4038d0acf33eaa605bfe6}\index{mathFunctions.h@{mathFunctions.h}!transpose@{transpose}}
+\index{transpose@{transpose}!mathFunctions.h@{mathFunctions.h}}
+\doxysubsubsection{\texorpdfstring{transpose()}{transpose()}}
+{\footnotesize\ttfamily \label{mathFunctions_8h_a3e09d80ae5d4038d0acf33eaa605bfe6} 
+\mbox{\hyperlink{globals_8h_ac062d767acbc2b8149a4039dc4a1a18f}{cdyad}} transpose (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ac062d767acbc2b8149a4039dc4a1a18f}{cdyad}}}]{d}{}\end{DoxyParamCaption})}
+
+
+
+Complex 3x3 dyadic and dot products. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & Complex dyadic. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Transposed complex dyadic. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{mathFunctions_8cpp_source_l00121}{121}} of file \mbox{\hyperlink{mathFunctions_8cpp_source}{math\+Functions.\+cpp}}.
+

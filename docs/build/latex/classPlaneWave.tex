@@ -1,0 +1,831 @@
+\doxysection{Plane\+Wave Class Reference}
+\hypertarget{classPlaneWave}{}\label{classPlaneWave}\index{PlaneWave@{PlaneWave}}
+
+
+Models a plane wave as an incident field in homogeneous or layered media.  
+
+
+
+
+{\ttfamily \#include $<$Plane\+Wave.\+h$>$}
+
+
+
+Inheritance diagram for Plane\+Wave\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classPlaneWave__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Plane\+Wave\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPlaneWave__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPlaneWave_afb2520b5ec768a6ad1bdedf1ec1e8025}{Plane\+Wave}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} wvl, double eps, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classPlaneWave_ab54cdf91faa1f37bc2f1c3b0e8694f78}{dir}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} po)
+\begin{DoxyCompactList}\small\item\em Construct a homogeneous plane wave. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPlaneWave_a07739002b987553f07df880745707fad}{Plane\+Wave}} (std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ k\+\_\+L, std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ epsL, std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ muL, std\+::vector$<$ double $>$ z\+Vals\+Interfaces, std\+::vector$<$ double $>$ thickness, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} prop\+Dir, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} po)
+\begin{DoxyCompactList}\small\item\em Construct a plane wave in a layered medium. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPlaneWave_a3371a26c546c34a881ae24de63fc9103}{\texorpdfstring{$\sim$}{\string~}\+Plane\+Wave}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classPlaneWave_a21e80621788fddf887cf27b7c6f9bdf7}{EvaluateE}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r)
+\begin{DoxyCompactList}\small\item\em Evaluate the electric field at a given position (homogeneous). \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ \mbox{\hyperlink{classPlaneWave_ade82a6ff2d60f8df4553d51837525a1c}{Evaluate\+Layered\+EandH}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r)
+\begin{DoxyCompactList}\small\item\em Evaluate the electric and magnetic fields at a given position in layered media. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classPlaneWave_a25c1de1e9cee6a241765539a4b22f103}{EvaluateH}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r)
+\begin{DoxyCompactList}\small\item\em Evaluate the magnetic field at a given position (homogeneous). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classPlaneWave_abe7fa331497162f9b0e3cd59c3332c34}{IntegrateE}} (\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}f)
+\begin{DoxyCompactList}\small\item\em Integrate electric field against an RWG basis function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classPlaneWave_a9b36a0f26c234a178795b1a431d53a03}{IntegrateH}} (\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}f)
+\begin{DoxyCompactList}\small\item\em Integrate magnetic field against an RWG basis function. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{classPlaneWave_a80fe83d9acd52a14f7b2f0ea2317b036}{Integrate\+Layered\+EandH}} (\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}f)
+\begin{DoxyCompactList}\small\item\em Integrate layered E and H fields against an RWG basis function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classPlaneWave_aef5b0a933a9727948336bcdb707d8399}{Wavevector}} ()
+\begin{DoxyCompactList}\small\item\em Return the wavevector of the plane wave. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classPlaneWave_a7a434b5205266e729210d41ad3ae1b34}{Polarization}} ()
+\begin{DoxyCompactList}\small\item\em Return the polarization vector of the plane wave. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPlaneWave_a1f1fd1b5140ab23b3ec7899e6962e60f}{write\+EHData}} (const std\+::vector$<$ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} $>$ \&points, const std\+::string \&e\+Filename, const std\+::string \&h\+Filename)
+\begin{DoxyCompactList}\small\item\em Write E and H field values at sample points to CSV files. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classPlaneWave_aa6b2d336c79c07cf23471fe99642d933}{rvec2cvec}} (const \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \&rv)
+\begin{DoxyCompactList}\small\item\em Convert rvec to cvec (real vector to complex vector). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classPlaneWave_af7c9805a49519670a0d4814146bf893d}{cvec2rvec}} (const \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \&cv, std\+::string \&type)
+\begin{DoxyCompactList}\small\item\em Convert cvec to rvec, extracting real or imaginary parts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classPlaneWave_a66641ca1cfa189357ce861df408c1d67}{complex\+Sqrt}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} arg)
+\begin{DoxyCompactList}\small\item\em Computes the square root of a complex number with proper handling of negative imaginary parts. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPlaneWave_a028bde791fe8319ca377c14c286a244d}{Is\+Plane\+Wave}} ()
+\begin{DoxyCompactList}\small\item\em Identify field as a \doxylink{classPlaneWave}{Plane\+Wave}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPlaneWave_ac56a5587971da115e40d4ecfc2a7bbf6}{Is\+Dipole}} ()
+\begin{DoxyCompactList}\small\item\em Identify field as not a \doxylink{classDipole}{Dipole}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPlaneWave_a7d182313ad46c1f2a9eadf7eeab08a17}{Is\+Gaussian}} ()
+\begin{DoxyCompactList}\small\item\em Identify field as not a \doxylink{classGaussian}{Gaussian} beam. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPlaneWave_ae4945c7b5e38022304cc31b270625c88}{set\+Grn\+Fun\+Layered}} (\mbox{\hyperlink{classGreenF}{GreenF}} \texorpdfstring{$\ast$}{*}f\+Grn\+Fields, std\+::vector$<$ \mbox{\hyperlink{structGrid}{Grid}} $>$ tab\+Grids)
+\begin{DoxyCompactList}\small\item\em Provide layered-\/medium Green\textquotesingle{}s function and its tabulation grids. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classIncidentField}{Incident\+Field}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classIncidentField_a79ee067f9cdb57c3ec8a82c937541dc5}{\texorpdfstring{$\sim$}{\string~}\+Incident\+Field}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor to allow proper cleanup through base pointer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classPlaneWave_a0d905a16520cb278fd50fff86a51eccf}{k}}
+\begin{DoxyCompactList}\small\item\em Wavevector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classPlaneWave_aeca25da3f6d45a6bb3b1bd6f67a830bb}{krho}}
+\begin{DoxyCompactList}\small\item\em Transverse wavenumber component. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classPlaneWave_a5e4cc282d994bdb3edc5f2e0c301d26f}{p}}
+\begin{DoxyCompactList}\small\item\em Polarization vector. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classPlaneWave_ad86721e04a76637cd02b653486491655}{z}}
+\begin{DoxyCompactList}\small\item\em Impedance (homogeneous medium) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classPlaneWave_a1f095386eab09f332c3310f806163f57}{zL}}
+\begin{DoxyCompactList}\small\item\em Impedance in layered medium. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classPlaneWave_ab54cdf91faa1f37bc2f1c3b0e8694f78}{dir}}
+\begin{DoxyCompactList}\small\item\em Propagation direction (unit vector) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classPlaneWave_a9f2f01d57babaa07cecaaee52eadaa90}{inc\+LayerZ}}
+\begin{DoxyCompactList}\small\item\em z of first interface in incidence layer \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPlaneWave_aa865592736f333f9c86d5aeb797f0e1f}{inc\+Layer\+Index}}
+\begin{DoxyCompactList}\small\item\em Layer index of incidence. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGaussQuad}{Gauss\+Quad}}$<$ \mbox{\hyperlink{classPlaneWave}{Plane\+Wave}} $>$ \mbox{\hyperlink{classPlaneWave_a62efc0919cff4aba04757a1a6f814c57}{gauss}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classGaussian}{Gaussian} quadrature integrator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLayeredMediaUtils}{Layered\+Media\+Utils}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classPlaneWave_aecde65abb68ba39fa4d6d7ce7138a815}{layered\+Utils}}
+\begin{DoxyCompactList}\small\item\em Utilities for layered case. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classIncidentField}{Incident\+Field}}}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classIncidentField_aa8e0e6dc5e0acf432cc06a76f5d33baf}{Enable\+Accurate}} ()
+\begin{DoxyCompactList}\small\item\em Enable high-\/accuracy integration for excitations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{classIncidentField}{Incident\+Field}}}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classIncidentField_af45c81c859bda7b0a43818eb8fcf5887}{Needs\+Accurate}} = false
+\begin{DoxyCompactList}\small\item\em Global toggle\+: request accurate/expensive integration path. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Models a plane wave as an incident field in homogeneous or layered media. 
+
+Definition at line \mbox{\hyperlink{PlaneWave_8h_source_l00021}{21}} of file \mbox{\hyperlink{PlaneWave_8h_source}{Plane\+Wave.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPlaneWave_afb2520b5ec768a6ad1bdedf1ec1e8025}\index{PlaneWave@{PlaneWave}!PlaneWave@{PlaneWave}}
+\index{PlaneWave@{PlaneWave}!PlaneWave@{PlaneWave}}
+\doxysubsubsection{\texorpdfstring{PlaneWave()}{PlaneWave()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classPlaneWave_afb2520b5ec768a6ad1bdedf1ec1e8025} 
+Plane\+Wave\+::\+Plane\+Wave (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{wvl}{, }\item[{double}]{eps}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{dir}{, }\item[{\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}}]{po}{}\end{DoxyParamCaption})}
+
+
+
+Construct a homogeneous plane wave. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wvl} & Incident wavelength. \\
+\hline
+{\em eps} & Permittivity of the homogeneous medium. \\
+\hline
+{\em dir} & Propagation direction (3D vector). \\
+\hline
+{\em po} & Polarization vector.\\
+\hline
+\end{DoxyParams}
+Normalizes the input propagation direction, sets the wavenumber $\mathbf{k} = \frac{2\pi}{\lambda}\sqrt{\varepsilon_r}\,\hat{\mathbf{d}}$, the medium impedance $ z = Z_0/\sqrt{\varepsilon_r}$, and stores polarization. 
+
+Definition at line \mbox{\hyperlink{PlaneWave_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{PlaneWave_8cpp_source}{Plane\+Wave.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPlaneWave_afb2520b5ec768a6ad1bdedf1ec1e8025_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPlaneWave_a07739002b987553f07df880745707fad}\index{PlaneWave@{PlaneWave}!PlaneWave@{PlaneWave}}
+\index{PlaneWave@{PlaneWave}!PlaneWave@{PlaneWave}}
+\doxysubsubsection{\texorpdfstring{PlaneWave()}{PlaneWave()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classPlaneWave_a07739002b987553f07df880745707fad} 
+Plane\+Wave\+::\+Plane\+Wave (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$}]{k\+\_\+L}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$}]{epsL}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$}]{muL}{, }\item[{std\+::vector$<$ double $>$}]{z\+Vals\+Interfaces}{, }\item[{std\+::vector$<$ double $>$}]{thickness}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{prop\+Dir}{, }\item[{\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}}]{po}{}\end{DoxyParamCaption})}
+
+
+
+Construct a plane wave in a layered medium. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em k\+\_\+L} & Wave numbers per layer. \\
+\hline
+{\em epsL} & Permittivity values per layer. \\
+\hline
+{\em muL} & Permeability values per layer. \\
+\hline
+{\em z\+Vals\+Interfaces} & z-\/coordinates of interfaces. \\
+\hline
+{\em thickness} & Thicknesses of layers. \\
+\hline
+{\em prop\+Dir} & Propagation direction. \\
+\hline
+{\em po} & Polarization vector.\\
+\hline
+\end{DoxyParams}
+Allocates a \doxylink{classLayeredMediaUtils}{Layered\+Media\+Utils} helper and initializes propagation parameters depending on whether the wave impinges from +z (top half-\/space) or −z (bottom). Also computes the transverse wavenumber magnitude $k_\rho$. 
+
+Definition at line \mbox{\hyperlink{PlaneWave_8cpp_source_l00027}{27}} of file \mbox{\hyperlink{PlaneWave_8cpp_source}{Plane\+Wave.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPlaneWave_a07739002b987553f07df880745707fad_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPlaneWave_a3371a26c546c34a881ae24de63fc9103}\index{PlaneWave@{PlaneWave}!````~PlaneWave@{\texorpdfstring{$\sim$}{\string~}PlaneWave}}
+\index{````~PlaneWave@{\texorpdfstring{$\sim$}{\string~}PlaneWave}!PlaneWave@{PlaneWave}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}PlaneWave()}{\string~PlaneWave()}}
+{\footnotesize\ttfamily \label{classPlaneWave_a3371a26c546c34a881ae24de63fc9103} 
+Plane\+Wave\+::\texorpdfstring{$\sim$}{\string~}\+Plane\+Wave (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destructor. 
+
+Cleans up \doxylink{classLayeredMediaUtils}{Layered\+Media\+Utils} if allocated. 
+
+Definition at line \mbox{\hyperlink{PlaneWave_8h_source_l00059}{59}} of file \mbox{\hyperlink{PlaneWave_8h_source}{Plane\+Wave.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPlaneWave_a66641ca1cfa189357ce861df408c1d67}\index{PlaneWave@{PlaneWave}!complexSqrt@{complexSqrt}}
+\index{complexSqrt@{complexSqrt}!PlaneWave@{PlaneWave}}
+\doxysubsubsection{\texorpdfstring{complexSqrt()}{complexSqrt()}}
+{\footnotesize\ttfamily \label{classPlaneWave_a66641ca1cfa189357ce861df408c1d67} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Plane\+Wave\+::complex\+Sqrt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{arg}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Computes the square root of a complex number with proper handling of negative imaginary parts. 
+
+This function ensures correct computation of the square root for cases where the imaginary part is negative or zero to maintain consistency in branch cuts.
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & The input complex number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The square root of the input complex number. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{PlaneWave_8h_source_l00160}{160}} of file \mbox{\hyperlink{PlaneWave_8h_source}{Plane\+Wave.\+h}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{classPlaneWave_a66641ca1cfa189357ce861df408c1d67_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPlaneWave_a66641ca1cfa189357ce861df408c1d67_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPlaneWave_af7c9805a49519670a0d4814146bf893d}\index{PlaneWave@{PlaneWave}!cvec2rvec@{cvec2rvec}}
+\index{cvec2rvec@{cvec2rvec}!PlaneWave@{PlaneWave}}
+\doxysubsubsection{\texorpdfstring{cvec2rvec()}{cvec2rvec()}}
+{\footnotesize\ttfamily \label{classPlaneWave_af7c9805a49519670a0d4814146bf893d} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} Plane\+Wave\+::cvec2rvec (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \&}]{cv}{, }\item[{std\+::string \&}]{type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Convert cvec to rvec, extracting real or imaginary parts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cv} & Complex vector. \\
+\hline
+{\em type} & "{}real"{} or "{}imag"{}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Real vector with corresponding components. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{PlaneWave_8h_source_l00140}{140}} of file \mbox{\hyperlink{PlaneWave_8h_source}{Plane\+Wave.\+h}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{classPlaneWave_af7c9805a49519670a0d4814146bf893d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPlaneWave_a21e80621788fddf887cf27b7c6f9bdf7}\index{PlaneWave@{PlaneWave}!EvaluateE@{EvaluateE}}
+\index{EvaluateE@{EvaluateE}!PlaneWave@{PlaneWave}}
+\doxysubsubsection{\texorpdfstring{EvaluateE()}{EvaluateE()}}
+{\footnotesize\ttfamily \label{classPlaneWave_a21e80621788fddf887cf27b7c6f9bdf7} 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} Plane\+Wave\+::\+EvaluateE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Evaluate the electric field at a given position (homogeneous). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Electric field vector at the point.
+\end{DoxyReturn}
+Uses $\mathbf{E}(\mathbf{r}) = \mathbf{p}\,e^{j\mathbf{k}\cdot\mathbf{r}}$. 
+
+Implements \mbox{\hyperlink{classIncidentField_a2c6e363fff67c453f9ab2b550bb6bb20}{Incident\+Field}}.
+
+
+
+Definition at line \mbox{\hyperlink{PlaneWave_8cpp_source_l00064}{64}} of file \mbox{\hyperlink{PlaneWave_8cpp_source}{Plane\+Wave.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPlaneWave_a21e80621788fddf887cf27b7c6f9bdf7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPlaneWave_a25c1de1e9cee6a241765539a4b22f103}\index{PlaneWave@{PlaneWave}!EvaluateH@{EvaluateH}}
+\index{EvaluateH@{EvaluateH}!PlaneWave@{PlaneWave}}
+\doxysubsubsection{\texorpdfstring{EvaluateH()}{EvaluateH()}}
+{\footnotesize\ttfamily \label{classPlaneWave_a25c1de1e9cee6a241765539a4b22f103} 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} Plane\+Wave\+::\+EvaluateH (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Evaluate the magnetic field at a given position (homogeneous). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Magnetic field vector at the point.
+\end{DoxyReturn}
+Uses $\mathbf{H}(\mathbf{r}) = \frac{1}{z}\,\hat{\mathbf{k}}\times\mathbf{p}\,e^{j\mathbf{k}\cdot\mathbf{r}}$. 
+
+Implements \mbox{\hyperlink{classIncidentField_a7f960fdcdeaf381ad12a49c190f180ff}{Incident\+Field}}.
+
+
+
+Definition at line \mbox{\hyperlink{PlaneWave_8cpp_source_l00150}{150}} of file \mbox{\hyperlink{PlaneWave_8cpp_source}{Plane\+Wave.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPlaneWave_a25c1de1e9cee6a241765539a4b22f103_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPlaneWave_ade82a6ff2d60f8df4553d51837525a1c}\index{PlaneWave@{PlaneWave}!EvaluateLayeredEandH@{EvaluateLayeredEandH}}
+\index{EvaluateLayeredEandH@{EvaluateLayeredEandH}!PlaneWave@{PlaneWave}}
+\doxysubsubsection{\texorpdfstring{EvaluateLayeredEandH()}{EvaluateLayeredEandH()}}
+{\footnotesize\ttfamily \label{classPlaneWave_ade82a6ff2d60f8df4553d51837525a1c} 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ Plane\+Wave\+::\+Evaluate\+Layered\+EandH (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Evaluate the electric and magnetic fields at a given position in layered media. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector containing electric and magnetic field complex vectors at the point.
+\end{DoxyReturn}
+Decomposes the incident polarization into local TE/\+TM unit vectors, computes incident amplitudes, queries \doxylink{classLayeredMediaUtils_a6d538561bc5345114e83f7939247866f}{Layered\+Media\+Utils\+::\+Secondary} to obtain up/down "{}secondary"{} wave amplitudes within the observation layer, and assembles the fields with impedance scaling in that layer. If the observation layer equals the incidence layer, the direct incident contribution is added on top of the secondary fields. 
+
+Implements \mbox{\hyperlink{classIncidentField_a2fbb18ff29205e11b3c0bff676b15a7e}{Incident\+Field}}.
+
+
+
+Definition at line \mbox{\hyperlink{PlaneWave_8cpp_source_l00074}{74}} of file \mbox{\hyperlink{PlaneWave_8cpp_source}{Plane\+Wave.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPlaneWave_ade82a6ff2d60f8df4553d51837525a1c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPlaneWave_ade82a6ff2d60f8df4553d51837525a1c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPlaneWave_abe7fa331497162f9b0e3cd59c3332c34}\index{PlaneWave@{PlaneWave}!IntegrateE@{IntegrateE}}
+\index{IntegrateE@{IntegrateE}!PlaneWave@{PlaneWave}}
+\doxysubsubsection{\texorpdfstring{IntegrateE()}{IntegrateE()}}
+{\footnotesize\ttfamily \label{classPlaneWave_abe7fa331497162f9b0e3cd59c3332c34} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Plane\+Wave\+::\+IntegrateE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{f}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Integrate electric field against an RWG basis function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Pointer to RWG function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex scalar integral value.
+\end{DoxyReturn}
+Uses \doxylink{classGaussian}{Gaussian} quadrature through \doxylink{classGaussQuad_ae1cb48d95d2fad8c46a0a4d44b1216d9}{Gauss\+Quad$<$\+Plane\+Wave$>$\+::\+Integrate}. 
+
+Implements \mbox{\hyperlink{classIncidentField_a277e316a752da5fcb0a0c17088c62ba9}{Incident\+Field}}.
+
+
+
+Definition at line \mbox{\hyperlink{PlaneWave_8cpp_source_l00160}{160}} of file \mbox{\hyperlink{PlaneWave_8cpp_source}{Plane\+Wave.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPlaneWave_abe7fa331497162f9b0e3cd59c3332c34_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPlaneWave_a9b36a0f26c234a178795b1a431d53a03}\index{PlaneWave@{PlaneWave}!IntegrateH@{IntegrateH}}
+\index{IntegrateH@{IntegrateH}!PlaneWave@{PlaneWave}}
+\doxysubsubsection{\texorpdfstring{IntegrateH()}{IntegrateH()}}
+{\footnotesize\ttfamily \label{classPlaneWave_a9b36a0f26c234a178795b1a431d53a03} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Plane\+Wave\+::\+IntegrateH (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{f}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Integrate magnetic field against an RWG basis function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Pointer to RWG function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex scalar integral value.
+\end{DoxyReturn}
+Uses \doxylink{classGaussian}{Gaussian} quadrature through \doxylink{classGaussQuad_ae1cb48d95d2fad8c46a0a4d44b1216d9}{Gauss\+Quad$<$\+Plane\+Wave$>$\+::\+Integrate}. 
+
+Implements \mbox{\hyperlink{classIncidentField_af220ad23b231a3d6d7da35c5799c25cc}{Incident\+Field}}.
+
+
+
+Definition at line \mbox{\hyperlink{PlaneWave_8cpp_source_l00172}{172}} of file \mbox{\hyperlink{PlaneWave_8cpp_source}{Plane\+Wave.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPlaneWave_a9b36a0f26c234a178795b1a431d53a03_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPlaneWave_a80fe83d9acd52a14f7b2f0ea2317b036}\index{PlaneWave@{PlaneWave}!IntegrateLayeredEandH@{IntegrateLayeredEandH}}
+\index{IntegrateLayeredEandH@{IntegrateLayeredEandH}!PlaneWave@{PlaneWave}}
+\doxysubsubsection{\texorpdfstring{IntegrateLayeredEandH()}{IntegrateLayeredEandH()}}
+{\footnotesize\ttfamily \label{classPlaneWave_a80fe83d9acd52a14f7b2f0ea2317b036} 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ Plane\+Wave\+::\+Integrate\+Layered\+EandH (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{f}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Integrate layered E and H fields against an RWG basis function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Pointer to RWG function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of complex values (E,H contributions).
+\end{DoxyReturn}
+Selects \doxylink{classPlaneWave_ade82a6ff2d60f8df4553d51837525a1c}{Evaluate\+Layered\+EandH} for the integrand and passes the global \doxylink{classIncidentField_af45c81c859bda7b0a43818eb8fcf5887}{Needs\+Accurate} flag to the quadrature object. 
+
+Implements \mbox{\hyperlink{classIncidentField_a7183dd5a80a0b88580fc0969cc25bc25}{Incident\+Field}}.
+
+
+
+Definition at line \mbox{\hyperlink{PlaneWave_8cpp_source_l00184}{184}} of file \mbox{\hyperlink{PlaneWave_8cpp_source}{Plane\+Wave.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPlaneWave_a80fe83d9acd52a14f7b2f0ea2317b036_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPlaneWave_ac56a5587971da115e40d4ecfc2a7bbf6}\index{PlaneWave@{PlaneWave}!IsDipole@{IsDipole}}
+\index{IsDipole@{IsDipole}!PlaneWave@{PlaneWave}}
+\doxysubsubsection{\texorpdfstring{IsDipole()}{IsDipole()}}
+{\footnotesize\ttfamily \label{classPlaneWave_ac56a5587971da115e40d4ecfc2a7bbf6} 
+bool Plane\+Wave\+::\+Is\+Dipole (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Identify field as not a \doxylink{classDipole}{Dipole}. 
+
+\begin{DoxyReturn}{Returns}
+False. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIncidentField_ab6e619e10e894f1df66bd1966bb40b21}{Incident\+Field}}.
+
+
+
+Definition at line \mbox{\hyperlink{PlaneWave_8h_source_l00182}{182}} of file \mbox{\hyperlink{PlaneWave_8h_source}{Plane\+Wave.\+h}}.
+
+\Hypertarget{classPlaneWave_a7d182313ad46c1f2a9eadf7eeab08a17}\index{PlaneWave@{PlaneWave}!IsGaussian@{IsGaussian}}
+\index{IsGaussian@{IsGaussian}!PlaneWave@{PlaneWave}}
+\doxysubsubsection{\texorpdfstring{IsGaussian()}{IsGaussian()}}
+{\footnotesize\ttfamily \label{classPlaneWave_a7d182313ad46c1f2a9eadf7eeab08a17} 
+bool Plane\+Wave\+::\+Is\+Gaussian (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Identify field as not a \doxylink{classGaussian}{Gaussian} beam. 
+
+\begin{DoxyReturn}{Returns}
+False. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIncidentField_a16663eb644835d5a7a5979360e5fcbb7}{Incident\+Field}}.
+
+
+
+Definition at line \mbox{\hyperlink{PlaneWave_8h_source_l00188}{188}} of file \mbox{\hyperlink{PlaneWave_8h_source}{Plane\+Wave.\+h}}.
+
+\Hypertarget{classPlaneWave_a028bde791fe8319ca377c14c286a244d}\index{PlaneWave@{PlaneWave}!IsPlaneWave@{IsPlaneWave}}
+\index{IsPlaneWave@{IsPlaneWave}!PlaneWave@{PlaneWave}}
+\doxysubsubsection{\texorpdfstring{IsPlaneWave()}{IsPlaneWave()}}
+{\footnotesize\ttfamily \label{classPlaneWave_a028bde791fe8319ca377c14c286a244d} 
+bool Plane\+Wave\+::\+Is\+Plane\+Wave (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Identify field as a \doxylink{classPlaneWave}{Plane\+Wave}. 
+
+\begin{DoxyReturn}{Returns}
+True. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIncidentField_a55dd80cfe4e8c55ae5dfe44c916b2055}{Incident\+Field}}.
+
+
+
+Definition at line \mbox{\hyperlink{PlaneWave_8h_source_l00176}{176}} of file \mbox{\hyperlink{PlaneWave_8h_source}{Plane\+Wave.\+h}}.
+
+\Hypertarget{classPlaneWave_a7a434b5205266e729210d41ad3ae1b34}\index{PlaneWave@{PlaneWave}!Polarization@{Polarization}}
+\index{Polarization@{Polarization}!PlaneWave@{PlaneWave}}
+\doxysubsubsection{\texorpdfstring{Polarization()}{Polarization()}}
+{\footnotesize\ttfamily \label{classPlaneWave_a7a434b5205266e729210d41ad3ae1b34} 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} Plane\+Wave\+::\+Polarization (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Return the polarization vector of the plane wave. 
+
+\begin{DoxyReturn}{Returns}
+Polarization complex vector. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{PlaneWave_8cpp_source_l00196}{196}} of file \mbox{\hyperlink{PlaneWave_8cpp_source}{Plane\+Wave.\+cpp}}.
+
+\Hypertarget{classPlaneWave_aa6b2d336c79c07cf23471fe99642d933}\index{PlaneWave@{PlaneWave}!rvec2cvec@{rvec2cvec}}
+\index{rvec2cvec@{rvec2cvec}!PlaneWave@{PlaneWave}}
+\doxysubsubsection{\texorpdfstring{rvec2cvec()}{rvec2cvec()}}
+{\footnotesize\ttfamily \label{classPlaneWave_aa6b2d336c79c07cf23471fe99642d933} 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} Plane\+Wave\+::rvec2cvec (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \&}]{rv}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Convert rvec to cvec (real vector to complex vector). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rv} & Real vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex vector. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{PlaneWave_8h_source_l00130}{130}} of file \mbox{\hyperlink{PlaneWave_8h_source}{Plane\+Wave.\+h}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPlaneWave_aa6b2d336c79c07cf23471fe99642d933_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classPlaneWave_ae4945c7b5e38022304cc31b270625c88}\index{PlaneWave@{PlaneWave}!setGrnFunLayered@{setGrnFunLayered}}
+\index{setGrnFunLayered@{setGrnFunLayered}!PlaneWave@{PlaneWave}}
+\doxysubsubsection{\texorpdfstring{setGrnFunLayered()}{setGrnFunLayered()}}
+{\footnotesize\ttfamily \label{classPlaneWave_ae4945c7b5e38022304cc31b270625c88} 
+void Plane\+Wave\+::set\+Grn\+Fun\+Layered (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGreenF}{GreenF}} \texorpdfstring{$\ast$}{*}}]{f\+Grn\+Fields}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{structGrid}{Grid}} $>$}]{tab\+Grids}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Provide layered-\/medium Green\textquotesingle{}s function and its tabulation grids. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f\+Grn\+Fields} & Pointer to a Green\textquotesingle{}s-\/function backend (homogeneous or layered). \\
+\hline
+{\em tab\+Grids} & Interpolation grids used by the layered backend.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & always. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classIncidentField_a03028097aa5da8ba73cd92af43c78cd9}{Incident\+Field}}.
+
+
+
+Definition at line \mbox{\hyperlink{PlaneWave_8cpp_source_l00201}{201}} of file \mbox{\hyperlink{PlaneWave_8cpp_source}{Plane\+Wave.\+cpp}}.
+
+\Hypertarget{classPlaneWave_aef5b0a933a9727948336bcdb707d8399}\index{PlaneWave@{PlaneWave}!Wavevector@{Wavevector}}
+\index{Wavevector@{Wavevector}!PlaneWave@{PlaneWave}}
+\doxysubsubsection{\texorpdfstring{Wavevector()}{Wavevector()}}
+{\footnotesize\ttfamily \label{classPlaneWave_aef5b0a933a9727948336bcdb707d8399} 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} Plane\+Wave\+::\+Wavevector (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Return the wavevector of the plane wave. 
+
+\begin{DoxyReturn}{Returns}
+Complex wavevector. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{PlaneWave_8cpp_source_l00193}{193}} of file \mbox{\hyperlink{PlaneWave_8cpp_source}{Plane\+Wave.\+cpp}}.
+
+\Hypertarget{classPlaneWave_a1f1fd1b5140ab23b3ec7899e6962e60f}\index{PlaneWave@{PlaneWave}!writeEHData@{writeEHData}}
+\index{writeEHData@{writeEHData}!PlaneWave@{PlaneWave}}
+\doxysubsubsection{\texorpdfstring{writeEHData()}{writeEHData()}}
+{\footnotesize\ttfamily \label{classPlaneWave_a1f1fd1b5140ab23b3ec7899e6962e60f} 
+void Plane\+Wave\+::write\+EHData (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} $>$ \&}]{points}{, }\item[{const std\+::string \&}]{e\+Filename}{, }\item[{const std\+::string \&}]{h\+Filename}{}\end{DoxyParamCaption})}
+
+
+
+Write E and H field values at sample points to CSV files. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em points} & List of 3D sample points. \\
+\hline
+{\em e\+Filename} & Output filename for electric field. \\
+\hline
+{\em h\+Filename} & Output filename for magnetic field.\\
+\hline
+\end{DoxyParams}
+Produces two files with headers\+:
+\begin{DoxyItemize}
+\item E CSV\+: x,y,z,Ex\+\_\+re,Ex\+\_\+im,Ey\+\_\+re,Ey\+\_\+im,Ez\+\_\+re,Ez\+\_\+im
+\item H CSV\+: x,y,z,Hx\+\_\+re,Hx\+\_\+im,Hy\+\_\+re,Hy\+\_\+im,Hz\+\_\+re,Hz\+\_\+im 
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if files cannot be opened for writing. \\
+\hline
+\end{DoxyExceptions}
+
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{PlaneWave_8cpp_source_l00211}{211}} of file \mbox{\hyperlink{PlaneWave_8cpp_source}{Plane\+Wave.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPlaneWave_a1f1fd1b5140ab23b3ec7899e6962e60f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPlaneWave_a1f1fd1b5140ab23b3ec7899e6962e60f_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classPlaneWave_ab54cdf91faa1f37bc2f1c3b0e8694f78}\index{PlaneWave@{PlaneWave}!dir@{dir}}
+\index{dir@{dir}!PlaneWave@{PlaneWave}}
+\doxysubsubsection{\texorpdfstring{dir}{dir}}
+{\footnotesize\ttfamily \label{classPlaneWave_ab54cdf91faa1f37bc2f1c3b0e8694f78} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} Plane\+Wave\+::dir\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Propagation direction (unit vector) 
+
+
+
+Definition at line \mbox{\hyperlink{PlaneWave_8h_source_l00028}{28}} of file \mbox{\hyperlink{PlaneWave_8h_source}{Plane\+Wave.\+h}}.
+
+\Hypertarget{classPlaneWave_a62efc0919cff4aba04757a1a6f814c57}\index{PlaneWave@{PlaneWave}!gauss@{gauss}}
+\index{gauss@{gauss}!PlaneWave@{PlaneWave}}
+\doxysubsubsection{\texorpdfstring{gauss}{gauss}}
+{\footnotesize\ttfamily \label{classPlaneWave_a62efc0919cff4aba04757a1a6f814c57} 
+\mbox{\hyperlink{classGaussQuad}{Gauss\+Quad}}$<$\mbox{\hyperlink{classPlaneWave}{Plane\+Wave}}$>$ Plane\+Wave\+::gauss\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{classGaussian}{Gaussian} quadrature integrator. 
+
+
+
+Definition at line \mbox{\hyperlink{PlaneWave_8h_source_l00031}{31}} of file \mbox{\hyperlink{PlaneWave_8h_source}{Plane\+Wave.\+h}}.
+
+\Hypertarget{classPlaneWave_aa865592736f333f9c86d5aeb797f0e1f}\index{PlaneWave@{PlaneWave}!incLayerIndex@{incLayerIndex}}
+\index{incLayerIndex@{incLayerIndex}!PlaneWave@{PlaneWave}}
+\doxysubsubsection{\texorpdfstring{incLayerIndex}{incLayerIndex}}
+{\footnotesize\ttfamily \label{classPlaneWave_aa865592736f333f9c86d5aeb797f0e1f} 
+int Plane\+Wave\+::inc\+Layer\+Index\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Layer index of incidence. 
+
+
+
+Definition at line \mbox{\hyperlink{PlaneWave_8h_source_l00030}{30}} of file \mbox{\hyperlink{PlaneWave_8h_source}{Plane\+Wave.\+h}}.
+
+\Hypertarget{classPlaneWave_a9f2f01d57babaa07cecaaee52eadaa90}\index{PlaneWave@{PlaneWave}!incLayerZ@{incLayerZ}}
+\index{incLayerZ@{incLayerZ}!PlaneWave@{PlaneWave}}
+\doxysubsubsection{\texorpdfstring{incLayerZ}{incLayerZ}}
+{\footnotesize\ttfamily \label{classPlaneWave_a9f2f01d57babaa07cecaaee52eadaa90} 
+double Plane\+Wave\+::inc\+LayerZ\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+z of first interface in incidence layer 
+
+
+
+Definition at line \mbox{\hyperlink{PlaneWave_8h_source_l00029}{29}} of file \mbox{\hyperlink{PlaneWave_8h_source}{Plane\+Wave.\+h}}.
+
+\Hypertarget{classPlaneWave_a0d905a16520cb278fd50fff86a51eccf}\index{PlaneWave@{PlaneWave}!k@{k}}
+\index{k@{k}!PlaneWave@{PlaneWave}}
+\doxysubsubsection{\texorpdfstring{k}{k}}
+{\footnotesize\ttfamily \label{classPlaneWave_a0d905a16520cb278fd50fff86a51eccf} 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} Plane\+Wave\+::k\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Wavevector. 
+
+
+
+Definition at line \mbox{\hyperlink{PlaneWave_8h_source_l00023}{23}} of file \mbox{\hyperlink{PlaneWave_8h_source}{Plane\+Wave.\+h}}.
+
+\Hypertarget{classPlaneWave_aeca25da3f6d45a6bb3b1bd6f67a830bb}\index{PlaneWave@{PlaneWave}!krho@{krho}}
+\index{krho@{krho}!PlaneWave@{PlaneWave}}
+\doxysubsubsection{\texorpdfstring{krho}{krho}}
+{\footnotesize\ttfamily \label{classPlaneWave_aeca25da3f6d45a6bb3b1bd6f67a830bb} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Plane\+Wave\+::krho\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Transverse wavenumber component. 
+
+
+
+Definition at line \mbox{\hyperlink{PlaneWave_8h_source_l00024}{24}} of file \mbox{\hyperlink{PlaneWave_8h_source}{Plane\+Wave.\+h}}.
+
+\Hypertarget{classPlaneWave_aecde65abb68ba39fa4d6d7ce7138a815}\index{PlaneWave@{PlaneWave}!layeredUtils@{layeredUtils}}
+\index{layeredUtils@{layeredUtils}!PlaneWave@{PlaneWave}}
+\doxysubsubsection{\texorpdfstring{layeredUtils}{layeredUtils}}
+{\footnotesize\ttfamily \label{classPlaneWave_aecde65abb68ba39fa4d6d7ce7138a815} 
+\mbox{\hyperlink{classLayeredMediaUtils}{Layered\+Media\+Utils}}\texorpdfstring{$\ast$}{*} Plane\+Wave\+::layered\+Utils\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Utilities for layered case. 
+
+
+
+Definition at line \mbox{\hyperlink{PlaneWave_8h_source_l00032}{32}} of file \mbox{\hyperlink{PlaneWave_8h_source}{Plane\+Wave.\+h}}.
+
+\Hypertarget{classPlaneWave_a5e4cc282d994bdb3edc5f2e0c301d26f}\index{PlaneWave@{PlaneWave}!p@{p}}
+\index{p@{p}!PlaneWave@{PlaneWave}}
+\doxysubsubsection{\texorpdfstring{p}{p}}
+{\footnotesize\ttfamily \label{classPlaneWave_a5e4cc282d994bdb3edc5f2e0c301d26f} 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} Plane\+Wave\+::p\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Polarization vector. 
+
+
+
+Definition at line \mbox{\hyperlink{PlaneWave_8h_source_l00025}{25}} of file \mbox{\hyperlink{PlaneWave_8h_source}{Plane\+Wave.\+h}}.
+
+\Hypertarget{classPlaneWave_ad86721e04a76637cd02b653486491655}\index{PlaneWave@{PlaneWave}!z@{z}}
+\index{z@{z}!PlaneWave@{PlaneWave}}
+\doxysubsubsection{\texorpdfstring{z}{z}}
+{\footnotesize\ttfamily \label{classPlaneWave_ad86721e04a76637cd02b653486491655} 
+double Plane\+Wave\+::z\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Impedance (homogeneous medium) 
+
+
+
+Definition at line \mbox{\hyperlink{PlaneWave_8h_source_l00026}{26}} of file \mbox{\hyperlink{PlaneWave_8h_source}{Plane\+Wave.\+h}}.
+
+\Hypertarget{classPlaneWave_a1f095386eab09f332c3310f806163f57}\index{PlaneWave@{PlaneWave}!zL@{zL}}
+\index{zL@{zL}!PlaneWave@{PlaneWave}}
+\doxysubsubsection{\texorpdfstring{zL}{zL}}
+{\footnotesize\ttfamily \label{classPlaneWave_a1f095386eab09f332c3310f806163f57} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Plane\+Wave\+::zL\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Impedance in layered medium. 
+
+
+
+Definition at line \mbox{\hyperlink{PlaneWave_8h_source_l00027}{27}} of file \mbox{\hyperlink{PlaneWave_8h_source}{Plane\+Wave.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{PlaneWave_8h}{Plane\+Wave.\+h}}\item 
+\mbox{\hyperlink{PlaneWave_8cpp}{Plane\+Wave.\+cpp}}\end{DoxyCompactItemize}

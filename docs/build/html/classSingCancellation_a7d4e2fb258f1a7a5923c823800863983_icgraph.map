@@ -1,0 +1,5 @@
+<map id="SingCancellation::commonFacet" name="SingCancellation::commonFacet">
+<area shape="rect" id="Node000001" title="Build paired quadrature for identical triangles (common facet)." alt="" coords="301,5,496,50"/>
+<area shape="rect" id="Node000002" href="$classSingCancellation.html#a8931df16b2dd06d74b1aa8a78eab4363" title="Construct and immediately generate the paired quadrature for a triangle pair." alt="" coords="5,14,253,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="285,30,253,30,253,25,285,25"/>
+</map>

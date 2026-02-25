@@ -1,0 +1,5 @@
+<map id="CLFlag::CLFlag" name="CLFlag::CLFlag">
+<area shape="rect" id="Node000001" title="Construct a flag option bound to a bool." alt="" coords="5,5,123,33"/>
+<area shape="rect" id="Node000002" href="$classCLParser.html#ae3702d514303a9f957e3381d71c4d6df" title="Construct with an option token." alt="" coords="171,5,312,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="123,16,155,16,155,22,123,22"/>
+</map>

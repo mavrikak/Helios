@@ -1,0 +1,12 @@
+<map id="GreenFHom3DPer::GreenFHom3DPer" name="GreenFHom3DPer::GreenFHom3DPer">
+<area shape="rect" id="Node000001" title="Homogeneous, magnetic constructor with Bloch vector." alt="" coords="5,29,269,57"/>
+<area shape="rect" id="Node000002" href="$classGreenFHom3D.html#ac928f16e6e79c75c002d9a721a8858d8" title="Default constructor (initializes with zeroed wavenumber and no lookup table)." alt="" coords="317,29,538,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="269,40,301,40,301,46,269,46"/>
+<area shape="rect" id="Node000003" href="$classGreenF.html#a332ac24f39288170f77c18f37fde2c82" title="Constructor for a homogeneous, non&#45;magnetic medium." alt="" coords="586,29,708,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="539,40,570,40,570,46,539,46"/>
+<area shape="rect" id="Node000004" href="$group__greenFunction.html#gac0a52dce23be7dacdf97c68653b6c137" title="Complex square root with a branch cut along the negative real axis." alt="" coords="756,29,810,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="709,40,741,40,741,46,709,46"/>
+<area shape="rect" id="Node000005" href="$Domain_8cpp.html#aafa3e4fa6318b2f8740f4dbd50c367e5" title="Extract the real part of each component of a complex 3&#45;vector." alt="" coords="858,29,904,57"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="810,40,842,40,842,46,810,46"/>
+<area shape="poly" id="edge5_Node000005_Node000005" title=" " alt="" coords="863,30,860,20,862,11,869,5,881,3,893,5,900,12,896,15,891,10,881,8,872,10,867,14,865,20,868,28"/>
+</map>

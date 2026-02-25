@@ -1,0 +1,341 @@
+\doxysection{Incident\+Field Class Reference}
+\hypertarget{classIncidentField}{}\label{classIncidentField}\index{IncidentField@{IncidentField}}
+
+
+Abstract base for incident fields (excitations) used in SIE.  
+
+
+
+
+{\ttfamily \#include $<$Incident\+Field.\+h$>$}
+
+
+
+Inheritance diagram for Incident\+Field\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIncidentField__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Incident\+Field\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{classIncidentField__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classIncidentField_a79ee067f9cdb57c3ec8a82c937541dc5}{\texorpdfstring{$\sim$}{\string~}\+Incident\+Field}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor to allow proper cleanup through base pointer. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classIncidentField_a2c6e363fff67c453f9ab2b550bb6bb20}{EvaluateE}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} position)=0
+\begin{DoxyCompactList}\small\item\em Evaluate the incident electric field $\mathbf{E}^{inc}(\mathbf{r})$. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classIncidentField_a7f960fdcdeaf381ad12a49c190f180ff}{EvaluateH}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} position)=0
+\begin{DoxyCompactList}\small\item\em Evaluate the incident magnetic field $\mathbf{H}^{inc}(\mathbf{r})$. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ \mbox{\hyperlink{classIncidentField_a2fbb18ff29205e11b3c0bff676b15a7e}{Evaluate\+Layered\+EandH}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} position)=0
+\begin{DoxyCompactList}\small\item\em Evaluate $(\mathbf{E}^{inc}, \mathbf{H}^{inc})$ in layered media. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classIncidentField_a277e316a752da5fcb0a0c17088c62ba9}{IntegrateE}} (\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}f)=0
+\begin{DoxyCompactList}\small\item\em RWG projection of the incident electric field. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classIncidentField_af220ad23b231a3d6d7da35c5799c25cc}{IntegrateH}} (\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}f)=0
+\begin{DoxyCompactList}\small\item\em RWG projection of the incident magnetic field. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{classIncidentField_a7183dd5a80a0b88580fc0969cc25bc25}{Integrate\+Layered\+EandH}} (\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}f)=0
+\begin{DoxyCompactList}\small\item\em RWG projection of $(\mathbf{E}^{inc}, \mathbf{H}^{inc})$ in layered media. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classIncidentField_a55dd80cfe4e8c55ae5dfe44c916b2055}{Is\+Plane\+Wave}} ()=0
+\begin{DoxyCompactList}\small\item\em True if this excitation is a \doxylink{classPlaneWave}{Plane\+Wave}. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classIncidentField_ab6e619e10e894f1df66bd1966bb40b21}{Is\+Dipole}} ()=0
+\begin{DoxyCompactList}\small\item\em True if this excitation is a \doxylink{classDipole}{Dipole}. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classIncidentField_a16663eb644835d5a7a5979360e5fcbb7}{Is\+Gaussian}} ()=0
+\begin{DoxyCompactList}\small\item\em True if this excitation is a \doxylink{classGaussian}{Gaussian} beam. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classIncidentField_a03028097aa5da8ba73cd92af43c78cd9}{set\+Grn\+Fun\+Layered}} (\mbox{\hyperlink{classGreenF}{GreenF}} \texorpdfstring{$\ast$}{*}f\+Grn\+Fields, std\+::vector$<$ \mbox{\hyperlink{structGrid}{Grid}} $>$ tab\+Grids)=0
+\begin{DoxyCompactList}\small\item\em Provide layered-\/medium Green\textquotesingle{}s function and its tabulation grids. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classIncidentField_aa8e0e6dc5e0acf432cc06a76f5d33baf}{Enable\+Accurate}} ()
+\begin{DoxyCompactList}\small\item\em Enable high-\/accuracy integration for excitations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classIncidentField_af45c81c859bda7b0a43818eb8fcf5887}{Needs\+Accurate}} = false
+\begin{DoxyCompactList}\small\item\em Global toggle\+: request accurate/expensive integration path. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base for incident fields (excitations) used in SIE. 
+
+Derived classes must implement both pointwise evaluations and the RWG-\/based integral projections that populate the excitation vectors. When working in a layered background, implementations typically rely on a layered Green\textquotesingle{}s function provided via \doxylink{classIncidentField_a03028097aa5da8ba73cd92af43c78cd9}{set\+Grn\+Fun\+Layered}. 
+
+Definition at line \mbox{\hyperlink{IncidentField_8h_source_l00034}{34}} of file \mbox{\hyperlink{IncidentField_8h_source}{Incident\+Field.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classIncidentField_a79ee067f9cdb57c3ec8a82c937541dc5}\index{IncidentField@{IncidentField}!````~IncidentField@{\texorpdfstring{$\sim$}{\string~}IncidentField}}
+\index{````~IncidentField@{\texorpdfstring{$\sim$}{\string~}IncidentField}!IncidentField@{IncidentField}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IncidentField()}{\string~IncidentField()}}
+{\footnotesize\ttfamily \label{classIncidentField_a79ee067f9cdb57c3ec8a82c937541dc5} 
+Incident\+Field\+::\texorpdfstring{$\sim$}{\string~}\+Incident\+Field (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual destructor to allow proper cleanup through base pointer. 
+
+
+
+Definition at line \mbox{\hyperlink{IncidentField_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{IncidentField_8cpp_source}{Incident\+Field.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classIncidentField_aa8e0e6dc5e0acf432cc06a76f5d33baf}\index{IncidentField@{IncidentField}!EnableAccurate@{EnableAccurate}}
+\index{EnableAccurate@{EnableAccurate}!IncidentField@{IncidentField}}
+\doxysubsubsection{\texorpdfstring{EnableAccurate()}{EnableAccurate()}}
+{\footnotesize\ttfamily \label{classIncidentField_aa8e0e6dc5e0acf432cc06a76f5d33baf} 
+void Incident\+Field\+::\+Enable\+Accurate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Enable high-\/accuracy integration for excitations. 
+
+
+
+Definition at line \mbox{\hyperlink{IncidentField_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{IncidentField_8cpp_source}{Incident\+Field.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{classIncidentField_aa8e0e6dc5e0acf432cc06a76f5d33baf_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classIncidentField_a2c6e363fff67c453f9ab2b550bb6bb20}\index{IncidentField@{IncidentField}!EvaluateE@{EvaluateE}}
+\index{EvaluateE@{EvaluateE}!IncidentField@{IncidentField}}
+\doxysubsubsection{\texorpdfstring{EvaluateE()}{EvaluateE()}}
+{\footnotesize\ttfamily \label{classIncidentField_a2c6e363fff67c453f9ab2b550bb6bb20} 
+virtual \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} Incident\+Field\+::\+EvaluateE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{position}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Evaluate the incident electric field $\mathbf{E}^{inc}(\mathbf{r})$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Observation point in Cartesian coordinates. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex 3-\/vector (Ex, Ey, Ez). 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classDipole_ab4873557b39cc8d504446c35392ab2a0}{Dipole}}, \mbox{\hyperlink{classGaussian_a0cccdedf53f0840888d57144566442b4}{Gaussian}}, and \mbox{\hyperlink{classPlaneWave_a21e80621788fddf887cf27b7c6f9bdf7}{Plane\+Wave}}.
+
+\Hypertarget{classIncidentField_a7f960fdcdeaf381ad12a49c190f180ff}\index{IncidentField@{IncidentField}!EvaluateH@{EvaluateH}}
+\index{EvaluateH@{EvaluateH}!IncidentField@{IncidentField}}
+\doxysubsubsection{\texorpdfstring{EvaluateH()}{EvaluateH()}}
+{\footnotesize\ttfamily \label{classIncidentField_a7f960fdcdeaf381ad12a49c190f180ff} 
+virtual \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} Incident\+Field\+::\+EvaluateH (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{position}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Evaluate the incident magnetic field $\mathbf{H}^{inc}(\mathbf{r})$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Observation point in Cartesian coordinates. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex 3-\/vector (Hx, Hy, Hz). 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classDipole_a4d85fde503ac7167f832503d5256c5e9}{Dipole}}, \mbox{\hyperlink{classGaussian_ad420298383fc00144d4f1dc9e87b8ee7}{Gaussian}}, and \mbox{\hyperlink{classPlaneWave_a25c1de1e9cee6a241765539a4b22f103}{Plane\+Wave}}.
+
+\Hypertarget{classIncidentField_a2fbb18ff29205e11b3c0bff676b15a7e}\index{IncidentField@{IncidentField}!EvaluateLayeredEandH@{EvaluateLayeredEandH}}
+\index{EvaluateLayeredEandH@{EvaluateLayeredEandH}!IncidentField@{IncidentField}}
+\doxysubsubsection{\texorpdfstring{EvaluateLayeredEandH()}{EvaluateLayeredEandH()}}
+{\footnotesize\ttfamily \label{classIncidentField_a2fbb18ff29205e11b3c0bff676b15a7e} 
+virtual std\+::vector$<$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ Incident\+Field\+::\+Evaluate\+Layered\+EandH (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{position}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Evaluate $(\mathbf{E}^{inc}, \mathbf{H}^{inc})$ in layered media. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Observation point in Cartesian coordinates. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A 2-\/element vector\+: $(\mathbf{E}^{inc}, \mathbf{H}^{inc})$, each a complex 3-\/vector. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classDipole_a5ffb98d7b929694cd41ec4e3a9593864}{Dipole}}, \mbox{\hyperlink{classGaussian_a92fa8f6f7a12c4b81b446903eb344bc3}{Gaussian}}, and \mbox{\hyperlink{classPlaneWave_ade82a6ff2d60f8df4553d51837525a1c}{Plane\+Wave}}.
+
+\Hypertarget{classIncidentField_a277e316a752da5fcb0a0c17088c62ba9}\index{IncidentField@{IncidentField}!IntegrateE@{IntegrateE}}
+\index{IntegrateE@{IntegrateE}!IncidentField@{IncidentField}}
+\doxysubsubsection{\texorpdfstring{IntegrateE()}{IntegrateE()}}
+{\footnotesize\ttfamily \label{classIncidentField_a277e316a752da5fcb0a0c17088c62ba9} 
+virtual \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Incident\+Field\+::\+IntegrateE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{f}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+RWG projection of the incident electric field. 
+
+Performs the scalar test integral on the triangle supporting the RWG basis function {\ttfamily f} to assemble the electric-\/field excitation entry. 
+\begin{DoxyParams}{Parameters}
+{\em f} & Pointer to the RWG test function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex scalar contribution for the excitation vector. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classDipole_a212daff5bb4e371b91e138e128722edd}{Dipole}}, \mbox{\hyperlink{classGaussian_a7c63c2889ab8b3c019c3d04c568c2ad4}{Gaussian}}, and \mbox{\hyperlink{classPlaneWave_abe7fa331497162f9b0e3cd59c3332c34}{Plane\+Wave}}.
+
+\Hypertarget{classIncidentField_af220ad23b231a3d6d7da35c5799c25cc}\index{IncidentField@{IncidentField}!IntegrateH@{IntegrateH}}
+\index{IntegrateH@{IntegrateH}!IncidentField@{IncidentField}}
+\doxysubsubsection{\texorpdfstring{IntegrateH()}{IntegrateH()}}
+{\footnotesize\ttfamily \label{classIncidentField_af220ad23b231a3d6d7da35c5799c25cc} 
+virtual \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Incident\+Field\+::\+IntegrateH (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{f}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+RWG projection of the incident magnetic field. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Pointer to the RWG test function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex scalar contribution for the excitation vector. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classDipole_a1dd3ce01913b5cff62ea44cc9590e49d}{Dipole}}, \mbox{\hyperlink{classGaussian_a5a2bbd00d15351a497efe6cd5fb333d3}{Gaussian}}, and \mbox{\hyperlink{classPlaneWave_a9b36a0f26c234a178795b1a431d53a03}{Plane\+Wave}}.
+
+\Hypertarget{classIncidentField_a7183dd5a80a0b88580fc0969cc25bc25}\index{IncidentField@{IncidentField}!IntegrateLayeredEandH@{IntegrateLayeredEandH}}
+\index{IntegrateLayeredEandH@{IntegrateLayeredEandH}!IncidentField@{IncidentField}}
+\doxysubsubsection{\texorpdfstring{IntegrateLayeredEandH()}{IntegrateLayeredEandH()}}
+{\footnotesize\ttfamily \label{classIncidentField_a7183dd5a80a0b88580fc0969cc25bc25} 
+virtual std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ Incident\+Field\+::\+Integrate\+Layered\+EandH (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{f}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+RWG projection of $(\mathbf{E}^{inc}, \mathbf{H}^{inc})$ in layered media. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Pointer to the RWG test function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Two complex scalars\+: $(\mathbf{E}^{exc}, \mathbf{H}^{exc})$. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classDipole_ad6b98d59b3e4e25f5715c0d55f7802a4}{Dipole}}, \mbox{\hyperlink{classGaussian_a052cfe5b26791974210c2a3f46a0ea64}{Gaussian}}, and \mbox{\hyperlink{classPlaneWave_a80fe83d9acd52a14f7b2f0ea2317b036}{Plane\+Wave}}.
+
+\Hypertarget{classIncidentField_ab6e619e10e894f1df66bd1966bb40b21}\index{IncidentField@{IncidentField}!IsDipole@{IsDipole}}
+\index{IsDipole@{IsDipole}!IncidentField@{IncidentField}}
+\doxysubsubsection{\texorpdfstring{IsDipole()}{IsDipole()}}
+{\footnotesize\ttfamily \label{classIncidentField_ab6e619e10e894f1df66bd1966bb40b21} 
+virtual bool Incident\+Field\+::\+Is\+Dipole (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+True if this excitation is a \doxylink{classDipole}{Dipole}. 
+
+\begin{DoxyReturn}{Returns}
+True if \doxylink{classDipole}{Dipole} illumination exists. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classDipole_a5cbd149068ebf7d40f1776285124c390}{Dipole}}, \mbox{\hyperlink{classGaussian_a18fb0a47d0bce2fccb93c2f594f743a6}{Gaussian}}, and \mbox{\hyperlink{classPlaneWave_ac56a5587971da115e40d4ecfc2a7bbf6}{Plane\+Wave}}.
+
+\Hypertarget{classIncidentField_a16663eb644835d5a7a5979360e5fcbb7}\index{IncidentField@{IncidentField}!IsGaussian@{IsGaussian}}
+\index{IsGaussian@{IsGaussian}!IncidentField@{IncidentField}}
+\doxysubsubsection{\texorpdfstring{IsGaussian()}{IsGaussian()}}
+{\footnotesize\ttfamily \label{classIncidentField_a16663eb644835d5a7a5979360e5fcbb7} 
+virtual bool Incident\+Field\+::\+Is\+Gaussian (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+True if this excitation is a \doxylink{classGaussian}{Gaussian} beam. 
+
+\begin{DoxyReturn}{Returns}
+True if \doxylink{classGaussian}{Gaussian} illumination exists. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classDipole_a40f2ba72f8dccd762a8c4084a58a12df}{Dipole}}, \mbox{\hyperlink{classGaussian_a9a094fdc95225f2ebaf4ade697908d3c}{Gaussian}}, and \mbox{\hyperlink{classPlaneWave_a7d182313ad46c1f2a9eadf7eeab08a17}{Plane\+Wave}}.
+
+\Hypertarget{classIncidentField_a55dd80cfe4e8c55ae5dfe44c916b2055}\index{IncidentField@{IncidentField}!IsPlaneWave@{IsPlaneWave}}
+\index{IsPlaneWave@{IsPlaneWave}!IncidentField@{IncidentField}}
+\doxysubsubsection{\texorpdfstring{IsPlaneWave()}{IsPlaneWave()}}
+{\footnotesize\ttfamily \label{classIncidentField_a55dd80cfe4e8c55ae5dfe44c916b2055} 
+virtual bool Incident\+Field\+::\+Is\+Plane\+Wave (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+True if this excitation is a \doxylink{classPlaneWave}{Plane\+Wave}. 
+
+\begin{DoxyReturn}{Returns}
+True if \doxylink{classPlaneWave}{Plane\+Wave} illumination exists. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classDipole_a056558ea28c9ae3bea6e49e409f75c9b}{Dipole}}, \mbox{\hyperlink{classGaussian_a4cb678d885117a191d246ecb5e7f595a}{Gaussian}}, and \mbox{\hyperlink{classPlaneWave_a028bde791fe8319ca377c14c286a244d}{Plane\+Wave}}.
+
+\Hypertarget{classIncidentField_a03028097aa5da8ba73cd92af43c78cd9}\index{IncidentField@{IncidentField}!setGrnFunLayered@{setGrnFunLayered}}
+\index{setGrnFunLayered@{setGrnFunLayered}!IncidentField@{IncidentField}}
+\doxysubsubsection{\texorpdfstring{setGrnFunLayered()}{setGrnFunLayered()}}
+{\footnotesize\ttfamily \label{classIncidentField_a03028097aa5da8ba73cd92af43c78cd9} 
+virtual void Incident\+Field\+::set\+Grn\+Fun\+Layered (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGreenF}{GreenF}} \texorpdfstring{$\ast$}{*}}]{f\+Grn\+Fields}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{structGrid}{Grid}} $>$}]{tab\+Grids}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Provide layered-\/medium Green\textquotesingle{}s function and its tabulation grids. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f\+Grn\+Fields} & Pointer to a Green\textquotesingle{}s-\/function backend (homogeneous or layered). The callee does not take ownership. \\
+\hline
+{\em tab\+Grids} & Interpolation grids used by the layered backend. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classDipole_a2e30bf49055a001b5d8c3e695f103e3d}{Dipole}}, \mbox{\hyperlink{classGaussian_a045c0864d0ce2062c99cfb14680ccad3}{Gaussian}}, and \mbox{\hyperlink{classPlaneWave_ae4945c7b5e38022304cc31b270625c88}{Plane\+Wave}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classIncidentField_af45c81c859bda7b0a43818eb8fcf5887}\index{IncidentField@{IncidentField}!NeedsAccurate@{NeedsAccurate}}
+\index{NeedsAccurate@{NeedsAccurate}!IncidentField@{IncidentField}}
+\doxysubsubsection{\texorpdfstring{NeedsAccurate}{NeedsAccurate}}
+{\footnotesize\ttfamily \label{classIncidentField_af45c81c859bda7b0a43818eb8fcf5887} 
+bool Incident\+Field\+::\+Needs\+Accurate = false\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Global toggle\+: request accurate/expensive integration path. 
+
+
+
+Definition at line \mbox{\hyperlink{IncidentField_8h_source_l00037}{37}} of file \mbox{\hyperlink{IncidentField_8h_source}{Incident\+Field.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{IncidentField_8h}{Incident\+Field.\+h}}\item 
+\mbox{\hyperlink{IncidentField_8cpp}{Incident\+Field.\+cpp}}\end{DoxyCompactItemize}

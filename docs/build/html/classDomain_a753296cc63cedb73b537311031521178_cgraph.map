@@ -1,0 +1,5 @@
+<map id="Domain::AddTrianglesFromMesh" name="Domain::AddTrianglesFromMesh">
+<area shape="rect" id="Node000001" title="Add all boundary triangles belonging to region dIndex and build RWGs." alt="" coords="5,5,237,33"/>
+<area shape="rect" id="Node000002" href="$classSurfaceMesh.html#a7681019f61e9c1542c893c177117dac4" title="Triangles bordering a given domain (FRONT or BACK)." alt="" coords="285,5,519,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="237,16,269,16,269,22,237,22"/>
+</map>

@@ -1,0 +1,699 @@
+\doxysection{Layered\+Media\+Utils.\+cpp}
+\hypertarget{LayeredMediaUtils_8cpp_source}{}\label{LayeredMediaUtils_8cpp_source}\index{LayeredMediaUtils.cpp@{LayeredMediaUtils.cpp}}
+\mbox{\hyperlink{LayeredMediaUtils_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{LayeredMediaUtils_8h}{LayeredMediaUtils.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <numeric>}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <unordered\_set>}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00021}\mbox{\hyperlink{LayeredMediaUtils_8cpp_a50405603197731a46c864b0f39744ed0}{00021}}\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{LayeredMediaUtils_8cpp_a50405603197731a46c864b0f39744ed0}{complexSqrt}}(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ arg)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00022}00022\ \ \ \textcolor{keywordflow}{if}\ (imag(arg)\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00023}00023\ \ \ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ buf(\mbox{\hyperlink{Domain_8cpp_aafa3e4fa6318b2f8740f4dbd50c367e5}{real}}(arg),\ 0);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00024}00024\ \ \ \ \ arg\ =\ buf;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00025}00025\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00026}00026\ \ \ \textcolor{keywordflow}{if}\ (imag(arg)\ <\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordflow}{return}\ -\/sqrt(arg);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00028}00028\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00029}00029\ \ \ \ \ \textcolor{keywordflow}{return}\ sqrt(arg);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00030}00030\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00031}00031\ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00037}\mbox{\hyperlink{classLayeredMediaUtils_ab8e302cf64bf49c94765e9c610cf12c5}{00037}}\ \mbox{\hyperlink{classLayeredMediaUtils_ab8e302cf64bf49c94765e9c610cf12c5}{LayeredMediaUtils::LayeredMediaUtils}}(\textcolor{keyword}{const}\ std::vector<dcmplx>\&\ inLayeredK,}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<dcmplx>\&\ inEpsilonMedium,}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<dcmplx>\&\ inMuMedium,}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\&\ inZValsInterfaces,}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\&\ inThickness,}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ inMidLayerIndex)\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00043}00043\ \ \ \ \ :\ \mbox{\hyperlink{classLayeredMediaUtils_a03d746d29be9c90b6866078b35090888}{k\_L}}(inLayeredK),}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00044}00044\ \ \ \ \ \ \ \mbox{\hyperlink{classLayeredMediaUtils_aac35250533c1bf922827b5a91220fb32}{epsilon}}(inEpsilonMedium),}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00045}00045\ \ \ \ \ \ \ \mbox{\hyperlink{classLayeredMediaUtils_a737efea63d0c23873f1460e7d76a198a}{mu}}(inMuMedium),}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00046}00046\ \ \ \ \ \ \ \mbox{\hyperlink{classLayeredMediaUtils_a98057e700d2180e8ee96e85a2d1cf494}{zValsInterfaces}}(inZValsInterfaces),}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00047}00047\ \ \ \ \ \ \ \mbox{\hyperlink{classLayeredMediaUtils_a691003fc879a0ec3698073d514c1d311}{thickness}}(inThickness),}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00048}00048\ \ \ \ \ \ \ \mbox{\hyperlink{classLayeredMediaUtils_aed6542366b844c7af1ee158ac2f1daaf}{midLayerIndex}}(inMidLayerIndex)\ \{\}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00054}\mbox{\hyperlink{classLayeredMediaUtils_a4b40e9fd70634bc3066c31e34a002df4}{00054}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classLayeredMediaUtils_a4b40e9fd70634bc3066c31e34a002df4}{LayeredMediaUtils::GetLayerIndex}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ pos)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00055}00055\ \ \ \textcolor{keywordtype}{double}\ z\ =\ pos[2];\ \ \textcolor{comment}{//\ Extract\ the\ z-\/component\ of\ the\ position}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00056}00056\ \ \ \textcolor{keywordtype}{int}\ index\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00057}00057\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ eps\ =\ 1e-\/6;\ \textcolor{comment}{//\ Small\ tolerance\ for\ floating-\/point\ comparisons}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00059}00059\ \ \ \textcolor{comment}{//\ Check\ if\ point\ is\ on\ an\ interface}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00060}00060\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classLayeredMediaUtils_a98057e700d2180e8ee96e85a2d1cf494}{zValsInterfaces}}.size();\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{keywordflow}{if}\ (std::abs(z\ -\/\ \mbox{\hyperlink{classLayeredMediaUtils_a98057e700d2180e8ee96e85a2d1cf494}{zValsInterfaces}}[i])\ <=\ eps)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00062}00062\ \ \ \ \ \ \ \textcolor{comment}{//\ Interface\ i\ separates\ layer\ i\ and\ layer\ i+1}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00063}00063\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ l\_lower\ =\ i;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00064}00064\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ l\_upper\ =\ i\ +\ 1;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00065}00065\ \ \ \ \ \ \ index\ =\ std::abs(l\_lower\ -\/\ \mbox{\hyperlink{classLayeredMediaUtils_aed6542366b844c7af1ee158ac2f1daaf}{midLayerIndex}})\ <\ std::abs(l\_upper\ -\/\ \mbox{\hyperlink{classLayeredMediaUtils_aed6542366b844c7af1ee158ac2f1daaf}{midLayerIndex}})\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ ?\ l\_lower\ :\ l\_upper;\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00067}00067\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00068}00068\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00070}00070\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classLayeredMediaUtils_a98057e700d2180e8ee96e85a2d1cf494}{zValsInterfaces}}.size()\ -\/\ 1;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00071}00071\ \ \ \ \ \textcolor{keywordflow}{if}\ (z\ >\ \mbox{\hyperlink{classLayeredMediaUtils_a98057e700d2180e8ee96e85a2d1cf494}{zValsInterfaces}}[i]\ +\ eps\ \&\&\ z\ <\ \mbox{\hyperlink{classLayeredMediaUtils_a98057e700d2180e8ee96e85a2d1cf494}{zValsInterfaces}}[i\ +\ 1]\ -\/\ eps)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00072}00072\ \ \ \ \ \ \ index\ =\ i\ +\ 1;\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00073}00073\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00074}00074\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00076}00076\ \ \ \textcolor{comment}{//\ If\ z\ is\ beyond\ the\ last\ interface,\ return\ the\ index\ of\ the\ last\ layer}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00077}00077\ \ \ \textcolor{keywordflow}{if}\ (z\ >\ \mbox{\hyperlink{classLayeredMediaUtils_a98057e700d2180e8ee96e85a2d1cf494}{zValsInterfaces}}.back()\ +\ eps)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00078}00078\ \ \ \ \ index\ =\ \mbox{\hyperlink{classLayeredMediaUtils_a98057e700d2180e8ee96e85a2d1cf494}{zValsInterfaces}}.size();}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00079}00079\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00080}00080\ \ \ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00081}00081\ \ \ \textcolor{comment}{//\ If\ z\ is\ below\ the\ first\ interface,\ return\ the\ index\ of\ the\ first\ layer}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00082}00082\ \ \ \textcolor{keywordflow}{if}\ (z\ <\ \mbox{\hyperlink{classLayeredMediaUtils_a98057e700d2180e8ee96e85a2d1cf494}{zValsInterfaces}}.front()\ -\/\ eps)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00083}00083\ \ \ \ \ index\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00084}00084\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00086}00086\ \ \ \textcolor{keywordflow}{return}\ index;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00087}00087\ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00093}\mbox{\hyperlink{classLayeredMediaUtils_a212943a3dd5bdeaaa5c92ed21fad87a9}{00093}}\ std::vector<dcmplx>\ \mbox{\hyperlink{classLayeredMediaUtils_a212943a3dd5bdeaaa5c92ed21fad87a9}{LayeredMediaUtils::FresnelCoeff}}(\textcolor{keywordtype}{int}\ layerIndexI,\ \textcolor{keywordtype}{int}\ layerIndexJ,\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ krho,\ \textcolor{keyword}{const}\ std::string\&\ waves)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00095}00095\ \ \ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00096}00096\ \ \ \textcolor{comment}{//\ Validate\ layer\ indices}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00097}00097\ \ \ \textcolor{keywordflow}{if}\ (layerIndexI\ <\ 0\ ||\ layerIndexI\ >=\ \mbox{\hyperlink{classLayeredMediaUtils_aac35250533c1bf922827b5a91220fb32}{epsilon}}.size()\ ||\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00098}00098\ \ \ \ \ \ \ layerIndexJ\ <\ 0\ ||\ layerIndexJ\ >=\ \mbox{\hyperlink{classLayeredMediaUtils_aac35250533c1bf922827b5a91220fb32}{epsilon}}.size()\ ||\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00099}00099\ \ \ \ \ \ \ std::abs(layerIndexI\ -\/\ layerIndexJ)\ >\ 1)\{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00100}00100\ \ \ \ \ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}Invalid\ layer\ indeces\ for\ Fresnel\ reflection\ coefficient\ calculation."{}});}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00101}00101\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00103}00103\ \ \ \textcolor{comment}{//\ Check\ if\ the\ wave\ type\ is\ valid\ (TE\ or\ TM)}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00104}00104\ \ \ \textcolor{keywordflow}{if}\ (waves\ !=\ \textcolor{stringliteral}{"{}TE"{}}\ \&\&\ waves\ !=\ \textcolor{stringliteral}{"{}TM"{}})\{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00105}00105\ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Invalid\ wave\ type.\ Use\ 'TE'\ or\ 'TM'."{}});}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00106}00106\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00108}00108\ \ \ \textcolor{comment}{//\ Get\ the\ permittivity\ (TM)\ and\ permeability\ (TE)\ of\ the\ two\ layers}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00109}00109\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ pI(0,0);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00110}00110\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ pJ(0,0);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00111}00111\ \ \ \textcolor{keywordflow}{if}\ (waves\ ==\ \textcolor{stringliteral}{"{}TM"{}})\{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00112}00112\ \ \ \ \ pI\ =\ \mbox{\hyperlink{classLayeredMediaUtils_aac35250533c1bf922827b5a91220fb32}{epsilon}}[layerIndexI];}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00113}00113\ \ \ \ \ pJ\ =\ \mbox{\hyperlink{classLayeredMediaUtils_aac35250533c1bf922827b5a91220fb32}{epsilon}}[layerIndexJ];}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00114}00114\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00115}00115\ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (waves\ ==\ \textcolor{stringliteral}{"{}TE"{}})\{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00116}00116\ \ \ \ \ pI\ =\ \mbox{\hyperlink{classLayeredMediaUtils_a737efea63d0c23873f1460e7d76a198a}{mu}}[layerIndexI];}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00117}00117\ \ \ \ \ pJ\ =\ \mbox{\hyperlink{classLayeredMediaUtils_a737efea63d0c23873f1460e7d76a198a}{mu}}[layerIndexJ];}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00118}00118\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00119}00119\ \ \ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00120}00120\ \ \ \textcolor{comment}{//\ z\ component\ of\ the\ wavevector}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00121}00121\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ kIz\ =\ \mbox{\hyperlink{classLayeredMediaUtils_a03d746d29be9c90b6866078b35090888}{k\_L}}[layerIndexI];}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00122}00122\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ kJz\ =\ \mbox{\hyperlink{classLayeredMediaUtils_a03d746d29be9c90b6866078b35090888}{k\_L}}[layerIndexJ];}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00123}00123\ \ \ kIz\ =\ kIz\ *\ kIz\ -\/\ krho\ *\ krho;\ kIz\ =\ \mbox{\hyperlink{LayeredMediaUtils_8cpp_a50405603197731a46c864b0f39744ed0}{complexSqrt}}(kIz);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00124}00124\ \ \ kJz\ =\ kJz\ *\ kJz\ -\/\ krho\ *\ krho;\ kJz\ =\ \mbox{\hyperlink{LayeredMediaUtils_8cpp_a50405603197731a46c864b0f39744ed0}{complexSqrt}}(kJz);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00126}00126\ \ \ \textcolor{comment}{//\ Fresnel\ reflection\ coefficient}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00127}00127\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ fresnelReflCoeff;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00128}00128\ \ \ fresnelReflCoeff\ =\ (pJ\ *\ kIz\ -\/\ pI\ *\ kJz)\ /}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (pJ\ *\ kIz\ +\ pI\ *\ kJz);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00131}00131\ \ \ \textcolor{comment}{//\ Fresnel\ transmission\ coefficient}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00132}00132\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ fresnelTransCoeff;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00133}00133\ \ \ fresnelTransCoeff\ =\ (2.0\ *\ pJ\ *\ kIz)\ /\ (\ pJ\ *\ kIz\ +\ pI\ *\ kJz\ );}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00135}00135\ \ \ std::vector<dcmplx>\ fresnelCoeffs\ =\ \{fresnelReflCoeff,\ fresnelTransCoeff\};}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00136}00136\ \ \ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00137}00137\ \ \ \textcolor{keywordflow}{return}\ fresnelCoeffs;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00138}00138\ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00145}\mbox{\hyperlink{classLayeredMediaUtils_a00598e0f83472fd9128419b9dddc7e09}{00145}}\ std::vector<std::vector<dcmplx>>\ \mbox{\hyperlink{classLayeredMediaUtils_a00598e0f83472fd9128419b9dddc7e09}{LayeredMediaUtils::InterfaceTransferMatrix}}(}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00146}00146\ \ \ \ \ \textcolor{keywordtype}{int}\ layerIndexI,\ \textcolor{keywordtype}{int}\ layerIndexJ,\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ krho,\ \textcolor{keyword}{const}\ std::string\&\ waves)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00148}00148\ \ \ \ \ \textcolor{comment}{//\ Validate\ layer\ indices}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00149}00149\ \ \ \ \ \textcolor{keywordflow}{if}\ (layerIndexI\ <\ 0\ ||\ layerIndexI\ >=\ \mbox{\hyperlink{classLayeredMediaUtils_aac35250533c1bf922827b5a91220fb32}{epsilon}}.size()\ ||\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ layerIndexJ\ <\ 0\ ||\ layerIndexJ\ >=\ \mbox{\hyperlink{classLayeredMediaUtils_aac35250533c1bf922827b5a91220fb32}{epsilon}}.size()\ ||\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ std::abs(layerIndexI\ -\/\ layerIndexJ)\ >\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}Invalid\ layer\ indices\ for\ transfer\ matrix\ calculation."{}});}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00153}00153\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00155}00155\ \ \ \ \ \textcolor{comment}{//\ Validate\ wave\ type}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00156}00156\ \ \ \ \ \textcolor{keywordflow}{if}\ (waves\ !=\ \textcolor{stringliteral}{"{}TE"{}}\ \&\&\ waves\ !=\ \textcolor{stringliteral}{"{}TM"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Invalid\ wave\ type.\ Use\ 'TE'\ or\ 'TM'."{}});}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00158}00158\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00159}00159\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00160}00160\ \ \ \ \ \textcolor{comment}{//\ Calculate\ Fresnel\ reflection\ and\ transmission\ coefficients}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00161}00161\ \ \ \ \ std::vector<dcmplx>\ fresnelCoeffs\ =\ this-\/>\mbox{\hyperlink{classLayeredMediaUtils_a212943a3dd5bdeaaa5c92ed21fad87a9}{FresnelCoeff}}(layerIndexI,\ layerIndexJ,\ krho,\ waves);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00162}00162\ \ \ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ r\ =\ fresnelCoeffs[0];\ \ \textcolor{comment}{//\ Reflection\ coefficient}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00163}00163\ \ \ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ t\ =\ fresnelCoeffs[1];\ \ \textcolor{comment}{//\ Transmission\ coefficient}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00165}00165\ \ \ \ \ \textcolor{comment}{//\ Prepare\ the\ transfer\ matrix\ for\ input\ polarization\ (TE\ or\ TM)}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00166}00166\ \ \ \ \ std::vector<std::vector<dcmplx>>\ tMatrix(2,\ std::vector<dcmplx>(2));}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00167}00167\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00168}00168\ \ \ \ \ \textcolor{comment}{//\ Calculate\ transfer\ matrix\ elements}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00169}00169\ \ \ \ \ tMatrix[0][0]\ =\ 1.0\ /\ t;\ \ \textcolor{comment}{//\ First\ row,\ first\ column}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00170}00170\ \ \ \ \ tMatrix[0][1]\ =\ r\ /\ t;\ \ \ \ \textcolor{comment}{//\ First\ row,\ second\ column}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00171}00171\ \ \ \ \ tMatrix[1][0]\ =\ r\ /\ t;\ \ \ \ \textcolor{comment}{//\ Second\ row,\ first\ column}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00172}00172\ \ \ \ \ tMatrix[1][1]\ =\ 1.0\ /\ t;\ \ \textcolor{comment}{//\ Second\ row,\ second\ column}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00173}00173\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00174}00174\ \ \ \ \ \textcolor{keywordflow}{return}\ tMatrix;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00175}00175\ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00176}00176\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00182}\mbox{\hyperlink{classLayeredMediaUtils_ac9168dd49348197009d483b94ff715a4}{00182}}\ std::vector<std::vector<dcmplx>>\ \mbox{\hyperlink{classLayeredMediaUtils_ac9168dd49348197009d483b94ff715a4}{LayeredMediaUtils::propagationMatrix}}(\textcolor{keywordtype}{int}\ layerIndex,\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ krho)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00183}00183\ \ \ \ \ \textcolor{comment}{//\ Validate\ layer\ index}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00184}00184\ \ \ \ \ \textcolor{keywordflow}{if}\ (layerIndex\ <\ 0\ ||\ layerIndex\ >=\ \mbox{\hyperlink{classLayeredMediaUtils_aac35250533c1bf922827b5a91220fb32}{epsilon}}.size())\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}Invalid\ layer\ index\ for\ propagation\ matrix\ calculation."{}});}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00186}00186\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00187}00187\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00188}00188\ \ \ \ \ \textcolor{comment}{//\ Calculate\ the\ propagation\ constant\ in\ the\ layer}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00189}00189\ \ \ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ kZ\ =\ \mbox{\hyperlink{classLayeredMediaUtils_a03d746d29be9c90b6866078b35090888}{k\_L}}[layerIndex];}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00190}00190\ \ \ \ \ kZ\ =\ kZ\ *\ kZ\ -\/\ krho\ *\ krho;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00191}00191\ \ \ \ \ kZ\ =\ \mbox{\hyperlink{LayeredMediaUtils_8cpp_a50405603197731a46c864b0f39744ed0}{complexSqrt}}(kZ);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00192}00192\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00193}00193\ \ \ \ \ \textcolor{comment}{//\ Prepare\ the\ propagation\ matrix}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00194}00194\ \ \ \ \ std::vector<std::vector<dcmplx>>\ pMatrix;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00195}00195\ \ \ \ \ pMatrix.resize(2,\ std::vector<dcmplx>(2));}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00196}00196\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00197}00197\ \ \ \ \ \textcolor{comment}{//\ Calculate\ propagation\ matrix\ elements}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00198}00198\ \ \ \ \ pMatrix[0][0]\ =\ exp(-\/\mbox{\hyperlink{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c}{I}}\ *\ kZ\ *\ \mbox{\hyperlink{classLayeredMediaUtils_a691003fc879a0ec3698073d514c1d311}{thickness}}[layerIndex\ -\/\ 1]);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00199}00199\ \ \ \ \ pMatrix[0][1]\ =\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(0.,\ 0.);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00200}00200\ \ \ \ \ pMatrix[1][0]\ =\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(0.,\ 0.);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00201}00201\ \ \ \ \ pMatrix[1][1]\ =\ exp(\mbox{\hyperlink{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c}{I}}\ *\ kZ\ *\ \mbox{\hyperlink{classLayeredMediaUtils_a691003fc879a0ec3698073d514c1d311}{thickness}}[layerIndex\ -\/\ 1]);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00202}00202\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00203}00203\ \ \ \ \ \textcolor{keywordflow}{if}\ (std::real(pMatrix[0][0])\ >\ 1e30\ ||\ std::imag(pMatrix[0][0])\ >\ 1e30)\ \ pMatrix[0][0]\ =\ 1e30;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00204}00204\ \ \ \ \ \textcolor{keywordflow}{if}\ (std::real(pMatrix[0][1])\ >\ 1e30\ ||\ std::imag(pMatrix[0][1])\ >\ 1e30)\ \ pMatrix[0][1]\ =\ 1e30;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00205}00205\ \ \ \ \ \textcolor{keywordflow}{if}\ (std::real(pMatrix[1][0])\ >\ 1e30\ ||\ std::imag(pMatrix[1][0])\ >\ 1e30)\ \ pMatrix[1][0]\ =\ 1e30;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00206}00206\ \ \ \ \ \textcolor{keywordflow}{if}\ (std::real(pMatrix[1][1])\ >\ 1e30\ ||\ std::imag(pMatrix[1][1])\ >\ 1e30)\ \ pMatrix[1][1]\ =\ 1e30;\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00207}00207\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00208}00208\ \ \ \ \ \textcolor{keywordflow}{return}\ pMatrix;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00209}00209\ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00210}00210\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00215}\mbox{\hyperlink{classLayeredMediaUtils_a796d55e02d56c610cae065557bc64c10}{00215}}\ std::vector<std::vector<dcmplx>>\ \mbox{\hyperlink{classLayeredMediaUtils_a796d55e02d56c610cae065557bc64c10}{LayeredMediaUtils::totalTransferMatrix}}(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ krho,}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ waves)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00217}00217\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00218}00218\ \ \ \ \ \textcolor{comment}{//\ Validate\ wave\ type}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00219}00219\ \ \ \ \ \textcolor{keywordflow}{if}\ (waves\ !=\ \textcolor{stringliteral}{"{}TE"{}}\ \&\&\ waves\ !=\ \textcolor{stringliteral}{"{}TM"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00220}00220\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Invalid\ wave\ type.\ Use\ 'TE'\ or\ 'TM'."{}});}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00221}00221\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00222}00222\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00223}00223\ \ \ \ \ std::vector<std::vector<dcmplx>>\ mTot\ =\ this-\/>\mbox{\hyperlink{classLayeredMediaUtils_a00598e0f83472fd9128419b9dddc7e09}{InterfaceTransferMatrix}}(0,\ 1,\ krho,\ waves);\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00224}00224\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <\ \mbox{\hyperlink{classLayeredMediaUtils_a98057e700d2180e8ee96e85a2d1cf494}{zValsInterfaces}}.size();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00225}00225\ \ \ \ \ \ \ std::vector<std::vector<dcmplx>>\ propMatrix\ =\ \mbox{\hyperlink{classLayeredMediaUtils_ac9168dd49348197009d483b94ff715a4}{propagationMatrix}}(i,\ krho);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00226}00226\ \ \ \ \ \ \ std::vector<std::vector<dcmplx>>\ interfaceMatrix\ =\ \mbox{\hyperlink{classLayeredMediaUtils_a00598e0f83472fd9128419b9dddc7e09}{InterfaceTransferMatrix}}(i,\ i\ +\ 1,\ krho,\ waves);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00227}00227\ \ \ \ \ \ \ std::vector<std::vector<dcmplx>>\ temp\ =\ \mbox{\hyperlink{classLayeredMediaUtils_ad48ebb179e3349bad58b015022cbff46}{matrixMultiply2D}}(propMatrix,\ interfaceMatrix);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00228}00228\ \ \ \ \ \ \ mTot\ =\ \mbox{\hyperlink{classLayeredMediaUtils_ad48ebb179e3349bad58b015022cbff46}{matrixMultiply2D}}(mTot,\ temp);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00229}00229\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00230}00230\ \ \ \ \ \textcolor{keywordflow}{return}\ mTot;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00231}00231\ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00232}00232\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00238}\mbox{\hyperlink{classLayeredMediaUtils_a55529dbdb069b59a6252ab2e446186a0}{00238}}\ std::vector<dcmplx>\ \mbox{\hyperlink{classLayeredMediaUtils_a55529dbdb069b59a6252ab2e446186a0}{LayeredMediaUtils::totalFresnelCoeffs}}(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ krho,\ \textcolor{keyword}{const}\ std::string\&\ waves,\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ direction)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00240}00240\ \ \ \textcolor{comment}{//\ Validate\ wave\ type}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00241}00241\ \ \ \textcolor{keywordflow}{if}\ (waves\ !=\ \textcolor{stringliteral}{"{}TE"{}}\ \&\&\ waves\ !=\ \textcolor{stringliteral}{"{}TM"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00242}00242\ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Invalid\ wave\ type.\ Use\ 'TE'\ or\ 'TM'."{}});}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00243}00243\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00244}00244\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00245}00245\ \ \ \textcolor{comment}{//\ Validate\ direction\ type}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00246}00246\ \ \ \textcolor{keywordflow}{if}\ (direction\ !=\ \textcolor{stringliteral}{"{}up"{}}\ \&\&\ direction\ !=\ \textcolor{stringliteral}{"{}down"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00247}00247\ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Invalid\ direction\ type.\ Use\ 'up'\ or\ 'down'."{}});}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00248}00248\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00249}00249\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00250}00250\ \ \ \textcolor{comment}{//\ Calculate\ the\ total\ transfer\ matrix}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00251}00251\ \ \ std::vector<std::vector<dcmplx>>\ mTot\ =\ this-\/>\mbox{\hyperlink{classLayeredMediaUtils_a796d55e02d56c610cae065557bc64c10}{totalTransferMatrix}}(krho,\ waves);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00252}00252\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00253}00253\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ totalFresnelReflCoeff(0.0,\ 0.0);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00254}00254\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ totalFresnelTransCoeff(0.0,\ 0.0);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00255}00255\ \ \ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00256}00256\ \ \ \textcolor{comment}{//\ Extract\ the\ reflection\ and\ transmission\ coefficients}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00257}00257\ \ \ \textcolor{keywordflow}{if}\ (direction\ ==\ \textcolor{stringliteral}{"{}up"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00258}00258\ \ \ \ \ \textcolor{comment}{//\ Upgoing\ wave\ Prof.\ Hohenester's\ book\ Eq.\ (8.34)}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00259}00259\ \ \ \ \ totalFresnelReflCoeff\ \ =\ mTot[1][0]\ /\ mTot[0][0];}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00260}00260\ \ \ \ \ totalFresnelTransCoeff\ =\ 1.\ /\ mTot[0][0];}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00261}00261\ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (direction\ ==\ \textcolor{stringliteral}{"{}down"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00262}00262\ \ \ \ \ \textcolor{comment}{//\ Downgoing\ wave\ Prof.\ Hohenester's\ book\ Eq.\ (8.36)}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00263}00263\ \ \ \ \ totalFresnelReflCoeff\ \ =\ -\/mTot[0][1]\ /\ mTot[0][0];}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00264}00264\ \ \ \ \ totalFresnelTransCoeff\ =\ \ mTot[1][1]\ +\ mTot[1][0]\ *\ totalFresnelReflCoeff;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00265}00265\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00266}00266\ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Invalid\ direction.\ Use\ 'up'\ or\ 'down'."{}});}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00267}00267\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00268}00268\ \ \ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00269}00269\ \ \ std::vector<dcmplx>\ \mbox{\hyperlink{classLayeredMediaUtils_a55529dbdb069b59a6252ab2e446186a0}{totalFresnelCoeffs}}\ =\ \{totalFresnelReflCoeff,\ totalFresnelTransCoeff\};}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00270}00270\ \ \ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00271}00271\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classLayeredMediaUtils_a55529dbdb069b59a6252ab2e446186a0}{totalFresnelCoeffs}};}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00272}00272\ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00273}00273\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00274}00274\ \textcolor{comment}{/*\ External\ LAPACK\ functions\ for\ solving\ linear\ systems.\ These\ functions\ }}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00275}00275\ \textcolor{comment}{\ *\ are\ used\ for\ LU\ factorization\ (`zgetrf\_`)\ and\ solving\ linear\ }}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00276}00276\ \textcolor{comment}{\ *\ equations\ using\ the\ LU\ decomposition\ (`zgetrs\_`).}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00277}00277\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00278}00278\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00289}\mbox{\hyperlink{LayeredMediaUtils_8cpp_ad123e1ae452426e2c00e3189488dedac}{00289}}\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{LayeredMediaUtils_8cpp_ad123e1ae452426e2c00e3189488dedac}{zgetrf\_}}(\textcolor{keywordtype}{int}\ *dim1,\ \textcolor{keywordtype}{int}\ *dim2,\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ *a,\ \textcolor{keywordtype}{int}\ *lda,\ \textcolor{keywordtype}{int}\ *ipiv,\ \textcolor{keywordtype}{int}\ *info);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00290}00290\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00304}\mbox{\hyperlink{LayeredMediaUtils_8cpp_a0d498505ce3081c778d322cdd12e60a4}{00304}}\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{LayeredMediaUtils_8cpp_a0d498505ce3081c778d322cdd12e60a4}{zgetrs\_}}(\textcolor{keywordtype}{char}\ *TRANS,\ \textcolor{keywordtype}{int}\ *N,\ \textcolor{keywordtype}{int}\ *NRHS,\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ *A,\ \textcolor{keywordtype}{int}\ *LDA,\ \textcolor{keywordtype}{int}\ *IPIV,}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00305}00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ *B,\ \textcolor{keywordtype}{int}\ *LDB,\ \textcolor{keywordtype}{int}\ *INFO);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00306}00306\ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00307}00307\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00313}\mbox{\hyperlink{classLayeredMediaUtils_a6d538561bc5345114e83f7939247866f}{00313}}\ blitz::Array<dcmplx,\ 2>\ \mbox{\hyperlink{classLayeredMediaUtils_a6d538561bc5345114e83f7939247866f}{LayeredMediaUtils::Secondary}}(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ krho,\ \textcolor{keywordtype}{int}\ observationLayer,\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00314}00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ sourceLayer,\ \textcolor{keyword}{const}\ std::string\&\ waves)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00315}00315\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00316}00316\ \ \ \textcolor{comment}{//\ Validate\ wave\ type}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00317}00317\ \ \ \textcolor{keywordflow}{if}\ (waves\ !=\ \textcolor{stringliteral}{"{}TE"{}}\ \&\&\ waves\ !=\ \textcolor{stringliteral}{"{}TM"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00318}00318\ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Invalid\ wave\ type.\ Use\ 'TE'\ or\ 'TM'."{}});}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00319}00319\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00320}00320\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00321}00321\ \ \ \textcolor{keywordtype}{int}\ interfacesNum\ =\ this-\/>\mbox{\hyperlink{classLayeredMediaUtils_a98057e700d2180e8ee96e85a2d1cf494}{zValsInterfaces}}.size();\ \ \textcolor{comment}{//\ Number\ of\ interfaces}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00322}00322\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00323}00323\ \ \ \textcolor{comment}{//\ Transfer\ matrices\ for\ each\ interface}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00324}00324\ \ \ std::vector<std::vector<std::vector<dcmplx>>>\ tMatrices(interfacesNum);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00325}00325\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ interfacesNum;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00326}00326\ \ \ \ \ tMatrices[i]\ =\ this-\/>\mbox{\hyperlink{classLayeredMediaUtils_a00598e0f83472fd9128419b9dddc7e09}{InterfaceTransferMatrix}}(i,\ i\ +\ 1,\ krho,\ waves);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00327}00327\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00328}00328\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00329}00329\ \ \ \textcolor{comment}{//\ Compute\ kZ\ (propagation\ constant\ in\ each\ layer)}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00330}00330\ \ \ std::vector<dcmplx>\ kZ(interfacesNum\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00331}00331\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ interfacesNum\ +\ 1;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00332}00332\ \ \ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ tmp\ =\ \mbox{\hyperlink{classLayeredMediaUtils_a03d746d29be9c90b6866078b35090888}{k\_L}}[i];}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00333}00333\ \ \ \ \ kZ[i]\ =\ \mbox{\hyperlink{LayeredMediaUtils_8cpp_a50405603197731a46c864b0f39744ed0}{complexSqrt}}(tmp\ *\ tmp\ -\/\ krho\ *\ krho);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00334}00334\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00335}00335\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00336}00336\ \ \ \textcolor{comment}{//\ Create\ a\ 2\ x\ (interfacesNum\ +\ 1)\ matrix}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00337}00337\ \ \ std::vector<int>\ range(interfacesNum\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00338}00338\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <=\ interfacesNum;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00339}00339\ \ \ \ \ range[i]\ =\ i;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00340}00340\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00341}00341\ \ \ std::vector<std::vector<int>>\ ind(2,\ range);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00342}00342\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00343}00343\ \ \ \textcolor{comment}{//\ Interleave\ the\ values\ and\ remove\ first\ and\ last}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00344}00344\ \ \ std::vector<int>\ interleaved;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00345}00345\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ ind[0].size();\ ++j)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00346}00346\ \ \ \ \ interleaved.push\_back(ind[0][j]);\ \textcolor{comment}{//\ Add\ value\ from\ the\ first\ row}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00347}00347\ \ \ \ \ interleaved.push\_back(ind[1][j]);\ \textcolor{comment}{//\ Add\ value\ from\ the\ second\ row}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00348}00348\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00349}00349\ \ \ interleaved.erase(interleaved.begin());}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00350}00350\ \ \ interleaved.erase(interleaved.end()\ -\/\ 1);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00351}00351\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00352}00352\ \ \ \textcolor{keywordtype}{int}\ size\ =\ 2\ *\ interfacesNum\ +\ 2;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00353}00353\ \ \ std::vector<bool>\ ind1(size,\ \textcolor{keyword}{true});\ \textcolor{comment}{//\ Initialize\ all\ elements\ to\ false}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00354}00354\ \ \ std::vector<bool>\ ind2(size,\ \textcolor{keyword}{true});\ \textcolor{comment}{//\ Initialize\ all\ elements\ to\ false}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00355}00355\ \ \ ind1[0]\ =\ \textcolor{keyword}{false};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ the\ first\ index\ to\ true}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00356}00356\ \ \ ind1[size\ -\/\ 1]\ =\ \textcolor{keyword}{false};\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ the\ last\ index\ to\ true}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00357}00357\ \ \ ind2[1]\ =\ \textcolor{keyword}{false};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ the\ second\ index\ to\ true}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00358}00358\ \ \ ind2[size\ -\/\ 2]\ =\ \textcolor{keyword}{false};\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ the\ second-\/to-\/last\ index\ to\ true}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00359}00359\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00360}00360\ \ \ \textcolor{comment}{//\ Set\ up\ matrices\ for\ secondary\ wave\ coefficients}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00361}00361\ \ \ blitz::Array<dcmplx,\ 2>\ lhs(2\ *\ interfacesNum,\ 2\ *\ interfacesNum\ +\ 2,\ blitz::ColumnMajorArray<2>());}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00362}00362\ \ \ blitz::Array<dcmplx,\ 2>\ rhs(2\ *\ interfacesNum,\ 2\ *\ interfacesNum\ +\ 2,\ blitz::ColumnMajorArray<2>());}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00363}00363\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00364}00364\ \ \ \textcolor{comment}{//\ Initialize\ propagation\ constants}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00365}00365\ \ \ std::vector<dcmplx>\ fac(interfacesNum);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00366}00366\ \ \ fac[0]\ =\ 1.0;\ \ \textcolor{comment}{//\ First\ element\ is\ 0}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00367}00367\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <\ interfacesNum;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00368}00368\ \ \ \ \ fac[i]\ =\ exp(\mbox{\hyperlink{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c}{I}}\ *\ kZ[i]\ *\ \mbox{\hyperlink{classLayeredMediaUtils_a691003fc879a0ec3698073d514c1d311}{thickness}}[i\ -\/\ 1]);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00369}00369\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00370}00370\ \ \ fac.push\_back(1.0);\ \ \textcolor{comment}{//\ Add\ the\ last\ element\ as\ 0}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00371}00371\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00372}00372\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ interfacesNum;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00373}00373\ \ \ \ \ \textcolor{comment}{//\ Extract\ transfer\ matrix}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00374}00374\ \ \ \ \ \textcolor{keyword}{auto}\ M\ =\ tMatrices[i];}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00375}00375\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00376}00376\ \ \ \ \ \textcolor{comment}{//\ Define\ sub-\/matrix\ indices}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00377}00377\ \ \ \ \ std::vector<int>\ k1\ =\ \{2\ *\ i,\ 2\ *\ i\ +\ 1\};}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00378}00378\ \ \ \ \ \textcolor{comment}{//\ Compute\ k2\ indices\ (zero-\/based)}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00379}00379\ \ \ \ \ std::vector<int>\ k2\ =\ \{2\ *\ i\ +\ 2,\ 2\ *\ i\ +\ 3\};}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00380}00380\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00381}00381\ \ \ \ \ \textcolor{comment}{//\ Fill\ lhs\ and\ rhs\ matrices\ using\ calculated\ indices}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00382}00382\ \ \ \ \ lhs(k1[0],\ k1[0])\ =\ fac[i];}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00383}00383\ \ \ \ \ lhs(k1[0],\ k1[1])\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00384}00384\ \ \ \ \ lhs(k1[1],\ k1[0])\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00385}00385\ \ \ \ \ lhs(k1[1],\ k1[1])\ =\ 1.0;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00386}00386\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00387}00387\ \ \ \ \ rhs(k1[0],\ k1[0])\ =\ 1.0;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00388}00388\ \ \ \ \ rhs(k1[0],\ k1[1])\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00389}00389\ \ \ \ \ rhs(k1[1],\ k1[0])\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00390}00390\ \ \ \ \ rhs(k1[1],\ k1[1])\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00391}00391\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00392}00392\ \ \ \ \ lhs(k1[0],\ k2[0])\ =\ -\/M[0][0];}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00393}00393\ \ \ \ \ lhs(k1[0],\ k2[1])\ =\ -\/M[0][1]\ *\ fac[i\ +\ 1];}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00394}00394\ \ \ \ \ lhs(k1[1],\ k2[0])\ =\ -\/M[1][0];}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00395}00395\ \ \ \ \ lhs(k1[1],\ k2[1])\ =\ -\/M[1][1]\ *\ fac[i\ +\ 1];}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00396}00396\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00397}00397\ \ \ \ \ rhs(k1[0],\ k2[0])\ =\ -\/0.0;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00398}00398\ \ \ \ \ rhs(k1[0],\ k2[1])\ =\ -\/M[0][1];}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00399}00399\ \ \ \ \ rhs(k1[1],\ k2[0])\ =\ -\/0.0;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00400}00400\ \ \ \ \ rhs(k1[1],\ k2[1])\ =\ -\/M[1][1];}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00401}00401\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00402}00402\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00403}00403\ \ \ \textcolor{keywordtype}{int}\ lhsCols\ =\ std::count(ind1.begin(),\ ind1.end(),\ \textcolor{keyword}{true});\ \textcolor{comment}{//\ Count\ how\ many\ 'true'\ values\ in\ ind1}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00404}00404\ \ \ \textcolor{keywordtype}{int}\ rhsCols\ =\ std::count(ind2.begin(),\ ind2.end(),\ \textcolor{keyword}{true});\ \textcolor{comment}{//\ Count\ how\ many\ 'true'\ values\ in\ ind2}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00405}00405\ \ \ blitz::Array<dcmplx,\ 2>\ lhsNew(lhs.extent(0),\ lhsCols,\ blitz::ColumnMajorArray<2>());}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00406}00406\ \ \ blitz::Array<dcmplx,\ 2>\ rhsNew(rhs.extent(0),\ rhsCols,\ blitz::ColumnMajorArray<2>());}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00407}00407\ \ \ blitz::Array<dcmplx,\ 2>\ sysSol(lhs.extent(0),\ rhsCols,\ blitz::ColumnMajorArray<2>());}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00408}00408\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00409}00409\ \ \ \textcolor{keywordtype}{int}\ colIndex1\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00410}00410\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ ind1.size();\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00411}00411\ \ \ \ \ \textcolor{keywordflow}{if}\ (ind1[i])\ \{\ \textcolor{comment}{//\ If\ the\ value\ is\ true}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00412}00412\ \ \ \ \ \ \ \ \ lhsNew(blitz::Range::all(),\ colIndex1++)\ =\ lhs(blitz::Range::all(),\ i);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00413}00413\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00414}00414\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00415}00415\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00416}00416\ \ \ \textcolor{keywordtype}{int}\ colIndex2\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00417}00417\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ ind2.size();\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00418}00418\ \ \ \ \ \textcolor{keywordflow}{if}\ (ind2[i])\ \{\ \textcolor{comment}{//\ If\ the\ value\ is\ true}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00419}00419\ \ \ \ \ \ \ \ \ rhsNew(blitz::Range::all(),\ colIndex2++)\ =\ rhs(blitz::Range::all(),\ i);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00420}00420\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00421}00421\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00422}00422\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00423}00423\ \ \ \textcolor{comment}{//\ Solve\ for\ the\ secondary\ fields}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00424}00424\ \ \ \textcolor{keywordtype}{int}\ arrayN\ =\ lhsNew.extent(0);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00425}00425\ \ \ blitz::Array<int,\ 1>\ iPiv(arrayN);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00426}00426\ \ \ \textcolor{keywordtype}{int}\ info\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00427}00427\ \ \ \textcolor{keywordtype}{char}\ trans\ =\ \textcolor{charliteral}{'N'};}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00428}00428\ \ \ blitz::Array<dcmplx,\ 2>\ rightSides(arrayN,\ rhsNew.extent(1),\ blitz::ColumnMajorArray<2>());}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00429}00429\ \ \ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00430}00430\ \ \ rightSides\ =\ rhsNew;\ \textcolor{comment}{//\ Copy\ the\ rhs\ to\ rightSides\ for\ solving}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00431}00431\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00432}00432\ \ \ \textcolor{comment}{//\ Perform\ LU\ factorization}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00433}00433\ \ \ \mbox{\hyperlink{DomainLayered3D_8cpp_ad123e1ae452426e2c00e3189488dedac}{zgetrf\_}}(\&arrayN,\ \&arrayN,\ \&(lhsNew(0,\ 0)),\ \&arrayN,\ \&(iPiv(0)),\ \&info);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00434}00434\ \ \ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00435}00435\ \ \ \textcolor{comment}{//\ Solve\ the\ system}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00436}00436\ \ \ \mbox{\hyperlink{DomainLayered3D_8cpp_a0d498505ce3081c778d322cdd12e60a4}{zgetrs\_}}(\&trans,\ \&arrayN,\ \&arrayN,\ \&(lhsNew(0,\ 0)),\ \&arrayN,\ \&(iPiv(0)),\ \&(rightSides(0,\ 0)),\ \&arrayN,\ \&info);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00437}00437\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00438}00438\ \ \ \textcolor{comment}{//\ Extract\ solution\ from\ rightSides\ back\ to\ the\ result}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00439}00439\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ rhsNew.extent(1);\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00440}00440\ \ \ \ \ sysSol(blitz::Range::all(),\ i)\ =\ -\/rightSides(blitz::Range::all(),\ i);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00441}00441\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00442}00442\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00443}00443\ \ \ \textcolor{comment}{//\ Select\ the\ rows\ based\ on\ interleaved}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00444}00444\ \ \ std::vector<int>\ rowIndices;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00445}00445\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ interleaved.size();\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00446}00446\ \ \ \ \ \textcolor{keywordflow}{if}\ (interleaved[i]\ ==\ observationLayer)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00447}00447\ \ \ \ \ \ \ \ \ rowIndices.push\_back(i);\ \textcolor{comment}{//\ Add\ the\ row\ index\ if\ the\ value\ is\ true}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00448}00448\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00449}00449\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00450}00450\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00451}00451\ \ \ \textcolor{comment}{//\ Select\ the\ columns\ based\ on\ interleaved}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00452}00452\ \ \ std::vector<int>\ colIndices;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00453}00453\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ interleaved.size();\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00454}00454\ \ \ \ \ \textcolor{keywordflow}{if}\ (interleaved[i]\ ==\ sourceLayer)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00455}00455\ \ \ \ \ \ \ \ \ colIndices.push\_back(i);\ \textcolor{comment}{//\ Add\ the\ column\ index\ if\ the\ value\ is\ true}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00456}00456\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00457}00457\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00458}00458\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00459}00459\ \ \ \textcolor{comment}{//\ Define\ the\ result\ sub-\/matrix}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00460}00460\ \ \ blitz::Array<dcmplx,\ 2>\ result(rowIndices.size(),\ colIndices.size(),\ blitz::ColumnMajorArray<2>());}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00461}00461\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00462}00462\ \ \ \textcolor{comment}{//\ Extract\ the\ submatrix\ from\ x\ using\ row\ and\ column\ indices}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00463}00463\ \ \ \textcolor{keywordtype}{int}\ rowIndex\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00464}00464\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ :\ rowIndices)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00465}00465\ \ \ \ \ \textcolor{keywordtype}{int}\ colIndex\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00466}00466\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ :\ colIndices)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00467}00467\ \ \ \ \ \ \ \ \ result(rowIndex,\ colIndex++)\ =\ sysSol(i,\ j);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00468}00468\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00469}00469\ \ \ \ \ ++rowIndex;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00470}00470\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00471}00471\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00472}00472\ \textcolor{preprocessor}{\#ifdef\ DEBUG}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00473}00473\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ result.extent(0);\ ++i)\ \{\ \textcolor{comment}{//\ Rows}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00474}00474\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ result.extent(1);\ ++j)\ \{\ \textcolor{comment}{//\ Columns}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00475}00475\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ std::real(result(i,\ j))\ <<\ \textcolor{stringliteral}{"{}\ +\ "{}}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00476}00476\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::imag(result(i,\ j))\ <<\ \textcolor{stringliteral}{"{}i)\ "{}};}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00477}00477\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00478}00478\ \ \ \ \ std::cout\ <<\ std::endl;\ \textcolor{comment}{//\ Newline\ after\ each\ row}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00479}00479\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00480}00480\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00481}00481\ \ \ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00482}00482\ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00483}00483\ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00484}00484\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00490}\mbox{\hyperlink{classLayeredMediaUtils_ab1660d136377d8e6d7878973475146a8}{00490}}\ std::vector<dcmplx>\ \mbox{\hyperlink{classLayeredMediaUtils_ab1660d136377d8e6d7878973475146a8}{LayeredMediaUtils::Fields}}(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ krho,\ std::vector<double>\ observationPointsZ,\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00491}00491\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ sourcePointZ,\ \textcolor{keyword}{const}\ std::string\&\ waves)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00492}00492\ \ \ \textcolor{comment}{//\ Resulting\ electric\ field\ (TE\ or\ TM)}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00493}00493\ \ \ std::vector<dcmplx>\ fields(observationPointsZ.size(),\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(0.0,\ 0.0));}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00494}00494\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00495}00495\ \ \ \textcolor{keywordtype}{int}\ interfacesNum\ =\ this-\/>\mbox{\hyperlink{classLayeredMediaUtils_a98057e700d2180e8ee96e85a2d1cf494}{zValsInterfaces}}.size();\ \ \textcolor{comment}{//\ Number\ of\ interfaces}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00496}00496\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00497}00497\ \ \ \textcolor{comment}{//\ Get\ layer\ indices\ for\ observation\ points\ and\ source\ point}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00498}00498\ \ \ std::vector<int>\ obsPointsLayersIndices(observationPointsZ.size(),\ -\/1);\ \textcolor{comment}{//\ Indices\ for\ observation\ points}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00499}00499\ \ \ \textcolor{keywordtype}{int}\ srcPointLayerIndex\ =\ \mbox{\hyperlink{classLayeredMediaUtils_a4b40e9fd70634bc3066c31e34a002df4}{GetLayerIndex}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}(0.,\ 0.,\ sourcePointZ));\ \ \ \ \ \textcolor{comment}{//\ Index\ for\ the\ source\ point}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00500}00500\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ observationPointsZ.size();\ i++)\{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00501}00501\ \ \ \ \ obsPointsLayersIndices[i]\ =\ \mbox{\hyperlink{classLayeredMediaUtils_a4b40e9fd70634bc3066c31e34a002df4}{GetLayerIndex}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}(0.,\ 0.,\ observationPointsZ[i]));}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00502}00502\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00503}00503\ \ \ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00504}00504\ \ \ \textcolor{comment}{//\ Wave\ propagation\ direction}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00505}00505\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ dir[]\ =\ \{1,\ -\/1\};}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00506}00506\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00507}00507\ \ \ \textcolor{comment}{//\ Loop\ over\ unique\ indices\ of\ observation\ layers}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00508}00508\ \ \ std::unordered\_set<int>\ temp(obsPointsLayersIndices.begin(),\ obsPointsLayersIndices.end());}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00509}00509\ \ \ std::vector<int>\ uniqueLayersIndices(temp.begin(),\ temp.end());}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00510}00510\ \ \ std::sort(uniqueLayersIndices.begin(),\ uniqueLayersIndices.end());}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00511}00511\ \ \ temp.clear();}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00512}00512\ \ \ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00513}00513\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ it\ :\ uniqueLayersIndices)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00514}00514\ \ \ \ \ \textcolor{comment}{//\ Coefficients\ for\ secondary\ waves}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00515}00515\ \ \ \ \ \textcolor{keyword}{auto}\ waveSec\ =\ \mbox{\hyperlink{classLayeredMediaUtils_a6d538561bc5345114e83f7939247866f}{Secondary}}(krho,\ it,\ srcPointLayerIndex,\ waves);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00516}00516\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00517}00517\ \ \ \ \ \textcolor{comment}{//\ Wavenumbers'\ z\ components}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00518}00518\ \ \ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ kzLayerObs\ =\ \mbox{\hyperlink{classLayeredMediaUtils_a03d746d29be9c90b6866078b35090888}{k\_L}}[it];}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00519}00519\ \ \ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ kzLayerSrc\ =\ \mbox{\hyperlink{classLayeredMediaUtils_a03d746d29be9c90b6866078b35090888}{k\_L}}[srcPointLayerIndex];}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00520}00520\ \ \ \ \ kzLayerObs\ =\ kzLayerObs\ *\ kzLayerObs\ -\/\ krho\ *\ krho;\ kzLayerObs\ =\ \mbox{\hyperlink{LayeredMediaUtils_8cpp_a50405603197731a46c864b0f39744ed0}{complexSqrt}}(kzLayerObs);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00521}00521\ \ \ \ \ kzLayerSrc\ =\ kzLayerSrc\ *\ kzLayerSrc\ -\/\ krho\ *\ krho;\ kzLayerSrc\ =\ \mbox{\hyperlink{LayeredMediaUtils_8cpp_a50405603197731a46c864b0f39744ed0}{complexSqrt}}(kzLayerSrc);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00522}00522\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00523}00523\ \ \ \ \ \textcolor{comment}{//\ Indices\ corresponding\ to\ the\ current\ layer}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00524}00524\ \ \ \ \ std::vector<bool>\ isInCurrentLayer(observationPointsZ.size(),\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00525}00525\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00526}00526\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ obsPointsLayersIndices.size();\ ++j)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00527}00527\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (obsPointsLayersIndices[j]\ ==\ it)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00528}00528\ \ \ \ \ \ \ \ \ \ \ isInCurrentLayer[j]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00529}00529\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00530}00530\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00531}00531\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00532}00532\ \ \ \ \ \textcolor{comment}{//\ Loop\ over\ wave\ directions}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00533}00533\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ dObs\ =\ 0;\ dObs\ <\ waveSec.extent(0);\ dObs++)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00534}00534\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ dSrc\ =\ 0;\ dSrc\ <\ waveSec.extent(1);\ dSrc++)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00535}00535\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ dirObs\ =\ dir[dObs];\ \textcolor{keywordflow}{if}\ (it\ ==\ 0)\ dirObs\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00536}00536\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ dirSrc\ =\ dir[dSrc];\ \textcolor{keywordflow}{if}\ (srcPointLayerIndex\ ==\ interfacesNum\ +\ 1)\ dirSrc\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00537}00537\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00538}00538\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ distances\ to\ interfaces}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00539}00539\ \ \ \ \ \ \ \ \ std::vector<double>\ distObs;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00540}00540\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ distSrc\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00541}00541\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ observationPointsZ.size();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00542}00542\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isInCurrentLayer[i])\{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00543}00543\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dirObs\ ==\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00544}00544\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Distance\ from\ the\ lower\ interface}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00545}00545\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ distObs.push\_back(observationPointsZ[i]\ -\/\ \mbox{\hyperlink{classLayeredMediaUtils_a98057e700d2180e8ee96e85a2d1cf494}{zValsInterfaces}}[it\ -\/\ 1]);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00546}00546\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00547}00547\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00548}00548\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Distance\ from\ the\ upper\ interface}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00549}00549\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ distObs.push\_back(\mbox{\hyperlink{classLayeredMediaUtils_a98057e700d2180e8ee96e85a2d1cf494}{zValsInterfaces}}[it]\ -\/\ observationPointsZ[i]);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00550}00550\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00551}00551\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00552}00552\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00553}00553\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00554}00554\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dirSrc\ ==\ -\/1)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00555}00555\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Distance\ from\ the\ lower\ interface}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00556}00556\ \ \ \ \ \ \ \ \ \ \ distSrc\ =\ sourcePointZ\ -\/\ \mbox{\hyperlink{classLayeredMediaUtils_a98057e700d2180e8ee96e85a2d1cf494}{zValsInterfaces}}[srcPointLayerIndex\ -\/\ 1];}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00557}00557\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00558}00558\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00559}00559\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Distance\ from\ the\ upper\ interface}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00560}00560\ \ \ \ \ \ \ \ \ \ \ distSrc\ =\ \mbox{\hyperlink{classLayeredMediaUtils_a98057e700d2180e8ee96e85a2d1cf494}{zValsInterfaces}}[srcPointLayerIndex]\ -\/\ sourcePointZ;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00561}00561\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00562}00562\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00563}00563\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Accumulate\ secondary\ fields}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00564}00564\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ counter\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00565}00565\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ observationPointsZ.size();\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00566}00566\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isInCurrentLayer[i])\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00567}00567\ \ \ \ \ \ \ \ \ \ \ \ \ fields[i]\ +=\ waveSec(dObs,\ dSrc)\ *\ exp(\mbox{\hyperlink{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c}{I}}\ *\ (kzLayerObs\ *\ distObs[counter]\ +\ kzLayerSrc\ *\ distSrc));}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00568}00568\ \ \ \ \ \ \ \ \ \ \ \ \ counter++;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00569}00569\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00570}00570\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00571}00571\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00572}00572\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00573}00573\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00574}00574\ \ \ \ \ \textcolor{comment}{//\ Add\ primary\ field\ if\ needed}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00575}00575\ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ ==\ srcPointLayerIndex)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00576}00576\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ observationPointsZ.size();\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00577}00577\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isInCurrentLayer[i])\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00578}00578\ \ \ \ \ \ \ \ \ \ \ fields[i]\ +=\ exp(\mbox{\hyperlink{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c}{I}}\ *\ kzLayerObs\ *\ std::abs(observationPointsZ[i]\ -\/\ sourcePointZ));}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00579}00579\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00580}00580\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00581}00581\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00582}00582\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00583}00583\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00584}00584\ \textcolor{preprocessor}{\#ifdef\ DEBUG}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00585}00585\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ elem\ :\ fields)\{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00586}00586\ \ \ \ \ std::cout\ <<\ elem\ <<\ \textcolor{charliteral}{'\ '};}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00587}00587\ \ \ \ \ std::cout\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00588}00588\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00589}00589\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00590}00590\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00591}00591\ \ \ \textcolor{keywordflow}{return}\ fields;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00592}00592\ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00593}00593\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00598}\mbox{\hyperlink{classLayeredMediaUtils_ad48ebb179e3349bad58b015022cbff46}{00598}}\ std::vector<std::vector<dcmplx>>\ \mbox{\hyperlink{classLayeredMediaUtils_ad48ebb179e3349bad58b015022cbff46}{LayeredMediaUtils::matrixMultiply2D}}(\textcolor{keyword}{const}\ std::vector<std::vector<dcmplx>>\&\ x,}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00599}00599\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<dcmplx>>\&\ y)\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00600}00600\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00601}00601\ \ \ \textcolor{keywordflow}{if}\ (x[0].size()\ !=\ y.size())\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00602}00602\ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Matrix\ dimensions\ do\ not\ match\ for\ multiplication."{}});}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00603}00603\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00604}00604\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00605}00605\ \ \ \textcolor{keywordtype}{size\_t}\ rows\ =\ x.size();}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00606}00606\ \ \ \textcolor{keywordtype}{size\_t}\ cols\ =\ y[0].size();}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00607}00607\ \ \ \textcolor{keywordtype}{size\_t}\ common\ =\ y.size();}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00608}00608\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00609}00609\ \ \ std::vector<std::vector<dcmplx>>\ z(rows,\ std::vector<dcmplx>(cols,\ 0.0));}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00610}00610\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00611}00611\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ rows;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00612}00612\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ cols;\ ++j)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00613}00613\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ k\ =\ 0;\ k\ <\ common;\ ++k)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00614}00614\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z[i][j]\ +=\ x[i][k]\ *\ y[k][j];}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00615}00615\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00616}00616\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00617}00617\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00618}00618\ \ \ \textcolor{keywordflow}{return}\ z;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00619}00619\ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00620}00620\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00625}\mbox{\hyperlink{classLayeredMediaUtils_a3ee62bdcd0ba1763e162df2c175cd022}{00625}}\ std::vector<std::vector<std::vector<dcmplx>>>\ \mbox{\hyperlink{classLayeredMediaUtils_a3ee62bdcd0ba1763e162df2c175cd022}{LayeredMediaUtils::matrixMultiply3D}}(}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00626}00626\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<std::vector<dcmplx>>>\&\ x,}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00627}00627\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<std::vector<dcmplx>>>\&\ y)\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00628}00628\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00629}00629\ \ \ \textcolor{keywordtype}{size\_t}\ depth\ =\ x[0][0].size();\ \textcolor{comment}{//\ Number\ of\ slices}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00630}00630\ \ \ std::vector<std::vector<std::vector<dcmplx>>>\ z(2,\ std::vector<std::vector<dcmplx>>(2,\ std::vector<dcmplx>(depth,\ 0.0)));}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00631}00631\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00632}00632\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ d\ =\ 0;\ d\ <\ depth;\ ++d)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00633}00633\ \ \ \ \ \ \ z[0][0][d]\ =\ x[0][0][d]\ *\ y[0][0][d]\ +\ x[0][1][d]\ *\ y[1][0][d];}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00634}00634\ \ \ \ \ \ \ z[1][0][d]\ =\ x[1][0][d]\ *\ y[0][0][d]\ +\ x[1][1][d]\ *\ y[1][0][d];}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00635}00635\ \ \ \ \ \ \ z[0][1][d]\ =\ x[0][0][d]\ *\ y[0][1][d]\ +\ x[0][1][d]\ *\ y[1][1][d];}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00636}00636\ \ \ \ \ \ \ z[1][1][d]\ =\ x[1][0][d]\ *\ y[0][1][d]\ +\ x[1][1][d]\ *\ y[1][1][d];}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00637}00637\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00638}00638\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00639}00639\ \ \ \textcolor{keywordflow}{return}\ z;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00640}00640\ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00641}00641\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00647}\mbox{\hyperlink{classLayeredMediaUtils_a72265396a660e7e7d93c56a0b35d11d0}{00647}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLayeredMediaUtils_a72265396a660e7e7d93c56a0b35d11d0}{LayeredMediaUtils::matrixMultiplication}}(\textcolor{keyword}{const}\ std::vector<std::vector<std::vector<dcmplx>>>\&\ x,}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00648}00648\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<std::vector<dcmplx>>>\&\ y)\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00649}00649\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00650}00650\ \ \ \textcolor{keywordflow}{if}\ (x[0][0].size()\ ==\ 1)\ \{\ \textcolor{comment}{//\ 2D\ Case}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00651}00651\ \ \ \ \ \ \ std::vector<std::vector<dcmplx>>\ x2D\ =\ \{\{x[0][0][0],\ x[0][1][0]\},\ \{x[1][0][0],\ x[1][1][0]\}\};}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00652}00652\ \ \ \ \ \ \ std::vector<std::vector<dcmplx>>\ y2D\ =\ \{\{y[0][0][0],\ y[0][1][0]\},\ \{y[1][0][0],\ y[1][1][0]\}\};}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00653}00653\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00654}00654\ \ \ \ \ \ \ std::vector<std::vector<dcmplx>>\ result\ =\ \mbox{\hyperlink{classLayeredMediaUtils_ad48ebb179e3349bad58b015022cbff46}{matrixMultiply2D}}(x2D,\ y2D);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00655}00655\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00656}00656\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}2D\ Multiplication\ Result:\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00657}00657\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ row\ :\ result)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00658}00658\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ val\ :\ row)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00659}00659\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ val\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00660}00660\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00661}00661\ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00662}00662\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00663}00663\ \ \ \}\ \textcolor{keywordflow}{else}\ \{\ \textcolor{comment}{//\ Higher-\/dimensional\ case}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00664}00664\ \ \ \ \ \ \ std::vector<std::vector<std::vector<dcmplx>>>\ result\ =\ \mbox{\hyperlink{classLayeredMediaUtils_a3ee62bdcd0ba1763e162df2c175cd022}{matrixMultiply3D}}(x,\ y);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00665}00665\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00666}00666\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}3D\ Multiplication\ Result:\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00667}00667\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ d\ =\ 0;\ d\ <\ result[0][0].size();\ ++d)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00668}00668\ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Slice\ "{}}\ <<\ d\ +\ 1\ <<\ \textcolor{stringliteral}{"{}:\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00669}00669\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ 2;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00670}00670\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ 2;\ ++j)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00671}00671\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ result[i][j][d]\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00672}00672\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00673}00673\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00674}00674\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00675}00675\ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00676}00676\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00677}00677\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00678}00678\ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00679}00679\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00684}\mbox{\hyperlink{classLayeredMediaUtils_a7ad630fd87bdac720ff90a4e2b3da69d}{00684}}\ \mbox{\hyperlink{structlayeredCoords}{layeredCoords}}\ \mbox{\hyperlink{classLayeredMediaUtils_a7ad630fd87bdac720ff90a4e2b3da69d}{LayeredMediaUtils::cartesianToLayeredQS}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ \&r1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ \&r2,\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00685}00685\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ type)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00686}00686\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00687}00687\ \ \ \ \ \mbox{\hyperlink{structlayeredCoords}{layeredCoords}}\ out\{\};}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00688}00688\ \ \ \ \ out.\mbox{\hyperlink{structlayeredCoords_ad281a39cab86b4975fbb5cb3b637876e}{r}}\ \ =\ 0.0;\ \textcolor{comment}{//\ Radial\ distance\ in\ xy‐plane}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00689}00689\ \ \ \ \ out.Z1\ =\ 0.0;\ \textcolor{comment}{//\ Vertical\ distance\ for\ lower\ interface\ (intraIn)\ or\ Z\ for\ intraTB/inter}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00690}00690\ \ \ \ \ out.Z2\ =\ 0.0;\ \textcolor{comment}{//\ Vertical\ distance\ for\ upper\ interface\ (intraIn)}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00691}00691\ \ \ \ \ out.R1\ =\ 0.0;\ \textcolor{comment}{//\ Total\ distance\ for\ lower\ interface\ (intraIn)\ or\ R\ for\ intraTB/inter}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00692}00692\ \ \ \ \ out.R2\ =\ 0.0;\ \textcolor{comment}{//\ Total\ distance\ for\ upper\ interface}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00693}00693\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00694}00694\ \ \ \ \ \textcolor{comment}{//\ Radial\ distance\ in\ xy‐plane:}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00695}00695\ \ \ \ \ \textcolor{keywordtype}{double}\ dx\ =\ r1[0]\ -\/\ r2[0];}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00696}00696\ \ \ \ \ \textcolor{keywordtype}{double}\ dy\ =\ r1[1]\ -\/\ r2[1];}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00697}00697\ \ \ \ \ out.r\ =\ std::sqrt(dx\ *\ dx\ +\ dy\ *\ dy);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00698}00698\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00699}00699\ \ \ \ \ \textcolor{comment}{//\ Vertical\ and\ total\ distances:}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00700}00700\ \ \ \ \ \textcolor{keywordflow}{if}\ (type\ ==\ \textcolor{stringliteral}{"{}intraTB"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00701}00701\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ For\ intra-\/layer\ interaction\ when\ layer\ is\ the\ top/bottom\ layer}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00702}00702\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ indexLayer\ =\ \mbox{\hyperlink{classLayeredMediaUtils_a4b40e9fd70634bc3066c31e34a002df4}{GetLayerIndex}}(r1);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00703}00703\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (indexLayer\ <\ 0\ ||\ indexLayer\ >\ \mbox{\hyperlink{classLayeredMediaUtils_aac35250533c1bf922827b5a91220fb32}{epsilon}}.size()\ -\/\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00704}00704\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}Invalid\ layer\ index\ for\ intraTB\ interaction."{}});}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00705}00705\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00706}00706\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ interfaceZ\ =\ (indexLayer\ ==\ 0\ ?\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00707}00707\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classLayeredMediaUtils_a98057e700d2180e8ee96e85a2d1cf494}{zValsInterfaces}}.front()\ :\ \mbox{\hyperlink{classLayeredMediaUtils_a98057e700d2180e8ee96e85a2d1cf494}{zValsInterfaces}}.back());}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00708}00708\ \ \ \ \ \ \ \ \ out.Z1\ =\ std::fabs(r1[2]\ +\ r2[2]\ -\/\ 2.0\ *\ interfaceZ);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00709}00709\ \ \ \ \ \ \ \ \ out.R1\ =\ std::sqrt(out.r\ *\ out.r\ +\ out.Z1\ *\ out.Z1);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00710}00710\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00711}00711\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (type\ ==\ \textcolor{stringliteral}{"{}intraIn"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00712}00712\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ For\ intra-\/layer\ interaction\ when\ layer\ is\ NOT\ the\ top/bottom\ layer}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00713}00713\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ indexLayer\ =\ \mbox{\hyperlink{classLayeredMediaUtils_a4b40e9fd70634bc3066c31e34a002df4}{GetLayerIndex}}(r1);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00714}00714\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (indexLayer\ <=\ 0\ ||\ indexLayer\ >=\ \mbox{\hyperlink{classLayeredMediaUtils_aac35250533c1bf922827b5a91220fb32}{epsilon}}.size()\ -\/\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00715}00715\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}Invalid\ layer\ index\ for\ intraIn\ interaction."{}});}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00716}00716\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00717}00717\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ lowerInterfaceZ\ =\ \mbox{\hyperlink{classLayeredMediaUtils_a98057e700d2180e8ee96e85a2d1cf494}{zValsInterfaces}}[indexLayer\ -\/\ 1];}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00718}00718\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ upperInterfaceZ\ =\ \mbox{\hyperlink{classLayeredMediaUtils_a98057e700d2180e8ee96e85a2d1cf494}{zValsInterfaces}}[indexLayer];}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00719}00719\ \ \ \ \ \ \ \ \ out.Z1\ =\ std::fabs(r1[2]\ +\ r2[2]\ -\/\ 2.0\ *\ lowerInterfaceZ);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00720}00720\ \ \ \ \ \ \ \ \ out.Z2\ =\ std::fabs(r1[2]\ +\ r2[2]\ -\/\ 2.0\ *\ upperInterfaceZ);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00721}00721\ \ \ \ \ \ \ \ \ out.R1\ =\ std::sqrt(out.r\ *\ out.r\ +\ out.Z1\ *\ out.Z1);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00722}00722\ \ \ \ \ \ \ \ \ out.R2\ =\ std::sqrt(out.r\ *\ out.r\ +\ out.Z2\ *\ out.Z2);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00723}00723\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00724}00724\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (type\ ==\ \textcolor{stringliteral}{"{}inter"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00725}00725\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ For\ inter-\/layer\ interaction\ (source\ \&\ observation\ layers\ are\ different)}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00726}00726\ \ \ \ \ \ \ \ \ out.Z1\ =\ std::fabs(r1[2]\ -\/\ r2[2]);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00727}00727\ \ \ \ \ \ \ \ \ out.R1\ =\ std::sqrt(out.r\ *\ out.r\ +\ out.Z1\ *\ out.Z1);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00728}00728\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00729}00729\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00730}00730\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Invalid\ interaction\ type.\ Use\ 'intraTB',\ 'intraIn',\ or\ 'inter'."{}});}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00731}00731\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00732}00732\ \ \ \ \ \textcolor{keywordflow}{if}\ (out.r\ <\ 1.0e-\/10)\ out.r\ =\ 1.0e-\/10;\ \textcolor{comment}{//\ Avoid\ division\ by\ zero\ in\ further\ calculations}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00733}00733\ \ \ \ \ \textcolor{keywordflow}{return}\ out;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00734}00734\ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00735}00735\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00740}\mbox{\hyperlink{classLayeredMediaUtils_ac2f15da8deb39f15a765f998aba880b7}{00740}}\ \mbox{\hyperlink{structlayeredCoords}{layeredCoords}}\ \mbox{\hyperlink{classLayeredMediaUtils_ac2f15da8deb39f15a765f998aba880b7}{LayeredMediaUtils::cartesianToLayeredTab}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ \&r1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ \&r2,\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00741}00741\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ type)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00742}00742\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00743}00743\ \ \ \ \ \mbox{\hyperlink{structlayeredCoords}{layeredCoords}}\ out\{\};}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00744}00744\ \ \ \ \ out.\mbox{\hyperlink{structlayeredCoords_ad281a39cab86b4975fbb5cb3b637876e}{r}}\ \ =\ 0.0;\ \textcolor{comment}{//\ Radial\ distance\ in\ xy‐plane}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00745}00745\ \ \ \ \ out.Z1\ =\ 0.0;\ \textcolor{comment}{//\ Vertical\ distance\ for\ lower\ interface\ (intraIn)\ or\ Z\ for\ intraTB/inter}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00746}00746\ \ \ \ \ out.Z2\ =\ 0.0;\ \textcolor{comment}{//\ Vertical\ distance\ for\ upper\ interface\ (intraIn)}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00747}00747\ \ \ \ \ out.R1\ =\ 0.0;\ \textcolor{comment}{//\ Total\ distance\ for\ lower\ interface\ (intraIn)\ or\ R\ for\ intraTB/inter}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00748}00748\ \ \ \ \ out.R2\ =\ 0.0;\ \textcolor{comment}{//\ Total\ distance\ for\ upper\ interface}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00749}00749\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00750}00750\ \ \ \ \ \textcolor{comment}{//\ Radial\ distance\ in\ xy‐plane:}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00751}00751\ \ \ \ \ \textcolor{keywordtype}{double}\ dx\ =\ r1[0]\ -\/\ r2[0];}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00752}00752\ \ \ \ \ \textcolor{keywordtype}{double}\ dy\ =\ r1[1]\ -\/\ r2[1];}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00753}00753\ \ \ \ \ out.r\ =\ std::sqrt(dx\ *\ dx\ +\ dy\ *\ dy);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00754}00754\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00755}00755\ \ \ \ \ \textcolor{comment}{//\ Vertical\ and\ total\ distances:}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00756}00756\ \ \ \ \ \textcolor{keywordflow}{if}\ (type\ ==\ \textcolor{stringliteral}{"{}intraTB"{}})\ \{\ \textcolor{comment}{//\ For\ intra-\/layer\ interaction\ when\ layer\ is\ the\ top/bottom\ layer}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00757}00757\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00758}00758\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ the\ layer\ is\ the\ top\ or\ bottom\ layer}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00759}00759\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ indexLayer\ =\ \mbox{\hyperlink{classLayeredMediaUtils_a4b40e9fd70634bc3066c31e34a002df4}{GetLayerIndex}}(r1);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00760}00760\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (indexLayer\ <\ 0\ ||\ indexLayer\ >\ \mbox{\hyperlink{classLayeredMediaUtils_aac35250533c1bf922827b5a91220fb32}{epsilon}}.size()\ -\/\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00761}00761\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}Invalid\ layer\ index\ for\ intraTB\ interaction."{}});}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00762}00762\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00763}00763\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00764}00764\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Calculate\ the\ vertical\ distance\ based\ on\ the\ layer\ index}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00765}00765\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ interfaceZ\ =\ (indexLayer\ ==\ 0\ ?\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00766}00766\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classLayeredMediaUtils_a98057e700d2180e8ee96e85a2d1cf494}{zValsInterfaces}}.front()\ :\ \mbox{\hyperlink{classLayeredMediaUtils_a98057e700d2180e8ee96e85a2d1cf494}{zValsInterfaces}}.back());}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00767}00767\ \ \ \ \ \ \ \ \ out.Z1\ =\ std::fabs(r1[2]\ +\ r2[2]\ -\/\ 2.0\ *\ interfaceZ);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00768}00768\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00769}00769\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (type\ ==\ \textcolor{stringliteral}{"{}intraIn"{}})\ \{\ \textcolor{comment}{//\ For\ intra-\/layer\ interaction\ (layer\ is\ NOT\ the\ first/last)}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00770}00770\ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00771}00771\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ the\ layer\ is\ a\ layer\ of\ the\ interior}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00772}00772\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ indexLayer\ =\ \mbox{\hyperlink{classLayeredMediaUtils_a4b40e9fd70634bc3066c31e34a002df4}{GetLayerIndex}}(r1);}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00773}00773\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (indexLayer\ <=\ 0\ ||\ indexLayer\ >=\ \mbox{\hyperlink{classLayeredMediaUtils_aac35250533c1bf922827b5a91220fb32}{epsilon}}.size()\ -\/\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00774}00774\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}Invalid\ layer\ index\ for\ intraIn\ interaction."{}});}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00775}00775\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00776}00776\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00777}00777\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Calculate\ the\ vertical\ distance\ based\ on\ the\ layer\ index}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00778}00778\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ lowerInterfaceZ\ =\ \mbox{\hyperlink{classLayeredMediaUtils_a98057e700d2180e8ee96e85a2d1cf494}{zValsInterfaces}}[indexLayer\ -\/\ 1];}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00779}00779\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ upperInterfaceZ\ =\ \mbox{\hyperlink{classLayeredMediaUtils_a98057e700d2180e8ee96e85a2d1cf494}{zValsInterfaces}}[indexLayer];}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00780}00780\ \ \ \ \ \ \ \ \ out.Z1\ =\ r1[2]\ -\/\ r2[2]\ +\ upperInterfaceZ\ -\/\ lowerInterfaceZ;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00781}00781\ \ \ \ \ \ \ \ \ out.Z2\ =\ r1[2]\ +\ r2[2]\ -\/\ 2.0\ *\ lowerInterfaceZ;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00782}00782\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00783}00783\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (type\ ==\ \textcolor{stringliteral}{"{}inter"{}})\ \{\ \textcolor{comment}{//\ For\ inter-\/layer\ interaction\ (source\ \&\ observation\ layers\ are\ different)}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00784}00784\ \ \ \ \ \ \ \ \ out.Z1\ =\ r1[2];\ out.Z2\ =\ r2[2];}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00785}00785\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00786}00786\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00787}00787\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Invalid\ interaction\ type.\ Use\ 'intraTB',\ 'intraIn',\ or\ 'inter'."{}});}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00788}00788\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00789}00789\ \ \ \ \ \textcolor{keywordflow}{return}\ out;}
+\DoxyCodeLine{\Hypertarget{LayeredMediaUtils_8cpp_source_l00790}00790\ \}}
+
+\end{DoxyCode}

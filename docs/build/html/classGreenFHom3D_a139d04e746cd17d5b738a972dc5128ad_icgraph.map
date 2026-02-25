@@ -1,0 +1,9 @@
+<map id="GreenFHom3D::AboveThreshold" name="GreenFHom3D::AboveThreshold">
+<area shape="rect" id="Node000001" title="Heuristic test based on ." alt="" coords="289,57,519,85"/>
+<area shape="rect" id="Node000002" href="$classGreenFHom3DPer.html#af451f0bfd43404b11e5ea97c9ee84c9d" title="Helper used by near/far tests to assign the nearest image vector." alt="" coords="28,5,218,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="310,57,201,36,202,31,311,51"/>
+<area shape="rect" id="Node000003" href="$classGreenFHom3D.html#a419cbe00b5a2aed70ac546904a8a8d6f" title="Compute &#160;and &#160;for all RWG pairs on two triangles." alt="" coords="25,57,221,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="273,74,222,74,222,68,273,68"/>
+<area shape="rect" id="Node000004" href="$classGreenFHom3DPer2D.html#a1dc9dd84c93ee10b2fb4b1866103d957" title="Compute &#160;and &#160;for all RWG pairs on two triangles." alt="" coords="5,109,241,137"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="311,91,202,111,201,106,310,86"/>
+</map>

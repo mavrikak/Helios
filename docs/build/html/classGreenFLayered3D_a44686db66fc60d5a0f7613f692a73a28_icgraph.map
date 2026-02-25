@@ -1,0 +1,11 @@
+<map id="GreenFLayered3D::AboveThreshold" name="GreenFLayered3D::AboveThreshold">
+<area shape="rect" id="Node000001" title="Checks whether the given positions exceed a predefined distance threshold." alt="" coords="271,118,522,146"/>
+<area shape="rect" id="Node000002" href="$classGreenFLayered3D.html#afbdbfdc8fc40fc885f6377d5be242d36" title="term at an observation point." alt="" coords="11,5,217,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="347,114,222,65,187,53,189,48,224,60,349,109"/>
+<area shape="rect" id="Node000003" href="$classGreenFLayered3D.html#a439eddb43f46fb52f6c84898ea12aa40" title="term at an observation point." alt="" coords="11,75,217,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="263,118,217,112,217,107,264,113"/>
+<area shape="rect" id="Node000004" href="$classGreenFLayered3D.html#af46d152fbc30bdc418ff16e5e7a334c6" title="Point–triangle delta/kappa contributions for RHS assembly." alt="" coords="15,144,213,189"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="264,151,214,157,213,152,263,145"/>
+<area shape="rect" id="Node000005" href="$classGreenFLayered3D.html#a6c88af86169f8d148c3e9f4da77a77d0" title="Triangle–triangle D/K blocks assembly for all RWG pairs on two triangles." alt="" coords="5,212,223,240"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="351,154,291,179,223,204,184,214,183,209,222,198,289,174,349,149"/>
+</map>

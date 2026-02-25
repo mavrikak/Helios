@@ -1,0 +1,166 @@
+\doxysection{Data2D Struct Reference}
+\hypertarget{structData2D}{}\label{structData2D}\index{Data2D@{Data2D}}
+
+
+Structure representing the 2D spatial data used for tabulation in a layered medium.  
+
+
+
+
+{\ttfamily \#include $<$Layered\+Media\+Utils.\+h$>$}
+
+
+
+Collaboration diagram for Data2D\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{structData2D__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{structData2D_a92b8f19469c6a26c3acd3ffbc09aaa9c}{r\+Vec}}
+\begin{DoxyCompactList}\small\item\em Radial coordinate sampling points. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{structData2D_a3696f9bea6b9c4db4e36083b6f297ae4}{r\+Matrix}}
+\begin{DoxyCompactList}\small\item\em 2D grid of radial coordinates. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{structData2D_a5831681c946cbae4f1c983dd319eddb6}{z1\+Vec}}
+\begin{DoxyCompactList}\small\item\em Z1 coordinate sampling points. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{structData2D_aad6460efee22a1b46b3a70dbcb445ef9}{z1\+Matrix}}
+\begin{DoxyCompactList}\small\item\em 2D grid of Z1 coordinates. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{structData2D_a361d367d572d8637467b70a1bbc1ce62}{z2\+Vec}}
+\begin{DoxyCompactList}\small\item\em Z2 coordinate sampling points. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{structData2D_ac2177da6489b6bd9cac4971206d39c0e}{z2\+Matrix}}
+\begin{DoxyCompactList}\small\item\em 2D grid of Z2 coordinates. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{structData2D_a6aaf03fdd8b4d06584700067adb86808}{ind\+Vec}}
+\begin{DoxyCompactList}\small\item\em Flat index mapping for grid access. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::complex$<$ int $>$ $>$ \mbox{\hyperlink{structData2D_a8db9fd3c6d33ae433726a25a23a21d48}{ind\+Vec\+Complex}}
+\begin{DoxyCompactList}\small\item\em Complex-\/valued index mapping. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure representing the 2D spatial data used for tabulation in a layered medium. 
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00082}{82}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structData2D_a6aaf03fdd8b4d06584700067adb86808}\index{Data2D@{Data2D}!indVec@{indVec}}
+\index{indVec@{indVec}!Data2D@{Data2D}}
+\doxysubsubsection{\texorpdfstring{indVec}{indVec}}
+{\footnotesize\ttfamily \label{structData2D_a6aaf03fdd8b4d06584700067adb86808} 
+std\+::vector$<$int$>$ Data2\+D\+::ind\+Vec}
+
+
+
+Flat index mapping for grid access. 
+
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00089}{89}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+\Hypertarget{structData2D_a8db9fd3c6d33ae433726a25a23a21d48}\index{Data2D@{Data2D}!indVecComplex@{indVecComplex}}
+\index{indVecComplex@{indVecComplex}!Data2D@{Data2D}}
+\doxysubsubsection{\texorpdfstring{indVecComplex}{indVecComplex}}
+{\footnotesize\ttfamily \label{structData2D_a8db9fd3c6d33ae433726a25a23a21d48} 
+std\+::vector$<$std\+::complex$<$int$>$ $>$ Data2\+D\+::ind\+Vec\+Complex}
+
+
+
+Complex-\/valued index mapping. 
+
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00090}{90}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+\Hypertarget{structData2D_a3696f9bea6b9c4db4e36083b6f297ae4}\index{Data2D@{Data2D}!rMatrix@{rMatrix}}
+\index{rMatrix@{rMatrix}!Data2D@{Data2D}}
+\doxysubsubsection{\texorpdfstring{rMatrix}{rMatrix}}
+{\footnotesize\ttfamily \label{structData2D_a3696f9bea6b9c4db4e36083b6f297ae4} 
+std\+::vector$<$std\+::vector$<$double$>$ $>$ Data2\+D\+::r\+Matrix}
+
+
+
+2D grid of radial coordinates. 
+
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00084}{84}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+\Hypertarget{structData2D_a92b8f19469c6a26c3acd3ffbc09aaa9c}\index{Data2D@{Data2D}!rVec@{rVec}}
+\index{rVec@{rVec}!Data2D@{Data2D}}
+\doxysubsubsection{\texorpdfstring{rVec}{rVec}}
+{\footnotesize\ttfamily \label{structData2D_a92b8f19469c6a26c3acd3ffbc09aaa9c} 
+std\+::vector$<$double$>$ Data2\+D\+::r\+Vec}
+
+
+
+Radial coordinate sampling points. 
+
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00083}{83}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+\Hypertarget{structData2D_aad6460efee22a1b46b3a70dbcb445ef9}\index{Data2D@{Data2D}!z1Matrix@{z1Matrix}}
+\index{z1Matrix@{z1Matrix}!Data2D@{Data2D}}
+\doxysubsubsection{\texorpdfstring{z1Matrix}{z1Matrix}}
+{\footnotesize\ttfamily \label{structData2D_aad6460efee22a1b46b3a70dbcb445ef9} 
+std\+::vector$<$std\+::vector$<$double$>$ $>$ Data2\+D\+::z1\+Matrix}
+
+
+
+2D grid of Z1 coordinates. 
+
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00086}{86}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+\Hypertarget{structData2D_a5831681c946cbae4f1c983dd319eddb6}\index{Data2D@{Data2D}!z1Vec@{z1Vec}}
+\index{z1Vec@{z1Vec}!Data2D@{Data2D}}
+\doxysubsubsection{\texorpdfstring{z1Vec}{z1Vec}}
+{\footnotesize\ttfamily \label{structData2D_a5831681c946cbae4f1c983dd319eddb6} 
+std\+::vector$<$double$>$ Data2\+D\+::z1\+Vec}
+
+
+
+Z1 coordinate sampling points. 
+
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00085}{85}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+\Hypertarget{structData2D_ac2177da6489b6bd9cac4971206d39c0e}\index{Data2D@{Data2D}!z2Matrix@{z2Matrix}}
+\index{z2Matrix@{z2Matrix}!Data2D@{Data2D}}
+\doxysubsubsection{\texorpdfstring{z2Matrix}{z2Matrix}}
+{\footnotesize\ttfamily \label{structData2D_ac2177da6489b6bd9cac4971206d39c0e} 
+std\+::vector$<$std\+::vector$<$double$>$ $>$ Data2\+D\+::z2\+Matrix}
+
+
+
+2D grid of Z2 coordinates. 
+
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00088}{88}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+\Hypertarget{structData2D_a361d367d572d8637467b70a1bbc1ce62}\index{Data2D@{Data2D}!z2Vec@{z2Vec}}
+\index{z2Vec@{z2Vec}!Data2D@{Data2D}}
+\doxysubsubsection{\texorpdfstring{z2Vec}{z2Vec}}
+{\footnotesize\ttfamily \label{structData2D_a361d367d572d8637467b70a1bbc1ce62} 
+std\+::vector$<$double$>$ Data2\+D\+::z2\+Vec}
+
+
+
+Z2 coordinate sampling points. 
+
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00087}{87}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{LayeredMediaUtils_8h}{Layered\+Media\+Utils.\+h}}\end{DoxyCompactItemize}

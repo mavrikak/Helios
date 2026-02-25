@@ -1,0 +1,558 @@
+\doxysection{Sing\+Cancellation Class Reference}
+\hypertarget{classSingCancellation}{}\label{classSingCancellation}\index{SingCancellation@{SingCancellation}}
+
+
+Builds synchronized quadrature nodes/weights for a pair of touching triangles.  
+
+
+
+
+{\ttfamily \#include $<$Sing\+Cancellation.\+h$>$}
+
+
+
+Collaboration diagram for Sing\+Cancellation\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classSingCancellation__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSingCancellation_a8931df16b2dd06d74b1aa8a78eab4363}{Sing\+Cancellation}} (int \mbox{\hyperlink{classSingCancellation_a2e4b3ef20e8ceb038dbdf9d1769740fe}{common\+Nodes}}, \mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classSingCancellation_a04bba3dfe9ba566143df01a4748d8847}{t\+Ptr1}}, \mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classSingCancellation_a79509ba149a71d661b8cd7ddb34bf7d2}{t\+Ptr2}}, int \mbox{\hyperlink{classSingCancellation_aa6217071d6c18917cc004b86cc18a68e}{n\+Quadrature}}, double(\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classSingCancellation_abef0ed40651f8431e56d6d9389bb0227}{x\+Quadrature}})\mbox{[}2\mbox{]}, double \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classSingCancellation_a99802f89c3a53fad46c61d31b85eec3c}{w\+Quadrature}})
+\begin{DoxyCompactList}\small\item\em Construct and immediately generate the paired quadrature for a triangle pair. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSingCancellation_a861604f98ce8ce06d9559adecc7ab10c}{\texorpdfstring{$\sim$}{\string~}\+Sing\+Cancellation}} ()
+\begin{DoxyCompactList}\small\item\em Trivial destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSingCancellation_ac1258c9e1d2e1981e9ceb22477312cfd}{common\+Vertex}} ()
+\begin{DoxyCompactList}\small\item\em Build paired quadrature for triangles sharing a {\itshape single vertex}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSingCancellation_aa72d2a4d4365846ffcbee49b07a4baa7}{common\+Edge}} ()
+\begin{DoxyCompactList}\small\item\em Build paired quadrature for triangles sharing a {\itshape common edge}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSingCancellation_a7d4e2fb258f1a7a5923c823800863983}{common\+Facet}} ()
+\begin{DoxyCompactList}\small\item\em Build paired quadrature for {\itshape identical triangles} (common facet). \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{classSingCancellation_af51fe5685bf1d5a85afd61a50eb375fe}{get\+Permutation}} (int shift)
+\begin{DoxyCompactList}\small\item\em Permutation of barycentric components induced by vertex/edge alignment. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classSingCancellation_a9f0341d9a5435ccf830d35c34a752d13}{get\+Points\+Map}} (int triangle\+Index)
+\begin{DoxyCompactList}\small\item\em Access the paired barycentric nodes for triangle i. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classSingCancellation_a1e39f550c512d7f609257be4f9610082}{get\+Weights}} ()
+\begin{DoxyCompactList}\small\item\em Access the weights associated with each paired sampling point. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSingCancellation_a671bbe3bcc58c21a3fa62e605fd36be8}{write\+Matlab\+Matrix\+To\+Txt}} (const std\+::string \&filename, const std\+::string \&varname, const std\+::string \&component, const std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \&V, int size, int prec=6)
+\begin{DoxyCompactList}\small\item\em Write a single matrix column (chosen component) as a MATLAB style vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSingCancellation_a099933b83efb63d62f2b5d1c26b6b7e8}{write\+Matlab\+Vector\+To\+Txt}} (const std\+::string \&filename, const std\+::string \&varname, const std\+::vector$<$ double $>$ \&\mbox{\hyperlink{classSingCancellation_a993ac3119615aa4c55ee7a07eff1211d}{w}}, int prec=6)
+\begin{DoxyCompactList}\small\item\em Write a real vector as a MATLAB style column vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classSingCancellation_a2e4b3ef20e8ceb038dbdf9d1769740fe}{common\+Nodes}}
+\begin{DoxyCompactList}\small\item\em Number of common nodes between two triangles. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSingCancellation_a04bba3dfe9ba566143df01a4748d8847}{t\+Ptr1}}
+\begin{DoxyCompactList}\small\item\em First triangle pointer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSingCancellation_a79509ba149a71d661b8cd7ddb34bf7d2}{t\+Ptr2}}
+\begin{DoxyCompactList}\small\item\em Second triangle pointer. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSingCancellation_aa6217071d6c18917cc004b86cc18a68e}{n\+Quadrature}}
+\begin{DoxyCompactList}\small\item\em Number of quadrature points for integration. \end{DoxyCompactList}\item 
+double(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSingCancellation_abef0ed40651f8431e56d6d9389bb0227}{x\+Quadrature}} )\mbox{[}2\mbox{]}
+\begin{DoxyCompactList}\small\item\em Quadrature points for integration. \end{DoxyCompactList}\item 
+double \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSingCancellation_a99802f89c3a53fad46c61d31b85eec3c}{w\+Quadrature}}
+\begin{DoxyCompactList}\small\item\em Weights for quadrature points. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classSingCancellation_a993ac3119615aa4c55ee7a07eff1211d}{w}}
+\begin{DoxyCompactList}\small\item\em Weights for integration. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classSingCancellation_ab297b85745a100f9ad9538a7f36437d3}{points\+Map1}}
+\begin{DoxyCompactList}\small\item\em Data structure to hold quadrature points and weights for the pair of triangles. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{classSingCancellation_a3719d3d769028c0f492a6e1e7354b7aa}{points\+Map2}}
+\begin{DoxyCompactList}\small\item\em Data structure to hold quadrature points and weights for the pair of triangles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Builds synchronized quadrature nodes/weights for a pair of touching triangles. 
+
+The class generates {\itshape paired} sampling points (barycentric) on the two triangles together with properly scaled weights so that singular and near-\/singular integrals (e.\+g., double-\/surface integrals with 1/R kernels) are integrable with high accuracy.
+
+After construction, call\+:
+\begin{DoxyItemize}
+\item get\+Points\+Map(0) for triangle \#1 nodes
+\item get\+Points\+Map(1) for triangle \#2 nodes
+\item \doxylink{classSingCancellation_a1e39f550c512d7f609257be4f9610082}{get\+Weights()} for the weights associated with each {\itshape paired} sample 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{SingCancellation_8h_source_l00040}{40}} of file \mbox{\hyperlink{SingCancellation_8h_source}{Sing\+Cancellation.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classSingCancellation_a8931df16b2dd06d74b1aa8a78eab4363}\index{SingCancellation@{SingCancellation}!SingCancellation@{SingCancellation}}
+\index{SingCancellation@{SingCancellation}!SingCancellation@{SingCancellation}}
+\doxysubsubsection{\texorpdfstring{SingCancellation()}{SingCancellation()}}
+{\footnotesize\ttfamily \label{classSingCancellation_a8931df16b2dd06d74b1aa8a78eab4363} 
+Sing\+Cancellation\+::\+Sing\+Cancellation (\begin{DoxyParamCaption}\item[{int}]{common\+Nodes}{, }\item[{\mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*}}]{t\+Ptr1}{, }\item[{\mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*}}]{t\+Ptr2}{, }\item[{int}]{n\+Quadrature}{, }\item[{double(\texorpdfstring{$\ast$}{*})}]{x\+Quadrature}{\mbox{[}2\mbox{]}, }\item[{double \texorpdfstring{$\ast$}{*}}]{w\+Quadrature}{}\end{DoxyParamCaption})}
+
+
+
+Construct and immediately generate the paired quadrature for a triangle pair. 
+
+Detects how the triangles touch by {\ttfamily common\+Nodes} and calls the appropriate builder\+:
+\begin{DoxyItemize}
+\item 1 -\/\texorpdfstring{$>$}{>} \doxylink{classSingCancellation_ac1258c9e1d2e1981e9ceb22477312cfd}{common\+Vertex()}
+\item 2 -\/\texorpdfstring{$>$}{>} \doxylink{classSingCancellation_aa72d2a4d4365846ffcbee49b07a4baa7}{common\+Edge()}
+\item 3 -\/\texorpdfstring{$>$}{>} \doxylink{classSingCancellation_a7d4e2fb258f1a7a5923c823800863983}{common\+Facet()}
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em common\+Nodes} & Number of common nodes (1, 2, or 3). \\
+\hline
+{\em t\+Ptr1} & Pointer to first triangle. \\
+\hline
+{\em t\+Ptr2} & Pointer to second triangle. \\
+\hline
+{\em n\+Quadrature} & Number of 1D GL points (typically 1, 4, or 8). \\
+\hline
+{\em x\+Quadrature} & GL nodes array of shape \mbox{[}n\+Quadrature\mbox{]}\mbox{[}2\mbox{]} with $ (\xi, 1-\xi) $. \\
+\hline
+{\em w\+Quadrature} & GL weights array of length n\+Quadrature.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if {\ttfamily common\+Nodes} not in \{1,2,3\}. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{SingCancellation_8cpp_source_l00009}{9}} of file \mbox{\hyperlink{SingCancellation_8cpp_source}{Sing\+Cancellation.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSingCancellation_a8931df16b2dd06d74b1aa8a78eab4363_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSingCancellation_a861604f98ce8ce06d9559adecc7ab10c}\index{SingCancellation@{SingCancellation}!````~SingCancellation@{\texorpdfstring{$\sim$}{\string~}SingCancellation}}
+\index{````~SingCancellation@{\texorpdfstring{$\sim$}{\string~}SingCancellation}!SingCancellation@{SingCancellation}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}SingCancellation()}{\string~SingCancellation()}}
+{\footnotesize\ttfamily \label{classSingCancellation_a861604f98ce8ce06d9559adecc7ab10c} 
+Sing\+Cancellation\+::\texorpdfstring{$\sim$}{\string~}\+Sing\+Cancellation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Trivial destructor. 
+
+
+
+Definition at line \mbox{\hyperlink{SingCancellation_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{SingCancellation_8cpp_source}{Sing\+Cancellation.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSingCancellation_aa72d2a4d4365846ffcbee49b07a4baa7}\index{SingCancellation@{SingCancellation}!commonEdge@{commonEdge}}
+\index{commonEdge@{commonEdge}!SingCancellation@{SingCancellation}}
+\doxysubsubsection{\texorpdfstring{commonEdge()}{commonEdge()}}
+{\footnotesize\ttfamily \label{classSingCancellation_aa72d2a4d4365846ffcbee49b07a4baa7} 
+void Sing\+Cancellation\+::common\+Edge (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Build paired quadrature for triangles sharing a {\itshape common edge}. 
+
+Produces $ 12 n^4 $ paired nodes per the six base mappings plus their symmetric counterparts ( $ \xi \leftrightarrow \eta $). Includes the $ \omega $-\/dependent Jacobian. Based on Taylor (2003), D\textquotesingle{}Elia et al. (2011), Sarraf et al. (2014).
+
+\begin{DoxyNote}{Note}
+Called automatically by the constructor when {\ttfamily common\+Nodes==2}.
+\end{DoxyNote}
+Build quadrature for triangles sharing a {\itshape common edge}. Mapping creates six base cases ( $k=0...5$), then symmetrizes to twelve, yielding $12n^4$ paired nodes overall. The $\omega$-\/dependent Jacobian $ x_1 \omega^2 (1-\omega) $ is folded into the weights.
+
+\begin{DoxyWarning}{Warning}
+std\+::runtime\+\_\+error if no common edge is found. 
+\end{DoxyWarning}
+
+
+Definition at line \mbox{\hyperlink{SingCancellation_8cpp_source_l00128}{128}} of file \mbox{\hyperlink{SingCancellation_8cpp_source}{Sing\+Cancellation.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSingCancellation_aa72d2a4d4365846ffcbee49b07a4baa7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSingCancellation_aa72d2a4d4365846ffcbee49b07a4baa7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSingCancellation_a7d4e2fb258f1a7a5923c823800863983}\index{SingCancellation@{SingCancellation}!commonFacet@{commonFacet}}
+\index{commonFacet@{commonFacet}!SingCancellation@{SingCancellation}}
+\doxysubsubsection{\texorpdfstring{commonFacet()}{commonFacet()}}
+{\footnotesize\ttfamily \label{classSingCancellation_a7d4e2fb258f1a7a5923c823800863983} 
+void Sing\+Cancellation\+::common\+Facet (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Build paired quadrature for {\itshape identical triangles} (common facet). 
+
+Produces $ 6 n^4 $ paired nodes from three base mappings and symmetry, with per-\/case Jacobians folded into the weights. Based on Taylor (2003), D\textquotesingle{}Elia et al. (2011), Sarraf et al. (2014).
+
+\begin{DoxyNote}{Note}
+Called automatically by the constructor when {\ttfamily common\+Nodes==3}.
+\end{DoxyNote}
+Build quadrature for {\itshape identical} triangles (common facet). Uses three base mappings and symmetry ( $ \xi \leftrightarrow \eta $) to produce $ 6 n^4 $ pairs. A per-\/case Jacobian (three values) is applied to the weights. 
+
+Definition at line \mbox{\hyperlink{SingCancellation_8cpp_source_l00252}{252}} of file \mbox{\hyperlink{SingCancellation_8cpp_source}{Sing\+Cancellation.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSingCancellation_a7d4e2fb258f1a7a5923c823800863983_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSingCancellation_a7d4e2fb258f1a7a5923c823800863983_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSingCancellation_ac1258c9e1d2e1981e9ceb22477312cfd}\index{SingCancellation@{SingCancellation}!commonVertex@{commonVertex}}
+\index{commonVertex@{commonVertex}!SingCancellation@{SingCancellation}}
+\doxysubsubsection{\texorpdfstring{commonVertex()}{commonVertex()}}
+{\footnotesize\ttfamily \label{classSingCancellation_ac1258c9e1d2e1981e9ceb22477312cfd} 
+void Sing\+Cancellation\+::common\+Vertex (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Build paired quadrature for triangles sharing a {\itshape single vertex}. 
+
+Produces $ 2 n^4 $ paired nodes (symmetrization doubles the base $ n^4 $ set), with weights including the appropriate Jacobian factors arising from the four nested scalar transforms. Based on Taylor (2003), D\textquotesingle{}Elia et al. (2011), Sarraf et al. (2014).
+
+\begin{DoxyNote}{Note}
+Called automatically by the constructor when {\ttfamily common\+Nodes==1}.
+\end{DoxyNote}
+Build quadrature for triangles with one {\itshape common vertex}. Creates the raw 4D tensor-\/product rule ( $ n^4 $ points), then applies the two-\/way symmetrization ( $ \xi \leftrightarrow \eta $) to obtain $ 2 n^4 $ paired samples. Each sample produces one barycentric triple on triangle \#1 and the corresponding triple on triangle \#2, plus the combined weight\+: $ w = 4 w_i w_j w_p w_q J(\xi, \eta, ...) $.
+
+Internally uses \doxylink{classTriangle_aa137190a0a6fd9adadee37a8228313d6}{Triangle\+::\+Find\+Common\+Vertex\+Indices()} to determine how the barycentric coordinates must be permuted on each triangle so that the {\itshape same} physical vertex is aligned in both local parameterizations.
+
+\begin{DoxyWarning}{Warning}
+On failure to detect the shared vertex, a runtime\+\_\+error is thrown. 
+\end{DoxyWarning}
+
+
+Definition at line \mbox{\hyperlink{SingCancellation_8cpp_source_l00038}{38}} of file \mbox{\hyperlink{SingCancellation_8cpp_source}{Sing\+Cancellation.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSingCancellation_ac1258c9e1d2e1981e9ceb22477312cfd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSingCancellation_ac1258c9e1d2e1981e9ceb22477312cfd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSingCancellation_af51fe5685bf1d5a85afd61a50eb375fe}\index{SingCancellation@{SingCancellation}!getPermutation@{getPermutation}}
+\index{getPermutation@{getPermutation}!SingCancellation@{SingCancellation}}
+\doxysubsubsection{\texorpdfstring{getPermutation()}{getPermutation()}}
+{\footnotesize\ttfamily \label{classSingCancellation_af51fe5685bf1d5a85afd61a50eb375fe} 
+std\+::vector$<$ int $>$ Sing\+Cancellation\+::get\+Permutation (\begin{DoxyParamCaption}\item[{int}]{shift}{}\end{DoxyParamCaption})}
+
+
+
+Permutation of barycentric components induced by vertex/edge alignment. 
+
+The shift encodes how the $ (\lambda_1, \lambda_2, \lambda_3) $ triple must be permuted so that the first component corresponds to the vertex opposite the "{}free"{} entity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em shift} & Encoded shift (−3...−1, 1...3). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A permutation vector of indices in \{0,1,2\}.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & on unsupported {\ttfamily shift}.\\
+\hline
+\end{DoxyExceptions}
+Map "{}shift code"{} -\/\texorpdfstring{$>$}{>} permutation indices of a barycentric triple. Encodes the rotations/reflections needed to align local $ (\lambda_1, \lambda_2, \lambda_3) $ choices across the two triangles so the {\itshape same physical} vertex/edge is addressed. 
+
+Definition at line \mbox{\hyperlink{SingCancellation_8cpp_source_l00357}{357}} of file \mbox{\hyperlink{SingCancellation_8cpp_source}{Sing\+Cancellation.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSingCancellation_af51fe5685bf1d5a85afd61a50eb375fe_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSingCancellation_a9f0341d9a5435ccf830d35c34a752d13}\index{SingCancellation@{SingCancellation}!getPointsMap@{getPointsMap}}
+\index{getPointsMap@{getPointsMap}!SingCancellation@{SingCancellation}}
+\doxysubsubsection{\texorpdfstring{getPointsMap()}{getPointsMap()}}
+{\footnotesize\ttfamily \label{classSingCancellation_a9f0341d9a5435ccf830d35c34a752d13} 
+std\+::vector$<$ std\+::vector$<$ double $>$ $>$ Sing\+Cancellation\+::get\+Points\+Map (\begin{DoxyParamCaption}\item[{int}]{triangle\+Index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Access the paired barycentric nodes for triangle i. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em triangle\+Index} & 0 for the first triangle, 1 for the second. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Points map of size (paired nodes) x 3.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if {\ttfamily triangle\+Index} not in \{0,1\}. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{SingCancellation_8h_source_l00137}{137}} of file \mbox{\hyperlink{SingCancellation_8h_source}{Sing\+Cancellation.\+h}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSingCancellation_a9f0341d9a5435ccf830d35c34a752d13_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSingCancellation_a1e39f550c512d7f609257be4f9610082}\index{SingCancellation@{SingCancellation}!getWeights@{getWeights}}
+\index{getWeights@{getWeights}!SingCancellation@{SingCancellation}}
+\doxysubsubsection{\texorpdfstring{getWeights()}{getWeights()}}
+{\footnotesize\ttfamily \label{classSingCancellation_a1e39f550c512d7f609257be4f9610082} 
+std\+::vector$<$ double $>$ Sing\+Cancellation\+::get\+Weights (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Access the weights associated with each paired sampling point. 
+
+\begin{DoxyReturn}{Returns}
+Vector of size paired nodes. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SingCancellation_8h_source_l00151}{151}} of file \mbox{\hyperlink{SingCancellation_8h_source}{Sing\+Cancellation.\+h}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSingCancellation_a1e39f550c512d7f609257be4f9610082_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSingCancellation_a671bbe3bcc58c21a3fa62e605fd36be8}\index{SingCancellation@{SingCancellation}!writeMatlabMatrixToTxt@{writeMatlabMatrixToTxt}}
+\index{writeMatlabMatrixToTxt@{writeMatlabMatrixToTxt}!SingCancellation@{SingCancellation}}
+\doxysubsubsection{\texorpdfstring{writeMatlabMatrixToTxt()}{writeMatlabMatrixToTxt()}}
+{\footnotesize\ttfamily \label{classSingCancellation_a671bbe3bcc58c21a3fa62e605fd36be8} 
+void Sing\+Cancellation\+::write\+Matlab\+Matrix\+To\+Txt (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{, }\item[{const std\+::string \&}]{varname}{, }\item[{const std\+::string \&}]{component}{, }\item[{const std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \&}]{V}{, }\item[{int}]{size}{, }\item[{int}]{prec}{ = {\ttfamily 6}}\end{DoxyParamCaption})}
+
+
+
+Write a single matrix column (chosen component) as a MATLAB style vector. 
+
+Writes\+: varname = \mbox{[} v1; v2; ... \mbox{]};
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Output text filename. \\
+\hline
+{\em varname} & MATLAB variable name to assign. \\
+\hline
+{\em component} & Which barycentric component to export\+: "{}x"{},"{}y"{},"{}z"{} (0,1,2). If empty, writes the first component by default. \\
+\hline
+{\em V} & Matrix to export (rows correspond to points). \\
+\hline
+{\em size} & Number of rows to write (typically V.\+size()). \\
+\hline
+{\em prec} & Decimal precision (default 6). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{SingCancellation_8cpp_source_l00377}{377}} of file \mbox{\hyperlink{SingCancellation_8cpp_source}{Sing\+Cancellation.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSingCancellation_a671bbe3bcc58c21a3fa62e605fd36be8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSingCancellation_a099933b83efb63d62f2b5d1c26b6b7e8}\index{SingCancellation@{SingCancellation}!writeMatlabVectorToTxt@{writeMatlabVectorToTxt}}
+\index{writeMatlabVectorToTxt@{writeMatlabVectorToTxt}!SingCancellation@{SingCancellation}}
+\doxysubsubsection{\texorpdfstring{writeMatlabVectorToTxt()}{writeMatlabVectorToTxt()}}
+{\footnotesize\ttfamily \label{classSingCancellation_a099933b83efb63d62f2b5d1c26b6b7e8} 
+void Sing\+Cancellation\+::write\+Matlab\+Vector\+To\+Txt (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{, }\item[{const std\+::string \&}]{varname}{, }\item[{const std\+::vector$<$ double $>$ \&}]{w}{, }\item[{int}]{prec}{ = {\ttfamily 6}}\end{DoxyParamCaption})}
+
+
+
+Write a real vector as a MATLAB style column vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Output text filename. \\
+\hline
+{\em varname} & MATLAB variable name to assign. \\
+\hline
+{\em w} & Data vector to write. \\
+\hline
+{\em prec} & Decimal precision (default 6). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{SingCancellation_8cpp_source_l00413}{413}} of file \mbox{\hyperlink{SingCancellation_8cpp_source}{Sing\+Cancellation.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSingCancellation_a099933b83efb63d62f2b5d1c26b6b7e8_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classSingCancellation_a2e4b3ef20e8ceb038dbdf9d1769740fe}\index{SingCancellation@{SingCancellation}!commonNodes@{commonNodes}}
+\index{commonNodes@{commonNodes}!SingCancellation@{SingCancellation}}
+\doxysubsubsection{\texorpdfstring{commonNodes}{commonNodes}}
+{\footnotesize\ttfamily \label{classSingCancellation_a2e4b3ef20e8ceb038dbdf9d1769740fe} 
+int Sing\+Cancellation\+::common\+Nodes\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of common nodes between two triangles. 
+
+
+
+Definition at line \mbox{\hyperlink{SingCancellation_8h_source_l00043}{43}} of file \mbox{\hyperlink{SingCancellation_8h_source}{Sing\+Cancellation.\+h}}.
+
+\Hypertarget{classSingCancellation_aa6217071d6c18917cc004b86cc18a68e}\index{SingCancellation@{SingCancellation}!nQuadrature@{nQuadrature}}
+\index{nQuadrature@{nQuadrature}!SingCancellation@{SingCancellation}}
+\doxysubsubsection{\texorpdfstring{nQuadrature}{nQuadrature}}
+{\footnotesize\ttfamily \label{classSingCancellation_aa6217071d6c18917cc004b86cc18a68e} 
+int Sing\+Cancellation\+::n\+Quadrature\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of quadrature points for integration. 
+
+
+
+Definition at line \mbox{\hyperlink{SingCancellation_8h_source_l00046}{46}} of file \mbox{\hyperlink{SingCancellation_8h_source}{Sing\+Cancellation.\+h}}.
+
+\Hypertarget{classSingCancellation_ab297b85745a100f9ad9538a7f36437d3}\index{SingCancellation@{SingCancellation}!pointsMap1@{pointsMap1}}
+\index{pointsMap1@{pointsMap1}!SingCancellation@{SingCancellation}}
+\doxysubsubsection{\texorpdfstring{pointsMap1}{pointsMap1}}
+{\footnotesize\ttfamily \label{classSingCancellation_ab297b85745a100f9ad9538a7f36437d3} 
+std\+::vector$<$std\+::vector$<$double$>$ $>$ Sing\+Cancellation\+::points\+Map1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Data structure to hold quadrature points and weights for the pair of triangles. 
+
+
+
+Definition at line \mbox{\hyperlink{SingCancellation_8h_source_l00052}{52}} of file \mbox{\hyperlink{SingCancellation_8h_source}{Sing\+Cancellation.\+h}}.
+
+\Hypertarget{classSingCancellation_a3719d3d769028c0f492a6e1e7354b7aa}\index{SingCancellation@{SingCancellation}!pointsMap2@{pointsMap2}}
+\index{pointsMap2@{pointsMap2}!SingCancellation@{SingCancellation}}
+\doxysubsubsection{\texorpdfstring{pointsMap2}{pointsMap2}}
+{\footnotesize\ttfamily \label{classSingCancellation_a3719d3d769028c0f492a6e1e7354b7aa} 
+std\+::vector$<$std\+::vector$<$double$>$ $>$ Sing\+Cancellation\+::points\+Map2\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Data structure to hold quadrature points and weights for the pair of triangles. 
+
+
+
+Definition at line \mbox{\hyperlink{SingCancellation_8h_source_l00054}{54}} of file \mbox{\hyperlink{SingCancellation_8h_source}{Sing\+Cancellation.\+h}}.
+
+\Hypertarget{classSingCancellation_a04bba3dfe9ba566143df01a4748d8847}\index{SingCancellation@{SingCancellation}!tPtr1@{tPtr1}}
+\index{tPtr1@{tPtr1}!SingCancellation@{SingCancellation}}
+\doxysubsubsection{\texorpdfstring{tPtr1}{tPtr1}}
+{\footnotesize\ttfamily \label{classSingCancellation_a04bba3dfe9ba566143df01a4748d8847} 
+\mbox{\hyperlink{classTriangle}{Triangle}}\texorpdfstring{$\ast$}{*} Sing\+Cancellation\+::t\+Ptr1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+First triangle pointer. 
+
+
+
+Definition at line \mbox{\hyperlink{SingCancellation_8h_source_l00044}{44}} of file \mbox{\hyperlink{SingCancellation_8h_source}{Sing\+Cancellation.\+h}}.
+
+\Hypertarget{classSingCancellation_a79509ba149a71d661b8cd7ddb34bf7d2}\index{SingCancellation@{SingCancellation}!tPtr2@{tPtr2}}
+\index{tPtr2@{tPtr2}!SingCancellation@{SingCancellation}}
+\doxysubsubsection{\texorpdfstring{tPtr2}{tPtr2}}
+{\footnotesize\ttfamily \label{classSingCancellation_a79509ba149a71d661b8cd7ddb34bf7d2} 
+\mbox{\hyperlink{classTriangle}{Triangle}}\texorpdfstring{$\ast$}{*} Sing\+Cancellation\+::t\+Ptr2\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Second triangle pointer. 
+
+
+
+Definition at line \mbox{\hyperlink{SingCancellation_8h_source_l00045}{45}} of file \mbox{\hyperlink{SingCancellation_8h_source}{Sing\+Cancellation.\+h}}.
+
+\Hypertarget{classSingCancellation_a993ac3119615aa4c55ee7a07eff1211d}\index{SingCancellation@{SingCancellation}!w@{w}}
+\index{w@{w}!SingCancellation@{SingCancellation}}
+\doxysubsubsection{\texorpdfstring{w}{w}}
+{\footnotesize\ttfamily \label{classSingCancellation_a993ac3119615aa4c55ee7a07eff1211d} 
+std\+::vector$<$double$>$ Sing\+Cancellation\+::w\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Weights for integration. 
+
+
+
+Definition at line \mbox{\hyperlink{SingCancellation_8h_source_l00049}{49}} of file \mbox{\hyperlink{SingCancellation_8h_source}{Sing\+Cancellation.\+h}}.
+
+\Hypertarget{classSingCancellation_a99802f89c3a53fad46c61d31b85eec3c}\index{SingCancellation@{SingCancellation}!wQuadrature@{wQuadrature}}
+\index{wQuadrature@{wQuadrature}!SingCancellation@{SingCancellation}}
+\doxysubsubsection{\texorpdfstring{wQuadrature}{wQuadrature}}
+{\footnotesize\ttfamily \label{classSingCancellation_a99802f89c3a53fad46c61d31b85eec3c} 
+double\texorpdfstring{$\ast$}{*} Sing\+Cancellation\+::w\+Quadrature\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Weights for quadrature points. 
+
+
+
+Definition at line \mbox{\hyperlink{SingCancellation_8h_source_l00048}{48}} of file \mbox{\hyperlink{SingCancellation_8h_source}{Sing\+Cancellation.\+h}}.
+
+\Hypertarget{classSingCancellation_abef0ed40651f8431e56d6d9389bb0227}\index{SingCancellation@{SingCancellation}!xQuadrature@{xQuadrature}}
+\index{xQuadrature@{xQuadrature}!SingCancellation@{SingCancellation}}
+\doxysubsubsection{\texorpdfstring{xQuadrature}{xQuadrature}}
+{\footnotesize\ttfamily \label{classSingCancellation_abef0ed40651f8431e56d6d9389bb0227} 
+double(\texorpdfstring{$\ast$}{*} Sing\+Cancellation\+::x\+Quadrature)\mbox{[}2\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Quadrature points for integration. 
+
+
+
+Definition at line \mbox{\hyperlink{SingCancellation_8h_source_l00047}{47}} of file \mbox{\hyperlink{SingCancellation_8h_source}{Sing\+Cancellation.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{SingCancellation_8h}{Sing\+Cancellation.\+h}}\item 
+\mbox{\hyperlink{SingCancellation_8cpp}{Sing\+Cancellation.\+cpp}}\end{DoxyCompactItemize}

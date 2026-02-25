@@ -1,0 +1,160 @@
+\doxysection{Sim\+Job.\+h File Reference}
+\hypertarget{SimJob_8h}{}\label{SimJob_8h}\index{SimJob.h@{SimJob.h}}
+
+
+Orchestrates a full simulation run\+: parse job/subjobs, build the linear system, solve it, and optionally post-\/process fields.  
+
+
+{\ttfamily \#include $<$blitz/array.\+h$>$}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include "{}Domain.\+h"{}}\newline
+{\ttfamily \#include "{}Job\+Parser.\+h"{}}\newline
+{\ttfamily \#include "{}SIEForm.\+h"{}}\newline
+Include dependency graph for Sim\+Job.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{SimJob_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{SimJob_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classSimJob}{Sim\+Job}}
+\begin{DoxyCompactList}\small\item\em High-\/level driver for SIE simulations and field evaluation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{SimJob_8h_a8263a262e3a4d744b08556f9bf181436}{EFIELD}}~1
+\begin{DoxyCompactList}\small\item\em Output electric field E. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{SimJob_8h_a279145c6fa24dc48d310a768b996744c}{HFIELD}}~2
+\begin{DoxyCompactList}\small\item\em Output magnetic field H. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{SimJob_8h_aa175bacfd8fb9b53cad24a7cb94db1f4}{DFIELD}}~4
+\begin{DoxyCompactList}\small\item\em Output electric displacement $\mathbf{D} = \varepsilon \mathbf{E}$. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{SimJob_8h_a0809674a029a31eaccea6dd07e590529}{BFIELD}}~8
+\begin{DoxyCompactList}\small\item\em Output magnetic flux density $\mathbf{B} = \mu \mathbf{H}$. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{SimJob_8h_abe086912e6dddeeb2bd68bc6712bf576}{POYVEC}}~16
+\begin{DoxyCompactList}\small\item\em Output Poynting vectors (inc/sca/ext) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{SimJob_8h_a88e090a808630e22e34d9f69c0be9c66}{FORCE}}~32
+\begin{DoxyCompactList}\small\item\em (reserved) force output \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{SimJob_8h_a0d5e23bac60070676b465522a140f5c7}{POWER}}~64
+\begin{DoxyCompactList}\small\item\em Output total power crossing domain boundaries. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Orchestrates a full simulation run\+: parse job/subjobs, build the linear system, solve it, and optionally post-\/process fields. 
+
+One \doxylink{classSimJob}{Sim\+Job} corresponds to one mesh and wavelength setup, with possibly multiple subjobs (different incident fields) reusing the same system matrix. 
+
+Definition in file \mbox{\hyperlink{SimJob_8h_source}{Sim\+Job.\+h}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{SimJob_8h_a0809674a029a31eaccea6dd07e590529}\index{SimJob.h@{SimJob.h}!BFIELD@{BFIELD}}
+\index{BFIELD@{BFIELD}!SimJob.h@{SimJob.h}}
+\doxysubsubsection{\texorpdfstring{BFIELD}{BFIELD}}
+{\footnotesize\ttfamily \label{SimJob_8h_a0809674a029a31eaccea6dd07e590529} 
+\#define BFIELD~8}
+
+
+
+Output magnetic flux density $\mathbf{B} = \mu \mathbf{H}$. 
+
+
+
+Definition at line \mbox{\hyperlink{SimJob_8h_source_l00017}{17}} of file \mbox{\hyperlink{SimJob_8h_source}{Sim\+Job.\+h}}.
+
+\Hypertarget{SimJob_8h_aa175bacfd8fb9b53cad24a7cb94db1f4}\index{SimJob.h@{SimJob.h}!DFIELD@{DFIELD}}
+\index{DFIELD@{DFIELD}!SimJob.h@{SimJob.h}}
+\doxysubsubsection{\texorpdfstring{DFIELD}{DFIELD}}
+{\footnotesize\ttfamily \label{SimJob_8h_aa175bacfd8fb9b53cad24a7cb94db1f4} 
+\#define DFIELD~4}
+
+
+
+Output electric displacement $\mathbf{D} = \varepsilon \mathbf{E}$. 
+
+
+
+Definition at line \mbox{\hyperlink{SimJob_8h_source_l00016}{16}} of file \mbox{\hyperlink{SimJob_8h_source}{Sim\+Job.\+h}}.
+
+\Hypertarget{SimJob_8h_a8263a262e3a4d744b08556f9bf181436}\index{SimJob.h@{SimJob.h}!EFIELD@{EFIELD}}
+\index{EFIELD@{EFIELD}!SimJob.h@{SimJob.h}}
+\doxysubsubsection{\texorpdfstring{EFIELD}{EFIELD}}
+{\footnotesize\ttfamily \label{SimJob_8h_a8263a262e3a4d744b08556f9bf181436} 
+\#define EFIELD~1}
+
+
+
+Output electric field E. 
+
+
+
+Definition at line \mbox{\hyperlink{SimJob_8h_source_l00014}{14}} of file \mbox{\hyperlink{SimJob_8h_source}{Sim\+Job.\+h}}.
+
+\Hypertarget{SimJob_8h_a88e090a808630e22e34d9f69c0be9c66}\index{SimJob.h@{SimJob.h}!FORCE@{FORCE}}
+\index{FORCE@{FORCE}!SimJob.h@{SimJob.h}}
+\doxysubsubsection{\texorpdfstring{FORCE}{FORCE}}
+{\footnotesize\ttfamily \label{SimJob_8h_a88e090a808630e22e34d9f69c0be9c66} 
+\#define FORCE~32}
+
+
+
+(reserved) force output 
+
+
+
+Definition at line \mbox{\hyperlink{SimJob_8h_source_l00019}{19}} of file \mbox{\hyperlink{SimJob_8h_source}{Sim\+Job.\+h}}.
+
+\Hypertarget{SimJob_8h_a279145c6fa24dc48d310a768b996744c}\index{SimJob.h@{SimJob.h}!HFIELD@{HFIELD}}
+\index{HFIELD@{HFIELD}!SimJob.h@{SimJob.h}}
+\doxysubsubsection{\texorpdfstring{HFIELD}{HFIELD}}
+{\footnotesize\ttfamily \label{SimJob_8h_a279145c6fa24dc48d310a768b996744c} 
+\#define HFIELD~2}
+
+
+
+Output magnetic field H. 
+
+
+
+Definition at line \mbox{\hyperlink{SimJob_8h_source_l00015}{15}} of file \mbox{\hyperlink{SimJob_8h_source}{Sim\+Job.\+h}}.
+
+\Hypertarget{SimJob_8h_a0d5e23bac60070676b465522a140f5c7}\index{SimJob.h@{SimJob.h}!POWER@{POWER}}
+\index{POWER@{POWER}!SimJob.h@{SimJob.h}}
+\doxysubsubsection{\texorpdfstring{POWER}{POWER}}
+{\footnotesize\ttfamily \label{SimJob_8h_a0d5e23bac60070676b465522a140f5c7} 
+\#define POWER~64}
+
+
+
+Output total power crossing domain boundaries. 
+
+
+
+Definition at line \mbox{\hyperlink{SimJob_8h_source_l00020}{20}} of file \mbox{\hyperlink{SimJob_8h_source}{Sim\+Job.\+h}}.
+
+\Hypertarget{SimJob_8h_abe086912e6dddeeb2bd68bc6712bf576}\index{SimJob.h@{SimJob.h}!POYVEC@{POYVEC}}
+\index{POYVEC@{POYVEC}!SimJob.h@{SimJob.h}}
+\doxysubsubsection{\texorpdfstring{POYVEC}{POYVEC}}
+{\footnotesize\ttfamily \label{SimJob_8h_abe086912e6dddeeb2bd68bc6712bf576} 
+\#define POYVEC~16}
+
+
+
+Output Poynting vectors (inc/sca/ext) 
+
+
+
+Definition at line \mbox{\hyperlink{SimJob_8h_source_l00018}{18}} of file \mbox{\hyperlink{SimJob_8h_source}{Sim\+Job.\+h}}.
+

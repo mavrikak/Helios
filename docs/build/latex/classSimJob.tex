@@ -1,0 +1,1588 @@
+\doxysection{Sim\+Job Class Reference}
+\hypertarget{classSimJob}{}\label{classSimJob}\index{SimJob@{SimJob}}
+
+
+High-\/level driver for SIE simulations and field evaluation.  
+
+
+
+
+{\ttfamily \#include $<$Sim\+Job.\+h$>$}
+
+
+
+Collaboration diagram for Sim\+Job\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classSimJob__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSimJob_a59a7b9db9a265d1b7976e327140299b0}{Sim\+Job}} ()
+\begin{DoxyCompactList}\small\item\em Construct an empty job (no mesh/domains yet). \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classSimJob_ab51d5f364601dd136bfdc696cdd91c69}{\texorpdfstring{$\sim$}{\string~}\+Sim\+Job}} ()
+\begin{DoxyCompactList}\small\item\em Destructor\+: frees owned domains and LUT if allocated. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSimJob_a83d402c189aeefdce43afbd3cb66f709}{Load\+From\+File}} ()
+\begin{DoxyCompactList}\small\item\em Parse a full $<job>...</job>$ block from the already-\/open \doxylink{classJobParser}{Job\+Parser}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSimJob_adba2c6ff445d17b3d75443f94a7de5eb}{Load\+Subjob\+From\+File}} ()
+\begin{DoxyCompactList}\small\item\em Parse one $<subjob>...</subjob>$ (incident specification + label). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSimJob_aab5e82b9e59f35e95195fe298b1aaeaf}{Create\+LSEMatrix}} ()
+\begin{DoxyCompactList}\small\item\em Allocate and zero the system matrix A (and gradients if enabled). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSimJob_a85f2c21f521105259a5dcbaabb9c4e7a}{Create\+LSEVec}} ()
+\begin{DoxyCompactList}\small\item\em Allocate and zero a new RHS vector b, and append to lse\+Vectors. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSimJob_a6db37fa49c08fa49ae7888c32c8f382d}{Create\+Sol\+Vec}} ()
+\begin{DoxyCompactList}\small\item\em Allocate and zero a new solution vector x, and append to sol\+Vectors. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSimJob_a3af5b2630698df72bd1aa6b3efdcbb66}{Solve\+LSE}} (int solver\+Type)
+\begin{DoxyCompactList}\small\item\em Solve the current linear system with the chosen solver. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T$>$ }\\int \mbox{\hyperlink{classSimJob_ac98a015c25c8e733475caf3c44317d0c}{Write\+Vector\+To\+File}} (std\+::string file\+Name, blitz\+::\+Array$<$ T, 1 $>$ \texorpdfstring{$\ast$}{*}vector)
+\begin{DoxyCompactList}\small\item\em Write a 1D Blitz vector in text format. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSimJob_a5845b99ec65d0662225efd5482a4ccd1}{Load\+Sol\+From\+File}} (std\+::string sol\+File)
+\begin{DoxyCompactList}\small\item\em Load a previously saved solution vector into sol\+Vectors.\+back(). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSimJob_aeca9fd8ceee84fdef75996581fe1093a}{Simulate}} (std\+::string job\+File, int solver\+Type, std\+::string out\+Prefix)
+\begin{DoxyCompactList}\small\item\em High-\/level entry\+: run a simulation for a given job file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDomain}{Domain}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSimJob_ab3887eb9e217b1d6424ff85aec4b1793}{Containing\+Domain}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} pos)
+\begin{DoxyCompactList}\small\item\em Find which domain contains a point. \end{DoxyCompactList}\item 
+std\+::pair$<$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ \mbox{\hyperlink{classSimJob_a746e46ef2aa6843c2f4da96e472c75a3}{EField}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} pos)
+\begin{DoxyCompactList}\small\item\em Incident and secondary $\mathbf{E}$ at pos (domain auto-\/detected). \end{DoxyCompactList}\item 
+std\+::pair$<$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ \mbox{\hyperlink{classSimJob_a10e94801726e68c660938659856c75b2}{EField}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} pos, \mbox{\hyperlink{classDomain}{Domain}} \texorpdfstring{$\ast$}{*}cont\+Domain)
+\begin{DoxyCompactList}\small\item\em Incident and secondary $\mathbf{E}$ at pos with known containing domain. \end{DoxyCompactList}\item 
+std\+::pair$<$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ \mbox{\hyperlink{classSimJob_ae9e4bc91d7636bf3e7fd151c870cd01f}{HField}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} pos)
+\begin{DoxyCompactList}\small\item\em Incident and secondary $\mathbf{H}$ at pos (domain auto-\/detected). \end{DoxyCompactList}\item 
+std\+::pair$<$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ \mbox{\hyperlink{classSimJob_ab9314ccd802a5a430e96e97439fc2459}{HField}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} pos, \mbox{\hyperlink{classDomain}{Domain}} \texorpdfstring{$\ast$}{*}cont\+Domain)
+\begin{DoxyCompactList}\small\item\em Incident and secondary $\mathbf{H}$ at pos with known containing domain. \end{DoxyCompactList}\item 
+std\+::pair$<$ std\+::pair$<$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$, std\+::pair$<$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ $>$ \mbox{\hyperlink{classSimJob_a24f10b7bb14c9181341d07a783e00214}{Eand\+HField}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} pos, \mbox{\hyperlink{classDomain}{Domain}} \texorpdfstring{$\ast$}{*}cont\+Domain)
+\begin{DoxyCompactList}\small\item\em Return both $(\mathbf{E}$, $\mathbf{H})$ incident and secondary pairs at pos. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classSimJob_a201222576f4e7d4dba3372d1f0615765}{Power}} (\mbox{\hyperlink{classDomain}{Domain}} \texorpdfstring{$\ast$}{*}domain)
+\begin{DoxyCompactList}\small\item\em Net time-\/averaged power crossing the domain\textquotesingle{}s surface. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classSimJob_a0ddeadc300108c36a5fd446397ce63a3}{scattering\+CS}} (\mbox{\hyperlink{classDomain}{Domain}} \texorpdfstring{$\ast$}{*}domain)
+\begin{DoxyCompactList}\small\item\em Scattering cross-\/section. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classSimJob_a07cd9c621e5cc832dff656272529a8bb}{absorption\+CS}} (\mbox{\hyperlink{classDomain}{Domain}} \texorpdfstring{$\ast$}{*}domain)
+\begin{DoxyCompactList}\small\item\em Absorption cross-\/section. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classSimJob_a6d465e65b1b6b9cf7cf9446369885786}{extinction\+CS}} (\mbox{\hyperlink{classDomain}{Domain}} \texorpdfstring{$\ast$}{*}domain)
+\begin{DoxyCompactList}\small\item\em Extinction cross-\/section. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSimJob_a20b37e2e0aa2502a3ec465a5705b1774}{Field\+Eval}} (std\+::string job\+File, std\+::string pos\+File, std\+::string out\+Prefix, \mbox{\hyperlink{globals_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} fields, bool needs\+CS=false)
+\begin{DoxyCompactList}\small\item\em Evaluate fields on a set of points read from a file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSimJob_aa492cf9e3639f2dfa91e36364a76729a}{Field\+Eval\+Parallel}} (std\+::vector$<$ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} $>$ \&posvec, bool needsE, bool needsH, std\+::vector$<$ std\+::pair$<$ std\+::pair$<$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$, std\+::pair$<$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ $>$ $>$ \&result, std\+::vector$<$ \mbox{\hyperlink{classDomain}{Domain}} \texorpdfstring{$\ast$}{*} $>$ \&cont\+Dom, int \&n\+Point, std\+::mutex \&mut)
+\begin{DoxyCompactList}\small\item\em Thread worker to evaluate fields over {\ttfamily posvec} in parallel. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSimJob_a12a443329f3e49a5a94a6af72403d93b}{Casimir}} (std\+::string job\+File, std\+::string out\+Prefix)
+\begin{DoxyCompactList}\small\item\em Casimir workflow entry (uses gradient matrices if enabled). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSimJob_a76044195996b2e4b7d30654549e9af9b}{Load\+Table\+From\+File}} (std\+::string file\+Name)
+\begin{DoxyCompactList}\small\item\em Load binary lookup table used by periodic Green\textquotesingle{}s function acceleration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSimJob_a3e2febefec163d7d178559b7ecc47eab}{dump\+LSEMatrix}} (blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 2 $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classSimJob_a2cff4226f3d21370966a1d898ba591eb}{lse\+Matrix}}, const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Dump A into a MATLAB friendly text file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSimJob_ad4379daaf974c35ffd98b1e2add63b6e}{dump\+LSEVector}} (blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 1 $>$ \texorpdfstring{$\ast$}{*}lse\+Vector, const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Dump RHS vector into a MATLAB friendly text file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classSimJob_a4ea29b8acaa7e36fbc9478c2ed9df0c6}{Assign\+Threads}} (int \mbox{\hyperlink{classSimJob_a89345aeacef9984753d0951eae28d0d0}{t}})
+\begin{DoxyCompactList}\small\item\em Set thread count used internally by \doxylink{classSimJob}{Sim\+Job}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classSimJob_a6d48eb7a13a50bdc8f9dc965165ed873}{Load\+Label}} ()
+\begin{DoxyCompactList}\small\item\em Parse and load simulation label from $<label>...</label>$ section. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSimJob_a7bb5eda7b7e62f899d8bf72ba8f33742}{Load\+Mesh}} ()
+\begin{DoxyCompactList}\small\item\em Parse and load mesh data from $<mesh>...</mesh>$ (non-\/periodic case). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSimJob_ac940b4b962fac361f3746deef6eb2e19}{Load\+Mesh\+Per}} ()
+\begin{DoxyCompactList}\small\item\em Parse and load periodic mesh from $<mesh>...</mesh>$ (applies symmetry operations). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSimJob_a21c36c1d2aa7937ca484527515e35263}{Load\+Wavelength}} ()
+\begin{DoxyCompactList}\small\item\em Parse and load wavelength from $<wavelength>...</wavelength>$. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSimJob_a9a630e54dbd3c59d8d0c5872fe082478}{Load\+Domain}} ()
+\begin{DoxyCompactList}\small\item\em Parse and load homogeneous domain definition from $<domain>...</domain>$. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSimJob_a4aed0b2fa9b728b0fcb8834d6cd9c3fd}{Load\+Domain\+Layered}} ()
+\begin{DoxyCompactList}\small\item\em Parse and load layered-\/media domain from $<domainLayers>...</domainLayers>$. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSimJob_a9d261a88162a72dc73b70f0f71d69164}{Load\+Domain\+Per}} ()
+\begin{DoxyCompactList}\small\item\em Parse and load periodic domain definition from $<periodicdomain>...</periodicdomain>$. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSimJob_a9b33589923ea7f4e5b671e55ecf2b320}{Load\+Planewave}} ()
+\begin{DoxyCompactList}\small\item\em Parse and load plane-\/wave excitation from $<planewave>...</planewave>$. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSimJob_ae16a5d8bdcf14121a812acd22b3c573a}{Load\+Dipole}} ()
+\begin{DoxyCompactList}\small\item\em Parse and load dipole excitation from $<dipole>...</dipole>$. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSimJob_a762457879a5f323daff8a2802ee937bd}{Load\+Gaussian}} ()
+\begin{DoxyCompactList}\small\item\em Parse and load Gaussian-\/beam excitation from $<gaussian>...</gaussian>$. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSimJob_a99c23586a8ba7184a750c694da6d9628}{Load\+Periodicity}} ()
+\begin{DoxyCompactList}\small\item\em Parse and load periodicity parameters from $<periodic>...</periodic>$. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classDomain}{Domain}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classSimJob_a8c0412c95abe53ba97566f3db24d084e}{domains}}
+\begin{DoxyCompactList}\small\item\em All problem domains. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSurfaceMesh}{Surface\+Mesh}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSimJob_a658edbf2559cc4e4946f809a1eac00c9}{mesh}}
+\begin{DoxyCompactList}\small\item\em Shared surface mesh. \end{DoxyCompactList}\item 
+blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 2 $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSimJob_a2cff4226f3d21370966a1d898ba591eb}{lse\+Matrix}}
+\begin{DoxyCompactList}\small\item\em System matrix A (2Ne x 2Ne) \end{DoxyCompactList}\item 
+blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 2 $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSimJob_ab5bb81122a5e8e5dab204977448016cb}{lse\+Gradient\+Matrix}} \mbox{[}3\mbox{]}
+\begin{DoxyCompactList}\small\item\em $\partial Z / \partial p_i$ matrices (Casimir) \end{DoxyCompactList}\item 
+std\+::vector$<$ blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 1 $>$ \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classSimJob_a4b25f30e9aad5734bf5b9ee657ef96ec}{lse\+Vectors}}
+\begin{DoxyCompactList}\small\item\em RHS vectors b. \end{DoxyCompactList}\item 
+std\+::vector$<$ blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 1 $>$ \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classSimJob_aef0ea2080610b6caee4eba901329397d}{sol\+Vectors}}
+\begin{DoxyCompactList}\small\item\em Solution vectors x. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classSimJob_a961fa91f07275f6102516769b3b3de76}{labels}}
+\begin{DoxyCompactList}\small\item\em Labels per (sub)job. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classSimJob_a8a09d28d2edf64bc1cdcc1f50d288216}{vacuum\+Wavelength}}
+\begin{DoxyCompactList}\small\item\em $\lambda_0$ used to compute $\omega$ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classSimJob_aaf7a38bc82218ed93f0fe7882656a638}{bloch\+Vector}}
+\begin{DoxyCompactList}\small\item\em Bloch vector (periodic jobs) \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} $>$ \mbox{\hyperlink{classSimJob_ae7bcb4189cc176a904c7c3a99690e7af}{lattice\+Vectors}}
+\begin{DoxyCompactList}\small\item\em Lattice vectors (periodic) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classJobParser}{Job\+Parser}} \mbox{\hyperlink{classSimJob_ab80a0f001d2247b79f057f0e9645f572}{job\+Parser}}
+\begin{DoxyCompactList}\small\item\em XML-\/like job reader. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classIncidentField}{Incident\+Field}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classSimJob_a0364566dc4961d9b6c67530aef8ac1a3}{subjob\+Incident\+Fields}}
+\begin{DoxyCompactList}\small\item\em Temp storage during load. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classSimJob_aab75aedec664ee0862d4c574c28ba1f1}{is\+Casimir\+Job}}
+\begin{DoxyCompactList}\small\item\em Determine if this is a Casimir job. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLookupTableBin}{Lookup\+Table\+Bin}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSimJob_a89345aeacef9984753d0951eae28d0d0}{t}}
+\begin{DoxyCompactList}\small\item\em Look-\/up table for the periodic Green\textquotesingle{}s function computation. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classSimJob_a6df921a04c5f4e0152e9d00e4378e3e4}{there\+Is\+ALookup\+Table}}
+\begin{DoxyCompactList}\small\item\em True if there is a lookup table. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{classSimJob_ae682550ed6bf641ead0349dcf4eef829}{threads}} = 1
+\begin{DoxyCompactList}\small\item\em Worker threads for field eval. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+High-\/level driver for SIE simulations and field evaluation. 
+
+Workflow\+: 1) \doxylink{classSimJob_a83d402c189aeefdce43afbd3cb66f709}{Load\+From\+File()} parses the job file\+: mesh, materials, sources, etc. 2) \doxylink{classSimJob_aab5e82b9e59f35e95195fe298b1aaeaf}{Create\+LSEMatrix()} allocates the A matrix; domains fill it via the formulations (PMCHWT). 3) For each subjob\+: \doxylink{classSimJob_a85f2c21f521105259a5dcbaabb9c4e7a}{Create\+LSEVec()} and \doxylink{classSimJob_a6db37fa49c08fa49ae7888c32c8f382d}{Create\+Sol\+Vec()}, fill excitation vectors, then \doxylink{classSimJob_a3af5b2630698df72bd1aa6b3efdcbb66}{Solve\+LSE()} to get the solution current vector(s). 4) Optionally \doxylink{classSimJob_a20b37e2e0aa2502a3ec465a5705b1774}{Field\+Eval()} to sample fields or power/cross sections. 
+
+Definition at line \mbox{\hyperlink{SimJob_8h_source_l00043}{43}} of file \mbox{\hyperlink{SimJob_8h_source}{Sim\+Job.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classSimJob_a59a7b9db9a265d1b7976e327140299b0}\index{SimJob@{SimJob}!SimJob@{SimJob}}
+\index{SimJob@{SimJob}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{SimJob()}{SimJob()}}
+{\footnotesize\ttfamily \label{classSimJob_a59a7b9db9a265d1b7976e327140299b0} 
+Sim\+Job\+::\+Sim\+Job (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Construct an empty job (no mesh/domains yet). 
+
+
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l00023}{23}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+\Hypertarget{classSimJob_ab51d5f364601dd136bfdc696cdd91c69}\index{SimJob@{SimJob}!````~SimJob@{\texorpdfstring{$\sim$}{\string~}SimJob}}
+\index{````~SimJob@{\texorpdfstring{$\sim$}{\string~}SimJob}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}SimJob()}{\string~SimJob()}}
+{\footnotesize\ttfamily \label{classSimJob_ab51d5f364601dd136bfdc696cdd91c69} 
+Sim\+Job\+::\texorpdfstring{$\sim$}{\string~}\+Sim\+Job (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor\+: frees owned domains and LUT if allocated. 
+
+
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSimJob_a07cd9c621e5cc832dff656272529a8bb}\index{SimJob@{SimJob}!absorptionCS@{absorptionCS}}
+\index{absorptionCS@{absorptionCS}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{absorptionCS()}{absorptionCS()}}
+{\footnotesize\ttfamily \label{classSimJob_a07cd9c621e5cc832dff656272529a8bb} 
+double Sim\+Job\+::absorption\+CS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDomain}{Domain}} \texorpdfstring{$\ast$}{*}}]{domain}{}\end{DoxyParamCaption})}
+
+
+
+Absorption cross-\/section. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em domain} & \doxylink{classDomain}{Domain} over which to compute $\sigma_{\alpha}$. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Absorption cross section. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Not always accurate (volumetric methods based on Ohmic losses have better accuracy). 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l00817}{817}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_a07cd9c621e5cc832dff656272529a8bb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_a07cd9c621e5cc832dff656272529a8bb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSimJob_a4ea29b8acaa7e36fbc9478c2ed9df0c6}\index{SimJob@{SimJob}!AssignThreads@{AssignThreads}}
+\index{AssignThreads@{AssignThreads}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{AssignThreads()}{AssignThreads()}}
+{\footnotesize\ttfamily \label{classSimJob_a4ea29b8acaa7e36fbc9478c2ed9df0c6} 
+void Sim\+Job\+::\+Assign\+Threads (\begin{DoxyParamCaption}\item[{int}]{t}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Set thread count used internally by \doxylink{classSimJob}{Sim\+Job}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Thread count. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l01113}{1113}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{classSimJob_a4ea29b8acaa7e36fbc9478c2ed9df0c6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSimJob_a12a443329f3e49a5a94a6af72403d93b}\index{SimJob@{SimJob}!Casimir@{Casimir}}
+\index{Casimir@{Casimir}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{Casimir()}{Casimir()}}
+{\footnotesize\ttfamily \label{classSimJob_a12a443329f3e49a5a94a6af72403d93b} 
+int Sim\+Job\+::\+Casimir (\begin{DoxyParamCaption}\item[{std\+::string}]{job\+File}{, }\item[{std\+::string}]{out\+Prefix}{}\end{DoxyParamCaption})}
+
+
+
+Casimir workflow entry (uses gradient matrices if enabled). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em job\+File} & Job file path. \\
+\hline
+{\em out\+Prefix} & Prefix for output filenames. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success; non-\/zero on failure. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l00644}{644}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_a12a443329f3e49a5a94a6af72403d93b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{classSimJob_a12a443329f3e49a5a94a6af72403d93b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSimJob_ab3887eb9e217b1d6424ff85aec4b1793}\index{SimJob@{SimJob}!ContainingDomain@{ContainingDomain}}
+\index{ContainingDomain@{ContainingDomain}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{ContainingDomain()}{ContainingDomain()}}
+{\footnotesize\ttfamily \label{classSimJob_ab3887eb9e217b1d6424ff85aec4b1793} 
+\mbox{\hyperlink{classDomain}{Domain}} \texorpdfstring{$\ast$}{*} Sim\+Job\+::\+Containing\+Domain (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{pos}{}\end{DoxyParamCaption})}
+
+
+
+Find which domain contains a point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & Cartesian position. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the containing \doxylink{classDomain}{Domain} (background if none), never null. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l00758}{758}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_ab3887eb9e217b1d6424ff85aec4b1793_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSimJob_aab5e82b9e59f35e95195fe298b1aaeaf}\index{SimJob@{SimJob}!CreateLSEMatrix@{CreateLSEMatrix}}
+\index{CreateLSEMatrix@{CreateLSEMatrix}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{CreateLSEMatrix()}{CreateLSEMatrix()}}
+{\footnotesize\ttfamily \label{classSimJob_aab5e82b9e59f35e95195fe298b1aaeaf} 
+int Sim\+Job\+::\+Create\+LSEMatrix (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Allocate and zero the system matrix A (and gradients if enabled). 
+
+Matrix size is 2Ne x 2Ne, where Ne is mesh edge count. \begin{DoxyReturn}{Returns}
+0 on success. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l00467}{467}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_aab5e82b9e59f35e95195fe298b1aaeaf_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSimJob_a85f2c21f521105259a5dcbaabb9c4e7a}\index{SimJob@{SimJob}!CreateLSEVec@{CreateLSEVec}}
+\index{CreateLSEVec@{CreateLSEVec}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{CreateLSEVec()}{CreateLSEVec()}}
+{\footnotesize\ttfamily \label{classSimJob_a85f2c21f521105259a5dcbaabb9c4e7a} 
+int Sim\+Job\+::\+Create\+LSEVec (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Allocate and zero a new RHS vector b, and append to lse\+Vectors. 
+
+\begin{DoxyReturn}{Returns}
+0 on success. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l00449}{449}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_a85f2c21f521105259a5dcbaabb9c4e7a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSimJob_a6db37fa49c08fa49ae7888c32c8f382d}\index{SimJob@{SimJob}!CreateSolVec@{CreateSolVec}}
+\index{CreateSolVec@{CreateSolVec}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{CreateSolVec()}{CreateSolVec()}}
+{\footnotesize\ttfamily \label{classSimJob_a6db37fa49c08fa49ae7888c32c8f382d} 
+int Sim\+Job\+::\+Create\+Sol\+Vec (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Allocate and zero a new solution vector x, and append to sol\+Vectors. 
+
+\begin{DoxyReturn}{Returns}
+0 on success. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l00458}{458}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_a6db37fa49c08fa49ae7888c32c8f382d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSimJob_a3e2febefec163d7d178559b7ecc47eab}\index{SimJob@{SimJob}!dumpLSEMatrix@{dumpLSEMatrix}}
+\index{dumpLSEMatrix@{dumpLSEMatrix}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{dumpLSEMatrix()}{dumpLSEMatrix()}}
+{\footnotesize\ttfamily \label{classSimJob_a3e2febefec163d7d178559b7ecc47eab} 
+void Sim\+Job\+::dump\+LSEMatrix (\begin{DoxyParamCaption}\item[{blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 2 $>$ \texorpdfstring{$\ast$}{*}}]{lse\+Matrix}{, }\item[{const std\+::string \&}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Dump A into a MATLAB friendly text file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lse\+Matrix} & Matrix A. \\
+\hline
+{\em filename} & Output filename. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l01116}{1116}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_a3e2febefec163d7d178559b7ecc47eab_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSimJob_ad4379daaf974c35ffd98b1e2add63b6e}\index{SimJob@{SimJob}!dumpLSEVector@{dumpLSEVector}}
+\index{dumpLSEVector@{dumpLSEVector}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{dumpLSEVector()}{dumpLSEVector()}}
+{\footnotesize\ttfamily \label{classSimJob_ad4379daaf974c35ffd98b1e2add63b6e} 
+void Sim\+Job\+::dump\+LSEVector (\begin{DoxyParamCaption}\item[{blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 1 $>$ \texorpdfstring{$\ast$}{*}}]{lse\+Vector}{, }\item[{const std\+::string \&}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Dump RHS vector into a MATLAB friendly text file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lse\+Vector} & RHS vector. \\
+\hline
+{\em filename} & Output filename. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l01151}{1151}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_ad4379daaf974c35ffd98b1e2add63b6e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSimJob_a24f10b7bb14c9181341d07a783e00214}\index{SimJob@{SimJob}!EandHField@{EandHField}}
+\index{EandHField@{EandHField}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{EandHField()}{EandHField()}}
+{\footnotesize\ttfamily \label{classSimJob_a24f10b7bb14c9181341d07a783e00214} 
+std\+::pair$<$ std\+::pair$<$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$, std\+::pair$<$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ $>$ Sim\+Job\+::\+Eand\+HField (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{pos}{, }\item[{\mbox{\hyperlink{classDomain}{Domain}} \texorpdfstring{$\ast$}{*}}]{cont\+Domain}{}\end{DoxyParamCaption})}
+
+
+
+Return both $(\mathbf{E}$, $\mathbf{H})$ incident and secondary pairs at pos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & Cartesian position. \\
+\hline
+{\em cont\+Domain} & Containing domain. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\{\{\mathbf{E}_\mathrm{inc}(pos),  \mathbf{H}_\mathrm{inc}(pos)\}, 
+             \{\mathbf{E}_\mathrm{scat}(pos), \mathbf{H}_\mathrm{scat}(pos)\}\}$. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l00800}{800}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_a24f10b7bb14c9181341d07a783e00214_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_a24f10b7bb14c9181341d07a783e00214_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSimJob_a746e46ef2aa6843c2f4da96e472c75a3}\index{SimJob@{SimJob}!EField@{EField}}
+\index{EField@{EField}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{EField()}{EField()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classSimJob_a746e46ef2aa6843c2f4da96e472c75a3} 
+std\+::pair$<$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ Sim\+Job\+::\+EField (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{pos}{}\end{DoxyParamCaption})}
+
+
+
+Incident and secondary $\mathbf{E}$ at pos (domain auto-\/detected). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & Cartesian position. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\{\mathbf{E}_\mathrm{inc}(pos), \mathbf{E}_\mathrm{scat}(pos)\}$. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l00768}{768}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_a746e46ef2aa6843c2f4da96e472c75a3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_a746e46ef2aa6843c2f4da96e472c75a3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSimJob_a10e94801726e68c660938659856c75b2}\index{SimJob@{SimJob}!EField@{EField}}
+\index{EField@{EField}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{EField()}{EField()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classSimJob_a10e94801726e68c660938659856c75b2} 
+std\+::pair$<$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ Sim\+Job\+::\+EField (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{pos}{, }\item[{\mbox{\hyperlink{classDomain}{Domain}} \texorpdfstring{$\ast$}{*}}]{cont\+Domain}{}\end{DoxyParamCaption})}
+
+
+
+Incident and secondary $\mathbf{E}$ at pos with known containing domain. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & Cartesian position. \\
+\hline
+{\em cont\+Domain} & Containing domain. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\{\mathbf{E}_\mathrm{inc}(pos), \mathbf{E}_\mathrm{scat}(pos)\}$. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l00778}{778}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_a10e94801726e68c660938659856c75b2_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSimJob_a6d465e65b1b6b9cf7cf9446369885786}\index{SimJob@{SimJob}!extinctionCS@{extinctionCS}}
+\index{extinctionCS@{extinctionCS}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{extinctionCS()}{extinctionCS()}}
+{\footnotesize\ttfamily \label{classSimJob_a6d465e65b1b6b9cf7cf9446369885786} 
+double Sim\+Job\+::extinction\+CS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDomain}{Domain}} \texorpdfstring{$\ast$}{*}}]{domain}{}\end{DoxyParamCaption})}
+
+
+
+Extinction cross-\/section. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em domain} & \doxylink{classDomain}{Domain} over which to compute $\sigma_{ext}$. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Extinction cross section. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Not always accurate (volumetric methods based on Ohmic losses have better accuracy). 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l00822}{822}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_a6d465e65b1b6b9cf7cf9446369885786_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_a6d465e65b1b6b9cf7cf9446369885786_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSimJob_a20b37e2e0aa2502a3ec465a5705b1774}\index{SimJob@{SimJob}!FieldEval@{FieldEval}}
+\index{FieldEval@{FieldEval}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{FieldEval()}{FieldEval()}}
+{\footnotesize\ttfamily \label{classSimJob_a20b37e2e0aa2502a3ec465a5705b1774} 
+int Sim\+Job\+::\+Field\+Eval (\begin{DoxyParamCaption}\item[{std\+::string}]{job\+File}{, }\item[{std\+::string}]{pos\+File}{, }\item[{std\+::string}]{out\+Prefix}{, }\item[{\mbox{\hyperlink{globals_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}}]{fields}{, }\item[{bool}]{needs\+CS}{ = {\ttfamily false}}\end{DoxyParamCaption})}
+
+
+
+Evaluate fields on a set of points read from a file. 
+
+Writes one or more output files (depending on {\ttfamily fields} bitmask)\+:
+\begin{DoxyItemize}
+\item .ein/.esc, .hin/.hsc, .din/.dsc, .bin/.bsc, .pin (Poynting), .csc (CS).
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em job\+File} & Job file path. \\
+\hline
+{\em pos\+File} & Position list (CSV of x y z) or empty to skip. \\
+\hline
+{\em out\+Prefix} & Prefix for output filenames. \\
+\hline
+{\em fields} & Bitmask\+: EFIELD/\+HFIELD/\+DFIELD/\+BFIELD/\+POYVEC/\+POWER. \\
+\hline
+{\em needs\+CS} & If true, writes cross sections to .csc. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success; non-\/zero on failure. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l00861}{861}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_a20b37e2e0aa2502a3ec465a5705b1774_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=257pt]{classSimJob_a20b37e2e0aa2502a3ec465a5705b1774_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSimJob_aa492cf9e3639f2dfa91e36364a76729a}\index{SimJob@{SimJob}!FieldEvalParallel@{FieldEvalParallel}}
+\index{FieldEvalParallel@{FieldEvalParallel}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{FieldEvalParallel()}{FieldEvalParallel()}}
+{\footnotesize\ttfamily \label{classSimJob_aa492cf9e3639f2dfa91e36364a76729a} 
+void Sim\+Job\+::\+Field\+Eval\+Parallel (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} $>$ \&}]{posvec}{, }\item[{bool}]{needsE}{, }\item[{bool}]{needsH}{, }\item[{std\+::vector$<$ std\+::pair$<$ std\+::pair$<$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$, std\+::pair$<$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ $>$ $>$ \&}]{result}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{classDomain}{Domain}} \texorpdfstring{$\ast$}{*} $>$ \&}]{cont\+Dom}{, }\item[{int \&}]{n\+Point}{, }\item[{std\+::mutex \&}]{mut}{}\end{DoxyParamCaption})}
+
+
+
+Thread worker to evaluate fields over {\ttfamily posvec} in parallel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em posvec} & Input positions. \\
+\hline
+{\em needsE} & Whether to compute $\mathbf{E}$. \\
+\hline
+{\em needsH} & Whether to compute $\mathbf{H}$. \\
+\hline
+{\em result} & Output array of  $\{\{\mathbf{E}_\mathrm{inc},  \mathbf{H}_\mathrm{inc}\}, 
+                     \{\mathbf{E}_\mathrm{scat}, \mathbf{H}_\mathrm{scat}\}\}$ per point. \\
+\hline
+{\em cont\+Dom} & Pre-\/computed containing domains for each point. \\
+\hline
+{\em n\+Point} & Shared index (guarded by {\ttfamily mut}). \\
+\hline
+{\em mut} & Mutex for index progress + periodic status prints. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l01067}{1067}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_aa492cf9e3639f2dfa91e36364a76729a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_aa492cf9e3639f2dfa91e36364a76729a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSimJob_ae9e4bc91d7636bf3e7fd151c870cd01f}\index{SimJob@{SimJob}!HField@{HField}}
+\index{HField@{HField}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{HField()}{HField()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classSimJob_ae9e4bc91d7636bf3e7fd151c870cd01f} 
+std\+::pair$<$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ Sim\+Job\+::\+HField (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{pos}{}\end{DoxyParamCaption})}
+
+
+
+Incident and secondary $\mathbf{H}$ at pos (domain auto-\/detected). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & Cartesian position. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\{\mathbf{H}_\mathrm{inc}(pos), \mathbf{H}_\mathrm{scat}(pos)\}$. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l00784}{784}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_ae9e4bc91d7636bf3e7fd151c870cd01f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_ae9e4bc91d7636bf3e7fd151c870cd01f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSimJob_ab9314ccd802a5a430e96e97439fc2459}\index{SimJob@{SimJob}!HField@{HField}}
+\index{HField@{HField}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{HField()}{HField()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classSimJob_ab9314ccd802a5a430e96e97439fc2459} 
+std\+::pair$<$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ Sim\+Job\+::\+HField (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{pos}{, }\item[{\mbox{\hyperlink{classDomain}{Domain}} \texorpdfstring{$\ast$}{*}}]{cont\+Domain}{}\end{DoxyParamCaption})}
+
+
+
+Incident and secondary $\mathbf{H}$ at pos with known containing domain. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & Cartesian position. \\
+\hline
+{\em cont\+Domain} & Containing domain. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\{\mathbf{H}_\mathrm{inc}(pos), \mathbf{H}_\mathrm{scat}(pos)\}$. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l00794}{794}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_ab9314ccd802a5a430e96e97439fc2459_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSimJob_ae16a5d8bdcf14121a812acd22b3c573a}\index{SimJob@{SimJob}!LoadDipole@{LoadDipole}}
+\index{LoadDipole@{LoadDipole}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{LoadDipole()}{LoadDipole()}}
+{\footnotesize\ttfamily \label{classSimJob_ae16a5d8bdcf14121a812acd22b3c573a} 
+int Sim\+Job\+::\+Load\+Dipole (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Parse and load dipole excitation from $<dipole>...</dipole>$. 
+
+\begin{DoxyReturn}{Returns}
+0 on success; non-\/zero on parse error. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l00342}{342}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_ae16a5d8bdcf14121a812acd22b3c573a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_ae16a5d8bdcf14121a812acd22b3c573a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSimJob_a9a630e54dbd3c59d8d0c5872fe082478}\index{SimJob@{SimJob}!LoadDomain@{LoadDomain}}
+\index{LoadDomain@{LoadDomain}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{LoadDomain()}{LoadDomain()}}
+{\footnotesize\ttfamily \label{classSimJob_a9a630e54dbd3c59d8d0c5872fe082478} 
+int Sim\+Job\+::\+Load\+Domain (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Parse and load homogeneous domain definition from $<domain>...</domain>$. 
+
+\begin{DoxyReturn}{Returns}
+0 on success; non-\/zero on parse error. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l00233}{233}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_a9a630e54dbd3c59d8d0c5872fe082478_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSimJob_a4aed0b2fa9b728b0fcb8834d6cd9c3fd}\index{SimJob@{SimJob}!LoadDomainLayered@{LoadDomainLayered}}
+\index{LoadDomainLayered@{LoadDomainLayered}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{LoadDomainLayered()}{LoadDomainLayered()}}
+{\footnotesize\ttfamily \label{classSimJob_a4aed0b2fa9b728b0fcb8834d6cd9c3fd} 
+int Sim\+Job\+::\+Load\+Domain\+Layered (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Parse and load layered-\/media domain from $<domainLayers>...</domainLayers>$. 
+
+\begin{DoxyReturn}{Returns}
+0 on success; non-\/zero on parse error. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l00246}{246}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_a4aed0b2fa9b728b0fcb8834d6cd9c3fd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSimJob_a9d261a88162a72dc73b70f0f71d69164}\index{SimJob@{SimJob}!LoadDomainPer@{LoadDomainPer}}
+\index{LoadDomainPer@{LoadDomainPer}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{LoadDomainPer()}{LoadDomainPer()}}
+{\footnotesize\ttfamily \label{classSimJob_a9d261a88162a72dc73b70f0f71d69164} 
+int Sim\+Job\+::\+Load\+Domain\+Per (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Parse and load periodic domain definition from $<periodicdomain>...</periodicdomain>$. 
+
+\begin{DoxyReturn}{Returns}
+0 on success; non-\/zero on parse error. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l00284}{284}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_a9d261a88162a72dc73b70f0f71d69164_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_a9d261a88162a72dc73b70f0f71d69164_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSimJob_a83d402c189aeefdce43afbd3cb66f709}\index{SimJob@{SimJob}!LoadFromFile@{LoadFromFile}}
+\index{LoadFromFile@{LoadFromFile}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{LoadFromFile()}{LoadFromFile()}}
+{\footnotesize\ttfamily \label{classSimJob_a83d402c189aeefdce43afbd3cb66f709} 
+int Sim\+Job\+::\+Load\+From\+File (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Parse a full $<job>...</job>$ block from the already-\/open \doxylink{classJobParser}{Job\+Parser}. 
+
+\begin{DoxyReturn}{Returns}
+0 on success; non-\/zero on parse/consistency error.
+\end{DoxyReturn}
+Parse a full $<job>...</job>$ block (mesh, domains, wavelength, etc.). Handles both periodic and non-\/periodic jobs and ensures consistency (e.\+g., number of domains \texorpdfstring{$<$}{<}= mesh-\/\texorpdfstring{$>$}{>}Max\+Domain\+Index()). 
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l00038}{38}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_a83d402c189aeefdce43afbd3cb66f709_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_a83d402c189aeefdce43afbd3cb66f709_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSimJob_a762457879a5f323daff8a2802ee937bd}\index{SimJob@{SimJob}!LoadGaussian@{LoadGaussian}}
+\index{LoadGaussian@{LoadGaussian}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{LoadGaussian()}{LoadGaussian()}}
+{\footnotesize\ttfamily \label{classSimJob_a762457879a5f323daff8a2802ee937bd} 
+int Sim\+Job\+::\+Load\+Gaussian (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Parse and load Gaussian-\/beam excitation from $<gaussian>...</gaussian>$. 
+
+\begin{DoxyReturn}{Returns}
+0 on success; non-\/zero on parse error. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l00371}{371}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{classSimJob_a762457879a5f323daff8a2802ee937bd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_a762457879a5f323daff8a2802ee937bd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSimJob_a6d48eb7a13a50bdc8f9dc965165ed873}\index{SimJob@{SimJob}!LoadLabel@{LoadLabel}}
+\index{LoadLabel@{LoadLabel}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{LoadLabel()}{LoadLabel()}}
+{\footnotesize\ttfamily \label{classSimJob_a6d48eb7a13a50bdc8f9dc965165ed873} 
+int Sim\+Job\+::\+Load\+Label (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Parse and load simulation label from $<label>...</label>$ section. 
+
+\begin{DoxyReturn}{Returns}
+0 on success; non-\/zero on parse error. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l00191}{191}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_a6d48eb7a13a50bdc8f9dc965165ed873_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSimJob_a7bb5eda7b7e62f899d8bf72ba8f33742}\index{SimJob@{SimJob}!LoadMesh@{LoadMesh}}
+\index{LoadMesh@{LoadMesh}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{LoadMesh()}{LoadMesh()}}
+{\footnotesize\ttfamily \label{classSimJob_a7bb5eda7b7e62f899d8bf72ba8f33742} 
+int Sim\+Job\+::\+Load\+Mesh (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Parse and load mesh data from $<mesh>...</mesh>$ (non-\/periodic case). 
+
+\begin{DoxyReturn}{Returns}
+0 on success; non-\/zero on parse error. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l00199}{199}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_a7bb5eda7b7e62f899d8bf72ba8f33742_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSimJob_ac940b4b962fac361f3746deef6eb2e19}\index{SimJob@{SimJob}!LoadMeshPer@{LoadMeshPer}}
+\index{LoadMeshPer@{LoadMeshPer}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{LoadMeshPer()}{LoadMeshPer()}}
+{\footnotesize\ttfamily \label{classSimJob_ac940b4b962fac361f3746deef6eb2e19} 
+int Sim\+Job\+::\+Load\+Mesh\+Per (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Parse and load periodic mesh from $<mesh>...</mesh>$ (applies symmetry operations). 
+
+\begin{DoxyReturn}{Returns}
+0 on success; non-\/zero on parse error. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l00210}{210}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_ac940b4b962fac361f3746deef6eb2e19_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSimJob_a99c23586a8ba7184a750c694da6d9628}\index{SimJob@{SimJob}!LoadPeriodicity@{LoadPeriodicity}}
+\index{LoadPeriodicity@{LoadPeriodicity}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{LoadPeriodicity()}{LoadPeriodicity()}}
+{\footnotesize\ttfamily \label{classSimJob_a99c23586a8ba7184a750c694da6d9628} 
+int Sim\+Job\+::\+Load\+Periodicity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Parse and load periodicity parameters from $<periodic>...</periodic>$. 
+
+\begin{DoxyReturn}{Returns}
+0 on success; non-\/zero on parse error. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l00425}{425}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_a99c23586a8ba7184a750c694da6d9628_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSimJob_a9b33589923ea7f4e5b671e55ecf2b320}\index{SimJob@{SimJob}!LoadPlanewave@{LoadPlanewave}}
+\index{LoadPlanewave@{LoadPlanewave}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{LoadPlanewave()}{LoadPlanewave()}}
+{\footnotesize\ttfamily \label{classSimJob_a9b33589923ea7f4e5b671e55ecf2b320} 
+int Sim\+Job\+::\+Load\+Planewave (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Parse and load plane-\/wave excitation from $<planewave>...</planewave>$. 
+
+\begin{DoxyReturn}{Returns}
+0 on success; non-\/zero on parse error. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l00307}{307}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_a9b33589923ea7f4e5b671e55ecf2b320_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSimJob_a5845b99ec65d0662225efd5482a4ccd1}\index{SimJob@{SimJob}!LoadSolFromFile@{LoadSolFromFile}}
+\index{LoadSolFromFile@{LoadSolFromFile}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{LoadSolFromFile()}{LoadSolFromFile()}}
+{\footnotesize\ttfamily \label{classSimJob_a5845b99ec65d0662225efd5482a4ccd1} 
+int Sim\+Job\+::\+Load\+Sol\+From\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{sol\+File}{}\end{DoxyParamCaption})}
+
+
+
+Load a previously saved solution vector into sol\+Vectors.\+back(). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sol\+File} & Input filename (.sol). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success; non-\/zero on I/\+O/format error. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l00622}{622}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_a5845b99ec65d0662225efd5482a4ccd1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_a5845b99ec65d0662225efd5482a4ccd1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSimJob_adba2c6ff445d17b3d75443f94a7de5eb}\index{SimJob@{SimJob}!LoadSubjobFromFile@{LoadSubjobFromFile}}
+\index{LoadSubjobFromFile@{LoadSubjobFromFile}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{LoadSubjobFromFile()}{LoadSubjobFromFile()}}
+{\footnotesize\ttfamily \label{classSimJob_adba2c6ff445d17b3d75443f94a7de5eb} 
+int Sim\+Job\+::\+Load\+Subjob\+From\+File (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Parse one $<subjob>...</subjob>$ (incident specification + label). 
+
+\begin{DoxyReturn}{Returns}
+0 on success; non-\/zero if malformed or missing label. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l00160}{160}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_adba2c6ff445d17b3d75443f94a7de5eb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_adba2c6ff445d17b3d75443f94a7de5eb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSimJob_a76044195996b2e4b7d30654549e9af9b}\index{SimJob@{SimJob}!LoadTableFromFile@{LoadTableFromFile}}
+\index{LoadTableFromFile@{LoadTableFromFile}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{LoadTableFromFile()}{LoadTableFromFile()}}
+{\footnotesize\ttfamily \label{classSimJob_a76044195996b2e4b7d30654549e9af9b} 
+int Sim\+Job\+::\+Load\+Table\+From\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Load binary lookup table used by periodic Green\textquotesingle{}s function acceleration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & Lookup table file name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success; non-\/zero on failure. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l01104}{1104}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{classSimJob_a76044195996b2e4b7d30654549e9af9b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSimJob_a21c36c1d2aa7937ca484527515e35263}\index{SimJob@{SimJob}!LoadWavelength@{LoadWavelength}}
+\index{LoadWavelength@{LoadWavelength}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{LoadWavelength()}{LoadWavelength()}}
+{\footnotesize\ttfamily \label{classSimJob_a21c36c1d2aa7937ca484527515e35263} 
+int Sim\+Job\+::\+Load\+Wavelength (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Parse and load wavelength from $<wavelength>...</wavelength>$. 
+
+\begin{DoxyReturn}{Returns}
+0 on success; non-\/zero on parse error. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l00225}{225}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_a21c36c1d2aa7937ca484527515e35263_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSimJob_a201222576f4e7d4dba3372d1f0615765}\index{SimJob@{SimJob}!Power@{Power}}
+\index{Power@{Power}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{Power()}{Power()}}
+{\footnotesize\ttfamily \label{classSimJob_a201222576f4e7d4dba3372d1f0615765} 
+double Sim\+Job\+::\+Power (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDomain}{Domain}} \texorpdfstring{$\ast$}{*}}]{domain}{}\end{DoxyParamCaption})}
+
+
+
+Net time-\/averaged power crossing the domain\textquotesingle{}s surface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em domain} & \doxylink{classDomain}{Domain} over which to compute $ P $. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Net power. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Currently only implemented for homogeneous domains. 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l00807}{807}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_a201222576f4e7d4dba3372d1f0615765_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_a201222576f4e7d4dba3372d1f0615765_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSimJob_a0ddeadc300108c36a5fd446397ce63a3}\index{SimJob@{SimJob}!scatteringCS@{scatteringCS}}
+\index{scatteringCS@{scatteringCS}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{scatteringCS()}{scatteringCS()}}
+{\footnotesize\ttfamily \label{classSimJob_a0ddeadc300108c36a5fd446397ce63a3} 
+std\+::vector$<$ double $>$ Sim\+Job\+::scattering\+CS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDomain}{Domain}} \texorpdfstring{$\ast$}{*}}]{domain}{}\end{DoxyParamCaption})}
+
+
+
+Scattering cross-\/section. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em domain} & \doxylink{classDomain}{Domain} over which to compute $\sigma_{sc}$. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Scattering cross section and near-\/field intensity. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l00812}{812}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_a0ddeadc300108c36a5fd446397ce63a3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_a0ddeadc300108c36a5fd446397ce63a3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSimJob_aeca9fd8ceee84fdef75996581fe1093a}\index{SimJob@{SimJob}!Simulate@{Simulate}}
+\index{Simulate@{Simulate}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{Simulate()}{Simulate()}}
+{\footnotesize\ttfamily \label{classSimJob_aeca9fd8ceee84fdef75996581fe1093a} 
+int Sim\+Job\+::\+Simulate (\begin{DoxyParamCaption}\item[{std\+::string}]{job\+File}{, }\item[{int}]{solver\+Type}{, }\item[{std\+::string}]{out\+Prefix}{}\end{DoxyParamCaption})}
+
+
+
+High-\/level entry\+: run a simulation for a given job file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em job\+File} & Path to job file. \\
+\hline
+{\em solver\+Type} & Solver selection (as in \doxylink{classSimJob_a3af5b2630698df72bd1aa6b3efdcbb66}{Solve\+LSE()}). \\
+\hline
+{\em out\+Prefix} & Prefix for output filenames. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success; non-\/zero on any failure. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l00694}{694}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_aeca9fd8ceee84fdef75996581fe1093a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{classSimJob_aeca9fd8ceee84fdef75996581fe1093a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSimJob_a3af5b2630698df72bd1aa6b3efdcbb66}\index{SimJob@{SimJob}!SolveLSE@{SolveLSE}}
+\index{SolveLSE@{SolveLSE}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{SolveLSE()}{SolveLSE()}}
+{\footnotesize\ttfamily \label{classSimJob_a3af5b2630698df72bd1aa6b3efdcbb66} 
+int Sim\+Job\+::\+Solve\+LSE (\begin{DoxyParamCaption}\item[{int}]{solver\+Type}{}\end{DoxyParamCaption})}
+
+
+
+Solve the current linear system with the chosen solver. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em solver\+Type} & 0\+: direct; 1\+: cgsqr; 2\+: LU (default). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success; non-\/zero on failure.
+\end{DoxyReturn}
+Solve linear system with selected solver backend. (cgsqr / LU via external FORTRAN or BLAS/\+LAPACK calls.) 
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l00561}{561}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{classSimJob_a3af5b2630698df72bd1aa6b3efdcbb66_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_a3af5b2630698df72bd1aa6b3efdcbb66_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSimJob_ac98a015c25c8e733475caf3c44317d0c}\index{SimJob@{SimJob}!WriteVectorToFile@{WriteVectorToFile}}
+\index{WriteVectorToFile@{WriteVectorToFile}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{WriteVectorToFile()}{WriteVectorToFile()}}
+{\footnotesize\ttfamily \label{classSimJob_ac98a015c25c8e733475caf3c44317d0c} 
+template$<$class T$>$ \\
+int Sim\+Job\+::\+Write\+Vector\+To\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Name}{, }\item[{blitz\+::\+Array$<$ T, 1 $>$ \texorpdfstring{$\ast$}{*}}]{vector}{}\end{DoxyParamCaption})}
+
+
+
+Write a 1D Blitz vector in text format. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Element type (e.\+g., dcmplx). \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & Output filename. \\
+\hline
+{\em vector} & Vector to serialize. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success; non-\/zero on I/O error. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l00605}{605}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSimJob_ac98a015c25c8e733475caf3c44317d0c_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classSimJob_aaf7a38bc82218ed93f0fe7882656a638}\index{SimJob@{SimJob}!blochVector@{blochVector}}
+\index{blochVector@{blochVector}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{blochVector}{blochVector}}
+{\footnotesize\ttfamily \label{classSimJob_aaf7a38bc82218ed93f0fe7882656a638} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} Sim\+Job\+::bloch\+Vector\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Bloch vector (periodic jobs) 
+
+
+
+Definition at line \mbox{\hyperlink{SimJob_8h_source_l00054}{54}} of file \mbox{\hyperlink{SimJob_8h_source}{Sim\+Job.\+h}}.
+
+\Hypertarget{classSimJob_a8c0412c95abe53ba97566f3db24d084e}\index{SimJob@{SimJob}!domains@{domains}}
+\index{domains@{domains}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{domains}{domains}}
+{\footnotesize\ttfamily \label{classSimJob_a8c0412c95abe53ba97566f3db24d084e} 
+std\+::vector$<$\mbox{\hyperlink{classDomain}{Domain}}\texorpdfstring{$\ast$}{*}$>$ Sim\+Job\+::domains\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+All problem domains. 
+
+
+
+Definition at line \mbox{\hyperlink{SimJob_8h_source_l00046}{46}} of file \mbox{\hyperlink{SimJob_8h_source}{Sim\+Job.\+h}}.
+
+\Hypertarget{classSimJob_aab75aedec664ee0862d4c574c28ba1f1}\index{SimJob@{SimJob}!isCasimirJob@{isCasimirJob}}
+\index{isCasimirJob@{isCasimirJob}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{isCasimirJob}{isCasimirJob}}
+{\footnotesize\ttfamily \label{classSimJob_aab75aedec664ee0862d4c574c28ba1f1} 
+bool Sim\+Job\+::is\+Casimir\+Job\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Determine if this is a Casimir job. 
+
+
+
+Definition at line \mbox{\hyperlink{SimJob_8h_source_l00058}{58}} of file \mbox{\hyperlink{SimJob_8h_source}{Sim\+Job.\+h}}.
+
+\Hypertarget{classSimJob_ab80a0f001d2247b79f057f0e9645f572}\index{SimJob@{SimJob}!jobParser@{jobParser}}
+\index{jobParser@{jobParser}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{jobParser}{jobParser}}
+{\footnotesize\ttfamily \label{classSimJob_ab80a0f001d2247b79f057f0e9645f572} 
+\mbox{\hyperlink{classJobParser}{Job\+Parser}} Sim\+Job\+::job\+Parser\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+XML-\/like job reader. 
+
+
+
+Definition at line \mbox{\hyperlink{SimJob_8h_source_l00056}{56}} of file \mbox{\hyperlink{SimJob_8h_source}{Sim\+Job.\+h}}.
+
+\Hypertarget{classSimJob_a961fa91f07275f6102516769b3b3de76}\index{SimJob@{SimJob}!labels@{labels}}
+\index{labels@{labels}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{labels}{labels}}
+{\footnotesize\ttfamily \label{classSimJob_a961fa91f07275f6102516769b3b3de76} 
+std\+::vector$<$std\+::string$>$ Sim\+Job\+::labels\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Labels per (sub)job. 
+
+
+
+Definition at line \mbox{\hyperlink{SimJob_8h_source_l00052}{52}} of file \mbox{\hyperlink{SimJob_8h_source}{Sim\+Job.\+h}}.
+
+\Hypertarget{classSimJob_ae7bcb4189cc176a904c7c3a99690e7af}\index{SimJob@{SimJob}!latticeVectors@{latticeVectors}}
+\index{latticeVectors@{latticeVectors}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{latticeVectors}{latticeVectors}}
+{\footnotesize\ttfamily \label{classSimJob_ae7bcb4189cc176a904c7c3a99690e7af} 
+std\+::vector$<$\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}$>$ Sim\+Job\+::lattice\+Vectors\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Lattice vectors (periodic) 
+
+
+
+Definition at line \mbox{\hyperlink{SimJob_8h_source_l00055}{55}} of file \mbox{\hyperlink{SimJob_8h_source}{Sim\+Job.\+h}}.
+
+\Hypertarget{classSimJob_ab5bb81122a5e8e5dab204977448016cb}\index{SimJob@{SimJob}!lseGradientMatrix@{lseGradientMatrix}}
+\index{lseGradientMatrix@{lseGradientMatrix}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{lseGradientMatrix}{lseGradientMatrix}}
+{\footnotesize\ttfamily \label{classSimJob_ab5bb81122a5e8e5dab204977448016cb} 
+blitz\+::\+Array$<$\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 2$>$\texorpdfstring{$\ast$}{*} Sim\+Job\+::lse\+Gradient\+Matrix\mbox{[}3\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+$\partial Z / \partial p_i$ matrices (Casimir) 
+
+
+
+Definition at line \mbox{\hyperlink{SimJob_8h_source_l00049}{49}} of file \mbox{\hyperlink{SimJob_8h_source}{Sim\+Job.\+h}}.
+
+\Hypertarget{classSimJob_a2cff4226f3d21370966a1d898ba591eb}\index{SimJob@{SimJob}!lseMatrix@{lseMatrix}}
+\index{lseMatrix@{lseMatrix}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{lseMatrix}{lseMatrix}}
+{\footnotesize\ttfamily \label{classSimJob_a2cff4226f3d21370966a1d898ba591eb} 
+blitz\+::\+Array$<$\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 2$>$\texorpdfstring{$\ast$}{*} Sim\+Job\+::lse\+Matrix\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+System matrix A (2Ne x 2Ne) 
+
+
+
+Definition at line \mbox{\hyperlink{SimJob_8h_source_l00048}{48}} of file \mbox{\hyperlink{SimJob_8h_source}{Sim\+Job.\+h}}.
+
+\Hypertarget{classSimJob_a4b25f30e9aad5734bf5b9ee657ef96ec}\index{SimJob@{SimJob}!lseVectors@{lseVectors}}
+\index{lseVectors@{lseVectors}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{lseVectors}{lseVectors}}
+{\footnotesize\ttfamily \label{classSimJob_a4b25f30e9aad5734bf5b9ee657ef96ec} 
+std\+::vector$<$blitz\+::\+Array$<$\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 1$>$\texorpdfstring{$\ast$}{*}$>$ Sim\+Job\+::lse\+Vectors\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+RHS vectors b. 
+
+
+
+Definition at line \mbox{\hyperlink{SimJob_8h_source_l00050}{50}} of file \mbox{\hyperlink{SimJob_8h_source}{Sim\+Job.\+h}}.
+
+\Hypertarget{classSimJob_a658edbf2559cc4e4946f809a1eac00c9}\index{SimJob@{SimJob}!mesh@{mesh}}
+\index{mesh@{mesh}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{mesh}{mesh}}
+{\footnotesize\ttfamily \label{classSimJob_a658edbf2559cc4e4946f809a1eac00c9} 
+\mbox{\hyperlink{classSurfaceMesh}{Surface\+Mesh}}\texorpdfstring{$\ast$}{*} Sim\+Job\+::mesh\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Shared surface mesh. 
+
+
+
+Definition at line \mbox{\hyperlink{SimJob_8h_source_l00047}{47}} of file \mbox{\hyperlink{SimJob_8h_source}{Sim\+Job.\+h}}.
+
+\Hypertarget{classSimJob_aef0ea2080610b6caee4eba901329397d}\index{SimJob@{SimJob}!solVectors@{solVectors}}
+\index{solVectors@{solVectors}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{solVectors}{solVectors}}
+{\footnotesize\ttfamily \label{classSimJob_aef0ea2080610b6caee4eba901329397d} 
+std\+::vector$<$blitz\+::\+Array$<$\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 1$>$\texorpdfstring{$\ast$}{*}$>$ Sim\+Job\+::sol\+Vectors\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Solution vectors x. 
+
+
+
+Definition at line \mbox{\hyperlink{SimJob_8h_source_l00051}{51}} of file \mbox{\hyperlink{SimJob_8h_source}{Sim\+Job.\+h}}.
+
+\Hypertarget{classSimJob_a0364566dc4961d9b6c67530aef8ac1a3}\index{SimJob@{SimJob}!subjobIncidentFields@{subjobIncidentFields}}
+\index{subjobIncidentFields@{subjobIncidentFields}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{subjobIncidentFields}{subjobIncidentFields}}
+{\footnotesize\ttfamily \label{classSimJob_a0364566dc4961d9b6c67530aef8ac1a3} 
+std\+::vector$<$\mbox{\hyperlink{classIncidentField}{Incident\+Field}}\texorpdfstring{$\ast$}{*}$>$ Sim\+Job\+::subjob\+Incident\+Fields\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Temp storage during load. 
+
+
+
+Definition at line \mbox{\hyperlink{SimJob_8h_source_l00057}{57}} of file \mbox{\hyperlink{SimJob_8h_source}{Sim\+Job.\+h}}.
+
+\Hypertarget{classSimJob_a89345aeacef9984753d0951eae28d0d0}\index{SimJob@{SimJob}!t@{t}}
+\index{t@{t}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{t}{t}}
+{\footnotesize\ttfamily \label{classSimJob_a89345aeacef9984753d0951eae28d0d0} 
+\mbox{\hyperlink{classLookupTableBin}{Lookup\+Table\+Bin}}\texorpdfstring{$\ast$}{*} Sim\+Job\+::t\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Look-\/up table for the periodic Green\textquotesingle{}s function computation. 
+
+
+
+Definition at line \mbox{\hyperlink{SimJob_8h_source_l00128}{128}} of file \mbox{\hyperlink{SimJob_8h_source}{Sim\+Job.\+h}}.
+
+\Hypertarget{classSimJob_a6df921a04c5f4e0152e9d00e4378e3e4}\index{SimJob@{SimJob}!thereIsALookupTable@{thereIsALookupTable}}
+\index{thereIsALookupTable@{thereIsALookupTable}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{thereIsALookupTable}{thereIsALookupTable}}
+{\footnotesize\ttfamily \label{classSimJob_a6df921a04c5f4e0152e9d00e4378e3e4} 
+bool Sim\+Job\+::there\+Is\+ALookup\+Table\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+True if there is a lookup table. 
+
+
+
+Definition at line \mbox{\hyperlink{SimJob_8h_source_l00129}{129}} of file \mbox{\hyperlink{SimJob_8h_source}{Sim\+Job.\+h}}.
+
+\Hypertarget{classSimJob_ae682550ed6bf641ead0349dcf4eef829}\index{SimJob@{SimJob}!threads@{threads}}
+\index{threads@{threads}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{threads}{threads}}
+{\footnotesize\ttfamily \label{classSimJob_ae682550ed6bf641ead0349dcf4eef829} 
+int Sim\+Job\+::threads = 1\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Worker threads for field eval. 
+
+
+
+Definition at line \mbox{\hyperlink{SimJob_8h_source_l00059}{59}} of file \mbox{\hyperlink{SimJob_8h_source}{Sim\+Job.\+h}}.
+
+\Hypertarget{classSimJob_a8a09d28d2edf64bc1cdcc1f50d288216}\index{SimJob@{SimJob}!vacuumWavelength@{vacuumWavelength}}
+\index{vacuumWavelength@{vacuumWavelength}!SimJob@{SimJob}}
+\doxysubsubsection{\texorpdfstring{vacuumWavelength}{vacuumWavelength}}
+{\footnotesize\ttfamily \label{classSimJob_a8a09d28d2edf64bc1cdcc1f50d288216} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Sim\+Job\+::vacuum\+Wavelength\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+$\lambda_0$ used to compute $\omega$ 
+
+
+
+Definition at line \mbox{\hyperlink{SimJob_8h_source_l00053}{53}} of file \mbox{\hyperlink{SimJob_8h_source}{Sim\+Job.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{SimJob_8h}{Sim\+Job.\+h}}\item 
+\mbox{\hyperlink{SimJob_8cpp}{Sim\+Job.\+cpp}}\end{DoxyCompactItemize}

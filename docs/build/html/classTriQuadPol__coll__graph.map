@@ -1,0 +1,5 @@
+<map id="TriQuadPol" name="TriQuadPol">
+<area shape="rect" id="Node000001" title="Polar &#160;quadrature generator on a triangular facet." alt="" coords="19,545,185,1019"/>
+<area shape="rect" id="Node000002" href="$classTriangle.html" title="Triangular surface element with cached geometry and utilities." alt="" coords="5,5,199,480"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,480,105,528,100,528,100,480"/>
+</map>

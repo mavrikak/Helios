@@ -1,0 +1,32 @@
+<map id="DomainHom3D.h" name="DomainHom3D.h">
+<area shape="rect" id="Node000001" title="Homogeneous 3D simulation domain (derived from Domain)." alt="" coords="670,5,804,33"/>
+<area shape="rect" id="Node000002" href="$DomainHom3D_8cpp.html" title="Implementation of the homogeneous 3D domain." alt="" coords="5,308,154,336"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="655,36,499,64,315,108,226,135,148,165,86,198,64,216,47,234,42,252,46,271,57,290,69,306,65,309,52,293,41,273,36,251,43,231,60,212,83,194,146,160,224,130,313,103,498,59,654,30"/>
+<area shape="rect" id="Node000003" href="$DomainHom3DPer_8h.html" title="Homogeneous 3D domain with in‑plane periodicity (derived from DomainHom3D)." alt="" coords="848,81,1002,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="785,37,892,78,891,83,784,42"/>
+<area shape="rect" id="Node000005" href="$SimJob_8cpp.html" title="Implementation for the SimJob class." alt="" coords="757,308,850,336"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="749,47,781,156,796,242,805,307,799,308,791,243,776,157,744,49"/>
+<area shape="rect" id="Node000006" href="$SommerfeldIntegrator_8h.html" title="Declaration of the SommerfeldIntegrator class, which evaluates Sommerfeld&#45;type integrals for layered ..." alt="" coords="515,81,692,109"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="701,43,628,83,626,78,699,38"/>
+<area shape="rect" id="Node000004" href="$DomainHom3DPer_8cpp.html" title="Implementation of the homogeneous, periodically replicated 3D domain." alt="" coords="841,157,1009,184"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="928,124,928,156,922,156,922,124"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="974,113,998,127,1017,144,1027,163,1023,185,1007,210,987,231,941,266,892,292,848,310,846,305,890,288,938,262,984,227,1003,206,1018,183,1022,164,1013,147,994,131,972,118"/>
+<area shape="rect" id="Node000007" href="$DomainLayered3D_8cpp.html" title="Implementation of the layered 3D domain." alt="" coords="344,308,514,336"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="587,123,564,158,550,187,542,211,532,235,514,262,484,289,454,310,451,305,481,285,509,258,527,232,537,209,546,185,560,155,583,120"/>
+<area shape="rect" id="Node000008" href="$GreenFLayered3D_8h.html" title="Layered‑medium 3D Green&#39;s function (scalar/gradient/dyadic) + RWG integrals." alt="" coords="278,157,428,184"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="545,116,398,159,397,154,543,111"/>
+<area shape="rect" id="Node000013" href="$SommerfeldIntegrator_8cpp.html" title="Implementation of SommerfeldIntegrator: contour construction, integrand assembly, QUADPACK integratio..." alt="" coords="574,157,766,184"/>
+<area shape="poly" id="edge17_Node000006_Node000013" title=" " alt="" coords="628,119,660,154,656,158,624,122"/>
+<area shape="rect" id="Node000009" href="$Dipole_8h.html" title="Incident field generator for electric dipole illumination in homogeneous or layered media." alt="" coords="246,232,321,260"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="332,198,298,234,294,230,328,194"/>
+<area shape="rect" id="Node000011" href="$DomainLayered3D_8h.html" title="Layered 3D simulation domain (derived from Domain)." alt="" coords="345,232,499,260"/>
+<area shape="poly" id="edge13_Node000008_Node000011" title=" " alt="" coords="378,194,412,230,408,234,374,198"/>
+<area shape="rect" id="Node000012" href="$GreenFLayered3D_8cpp.html" title="Implementation of the 3D Green&#39;s Function class in a layered background." alt="" coords="57,232,222,260"/>
+<area shape="poly" id="edge16_Node000008_Node000012" title=" " alt="" coords="301,192,179,234,177,229,299,187"/>
+<area shape="poly" id="edge11_Node000009_Node000002" title=" " alt="" coords="234,268,117,310,115,305,232,263"/>
+<area shape="poly" id="edge12_Node000009_Node000007" title=" " alt="" coords="324,265,404,305,402,310,322,270"/>
+<area shape="rect" id="Node000010" href="$Dipole_8cpp.html" title="Implementation of the Dipole incident source." alt="" coords="230,308,321,336"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="283,276,280,308,274,307,278,275"/>
+<area shape="poly" id="edge15_Node000011_Node000005" title=" " alt="" coords="506,261,757,309,756,314,505,266"/>
+<area shape="poly" id="edge14_Node000011_Node000007" title=" " alt="" coords="427,276,430,307,425,308,422,276"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="SymmetryOperation::Apply" name="SymmetryOperation::Apply">
+<area shape="rect" id="Node000001" title="Apply a translation to a given vector." alt="" coords="193,5,354,50"/>
+<area shape="rect" id="Node000002" href="$classRWGFun.html#af8d988b7a0c653432dbe1d7c2415028a" title="Construct an RWG basis function tied to one triangle." alt="" coords="5,14,145,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="177,30,145,30,145,25,177,25"/>
+</map>

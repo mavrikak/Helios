@@ -1,0 +1,194 @@
+\doxysection{Gauss\+Quad.\+h}
+\hypertarget{GaussQuad_8h_source}{}\label{GaussQuad_8h_source}\index{GaussQuad.h@{GaussQuad.h}}
+\mbox{\hyperlink{GaussQuad_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00026}00026\ \textcolor{preprocessor}{\#ifndef\ GAUSSQUAD\_H}}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00027}00027\ \textcolor{preprocessor}{\#define\ GAUSSQUAD\_H}}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00029}00029\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00030}00030\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00031}00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{RWGFun_8h}{RWGFun.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00032}00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{globals_8h}{globals.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00033}00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{quadrature_8h}{quadrature.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00047}00047\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Type>}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00048}\mbox{\hyperlink{classGaussQuad}{00048}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classGaussQuad}{GaussQuad}}\ \{}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00049}00049\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00050}00050\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00051}00051\ \ \ \textcolor{comment}{//\ Inner\ integrals\ (centroid\ evaluation)\ used\ by\ the\ first‑order\ formulas}}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00052}00052\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00054}\mbox{\hyperlink{classGaussQuad_afecf86c6fbc2362c30d56fb10454621e}{00054}}\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classGaussQuad_afecf86c6fbc2362c30d56fb10454621e}{I1}}(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ grrp,\ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ fp);}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00056}\mbox{\hyperlink{classGaussQuad_a017bdf3c80a430f4c381310bd7b680ed}{00056}}\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ \mbox{\hyperlink{classGaussQuad_a017bdf3c80a430f4c381310bd7b680ed}{I2}}(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ grrp,\ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ fp);}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00058}\mbox{\hyperlink{classGaussQuad_aa2f7019adfbd7b78e6f91e5554b526b7}{00058}}\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ \mbox{\hyperlink{classGaussQuad_aa2f7019adfbd7b78e6f91e5554b526b7}{I4}}(\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ grrp,\ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ fp);}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00060}00060\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00061}00061\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00062}00062\ \ \ \textcolor{comment}{//\ Green's\ integrals\ on\ one\ or\ two\ triangles}}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00063}00063\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00072}\mbox{\hyperlink{classGaussQuad_a446b0b21a34640c901189c53ec4081b3}{00072}}\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classGaussQuad_a446b0b21a34640c901189c53ec4081b3}{I1}}(Type*\ gF,\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ (Type::*)(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rp),\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r,\ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ fp);}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00082}\mbox{\hyperlink{classGaussQuad_ae59aff5fbf12ed60f4bb65820fdcae91}{00082}}\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ \mbox{\hyperlink{classGaussQuad_ae59aff5fbf12ed60f4bb65820fdcae91}{I2}}(Type*\ gF,\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ (Type::*)(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rp),\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r,\ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ fp);}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00092}\mbox{\hyperlink{classGaussQuad_a0fb8ea7e979899e9f7e872faed11d6bd}{00092}}\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ \mbox{\hyperlink{classGaussQuad_a0fb8ea7e979899e9f7e872faed11d6bd}{I4}}(Type*\ gF,\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ (Type::*)(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rp),\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r,\ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ fp);}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00102}\mbox{\hyperlink{classGaussQuad_a7b4dd3082686af22451b5f405073d33e}{00102}}\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ \mbox{\hyperlink{classGaussQuad_a7b4dd3082686af22451b5f405073d33e}{I5}}(Type*\ gF,\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ (Type::*)(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rp),\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r,\ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ fp);}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00103}00103\ \ \ }
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00114}\mbox{\hyperlink{classGaussQuad_ab01b06d5cd9d9d15b01d0c9078b8dc5e}{00114}}\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classGaussQuad_ab01b06d5cd9d9d15b01d0c9078b8dc5e}{IntegrateD}}(Type*\ gF,\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ (Type::*)(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rp),\ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ f,}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ fp);}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00116}00116\ \ \ }
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00127}\mbox{\hyperlink{classGaussQuad_ab896c6e8141cd1e678d4f630fe0fd186}{00127}}\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classGaussQuad_ab896c6e8141cd1e678d4f630fe0fd186}{IntegrateK}}(Type*\ gF,\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ (Type::*)(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rp),\ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ f,}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ fp);}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00130}00130\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00131}00131\ \ \ \textcolor{comment}{//\ Incident‑field\ integrals\ (RHS)}}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00132}00132\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00140}\mbox{\hyperlink{classGaussQuad_ae1cb48d95d2fad8c46a0a4d44b1216d9}{00140}}\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classGaussQuad_ae1cb48d95d2fad8c46a0a4d44b1216d9}{Integrate}}(Type*\ gF,\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ (Type::*)(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r),\ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ f);}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00150}\mbox{\hyperlink{classGaussQuad_ac053945db0c37c26ac30f3e468550b6e}{00150}}\ \ \ std::vector<dcmplx>\ \mbox{\hyperlink{classGaussQuad_ac053945db0c37c26ac30f3e468550b6e}{Integrate}}(}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00151}00151\ \ \ \ \ \ \ \ \ Type*\ gF,\ std::vector<cvec>\ (Type::*EvaluationFunction)(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r),\ }
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00152}00152\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ f,\ \textcolor{keywordtype}{bool}\ NeedsAccurate);}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00153}00153\ \};}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00155}00155\ \textcolor{comment}{//\ =====================\ Implementation\ (inline)\ =====================}}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00157}00157\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Type>}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00158}\mbox{\hyperlink{classGaussQuad_a446b0b21a34640c901189c53ec4081b3}{00158}}\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classGaussQuad_afecf86c6fbc2362c30d56fb10454621e}{GaussQuad<Type>::I1}}(Type*\ gF,}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ (Type::*EvaluationFunction)(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}},\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}),}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r,\ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ fp)\ \{}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00161}00161\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rp(fp-\/>\mbox{\hyperlink{classRWGFun_a6d9c854fc60bc02cb51ffb60cf388ccc}{TrianglePtr}}()-\/>\mbox{\hyperlink{classTriangle_ab78508a340ec5d345adf114b43563dbf}{Center}}());}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00162}00162\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ grrp((*gF.*EvaluationFunction)(r,\ rp));}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00163}00163\ \ \ \textcolor{keywordtype}{double}\ Areap(fp-\/>\mbox{\hyperlink{classRWGFun_a6d9c854fc60bc02cb51ffb60cf388ccc}{TrianglePtr}}()-\/>\mbox{\hyperlink{classTriangle_a1d3d08deeb999f339d2e821a877521ba}{Area}}());}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00164}00164\ \ \ \textcolor{keywordflow}{return}\ Areap\ *\ fp-\/>\mbox{\hyperlink{classRWGFun_a7cd7779305937d48196453e53d0d4df8}{RWGPreFactor}}()\ *\ grrp;}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00165}00165\ \}}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00167}00167\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Type>}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00168}\mbox{\hyperlink{classGaussQuad_ae59aff5fbf12ed60f4bb65820fdcae91}{00168}}\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ \mbox{\hyperlink{classGaussQuad_a017bdf3c80a430f4c381310bd7b680ed}{GaussQuad<Type>::I2}}(Type*\ gF,}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ (Type::*EvaluationFunction)(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}},}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}),}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r,\ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ fp)\ \{}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00172}00172\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rp(fp-\/>\mbox{\hyperlink{classRWGFun_a6d9c854fc60bc02cb51ffb60cf388ccc}{TrianglePtr}}()-\/>\mbox{\hyperlink{classTriangle_ab78508a340ec5d345adf114b43563dbf}{Center}}());}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00173}00173\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ grrp((*gF.*EvaluationFunction)(r,\ rp));}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00174}00174\ \ \ \textcolor{keywordtype}{double}\ Areap(fp-\/>\mbox{\hyperlink{classRWGFun_a6d9c854fc60bc02cb51ffb60cf388ccc}{TrianglePtr}}()-\/>\mbox{\hyperlink{classTriangle_a1d3d08deeb999f339d2e821a877521ba}{Area}}());}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00175}00175\ \ \ \textcolor{keywordflow}{return}\ Areap\ *\ fp-\/>\mbox{\hyperlink{classRWGFun_a7540ce2f84c6b42a29c2808504c47d42}{Evaluate}}(rp)\ *\ grrp;}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00176}00176\ \}}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00177}00177\ }
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00178}00178\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Type>}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00179}\mbox{\hyperlink{classGaussQuad_a0fb8ea7e979899e9f7e872faed11d6bd}{00179}}\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ \mbox{\hyperlink{classGaussQuad_aa2f7019adfbd7b78e6f91e5554b526b7}{GaussQuad<Type>::I4}}(Type*\ gF,}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ (Type::*EvaluationFunction)(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}},\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}),}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r,\ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ fp)\ \{}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00182}00182\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rp(fp-\/>\mbox{\hyperlink{classRWGFun_a6d9c854fc60bc02cb51ffb60cf388ccc}{TrianglePtr}}()-\/>\mbox{\hyperlink{classTriangle_ab78508a340ec5d345adf114b43563dbf}{Center}}());}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00183}00183\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ grrp((*gF.*EvaluationFunction)(r,\ rp));}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00184}00184\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ fprp(fp-\/>\mbox{\hyperlink{classRWGFun_a7540ce2f84c6b42a29c2808504c47d42}{Evaluate}}(rp));}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00185}00185\ \ \ \textcolor{keywordtype}{double}\ Areap(fp-\/>\mbox{\hyperlink{classRWGFun_a6d9c854fc60bc02cb51ffb60cf388ccc}{TrianglePtr}}()-\/>\mbox{\hyperlink{classTriangle_a1d3d08deeb999f339d2e821a877521ba}{Area}}());}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00186}00186\ \ \ \textcolor{keywordflow}{return}\ Areap\ *\ cross(grrp,\ fprp);}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00187}00187\ \}}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00188}00188\ }
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00189}00189\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Type>}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00190}\mbox{\hyperlink{classGaussQuad_a7b4dd3082686af22451b5f405073d33e}{00190}}\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ \mbox{\hyperlink{classGaussQuad_a7b4dd3082686af22451b5f405073d33e}{GaussQuad<Type>::I5}}(Type*\ gF,}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ (Type::*EvaluationFunction)(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}},\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}),}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r,\ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ fp)\ \{}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00193}00193\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rp(fp-\/>\mbox{\hyperlink{classRWGFun_a6d9c854fc60bc02cb51ffb60cf388ccc}{TrianglePtr}}()-\/>\mbox{\hyperlink{classTriangle_ab78508a340ec5d345adf114b43563dbf}{Center}}());}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00194}00194\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ grrp((*gF.*EvaluationFunction)(r,\ rp));}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00195}00195\ \ \ \textcolor{keywordtype}{double}\ Areap(fp-\/>\mbox{\hyperlink{classRWGFun_a6d9c854fc60bc02cb51ffb60cf388ccc}{TrianglePtr}}()-\/>\mbox{\hyperlink{classTriangle_a1d3d08deeb999f339d2e821a877521ba}{Area}}());}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00196}00196\ \ \ \textcolor{keywordflow}{return}\ Areap\ *\ fp-\/>\mbox{\hyperlink{classRWGFun_a7cd7779305937d48196453e53d0d4df8}{RWGPreFactor}}()\ *\ grrp;}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00197}00197\ \}}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00198}00198\ }
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00199}00199\ \textcolor{comment}{//\ Returns\ evaluation\ of\ equation\ (27)\ in\ JOSA\ B\ Vol\ 26\ No\ 4\ 2009\ at\ first\ order.}}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00200}00200\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Type>}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00201}\mbox{\hyperlink{classGaussQuad_ab01b06d5cd9d9d15b01d0c9078b8dc5e}{00201}}\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classGaussQuad_ab01b06d5cd9d9d15b01d0c9078b8dc5e}{GaussQuad<Type>::IntegrateD}}(}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00202}00202\ \ \ \ \ Type*\ gF,\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ (Type::*EvaluationFunction)(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}},\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}),}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00203}00203\ \ \ \ \ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ f,\ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ fp)\ \{}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00204}00204\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r(f-\/>\mbox{\hyperlink{classRWGFun_a6d9c854fc60bc02cb51ffb60cf388ccc}{TrianglePtr}}()-\/>\mbox{\hyperlink{classTriangle_ab78508a340ec5d345adf114b43563dbf}{Center}}());}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00205}00205\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rp(fp-\/>\mbox{\hyperlink{classRWGFun_a6d9c854fc60bc02cb51ffb60cf388ccc}{TrianglePtr}}()-\/>\mbox{\hyperlink{classTriangle_ab78508a340ec5d345adf114b43563dbf}{Center}}());}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00206}00206\ \ \ \textcolor{keywordtype}{double}\ Area(f-\/>\mbox{\hyperlink{classRWGFun_a6d9c854fc60bc02cb51ffb60cf388ccc}{TrianglePtr}}()-\/>\mbox{\hyperlink{classTriangle_a1d3d08deeb999f339d2e821a877521ba}{Area}}());}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00207}00207\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ grrp((*gF.*EvaluationFunction)(r,\ rp));}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00208}00208\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ ki(gF-\/>WaveVec());}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00209}00209\ \ \ \textcolor{keywordflow}{return}\ Area\ *\ (dot(f-\/>\mbox{\hyperlink{classRWGFun_a7540ce2f84c6b42a29c2808504c47d42}{Evaluate}}(r),\ \mbox{\hyperlink{classGaussQuad_a017bdf3c80a430f4c381310bd7b680ed}{I2}}(grrp,\ fp))\ -\/}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1.\ /\ (ki\ *\ ki)\ *\ f-\/>\mbox{\hyperlink{classRWGFun_a7cd7779305937d48196453e53d0d4df8}{RWGPreFactor}}()\ *\ \mbox{\hyperlink{classGaussQuad_afecf86c6fbc2362c30d56fb10454621e}{I1}}(grrp,\ fp));}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00211}00211\ \}}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00212}00212\ }
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00213}00213\ \textcolor{comment}{//\ Returns\ evaluation\ of\ equation\ (29)\ in\ JOSA\ B\ Vol\ 26\ No\ 4\ 2009\ at\ first\ order.}}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00214}00214\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Type>}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00215}\mbox{\hyperlink{classGaussQuad_ab896c6e8141cd1e678d4f630fe0fd186}{00215}}\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classGaussQuad_ab896c6e8141cd1e678d4f630fe0fd186}{GaussQuad<Type>::IntegrateK}}(}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00216}00216\ \ \ \ \ Type*\ gF,\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ (Type::*EvaluationFunction)(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rp),}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00217}00217\ \ \ \ \ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ f,\ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ fp)\ \{}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00218}00218\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r(f-\/>\mbox{\hyperlink{classRWGFun_a6d9c854fc60bc02cb51ffb60cf388ccc}{TrianglePtr}}()-\/>\mbox{\hyperlink{classTriangle_ab78508a340ec5d345adf114b43563dbf}{Center}}());}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00219}00219\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rp(fp-\/>\mbox{\hyperlink{classRWGFun_a6d9c854fc60bc02cb51ffb60cf388ccc}{TrianglePtr}}()-\/>\mbox{\hyperlink{classTriangle_ab78508a340ec5d345adf114b43563dbf}{Center}}());}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00220}00220\ \ \ \textcolor{keywordtype}{double}\ Area(f-\/>\mbox{\hyperlink{classRWGFun_a6d9c854fc60bc02cb51ffb60cf388ccc}{TrianglePtr}}()-\/>\mbox{\hyperlink{classTriangle_a1d3d08deeb999f339d2e821a877521ba}{Area}}());}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00221}00221\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ grrp((*gF.*EvaluationFunction)(r,\ rp));}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00222}00222\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ fr(f-\/>\mbox{\hyperlink{classRWGFun_a7540ce2f84c6b42a29c2808504c47d42}{Evaluate}}(r));}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00223}00223\ \ \ \textcolor{keywordflow}{return}\ Area\ *\ dot(fr,\ \mbox{\hyperlink{classGaussQuad_aa2f7019adfbd7b78e6f91e5554b526b7}{I4}}(grrp,\ fp));}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00224}00224\ \}}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00225}00225\ }
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00226}00226\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Type>}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00227}\mbox{\hyperlink{classGaussQuad_ae1cb48d95d2fad8c46a0a4d44b1216d9}{00227}}\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classGaussQuad_ae1cb48d95d2fad8c46a0a4d44b1216d9}{GaussQuad<Type>::Integrate}}(}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00228}00228\ \ \ \ \ Type*\ inF,\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ (Type::*EvaluationFunction)(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r),}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00229}00229\ \ \ \ \ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ f)\ \{}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00230}00230\ \ \ \textcolor{keywordtype}{double}\ Area((*f).TrianglePtr()-\/>Area());}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00231}00231\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r(0.,\ 0.,\ 0.);}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00232}00232\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i(0);\ i\ <=\ 2;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00233}00233\ \ \ \ \ r\ +=\ f-\/>\mbox{\hyperlink{classRWGFun_a6d9c854fc60bc02cb51ffb60cf388ccc}{TrianglePtr}}()-\/>\mbox{\hyperlink{classTriangle_a0752d2c9488c7c44b851b8f75abcaa79}{Node}}(i);}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00234}00234\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00235}00235\ \ \ r\ /=\ 3.;}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00236}00236\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ rf(f-\/>\mbox{\hyperlink{classRWGFun_a7540ce2f84c6b42a29c2808504c47d42}{Evaluate}}(r));}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00237}00237\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ out(Area\ *\ dot(rf,\ (*inF.*EvaluationFunction)(r)));}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00238}00238\ \ \ \textcolor{keywordflow}{return}\ out;}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00239}00239\ \}}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00240}00240\ }
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00241}00241\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Type>}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00242}\mbox{\hyperlink{classGaussQuad_ac053945db0c37c26ac30f3e468550b6e}{00242}}\ std::vector<dcmplx>\ \mbox{\hyperlink{classGaussQuad_ae1cb48d95d2fad8c46a0a4d44b1216d9}{GaussQuad<Type>::Integrate}}(}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00243}00243\ \ \ \ \ Type*\ inF,\ std::vector<cvec>\ (Type::*EvaluationFunction)(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r),}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00244}00244\ \ \ \ \ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ f,\ \textcolor{keywordtype}{bool}\ NeedsAccurate)\ \{}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00245}00245\ \ \ \textcolor{keywordtype}{double}\ Area((*f).TrianglePtr()-\/>Area());}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00246}00246\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r[3];}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00247}00247\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00248}00248\ \ \ \ \ r[i]\ =\ f-\/>\mbox{\hyperlink{classRWGFun_a6d9c854fc60bc02cb51ffb60cf388ccc}{TrianglePtr}}()-\/>\mbox{\hyperlink{classTriangle_a0752d2c9488c7c44b851b8f75abcaa79}{Node}}(i);}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00249}00249\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00250}00250\ \ \ \textcolor{keywordtype}{int}\ Ndunavant;}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00251}00251\ \ \ double(*xdunavant)[3];}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00252}00252\ \ \ \textcolor{keywordtype}{double}*\ wdunavant;}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00253}00253\ \ \ Ndunavant\ =\ NeedsAccurate\ ?\ \mbox{\hyperlink{namespacedunavant_a78db0b14f9330efb00cdec8e739b88ff}{dunavant::N5}}\ :\ \mbox{\hyperlink{namespacedunavant_af58e993ed1b610dc1dfef3fe0952ea68}{dunavant::N1}};}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00254}00254\ \ \ xdunavant\ =\ NeedsAccurate\ ?\ \mbox{\hyperlink{namespacedunavant_a9802599aa0c185b6f570450941c5134d}{dunavant::x5}}\ :\ \mbox{\hyperlink{namespacedunavant_a1e043db830b4c85039542955acca52b8}{dunavant::x1}};}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00255}00255\ \ \ wdunavant\ =\ NeedsAccurate\ ?\ \mbox{\hyperlink{namespacedunavant_a9a7dd7b1990b8b02231ac6ad5b62062a}{dunavant::w5}}\ :\ \mbox{\hyperlink{namespacedunavant_aec3459816716d1a6ebed2975dd954f84}{dunavant::w1}};}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00256}00256\ \ \ std::vector<rvec>\ svec(Ndunavant);}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00257}00257\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ Ndunavant;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00258}00258\ \ \ \ \ svec[i]\ =\ r[0]\ *\ xdunavant[i][0]\ +\ r[1]\ *\ xdunavant[i][1]\ +}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r[2]\ *\ xdunavant[i][2];}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00260}00260\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00261}00261\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ outE(0.),\ outH(0.);}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00262}00262\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ Ndunavant;\ ++i)\{}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00263}00263\ \ \ \ \ \textcolor{keywordtype}{double}\ dA\ =\ Area\ *\ wdunavant[i];}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00264}00264\ \ \ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ rf(f-\/>\mbox{\hyperlink{classRWGFun_a7540ce2f84c6b42a29c2808504c47d42}{Evaluate}}(svec[i]));}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00265}00265\ \ \ \ \ outE\ +=\ dA\ *\ dot(rf,\ ((*inF.*EvaluationFunction)(svec[i])).at(0));}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00266}00266\ \ \ \ \ outH\ +=\ dA\ *\ dot(rf,\ ((*inF.*EvaluationFunction)(svec[i])).at(1));}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00267}00267\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00268}00268\ \ \ \textcolor{keywordflow}{return}\ \{outE,\ outH\};}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00269}00269\ \}}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00270}00270\ }
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00271}00271\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Type>}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00272}\mbox{\hyperlink{classGaussQuad_afecf86c6fbc2362c30d56fb10454621e}{00272}}\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classGaussQuad_afecf86c6fbc2362c30d56fb10454621e}{GaussQuad<Type>::I1}}(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ grrp,\ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ fp)\ \{}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00273}00273\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rp(fp-\/>\mbox{\hyperlink{classRWGFun_a6d9c854fc60bc02cb51ffb60cf388ccc}{TrianglePtr}}()-\/>\mbox{\hyperlink{classTriangle_ab78508a340ec5d345adf114b43563dbf}{Center}}());}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00274}00274\ \ \ \textcolor{keywordtype}{double}\ Areap(fp-\/>\mbox{\hyperlink{classRWGFun_a6d9c854fc60bc02cb51ffb60cf388ccc}{TrianglePtr}}()-\/>\mbox{\hyperlink{classTriangle_a1d3d08deeb999f339d2e821a877521ba}{Area}}());}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00275}00275\ \ \ \textcolor{keywordflow}{return}\ Areap\ *\ fp-\/>\mbox{\hyperlink{classRWGFun_a7cd7779305937d48196453e53d0d4df8}{RWGPreFactor}}()\ *\ grrp;}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00276}00276\ \}}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00277}00277\ }
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00278}00278\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Type>}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00279}\mbox{\hyperlink{classGaussQuad_a017bdf3c80a430f4c381310bd7b680ed}{00279}}\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ \mbox{\hyperlink{classGaussQuad_a017bdf3c80a430f4c381310bd7b680ed}{GaussQuad<Type>::I2}}(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ grrp,\ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ fp)\ \{}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00280}00280\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rp(fp-\/>\mbox{\hyperlink{classRWGFun_a6d9c854fc60bc02cb51ffb60cf388ccc}{TrianglePtr}}()-\/>\mbox{\hyperlink{classTriangle_ab78508a340ec5d345adf114b43563dbf}{Center}}());}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00281}00281\ \ \ \textcolor{keywordtype}{double}\ Areap(fp-\/>\mbox{\hyperlink{classRWGFun_a6d9c854fc60bc02cb51ffb60cf388ccc}{TrianglePtr}}()-\/>\mbox{\hyperlink{classTriangle_a1d3d08deeb999f339d2e821a877521ba}{Area}}());}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00282}00282\ \ \ \textcolor{keywordflow}{return}\ Areap\ *\ fp-\/>\mbox{\hyperlink{classRWGFun_a7540ce2f84c6b42a29c2808504c47d42}{Evaluate}}(rp)\ *\ grrp;}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00283}00283\ \}}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00284}00284\ }
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00285}00285\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Type>}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00286}\mbox{\hyperlink{classGaussQuad_aa2f7019adfbd7b78e6f91e5554b526b7}{00286}}\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ \mbox{\hyperlink{classGaussQuad_aa2f7019adfbd7b78e6f91e5554b526b7}{GaussQuad<Type>::I4}}(\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ grrp,\ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ fp)\ \{}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00287}00287\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rp(fp-\/>\mbox{\hyperlink{classRWGFun_a6d9c854fc60bc02cb51ffb60cf388ccc}{TrianglePtr}}()-\/>\mbox{\hyperlink{classTriangle_ab78508a340ec5d345adf114b43563dbf}{Center}}());}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00288}00288\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ fprp(fp-\/>\mbox{\hyperlink{classRWGFun_a7540ce2f84c6b42a29c2808504c47d42}{Evaluate}}(rp));}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00289}00289\ \ \ \textcolor{keywordtype}{double}\ Areap(fp-\/>\mbox{\hyperlink{classRWGFun_a6d9c854fc60bc02cb51ffb60cf388ccc}{TrianglePtr}}()-\/>\mbox{\hyperlink{classTriangle_a1d3d08deeb999f339d2e821a877521ba}{Area}}());}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00290}00290\ \ \ \textcolor{keywordflow}{return}\ Areap\ *\ cross(grrp,\ fprp);}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00291}00291\ \}}
+\DoxyCodeLine{\Hypertarget{GaussQuad_8h_source_l00292}00292\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,1145 @@
+\doxysection{Sommerfeld\+Integrator.\+cpp File Reference}
+\hypertarget{SommerfeldIntegrator_8cpp}{}\label{SommerfeldIntegrator_8cpp}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}
+
+
+Implementation of \doxylink{classSommerfeldIntegrator}{Sommerfeld\+Integrator}\+: contour construction, integrand assembly, QUADPACK integration, and interpolation packing.  
+
+
+{\ttfamily \#include "{}Sommerfeld\+Integrator.\+h"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$numeric$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+Include dependency graph for Sommerfeld\+Integrator.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{SommerfeldIntegrator_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506}{Intra\+Member}} \{ \newline
+\mbox{\hyperlink{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506a83f56f37a245ccaf8c885814074777f6}{TE}}
+, \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506aac7a4fbd0d788d94f43454817e1c208c}{TM}}
+, \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506a0651882fcdd052ed86ed067f54c95091}{TEZ}}
+, \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506a9e6339893ad7fbbe2aede131685eec35}{TMZ}}
+, \newline
+\mbox{\hyperlink{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506a8cf8b40bb8abbc2afcc15bfb757518e7}{TEZZ}}
+, \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506a53811d0b054df43a67906e9b4bfd2bd0}{TMZZ}}
+, \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506a08e789053de980e0f1ac70a61125a17d}{TES}}
+, \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506a9e5dfc0ebc078e4f03650d778f13d412}{TMS}}
+, \newline
+\mbox{\hyperlink{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506a6797ee0de4e6d4511b6dd0cf4ab28e88}{TER}}
+, \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506a80d5ff9eaa9de5010102e77ac14c3d19}{TMR}}
+, \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506a9dc7b114c9daf7202b52e5e39cc55cb1}{TERZ}}
+, \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506a3cdf1cb228ae4c1d9f5319c664b97b13}{TMRZ}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of intra-\/layer integrand components. \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8f}{Inter\+Member}} \{ \newline
+\mbox{\hyperlink{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8fa83f56f37a245ccaf8c885814074777f6}{TE}}
+, \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8faac7a4fbd0d788d94f43454817e1c208c}{TM}}
+, \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8fa5cbe44d15dd51ce99c758dd66d683f11}{TEZ1}}
+, \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8faee3ce3b8835a77769939291dcbaa5591}{TMZ1}}
+, \newline
+\mbox{\hyperlink{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8fa8912f07e925d2578701160c1a82895bf}{TEZ2}}
+, \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8fa59261dbf92ca1daff6e21477d96b007f}{TMZ2}}
+, \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8fa8cf8b40bb8abbc2afcc15bfb757518e7}{TEZZ}}
+, \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8fa53811d0b054df43a67906e9b4bfd2bd0}{TMZZ}}
+, \newline
+\mbox{\hyperlink{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8fa08e789053de980e0f1ac70a61125a17d}{TES}}
+, \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8fa9e5dfc0ebc078e4f03650d778f13d412}{TMS}}
+, \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8fa6797ee0de4e6d4511b6dd0cf4ab28e88}{TER}}
+, \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8fa80d5ff9eaa9de5010102e77ac14c3d19}{TMR}}
+, \newline
+\mbox{\hyperlink{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8faeb268e5f52a68ff4d752e3a01436040f}{TERZ1}}
+, \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8fac199fe4a0b590291ebed1648d475e782}{TMRZ1}}
+, \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8fa51e8e3474d08307458df9ee38f78d844}{TERZ2}}
+, \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8faf8c81d38164ec9664cd7c56b5aaf3191}{TMRZ2}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of inter-\/layer integrand components. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a959789f60c38ac9b62d804949d79fe03}{pick\+Real\+Member}} (double \texorpdfstring{$\ast$}{*}x)
+\begin{DoxyCompactList}\small\item\em Retrieves the real part of a selected member of the computed integrand. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a5384eb4c9aebb470421b74dae88a9a1c}{pick\+Imag\+Member}} (double \texorpdfstring{$\ast$}{*}x)
+\begin{DoxyCompactList}\small\item\em Retrieves the imaginary part of a selected member of the computed integrand. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a384f5925eef2fc5d52e72a65c50174c7}{zbesj\+\_\+}} (const double \texorpdfstring{$\ast$}{*}zr, const double \texorpdfstring{$\ast$}{*}zi, const double \texorpdfstring{$\ast$}{*}fnu, const int \texorpdfstring{$\ast$}{*}kode, const int \texorpdfstring{$\ast$}{*}n, double \texorpdfstring{$\ast$}{*}cyr, double \texorpdfstring{$\ast$}{*}cyi, int \texorpdfstring{$\ast$}{*}nz, int \texorpdfstring{$\ast$}{*}ierr)
+\begin{DoxyCompactList}\small\item\em Compute complex Bessel functions of the first kind $ J_\nu(z) $. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a2119f72fafe396d33e9c85025883db96}{zbesh\+\_\+}} (const double \texorpdfstring{$\ast$}{*}zr, const double \texorpdfstring{$\ast$}{*}zi, const double \texorpdfstring{$\ast$}{*}fnu, const int \texorpdfstring{$\ast$}{*}kode, const int \texorpdfstring{$\ast$}{*}m, const int \texorpdfstring{$\ast$}{*}n, double \texorpdfstring{$\ast$}{*}cyr, double \texorpdfstring{$\ast$}{*}cyi, int \texorpdfstring{$\ast$}{*}nz, int \texorpdfstring{$\ast$}{*}ierr)
+\begin{DoxyCompactList}\small\item\em Compute complex Hankel functions of the first kind or second kind $ H_\nu^{(m)}(z) $. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a9d3834c50a37c06607ab377700f8ba4d}{dqage\+\_\+}} (double(\texorpdfstring{$\ast$}{*}f)(double \texorpdfstring{$\ast$}{*}), double \texorpdfstring{$\ast$}{*}a, double \texorpdfstring{$\ast$}{*}b, double \texorpdfstring{$\ast$}{*}epsabs, double \texorpdfstring{$\ast$}{*}epsrel, int \texorpdfstring{$\ast$}{*}key, int \texorpdfstring{$\ast$}{*}limit, double \texorpdfstring{$\ast$}{*}result, double \texorpdfstring{$\ast$}{*}abserr, int \texorpdfstring{$\ast$}{*}neval, int \texorpdfstring{$\ast$}{*}ier, double \texorpdfstring{$\ast$}{*}alist, double \texorpdfstring{$\ast$}{*}blist, double \texorpdfstring{$\ast$}{*}rlist, double \texorpdfstring{$\ast$}{*}elist, int \texorpdfstring{$\ast$}{*}iord, int \texorpdfstring{$\ast$}{*}last)
+\begin{DoxyCompactList}\small\item\em Adaptive Gauss–\+Kronrod quadrature (QUADPACK driver routine DQAGE). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a93b85379d21563ca5aba6f5eff053826}{besselJ}} (int order, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} arg)
+\begin{DoxyCompactList}\small\item\em Computes the Bessel function $ J_n(z) $. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{SommerfeldIntegrator_8cpp_aa15340ecd95146df9ef36735f56c3417}{hankelH}} (int order, int kind, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} arg)
+\begin{DoxyCompactList}\small\item\em Computes the Hankel function $ H_\nu^{(m)}(z) $. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a451453beb5b95daba5d1e92047643b13}{gauss\+Kronrod}} (double(\texorpdfstring{$\ast$}{*}integrand)(double \texorpdfstring{$\ast$}{*}), double a, double b, int key=5, int limit=100, double epsabs=1e-\/6, double epsrel=1e-\/6)
+\begin{DoxyCompactList}\small\item\em Performs Gauss-\/\+Kronrod integration. \end{DoxyCompactList}\item 
+std\+::tuple$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$, std\+::vector$<$ int $>$, std\+::vector$<$ int $>$, std\+::vector$<$ double $>$, std\+::vector$<$ double $>$ $>$ \mbox{\hyperlink{SommerfeldIntegrator_8cpp_aaf7c4d18b58bb87ad89dc34cfa1117c3}{interpolate\+Intra}} (std\+::vector$<$ double $>$ \&x\+\_\+grid, std\+::vector$<$ double $>$ \&y\+\_\+grid, std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ \&green)
+\begin{DoxyCompactList}\small\item\em Flatten 2D complex grid to column-\/major array with axis metadata. \end{DoxyCompactList}\item 
+std\+::tuple$<$ std\+::vector$<$ double $>$, std\+::vector$<$ double $>$, std\+::vector$<$ double $>$, std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a5535ba494c54ae267b6b889fbf34a339}{interpolate\+Inter}} (std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$ \&x, std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$ \&y, std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$ \&z, std\+::vector$<$ double $>$ \&in\+Scales, std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ $>$ \&green)
+\begin{DoxyCompactList}\small\item\em Flatten 3D complex tensor grid (column-\/major order). \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a41b5c25befab03c3dfc3200a419a49fe}{get\+Column}} (const std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \&matrix, size\+\_\+t col\+Index)
+\begin{DoxyCompactList}\small\item\em Extract a single column from a 2D matrix. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a5c189341c1c2b58a6edd7bb6d77f3390}{get\+Column\+At\+Row\+Depth}} (const std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$ \&matrix, size\+\_\+t row\+Index, size\+\_\+t depth\+Index)
+\begin{DoxyCompactList}\small\item\em Extract one row (across all columns) at a specific depth in a 3D matrix. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a227a630955115f778548ee81c152897b}{get\+Depth\+At\+Row\+Column}} (const std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$ \&matrix, size\+\_\+t row\+Index, size\+\_\+t col\+Index)
+\begin{DoxyCompactList}\small\item\em Extract all depth elements at a specific row and column in a 3D matrix. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a85b9f46fa6967ea992a869f4371d5214}{get\+Row\+At\+Column\+Depth}} (const std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$ \&matrix, size\+\_\+t col\+Index, size\+\_\+t depth\+Index)
+\begin{DoxyCompactList}\small\item\em Extract one column (across all rows) at a specific depth in a 3D matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classSommerfeldIntegrator}{Sommerfeld\+Integrator}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a62d7a7e41f0325654a52c94bc18547f7}{g\+\_\+integ}} = nullptr
+\begin{DoxyCompactList}\small\item\em Pointer to the \doxylink{classSommerfeldIntegrator}{Sommerfeld\+Integrator} object (this) \end{DoxyCompactList}\item 
+static std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{SommerfeldIntegrator_8cpp_afa9fed6bf487c9bc4340770d4d42ab7a}{g\+\_\+rq\+\_\+te}}
+\begin{DoxyCompactList}\small\item\em Quasistatic reflection coefficient (TE) \end{DoxyCompactList}\item 
+static std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{SommerfeldIntegrator_8cpp_ab4542d027134733024bf70e1cf0f7614}{g\+\_\+rq\+\_\+tm}}
+\begin{DoxyCompactList}\small\item\em Quasistatic reflection coefficient (TM) \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a15ee78aa763bd16c34cfdb8753e7fbcf}{g\+\_\+tq\+\_\+te}}
+\begin{DoxyCompactList}\small\item\em Quasistatic transmission coefficient (TE) \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a4aeac0a1c1dd92d445490eb6f52bc010}{g\+\_\+tq\+\_\+tm}}
+\begin{DoxyCompactList}\small\item\em Quasistatic transmission coefficient (TM) \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{structData2D}{Data2D}} \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a67ca490552eee69b71a641dbae4002cb}{g\+\_\+\+Data2D}}
+\begin{DoxyCompactList}\small\item\em 2D data structure \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{structData3D}{Data3D}} \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a7002f015345bd47e92c0d4389275f218}{g\+\_\+\+Data3D}}
+\begin{DoxyCompactList}\small\item\em 3D data structure \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{structIntegrandIntra}{Integrand\+Intra}} \mbox{\hyperlink{SommerfeldIntegrator_8cpp_aeb0cd7e224b34adc8d09ae14abd5ec49}{g\+\_\+int\+Zero\+Krho}}
+\begin{DoxyCompactList}\small\item\em Integrand for intra-\/layer integrals at $k_\rho = 0$. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{structIntegrandInter}{Integrand\+Inter}} \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a260479523ffc9d400daf8834fd1a61f9}{g\+\_\+int\+Zero\+Krho\+Inter}}
+\begin{DoxyCompactList}\small\item\em Integrand for inter-\/layer integrals at $k_\rho = 0$. \end{DoxyCompactList}\item 
+static double \mbox{\hyperlink{SommerfeldIntegrator_8cpp_aceadefd0b3b6507a8d1a0f3c6040786a}{g\+\_\+k\+\_\+max}} = 0.\+0
+\begin{DoxyCompactList}\small\item\em Value for integration path definition. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a4bb5357aab7375b674096bfe900eeb1a}{g\+\_\+path}} = "{}none"{}
+\begin{DoxyCompactList}\small\item\em Path of integration parameter (semi, real, imag) \end{DoxyCompactList}\item 
+static size\+\_\+t \mbox{\hyperlink{SommerfeldIntegrator_8cpp_ac3aaa12258a1bd5bdb6ef2424d0a7a61}{g\+\_\+currentI}} = 0
+\begin{DoxyCompactList}\small\item\em Row of Integrand\+Intra/\+Integrand\+Inter integration result. \end{DoxyCompactList}\item 
+static size\+\_\+t \mbox{\hyperlink{SommerfeldIntegrator_8cpp_ae39f3bb417d74901d9a941eaeb2c14ab}{g\+\_\+currentJ}} = 0
+\begin{DoxyCompactList}\small\item\em Column of Integrand\+Intra/\+Integrand\+Inter integration result. \end{DoxyCompactList}\item 
+static size\+\_\+t \mbox{\hyperlink{SommerfeldIntegrator_8cpp_aaf912c1071a387a0c4ec316a52ffa556}{g\+\_\+currentK}} = 0
+\begin{DoxyCompactList}\small\item\em Depth of Integrand\+Intra/\+Integrand\+Inter integration result. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a026826808e7b88bb19719d48863a22b4}{g\+\_\+op}} = "{}"{}
+\begin{DoxyCompactList}\small\item\em Operation type (minus, plus, "{}"{}) \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506}{Intra\+Member}} \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a19df1dfb234e12835f59cf3240c7707e}{g\+\_\+current\+Member}} = \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506a83f56f37a245ccaf8c885814074777f6}{Intra\+Member\+::\+TE}}
+\begin{DoxyCompactList}\small\item\em Current intra-\/layer member (random initialization) \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8f}{Inter\+Member}} \mbox{\hyperlink{SommerfeldIntegrator_8cpp_af0f33c7b4ab252451ade86c6f1335680}{g\+\_\+current\+Member\+Inter}} = \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8fa83f56f37a245ccaf8c885814074777f6}{Inter\+Member\+::\+TE}}
+\begin{DoxyCompactList}\small\item\em Current inter-\/layer member (random initialization) \end{DoxyCompactList}\item 
+static std\+::map$<$ double, \mbox{\hyperlink{structIntegrandIntra}{Integrand\+Intra}} $>$ \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a826ca4d604d2be5d5e310c0b290cf08e}{g\+\_\+memo}}
+\begin{DoxyCompactList}\small\item\em Global memo cache\+: x -\/\texorpdfstring{$>$}{>} \doxylink{structIntegrandIntra}{Integrand\+Intra}. \end{DoxyCompactList}\item 
+static std\+::unordered\+\_\+map$<$ double, \mbox{\hyperlink{structIntegrandInter}{Integrand\+Inter}} $>$ \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a3206fa9af3c45d1e56c0e3f043085137}{g\+\_\+memo\+Inter}}
+\begin{DoxyCompactList}\small\item\em Global memo cache\+: x -\/\texorpdfstring{$>$}{>} \doxylink{structIntegrandInter}{Integrand\+Inter}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{SommerfeldIntegrator_8cpp_adbd6a2ee6a1d23093fba1f18441bccfb}{g\+\_\+status}} = "{}"{}
+\begin{DoxyCompactList}\small\item\em Intra or inter global status. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of \doxylink{classSommerfeldIntegrator}{Sommerfeld\+Integrator}\+: contour construction, integrand assembly, QUADPACK integration, and interpolation packing. 
+
+
+
+Definition in file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8f}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!InterMember@{InterMember}}
+\index{InterMember@{InterMember}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}
+\doxysubsubsection{\texorpdfstring{InterMember}{InterMember}}
+{\footnotesize\ttfamily \label{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8f} 
+enum class \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8f}{Inter\+Member}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Enumeration of inter-\/layer integrand components. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TE@{TE}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!TE@{TE}}}\Hypertarget{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8fa83f56f37a245ccaf8c885814074777f6}\label{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8fa83f56f37a245ccaf8c885814074777f6} 
+TE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TM@{TM}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!TM@{TM}}}\Hypertarget{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8faac7a4fbd0d788d94f43454817e1c208c}\label{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8faac7a4fbd0d788d94f43454817e1c208c} 
+TM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEZ1@{TEZ1}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!TEZ1@{TEZ1}}}\Hypertarget{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8fa5cbe44d15dd51ce99c758dd66d683f11}\label{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8fa5cbe44d15dd51ce99c758dd66d683f11} 
+TEZ1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TMZ1@{TMZ1}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!TMZ1@{TMZ1}}}\Hypertarget{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8faee3ce3b8835a77769939291dcbaa5591}\label{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8faee3ce3b8835a77769939291dcbaa5591} 
+TMZ1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEZ2@{TEZ2}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!TEZ2@{TEZ2}}}\Hypertarget{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8fa8912f07e925d2578701160c1a82895bf}\label{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8fa8912f07e925d2578701160c1a82895bf} 
+TEZ2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TMZ2@{TMZ2}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!TMZ2@{TMZ2}}}\Hypertarget{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8fa59261dbf92ca1daff6e21477d96b007f}\label{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8fa59261dbf92ca1daff6e21477d96b007f} 
+TMZ2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEZZ@{TEZZ}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!TEZZ@{TEZZ}}}\Hypertarget{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8fa8cf8b40bb8abbc2afcc15bfb757518e7}\label{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8fa8cf8b40bb8abbc2afcc15bfb757518e7} 
+TEZZ&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TMZZ@{TMZZ}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!TMZZ@{TMZZ}}}\Hypertarget{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8fa53811d0b054df43a67906e9b4bfd2bd0}\label{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8fa53811d0b054df43a67906e9b4bfd2bd0} 
+TMZZ&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TES@{TES}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!TES@{TES}}}\Hypertarget{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8fa08e789053de980e0f1ac70a61125a17d}\label{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8fa08e789053de980e0f1ac70a61125a17d} 
+TES&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TMS@{TMS}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!TMS@{TMS}}}\Hypertarget{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8fa9e5dfc0ebc078e4f03650d778f13d412}\label{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8fa9e5dfc0ebc078e4f03650d778f13d412} 
+TMS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TER@{TER}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!TER@{TER}}}\Hypertarget{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8fa6797ee0de4e6d4511b6dd0cf4ab28e88}\label{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8fa6797ee0de4e6d4511b6dd0cf4ab28e88} 
+TER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TMR@{TMR}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!TMR@{TMR}}}\Hypertarget{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8fa80d5ff9eaa9de5010102e77ac14c3d19}\label{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8fa80d5ff9eaa9de5010102e77ac14c3d19} 
+TMR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TERZ1@{TERZ1}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!TERZ1@{TERZ1}}}\Hypertarget{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8faeb268e5f52a68ff4d752e3a01436040f}\label{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8faeb268e5f52a68ff4d752e3a01436040f} 
+TERZ1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TMRZ1@{TMRZ1}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!TMRZ1@{TMRZ1}}}\Hypertarget{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8fac199fe4a0b590291ebed1648d475e782}\label{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8fac199fe4a0b590291ebed1648d475e782} 
+TMRZ1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TERZ2@{TERZ2}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!TERZ2@{TERZ2}}}\Hypertarget{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8fa51e8e3474d08307458df9ee38f78d844}\label{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8fa51e8e3474d08307458df9ee38f78d844} 
+TERZ2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TMRZ2@{TMRZ2}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!TMRZ2@{TMRZ2}}}\Hypertarget{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8faf8c81d38164ec9664cd7c56b5aaf3191}\label{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8faf8c81d38164ec9664cd7c56b5aaf3191} 
+TMRZ2&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l00046}{46}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+\Hypertarget{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!IntraMember@{IntraMember}}
+\index{IntraMember@{IntraMember}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}
+\doxysubsubsection{\texorpdfstring{IntraMember}{IntraMember}}
+{\footnotesize\ttfamily \label{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506} 
+enum class \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506}{Intra\+Member}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Enumeration of intra-\/layer integrand components. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TE@{TE}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!TE@{TE}}}\Hypertarget{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506a83f56f37a245ccaf8c885814074777f6}\label{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506a83f56f37a245ccaf8c885814074777f6} 
+TE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TM@{TM}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!TM@{TM}}}\Hypertarget{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506aac7a4fbd0d788d94f43454817e1c208c}\label{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506aac7a4fbd0d788d94f43454817e1c208c} 
+TM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEZ@{TEZ}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!TEZ@{TEZ}}}\Hypertarget{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506a0651882fcdd052ed86ed067f54c95091}\label{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506a0651882fcdd052ed86ed067f54c95091} 
+TEZ&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TMZ@{TMZ}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!TMZ@{TMZ}}}\Hypertarget{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506a9e6339893ad7fbbe2aede131685eec35}\label{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506a9e6339893ad7fbbe2aede131685eec35} 
+TMZ&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEZZ@{TEZZ}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!TEZZ@{TEZZ}}}\Hypertarget{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506a8cf8b40bb8abbc2afcc15bfb757518e7}\label{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506a8cf8b40bb8abbc2afcc15bfb757518e7} 
+TEZZ&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TMZZ@{TMZZ}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!TMZZ@{TMZZ}}}\Hypertarget{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506a53811d0b054df43a67906e9b4bfd2bd0}\label{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506a53811d0b054df43a67906e9b4bfd2bd0} 
+TMZZ&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TES@{TES}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!TES@{TES}}}\Hypertarget{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506a08e789053de980e0f1ac70a61125a17d}\label{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506a08e789053de980e0f1ac70a61125a17d} 
+TES&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TMS@{TMS}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!TMS@{TMS}}}\Hypertarget{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506a9e5dfc0ebc078e4f03650d778f13d412}\label{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506a9e5dfc0ebc078e4f03650d778f13d412} 
+TMS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TER@{TER}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!TER@{TER}}}\Hypertarget{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506a6797ee0de4e6d4511b6dd0cf4ab28e88}\label{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506a6797ee0de4e6d4511b6dd0cf4ab28e88} 
+TER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TMR@{TMR}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!TMR@{TMR}}}\Hypertarget{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506a80d5ff9eaa9de5010102e77ac14c3d19}\label{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506a80d5ff9eaa9de5010102e77ac14c3d19} 
+TMR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TERZ@{TERZ}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!TERZ@{TERZ}}}\Hypertarget{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506a9dc7b114c9daf7202b52e5e39cc55cb1}\label{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506a9dc7b114c9daf7202b52e5e39cc55cb1} 
+TERZ&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TMRZ@{TMRZ}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!TMRZ@{TMRZ}}}\Hypertarget{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506a3cdf1cb228ae4c1d9f5319c664b97b13}\label{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506a3cdf1cb228ae4c1d9f5319c664b97b13} 
+TMRZ&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l00039}{39}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{SommerfeldIntegrator_8cpp_a93b85379d21563ca5aba6f5eff053826}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!besselJ@{besselJ}}
+\index{besselJ@{besselJ}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}
+\doxysubsubsection{\texorpdfstring{besselJ()}{besselJ()}}
+{\footnotesize\ttfamily \label{SommerfeldIntegrator_8cpp_a93b85379d21563ca5aba6f5eff053826} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} besselJ (\begin{DoxyParamCaption}\item[{int}]{order}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{arg}{}\end{DoxyParamCaption})}
+
+
+
+Computes the Bessel function $ J_n(z) $. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em order} & Order of the Bessel function. \\
+\hline
+{\em arg} & Argument of the function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Computed Bessel function value. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l00328}{328}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{SommerfeldIntegrator_8cpp_a93b85379d21563ca5aba6f5eff053826_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{SommerfeldIntegrator_8cpp_a93b85379d21563ca5aba6f5eff053826_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{SommerfeldIntegrator_8cpp_a9d3834c50a37c06607ab377700f8ba4d}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!dqage\_@{dqage\_}}
+\index{dqage\_@{dqage\_}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}
+\doxysubsubsection{\texorpdfstring{dqage\_()}{dqage\_()}}
+{\footnotesize\ttfamily \label{SommerfeldIntegrator_8cpp_a9d3834c50a37c06607ab377700f8ba4d} 
+void dqage\+\_\+ (\begin{DoxyParamCaption}\item[{double(\texorpdfstring{$\ast$}{*}}]{f~}{)(double \texorpdfstring{$\ast$}{*}), }\item[{double \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{b}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{epsabs}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{epsrel}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{key}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{limit}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{result}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{abserr}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{neval}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{ier}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{alist}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{blist}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{rlist}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{elist}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{iord}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{last}{}\end{DoxyParamCaption})}
+
+
+
+Adaptive Gauss–\+Kronrod quadrature (QUADPACK driver routine DQAGE). 
+
+Evaluates a real integral using adaptive Gauss–\+Kronrod rules over a finite interval.
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Pointer to the function to integrate. \\
+\hline
+{\em a} & Lower integration bound. \\
+\hline
+{\em b} & Upper integration bound. \\
+\hline
+{\em epsabs} & Absolute accuracy requested. \\
+\hline
+{\em epsrel} & Relative accuracy requested. \\
+\hline
+{\em key} & Rule selection key (1–6 corresponding to different Gauss–\+Kronrod pairs). \\
+\hline
+{\em limit} & Maximum number of subintervals allowed. \\
+\hline
+{\em result} & Output integral result. \\
+\hline
+{\em abserr} & Estimated absolute error. \\
+\hline
+{\em neval} & Number of function evaluations performed. \\
+\hline
+{\em ier} & Error flag (0 if successful). \\
+\hline
+{\em alist} & Workspace array of left subinterval bounds. \\
+\hline
+{\em blist} & Workspace array of right subinterval bounds. \\
+\hline
+{\em rlist} & Workspace array of subinterval results. \\
+\hline
+{\em elist} & Workspace array of subinterval errors. \\
+\hline
+{\em iord} & Workspace array for ordering subintervals. \\
+\hline
+{\em last} & Number of subintervals actually used. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{SommerfeldIntegrator_8cpp_a9d3834c50a37c06607ab377700f8ba4d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{SommerfeldIntegrator_8cpp_a451453beb5b95daba5d1e92047643b13}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!gaussKronrod@{gaussKronrod}}
+\index{gaussKronrod@{gaussKronrod}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}
+\doxysubsubsection{\texorpdfstring{gaussKronrod()}{gaussKronrod()}}
+{\footnotesize\ttfamily \label{SommerfeldIntegrator_8cpp_a451453beb5b95daba5d1e92047643b13} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} gauss\+Kronrod (\begin{DoxyParamCaption}\item[{double(\texorpdfstring{$\ast$}{*}}]{integrand~}{)(double \texorpdfstring{$\ast$}{*}), }\item[{double}]{a}{, }\item[{double}]{b}{, }\item[{int}]{key}{ = {\ttfamily 5}, }\item[{int}]{limit}{ = {\ttfamily 100}, }\item[{double}]{epsabs}{ = {\ttfamily 1e-\/6}, }\item[{double}]{epsrel}{ = {\ttfamily 1e-\/6}}\end{DoxyParamCaption})}
+
+
+
+Performs Gauss-\/\+Kronrod integration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em integrand} & Function pointer to the integrand function. \\
+\hline
+{\em a} & Lower bound of integration. \\
+\hline
+{\em b} & Upper bound of integration. \\
+\hline
+{\em key} & Selection of Gauss-\/\+Kronrod pair (5 -\/\texorpdfstring{$>$}{>} 25/51). \\
+\hline
+{\em limit} & Maximum subdivisions. \\
+\hline
+{\em epsabs} & Absolute error tolerance. \\
+\hline
+{\em epsrel} & Relative error tolerance. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Computed integral value as a complex number. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l00391}{391}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{SommerfeldIntegrator_8cpp_a451453beb5b95daba5d1e92047643b13_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{SommerfeldIntegrator_8cpp_a451453beb5b95daba5d1e92047643b13_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{SommerfeldIntegrator_8cpp_a41b5c25befab03c3dfc3200a419a49fe}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!getColumn@{getColumn}}
+\index{getColumn@{getColumn}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}
+\doxysubsubsection{\texorpdfstring{getColumn()}{getColumn()}}
+{\footnotesize\ttfamily \label{SommerfeldIntegrator_8cpp_a41b5c25befab03c3dfc3200a419a49fe} 
+std\+::vector$<$ double $>$ get\+Column (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \&}]{matrix}{, }\item[{size\+\_\+t}]{col\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Extract a single column from a 2D matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & Input 2D matrix (matrix\mbox{[}row\mbox{]}\mbox{[}col\mbox{]}). \\
+\hline
+{\em col\+Index} & Index of the column to extract. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector containing all elements from the specified column. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & if {\ttfamily col\+Index} is greater than the number of columns. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l01367}{1367}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{SommerfeldIntegrator_8cpp_a41b5c25befab03c3dfc3200a419a49fe_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{SommerfeldIntegrator_8cpp_a5c189341c1c2b58a6edd7bb6d77f3390}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!getColumnAtRowDepth@{getColumnAtRowDepth}}
+\index{getColumnAtRowDepth@{getColumnAtRowDepth}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}
+\doxysubsubsection{\texorpdfstring{getColumnAtRowDepth()}{getColumnAtRowDepth()}}
+{\footnotesize\ttfamily \label{SommerfeldIntegrator_8cpp_a5c189341c1c2b58a6edd7bb6d77f3390} 
+std\+::vector$<$ double $>$ get\+Column\+At\+Row\+Depth (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$ \&}]{matrix}{, }\item[{size\+\_\+t}]{row\+Index}{, }\item[{size\+\_\+t}]{depth\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Extract one row (across all columns) at a specific depth in a 3D matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & Input 3D matrix (matrix\mbox{[}row\mbox{]}\mbox{[}col\mbox{]}\mbox{[}depth\mbox{]}). \\
+\hline
+{\em row\+Index} & Row index to extract. \\
+\hline
+{\em depth\+Index} & Depth (third-\/dimension) index to extract. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of values at the specified (row, \+:, depth). 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & if indices are out of bounds. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l01383}{1383}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{SommerfeldIntegrator_8cpp_a5c189341c1c2b58a6edd7bb6d77f3390_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{SommerfeldIntegrator_8cpp_a227a630955115f778548ee81c152897b}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!getDepthAtRowColumn@{getDepthAtRowColumn}}
+\index{getDepthAtRowColumn@{getDepthAtRowColumn}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}
+\doxysubsubsection{\texorpdfstring{getDepthAtRowColumn()}{getDepthAtRowColumn()}}
+{\footnotesize\ttfamily \label{SommerfeldIntegrator_8cpp_a227a630955115f778548ee81c152897b} 
+std\+::vector$<$ double $>$ get\+Depth\+At\+Row\+Column (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$ \&}]{matrix}{, }\item[{size\+\_\+t}]{row\+Index}{, }\item[{size\+\_\+t}]{col\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Extract all depth elements at a specific row and column in a 3D matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & Input 3D matrix (matrix\mbox{[}row\mbox{]}\mbox{[}col\mbox{]}\mbox{[}depth\mbox{]}). \\
+\hline
+{\em row\+Index} & Row index to extract. \\
+\hline
+{\em col\+Index} & Column index to extract. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector containing all depth values at (row\+Index, col\+Index, \+:). 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & if indices are out of bounds. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l01410}{1410}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{SommerfeldIntegrator_8cpp_a227a630955115f778548ee81c152897b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{SommerfeldIntegrator_8cpp_a85b9f46fa6967ea992a869f4371d5214}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!getRowAtColumnDepth@{getRowAtColumnDepth}}
+\index{getRowAtColumnDepth@{getRowAtColumnDepth}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}
+\doxysubsubsection{\texorpdfstring{getRowAtColumnDepth()}{getRowAtColumnDepth()}}
+{\footnotesize\ttfamily \label{SommerfeldIntegrator_8cpp_a85b9f46fa6967ea992a869f4371d5214} 
+std\+::vector$<$ double $>$ get\+Row\+At\+Column\+Depth (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$ \&}]{matrix}{, }\item[{size\+\_\+t}]{col\+Index}{, }\item[{size\+\_\+t}]{depth\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Extract one column (across all rows) at a specific depth in a 3D matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & Input 3D matrix (matrix\mbox{[}row\mbox{]}\mbox{[}col\mbox{]}\mbox{[}depth\mbox{]}). \\
+\hline
+{\em col\+Index} & Column index to extract. \\
+\hline
+{\em depth\+Index} & Depth index to extract. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector containing the values at (\+:, col\+Index, depth\+Index). 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & if indices are out of bounds. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l01430}{1430}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{SommerfeldIntegrator_8cpp_a85b9f46fa6967ea992a869f4371d5214_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{SommerfeldIntegrator_8cpp_aa15340ecd95146df9ef36735f56c3417}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!hankelH@{hankelH}}
+\index{hankelH@{hankelH}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}
+\doxysubsubsection{\texorpdfstring{hankelH()}{hankelH()}}
+{\footnotesize\ttfamily \label{SommerfeldIntegrator_8cpp_aa15340ecd95146df9ef36735f56c3417} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} hankelH (\begin{DoxyParamCaption}\item[{int}]{order}{, }\item[{int}]{kind}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{arg}{}\end{DoxyParamCaption})}
+
+
+
+Computes the Hankel function $ H_\nu^{(m)}(z) $. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em order} & Order of the Hankel function. \\
+\hline
+{\em kind} & Kind of Hankel function (1 or 2). \\
+\hline
+{\em arg} & Argument of the function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Computed Hankel function value. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l00355}{355}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{SommerfeldIntegrator_8cpp_aa15340ecd95146df9ef36735f56c3417_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{SommerfeldIntegrator_8cpp_aa15340ecd95146df9ef36735f56c3417_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{SommerfeldIntegrator_8cpp_a5535ba494c54ae267b6b889fbf34a339}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!interpolateInter@{interpolateInter}}
+\index{interpolateInter@{interpolateInter}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}
+\doxysubsubsection{\texorpdfstring{interpolateInter()}{interpolateInter()}}
+{\footnotesize\ttfamily \label{SommerfeldIntegrator_8cpp_a5535ba494c54ae267b6b889fbf34a339} 
+std\+::tuple$<$ std\+::vector$<$ double $>$, std\+::vector$<$ double $>$, std\+::vector$<$ double $>$, std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ interpolate\+Inter (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$ \&}]{x}{, }\item[{std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$ \&}]{y}{, }\item[{std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$ \&}]{z}{, }\item[{std\+::vector$<$ double $>$ \&}]{in\+Scales}{, }\item[{std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ $>$ \&}]{green}{}\end{DoxyParamCaption})}
+
+
+
+Flatten 3D complex tensor grid (column-\/major order). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & A 3D vector representing the x-\/coordinates of the grid. \\
+\hline
+{\em y} & A 3D vector representing the y-\/coordinates of the grid. \\
+\hline
+{\em z} & A 3D vector representing the z-\/coordinates of the grid. \\
+\hline
+{\em in\+Scales} & A vector with the scaling factors for x, y, z coordinates. \\
+\hline
+{\em green} & A 3D vector containing complex function values at grid points. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A tuple containing\+:
+\begin{DoxyItemize}
+\item Xv\+: A vector of x-\/coordinates.
+\item Yv\+: A vector of y-\/coordinates.
+\item Zv\+: A vector of z-\/coordinates.
+\item F\+\_\+flat\+: green flattened in column-\/major order. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l00479}{479}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{SommerfeldIntegrator_8cpp_a5535ba494c54ae267b6b889fbf34a339_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{SommerfeldIntegrator_8cpp_aaf7c4d18b58bb87ad89dc34cfa1117c3}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!interpolateIntra@{interpolateIntra}}
+\index{interpolateIntra@{interpolateIntra}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}
+\doxysubsubsection{\texorpdfstring{interpolateIntra()}{interpolateIntra()}}
+{\footnotesize\ttfamily \label{SommerfeldIntegrator_8cpp_aaf7c4d18b58bb87ad89dc34cfa1117c3} 
+std\+::tuple$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$, std\+::vector$<$ int $>$, std\+::vector$<$ int $>$, std\+::vector$<$ double $>$, std\+::vector$<$ double $>$ $>$ interpolate\+Intra (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$ \&}]{x\+\_\+grid}{, }\item[{std\+::vector$<$ double $>$ \&}]{y\+\_\+grid}{, }\item[{std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ \&}]{green}{}\end{DoxyParamCaption})}
+
+
+
+Flatten 2D complex grid to column-\/major array with axis metadata. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+\_\+grid} & A vector containing the x-\/coordinates of the grid. \\
+\hline
+{\em y\+\_\+grid} & A vector containing the y-\/coordinates of the grid. \\
+\hline
+{\em green} & A 2D vector containing the complex values of the function on the grid. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A tuple containing\+:
+\begin{DoxyItemize}
+\item F\+\_\+flat\+: green flattened in column-\/major order.
+\item px\+: A vector of two integers representing px values for real and imaginary parts.
+\item py\+: A vector of two integers representing py values for real and imaginary parts.
+\item Xc\+: x\+\_\+grid points.
+\item Yc\+: y\+\_\+grid points. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l00441}{441}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{SommerfeldIntegrator_8cpp_aaf7c4d18b58bb87ad89dc34cfa1117c3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{SommerfeldIntegrator_8cpp_a5384eb4c9aebb470421b74dae88a9a1c}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!pickImagMember@{pickImagMember}}
+\index{pickImagMember@{pickImagMember}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}
+\doxysubsubsection{\texorpdfstring{pickImagMember()}{pickImagMember()}}
+{\footnotesize\ttfamily \label{SommerfeldIntegrator_8cpp_a5384eb4c9aebb470421b74dae88a9a1c} 
+double pick\+Imag\+Member (\begin{DoxyParamCaption}\item[{double \texorpdfstring{$\ast$}{*}}]{x}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the imaginary part of a selected member of the computed integrand. 
+
+This function selects the correct member from either the "{}inter"{} or "{}intra"{} integrand, computing it if necessary and caching the result for future lookups.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Pointer to the independent variable for which the integrand is evaluated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The imaginary part of the selected member of the computed integrand.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if g\+\_\+status is neither "{}inter"{} nor "{}intra"{}. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l00167}{167}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{SommerfeldIntegrator_8cpp_a5384eb4c9aebb470421b74dae88a9a1c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{SommerfeldIntegrator_8cpp_a959789f60c38ac9b62d804949d79fe03}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!pickRealMember@{pickRealMember}}
+\index{pickRealMember@{pickRealMember}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}
+\doxysubsubsection{\texorpdfstring{pickRealMember()}{pickRealMember()}}
+{\footnotesize\ttfamily \label{SommerfeldIntegrator_8cpp_a959789f60c38ac9b62d804949d79fe03} 
+double pick\+Real\+Member (\begin{DoxyParamCaption}\item[{double \texorpdfstring{$\ast$}{*}}]{x}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the real part of a selected member of the computed integrand. 
+
+This function selects the correct member from either the "{}inter"{} or "{}intra"{} integrand, computing it if necessary and caching the result for future lookups.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Pointer to the independent variable for which the integrand is evaluated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The real part of the selected member of the computed integrand.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if g\+\_\+status is neither "{}inter"{} nor "{}intra"{}. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l00078}{78}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{SommerfeldIntegrator_8cpp_a959789f60c38ac9b62d804949d79fe03_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{SommerfeldIntegrator_8cpp_a2119f72fafe396d33e9c85025883db96}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!zbesh\_@{zbesh\_}}
+\index{zbesh\_@{zbesh\_}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}
+\doxysubsubsection{\texorpdfstring{zbesh\_()}{zbesh\_()}}
+{\footnotesize\ttfamily \label{SommerfeldIntegrator_8cpp_a2119f72fafe396d33e9c85025883db96} 
+void zbesh\+\_\+ (\begin{DoxyParamCaption}\item[{const double \texorpdfstring{$\ast$}{*}}]{zr}{, }\item[{const double \texorpdfstring{$\ast$}{*}}]{zi}{, }\item[{const double \texorpdfstring{$\ast$}{*}}]{fnu}{, }\item[{const int \texorpdfstring{$\ast$}{*}}]{kode}{, }\item[{const int \texorpdfstring{$\ast$}{*}}]{m}{, }\item[{const int \texorpdfstring{$\ast$}{*}}]{n}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{cyr}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{cyi}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{nz}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{ierr}{}\end{DoxyParamCaption})}
+
+
+
+Compute complex Hankel functions of the first kind or second kind $ H_\nu^{(m)}(z) $. 
+
+Fortran wrapper to the Amos library routine {\ttfamily ZBESH}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em zr} & Real part of the complex argument z. \\
+\hline
+{\em zi} & Imaginary part of the complex argument z. \\
+\hline
+{\em fnu} & Order of the Hankel function. \\
+\hline
+{\em kode} & Scaling option (1 = unscaled, 2 = exponentially scaled). \\
+\hline
+{\em m} & Type selector (1 = first kind, 2 = second kind). \\
+\hline
+{\em n} & Number of sequential orders to compute. \\
+\hline
+{\em cyr} & Output array for the real parts of $ H_\nu^{(m)}(z) $. \\
+\hline
+{\em cyi} & Output array for the imaginary parts of $ H_\nu^{(m)}(z) $. \\
+\hline
+{\em nz} & Number of underflows set to zero. \\
+\hline
+{\em ierr} & Error flag (0 if successful). \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{SommerfeldIntegrator_8cpp_a2119f72fafe396d33e9c85025883db96_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{SommerfeldIntegrator_8cpp_a384f5925eef2fc5d52e72a65c50174c7}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!zbesj\_@{zbesj\_}}
+\index{zbesj\_@{zbesj\_}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}
+\doxysubsubsection{\texorpdfstring{zbesj\_()}{zbesj\_()}}
+{\footnotesize\ttfamily \label{SommerfeldIntegrator_8cpp_a384f5925eef2fc5d52e72a65c50174c7} 
+void zbesj\+\_\+ (\begin{DoxyParamCaption}\item[{const double \texorpdfstring{$\ast$}{*}}]{zr}{, }\item[{const double \texorpdfstring{$\ast$}{*}}]{zi}{, }\item[{const double \texorpdfstring{$\ast$}{*}}]{fnu}{, }\item[{const int \texorpdfstring{$\ast$}{*}}]{kode}{, }\item[{const int \texorpdfstring{$\ast$}{*}}]{n}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{cyr}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{cyi}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{nz}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{ierr}{}\end{DoxyParamCaption})}
+
+
+
+Compute complex Bessel functions of the first kind $ J_\nu(z) $. 
+
+Fortran wrapper to the Amos library routine {\ttfamily ZBESJ}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em zr} & Real part of the complex argument z. \\
+\hline
+{\em zi} & Imaginary part of the complex argument z. \\
+\hline
+{\em fnu} & Order of the Bessel function. \\
+\hline
+{\em kode} & Scaling option (1 = unscaled, 2 = exponentially scaled). \\
+\hline
+{\em n} & Number of terms to compute (number of sequential orders). \\
+\hline
+{\em cyr} & Output array for the real parts of $ J_\nu(z) $. \\
+\hline
+{\em cyi} & Output array for the imaginary parts of $ J_\nu(z) $. \\
+\hline
+{\em nz} & Number of underflows set to zero. \\
+\hline
+{\em ierr} & Error flag (0 if successful). \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{SommerfeldIntegrator_8cpp_a384f5925eef2fc5d52e72a65c50174c7_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{SommerfeldIntegrator_8cpp_ac3aaa12258a1bd5bdb6ef2424d0a7a61}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!g\_currentI@{g\_currentI}}
+\index{g\_currentI@{g\_currentI}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}
+\doxysubsubsection{\texorpdfstring{g\_currentI}{g\_currentI}}
+{\footnotesize\ttfamily \label{SommerfeldIntegrator_8cpp_ac3aaa12258a1bd5bdb6ef2424d0a7a61} 
+size\+\_\+t g\+\_\+currentI = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Row of Integrand\+Intra/\+Integrand\+Inter integration result. 
+
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l00033}{33}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+\Hypertarget{SommerfeldIntegrator_8cpp_ae39f3bb417d74901d9a941eaeb2c14ab}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!g\_currentJ@{g\_currentJ}}
+\index{g\_currentJ@{g\_currentJ}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}
+\doxysubsubsection{\texorpdfstring{g\_currentJ}{g\_currentJ}}
+{\footnotesize\ttfamily \label{SommerfeldIntegrator_8cpp_ae39f3bb417d74901d9a941eaeb2c14ab} 
+size\+\_\+t g\+\_\+currentJ = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Column of Integrand\+Intra/\+Integrand\+Inter integration result. 
+
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l00034}{34}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+\Hypertarget{SommerfeldIntegrator_8cpp_aaf912c1071a387a0c4ec316a52ffa556}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!g\_currentK@{g\_currentK}}
+\index{g\_currentK@{g\_currentK}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}
+\doxysubsubsection{\texorpdfstring{g\_currentK}{g\_currentK}}
+{\footnotesize\ttfamily \label{SommerfeldIntegrator_8cpp_aaf912c1071a387a0c4ec316a52ffa556} 
+size\+\_\+t g\+\_\+currentK = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Depth of Integrand\+Intra/\+Integrand\+Inter integration result. 
+
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l00035}{35}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+\Hypertarget{SommerfeldIntegrator_8cpp_a19df1dfb234e12835f59cf3240c7707e}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!g\_currentMember@{g\_currentMember}}
+\index{g\_currentMember@{g\_currentMember}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}
+\doxysubsubsection{\texorpdfstring{g\_currentMember}{g\_currentMember}}
+{\footnotesize\ttfamily \label{SommerfeldIntegrator_8cpp_a19df1dfb234e12835f59cf3240c7707e} 
+\mbox{\hyperlink{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506}{Intra\+Member}} g\+\_\+current\+Member = \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a51a1eddd374e977f58bb2f82468fc506a83f56f37a245ccaf8c885814074777f6}{Intra\+Member\+::\+TE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Current intra-\/layer member (random initialization) 
+
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l00052}{52}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+\Hypertarget{SommerfeldIntegrator_8cpp_af0f33c7b4ab252451ade86c6f1335680}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!g\_currentMemberInter@{g\_currentMemberInter}}
+\index{g\_currentMemberInter@{g\_currentMemberInter}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}
+\doxysubsubsection{\texorpdfstring{g\_currentMemberInter}{g\_currentMemberInter}}
+{\footnotesize\ttfamily \label{SommerfeldIntegrator_8cpp_af0f33c7b4ab252451ade86c6f1335680} 
+\mbox{\hyperlink{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8f}{Inter\+Member}} g\+\_\+current\+Member\+Inter = \mbox{\hyperlink{SommerfeldIntegrator_8cpp_a4952aeef76860e19964fca133c870b8fa83f56f37a245ccaf8c885814074777f6}{Inter\+Member\+::\+TE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Current inter-\/layer member (random initialization) 
+
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l00053}{53}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+\Hypertarget{SommerfeldIntegrator_8cpp_a67ca490552eee69b71a641dbae4002cb}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!g\_Data2D@{g\_Data2D}}
+\index{g\_Data2D@{g\_Data2D}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}
+\doxysubsubsection{\texorpdfstring{g\_Data2D}{g\_Data2D}}
+{\footnotesize\ttfamily \label{SommerfeldIntegrator_8cpp_a67ca490552eee69b71a641dbae4002cb} 
+\mbox{\hyperlink{structData2D}{Data2D}} g\+\_\+\+Data2D\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+2D data structure 
+
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l00027}{27}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+\Hypertarget{SommerfeldIntegrator_8cpp_a7002f015345bd47e92c0d4389275f218}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!g\_Data3D@{g\_Data3D}}
+\index{g\_Data3D@{g\_Data3D}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}
+\doxysubsubsection{\texorpdfstring{g\_Data3D}{g\_Data3D}}
+{\footnotesize\ttfamily \label{SommerfeldIntegrator_8cpp_a7002f015345bd47e92c0d4389275f218} 
+\mbox{\hyperlink{structData3D}{Data3D}} g\+\_\+\+Data3D\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+3D data structure 
+
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+\Hypertarget{SommerfeldIntegrator_8cpp_a62d7a7e41f0325654a52c94bc18547f7}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!g\_integ@{g\_integ}}
+\index{g\_integ@{g\_integ}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}
+\doxysubsubsection{\texorpdfstring{g\_integ}{g\_integ}}
+{\footnotesize\ttfamily \label{SommerfeldIntegrator_8cpp_a62d7a7e41f0325654a52c94bc18547f7} 
+\mbox{\hyperlink{classSommerfeldIntegrator}{Sommerfeld\+Integrator}}\texorpdfstring{$\ast$}{*} g\+\_\+integ = nullptr\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Pointer to the \doxylink{classSommerfeldIntegrator}{Sommerfeld\+Integrator} object (this) 
+
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+\Hypertarget{SommerfeldIntegrator_8cpp_aeb0cd7e224b34adc8d09ae14abd5ec49}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!g\_intZeroKrho@{g\_intZeroKrho}}
+\index{g\_intZeroKrho@{g\_intZeroKrho}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}
+\doxysubsubsection{\texorpdfstring{g\_intZeroKrho}{g\_intZeroKrho}}
+{\footnotesize\ttfamily \label{SommerfeldIntegrator_8cpp_aeb0cd7e224b34adc8d09ae14abd5ec49} 
+\mbox{\hyperlink{structIntegrandIntra}{Integrand\+Intra}} g\+\_\+int\+Zero\+Krho\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Integrand for intra-\/layer integrals at $k_\rho = 0$. 
+
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l00029}{29}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+\Hypertarget{SommerfeldIntegrator_8cpp_a260479523ffc9d400daf8834fd1a61f9}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!g\_intZeroKrhoInter@{g\_intZeroKrhoInter}}
+\index{g\_intZeroKrhoInter@{g\_intZeroKrhoInter}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}
+\doxysubsubsection{\texorpdfstring{g\_intZeroKrhoInter}{g\_intZeroKrhoInter}}
+{\footnotesize\ttfamily \label{SommerfeldIntegrator_8cpp_a260479523ffc9d400daf8834fd1a61f9} 
+\mbox{\hyperlink{structIntegrandInter}{Integrand\+Inter}} g\+\_\+int\+Zero\+Krho\+Inter\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Integrand for inter-\/layer integrals at $k_\rho = 0$. 
+
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l00030}{30}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+\Hypertarget{SommerfeldIntegrator_8cpp_aceadefd0b3b6507a8d1a0f3c6040786a}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!g\_k\_max@{g\_k\_max}}
+\index{g\_k\_max@{g\_k\_max}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}
+\doxysubsubsection{\texorpdfstring{g\_k\_max}{g\_k\_max}}
+{\footnotesize\ttfamily \label{SommerfeldIntegrator_8cpp_aceadefd0b3b6507a8d1a0f3c6040786a} 
+double g\+\_\+k\+\_\+max = 0.\+0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Value for integration path definition. 
+
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l00031}{31}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+\Hypertarget{SommerfeldIntegrator_8cpp_a826ca4d604d2be5d5e310c0b290cf08e}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!g\_memo@{g\_memo}}
+\index{g\_memo@{g\_memo}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}
+\doxysubsubsection{\texorpdfstring{g\_memo}{g\_memo}}
+{\footnotesize\ttfamily \label{SommerfeldIntegrator_8cpp_a826ca4d604d2be5d5e310c0b290cf08e} 
+std\+::map$<$double, \mbox{\hyperlink{structIntegrandIntra}{Integrand\+Intra}}$>$ g\+\_\+memo\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Global memo cache\+: x -\/\texorpdfstring{$>$}{>} \doxylink{structIntegrandIntra}{Integrand\+Intra}. 
+
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l00056}{56}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+\Hypertarget{SommerfeldIntegrator_8cpp_a3206fa9af3c45d1e56c0e3f043085137}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!g\_memoInter@{g\_memoInter}}
+\index{g\_memoInter@{g\_memoInter}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}
+\doxysubsubsection{\texorpdfstring{g\_memoInter}{g\_memoInter}}
+{\footnotesize\ttfamily \label{SommerfeldIntegrator_8cpp_a3206fa9af3c45d1e56c0e3f043085137} 
+std\+::unordered\+\_\+map$<$double, \mbox{\hyperlink{structIntegrandInter}{Integrand\+Inter}}$>$ g\+\_\+memo\+Inter\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Global memo cache\+: x -\/\texorpdfstring{$>$}{>} \doxylink{structIntegrandInter}{Integrand\+Inter}. 
+
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l00059}{59}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+\Hypertarget{SommerfeldIntegrator_8cpp_a026826808e7b88bb19719d48863a22b4}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!g\_op@{g\_op}}
+\index{g\_op@{g\_op}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}
+\doxysubsubsection{\texorpdfstring{g\_op}{g\_op}}
+{\footnotesize\ttfamily \label{SommerfeldIntegrator_8cpp_a026826808e7b88bb19719d48863a22b4} 
+std\+::string g\+\_\+op = "{}"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Operation type (minus, plus, "{}"{}) 
+
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l00036}{36}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+\Hypertarget{SommerfeldIntegrator_8cpp_a4bb5357aab7375b674096bfe900eeb1a}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!g\_path@{g\_path}}
+\index{g\_path@{g\_path}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}
+\doxysubsubsection{\texorpdfstring{g\_path}{g\_path}}
+{\footnotesize\ttfamily \label{SommerfeldIntegrator_8cpp_a4bb5357aab7375b674096bfe900eeb1a} 
+std\+::string g\+\_\+path = "{}none"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Path of integration parameter (semi, real, imag) 
+
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l00032}{32}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+\Hypertarget{SommerfeldIntegrator_8cpp_afa9fed6bf487c9bc4340770d4d42ab7a}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!g\_rq\_te@{g\_rq\_te}}
+\index{g\_rq\_te@{g\_rq\_te}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}
+\doxysubsubsection{\texorpdfstring{g\_rq\_te}{g\_rq\_te}}
+{\footnotesize\ttfamily \label{SommerfeldIntegrator_8cpp_afa9fed6bf487c9bc4340770d4d42ab7a} 
+std\+::vector$<$\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}$>$ g\+\_\+rq\+\_\+te\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Quasistatic reflection coefficient (TE) 
+
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l00023}{23}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+\Hypertarget{SommerfeldIntegrator_8cpp_ab4542d027134733024bf70e1cf0f7614}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!g\_rq\_tm@{g\_rq\_tm}}
+\index{g\_rq\_tm@{g\_rq\_tm}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}
+\doxysubsubsection{\texorpdfstring{g\_rq\_tm}{g\_rq\_tm}}
+{\footnotesize\ttfamily \label{SommerfeldIntegrator_8cpp_ab4542d027134733024bf70e1cf0f7614} 
+std\+::vector$<$\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}$>$ g\+\_\+rq\+\_\+tm\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Quasistatic reflection coefficient (TM) 
+
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+\Hypertarget{SommerfeldIntegrator_8cpp_adbd6a2ee6a1d23093fba1f18441bccfb}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!g\_status@{g\_status}}
+\index{g\_status@{g\_status}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}
+\doxysubsubsection{\texorpdfstring{g\_status}{g\_status}}
+{\footnotesize\ttfamily \label{SommerfeldIntegrator_8cpp_adbd6a2ee6a1d23093fba1f18441bccfb} 
+std\+::string g\+\_\+status = "{}"{}}
+
+
+
+Intra or inter global status. 
+
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l00062}{62}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+\Hypertarget{SommerfeldIntegrator_8cpp_a15ee78aa763bd16c34cfdb8753e7fbcf}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!g\_tq\_te@{g\_tq\_te}}
+\index{g\_tq\_te@{g\_tq\_te}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}
+\doxysubsubsection{\texorpdfstring{g\_tq\_te}{g\_tq\_te}}
+{\footnotesize\ttfamily \label{SommerfeldIntegrator_8cpp_a15ee78aa763bd16c34cfdb8753e7fbcf} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} g\+\_\+tq\+\_\+te\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Quasistatic transmission coefficient (TE) 
+
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l00025}{25}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+\Hypertarget{SommerfeldIntegrator_8cpp_a4aeac0a1c1dd92d445490eb6f52bc010}\index{SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}!g\_tq\_tm@{g\_tq\_tm}}
+\index{g\_tq\_tm@{g\_tq\_tm}!SommerfeldIntegrator.cpp@{SommerfeldIntegrator.cpp}}
+\doxysubsubsection{\texorpdfstring{g\_tq\_tm}{g\_tq\_tm}}
+{\footnotesize\ttfamily \label{SommerfeldIntegrator_8cpp_a4aeac0a1c1dd92d445490eb6f52bc010} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} g\+\_\+tq\+\_\+tm\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Quasistatic transmission coefficient (TM) 
+
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+

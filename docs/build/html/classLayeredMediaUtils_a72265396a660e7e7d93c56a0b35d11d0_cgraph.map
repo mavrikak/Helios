@@ -1,0 +1,7 @@
+<map id="LayeredMediaUtils::matrixMultiplication" name="LayeredMediaUtils::matrixMultiplication">
+<area shape="rect" id="Node000001" title="Performs matrix multiplication for 2D/3D complex matrices." alt="" coords="5,40,159,85"/>
+<area shape="rect" id="Node000002" href="$classLayeredMediaUtils.html#ad48ebb179e3349bad58b015022cbff46" title="Performs matrix multiplication for 2D complex matrices." alt="" coords="207,5,358,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="159,46,191,41,192,46,160,52"/>
+<area shape="rect" id="Node000003" href="$classLayeredMediaUtils.html#a3ee62bdcd0ba1763e162df2c175cd022" title="Performs matrix multiplication for 3D complex matrices." alt="" coords="207,75,358,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="160,73,192,79,191,84,159,78"/>
+</map>

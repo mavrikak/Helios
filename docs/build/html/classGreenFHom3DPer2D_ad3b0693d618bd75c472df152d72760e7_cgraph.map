@@ -1,0 +1,22 @@
+<map id="GreenFHom3DPer2D::GreenFHom3DPer2D" name="GreenFHom3DPer2D::GreenFHom3DPer2D">
+<area shape="rect" id="Node000001" title="Constructor for a magnetic medium (2D periodic)." alt="" coords="5,86,256,131"/>
+<area shape="rect" id="Node000002" href="$classGreenFHom3DPer.html#a414d2e05ac1b3d089e2a5556e6e16a93" title="Homogeneous, non‑magnetic constructor with Bloch vector." alt="" coords="304,49,567,77"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="256,87,322,77,323,83,256,93"/>
+<area shape="rect" id="Node000007" href="$classGreenFHom3DPer2D.html#a3160d2ff20a3ec478d2fb6e9b72cf79d" title="Common initialization: set lookup flags, build reciprocal lattice, project k, choose Ewald parameter." alt="" coords="343,120,528,148"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="256,116,327,122,327,128,256,122"/>
+<area shape="rect" id="Node000003" href="$classGreenFHom3D.html#ac928f16e6e79c75c002d9a721a8858d8" title="Default constructor (initializes with zeroed wavenumber and no lookup table)." alt="" coords="620,29,842,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="567,52,605,49,605,54,568,57"/>
+<area shape="rect" id="Node000004" href="$classGreenF.html#a332ac24f39288170f77c18f37fde2c82" title="Constructor for a homogeneous, non&#45;magnetic medium." alt="" coords="895,29,1018,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="842,40,880,40,880,46,842,46"/>
+<area shape="rect" id="Node000005" href="$group__greenFunction.html#gac0a52dce23be7dacdf97c68653b6c137" title="Complex square root with a branch cut along the negative real axis." alt="" coords="1066,29,1119,57"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="1018,40,1050,40,1050,46,1018,46"/>
+<area shape="rect" id="Node000006" href="$Domain_8cpp.html#aafa3e4fa6318b2f8740f4dbd50c367e5" title="Extract the real part of each component of a complex 3&#45;vector." alt="" coords="1167,29,1213,57"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1119,40,1151,40,1151,46,1119,46"/>
+<area shape="poly" id="edge6_Node000006_Node000006" title=" " alt="" coords="1172,30,1169,20,1171,11,1179,5,1190,3,1202,5,1209,12,1205,15,1200,10,1190,8,1181,10,1176,14,1175,20,1177,28"/>
+<area shape="rect" id="Node000008" href="$classGreenFHom3DPer.html#a8b1a5f0f63af1baf32caeebbf9b33170" title="Set the number of periodic evaluation terms to accumulate." alt="" coords="624,81,839,126"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="528,122,608,113,609,119,529,127"/>
+<area shape="rect" id="Node000009" href="$classGreenFHom3DPer2D.html#a07235ce91a1e9b3410f5fad888d0e44c" title="Build reciprocal lattice vectors." alt="" coords="615,149,847,177"/>
+<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="529,140,600,147,599,153,528,146"/>
+<area shape="rect" id="Node000010" href="$classGreenFHom3DPer2D.html#a9352fdb0ead2b5956f3e951122f73e18" title="Project the Bloch vector onto the lattice plane." alt="" coords="624,201,838,229"/>
+<area shape="poly" id="edge10_Node000007_Node000010" title=" " alt="" coords="482,146,616,186,650,195,649,200,614,191,480,151"/>
+</map>

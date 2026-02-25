@@ -1,0 +1,18 @@
+<map id="GreenFLayered3D.h" name="GreenFLayered3D.h">
+<area shape="rect" id="Node000001" title="Layered‑medium 3D Green&#39;s function (scalar/gradient/dyadic) + RWG integrals." alt="" coords="302,5,452,33"/>
+<area shape="rect" id="Node000002" href="$Dipole_8h.html" title="Incident field generator for electric dipole illumination in homogeneous or layered media." alt="" coords="180,81,255,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="336,42,247,83,244,78,334,37"/>
+<area shape="rect" id="Node000006" href="$DomainLayered3D_8h.html" title="Layered 3D simulation domain (derived from Domain)." alt="" coords="300,81,454,109"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="380,49,380,81,374,81,374,49"/>
+<area shape="rect" id="Node000008" href="$GreenFLayered3D_8cpp.html" title="Implementation of the 3D Green&#39;s Function class in a layered background." alt="" coords="478,81,644,109"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="425,37,530,78,528,83,423,42"/>
+<area shape="rect" id="Node000003" href="$Dipole_8cpp.html" title="Implementation of the Dipole incident source." alt="" coords="5,157,96,184"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="175,118,81,159,79,154,173,113"/>
+<area shape="rect" id="Node000004" href="$DomainHom3D_8cpp.html" title="Implementation of the homogeneous 3D domain." alt="" coords="120,157,269,184"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="211,125,201,157,196,155,206,123"/>
+<area shape="rect" id="Node000005" href="$DomainLayered3D_8cpp.html" title="Implementation of the layered 3D domain." alt="" coords="292,157,462,184"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="261,113,350,154,348,159,259,118"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="380,124,380,156,374,156,374,124"/>
+<area shape="rect" id="Node000007" href="$SimJob_8cpp.html" title="Implementation for the SimJob class." alt="" coords="486,157,580,184"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="420,113,507,154,504,159,417,118"/>
+</map>

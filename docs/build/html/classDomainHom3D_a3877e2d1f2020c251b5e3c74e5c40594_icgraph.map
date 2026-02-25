@@ -1,0 +1,9 @@
+<map id="DomainHom3D::InitGrnFun" name="DomainHom3D::InitGrnFun">
+<area shape="rect" id="Node000001" title="Instantiate the homogeneous Green&#39;s function for this domain." alt="" coords="602,32,798,60"/>
+<area shape="rect" id="Node000002" href="$classDomainHom3D.html#ae2c7b0309cdbeda660e9e937de24c2b6" title="Construct a homogeneous domain and immediately create its Green&#39;s function." alt="" coords="325,5,554,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="586,37,554,34,555,28,587,32"/>
+<area shape="rect" id="Node000004" href="$classDomainHom3D.html#a711da6da038d5667d1dffeed2431ae11" title="Construct a homogeneous domain, optionally skipping Green&#39;s function creation." alt="" coords="325,57,554,85"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="587,60,555,63,554,57,586,54"/>
+<area shape="rect" id="Node000003" href="$classDomainHom3DPer.html#a973f16aa5d1165725d3d0bdab331781f" title="Construct a periodic homogeneous domain and select a periodic Green&#39;s function." alt="" coords="5,5,277,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="309,22,277,22,277,16,309,16"/>
+</map>

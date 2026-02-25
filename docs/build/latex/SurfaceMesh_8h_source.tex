@@ -1,0 +1,94 @@
+\doxysection{Surface\+Mesh.\+h}
+\hypertarget{SurfaceMesh_8h_source}{}\label{SurfaceMesh_8h_source}\index{SurfaceMesh.h@{SurfaceMesh.h}}
+\mbox{\hyperlink{SurfaceMesh_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00011}00011\ \textcolor{comment}{//\ Only\ include\ this\ once\ during\ compiling}}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00012}00012\ \textcolor{preprocessor}{\#ifndef\ SURFACEMESH\_H}}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00013}00013\ \textcolor{preprocessor}{\#define\ SURFACEMESH\_H}}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00015}00015\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00016}00016\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00017}00017\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00018}00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{JobParser_8h}{JobParser.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00019}00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Triangle_8h}{Triangle.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00020}00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{globals_8h}{globals.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00021}00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mathFunctions_8h}{mathFunctions.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00027}\mbox{\hyperlink{structedge}{00027}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structedge}{edge}}\ \{}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00028}\mbox{\hyperlink{structedge_a8a0de0171ae4f1bc664e1a1fb80c6863}{00028}}\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ *\mbox{\hyperlink{structedge_a8a0de0171ae4f1bc664e1a1fb80c6863}{node1}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00029}\mbox{\hyperlink{structedge_a2588830cb8c3f4343b7c5d4b33c4d8a0}{00029}}\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ *\mbox{\hyperlink{structedge_a2588830cb8c3f4343b7c5d4b33c4d8a0}{node2}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00030}\mbox{\hyperlink{structedge_a67268df2e3a3c8671f5479d7b1d4abb7}{00030}}\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structedge_a67268df2e3a3c8671f5479d7b1d4abb7}{edgeLength}};\ \ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00031}00031\ \};}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00044}\mbox{\hyperlink{classSurfaceMesh}{00044}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSurfaceMesh_a020395181bf96068e3a0b287f3f75968}{SurfaceMesh}}\ \{}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00045}00045\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00046}\mbox{\hyperlink{classSurfaceMesh_a01fd83efaeb12a789f9b1448111bdf6f}{00046}}\ \ \ \mbox{\hyperlink{classJobParser}{JobParser}}\ \mbox{\hyperlink{classSurfaceMesh_a01fd83efaeb12a789f9b1448111bdf6f}{jobParser}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00047}\mbox{\hyperlink{classSurfaceMesh_ad15834c114ffa57483ed928b75634c63}{00047}}\ \ \ std::vector<rvec>\ \mbox{\hyperlink{classSurfaceMesh_ad15834c114ffa57483ed928b75634c63}{nodes}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00048}\mbox{\hyperlink{classSurfaceMesh_a9b3bdc4a40179af090240e48b2408e73}{00048}}\ \ \ std::vector<Triangle>\ \mbox{\hyperlink{classSurfaceMesh_a9b3bdc4a40179af090240e48b2408e73}{triangles}};\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00049}\mbox{\hyperlink{classSurfaceMesh_a051d7723b78f98ca83aafb35a3a4ea35}{00049}}\ \ \ std::vector<edge>\ \mbox{\hyperlink{classSurfaceMesh_a051d7723b78f98ca83aafb35a3a4ea35}{edges}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00050}\mbox{\hyperlink{classSurfaceMesh_a3b21d09b955a30cb106a7490f1431cef}{00050}}\ \ \ std::set<int>\ \mbox{\hyperlink{classSurfaceMesh_a3b21d09b955a30cb106a7490f1431cef}{domainIndeces}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00051}\mbox{\hyperlink{classSurfaceMesh_a1de6a9eb8ebab94507f2f213661ad6cc}{00051}}\ \ \ std::vector<rvec*>\ \mbox{\hyperlink{classSurfaceMesh_a1de6a9eb8ebab94507f2f213661ad6cc}{supNodes}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00052}\mbox{\hyperlink{classSurfaceMesh_a3f69f0b0f14a90b0bdc8c957b9c79fc1}{00052}}\ \ \ std::vector<Triangle*>\ \mbox{\hyperlink{classSurfaceMesh_a3f69f0b0f14a90b0bdc8c957b9c79fc1}{supTriangles}};\ \ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00060}00060\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSurfaceMesh_ad8c7eef9fac668b92caf8b4418dcb4ff}{AddEdgeTested}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}*\ n1,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}*\ n2);}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00061}00061\ \ \ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00067}00067\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSurfaceMesh_adac4bd062647ba2d6a9662ae3683abc2}{GetNodeIndex}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}*\ in);}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00068}00068\ \ \ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00070}\mbox{\hyperlink{classSurfaceMesh_a0deb1c8dd8e053b664a12aa61ec13838}{00070}}\ \ \ std::vector<SymmetryOperation*>\ \mbox{\hyperlink{classSurfaceMesh_a0deb1c8dd8e053b664a12aa61ec13838}{bcs}};}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00072}00072\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00074}00074\ \ \ \mbox{\hyperlink{classSurfaceMesh_a020395181bf96068e3a0b287f3f75968}{SurfaceMesh}}();}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00075}00075\ \ \ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00077}00077\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classSurfaceMesh_afeecfa02bec99871507cfdb0f1efb7a2}{\string~SurfaceMesh}}();}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00078}00078\ \ \ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00090}00090\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSurfaceMesh_aa64ebb4992ea98778f79c272568c68d2}{LoadFromFile}}(std::string\ fileName);}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00091}00091\ \ \ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00097}00097\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSurfaceMesh_ad8ac4a9fe716d917b92e245d091ab553}{LoadFromMeshFile}}(std::string\ fileName);}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00098}00098\ \ \ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00104}00104\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSurfaceMesh_ab392f262cacf93c286ef49cbe95f2a66}{LoadFromMphtxtFile}}(std::string\ fileName);}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00105}00105\ \ \ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00111}00111\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSurfaceMesh_ae7486b3dfa647ae8ee6063bd6297f5ff}{LoadFromMshFile}}(std::string\ fileName);}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00112}00112\ \ \ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00118}00118\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSurfaceMesh_a4c66cbdeb07f2fd62429d6a949518cad}{SaveToMeshFile}}(std::string\ fileName);}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00119}00119\ \ \ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00124}00124\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSurfaceMesh_afc3c75aee77b7cfce33e4e907bae9ce0}{MaxDomainIndex}}();}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00125}00125\ \ \ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00132}00132\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSurfaceMesh_a45445ddd5776f8236dc72058cc1c7b18}{FindEdgeFB}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}*\ n1,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}*\ n2);}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00133}00133\ \ \ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00140}00140\ \ \ std::pair<int,\ SymmetryOperation*>\ \mbox{\hyperlink{classSurfaceMesh_a7c57c7085e749775a96cb25a5424834e}{FindEdgeBC}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}*\ n1,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}*\ n2);}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00141}00141\ \ \ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00147}00147\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classSurfaceMesh_a6312507138a88db61642b2bf2d32eca7}{EdgeLength}}(\textcolor{keywordtype}{int}\ edgeIndex);}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00148}00148\ \ \ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00154}00154\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ \mbox{\hyperlink{classSurfaceMesh_ac96dea3c4e733c9e6f5456aaa20e6401}{EdgeVector}}(\textcolor{keywordtype}{int}\ edgeIndex);}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00155}00155\ \ \ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00161}00161\ \ \ \mbox{\hyperlink{structedge}{edge}}\ \mbox{\hyperlink{classSurfaceMesh_afc87f70592dcc52c400c29d531d15ec8}{Edge}}(\textcolor{keywordtype}{int}\ edgeIndex);}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00162}00162\ \ \ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00168}00168\ \ \ std::vector<Triangle*>\ \mbox{\hyperlink{classSurfaceMesh_a7681019f61e9c1542c893c177117dac4}{BorderingTriangles}}(\textcolor{keywordtype}{int}\ dIndex);}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00169}00169\ \ \ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00174}00174\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSurfaceMesh_aff6d5c69ce476f61d264b8fbc28e8b23}{EdgeCount}}();}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00175}00175\ \ \ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00181}00181\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSurfaceMesh_a7b9932db85ea0b19578ec45eb09c3859}{NewTranslation}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}});}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00182}00182\ \ \ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00188}00188\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSurfaceMesh_af229438e36396cad9e4ca5dc11729b8d}{AddNode}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}});}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00189}00189\ \ \ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00196}00196\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSurfaceMesh_a7fddafcb2b9095d1e73bd3ecd05bb5e1}{AddTriangle}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}*\ n1,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}*\ n2,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}*\ n3,\ \textcolor{keywordtype}{int}\ frontIndex,\ \textcolor{keywordtype}{int}\ backIndex);}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00197}00197\ \ \ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00202}00202\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}*\ \mbox{\hyperlink{classSurfaceMesh_a93bf9a464b92ad98d48d2b79aa521c94}{LastNode}}();}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00203}00203\ \ \ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00208}00208\ \ \ \mbox{\hyperlink{classTriangle}{Triangle}}*\ \mbox{\hyperlink{classSurfaceMesh_a8fccca31ad4a27d0308fdbf5f4e9a997}{LastTriangle}}();}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00209}00209\ \ \ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00222}00222\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSurfaceMesh_aa8811e2b8b03caa6028d5d154a69ea71}{ConvertMeshFile}}(std::string\ inputMeshFile);}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00223}00223\ \ \ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00230}00230\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSurfaceMesh_a365f60555e50472cef70095f3ac9027e}{RemovePlane}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ normal,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ point);}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00231}00231\ \ \ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00238}00238\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSurfaceMesh_ab8758aecb743f6df45e760074e2592fb}{SwitchIndex}}(\textcolor{keywordtype}{int}\ n1,\ \textcolor{keywordtype}{int}\ n2);}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00239}00239\ \ \ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00244}00244\ \ \ std::pair<double,\ double>\ \mbox{\hyperlink{classSurfaceMesh_a4a88f03484758605cc254297149c7d29}{zMinMax}}();}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00245}00245\ \};}
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00246}00246\ }
+\DoxyCodeLine{\Hypertarget{SurfaceMesh_8h_source_l00247}00247\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,11 @@
+<map id="GreenFLayered3D::AboveThreshold" name="GreenFLayered3D::AboveThreshold">
+<area shape="rect" id="Node000001" title="Checks whether the given triangles exceed a predefined threshold." alt="" coords="5,96,257,124"/>
+<area shape="rect" id="Node000002" href="$classTriangle.html#ab78508a340ec5d345adf114b43563dbf" title="Centroid of the triangle." alt="" coords="346,5,469,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="166,93,304,42,330,34,331,40,306,47,168,98"/>
+<area shape="rect" id="Node000003" href="$classGreenFLayered3D.html#a1fb4fa93c84d77750cac364641945725" title="Return layer index of a 3D point." alt="" coords="305,57,510,102"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="257,93,289,90,290,95,257,98"/>
+<area shape="rect" id="Node000004" href="$classTriangle.html#a0752d2c9488c7c44b851b8f75abcaa79" title="Node position (by value) for local index 0..2." alt="" coords="350,125,464,153"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="257,121,335,129,334,134,257,126"/>
+<area shape="rect" id="Node000005" href="$classTriangle.html#a6e7daa074db3d147b33763bfd2a6e83b" title="Perimeter (sum of edge lengths)." alt="" coords="335,177,480,205"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="177,122,305,162,335,170,334,175,304,167,175,127"/>
+</map>

@@ -1,0 +1,23 @@
+<map id="SingSub::K3" name="SingSub::K3">
+<area shape="rect" id="Node000001" title="K3(q) vector term." alt="" coords="560,125,658,153"/>
+<area shape="rect" id="Node000002" href="$classGreenFHom3D.html#aca136b03c44ad1da34acf91eb5a5e390" title="term at an observation point." alt="" coords="291,5,510,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="586,115,553,79,511,47,486,36,488,31,513,42,557,75,590,111"/>
+<area shape="rect" id="Node000003" href="$classGreenFHom3DPer2D.html#a233c2185952220bd16acae2142f05cc1" title="term at an observation point." alt="" coords="289,57,512,102"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="544,123,480,105,481,100,546,118"/>
+<area shape="rect" id="Node000004" href="$classSingSub.html#ab61a21e3498d2d6a4c0796254cf126ed" title="K4(q) vector term." alt="" coords="351,176,450,204"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="545,157,451,181,449,175,544,152"/>
+<area shape="rect" id="Node000007" href="$classGreenFHom3D.html#a48e8471aabb445e0e50a01c005ff3b98" title="Compute &#160;for all RWGs on a source triangle." alt="" coords="17,17,229,62"/>
+<area shape="poly" id="edge10_Node000001_Node000007" title=" " alt="" coords="545,148,488,149,423,146,354,136,288,116,272,107,262,97,253,86,239,76,214,65,216,60,242,72,257,82,266,93,275,103,290,111,355,131,423,141,488,144,545,142"/>
+<area shape="rect" id="Node000008" href="$classGreenFHom3DPer2D.html#a84a8c855a27c895ff24f6771037284a5" title="Compute &#160;for all RWGs on a source triangle." alt="" coords="15,309,231,354"/>
+<area shape="poly" id="edge11_Node000001_Node000008" title=" " alt="" coords="584,166,552,193,513,218,443,250,369,276,232,313,231,308,368,271,441,245,511,213,549,188,581,162"/>
+<area shape="rect" id="Node000005" href="$classGreenFHom3D.html#a9cece8a4056d65455cfcc94c8c61decd" title="term at an observation point." alt="" coords="10,85,236,113"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="335,178,287,160,263,143,239,127,209,116,210,111,242,122,266,139,290,155,337,173"/>
+<area shape="rect" id="Node000006" href="$classGreenFHom3DPer2D.html#aadb534ef4509422e6f3e78a0e3999758" title="term at an observation point." alt="" coords="11,137,235,182"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="335,185,235,174,235,169,336,180"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="335,183,310,174,287,160,269,139,262,117,255,96,239,76,221,64,224,60,242,72,260,93,267,115,274,136,290,156,312,169,337,178"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="358,213,290,255,267,277,257,288,242,299,217,311,214,306,239,294,254,284,263,274,287,250,355,209"/>
+<area shape="rect" id="Node000009" href="$classGreenFHom3D.html#a419cbe00b5a2aed70ac546904a8a8d6f" title="Compute &#160;and &#160;for all RWG pairs on two triangles." alt="" coords="25,205,221,233"/>
+<area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="336,199,222,211,222,206,335,194"/>
+<area shape="rect" id="Node000010" href="$classGreenFHom3DPer2D.html#a1dc9dd84c93ee10b2fb4b1866103d957" title="Compute &#160;and &#160;for all RWG pairs on two triangles." alt="" coords="5,257,241,285"/>
+<area shape="poly" id="edge9_Node000004_Node000010" title=" " alt="" coords="348,212,241,247,194,259,192,254,240,242,346,207"/>
+</map>

@@ -1,0 +1,54 @@
+\doxysection{Gauss\+Quad.\+h File Reference}
+\hypertarget{GaussQuad_8h}{}\label{GaussQuad_8h}\index{GaussQuad.h@{GaussQuad.h}}
+
+
+\doxylink{classGaussian}{Gaussian} quadrature helpers for Green\textquotesingle{}s functions and incident fields.  
+
+
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include "{}RWGFun.\+h"{}}\newline
+{\ttfamily \#include "{}globals.\+h"{}}\newline
+{\ttfamily \#include "{}quadrature.\+h"{}}\newline
+Include dependency graph for Gauss\+Quad.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{GaussQuad_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{GaussQuad_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classGaussQuad}{Gauss\+Quad$<$ Type $>$}}
+\begin{DoxyCompactList}\small\item\em Gaussian-\/quadrature helpers for Green\textquotesingle{}s functions and incident fields. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classGaussian}{Gaussian} quadrature helpers for Green\textquotesingle{}s functions and incident fields. 
+
+The templated class \doxylink{classGaussQuad}{Gauss\+Quad$<$\+Type$>$} performs first‑order \doxylink{classGaussian}{Gaussian} quadrature on triangular surface elements for two broad families of integrands\+:
+
+1) {\bfseries{Green\textquotesingle{}s function kernels}} used in SIE matrix assembly. 2) {\bfseries{Incident fields}} used to build right‑hand‑side vectors.
+
+The interface is intentionally minimal and relies on the following contracts with the template parameter {\ttfamily Type\+:} 
+\begin{DoxyItemize}
+\item For {\bfseries{Green\textquotesingle{}s integrals}}\+: {\ttfamily Type} must expose dyadic or scalar Green\textquotesingle{}s evaluation methods with signature
+\item {\ttfamily dcmplx Type\+:\+:(rvec r, rvec rp)} for scalar kernels, and/or
+\item {\ttfamily cvec Type\+:\+:(rvec r, rvec rp)} for vector kernels, and a {\ttfamily Wave\+Vec()} method returning $ k $.
+\item For {\bfseries{incident integrals}}\+: {\ttfamily Type} must expose
+\item {\ttfamily cvec Type\+:\+:(rvec r)} (single field), or
+\item {\ttfamily std\+::vector\texorpdfstring{$<$}{<}cvec\texorpdfstring{$>$}{>} Type\+:\+:(rvec r)} returning {\ttfamily \{E, H\}} at {\ttfamily r}.
+\end{DoxyItemize}
+
+Integration accuracy is controlled by Dunavant rules (see {\ttfamily \doxylink{quadrature_8h}{quadrature.\+h}}). 
+
+Definition in file \mbox{\hyperlink{GaussQuad_8h_source}{Gauss\+Quad.\+h}}.
+

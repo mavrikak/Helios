@@ -1,0 +1,9 @@
+<map id="SimJob::HField" name="SimJob::HField">
+<area shape="rect" id="Node000001" title="Incident and secondary &#160;at pos with known containing domain." alt="" coords="5,32,121,60"/>
+<area shape="rect" id="Node000002" href="$classDomain.html#a832a36e6ba8ae02be3dd493bd2577d4a" title="Total incident magnetic field at a point from all incident sources." alt="" coords="171,5,311,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,35,155,29,155,35,122,40"/>
+<area shape="rect" id="Node000003" href="$classDomain.html#a507d3690b3a17a9f01beb83a2d6b026e" title="Secondary (scattered) magnetic field at a point from the solution vector." alt="" coords="169,57,313,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="122,51,153,56,153,61,121,57"/>
+<area shape="rect" id="Node000004" href="$classDomain.html#a928ea926ed97bac309194301a8b509c3" title="Relative permittivity at a spatial location." alt="" coords="361,57,488,85"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="313,68,346,68,346,74,313,74"/>
+</map>

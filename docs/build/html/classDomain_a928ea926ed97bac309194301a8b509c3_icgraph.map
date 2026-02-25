@@ -1,0 +1,20 @@
+<map id="Domain::Epsilon" name="Domain::Epsilon">
+<area shape="rect" id="Node000001" title="Relative permittivity at a spatial location." alt="" coords="938,32,1065,60"/>
+<area shape="rect" id="Node000002" href="$classDomain.html#a1d339cb7979c5b2d03d069fc09b40696" title="Secondary fields &#160;at a point." alt="" coords="714,5,890,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="922,38,890,34,891,28,923,33"/>
+<area shape="rect" id="Node000007" href="$classDomain.html#a507d3690b3a17a9f01beb83a2d6b026e" title="Secondary (scattered) magnetic field at a point from the solution vector." alt="" coords="730,57,874,85"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="923,58,875,65,874,59,922,53"/>
+<area shape="rect" id="Node000003" href="$classSimJob.html#a24f10b7bb14c9181341d07a783e00214" title="Return both , &#160;incident and secondary pairs at pos." alt="" coords="518,5,666,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="698,22,666,22,666,16,698,16"/>
+<area shape="rect" id="Node000004" href="$classSimJob.html#aa492cf9e3639f2dfa91e36364a76729a" title="Thread worker to evaluate fields over posvec in parallel." alt="" coords="289,32,470,60"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="503,33,471,37,471,32,502,28"/>
+<area shape="rect" id="Node000005" href="$classSimJob.html#a20b37e2e0aa2502a3ec465a5705b1774" title="Evaluate fields on a set of points read from a file." alt="" coords="108,32,241,60"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="274,48,242,48,242,43,274,43"/>
+<area shape="rect" id="Node000006" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Main driver routine for the HELIOS SIE simulation program." alt="" coords="5,32,60,60"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="92,48,60,48,60,43,92,43"/>
+<area shape="rect" id="Node000008" href="$classSimJob.html#ae9e4bc91d7636bf3e7fd151c870cd01f" title="Incident and secondary &#160;at pos (domain auto&#45;detected)." alt="" coords="534,57,650,85"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="714,74,650,74,650,68,714,68"/>
+<area shape="rect" id="Node000009" href="$classSimJob.html#ab9314ccd802a5a430e96e97439fc2459" title="Incident and secondary &#160;at pos with known containing domain." alt="" coords="534,109,650,137"/>
+<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="729,92,651,112,649,106,727,87"/>
+<area shape="poly" id="edge8_Node000008_Node000004" title=" " alt="" coords="519,65,471,59,471,54,519,60"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="SommerfeldIntegrator" name="SommerfeldIntegrator">
+<area shape="rect" id="Node000001" title="Numerical engine for Sommerfeld integrals in stratified media." alt="" coords="5,478,197,1019"/>
+<area shape="rect" id="Node000002" href="$classLayeredMediaUtils.html" title="Utility class for calculations related to layered media." alt="" coords="7,5,196,413"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,412,104,461,99,461,99,412"/>
+</map>

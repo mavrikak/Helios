@@ -1,0 +1,60 @@
+\doxysection{Sing\+Sub.\+h}
+\hypertarget{SingSub_8h_source}{}\label{SingSub_8h_source}\index{SingSub.h@{SingSub.h}}
+\mbox{\hyperlink{SingSub_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00012}00012\ \textcolor{comment}{//\ Only\ include\ this\ once\ during\ compiling}}
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00013}00013\ \textcolor{preprocessor}{\#ifndef\ SINGSUB\_H}}
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00014}00014\ \textcolor{preprocessor}{\#define\ SINGSUB\_H}}
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00016}00016\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{RWGFun_8h}{RWGFun.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00018}00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Triangle_8h}{Triangle.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00019}00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{globals_8h}{globals.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00036}\mbox{\hyperlink{classSingSub}{00036}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSingSub_a4e35167ef3a83526066cafd849baaf20}{SingSub}}\ \{}
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00037}00037\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00038}00038\ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Cached\ state\ (from\ RWG/triangle\ and\ observation\ point)\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00039}\mbox{\hyperlink{classSingSub_aba7834cbc417431f3b1302a2481051ac}{00039}}\ \ \ \mbox{\hyperlink{classRWGFun}{RWGFun}}*\ \mbox{\hyperlink{classSingSub_aba7834cbc417431f3b1302a2481051ac}{rwgFun}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00040}\mbox{\hyperlink{classSingSub_a054d7dff391f7575494f70a5df27e7ca}{00040}}\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ \mbox{\hyperlink{classSingSub_a054d7dff391f7575494f70a5df27e7ca}{r}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00041}\mbox{\hyperlink{classSingSub_aeeab3df2135a12a8fcca03706861d3ad}{00041}}\ \ \ std::vector<rvec>\ \mbox{\hyperlink{classSingSub_aeeab3df2135a12a8fcca03706861d3ad}{edgeNormals}};\ \ }
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00042}\mbox{\hyperlink{classSingSub_a4d78ff79f077722d66737a8e8699f6c4}{00042}}\ \ \ std::vector<double>\ \mbox{\hyperlink{classSingSub_a4d78ff79f077722d66737a8e8699f6c4}{t}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00043}\mbox{\hyperlink{classSingSub_af93426a24d1988d423c99be23b873b58}{00043}}\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classSingSub_af93426a24d1988d423c99be23b873b58}{h}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00044}\mbox{\hyperlink{classSingSub_afad4de2e273885a72ed545af004ce5b6}{00044}}\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classSingSub_afad4de2e273885a72ed545af004ce5b6}{omega}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00046}00046\ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Precomputed\ arrays\ for\ "{}better"{}\ initialization\ path\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00047}\mbox{\hyperlink{classSingSub_a89036a2faa57e05b8aaab4fbeb3c54d9}{00047}}\ \ \ \mbox{\hyperlink{classTriangle}{Triangle}}*\ \mbox{\hyperlink{classSingSub_a89036a2faa57e05b8aaab4fbeb3c54d9}{tPtr}};\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00048}\mbox{\hyperlink{classSingSub_a0a2a44a6151665cff1c305fbec7e1068}{00048}}\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ \mbox{\hyperlink{classSingSub_a0a2a44a6151665cff1c305fbec7e1068}{eNar}}[3];\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00049}\mbox{\hyperlink{classSingSub_a57cccecd5fac47b5cb507128d1e501a8}{00049}}\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classSingSub_a57cccecd5fac47b5cb507128d1e501a8}{tar}}[3];\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00050}\mbox{\hyperlink{classSingSub_a2b9ff2ec2079602e13d1c2b2315e1217}{00050}}\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classSingSub_a2b9ff2ec2079602e13d1c2b2315e1217}{ILar}}[3][3];\ \ }
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00051}\mbox{\hyperlink{classSingSub_a4aa2f73a45f2f4f8dddf3562f7941f8e}{00051}}\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classSingSub_a4aa2f73a45f2f4f8dddf3562f7941f8e}{ISar}}[4];\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00053}00053\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00055}00055\ \ \ \mbox{\hyperlink{classSingSub_a4e35167ef3a83526066cafd849baaf20}{SingSub}}();}
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00068}00068\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSingSub_ae84ba8e91ca5a0aeee4246d8ee0f033d}{Init}}(\mbox{\hyperlink{classRWGFun}{RWGFun}}*\ rwgIn,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rIn);}
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00081}00081\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSingSub_a20337fe20529d26c1775c8ba6d47cad0}{SetTriangleRWG}}(\mbox{\hyperlink{classRWGFun}{RWGFun}}*\ rwgIn,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rIn);}
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00088}00088\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSingSub_a9d74100325023b4d1c156bd97ae240b3}{ChangeTriangleRWG}}(\mbox{\hyperlink{classRWGFun}{RWGFun}}*\ rwgIn);}
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00097}00097\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classSingSub_a446879b799b19a2a606477fd316eb460}{IL}}(\textcolor{keywordtype}{int}\ q,\ \textcolor{keywordtype}{int}\ triEdgeIndex);}
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00098}00098\ \ \ }
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00104}00104\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classSingSub_a11a285881f5f92df576070e487a69ed0}{IS}}(\textcolor{keywordtype}{int}\ q);}
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00111}00111\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classSingSub_ac65ad1ad2d03f9de274b24d19f457f6e}{K1}}(\textcolor{keywordtype}{int}\ q);}
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00118}00118\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ \mbox{\hyperlink{classSingSub_aed0bb257cd3c94dccd5b6cc0ecdd1c5e}{K2}}(\textcolor{keywordtype}{int}\ q);}
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00119}00119\ \ \ }
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00125}00125\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ \mbox{\hyperlink{classSingSub_a3e9e0b5a61df98d8f8138544c7df3da0}{K3}}(\textcolor{keywordtype}{int}\ q);}
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00132}00132\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ \mbox{\hyperlink{classSingSub_aa4dc7cddb70399aab67741fe6b0a9397}{K3n}}(\textcolor{keywordtype}{int}\ q);}
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00139}00139\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ \mbox{\hyperlink{classSingSub_ab61a21e3498d2d6a4c0796254cf126ed}{K4}}(\textcolor{keywordtype}{int}\ q);}
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00140}00140\ \};}
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{SingSub_8h_source_l00142}00142\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

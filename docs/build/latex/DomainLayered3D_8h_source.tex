@@ -1,0 +1,170 @@
+\doxysection{Domain\+Layered3\+D.\+h}
+\hypertarget{DomainLayered3D_8h_source}{}\label{DomainLayered3D_8h_source}\index{DomainLayered3D.h@{DomainLayered3D.h}}
+\mbox{\hyperlink{DomainLayered3D_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00013}00013\ \textcolor{preprocessor}{\#ifndef\ DOMAINLAYERED3D\_H}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00014}00014\ \textcolor{preprocessor}{\#define\ DOMAINLAYERED3D\_H}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Domain_8h}{Domain.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{GreenFHom3D_8h}{GreenFHom3D.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00018}00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{GreenFLayered3D_8h}{GreenFLayered3D.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00019}00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{SurfaceMesh_8h}{SurfaceMesh.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00020}00020\ \textcolor{preprocessor}{\#include\ <blitz/array.h>}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00021}00021\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00022}00022\ \textcolor{preprocessor}{\#include\ <unordered\_set>}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00038}\mbox{\hyperlink{classDomainLayered3D}{00038}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDomainLayered3D_ad0d867ee7289e485c4bc01077fbdb59a}{DomainLayered3D}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classDomain_a3f6f9e8ec932680440098679b6fe3300}{Domain}}\ \{}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00039}00039\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00040}00040\ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Layer\ data\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00041}\mbox{\hyperlink{classDomainLayered3D_a41f2a7eb17b1cc24ed1755772de75755}{00041}}\ \ \ std::vector<dcmplx>\ \mbox{\hyperlink{classDomainLayered3D_a41f2a7eb17b1cc24ed1755772de75755}{k\_L}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00042}\mbox{\hyperlink{classDomainLayered3D_a58f876ef1491c000f77683ce4fef1f7a}{00042}}\ \ \ std::vector<dcmplx>\ \mbox{\hyperlink{classDomainLayered3D_a58f876ef1491c000f77683ce4fef1f7a}{epsilon}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00043}\mbox{\hyperlink{classDomainLayered3D_a3dbf24ea314c266c1a7ff47ecf4729d5}{00043}}\ \ \ std::vector<dcmplx>\ \mbox{\hyperlink{classDomainLayered3D_a3dbf24ea314c266c1a7ff47ecf4729d5}{mu}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00044}\mbox{\hyperlink{classDomainLayered3D_a0b5af6c5df5a48e49899fd9581f65751}{00044}}\ \ \ std::vector<double>\ \mbox{\hyperlink{classDomainLayered3D_a0b5af6c5df5a48e49899fd9581f65751}{zValsInterfaces}};\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00045}\mbox{\hyperlink{classDomainLayered3D_a16e9407f5a35b7b66e87a58b3816a283}{00045}}\ \ \ std::vector<double>\ \mbox{\hyperlink{classDomainLayered3D_a16e9407f5a35b7b66e87a58b3816a283}{thickness}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00046}\mbox{\hyperlink{classDomainLayered3D_a72fa47cc7e202e40f7b2146eed73fe95}{00046}}\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classDomainLayered3D_a72fa47cc7e202e40f7b2146eed73fe95}{midLayerIndex}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00048}00048\ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Tabulation\ grids\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00049}\mbox{\hyperlink{classDomainLayered3D_afd6933146f9487fc032ad69cd63b1b68}{00049}}\ \ \ std::vector<Grid>\ \mbox{\hyperlink{classDomainLayered3D_afd6933146f9487fc032ad69cd63b1b68}{tabulationGrids}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00050}\mbox{\hyperlink{classDomainLayered3D_adf794e362fef50b827218f252984113d}{00050}}\ \ \ std::vector<Grid>\ \mbox{\hyperlink{classDomainLayered3D_adf794e362fef50b827218f252984113d}{tabulationGridsFields}};\ \ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00052}00052\ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Green's\ functions\ and\ helpers\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00053}\mbox{\hyperlink{classDomainLayered3D_ac443e7dada304ef35ed380febd70113a}{00053}}\ \ \ \mbox{\hyperlink{classGreenF}{GreenF}}\ *\mbox{\hyperlink{classDomainLayered3D_ac443e7dada304ef35ed380febd70113a}{grnFunLayered}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00054}\mbox{\hyperlink{classDomainLayered3D_a100f0e1e0ea0d8b3c389647f2755716c}{00054}}\ \ \ \mbox{\hyperlink{classGreenF}{GreenF}}\ *\mbox{\hyperlink{classDomainLayered3D_a100f0e1e0ea0d8b3c389647f2755716c}{grnFunLayeredFields}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00055}\mbox{\hyperlink{classDomainLayered3D_a6a6ed8bf711c621a6d237eacf24040d7}{00055}}\ \ \ \mbox{\hyperlink{classLayeredMediaUtils}{LayeredMediaUtils}}*\ \mbox{\hyperlink{classDomainLayered3D_a6a6ed8bf711c621a6d237eacf24040d7}{layeredUtils}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00057}00057\ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Geometry\ bookkeeping\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00058}\mbox{\hyperlink{classDomainLayered3D_a97b89f1a16591e991b11e32bc20fcc7b}{00058}}\ \ \ std::vector<rvec>\ \mbox{\hyperlink{classDomainLayered3D_a97b89f1a16591e991b11e32bc20fcc7b}{triPoints}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00059}\mbox{\hyperlink{classDomainLayered3D_ac3e5a2b6733ec9eba405e2c8cd6f68bf}{00059}}\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classDomainLayered3D_ac3e5a2b6733ec9eba405e2c8cd6f68bf}{enableLineInt}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00065}00065\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classDomainLayered3D_af630820f17df76fa4348a9dc121c70e7}{InitGrnFun}}();}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00069}00069\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00070}00070\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00071}00071\ \ \ \textcolor{comment}{//\ Construction\ \&\ lifetime}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00072}00072\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00087}00087\ \ \ \mbox{\hyperlink{classDomainLayered3D_ad0d867ee7289e485c4bc01077fbdb59a}{DomainLayered3D}}(\mbox{\hyperlink{classSurfaceMesh}{SurfaceMesh}}\ *inMesh,\ \textcolor{keywordtype}{int}\ inDIndex,\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<dcmplx>\&\ inEpsilon,\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<dcmplx>\&\ inMu,\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\&\ inZVals,\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ inVacuumWavelength);}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00103}00103\ \ \ \mbox{\hyperlink{classDomainLayered3D_ad0d867ee7289e485c4bc01077fbdb59a}{DomainLayered3D}}(\mbox{\hyperlink{classSurfaceMesh}{SurfaceMesh}}\ *inMesh,\ \textcolor{keywordtype}{int}\ inDIndex,\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<dcmplx>\&\ inEpsilon,\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<dcmplx>\&\ inMu,\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\&\ inZVals,\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ inVacuumWavelength,\ \textcolor{keywordtype}{bool}\ parent);}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00108}00108\ \ \ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00110}00110\ \ \ \mbox{\hyperlink{classDomainLayered3D_ad2419f720782f15b3ec524f3cf1de068}{\string~DomainLayered3D}}();}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00112}00112\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00113}00113\ \ \ \textcolor{comment}{//\ Domain\ traits\ \&\ formulation}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00114}00114\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00118}\mbox{\hyperlink{classDomainLayered3D_a799790429ac806eed16efe1014b0f2bd}{00118}}\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classDomainLayered3D_a799790429ac806eed16efe1014b0f2bd}{IsLayered}}()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00127}00127\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDomainLayered3D_ab55a37fee77313a2f5e2bd4c2be927f0}{newGrnFunLayered}}(std::vector<rvec>\ \&posvec);}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00134}00134\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classDomainLayered3D_a29d39ee560fefa7c1262f2d50f2deedd}{InitFormulation}}(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ inVacWavelength);}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00136}00136\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00137}00137\ \ \ \textcolor{comment}{//\ Layer‑optics\ helpers\ (Fresnel/transfer,\ secondary\ fields,\ 1D\ tests)}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00138}00138\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00147}00147\ \ \ std::vector<dcmplx>\ \mbox{\hyperlink{classDomainLayered3D_a8bd60b71ce54f037a3e55645f488d981}{FresnelCoeff}}(\textcolor{keywordtype}{int}\ layerIndex1,\ \textcolor{keywordtype}{int}\ layerIndex2,\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ krho,\ \textcolor{keyword}{const}\ std::string\&\ waves)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00158}00158\ \ \ std::vector<std::vector<dcmplx>>\ \mbox{\hyperlink{classDomainLayered3D_ad002222a339c6e0abed50ba25034db06}{InterfaceTransferMatrix}}(}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00159}00159\ \ \ \ \ \textcolor{keywordtype}{int}\ layerIndexI,\ \textcolor{keywordtype}{int}\ layerIndexJ,\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ krho,\ \textcolor{keyword}{const}\ std::string\&\ waves)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00169}00169\ \ \ blitz::Array<dcmplx,\ 2>\ \mbox{\hyperlink{classDomainLayered3D_a732c9c50914b8a13e46121f9f760decd}{Secondary}}(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ krho,\ \textcolor{keywordtype}{int}\ observationLayer,\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ sourceLayer,\ \textcolor{keyword}{const}\ std::string\&\ waves);}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00171}00171\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00180}00180\ \ \ std::vector<dcmplx>\ \mbox{\hyperlink{classDomainLayered3D_a8f77f88f401f85508ae5d907f674f7cc}{Fields}}(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ krho,\ std::vector<double>\ observationPointsZ,\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ sourcePointZ,\ \textcolor{keyword}{const}\ std::string\&\ waves);}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00182}00182\ \ \ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00193}00193\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classDomainLayered3D_a90a6c55e3461b8ef69bde6571ad6e7bc}{writeFields}}(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ krho,\ \textcolor{keywordtype}{double}\ start,\ \textcolor{keywordtype}{double}\ end,\ \textcolor{keywordtype}{int}\ numPoints,\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ sourcePointZ,\ \textcolor{keyword}{const}\ std::string\&\ waves);}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00196}00196\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00197}00197\ \ \ \textcolor{comment}{//\ Material\ queries\ and\ layer\ indexing}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00198}00198\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00204}00204\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classDomainLayered3D_ae8e9daf2ca4d1ed649a1e0fe83880160}{GetLayerIndex}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ pos)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00205}00205\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00211}00211\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classDomainLayered3D_a281513a4cb865b8c688dd920a6789955}{Epsilon}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ pos);}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00212}00212\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00218}00218\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classDomainLayered3D_a295274a8176b2d6f9fc07c7aea9fd89c}{Mu}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ pos);}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00219}00219\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00224}\mbox{\hyperlink{classDomainLayered3D_a81a50dca5e2c5f0415bc08dc0bcd7a79}{00224}}\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classGreenF}{GreenF}}*\ \mbox{\hyperlink{classDomainLayered3D_a81a50dca5e2c5f0415bc08dc0bcd7a79}{GetGrnFunLayeredFields}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDomainLayered3D_a100f0e1e0ea0d8b3c389647f2755716c}{grnFunLayeredFields}};\ \}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00225}00225\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00230}\mbox{\hyperlink{classDomainLayered3D_ab63d8f8b584d86fc2b63275241a262d5}{00230}}\ \ \ std::vector<dcmplx>\ \mbox{\hyperlink{classDomainLayered3D_ab63d8f8b584d86fc2b63275241a262d5}{GetEpsilon}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDomainLayered3D_a58f876ef1491c000f77683ce4fef1f7a}{epsilon}};\ \}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00231}00231\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00232}00232\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00233}00233\ \ \ \textcolor{comment}{//\ Position\ partitioning\ \&\ tabulation\ grid\ generation}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00234}00234\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00241}00241\ \ \ std::vector<PositionGroup>\ \mbox{\hyperlink{classDomainLayered3D_a76fc8705ab75f3e6599693f9544821e9}{slice}}(\textcolor{keyword}{const}\ std::vector<rvec>\&\ pos1,}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<rvec>*\ pos2\_opt\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00243}00243\ \ \ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00252}00252\ \ \ \mbox{\hyperlink{structRange}{Range}}\ \mbox{\hyperlink{classDomainLayered3D_af0fc42edd76b3e69a326990cefcbcd37}{calculateRange}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structPositionGroup}{PositionGroup}}\&\ pts,\ \textcolor{keywordtype}{double}\ rmin\ =\ 0.01,}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ zmin\ =\ 0.01,\ \textcolor{keywordtype}{double}\ margin\ =\ 0.05);}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00254}00254\ \ \ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00265}00265\ \ \ std::vector<Grid>\ \mbox{\hyperlink{classDomainLayered3D_a5379311442fe1bbc7808308726ee510d}{computeGrid}}(\textcolor{keyword}{const}\ std::vector<PositionGroup>\&\ pos,}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ nr\ =\ 20,\ \textcolor{keywordtype}{int}\ nz\ =\ 20,\ \textcolor{keywordtype}{double}\ rmin\ =\ 1e-\/2,}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ margin\ =\ 0.05,\ \textcolor{keywordtype}{double}\ zmin\ =\ 1e-\/2);}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00268}00268\ \ \ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00272}00272\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDomainLayered3D_adf153d4382b02cff7ced37500e7f624f}{test\_slice}}();}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00273}00273\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00277}00277\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDomainLayered3D_a9ca4f1cf49de04c5df6a664e656dbf85}{test\_range}}();}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00278}00278\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00282}00282\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDomainLayered3D_acd442aab27d1f56d8211a164f85f341a}{test\_grid}}();}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00283}00283\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00284}00284\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00285}00285\ \ \ \textcolor{comment}{//\ Incident\ fields\ (layered\ variants)}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00286}00286\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00294}00294\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classDomainLayered3D_af915245a562206c20725942120a5d06e}{AddPlaneWave}}(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ wavelength,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ propagationDirection,}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00295}00295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ polarization);}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00296}00296\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00303}00303\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classDomainLayered3D_a6551ae7ca5dac2a5dda2d78b15d78ecc}{AddDipole}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ position,\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ polarization);}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00304}00304\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00315}00315\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classDomainLayered3D_aaa6b950bf905f5bc98710271815d910d}{AddGaussian}}(\textcolor{keywordtype}{double}\ wavelength,\ \textcolor{keywordtype}{double}\ waist,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ focal\_point,}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00316}00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ propagationdirection,\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ polarization);}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00317}00317\ \ \ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00318}00318\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00319}00319\ \ \ \textcolor{comment}{//\ Field\ evaluation\ (uses\ layered\ GFs)}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00320}00320\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00327}00327\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ \mbox{\hyperlink{classDomainLayered3D_a110d03c8733184e065d4e41ba22b113f}{SecFieldE}}(blitz::Array<dcmplx,\ 1>\ *solVector,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ pos);}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00328}00328\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00334}00334\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ \mbox{\hyperlink{classDomainLayered3D_ae2e6a313e8a32a981d6d698a47e238cb}{IncFieldE}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ pos);}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00335}00335\ \ \ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00342}00342\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ \mbox{\hyperlink{classDomainLayered3D_ae0399e203da7a532c55264015d172e99}{SecFieldH}}(blitz::Array<dcmplx,\ 1>\ *solVector,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ pos);}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00343}00343\ \ \ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00349}00349\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ \mbox{\hyperlink{classDomainLayered3D_a1224cc02268d1cfe5b51ebf363cda79e}{IncFieldH}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ pos);}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00350}00350\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00357}00357\ \ \ \textcolor{keyword}{virtual}\ std::pair<cvec,\ cvec>\ \mbox{\hyperlink{classDomainLayered3D_a2572d0a6f9105bf4f90c42970f76f8a0}{SecFieldEandH}}(blitz::Array<dcmplx,\ 1>\ *solVector,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ pos);}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00358}00358\ \ \ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00359}00359\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00360}00360\ \ \ \textcolor{comment}{//\ Cross\ sections}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00361}00361\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00367}00367\ \ \ \textcolor{keyword}{virtual}\ std::vector<double>\ \mbox{\hyperlink{classDomainLayered3D_a267135f0a2f5bfff12f7ac3b25429176}{scatteringCS}}(blitz::Array<dcmplx,\ 1>\ *solVector);}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00368}00368\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00375}00375\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classDomainLayered3D_a4e5fb098bcc6edc2f594da23e0b64fb3}{absorptionCS}}(blitz::Array<dcmplx,\ 1>\ *solVector);}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00376}00376\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00383}00383\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classDomainLayered3D_a847bdddcbf4257a73cfcd2766c882f8b}{extinctionCS}}(blitz::Array<dcmplx,\ 1>\ *solVector);}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00384}00384\ \ \ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00385}00385\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00386}00386\ \ \ \textcolor{comment}{//\ Debug\ /\ logging\ utilities}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00387}00387\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00393}00393\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDomainLayered3D_ac59236042a0549670326a58ff289f8e2}{dumpField}}(\textcolor{keyword}{const}\ std::string\&\ fieldName,\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00394}00394\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ blitz::TinyVector<std::complex<double>,\ 3>\&\ vec);}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00395}00395\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00396}00396\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00397}00397\ \ \ \textcolor{comment}{//\ Incident\ cleanup}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00398}00398\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00403}00403\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classDomainLayered3D_a4e4355cfe34e6edd8e3587df4b5b115f}{ClearIncidentFields}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00404}00404\ \};}
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00405}00405\ }
+\DoxyCodeLine{\Hypertarget{DomainLayered3D_8h_source_l00406}00406\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

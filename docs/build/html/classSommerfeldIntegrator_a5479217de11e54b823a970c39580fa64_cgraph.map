@@ -1,0 +1,23 @@
+<map id="SommerfeldIntegrator::integrationFInter" name="SommerfeldIntegrator::integrationFInter">
+<area shape="rect" id="Node000001" title="Computes the inter&#45;layer integration function." alt="" coords="5,50,171,95"/>
+<area shape="rect" id="Node000002" href="$structIntegrandInter.html#a2668c7d108e647d129889975d618ecfc" title="Function to create a flattened structure." alt="" coords="220,17,383,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,54,211,46,212,51,171,59"/>
+<area shape="rect" id="Node000005" href="$classSommerfeldIntegrator.html#a9467786ef80af13f1b6f4317fb6ae80a" title="Computes the inter&#45;layer Green&#39;s function integrand." alt="" coords="219,80,384,124"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="171,81,203,86,203,91,170,86"/>
+<area shape="rect" id="Node000003" href="$structIntegrandInter.html#a2ea9f2fbbfb494f9b9debd5f7f4f362b" title="Extract selected elements from a 3D array into a compact 3D structure." alt="" coords="432,5,636,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="383,24,416,23,416,28,383,30"/>
+<area shape="rect" id="Node000004" href="$structIntegrandInter.html#adb71cb8507ba98a63b290ec0acd8d628" title="Bounds&#45;checked access to a 3D array element." alt="" coords="684,5,863,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="637,16,669,16,669,22,637,22"/>
+<area shape="rect" id="Node000006" href="$SommerfeldIntegrator_8cpp.html#a93b85379d21563ca5aba6f5eff053826" title="Computes the Bessel function ." alt="" coords="500,57,568,85"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="384,88,484,75,485,80,385,94"/>
+<area shape="rect" id="Node000008" href="$SommerfeldIntegrator_8cpp.html#aa15340ecd95146df9ef36735f56c3417" title="Computes the Hankel function ." alt="" coords="497,109,571,137"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="385,107,482,116,482,121,384,112"/>
+<area shape="rect" id="Node000010" href="$classSommerfeldIntegrator.html#a81c32ffee2aefc0eecbbbd7235c80e70" title="Computes secondary wave contributions in a layered medium." alt="" coords="452,161,617,206"/>
+<area shape="poly" id="edge9_Node000005_Node000010" title=" " alt="" coords="367,122,433,146,452,153,450,158,431,151,365,127"/>
+<area shape="rect" id="Node000007" href="$SommerfeldIntegrator_8cpp.html#a384f5925eef2fc5d52e72a65c50174c7" title="Compute complex Bessel functions of the first kind ." alt="" coords="742,57,805,85"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="568,68,726,68,726,74,568,74"/>
+<area shape="rect" id="Node000009" href="$SommerfeldIntegrator_8cpp.html#a2119f72fafe396d33e9c85025883db96" title="Compute complex Hankel functions of the first kind or second kind ." alt="" coords="740,109,807,137"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="572,120,725,120,725,126,572,126"/>
+<area shape="rect" id="Node000011" href="$classSommerfeldIntegrator.html#ac555c6dc86d0b7fb03ea49df9668daf8" title="Computes distances from interfaces for inter&#45;layer secondary wave calculations." alt="" coords="691,161,856,206"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="617,180,675,180,675,186,617,186"/>
+</map>

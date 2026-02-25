@@ -1,0 +1,10 @@
+<map id="LayeredMediaUtils::matrixMultiply2D" name="LayeredMediaUtils::matrixMultiply2D">
+<area shape="rect" id="Node000001" title="Performs matrix multiplication for 2D complex matrices." alt="" coords="406,40,557,85"/>
+<area shape="rect" id="Node000002" href="$classLayeredMediaUtils.html#a72265396a660e7e7d93c56a0b35d11d0" title="Performs matrix multiplication for 2D/3D complex matrices." alt="" coords="205,5,358,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="390,49,358,44,359,38,391,44"/>
+<area shape="rect" id="Node000003" href="$classLayeredMediaUtils.html#a796d55e02d56c610cae065557bc64c10" title="Computes the total transfer matrix for the entire layered structure." alt="" coords="206,75,357,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="391,81,358,87,357,81,390,75"/>
+<area shape="rect" id="Node000004" href="$classLayeredMediaUtils.html#a55529dbdb069b59a6252ab2e446186a0" title="Computes reflection and transmission coefficients for the entire layered structure." alt="" coords="5,75,157,119"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="190,100,157,100,157,94,190,94"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="113,61,101,56,81,53,62,55,51,60,46,66,48,74,42,74,41,65,48,56,61,50,81,48,102,50,115,57"/>
+</map>

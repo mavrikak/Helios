@@ -1,0 +1,51 @@
+\doxysection{Green\+FHom3\+DPer.\+h File Reference}
+\hypertarget{GreenFHom3DPer_8h}{}\label{GreenFHom3DPer_8h}\index{GreenFHom3DPer.h@{GreenFHom3DPer.h}}
+
+
+Periodic homogeneous 3D Green\textquotesingle{}s function (abstract base).  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include "{}Green\+FHom3\+D.\+h"{}}\newline
+{\ttfamily \#include "{}globals.\+h"{}}\newline
+{\ttfamily \#include "{}math\+Functions.\+h"{}}\newline
+Include dependency graph for Green\+FHom3\+DPer.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{GreenFHom3DPer_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{GreenFHom3DPer_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classGreenFHom3DPer}{Green\+FHom3\+DPer}}
+\begin{DoxyCompactList}\small\item\em Base class for homogeneous 3D Green\textquotesingle{}s functions with lattice periodicity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Periodic homogeneous 3D Green\textquotesingle{}s function (abstract base). 
+
+This interface extends \doxylink{classGreenFHom3D}{Green\+FHom3D} to handle {\bfseries{Bloch‑periodic}} media in a homogeneous background. Concrete subclasses implement the lattice geometry (primitive cell mapping) and the periodic summation strategy (e.\+g. Ewald splitting in real/reciprocal space).
+
+Key ideas\+:
+\begin{DoxyItemize}
+\item Fields satisfy Floquet–\+Bloch condition with wavevector {\bfseries{k}} (a.\+k.\+a. Bloch vector). Periodic images are accumulated with phase factors exp(i k·R).
+\item Convergence is typically accelerated with {\bfseries{Ewald}} splitting; {\ttfamily evaluation\+Terms} and {\ttfamily e} control how many terms and the splitting strength.
+\item {\ttfamily Primitive\+Cell()} maps any lattice vector to a canonical representative of the primitive cell.
+\end{DoxyItemize}
+
+\begin{DoxyWarning}{Warning}
+This class is {\bfseries{abstract}}\+: {\ttfamily Primitive\+Cell()} is pure virtual. 
+\end{DoxyWarning}
+
+
+Definition in file \mbox{\hyperlink{GreenFHom3DPer_8h_source}{Green\+FHom3\+DPer.\+h}}.
+

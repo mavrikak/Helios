@@ -1,0 +1,166 @@
+\doxysection{Data3D Struct Reference}
+\hypertarget{structData3D}{}\label{structData3D}\index{Data3D@{Data3D}}
+
+
+Structure representing the 3D spatial data used for tabulation in a layered medium.  
+
+
+
+
+{\ttfamily \#include $<$Layered\+Media\+Utils.\+h$>$}
+
+
+
+Collaboration diagram for Data3D\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{structData3D__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{structData3D_a713a5d3270d913318a0c45ccf16fcfc9}{r\+Vec}}
+\begin{DoxyCompactList}\small\item\em Radial coordinate sampling points. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$ \mbox{\hyperlink{structData3D_af6efca007539c5efab78687e483e1afb}{r\+Matrix}}
+\begin{DoxyCompactList}\small\item\em 3D grid of radial coordinates. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{structData3D_aee91d56260fcb20b009e0949585bbf2d}{z1\+Vec}}
+\begin{DoxyCompactList}\small\item\em Z1 coordinate sampling points. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$ \mbox{\hyperlink{structData3D_a3d90ea2bf4bfa6e47d4589aca4ce8c18}{z1\+Matrix}}
+\begin{DoxyCompactList}\small\item\em 3D grid of Z1 coordinates. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{structData3D_acae8b073151a53d0ec73cd207b833355}{z2\+Vec}}
+\begin{DoxyCompactList}\small\item\em Z2 coordinate sampling points. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$ \mbox{\hyperlink{structData3D_a7bd615b68695fb23be1f49d2bdf62f2d}{z2\+Matrix}}
+\begin{DoxyCompactList}\small\item\em 3D grid of Z2 coordinates. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{structData3D_aa9d611ed4e81cc1c8c24e759922d77c3}{ind\+Vec}}
+\begin{DoxyCompactList}\small\item\em Flat index mapping for grid access. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::tuple$<$ int, int, int $>$ $>$ \mbox{\hyperlink{structData3D_a79125c2e97d48765082a29bfb12ff7f9}{ind\+Vec\+Triplet}}
+\begin{DoxyCompactList}\small\item\em Triplet index mapping (rho, Z1, Z2). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure representing the 3D spatial data used for tabulation in a layered medium. 
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00097}{97}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structData3D_aa9d611ed4e81cc1c8c24e759922d77c3}\index{Data3D@{Data3D}!indVec@{indVec}}
+\index{indVec@{indVec}!Data3D@{Data3D}}
+\doxysubsubsection{\texorpdfstring{indVec}{indVec}}
+{\footnotesize\ttfamily \label{structData3D_aa9d611ed4e81cc1c8c24e759922d77c3} 
+std\+::vector$<$int$>$ Data3\+D\+::ind\+Vec}
+
+
+
+Flat index mapping for grid access. 
+
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00104}{104}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+\Hypertarget{structData3D_a79125c2e97d48765082a29bfb12ff7f9}\index{Data3D@{Data3D}!indVecTriplet@{indVecTriplet}}
+\index{indVecTriplet@{indVecTriplet}!Data3D@{Data3D}}
+\doxysubsubsection{\texorpdfstring{indVecTriplet}{indVecTriplet}}
+{\footnotesize\ttfamily \label{structData3D_a79125c2e97d48765082a29bfb12ff7f9} 
+std\+::vector$<$std\+::tuple$<$int, int, int$>$ $>$ Data3\+D\+::ind\+Vec\+Triplet}
+
+
+
+Triplet index mapping (rho, Z1, Z2). 
+
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00105}{105}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+\Hypertarget{structData3D_af6efca007539c5efab78687e483e1afb}\index{Data3D@{Data3D}!rMatrix@{rMatrix}}
+\index{rMatrix@{rMatrix}!Data3D@{Data3D}}
+\doxysubsubsection{\texorpdfstring{rMatrix}{rMatrix}}
+{\footnotesize\ttfamily \label{structData3D_af6efca007539c5efab78687e483e1afb} 
+std\+::vector$<$std\+::vector$<$std\+::vector$<$double$>$ $>$ $>$ Data3\+D\+::r\+Matrix}
+
+
+
+3D grid of radial coordinates. 
+
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00099}{99}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+\Hypertarget{structData3D_a713a5d3270d913318a0c45ccf16fcfc9}\index{Data3D@{Data3D}!rVec@{rVec}}
+\index{rVec@{rVec}!Data3D@{Data3D}}
+\doxysubsubsection{\texorpdfstring{rVec}{rVec}}
+{\footnotesize\ttfamily \label{structData3D_a713a5d3270d913318a0c45ccf16fcfc9} 
+std\+::vector$<$double$>$ Data3\+D\+::r\+Vec}
+
+
+
+Radial coordinate sampling points. 
+
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00098}{98}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+\Hypertarget{structData3D_a3d90ea2bf4bfa6e47d4589aca4ce8c18}\index{Data3D@{Data3D}!z1Matrix@{z1Matrix}}
+\index{z1Matrix@{z1Matrix}!Data3D@{Data3D}}
+\doxysubsubsection{\texorpdfstring{z1Matrix}{z1Matrix}}
+{\footnotesize\ttfamily \label{structData3D_a3d90ea2bf4bfa6e47d4589aca4ce8c18} 
+std\+::vector$<$std\+::vector$<$std\+::vector$<$double$>$ $>$ $>$ Data3\+D\+::z1\+Matrix}
+
+
+
+3D grid of Z1 coordinates. 
+
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00101}{101}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+\Hypertarget{structData3D_aee91d56260fcb20b009e0949585bbf2d}\index{Data3D@{Data3D}!z1Vec@{z1Vec}}
+\index{z1Vec@{z1Vec}!Data3D@{Data3D}}
+\doxysubsubsection{\texorpdfstring{z1Vec}{z1Vec}}
+{\footnotesize\ttfamily \label{structData3D_aee91d56260fcb20b009e0949585bbf2d} 
+std\+::vector$<$double$>$ Data3\+D\+::z1\+Vec}
+
+
+
+Z1 coordinate sampling points. 
+
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00100}{100}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+\Hypertarget{structData3D_a7bd615b68695fb23be1f49d2bdf62f2d}\index{Data3D@{Data3D}!z2Matrix@{z2Matrix}}
+\index{z2Matrix@{z2Matrix}!Data3D@{Data3D}}
+\doxysubsubsection{\texorpdfstring{z2Matrix}{z2Matrix}}
+{\footnotesize\ttfamily \label{structData3D_a7bd615b68695fb23be1f49d2bdf62f2d} 
+std\+::vector$<$std\+::vector$<$std\+::vector$<$double$>$ $>$ $>$ Data3\+D\+::z2\+Matrix}
+
+
+
+3D grid of Z2 coordinates. 
+
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00103}{103}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+\Hypertarget{structData3D_acae8b073151a53d0ec73cd207b833355}\index{Data3D@{Data3D}!z2Vec@{z2Vec}}
+\index{z2Vec@{z2Vec}!Data3D@{Data3D}}
+\doxysubsubsection{\texorpdfstring{z2Vec}{z2Vec}}
+{\footnotesize\ttfamily \label{structData3D_acae8b073151a53d0ec73cd207b833355} 
+std\+::vector$<$double$>$ Data3\+D\+::z2\+Vec}
+
+
+
+Z2 coordinate sampling points. 
+
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00102}{102}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{LayeredMediaUtils_8h}{Layered\+Media\+Utils.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,30 @@
+<map id="SimJob::FieldEvalParallel" name="SimJob::FieldEvalParallel">
+<area shape="rect" id="Node000001" title="Thread worker to evaluate fields over posvec in parallel." alt="" coords="5,109,187,137"/>
+<area shape="rect" id="Node000002" href="$classSimJob.html#a24f10b7bb14c9181341d07a783e00214" title="Return both , &#160;incident and secondary pairs at pos." alt="" coords="235,109,382,137"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="187,120,219,120,219,126,187,126"/>
+<area shape="rect" id="Node000008" href="$classSimJob.html#a746e46ef2aa6843c2f4da96e472c75a3" title="Incident and secondary &#160;at pos (domain auto&#45;detected)." alt="" coords="252,57,365,85"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="155,106,236,86,237,91,156,111"/>
+<area shape="rect" id="Node000011" href="$classSimJob.html#ae9e4bc91d7636bf3e7fd151c870cd01f" title="Incident and secondary &#160;at pos (domain auto&#45;detected)." alt="" coords="251,187,366,214"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="137,135,255,178,253,183,135,140"/>
+<area shape="rect" id="Node000003" href="$classDomain.html#afe5c1f862e335ab05031b1d6b0b87c42" title="Total incident electric field at a point from all incident sources." alt="" coords="458,57,597,85"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="369,106,451,87,452,92,371,111"/>
+<area shape="rect" id="Node000004" href="$classDomain.html#a832a36e6ba8ae02be3dd493bd2577d4a" title="Total incident magnetic field at a point from all incident sources." alt="" coords="458,213,598,241"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="330,135,375,167,431,198,450,206,448,211,429,203,372,171,327,140"/>
+<area shape="rect" id="Node000005" href="$classDomain.html#a1d339cb7979c5b2d03d069fc09b40696" title="Secondary fields &#160;at a point." alt="" coords="440,109,616,137"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="382,120,424,120,424,126,382,126"/>
+<area shape="rect" id="Node000006" href="$classDomain.html#a928ea926ed97bac309194301a8b509c3" title="Relative permittivity at a spatial location." alt="" coords="673,161,801,189"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="587,135,664,154,663,160,586,140"/>
+<area shape="rect" id="Node000007" href="$classDomain.html#a22745c7dfa178d41cfa4fb0b5b120595" title="Relative permeability at a spatial location." alt="" coords="687,57,787,85"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="586,106,671,85,672,90,587,111"/>
+<area shape="poly" id="edge9_Node000008_Node000003" title=" " alt="" coords="365,68,443,68,443,74,365,74"/>
+<area shape="rect" id="Node000009" href="$classSimJob.html#ab3887eb9e217b1d6424ff85aec4b1793" title="Find which domain contains a point." alt="" coords="430,161,625,189"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="359,83,384,96,399,109,408,122,417,134,431,146,444,153,441,157,429,151,413,138,404,125,395,112,380,100,357,88"/>
+<area shape="rect" id="Node000010" href="$classDomain.html#ae1e6975d3ddc5fe177020d447673fdf7" title="Secondary (scattered) electric field at a point from the solution vector." alt="" coords="456,5,599,33"/>
+<area shape="poly" id="edge10_Node000008_Node000010" title=" " alt="" coords="365,55,451,35,452,40,366,60"/>
+<area shape="poly" id="edge11_Node000010_Node000007" title=" " alt="" coords="587,31,672,53,671,58,586,36"/>
+<area shape="poly" id="edge14_Node000011_Node000004" title=" " alt="" coords="367,205,442,214,442,219,366,210"/>
+<area shape="poly" id="edge13_Node000011_Node000009" title=" " alt="" coords="366,191,414,186,415,191,367,196"/>
+<area shape="rect" id="Node000012" href="$classDomain.html#a507d3690b3a17a9f01beb83a2d6b026e" title="Secondary (scattered) magnetic field at a point from the solution vector." alt="" coords="456,265,600,293"/>
+<area shape="poly" id="edge15_Node000011_Node000012" title=" " alt="" coords="341,212,431,250,456,258,454,263,429,255,339,217"/>
+<area shape="poly" id="edge16_Node000012_Node000006" title=" " alt="" coords="592,262,624,250,668,224,706,197,709,201,671,229,626,255,594,267"/>
+</map>

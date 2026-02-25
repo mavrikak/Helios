@@ -1,0 +1,18 @@
+<map id="mathFunctions.h" name="mathFunctions.h">
+<area shape="rect" id="Node000001" title="Header file of the class that provides auxiliary mathematical functionalities for the SIE solver." alt="" coords="78,5,208,33"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,81,73,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,36,71,74,68,70,123,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="71,157,148,184"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="143,34,119,142,113,141,138,33"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="146,81,209,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="152,32,167,66,163,68,147,35"/>
+<area shape="rect" id="Node000005" href="$globals_8h.html" title="Global numerical constants, fundamental types, and simple macros." alt="" coords="234,81,314,109"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="168,31,239,71,236,75,165,36"/>
+<area shape="poly" id="edge8_Node000005_Node000003" title=" " alt="" coords="245,112,154,153,151,148,243,107"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="173,157,270,184"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="267,111,242,146,237,142,262,108"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="294,157,416,184"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="290,107,331,144,328,148,286,111"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="440,157,568,184"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="315,107,449,149,448,154,314,112"/>
+</map>

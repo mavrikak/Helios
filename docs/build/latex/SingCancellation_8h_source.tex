@@ -1,0 +1,67 @@
+\doxysection{Sing\+Cancellation.\+h}
+\hypertarget{SingCancellation_8h_source}{}\label{SingCancellation_8h_source}\index{SingCancellation.h@{SingCancellation.h}}
+\mbox{\hyperlink{SingCancellation_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00019}00019\ \textcolor{preprocessor}{\#ifndef\ SINGCANCELLATION\_H}}
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00020}00020\ \textcolor{preprocessor}{\#define\ SINGCANCELLATION\_H}}
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00022}00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Triangle_8h}{Triangle.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00023}00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{RWGFun_8h}{RWGFun.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00024}00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{quadrature_8h}{quadrature.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00040}\mbox{\hyperlink{classSingCancellation}{00040}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSingCancellation_a8931df16b2dd06d74b1aa8a78eab4363}{SingCancellation}}}
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00041}00041\ \{}
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00042}00042\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00043}\mbox{\hyperlink{classSingCancellation_a2e4b3ef20e8ceb038dbdf9d1769740fe}{00043}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSingCancellation_a2e4b3ef20e8ceb038dbdf9d1769740fe}{commonNodes}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00044}\mbox{\hyperlink{classSingCancellation_a04bba3dfe9ba566143df01a4748d8847}{00044}}\ \ \ \ \ \mbox{\hyperlink{classTriangle}{Triangle}}*\ \mbox{\hyperlink{classSingCancellation_a04bba3dfe9ba566143df01a4748d8847}{tPtr1}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00045}\mbox{\hyperlink{classSingCancellation_a79509ba149a71d661b8cd7ddb34bf7d2}{00045}}\ \ \ \ \ \mbox{\hyperlink{classTriangle}{Triangle}}*\ \mbox{\hyperlink{classSingCancellation_a79509ba149a71d661b8cd7ddb34bf7d2}{tPtr2}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00046}\mbox{\hyperlink{classSingCancellation_aa6217071d6c18917cc004b86cc18a68e}{00046}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSingCancellation_aa6217071d6c18917cc004b86cc18a68e}{nQuadrature}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00047}\mbox{\hyperlink{classSingCancellation_abef0ed40651f8431e56d6d9389bb0227}{00047}}\ \ \ \ \ double(*\mbox{\hyperlink{classSingCancellation_abef0ed40651f8431e56d6d9389bb0227}{xQuadrature}})[2];\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00048}\mbox{\hyperlink{classSingCancellation_a99802f89c3a53fad46c61d31b85eec3c}{00048}}\ \ \ \ \ \textcolor{keywordtype}{double}*\ \mbox{\hyperlink{classSingCancellation_a99802f89c3a53fad46c61d31b85eec3c}{wQuadrature}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00049}\mbox{\hyperlink{classSingCancellation_a993ac3119615aa4c55ee7a07eff1211d}{00049}}\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classSingCancellation_a993ac3119615aa4c55ee7a07eff1211d}{w}};\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00050}00050\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00052}\mbox{\hyperlink{classSingCancellation_ab297b85745a100f9ad9538a7f36437d3}{00052}}\ \ \ \ \ std::vector<std::vector<double>>\ \mbox{\hyperlink{classSingCancellation_ab297b85745a100f9ad9538a7f36437d3}{pointsMap1}};}
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00054}\mbox{\hyperlink{classSingCancellation_a3719d3d769028c0f492a6e1e7354b7aa}{00054}}\ \ \ \ \ std::vector<std::vector<double>>\ \mbox{\hyperlink{classSingCancellation_a3719d3d769028c0f492a6e1e7354b7aa}{pointsMap2}};}
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00055}00055\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00056}00056\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00074}00074\ \ \ \ \ \mbox{\hyperlink{classSingCancellation_a8931df16b2dd06d74b1aa8a78eab4363}{SingCancellation}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSingCancellation_a2e4b3ef20e8ceb038dbdf9d1769740fe}{commonNodes}},\ \mbox{\hyperlink{classTriangle}{Triangle}}*\ \mbox{\hyperlink{classSingCancellation_a04bba3dfe9ba566143df01a4748d8847}{tPtr1}},\ \mbox{\hyperlink{classTriangle}{Triangle}}*\ \mbox{\hyperlink{classSingCancellation_a79509ba149a71d661b8cd7ddb34bf7d2}{tPtr2}},}
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSingCancellation_aa6217071d6c18917cc004b86cc18a68e}{nQuadrature}},\ \textcolor{keywordtype}{double}(*\mbox{\hyperlink{classSingCancellation_abef0ed40651f8431e56d6d9389bb0227}{xQuadrature}})[2],\ \textcolor{keywordtype}{double}*\ \mbox{\hyperlink{classSingCancellation_a99802f89c3a53fad46c61d31b85eec3c}{wQuadrature}});}
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00076}00076\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00078}00078\ \ \ \ \ \mbox{\hyperlink{classSingCancellation_a861604f98ce8ce06d9559adecc7ab10c}{\string~SingCancellation}}();}
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00079}00079\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00090}00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSingCancellation_ac1258c9e1d2e1981e9ceb22477312cfd}{commonVertex}}();}
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00091}00091\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00102}00102\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSingCancellation_aa72d2a4d4365846ffcbee49b07a4baa7}{commonEdge}}();}
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00113}00113\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSingCancellation_a7d4e2fb258f1a7a5923c823800863983}{commonFacet}}();}
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00127}00127\ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{classSingCancellation_af51fe5685bf1d5a85afd61a50eb375fe}{getPermutation}}(\textcolor{keywordtype}{int}\ shift);}
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00137}\mbox{\hyperlink{classSingCancellation_a9f0341d9a5435ccf830d35c34a752d13}{00137}}\ \ \ \ \ std::vector<std::vector<double>>\ \mbox{\hyperlink{classSingCancellation_a9f0341d9a5435ccf830d35c34a752d13}{getPointsMap}}(\textcolor{keywordtype}{int}\ triangleIndex)\ \{}
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00138}00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (triangleIndex\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classSingCancellation_ab297b85745a100f9ad9538a7f36437d3}{pointsMap1}};}
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00140}00140\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (triangleIndex\ ==\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classSingCancellation_a3719d3d769028c0f492a6e1e7354b7aa}{pointsMap2}};}
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00142}00142\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Invalid\ triangle\ index.\ Use\ 1\ or\ 2."{}});}
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00144}00144\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00145}00145\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00151}\mbox{\hyperlink{classSingCancellation_a1e39f550c512d7f609257be4f9610082}{00151}}\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classSingCancellation_a1e39f550c512d7f609257be4f9610082}{getWeights}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classSingCancellation_a993ac3119615aa4c55ee7a07eff1211d}{w}};\ \}}
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00171}00171\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSingCancellation_a671bbe3bcc58c21a3fa62e605fd36be8}{writeMatlabMatrixToTxt}}(\textcolor{keyword}{const}\ std::string\ \&filename,}
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&varname,}
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&component,\ }
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<double>>\ \&V,}
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ size,\ \textcolor{keywordtype}{int}\ prec\ =\ 6);}
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00176}00176\ }
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00185}00185\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSingCancellation_a099933b83efb63d62f2b5d1c26b6b7e8}{writeMatlabVectorToTxt}}(\textcolor{keyword}{const}\ std::string\ \&filename,\ \textcolor{keyword}{const}\ std::string\ \&varname,}
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\ \&\mbox{\hyperlink{classSingCancellation_a993ac3119615aa4c55ee7a07eff1211d}{w}},\ \textcolor{keywordtype}{int}\ prec\ =\ 6);}
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00187}00187\ \};}
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00188}00188\ }
+\DoxyCodeLine{\Hypertarget{SingCancellation_8h_source_l00189}00189\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

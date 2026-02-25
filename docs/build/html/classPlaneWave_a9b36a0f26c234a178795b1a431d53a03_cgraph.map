@@ -1,0 +1,7 @@
+<map id="PlaneWave::IntegrateH" name="PlaneWave::IntegrateH">
+<area shape="rect" id="Node000001" title="Integrate magnetic field against an RWG basis function." alt="" coords="5,32,176,60"/>
+<area shape="rect" id="Node000002" href="$classPlaneWave.html#a25c1de1e9cee6a241765539a4b22f103" title="Evaluate the magnetic field at a given position (homogeneous)." alt="" coords="226,5,394,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="175,33,210,29,211,34,176,38"/>
+<area shape="rect" id="Node000003" href="$classPlaneWave.html#afb2520b5ec768a6ad1bdedf1ec1e8025" title="Construct a homogeneous plane wave." alt="" coords="224,57,397,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="176,53,208,57,208,62,175,58"/>
+</map>

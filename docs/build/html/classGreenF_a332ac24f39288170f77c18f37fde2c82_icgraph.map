@@ -1,0 +1,37 @@
+<map id="GreenF::GreenF" name="GreenF::GreenF">
+<area shape="rect" id="Node000001" title="Constructor for a homogeneous, non&#45;magnetic medium." alt="" coords="1210,264,1332,292"/>
+<area shape="rect" id="Node000002" href="$classGreenFHom3D.html#ac928f16e6e79c75c002d9a721a8858d8" title="Default constructor (initializes with zeroed wavenumber and no lookup table)." alt="" coords="919,160,1141,188"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1241,256,1204,228,1161,203,1125,191,1127,186,1163,199,1207,224,1244,252"/>
+<area shape="rect" id="Node000015" href="$classGreenFHom3D.html#a59f5ce23b99f97eaa6dedf90284ed6e3" title="Construct for a homogeneous, non&#45;magnetic medium." alt="" coords="919,212,1141,240"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="1194,263,1161,256,1103,243,1104,238,1162,250,1195,258"/>
+<area shape="rect" id="Node000016" href="$classGreenFHom3D.html#a2947b2c6b81ce78024413a994702dad7" title="Construct for a homogeneous, magnetic medium." alt="" coords="919,264,1141,292"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="1194,281,1141,281,1141,276,1194,276"/>
+<area shape="rect" id="Node000017" href="$classGreenFLayered3D.html#a4f699484c9505951b38acc2cb5fa3194" title="Construct layered Green&#39;s function (magnetic layers)." alt="" coords="898,316,1162,344"/>
+<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="1195,299,1162,306,1104,319,1103,313,1161,301,1194,294"/>
+<area shape="rect" id="Node000018" href="$classGreenFLayered3D.html#a865947398024c01996eba4018b9201b7" title="Construct layered Green&#39;s function (non&#45;magnetic layers)." alt="" coords="898,368,1162,396"/>
+<area shape="poly" id="edge17_Node000001_Node000018" title=" " alt="" coords="1244,305,1207,333,1163,358,1127,370,1125,365,1161,353,1204,329,1241,301"/>
+<area shape="rect" id="Node000003" href="$classGreenFHom3DPer.html#aa37478b09d78cff44338edc1b4be41ac" title="Homogeneous, magnetic constructor with Bloch vector." alt="" coords="587,31,850,59"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="995,154,929,113,849,74,809,62,811,57,851,69,932,108,998,149"/>
+<area shape="rect" id="Node000004" href="$classGreenFHom3DPer.html#a414d2e05ac1b3d089e2a5556e6e16a93" title="Homogeneous, non‑magnetic constructor with Bloch vector." alt="" coords="587,83,850,111"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="966,158,850,126,795,114,796,109,851,121,968,153"/>
+<area shape="rect" id="Node000011" href="$classGreenFHom3D.html#aca136b03c44ad1da34acf91eb5a5e390" title="term at an observation point." alt="" coords="609,135,828,163"/>
+<area shape="poly" id="edge10_Node000002_Node000011" title=" " alt="" coords="903,167,829,161,829,155,904,161"/>
+<area shape="rect" id="Node000012" href="$classGreenFHom3D.html#a9cece8a4056d65455cfcc94c8c61decd" title="term at an observation point." alt="" coords="606,187,831,215"/>
+<area shape="poly" id="edge11_Node000002_Node000012" title=" " alt="" coords="904,188,832,194,832,189,904,182"/>
+<area shape="rect" id="Node000013" href="$classGreenFHom3D.html#a48e8471aabb445e0e50a01c005ff3b98" title="Compute &#160;for all RWGs on a source triangle." alt="" coords="612,239,825,283"/>
+<area shape="poly" id="edge12_Node000002_Node000013" title=" " alt="" coords="926,195,899,203,875,216,851,229,817,241,815,236,849,224,873,211,897,199,925,190"/>
+<area shape="rect" id="Node000014" href="$classGreenFHom3D.html#a419cbe00b5a2aed70ac546904a8a8d6f" title="Compute &#160;and &#160;for all RWG pairs on two triangles." alt="" coords="620,307,817,335"/>
+<area shape="poly" id="edge13_Node000002_Node000014" title=" " alt="" coords="907,198,900,203,889,214,883,225,877,249,871,274,864,286,852,298,819,315,816,310,849,293,860,283,866,272,872,248,878,223,885,210,897,199,904,194"/>
+<area shape="rect" id="Node000005" href="$classGreenFHom3DPer2D.html#ad3b0693d618bd75c472df152d72760e7" title="Constructor for a magnetic medium (2D periodic)." alt="" coords="289,40,539,85"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="576,83,539,79,540,74,577,78"/>
+<area shape="rect" id="Node000006" href="$classGreenFHom3DPer2D.html#a6e7bfc8640c70e6dfaa9f8e14cb916ea" title="Constructor for a non&#45;magnetic medium (2D periodic)." alt="" coords="289,109,539,154"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="577,116,540,120,539,115,576,111"/>
+<area shape="rect" id="Node000007" href="$classGreenFHom3DPer2D.html#a233c2185952220bd16acae2142f05cc1" title="term at an observation point." alt="" coords="11,5,235,50"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="302,106,287,99,263,82,239,65,212,53,214,48,242,60,266,78,290,95,304,101"/>
+<area shape="rect" id="Node000008" href="$classGreenFHom3DPer2D.html#aadb534ef4509422e6f3e78a0e3999758" title="term at an observation point." alt="" coords="11,75,235,119"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="273,118,235,113,235,108,274,112"/>
+<area shape="rect" id="Node000009" href="$classGreenFHom3DPer2D.html#a84a8c855a27c895ff24f6771037284a5" title="Compute &#160;for all RWGs on a source triangle." alt="" coords="15,144,231,189"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="273,151,232,156,231,151,273,146"/>
+<area shape="rect" id="Node000010" href="$classGreenFHom3DPer2D.html#a1dc9dd84c93ee10b2fb4b1866103d957" title="Compute &#160;and &#160;for all RWG pairs on two triangles." alt="" coords="5,212,241,240"/>
+<area shape="poly" id="edge9_Node000006_Node000010" title=" " alt="" coords="349,163,241,204,200,215,199,209,240,198,347,158"/>
+</map>

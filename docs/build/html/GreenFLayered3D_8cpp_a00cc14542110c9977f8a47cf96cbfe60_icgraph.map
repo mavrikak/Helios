@@ -1,0 +1,7 @@
+<map id="interMap" name="interMap">
+<area shape="rect" id="Node000001" title="Initialize the selector map for inter&#45;layer coefficients." alt="" coords="317,36,396,64"/>
+<area shape="rect" id="Node000002" href="$classGreenFLayered3D.html#a4f699484c9505951b38acc2cb5fa3194" title="Construct layered Green&#39;s function (magnetic layers)." alt="" coords="5,5,269,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="301,45,240,36,241,31,302,40"/>
+<area shape="rect" id="Node000003" href="$classGreenFLayered3D.html#adb66750a1f30911e4e64f2cb05b61f98" title="Test filling of interpolation tables with Green&#39;s function values." alt="" coords="42,57,232,102"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="302,60,233,69,232,64,301,54"/>
+</map>

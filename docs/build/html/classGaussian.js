@@ -1,0 +1,25 @@
+var classGaussian =
+[
+    [ "Gaussian", "classGaussian.html#a3621600be0f1a452bc426f15041d4ed4", null ],
+    [ "EvaluateE", "classGaussian.html#a0cccdedf53f0840888d57144566442b4", null ],
+    [ "EvaluateH", "classGaussian.html#ad420298383fc00144d4f1dc9e87b8ee7", null ],
+    [ "EvaluateLayeredEandH", "classGaussian.html#a92fa8f6f7a12c4b81b446903eb344bc3", null ],
+    [ "IntegrateE", "classGaussian.html#a7c63c2889ab8b3c019c3d04c568c2ad4", null ],
+    [ "IntegrateH", "classGaussian.html#a5a2bbd00d15351a497efe6cd5fb333d3", null ],
+    [ "IntegrateLayeredEandH", "classGaussian.html#a052cfe5b26791974210c2a3f46a0ea64", null ],
+    [ "IsDipole", "classGaussian.html#a18fb0a47d0bce2fccb93c2f594f743a6", null ],
+    [ "IsGaussian", "classGaussian.html#a9a094fdc95225f2ebaf4ade697908d3c", null ],
+    [ "IsPlaneWave", "classGaussian.html#a4cb678d885117a191d246ecb5e7f595a", null ],
+    [ "Polarisation", "classGaussian.html#a7ea43a8584ebecc5b11f2bd4bde08aa7", null ],
+    [ "Propagation", "classGaussian.html#abb1472c6129a7689057b98094d8bc68c", null ],
+    [ "setGrnFunLayered", "classGaussian.html#a045c0864d0ce2062c99cfb14680ccad3", null ],
+    [ "Waist", "classGaussian.html#a25de64854de917ae29473a55cf09c0be", null ],
+    [ "depth", "classGaussian.html#ac46c594c1c022605fe5fbc445afc42b4", null ],
+    [ "focus", "classGaussian.html#a89214ccbc460ca02bb3841ea828c31c0", null ],
+    [ "gauss", "classGaussian.html#a02f414f3ba03fac5477122c9668432eb", null ],
+    [ "k", "classGaussian.html#a5f0a417475abab2cff7a20518a32c19b", null ],
+    [ "p", "classGaussian.html#a232a8924d6c47879eaf1782b07249769", null ],
+    [ "prop", "classGaussian.html#aec7b455b30364a4ad0bd134c77a38718", null ],
+    [ "w0", "classGaussian.html#ae3dbd384e89f118dd1eaf222f892c5a5", null ],
+    [ "z", "classGaussian.html#a2a40a25156f53c86d40425807a956232", null ]
+];

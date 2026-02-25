@@ -1,0 +1,5 @@
+<map id="SIEFormPMCHW::FillLSEMatrixAndGradientParallel" name="SIEFormPMCHW::FillLSEMatrixAndGradientParallel">
+<area shape="rect" id="Node000001" title="Worker for parallel assembly of A and gradients (homogeneous)." alt="" coords="271,5,488,50"/>
+<area shape="rect" id="Node000002" href="$classSIEFormPMCHW.html#a6b8755f234cd116ae3f3a44cacf85813" title="Assemble A and its gradients w.r.t." alt="" coords="5,5,223,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="255,30,223,30,223,25,255,25"/>
+</map>

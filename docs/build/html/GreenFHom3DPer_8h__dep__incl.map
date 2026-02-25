@@ -1,0 +1,11 @@
+<map id="GreenFHom3DPer.h" name="GreenFHom3DPer.h">
+<area shape="rect" id="Node000001" title="Periodic homogeneous 3D Green&#39;s function (abstract base)." alt="" coords="108,5,257,33"/>
+<area shape="rect" id="Node000002" href="$GreenFHom3DPer_8cpp.html" title="Implementation of the periodic homogeneous 3D Green&#39;s function base." alt="" coords="5,81,170,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="155,45,106,83,103,78,152,41"/>
+<area shape="rect" id="Node000003" href="$GreenFHom3DPer2D_8h.html" title="Periodic homogeneous 3D Green&#39;s function with 2D in‑plane periodicity." alt="" coords="194,81,362,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="213,41,263,78,260,83,210,45"/>
+<area shape="rect" id="Node000004" href="$DomainHom3DPer_8cpp.html" title="Implementation of the homogeneous, periodically replicated 3D domain." alt="" coords="94,157,262,184"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="250,120,197,158,194,154,247,116"/>
+<area shape="rect" id="Node000005" href="$GreenFHom3DPer2D_8cpp.html" title="Implementation of the 2D&#45;periodic homogeneous 3D Green&#39;s function." alt="" coords="286,157,470,184"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="310,116,362,154,359,158,307,120"/>
+</map>

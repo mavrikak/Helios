@@ -1,0 +1,120 @@
+\doxysection{Job\+Parser.\+cpp}
+\hypertarget{JobParser_8cpp_source}{}\label{JobParser_8cpp_source}\index{JobParser.cpp@{JobParser.cpp}}
+\mbox{\hyperlink{JobParser_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{JobParser_8h}{JobParser.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{iofunctions_8h}{iofunctions.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00009}00009\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00010}00010\ \textcolor{comment}{//\ Consrtuctors}}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00011}00011\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00013}\mbox{\hyperlink{classJobParser_ac8680edbf18db57573b8f33a990ef7de}{00013}}\ \mbox{\hyperlink{classJobParser_ac8680edbf18db57573b8f33a990ef7de}{JobParser::JobParser}}()\ \{\}}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00020}\mbox{\hyperlink{classJobParser_ad405a892507e7b62dd9c57f888bc2bb7}{00020}}\ \mbox{\hyperlink{classJobParser_ac8680edbf18db57573b8f33a990ef7de}{JobParser::JobParser}}(std::string\ jobFile)\ \{}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00021}00021\ \ \ \mbox{\hyperlink{classJobParser_aff7df7ddb19bd11d750d71f9fde0615d}{reader}}.open(jobFile.c\_str());}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00022}00022\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classJobParser_aff7df7ddb19bd11d750d71f9fde0615d}{reader}}.is\_open())\ \{}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00023}00023\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ opening\ job\ file:\ "{}}\ <<\ jobFile\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00024}00024\ \ \ \ \ \mbox{\hyperlink{classJobParser_aff7df7ddb19bd11d750d71f9fde0615d}{reader}}.close();}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00025}00025\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00026}00026\ \}}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00028}00028\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00029}00029\ \textcolor{comment}{//\ File\ control}}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00030}00030\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00032}\mbox{\hyperlink{classJobParser_a5a48a87bc6f5e0a86efdc751bbaf0bc2}{00032}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classJobParser_a5a48a87bc6f5e0a86efdc751bbaf0bc2}{JobParser::close}}()\ \{}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00033}00033\ \ \ \mbox{\hyperlink{classJobParser_aff7df7ddb19bd11d750d71f9fde0615d}{reader}}.close();}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00034}00034\ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00035}00035\ \}}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00038}\mbox{\hyperlink{classJobParser_a7563873491eca6d7e0a5ba6f30755db8}{00038}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classJobParser_a7563873491eca6d7e0a5ba6f30755db8}{JobParser::empty}}()\ \{}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00039}00039\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classJobParser_af35b727dfb4eea2261f21b34c5c15e8e}{tags}}.size()\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00040}00040\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00041}00041\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00042}00042\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00043}00043\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00044}00044\ \}}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00050}\mbox{\hyperlink{classJobParser_a3030319b0407051dc9919951a7b733c1}{00050}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classJobParser_a3030319b0407051dc9919951a7b733c1}{JobParser::open}}(std::string\ jobFile)\ \{}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00051}00051\ \ \ \mbox{\hyperlink{classJobParser_aff7df7ddb19bd11d750d71f9fde0615d}{reader}}.open(jobFile.c\_str());}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00052}00052\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classJobParser_aff7df7ddb19bd11d750d71f9fde0615d}{reader}}.is\_open())\ \{}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00053}00053\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ opening\ job\ file:\ "{}}\ <<\ jobFile\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00054}00054\ \ \ \ \ \mbox{\hyperlink{classJobParser_aff7df7ddb19bd11d750d71f9fde0615d}{reader}}.close();}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00056}00056\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00058}00058\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00059}00059\ \}}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00061}00061\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00062}00062\ \textcolor{comment}{//\ Tag\ navigation}}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00063}00063\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00075}\mbox{\hyperlink{classJobParser_a83fe4cb0b8be6a82f39379fb516341ae}{00075}}\ std::string\ \mbox{\hyperlink{classJobParser_a83fe4cb0b8be6a82f39379fb516341ae}{JobParser::readTag}}()\ \{}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00076}00076\ \ \ \textcolor{keywordtype}{char}\ id;}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00077}00077\ \ \ \mbox{\hyperlink{classJobParser_af200c604d924f86c8d97b33e105b915e}{nextChar}}();}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00078}00078\ \ \ \mbox{\hyperlink{classJobParser_aff7df7ddb19bd11d750d71f9fde0615d}{reader}}.get(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00079}00079\ \ \ \mbox{\hyperlink{classJobParser_aff7df7ddb19bd11d750d71f9fde0615d}{reader}}.unget();}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00080}00080\ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{id}\ ==\ \textcolor{charliteral}{'<'})\ \{}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00081}00081\ \ \ \ \ \mbox{\hyperlink{classJobParser_aff7df7ddb19bd11d750d71f9fde0615d}{reader}}.get(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00082}00082\ \ \ \ \ \mbox{\hyperlink{classJobParser_aff7df7ddb19bd11d750d71f9fde0615d}{reader}}\ >>\ \mbox{\hyperlink{classJobParser_afb7f2600703a9565010a52542b5d94fa}{tag}};}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00083}00083\ \ \ \ \ \mbox{\hyperlink{classJobParser_afb7f2600703a9565010a52542b5d94fa}{tag}}\ =\ \mbox{\hyperlink{classJobParser_afb7f2600703a9565010a52542b5d94fa}{tag}}.replace(\mbox{\hyperlink{classJobParser_afb7f2600703a9565010a52542b5d94fa}{tag}}.size()\ -\/\ 1,\ 1,\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00084}00084\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classJobParser_afb7f2600703a9565010a52542b5d94fa}{tag}}[0]\ !=\ \textcolor{charliteral}{'/'})\ \{}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00085}00085\ \ \ \ \ \ \ \mbox{\hyperlink{classJobParser_af35b727dfb4eea2261f21b34c5c15e8e}{tags}}.push\_back(\mbox{\hyperlink{classJobParser_afb7f2600703a9565010a52542b5d94fa}{tag}});}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00086}00086\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00087}00087\ \ \ \ \ \ \ std::string\ comp(\mbox{\hyperlink{classJobParser_afb7f2600703a9565010a52542b5d94fa}{tag}});}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00088}00088\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (comp.replace(0,\ 1,\ \textcolor{stringliteral}{"{}"{}})\ ==\ \mbox{\hyperlink{classJobParser_aa2ff54c559c616be63dc01dfbff29c91}{JobParser::getTag}}())\ \{}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classJobParser_af35b727dfb4eea2261f21b34c5c15e8e}{tags}}.pop\_back();}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00090}00090\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Incorrect\ use\ of\ tags\ in\ job\ file"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00092}00092\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00093}00093\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00094}00094\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00095}00095\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classJobParser_af35b727dfb4eea2261f21b34c5c15e8e}{tags}}.size()\ !=\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00096}00096\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classJobParser_af35b727dfb4eea2261f21b34c5c15e8e}{tags}}.back();}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00097}00097\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00099}00099\ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00100}00100\ \}}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00103}\mbox{\hyperlink{classJobParser_aeab1ae1394fba1d3dd383754dd56bca3}{00103}}\ std::string\ \mbox{\hyperlink{classJobParser_aeab1ae1394fba1d3dd383754dd56bca3}{JobParser::lastRead}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classJobParser_afb7f2600703a9565010a52542b5d94fa}{tag}};\ \}}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00110}\mbox{\hyperlink{classJobParser_af200c604d924f86c8d97b33e105b915e}{00110}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classJobParser_af200c604d924f86c8d97b33e105b915e}{JobParser::nextChar}}()\ \{}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00111}00111\ \ \ \textcolor{keywordtype}{char}\ id;}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00112}00112\ \ \ \mbox{\hyperlink{classJobParser_aff7df7ddb19bd11d750d71f9fde0615d}{reader}}.get(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00113}00113\ \ \ \textcolor{keywordflow}{while}\ (((\textcolor{keywordtype}{id}\ ==\ \textcolor{charliteral}{'\ '})\ ||\ (\textcolor{keywordtype}{id}\ ==\ \textcolor{charliteral}{'\(\backslash\)n'})\ ||\ (\textcolor{keywordtype}{id}\ ==\ \textcolor{charliteral}{'\(\backslash\)r'})\ ||\ (\textcolor{keywordtype}{id}\ ==\ \textcolor{charliteral}{'\(\backslash\)t'}))\ \&\&}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ (!\mbox{\hyperlink{classJobParser_aff7df7ddb19bd11d750d71f9fde0615d}{reader}}.eof()))\ \{}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00115}00115\ \ \ \ \ \mbox{\hyperlink{classJobParser_aff7df7ddb19bd11d750d71f9fde0615d}{reader}}.get(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00116}00116\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00117}00117\ \ \ \mbox{\hyperlink{classJobParser_aff7df7ddb19bd11d750d71f9fde0615d}{reader}}.unget();}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00118}00118\ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00119}00119\ \}}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00122}\mbox{\hyperlink{classJobParser_aa2ff54c559c616be63dc01dfbff29c91}{00122}}\ std::string\ \mbox{\hyperlink{classJobParser_aa2ff54c559c616be63dc01dfbff29c91}{JobParser::getTag}}()\ \{}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00123}00123\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classJobParser_af35b727dfb4eea2261f21b34c5c15e8e}{tags}}.size()\ !=\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00124}00124\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classJobParser_af35b727dfb4eea2261f21b34c5c15e8e}{tags}}.back();}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00125}00125\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00126}00126\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00127}00127\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00128}00128\ \}}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00130}00130\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00131}00131\ \textcolor{comment}{//\ Block\ helpers}}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00132}00132\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00141}\mbox{\hyperlink{classJobParser_a02ccef107cb7825e1f1395abc3cd96fe}{00141}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classJobParser_a02ccef107cb7825e1f1395abc3cd96fe}{JobParser::endOfTag}}()\ \{}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00142}00142\ \ \ std::string\ endTag(\textcolor{stringliteral}{"{}</"{}}\ +\ \mbox{\hyperlink{classJobParser_aa2ff54c559c616be63dc01dfbff29c91}{getTag}}()\ +\ \textcolor{stringliteral}{"{}>"{}});}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00143}00143\ \ \ std::string\ word;}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00144}00144\ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{classJobParser_aff7df7ddb19bd11d750d71f9fde0615d}{reader}}\ >>\ word\ \&\&\ word\ !=\ endTag)\ \{}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00145}00145\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00146}00146\ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00147}00147\ \}}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00150}\mbox{\hyperlink{classJobParser_a2fb97b92acf2b3c534f9b893b5f5a9fe}{00150}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classJobParser_a2fb97b92acf2b3c534f9b893b5f5a9fe}{JobParser::moveTop}}()\ \{}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00151}00151\ \ \ \mbox{\hyperlink{classJobParser_aff7df7ddb19bd11d750d71f9fde0615d}{reader}}.seekg(0,\ \mbox{\hyperlink{classJobParser_aff7df7ddb19bd11d750d71f9fde0615d}{reader}}.beg);}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00152}00152\ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{JobParser_8cpp_source_l00153}00153\ \}}
+
+\end{DoxyCode}

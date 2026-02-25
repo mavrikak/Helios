@@ -1,0 +1,5 @@
+<map id="CLStringOption" name="CLStringOption">
+<area shape="rect" id="Node000001" title="Option that captures a string argument." alt="" coords="5,193,150,332"/>
+<area shape="rect" id="Node000002" href="$classCLParser.html" title="Abstract base for all command&#45;line option parsers." alt="" coords="26,5,130,145"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="80,160,80,193,75,193,75,160"/>
+</map>

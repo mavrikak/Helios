@@ -1,0 +1,111 @@
+<map id="real" name="real">
+<area shape="rect" id="Node000001" title="Extract the real part of each component of a complex 3&#45;vector." alt="" coords="792,1472,839,1500"/>
+<area shape="poly" id="edge45_Node000001_Node000001" title=" " alt="" coords="847,1466,848,1461,843,1456,815,1451,794,1454,784,1459,784,1466,794,1475,790,1479,779,1468,779,1457,792,1449,816,1446,846,1452,853,1459,853,1467"/>
+<area shape="rect" id="Node000002" href="$classDomainHom3D.html#addce520ad0085aae8f454c377131fce7" title="Add a Gaussian beam excitation." alt="" coords="520,108,734,136"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="811,1457,805,1179,791,751,770,349,757,213,750,171,742,151,728,139,732,135,747,147,755,169,762,212,776,348,797,751,810,1179,816,1457"/>
+<area shape="rect" id="Node000003" href="$classDomainLayered3D.html#aaa6b950bf905f5bc98710271815d910d" title="Add a Gaussian beam excitation in the layered medium." alt="" coords="509,160,744,188"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="811,1457,804,1189,790,778,770,392,757,262,749,222,742,203,728,191,732,187,747,199,755,221,762,261,775,392,796,777,810,1189,816,1457"/>
+<area shape="rect" id="Node000004" href="$classDomainHom3D.html#ac0c154d55efe4f3819ee764fa58e3e2d" title="Add a PlaneWave excitation (ownership transferred to Domain)." alt="" coords="514,212,740,240"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="811,1457,804,1199,790,805,769,436,756,311,749,273,742,255,728,243,732,239,747,251,754,272,761,311,774,435,795,804,809,1199,816,1457"/>
+<area shape="rect" id="Node000005" href="$LayeredMediaUtils_8cpp.html#a50405603197731a46c864b0f39744ed0" title="Computes the square root of a complex number with proper handling of negative imaginary parts." alt="" coords="575,264,678,292"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="811,1457,804,1237,791,905,770,584,757,467,742,401,722,368,697,338,647,295,651,291,701,334,727,364,747,399,762,467,776,584,796,905,810,1237,816,1457"/>
+<area shape="rect" id="Node000013" href="$classPlaneWave.html#a66641ca1cfa189357ce861df408c1d67" title="Computes the square root of a complex number with proper handling of negative imaginary parts." alt="" coords="535,411,718,439"/>
+<area shape="poly" id="edge10_Node000001_Node000013" title=" " alt="" coords="811,1457,806,1293,794,1051,773,803,759,701,742,624,719,569,690,516,637,441,642,438,694,514,724,566,747,623,764,700,779,803,799,1050,811,1293,816,1457"/>
+<area shape="rect" id="Node000018" href="$group__greenFunction.html#gac0a52dce23be7dacdf97c68653b6c137" title="Complex square root with a branch cut along the negative real axis." alt="" coords="600,1160,653,1188"/>
+<area shape="poly" id="edge12_Node000001_Node000018" title=" " alt="" coords="806,1458,784,1379,765,1333,742,1289,720,1259,694,1232,646,1191,649,1187,697,1228,724,1256,747,1286,770,1330,789,1377,811,1456"/>
+<area shape="rect" id="Node000064" href="$classPlaneWave.html#af7c9805a49519670a0d4814146bf893d" title="Convert cvec to rvec, extracting real or imaginary parts." alt="" coords="543,1368,710,1396"/>
+<area shape="poly" id="edge27_Node000001_Node000064" title=" " alt="" coords="794,1461,772,1434,743,1411,709,1397,712,1392,746,1407,775,1431,798,1458"/>
+<area shape="rect" id="Node000065" href="$classGreenF.html#abf00726011a4eca4109bc43125218d30" title="Evaluate erfc via the 2D lookup table if available." alt="" coords="568,635,685,663"/>
+<area shape="poly" id="edge28_Node000001_Node000065" title=" " alt="" coords="806,1458,742,1150,629,664,634,663,747,1148,811,1457"/>
+<area shape="rect" id="Node000072" href="$classSimJob.html#a762457879a5f323daff8a2802ee937bd" title="Parse and load Gaussian&#45;beam excitation from ." alt="" coords="544,1420,709,1448"/>
+<area shape="poly" id="edge38_Node000001_Node000072" title=" " alt="" coords="777,1475,744,1464,697,1451,698,1446,745,1458,778,1470"/>
+<area shape="rect" id="Node000080" href="$classLookupTable.html#ae6e7b00a09e1e8150e013df55820cbb0" title="Construct a LookupTable from a text file." alt="" coords="532,1472,721,1500"/>
+<area shape="poly" id="edge41_Node000001_Node000080" title=" " alt="" coords="777,1489,722,1489,722,1484,777,1484"/>
+<area shape="rect" id="Node000081" href="$classLookupTableBin.html#a48c684661180b6c3b561d7d8a0d8da3f" title="Construct a LookupTableBin from a binary file." alt="" coords="511,1524,742,1552"/>
+<area shape="poly" id="edge42_Node000001_Node000081" title=" " alt="" coords="778,1503,745,1514,698,1527,697,1521,744,1509,777,1498"/>
+<area shape="rect" id="Node000082" href="$classDomain.html#a3087596044d4c345f84faaad1291946d" title="Power crossing the domain boundary computed from the RWG solution." alt="" coords="566,1576,687,1604"/>
+<area shape="poly" id="edge43_Node000001_Node000082" title=" " alt="" coords="798,1515,775,1542,746,1566,718,1579,688,1586,687,1581,716,1574,743,1561,772,1538,794,1512"/>
+<area shape="rect" id="Node000084" href="$SimJob_8cpp.html#afd2614e8171c7074caa9db28bfd14092" title="Extract the real part of each component of a complex 3&#45;vector." alt="" coords="590,1628,663,1656"/>
+<area shape="poly" id="edge46_Node000001_Node000084" title=" " alt="" coords="809,1516,786,1568,769,1595,746,1618,727,1629,705,1637,664,1644,663,1639,704,1632,724,1624,743,1614,765,1592,782,1566,804,1514"/>
+<area shape="rect" id="Node000085" href="$DomainHom3D_8cpp.html#a40914d7aec9b5a14a562be6061d9324b" title="Extract the real part of each component of a complex 3&#45;vector." alt="" coords="576,1680,677,1708"/>
+<area shape="poly" id="edge47_Node000001_Node000085" title=" " alt="" coords="814,1516,807,1552,795,1593,775,1635,746,1670,713,1688,678,1696,677,1691,712,1683,743,1666,771,1632,790,1591,802,1551,809,1515"/>
+<area shape="rect" id="Node000088" href="$classDomainHom3D.html#af51c0166dbce1642b143f7bf910b7c12" title="Scattering cross section via surface quadrature." alt="" coords="227,1731,438,1759"/>
+<area shape="poly" id="edge51_Node000001_Node000088" title=" " alt="" coords="818,1515,816,1562,806,1618,797,1647,784,1675,767,1700,746,1722,723,1734,693,1743,614,1754,525,1756,439,1754,439,1749,525,1751,614,1748,692,1738,721,1729,743,1718,763,1697,780,1673,792,1645,801,1617,810,1561,813,1515"/>
+<area shape="rect" id="Node000089" href="$DomainLayered3D_8cpp.html#a2c019c7f0fe35eb5871f0c0b1ae9bd96" title="Extract the real part of each component of a complex 3&#45;vector." alt="" coords="588,1782,665,1810"/>
+<area shape="poly" id="edge49_Node000001_Node000089" title=" " alt="" coords="813,1516,790,1651,771,1720,759,1747,746,1765,728,1779,708,1789,666,1797,665,1792,706,1784,726,1775,742,1762,754,1744,766,1718,785,1650,808,1515"/>
+<area shape="rect" id="Node000092" href="$classDomainLayered3D.html#a267135f0a2f5bfff12f7ac3b25429176" title="Scattering cross section." alt="" coords="217,1807,449,1835"/>
+<area shape="poly" id="edge52_Node000001_Node000092" title=" " alt="" coords="815,1516,809,1590,797,1682,777,1768,763,1801,746,1823,724,1835,693,1843,615,1849,525,1846,439,1838,440,1833,526,1841,615,1844,692,1838,722,1830,743,1819,758,1799,772,1767,792,1681,804,1589,810,1516"/>
+<area shape="rect" id="Node000093" href="$classSommerfeldIntegrator.html#ae6b066494d7f0e8d6dfd9c8e282f9e5a" title="Dump a 3D complex matrix to text (i j k Re Im) for debugging." alt="" coords="544,1884,709,1929"/>
+<area shape="poly" id="edge53_Node000001_Node000093" title=" " alt="" coords="815,1516,809,1597,796,1701,776,1800,762,1839,746,1867,730,1881,711,1892,709,1887,727,1877,742,1863,758,1837,771,1799,791,1700,803,1596,810,1516"/>
+<area shape="rect" id="Node000095" href="$classSommerfeldIntegrator.html#aab7ff3d330e81d60b341e937b4dbe2d4" title="Dump a 2D complex matrix to text (i j Re Im) for debugging." alt="" coords="544,1953,709,1998"/>
+<area shape="poly" id="edge54_Node000001_Node000095" title=" " alt="" coords="816,1516,812,1612,802,1739,793,1803,781,1861,766,1909,746,1943,730,1957,711,1967,708,1962,727,1952,742,1939,761,1907,776,1860,788,1802,796,1738,807,1611,811,1516"/>
+<area shape="rect" id="Node000097" href="$classGreenFLayered3D.html#a74a468a93bf93bd4acd39989502a10fd" title="Write complex data with associated 2D coordinates to a text file." alt="" coords="516,1300,737,1345"/>
+<area shape="poly" id="edge55_Node000001_Node000097" title=" " alt="" coords="803,1458,781,1407,764,1381,743,1359,725,1347,728,1343,746,1355,768,1378,786,1405,808,1456"/>
+<area shape="rect" id="Node000099" href="$classGreenFLayered3D.html#afbbeb440a2dcc7d185d9ae5ca5a46a87" title="Write complex data with associated 3D coordinates to a text file." alt="" coords="516,2023,737,2067"/>
+<area shape="poly" id="edge59_Node000001_Node000099" title=" " alt="" coords="817,1515,815,1624,806,1772,797,1847,785,1916,768,1972,746,2012,733,2024,730,2020,742,2009,763,1970,780,1914,792,1846,801,1771,810,1623,812,1515"/>
+<area shape="rect" id="Node000006" href="$classLayeredMediaUtils.html#ab1660d136377d8e6d7878973475146a8" title="Computes electromagnetic fields at observation points given a source position." alt="" coords="5,165,157,210"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="559,275,533,267,507,254,491,236,483,217,476,199,460,185,423,169,384,159,344,153,303,152,225,157,158,169,157,164,225,152,303,146,344,148,385,154,425,164,462,180,480,196,488,215,495,233,511,250,535,262,561,270"/>
+<area shape="rect" id="Node000007" href="$classLayeredMediaUtils.html#a212943a3dd5bdeaaa5c92ed21fad87a9" title="Computes Fresnel reflection and transmission coefficients at an interface." alt="" coords="257,5,408,50"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="559,278,531,270,507,254,489,230,481,206,480,181,482,157,484,133,483,110,476,87,459,64,436,47,408,37,410,32,438,43,463,60,480,85,488,109,489,134,487,158,485,181,486,205,494,227,511,250,534,265,561,273"/>
+<area shape="rect" id="Node000012" href="$classLayeredMediaUtils.html#ac9168dd49348197009d483b94ff715a4" title="Computes the propagation matrix for a given layer." alt="" coords="257,75,408,119"/>
+<area shape="poly" id="edge7_Node000005_Node000012" title=" " alt="" coords="559,277,532,268,507,254,494,240,487,225,482,196,477,167,471,154,459,140,435,124,408,112,410,107,438,119,463,136,475,151,482,166,487,195,492,223,499,237,511,250,534,264,560,272"/>
+<area shape="rect" id="Node000009" href="$classLayeredMediaUtils.html#a6d538561bc5345114e83f7939247866f" title="Computes secondary wave coefficients for a given observation and source layer." alt="" coords="257,195,408,239"/>
+<area shape="poly" id="edge8_Node000005_Node000009" title=" " alt="" coords="559,267,408,235,409,230,561,262"/>
+<area shape="poly" id="edge9_Node000009_Node000006" title=" " alt="" coords="241,209,157,199,157,194,242,204"/>
+<area shape="rect" id="Node000014" href="$classPlaneWave.html#ade82a6ff2d60f8df4553d51837525a1c" title="Evaluate the electric and magnetic fields at a given position in layered media." alt="" coords="228,264,438,309"/>
+<area shape="poly" id="edge11_Node000013_Node000014" title=" " alt="" coords="593,404,533,363,460,323,429,312,431,307,462,319,536,359,596,399"/>
+<area shape="rect" id="Node000019" href="$classGreenFLayered3D.html#aea3c88abd8cb25bd99d64a4eeda84a85" title="Evaluates the secondary terms for dipole incident field in layered background." alt="" coords="231,1023,434,1067"/>
+<area shape="poly" id="edge13_Node000018_Node000019" title=" " alt="" coords="590,1154,531,1117,460,1082,428,1070,429,1065,462,1077,533,1113,593,1149"/>
+<area shape="rect" id="Node000020" href="$classGreenFHom3DPer2D.html#a025f6ce600bdd42ae02716905c75ba66" title="Spectral part returning ." alt="" coords="219,731,447,775"/>
+<area shape="poly" id="edge14_Node000018_Node000020" title=" " alt="" coords="619,1146,605,1073,577,977,556,926,530,876,498,830,459,790,443,778,446,774,463,786,502,827,534,873,561,924,582,975,610,1072,624,1145"/>
+<area shape="rect" id="Node000026" href="$classGreenFHom3DPer2D.html#aad98b9953626259eda54006eecbcf04e" title="Spectral (reciprocal&#45;lattice) part of Ewald sum for ." alt="" coords="205,799,461,827"/>
+<area shape="poly" id="edge15_Node000018_Node000026" title=" " alt="" coords="617,1146,601,1081,572,998,551,954,525,912,495,873,459,840,442,830,444,825,463,836,499,870,530,909,555,952,577,996,607,1080,623,1144"/>
+<area shape="rect" id="Node000033" href="$classSommerfeldIntegrator.html#afe0d60f6663b012e9004922feac799ee" title="Computes the Fresnel reflection and transmission coefficients between two layers." alt="" coords="250,1092,416,1137"/>
+<area shape="poly" id="edge16_Node000018_Node000033" title=" " alt="" coords="584,1169,415,1134,416,1129,585,1163"/>
+<area shape="rect" id="Node000034" href="$classGreenFHom3DPer2D.html#a1ab7bcf35b15f67bb9824040c34c8bbc" title="Spectral part of the source&#45;gradient ." alt="" coords="223,851,443,895"/>
+<area shape="poly" id="edge17_Node000018_Node000034" title=" " alt="" coords="613,1147,593,1096,560,1031,516,966,489,936,459,910,440,898,443,894,463,906,493,932,520,962,565,1029,598,1093,618,1145"/>
+<area shape="rect" id="Node000042" href="$classGreenF.html#a8f4bd71bf23024ff5859ea791b8a17df" title="Constructor for a layered, non&#45;magnetic medium." alt="" coords="272,1160,394,1188"/>
+<area shape="poly" id="edge18_Node000018_Node000042" title=" " alt="" coords="585,1177,395,1177,395,1172,585,1172"/>
+<area shape="rect" id="Node000043" href="$classGreenF.html#a90c26315201fbb2b80a7ce30b0d369cf" title="Constructor for a layered, magnetic medium." alt="" coords="272,1212,394,1240"/>
+<area shape="poly" id="edge19_Node000018_Node000043" title=" " alt="" coords="585,1184,395,1218,394,1213,584,1179"/>
+<area shape="rect" id="Node000044" href="$classGreenF.html#a332ac24f39288170f77c18f37fde2c82" title="Constructor for a homogeneous, non&#45;magnetic medium." alt="" coords="272,1264,394,1292"/>
+<area shape="poly" id="edge20_Node000018_Node000044" title=" " alt="" coords="588,1198,529,1227,462,1254,395,1271,394,1266,460,1249,527,1222,585,1193"/>
+<area shape="rect" id="Node000058" href="$classGreenF.html#a37b267f203bf4d571d7510e0a92bdd4f" title="Constructor for a homogeneous, magnetic medium." alt="" coords="272,1316,394,1344"/>
+<area shape="poly" id="edge21_Node000018_Node000058" title=" " alt="" coords="603,1201,543,1255,504,1283,462,1306,429,1318,395,1326,393,1321,427,1313,460,1301,501,1278,539,1251,600,1197"/>
+<area shape="rect" id="Node000059" href="$classGreenFLayered3D.html#afbdbfdc8fc40fc885f6377d5be242d36" title="term at an observation point." alt="" coords="230,1368,436,1413"/>
+<area shape="poly" id="edge22_Node000018_Node000059" title=" " alt="" coords="599,1201,557,1241,511,1289,498,1309,490,1326,480,1342,463,1358,437,1372,435,1367,459,1354,476,1338,485,1323,493,1306,507,1286,553,1237,596,1197"/>
+<area shape="rect" id="Node000060" href="$classGreenFLayered3D.html#a439eddb43f46fb52f6c84898ea12aa40" title="term at an observation point." alt="" coords="230,1437,436,1482"/>
+<area shape="poly" id="edge23_Node000018_Node000060" title=" " alt="" coords="596,1200,552,1239,511,1289,501,1308,496,1326,492,1361,486,1393,477,1410,463,1427,437,1444,434,1440,459,1423,473,1407,481,1392,487,1360,491,1325,496,1306,507,1286,548,1235,592,1196"/>
+<area shape="rect" id="Node000061" href="$classGreenFLayered3D.html#af46d152fbc30bdc418ff16e5e7a334c6" title="Point–triangle delta/kappa contributions for RHS assembly." alt="" coords="234,1507,432,1551"/>
+<area shape="poly" id="edge24_Node000018_Node000061" title=" " alt="" coords="594,1200,550,1239,529,1263,511,1289,499,1318,494,1345,495,1396,495,1421,492,1446,482,1471,463,1496,434,1516,431,1512,459,1492,478,1468,487,1444,490,1421,489,1396,489,1345,494,1317,507,1286,525,1259,547,1235,591,1196"/>
+<area shape="rect" id="Node000062" href="$classGreenFLayered3D.html#a6c88af86169f8d148c3e9f4da77a77d0" title="Triangle–triangle D/K blocks assembly for all RWG pairs on two triangles." alt="" coords="224,919,442,947"/>
+<area shape="poly" id="edge25_Node000018_Node000062" title=" " alt="" coords="610,1148,587,1106,554,1055,511,1004,486,981,460,962,435,950,437,945,462,957,490,977,515,1000,558,1052,592,1103,615,1145"/>
+<area shape="rect" id="Node000063" href="$classSIEFormPMCHW.html#a2b301e815a6a5c0d81062935e5476278" title="Layer&#45;wise wave impedances Z_r." alt="" coords="233,971,432,999"/>
+<area shape="poly" id="edge26_Node000018_Node000063" title=" " alt="" coords="605,1150,546,1080,505,1043,460,1013,432,1001,434,996,462,1008,508,1039,550,1076,609,1146"/>
+<area shape="poly" id="edge31_Node000065_Node000020" title=" " alt="" coords="582,672,462,721,425,733,423,727,460,716,580,667"/>
+<area shape="poly" id="edge34_Node000065_Node000026" title=" " alt="" coords="605,676,545,734,505,765,462,790,433,801,431,796,460,785,502,760,541,730,601,673"/>
+<area shape="poly" id="edge37_Node000065_Node000034" title=" " alt="" coords="611,678,587,715,553,759,511,803,462,841,439,853,437,848,460,836,507,799,548,755,582,712,607,675"/>
+<area shape="rect" id="Node000066" href="$classGreenFHom3DPer2D.html#ad219414131e33eb361fe2240be9612a0" title="Spatial part returning both normal and gradient." alt="" coords="219,333,447,378"/>
+<area shape="poly" id="edge29_Node000065_Node000066" title=" " alt="" coords="607,623,527,490,486,426,459,392,440,381,443,376,463,388,490,423,532,487,612,620"/>
+<area shape="rect" id="Node000067" href="$classGreenFHom3DPer2D.html#af034587a03115087737a86ed71b664f4" title="Spatial part returning ." alt="" coords="219,403,447,447"/>
+<area shape="poly" id="edge30_Node000065_Node000067" title=" " alt="" coords="607,623,582,586,548,543,507,499,460,462,437,450,439,445,462,457,511,495,553,539,587,583,611,620"/>
+<area shape="rect" id="Node000068" href="$classGreenFHom3DPer2D.html#a1bf2f1eb77a84b027b99ec75d31c8576" title="Spatial (real&#45;space images) part of Ewald sum." alt="" coords="209,471,457,499"/>
+<area shape="poly" id="edge32_Node000065_Node000068" title=" " alt="" coords="601,625,541,568,502,538,460,513,431,502,433,497,462,508,505,533,545,564,605,622"/>
+<area shape="rect" id="Node000069" href="$classGreenFHom3DPer2D.html#accc01158b08720b45256b17ed3536d8b" title="Spatial part for the smoothed scalar kernel ." alt="" coords="209,523,457,567"/>
+<area shape="poly" id="edge33_Node000065_Node000069" title=" " alt="" coords="580,631,460,582,423,571,425,565,462,577,582,626"/>
+<area shape="rect" id="Node000070" href="$classGreenFHom3DPer2D.html#a9e049d83cd897078023b76fb89558d31" title="Spatial part of the source&#45;gradient." alt="" coords="223,592,443,637"/>
+<area shape="poly" id="edge35_Node000065_Node000070" title=" " alt="" coords="553,643,443,630,443,625,553,638"/>
+<area shape="rect" id="Node000071" href="$classGreenFHom3DPer2D.html#a11d147713f81b9b9684aa9d39514a2c6" title="Spatial part of the smoothed source&#45;gradient ." alt="" coords="223,661,443,706"/>
+<area shape="poly" id="edge36_Node000065_Node000071" title=" " alt="" coords="553,660,443,673,443,668,553,655"/>
+<area shape="rect" id="Node000073" href="$classSimJob.html#a83d402c189aeefdce43afbd3cb66f709" title="Parse a full &#160;block from the already&#45;open JobParser." alt="" coords="252,1575,414,1603"/>
+<area shape="poly" id="edge39_Node000072_Node000073" title=" " alt="" coords="531,1451,511,1463,499,1475,493,1487,488,1513,482,1540,475,1553,463,1566,440,1579,414,1587,413,1582,437,1574,459,1562,471,1550,477,1538,483,1512,488,1485,495,1472,507,1459,528,1446"/>
+<area shape="rect" id="Node000079" href="$classSimJob.html#adba2c6ff445d17b3d75443f94a7de5eb" title="Parse one &#160;(incident specification + label)." alt="" coords="230,1627,436,1655"/>
+<area shape="poly" id="edge40_Node000072_Node000079" title=" " alt="" coords="531,1449,511,1463,496,1481,489,1499,488,1538,486,1577,478,1597,463,1616,437,1632,435,1628,459,1612,474,1595,481,1576,482,1538,484,1498,492,1478,507,1459,528,1445"/>
+<area shape="rect" id="Node000083" href="$classSimJob.html#a201222576f4e7d4dba3372d1f0615765" title="Net time&#45;averaged power crossing the domain&#39;s surface." alt="" coords="276,1679,390,1707"/>
+<area shape="poly" id="edge44_Node000082_Node000083" title=" " alt="" coords="553,1603,510,1619,496,1631,487,1643,478,1656,462,1669,427,1683,391,1691,390,1686,425,1678,460,1664,474,1653,483,1640,492,1627,508,1615,551,1598"/>
+<area shape="poly" id="edge48_Node000085_Node000088" title=" " alt="" coords="561,1708,417,1733,416,1728,561,1703"/>
+<area shape="poly" id="edge50_Node000089_Node000092" title=" " alt="" coords="573,1803,450,1814,449,1808,573,1798"/>
+<area shape="poly" id="edge56_Node000097_Node000059" title=" " alt="" coords="513,1351,433,1370,432,1365,512,1346"/>
+<area shape="poly" id="edge57_Node000097_Node000060" title=" " alt="" coords="517,1355,511,1359,495,1375,488,1392,479,1410,463,1427,437,1441,435,1436,459,1423,475,1407,483,1390,491,1372,507,1355,514,1350"/>
+<area shape="poly" id="edge58_Node000097_Node000061" title=" " alt="" coords="514,1356,511,1359,498,1375,491,1392,488,1426,484,1461,477,1479,463,1496,434,1515,431,1511,459,1492,472,1476,479,1460,483,1426,486,1390,493,1373,507,1355,511,1352"/>
+</map>

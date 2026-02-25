@@ -1,0 +1,33 @@
+<map id="LayeredMediaUtils.cpp" name="LayeredMediaUtils.cpp">
+<area shape="rect" id="Node000001" title="Implementation for the LayeredMediaUtils class." alt="" coords="444,5,614,33"/>
+<area shape="rect" id="Node000002" href="$LayeredMediaUtils_8h.html" title="This header declares utility structures and algorithms used throughout the layered&#45;media scattering s..." alt="" coords="204,81,359,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="486,36,341,79,339,74,484,31"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="383,81,467,109"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="512,36,457,74,454,70,509,31"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="492,81,566,109"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="532,34,532,65,526,65,526,34"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="590,81,714,109"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="552,31,618,71,616,75,550,36"/>
+<area shape="rect" id="Node000016" title=" " alt="" coords="737,81,852,109"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="577,31,734,74,732,79,576,36"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,157,56,184"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="233,112,71,159,70,153,232,107"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="80,157,165,184"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="254,112,165,152,163,147,252,107"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="189,157,275,184"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="275,111,251,145,247,142,270,108"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="299,157,362,184"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="292,108,315,142,311,145,288,111"/>
+<area shape="rect" id="Node000007" href="$globals_8h.html" title="Global numerical constants, fundamental types, and simple macros." alt="" coords="386,157,467,184"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="308,107,388,147,386,152,306,112"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="490,157,563,184"/>
+<area shape="poly" id="edge11_Node000002_Node000012" title=" " alt="" coords="326,107,476,151,475,157,324,112"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="170,232,267,260"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="390,187,271,229,269,224,388,182"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="291,232,412,260"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="415,187,378,223,374,219,411,183"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="437,232,565,260"/>
+<area shape="poly" id="edge9_Node000007_Node000010" title=" " alt="" coords="442,183,479,219,475,223,438,187"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="589,232,666,260"/>
+<area shape="poly" id="edge10_Node000007_Node000011" title=" " alt="" coords="463,182,579,224,577,229,462,187"/>
+</map>

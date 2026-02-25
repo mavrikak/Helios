@@ -1,0 +1,20 @@
+<map id="Domain::Mu" name="Domain::Mu">
+<area shape="rect" id="Node000001" title="Relative permeability at a spatial location." alt="" coords="938,84,1038,112"/>
+<area shape="rect" id="Node000002" href="$classDomain.html#ae1e6975d3ddc5fe177020d447673fdf7" title="Secondary (scattered) electric field at a point from the solution vector." alt="" coords="731,57,873,85"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="922,91,873,84,874,79,923,86"/>
+<area shape="rect" id="Node000008" href="$classDomain.html#a1d339cb7979c5b2d03d069fc09b40696" title="Secondary fields &#160;at a point." alt="" coords="714,109,890,137"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="923,109,891,114,890,108,922,104"/>
+<area shape="rect" id="Node000003" href="$classSimJob.html#a746e46ef2aa6843c2f4da96e472c75a3" title="Incident and secondary &#160;at pos (domain auto&#45;detected)." alt="" coords="535,5,649,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="727,56,649,36,650,31,729,50"/>
+<area shape="rect" id="Node000007" href="$classSimJob.html#a10e94801726e68c660938659856c75b2" title="Incident and secondary &#160;at pos with known containing domain." alt="" coords="535,57,649,85"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="715,74,649,74,649,68,715,68"/>
+<area shape="rect" id="Node000004" href="$classSimJob.html#aa492cf9e3639f2dfa91e36364a76729a" title="Thread worker to evaluate fields over posvec in parallel." alt="" coords="289,57,470,85"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="521,39,440,59,439,54,520,34"/>
+<area shape="rect" id="Node000005" href="$classSimJob.html#a20b37e2e0aa2502a3ec465a5705b1774" title="Evaluate fields on a set of points read from a file." alt="" coords="108,57,241,85"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="274,74,242,74,242,68,274,68"/>
+<area shape="rect" id="Node000006" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Main driver routine for the HELIOS SIE simulation program." alt="" coords="5,57,60,85"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="92,74,60,74,60,68,92,68"/>
+<area shape="rect" id="Node000009" href="$classSimJob.html#a24f10b7bb14c9181341d07a783e00214" title="Return both , &#160;incident and secondary pairs at pos." alt="" coords="518,109,666,137"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="698,126,666,126,666,120,698,120"/>
+<area shape="poly" id="edge9_Node000009_Node000004" title=" " alt="" coords="517,108,439,88,440,83,518,102"/>
+</map>

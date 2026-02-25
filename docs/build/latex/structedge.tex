@@ -1,0 +1,86 @@
+\doxysection{edge Struct Reference}
+\hypertarget{structedge}{}\label{structedge}\index{edge@{edge}}
+
+
+Mesh edge record (unique and unoriented for membership; oriented for vectors).  
+
+
+
+
+{\ttfamily \#include $<$Surface\+Mesh.\+h$>$}
+
+
+
+Collaboration diagram for edge\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=157pt]{structedge__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structedge_a8a0de0171ae4f1bc664e1a1fb80c6863}{node1}}
+\begin{DoxyCompactList}\small\item\em Pointer to 1st node within the mesh node array. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structedge_a2588830cb8c3f4343b7c5d4b33c4d8a0}{node2}}
+\begin{DoxyCompactList}\small\item\em Pointer to 2nd node within the mesh node array. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{structedge_a67268df2e3a3c8671f5479d7b1d4abb7}{edge\+Length}}
+\begin{DoxyCompactList}\small\item\em cached Euclidean length \texorpdfstring{$\vert$}{|}node2 -\/ node1\texorpdfstring{$\vert$}{|} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Mesh edge record (unique and unoriented for membership; oriented for vectors). 
+
+Definition at line \mbox{\hyperlink{SurfaceMesh_8h_source_l00027}{27}} of file \mbox{\hyperlink{SurfaceMesh_8h_source}{Surface\+Mesh.\+h}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structedge_a67268df2e3a3c8671f5479d7b1d4abb7}\index{edge@{edge}!edgeLength@{edgeLength}}
+\index{edgeLength@{edgeLength}!edge@{edge}}
+\doxysubsubsection{\texorpdfstring{edgeLength}{edgeLength}}
+{\footnotesize\ttfamily \label{structedge_a67268df2e3a3c8671f5479d7b1d4abb7} 
+double edge\+::edge\+Length}
+
+
+
+cached Euclidean length \texorpdfstring{$\vert$}{|}node2 -\/ node1\texorpdfstring{$\vert$}{|} 
+
+
+
+Definition at line \mbox{\hyperlink{SurfaceMesh_8h_source_l00030}{30}} of file \mbox{\hyperlink{SurfaceMesh_8h_source}{Surface\+Mesh.\+h}}.
+
+\Hypertarget{structedge_a8a0de0171ae4f1bc664e1a1fb80c6863}\index{edge@{edge}!node1@{node1}}
+\index{node1@{node1}!edge@{edge}}
+\doxysubsubsection{\texorpdfstring{node1}{node1}}
+{\footnotesize\ttfamily \label{structedge_a8a0de0171ae4f1bc664e1a1fb80c6863} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\texorpdfstring{$\ast$}{*} edge\+::node1}
+
+
+
+Pointer to 1st node within the mesh node array. 
+
+
+
+Definition at line \mbox{\hyperlink{SurfaceMesh_8h_source_l00028}{28}} of file \mbox{\hyperlink{SurfaceMesh_8h_source}{Surface\+Mesh.\+h}}.
+
+\Hypertarget{structedge_a2588830cb8c3f4343b7c5d4b33c4d8a0}\index{edge@{edge}!node2@{node2}}
+\index{node2@{node2}!edge@{edge}}
+\doxysubsubsection{\texorpdfstring{node2}{node2}}
+{\footnotesize\ttfamily \label{structedge_a2588830cb8c3f4343b7c5d4b33c4d8a0} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\texorpdfstring{$\ast$}{*} edge\+::node2}
+
+
+
+Pointer to 2nd node within the mesh node array. 
+
+
+
+Definition at line \mbox{\hyperlink{SurfaceMesh_8h_source_l00029}{29}} of file \mbox{\hyperlink{SurfaceMesh_8h_source}{Surface\+Mesh.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{SurfaceMesh_8h}{Surface\+Mesh.\+h}}\end{DoxyCompactItemize}

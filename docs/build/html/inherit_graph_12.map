@@ -1,0 +1,9 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$classIncidentField.html" title="Abstract base for incident fields (excitations) used in SIE." alt="" coords="5,57,110,85"/>
+<area shape="rect" id="Node000001" href="$classDipole.html" title="Point electric dipole excitation." alt="" coords="173,5,236,33"/>
+<area shape="poly" id="edge11_Node000000_Node000001" title=" " alt="" coords="112,49,171,28,173,33,114,54"/>
+<area shape="rect" id="Node000002" href="$classGaussian.html" title="Paraxial Gaussian beam illumination (homogeneous medium)." alt="" coords="164,57,245,85"/>
+<area shape="poly" id="edge12_Node000000_Node000002" title=" " alt="" coords="125,68,163,68,163,74,125,74"/>
+<area shape="rect" id="Node000003" href="$classPlaneWave.html" title="Models a plane wave as an incident field in homogeneous or layered media." alt="" coords="158,109,251,137"/>
+<area shape="poly" id="edge13_Node000000_Node000003" title=" " alt="" coords="114,88,164,106,162,111,112,93"/>
+</map>

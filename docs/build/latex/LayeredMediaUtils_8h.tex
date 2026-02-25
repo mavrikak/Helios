@@ -1,0 +1,69 @@
+\doxysection{Layered\+Media\+Utils.\+h File Reference}
+\hypertarget{LayeredMediaUtils_8h}{}\label{LayeredMediaUtils_8h}\index{LayeredMediaUtils.h@{LayeredMediaUtils.h}}
+
+
+This header declares utility structures and algorithms used throughout the layered-\/media scattering solver.  
+
+
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include "{}globals.\+h"{}}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+Include dependency graph for Layered\+Media\+Utils.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LayeredMediaUtils_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LayeredMediaUtils_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structPositionGroup}{Position\+Group}}
+\begin{DoxyCompactList}\small\item\em Structure representing a group of spatial positions categorized by layer indices. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structRange}{Range}}
+\begin{DoxyCompactList}\small\item\em Structure representing the spatial ranges in a layered medium tabulation. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structGrid}{Grid}}
+\begin{DoxyCompactList}\small\item\em Structure representing the grid points used for tabulation in a layered medium. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structlayeredCoords}{layered\+Coords}}
+\begin{DoxyCompactList}\small\item\em Structure representing stratified coordinates in a layered medium. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structData2D}{Data2D}}
+\begin{DoxyCompactList}\small\item\em Structure representing the 2D spatial data used for tabulation in a layered medium. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structData3D}{Data3D}}
+\begin{DoxyCompactList}\small\item\em Structure representing the 3D spatial data used for tabulation in a layered medium. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structCoeffsIntra}{Coeffs\+Intra}}
+\begin{DoxyCompactList}\small\item\em Interpolation coefficients of the intra-\/layer interactions of Green\textquotesingle{}s function. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structCoeffsInter}{Coeffs\+Inter}}
+\begin{DoxyCompactList}\small\item\em Interpolation coefficients of the inter-\/layer interactions of Green\textquotesingle{}s function. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structIntegrandIntra}{Integrand\+Intra}}
+\begin{DoxyCompactList}\small\item\em Structure representing the integrand of the intra-\/layer interactions of Green\textquotesingle{}s function. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structIntegrandInter}{Integrand\+Inter}}
+\begin{DoxyCompactList}\small\item\em Structure representing the integrand of the inter-\/layer interactions of Green\textquotesingle{}s function. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classLayeredMediaUtils}{Layered\+Media\+Utils}}
+\begin{DoxyCompactList}\small\item\em Utility class for calculations related to layered media. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This header declares utility structures and algorithms used throughout the layered-\/media scattering solver. 
+
+The utilities cover\+:
+\begin{DoxyItemize}
+\item Indexing of layers from Cartesian z (Get\+Layer\+Index)
+\item Fresnel coefficients, transfer and propagation matrices for TE/\+TM (Fresnel\+Coeff, Interface\+Transfer\+Matrix, propagation\+Matrix, total\+Transfer\+Matrix)
+\item Total reflection/transmission of a multilayer stack (total\+Fresnel\+Coeffs)
+\item Source/observation coordinate transforms for the fast-\/tabulated Green\textquotesingle{}s functions (cartesian\+To\+Layered\+Tab, cartesian\+To\+Layered\+QS)
+\item Discrete range slicing and gridding for tabulation (slice, compute\+Grid)
+\item Reading helper utilities for test data (read\+Positions\+From\+File) See the .cpp for algorithmic details and numerical conventions. 
+\end{DoxyItemize}
+
+Definition in file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+

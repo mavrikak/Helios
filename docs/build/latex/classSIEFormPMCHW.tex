@@ -1,0 +1,619 @@
+\doxysection{SIEForm\+PMCHW Class Reference}
+\hypertarget{classSIEFormPMCHW}{}\label{classSIEFormPMCHW}\index{SIEFormPMCHW@{SIEFormPMCHW}}
+
+
+PMCHWT formulation for SIE in homogeneous and layered media.  
+
+
+
+
+{\ttfamily \#include $<$SIEForm\+PMCHW.\+h$>$}
+
+
+
+Inheritance diagram for SIEForm\+PMCHW\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classSIEFormPMCHW__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for SIEForm\+PMCHW\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classSIEFormPMCHW__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSIEFormPMCHW_a2d13661bd0a92a339d703ebf5c93bd2b}{SIEForm\+PMCHW}} (std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} $>$ \texorpdfstring{$\ast$}{*}in\+RWGFuns, \mbox{\hyperlink{classGreenF}{GreenF}} \texorpdfstring{$\ast$}{*}in\+Grn\+Fun, std\+::vector$<$ \mbox{\hyperlink{classIncidentField}{Incident\+Field}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*}in\+Inc\+Fields, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} in\+Vac\+Wavelength, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} in\+Epsilon, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} in\+Mu)
+\begin{DoxyCompactList}\small\item\em Construct PMCHWT for a homogeneous medium. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSIEFormPMCHW_ae2ae42499fdc0816fc7bef695f6ec488}{SIEForm\+PMCHW}} (std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} $>$ \texorpdfstring{$\ast$}{*}in\+RWGFuns, \mbox{\hyperlink{classGreenF}{GreenF}} \texorpdfstring{$\ast$}{*}in\+Grn\+Fun, std\+::vector$<$ \mbox{\hyperlink{classIncidentField}{Incident\+Field}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*}in\+Inc\+Fields, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} in\+Vac\+Wavelength, \mbox{\hyperlink{classGreenF}{GreenF}} \texorpdfstring{$\ast$}{*}in\+Grn\+Fun\+Layered, const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&in\+Epsilon, const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&in\+Mu, const std\+::vector$<$ double $>$ \&in\+ZVals, int in\+Mid\+Layer\+Index=0)
+\begin{DoxyCompactList}\small\item\em Construct PMCHWT for a layered medium. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSIEFormPMCHW_a65dca87d3c16fbf2c82200d597e18417}{Fill\+LSEMatrix}} (blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 2 $>$ \texorpdfstring{$\ast$}{*}lse\+Matrix)
+\begin{DoxyCompactList}\small\item\em Assemble the PMCHWT system matrix for a homogeneous/layered medium. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSIEFormPMCHW_aa9f13c8634ee9f20c1839a91da17b4a1}{Fill\+LSEMatrix\+Parallel}} (blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 2 $>$ \texorpdfstring{$\ast$}{*}lse\+Matrix, const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*} $>$ $>$ \&rwg\+Per\+Tri, int \&index, std\+::mutex \texorpdfstring{$\ast$}{*}mut)
+\begin{DoxyCompactList}\small\item\em Worker for parallel homogeneous/layered media assembly (triangle-\/group partition). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSIEFormPMCHW_a6b8755f234cd116ae3f3a44cacf85813}{Fill\+LSEMatrix\+And\+Gradient}} (blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 2 $>$ \texorpdfstring{$\ast$}{*}lse\+Matrix, blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 2 $>$ \texorpdfstring{$\ast$}{*}lse\+Gradient\+Matrix\mbox{[}3\mbox{]})
+\begin{DoxyCompactList}\small\item\em Assemble A and its gradients w.\+r.\+t. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSIEFormPMCHW_a1039869e349d42d354a1b354ee09767b}{Fill\+LSEMatrix\+And\+Gradient\+Parallel}} (blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 2 $>$ \texorpdfstring{$\ast$}{*}lse\+Matrix, blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 2 $>$ \texorpdfstring{$\ast$}{*}lse\+Gradient\+Matrix\mbox{[}3\mbox{]}, const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*} $>$ $>$ \&rwg\+Per\+Tri, const std\+::vector$<$ int $>$ \&bordertype, int \&index, std\+::mutex \texorpdfstring{$\ast$}{*}mut)
+\begin{DoxyCompactList}\small\item\em Worker for parallel assembly of A and gradients (homogeneous). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSIEFormPMCHW_ad44f68bc82374b4d26a60f18a98ced6d}{Fill\+LSEVector}} (blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 1 $>$ \texorpdfstring{$\ast$}{*}lse\+Vector)
+\begin{DoxyCompactList}\small\item\em Assemble PMCHWT right-\/hand side vector for current incident fields. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSIEFormPMCHW_acae01d25783587fe8197f3b69811b1f7}{Get\+Layer\+Index}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} pos) const
+\begin{DoxyCompactList}\small\item\em Return the layer index for a 3D position (based on z). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classSIEForm}{SIEForm}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSIEForm_a30c5e86bcde04c2ea9ffb83f4ae124b6}{SIEForm}} (std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} $>$ \texorpdfstring{$\ast$}{*}in\+RWGFuns, \mbox{\hyperlink{classGreenF}{GreenF}} \texorpdfstring{$\ast$}{*}in\+Grn\+Fun, std\+::vector$<$ \mbox{\hyperlink{classIncidentField}{Incident\+Field}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*}in\+Inc\+Fields, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} in\+Vac\+Wavelength)
+\begin{DoxyCompactList}\small\item\em Construct the SIE formulation context. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classSIEForm_af1377ff161e001f3bdb08d8a789ede67}{\texorpdfstring{$\sim$}{\string~}\+SIEForm}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classSIEFormPMCHW_a9d91e407f50e49fd90dd1bc25db22532}{Assign\+Threads}} (int t)
+\begin{DoxyCompactList}\small\item\em Configure how many threads to use for parallel assembly. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classSIEFormPMCHW_adf804d1025aebf0dcdfd709bb231d708}{Zr}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} e, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} m)
+\begin{DoxyCompactList}\small\item\em Wave impedance in homogeneous medium. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{classSIEFormPMCHW_a2b301e815a6a5c0d81062935e5476278}{Zr\+Layered}} (const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&e, const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&m)
+\begin{DoxyCompactList}\small\item\em Layer-\/wise wave impedances Z\+\_\+r. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classSIEFormPMCHW_ae433154437f25a5dfcecbcc22549203d}{epsilon}}
+\begin{DoxyCompactList}\small\item\em Relative permittivity for homogeneous case. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classSIEFormPMCHW_af072caaa80e55f3c6676ecda58e32666}{mu}}
+\begin{DoxyCompactList}\small\item\em Relative permeability for homogeneous case. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{classSIEFormPMCHW_a5c5f7bb255b5c69e723795d4b8dc67b5}{epsilon\+Layered}}
+\begin{DoxyCompactList}\small\item\em Layer-\/wise relative permittivities. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{classSIEFormPMCHW_a21a8a8047ae8a4a20b0f9c82b81b7aad}{mu\+Layered}}
+\begin{DoxyCompactList}\small\item\em Layer-\/wise relative permeabilities. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classSIEFormPMCHW_a905a0dbdfbcdecabe5c9ca04c2a41233}{z\+Vals\+Interfaces}}
+\begin{DoxyCompactList}\small\item\em Interface z-\/positions (ascending) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSIEFormPMCHW_afba0d187de12c7fdc66b1a3c0c6e2e6e}{mid\+Layer\+Index}}
+\begin{DoxyCompactList}\small\item\em Layer index of the mesh middle point. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGreenF}{GreenF}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSIEFormPMCHW_aa50f0ed0ba3fd971157b05002c6a2214}{grn\+Fun\+Layered}}
+\begin{DoxyCompactList}\small\item\em Layered Green\textquotesingle{}s function provider. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classSIEForm}{SIEForm}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSIEForm_ad9582e70410cd1489daef4fd568fcbe9}{rwg\+Funs}}
+\begin{DoxyCompactList}\small\item\em Pointer to collection of RWG basis functions. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGreenF}{GreenF}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSIEForm_af0daa3e52b4bd7fdedf1d532a40031ad}{grn\+Fun}}
+\begin{DoxyCompactList}\small\item\em Green\textquotesingle{}s function provider (homogeneous/layered) \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classIncidentField}{Incident\+Field}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSIEForm_abe76634df0190690fb61f44aecc49b70}{inc\+Fields}}
+\begin{DoxyCompactList}\small\item\em Incident field(s) used to build excitation vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classSIEForm_a83bf09002e4af4e392a75054a8a8c8ae}{omega}}
+\begin{DoxyCompactList}\small\item\em Angular frequency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{classSIEFormPMCHW_afefc288a5c108896f375c14bd734e474}{threads}} = 1
+\begin{DoxyCompactList}\small\item\em Number of worker threads for parallel assembly. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+PMCHWT formulation for SIE in homogeneous and layered media. 
+
+Uses RWG basis/testing and Green\textquotesingle{}s function back-\/ends (homogeneous and optionally layered) to assemble the block matrix\+:
+
+\[\begin{bmatrix}
+\mathrm{j}\,\omega\,\mu\,\mathbf{D} & \,\mathbf{K} \\
+-\,\mathbf{K} & \mathrm{j}\,\omega\,\varepsilon\,\mathbf{D}
+\end{bmatrix}
+\begin{bmatrix}
+\mathbf{J} \\[2pt] \mathbf{M}
+\end{bmatrix}
+=
+\begin{bmatrix}
+\mathbf{q}^\mathbf{E}_{\mathrm{inc}} \\[2pt] \mathbf{q}^\mathbf{H}_{\mathrm{inc}}
+\end{bmatrix},
+\]
+
+where blocks are populated by double-\/surface integrals of Green kernels and their curls/gradients, evaluated with RWG functions on mesh triangles. 
+
+Definition at line \mbox{\hyperlink{SIEFormPMCHW_8h_source_l00051}{51}} of file \mbox{\hyperlink{SIEFormPMCHW_8h_source}{SIEForm\+PMCHW.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classSIEFormPMCHW_a2d13661bd0a92a339d703ebf5c93bd2b}\index{SIEFormPMCHW@{SIEFormPMCHW}!SIEFormPMCHW@{SIEFormPMCHW}}
+\index{SIEFormPMCHW@{SIEFormPMCHW}!SIEFormPMCHW@{SIEFormPMCHW}}
+\doxysubsubsection{\texorpdfstring{SIEFormPMCHW()}{SIEFormPMCHW()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classSIEFormPMCHW_a2d13661bd0a92a339d703ebf5c93bd2b} 
+SIEForm\+PMCHW\+::\+SIEForm\+PMCHW (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} $>$ \texorpdfstring{$\ast$}{*}}]{in\+RWGFuns}{, }\item[{\mbox{\hyperlink{classGreenF}{GreenF}} \texorpdfstring{$\ast$}{*}}]{in\+Grn\+Fun}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{classIncidentField}{Incident\+Field}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*}}]{in\+Inc\+Fields}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{in\+Vac\+Wavelength}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{in\+Epsilon}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{in\+Mu}{}\end{DoxyParamCaption})}
+
+
+
+Construct PMCHWT for a homogeneous medium. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in\+RWGFuns} & RWG basis functions (owned elsewhere). \\
+\hline
+{\em in\+Grn\+Fun} & Homogeneous Green\textquotesingle{}s function. \\
+\hline
+{\em in\+Inc\+Fields} & Incident fields used to build the RHS. \\
+\hline
+{\em in\+Vac\+Wavelength} & Vacuum wavelength. \\
+\hline
+{\em in\+Epsilon} & Relative permittivity. \\
+\hline
+{\em in\+Mu} & Relative permeability. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{SIEFormPMCHW_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{SIEFormPMCHW_8cpp_source}{SIEForm\+PMCHW.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSIEFormPMCHW_a2d13661bd0a92a339d703ebf5c93bd2b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSIEFormPMCHW_ae2ae42499fdc0816fc7bef695f6ec488}\index{SIEFormPMCHW@{SIEFormPMCHW}!SIEFormPMCHW@{SIEFormPMCHW}}
+\index{SIEFormPMCHW@{SIEFormPMCHW}!SIEFormPMCHW@{SIEFormPMCHW}}
+\doxysubsubsection{\texorpdfstring{SIEFormPMCHW()}{SIEFormPMCHW()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classSIEFormPMCHW_ae2ae42499fdc0816fc7bef695f6ec488} 
+SIEForm\+PMCHW\+::\+SIEForm\+PMCHW (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} $>$ \texorpdfstring{$\ast$}{*}}]{in\+RWGFuns}{, }\item[{\mbox{\hyperlink{classGreenF}{GreenF}} \texorpdfstring{$\ast$}{*}}]{in\+Grn\+Fun}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{classIncidentField}{Incident\+Field}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*}}]{in\+Inc\+Fields}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{in\+Vac\+Wavelength}{, }\item[{\mbox{\hyperlink{classGreenF}{GreenF}} \texorpdfstring{$\ast$}{*}}]{in\+Grn\+Fun\+Layered}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&}]{in\+Epsilon}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&}]{in\+Mu}{, }\item[{const std\+::vector$<$ double $>$ \&}]{in\+ZVals}{, }\item[{int}]{in\+Mid\+Layer\+Index}{ = {\ttfamily 0}}\end{DoxyParamCaption})}
+
+
+
+Construct PMCHWT for a layered medium. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in\+RWGFuns} & RWG basis functions (owned elsewhere). \\
+\hline
+{\em in\+Grn\+Fun} & Homogeneous Green\textquotesingle{}s function (for same-\/layer cases). \\
+\hline
+{\em in\+Inc\+Fields} & Incident fields used to build the RHS. \\
+\hline
+{\em in\+Vac\+Wavelength} & Vacuum wavelength. \\
+\hline
+{\em in\+Grn\+Fun\+Layered} & Layered Green\textquotesingle{}s function back-\/end. \\
+\hline
+{\em in\+Epsilon} & Layer-\/wise relative permittivity values. \\
+\hline
+{\em in\+Mu} & Layer-\/wise relative permeability values. \\
+\hline
+{\em in\+ZVals} & Interface z-\/positions (ascending). \\
+\hline
+{\em in\+Mid\+Layer\+Index} & Layer index of the mesh middle point. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{SIEFormPMCHW_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{SIEFormPMCHW_8cpp_source}{SIEForm\+PMCHW.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSIEFormPMCHW_ae2ae42499fdc0816fc7bef695f6ec488_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSIEFormPMCHW_a9d91e407f50e49fd90dd1bc25db22532}\index{SIEFormPMCHW@{SIEFormPMCHW}!AssignThreads@{AssignThreads}}
+\index{AssignThreads@{AssignThreads}!SIEFormPMCHW@{SIEFormPMCHW}}
+\doxysubsubsection{\texorpdfstring{AssignThreads()}{AssignThreads()}}
+{\footnotesize\ttfamily \label{classSIEFormPMCHW_a9d91e407f50e49fd90dd1bc25db22532} 
+void SIEForm\+PMCHW\+::\+Assign\+Threads (\begin{DoxyParamCaption}\item[{int}]{t}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Configure how many threads to use for parallel assembly. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Number of threads (\texorpdfstring{$>$}{>}=1). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{SIEFormPMCHW_8cpp_source_l00474}{474}} of file \mbox{\hyperlink{SIEFormPMCHW_8cpp_source}{SIEForm\+PMCHW.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{classSIEFormPMCHW_a9d91e407f50e49fd90dd1bc25db22532_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSIEFormPMCHW_a65dca87d3c16fbf2c82200d597e18417}\index{SIEFormPMCHW@{SIEFormPMCHW}!FillLSEMatrix@{FillLSEMatrix}}
+\index{FillLSEMatrix@{FillLSEMatrix}!SIEFormPMCHW@{SIEFormPMCHW}}
+\doxysubsubsection{\texorpdfstring{FillLSEMatrix()}{FillLSEMatrix()}}
+{\footnotesize\ttfamily \label{classSIEFormPMCHW_a65dca87d3c16fbf2c82200d597e18417} 
+int SIEForm\+PMCHW\+::\+Fill\+LSEMatrix (\begin{DoxyParamCaption}\item[{blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 2 $>$ \texorpdfstring{$\ast$}{*}}]{lse\+Matrix}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Assemble the PMCHWT system matrix for a homogeneous/layered medium. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lse\+Matrix} & Output A (2Nx2N). Caller must size appropriately. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success.
+\end{DoxyReturn}
+Partitions RWGs by owner triangle, spawns (threads-\/1) workers plus the current thread to call Fill\+LSEMatrix\+Parallel. Uses per-\/row mutexes to update matrix blocks safely. 
+
+Implements \mbox{\hyperlink{classSIEForm_adb9adfe191240392dec2e902810f64d7}{SIEForm}}.
+
+
+
+Definition at line \mbox{\hyperlink{SIEFormPMCHW_8cpp_source_l00060}{60}} of file \mbox{\hyperlink{SIEFormPMCHW_8cpp_source}{SIEForm\+PMCHW.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSIEFormPMCHW_a65dca87d3c16fbf2c82200d597e18417_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSIEFormPMCHW_a6b8755f234cd116ae3f3a44cacf85813}\index{SIEFormPMCHW@{SIEFormPMCHW}!FillLSEMatrixAndGradient@{FillLSEMatrixAndGradient}}
+\index{FillLSEMatrixAndGradient@{FillLSEMatrixAndGradient}!SIEFormPMCHW@{SIEFormPMCHW}}
+\doxysubsubsection{\texorpdfstring{FillLSEMatrixAndGradient()}{FillLSEMatrixAndGradient()}}
+{\footnotesize\ttfamily \label{classSIEFormPMCHW_a6b8755f234cd116ae3f3a44cacf85813} 
+int SIEForm\+PMCHW\+::\+Fill\+LSEMatrix\+And\+Gradient (\begin{DoxyParamCaption}\item[{blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 2 $>$ \texorpdfstring{$\ast$}{*}}]{lse\+Matrix}{, }\item[{blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 2 $>$ \texorpdfstring{$\ast$}{*}}]{lse\+Gradient\+Matrix}{\mbox{[}3\mbox{]}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Assemble A and its gradients w.\+r.\+t. 
+
+3 geometry params (homogeneous). 
+\begin{DoxyParams}{Parameters}
+{\em lse\+Matrix} & Output A. \\
+\hline
+{\em lse\+Gradient\+Matrix} & Array of 3 gradient matrices. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success.
+\end{DoxyReturn}
+Triangles are grouped, and workers call Fill\+LSEMatrix\+And\+Gradient\+Parallel. Gradient contributions are computed only for boundary-\/type pairs that cross the 0–1 interface (as per existing code logic). 
+
+Implements \mbox{\hyperlink{classSIEForm_ac9e576744fb7aa010cf20a0e9a95b056}{SIEForm}}.
+
+
+
+Definition at line \mbox{\hyperlink{SIEFormPMCHW_8cpp_source_l00215}{215}} of file \mbox{\hyperlink{SIEFormPMCHW_8cpp_source}{SIEForm\+PMCHW.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSIEFormPMCHW_a6b8755f234cd116ae3f3a44cacf85813_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSIEFormPMCHW_a1039869e349d42d354a1b354ee09767b}\index{SIEFormPMCHW@{SIEFormPMCHW}!FillLSEMatrixAndGradientParallel@{FillLSEMatrixAndGradientParallel}}
+\index{FillLSEMatrixAndGradientParallel@{FillLSEMatrixAndGradientParallel}!SIEFormPMCHW@{SIEFormPMCHW}}
+\doxysubsubsection{\texorpdfstring{FillLSEMatrixAndGradientParallel()}{FillLSEMatrixAndGradientParallel()}}
+{\footnotesize\ttfamily \label{classSIEFormPMCHW_a1039869e349d42d354a1b354ee09767b} 
+int SIEForm\+PMCHW\+::\+Fill\+LSEMatrix\+And\+Gradient\+Parallel (\begin{DoxyParamCaption}\item[{blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 2 $>$ \texorpdfstring{$\ast$}{*}}]{lse\+Matrix}{, }\item[{blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 2 $>$ \texorpdfstring{$\ast$}{*}}]{lse\+Gradient\+Matrix}{\mbox{[}3\mbox{]}, }\item[{const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*} $>$ $>$ \&}]{rwg\+Per\+Tri}{, }\item[{const std\+::vector$<$ int $>$ \&}]{bordertype}{, }\item[{int \&}]{index}{, }\item[{std\+::mutex \texorpdfstring{$\ast$}{*}}]{mut}{}\end{DoxyParamCaption})}
+
+
+
+Worker for parallel assembly of A and gradients (homogeneous). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lse\+Matrix} & Output A (shared). \\
+\hline
+{\em lse\+Gradient\+Matrix} & Output gradient matrices (shared). \\
+\hline
+{\em rwg\+Per\+Tri} & Grouped RWG per triangle. \\
+\hline
+{\em bordertype} & Per-\/triangle boundary category used for gradient logic. \\
+\hline
+{\em index} & Shared index into {\ttfamily rwg\+Per\+Tri} (guarded). \\
+\hline
+{\em mut} & Row mutex array; last element guards {\ttfamily index}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success.
+\end{DoxyReturn}
+Gradient terms are only accumulated for triangle-\/pair types that meet the selector (bordertype\mbox{[}i\mbox{]} + bordertype\mbox{[}j\mbox{]} == 3), following existing logic. 
+
+Definition at line \mbox{\hyperlink{SIEFormPMCHW_8cpp_source_l00297}{297}} of file \mbox{\hyperlink{SIEFormPMCHW_8cpp_source}{SIEForm\+PMCHW.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSIEFormPMCHW_a1039869e349d42d354a1b354ee09767b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSIEFormPMCHW_aa9f13c8634ee9f20c1839a91da17b4a1}\index{SIEFormPMCHW@{SIEFormPMCHW}!FillLSEMatrixParallel@{FillLSEMatrixParallel}}
+\index{FillLSEMatrixParallel@{FillLSEMatrixParallel}!SIEFormPMCHW@{SIEFormPMCHW}}
+\doxysubsubsection{\texorpdfstring{FillLSEMatrixParallel()}{FillLSEMatrixParallel()}}
+{\footnotesize\ttfamily \label{classSIEFormPMCHW_aa9f13c8634ee9f20c1839a91da17b4a1} 
+int SIEForm\+PMCHW\+::\+Fill\+LSEMatrix\+Parallel (\begin{DoxyParamCaption}\item[{blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 2 $>$ \texorpdfstring{$\ast$}{*}}]{lse\+Matrix}{, }\item[{const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*} $>$ $>$ \&}]{rwg\+Per\+Tri}{, }\item[{int \&}]{index}{, }\item[{std\+::mutex \texorpdfstring{$\ast$}{*}}]{mut}{}\end{DoxyParamCaption})}
+
+
+
+Worker for parallel homogeneous/layered media assembly (triangle-\/group partition). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lse\+Matrix} & Output A (shared across workers; protected by row mutexes). \\
+\hline
+{\em rwg\+Per\+Tri} & RWG basis grouped by owner triangle. \\
+\hline
+{\em index} & Shared index into {\ttfamily rwg\+Per\+Tri} (atomic via mutex). \\
+\hline
+{\em mut} & Array of mutexes; last one guards {\ttfamily index}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SIEFormPMCHW_8cpp_source_l00115}{115}} of file \mbox{\hyperlink{SIEFormPMCHW_8cpp_source}{SIEForm\+PMCHW.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSIEFormPMCHW_aa9f13c8634ee9f20c1839a91da17b4a1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSIEFormPMCHW_aa9f13c8634ee9f20c1839a91da17b4a1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSIEFormPMCHW_ad44f68bc82374b4d26a60f18a98ced6d}\index{SIEFormPMCHW@{SIEFormPMCHW}!FillLSEVector@{FillLSEVector}}
+\index{FillLSEVector@{FillLSEVector}!SIEFormPMCHW@{SIEFormPMCHW}}
+\doxysubsubsection{\texorpdfstring{FillLSEVector()}{FillLSEVector()}}
+{\footnotesize\ttfamily \label{classSIEFormPMCHW_ad44f68bc82374b4d26a60f18a98ced6d} 
+int SIEForm\+PMCHW\+::\+Fill\+LSEVector (\begin{DoxyParamCaption}\item[{blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 1 $>$ \texorpdfstring{$\ast$}{*}}]{lse\+Vector}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Assemble PMCHWT right-\/hand side vector for current incident fields. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lse\+Vector} & Output b (size 2Nx1). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success.
+\end{DoxyReturn}
+For homogeneous media, uses Integrate\+E/\+IntegrateH; for layered media, uses Integrate\+Layered\+EandH to get matching contributions per RWG edge. 
+
+Implements \mbox{\hyperlink{classSIEForm_aa183795c25b9cd746109b8241d44c762}{SIEForm}}.
+
+
+
+Definition at line \mbox{\hyperlink{SIEFormPMCHW_8cpp_source_l00386}{386}} of file \mbox{\hyperlink{SIEFormPMCHW_8cpp_source}{SIEForm\+PMCHW.\+cpp}}.
+
+\Hypertarget{classSIEFormPMCHW_acae01d25783587fe8197f3b69811b1f7}\index{SIEFormPMCHW@{SIEFormPMCHW}!GetLayerIndex@{GetLayerIndex}}
+\index{GetLayerIndex@{GetLayerIndex}!SIEFormPMCHW@{SIEFormPMCHW}}
+\doxysubsubsection{\texorpdfstring{GetLayerIndex()}{GetLayerIndex()}}
+{\footnotesize\ttfamily \label{classSIEFormPMCHW_acae01d25783587fe8197f3b69811b1f7} 
+int SIEForm\+PMCHW\+::\+Get\+Layer\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{pos}{}\end{DoxyParamCaption}) const}
+
+
+
+Return the layer index for a 3D position (based on z). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & Cartesian position. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Layer index in \mbox{[}0...N\mbox{]}, using \doxylink{classSIEFormPMCHW_a905a0dbdfbcdecabe5c9ca04c2a41233}{z\+Vals\+Interfaces} with tolerance.
+\end{DoxyReturn}
+Indexing convention\+:
+\begin{DoxyItemize}
+\item 0 \+: below the first interface
+\item 1..N-\/1 \+: between interfaces i-\/1 and i
+\item N \+: above the last interface with a small tolerance on comparisons. 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{SIEFormPMCHW_8cpp_source_l00435}{435}} of file \mbox{\hyperlink{SIEFormPMCHW_8cpp_source}{SIEForm\+PMCHW.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSIEFormPMCHW_acae01d25783587fe8197f3b69811b1f7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSIEFormPMCHW_adf804d1025aebf0dcdfd709bb231d708}\index{SIEFormPMCHW@{SIEFormPMCHW}!Zr@{Zr}}
+\index{Zr@{Zr}!SIEFormPMCHW@{SIEFormPMCHW}}
+\doxysubsubsection{\texorpdfstring{Zr()}{Zr()}}
+{\footnotesize\ttfamily \label{classSIEFormPMCHW_adf804d1025aebf0dcdfd709bb231d708} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} SIEForm\+PMCHW\+::\+Zr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{e}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{m}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Wave impedance in homogeneous medium. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & Relative permittivity. \\
+\hline
+{\em m} & Relative permeability. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Wave impedance. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SIEFormPMCHW_8cpp_source_l00040}{40}} of file \mbox{\hyperlink{SIEFormPMCHW_8cpp_source}{SIEForm\+PMCHW.\+cpp}}.
+
+\Hypertarget{classSIEFormPMCHW_a2b301e815a6a5c0d81062935e5476278}\index{SIEFormPMCHW@{SIEFormPMCHW}!ZrLayered@{ZrLayered}}
+\index{ZrLayered@{ZrLayered}!SIEFormPMCHW@{SIEFormPMCHW}}
+\doxysubsubsection{\texorpdfstring{ZrLayered()}{ZrLayered()}}
+{\footnotesize\ttfamily \label{classSIEFormPMCHW_a2b301e815a6a5c0d81062935e5476278} 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ SIEForm\+PMCHW\+::\+Zr\+Layered (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&}]{e}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&}]{m}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Layer-\/wise wave impedances Z\+\_\+r. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & Vector of layer permittivities. \\
+\hline
+{\em m} & Vector of layer permeabilities. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of impedances per layer. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SIEFormPMCHW_8cpp_source_l00043}{43}} of file \mbox{\hyperlink{SIEFormPMCHW_8cpp_source}{SIEForm\+PMCHW.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSIEFormPMCHW_a2b301e815a6a5c0d81062935e5476278_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classSIEFormPMCHW_ae433154437f25a5dfcecbcc22549203d}\index{SIEFormPMCHW@{SIEFormPMCHW}!epsilon@{epsilon}}
+\index{epsilon@{epsilon}!SIEFormPMCHW@{SIEFormPMCHW}}
+\doxysubsubsection{\texorpdfstring{epsilon}{epsilon}}
+{\footnotesize\ttfamily \label{classSIEFormPMCHW_ae433154437f25a5dfcecbcc22549203d} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} SIEForm\+PMCHW\+::epsilon\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Relative permittivity for homogeneous case. 
+
+
+
+Definition at line \mbox{\hyperlink{SIEFormPMCHW_8h_source_l00054}{54}} of file \mbox{\hyperlink{SIEFormPMCHW_8h_source}{SIEForm\+PMCHW.\+h}}.
+
+\Hypertarget{classSIEFormPMCHW_a5c5f7bb255b5c69e723795d4b8dc67b5}\index{SIEFormPMCHW@{SIEFormPMCHW}!epsilonLayered@{epsilonLayered}}
+\index{epsilonLayered@{epsilonLayered}!SIEFormPMCHW@{SIEFormPMCHW}}
+\doxysubsubsection{\texorpdfstring{epsilonLayered}{epsilonLayered}}
+{\footnotesize\ttfamily \label{classSIEFormPMCHW_a5c5f7bb255b5c69e723795d4b8dc67b5} 
+std\+::vector$<$\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}$>$ SIEForm\+PMCHW\+::epsilon\+Layered\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Layer-\/wise relative permittivities. 
+
+
+
+Definition at line \mbox{\hyperlink{SIEFormPMCHW_8h_source_l00066}{66}} of file \mbox{\hyperlink{SIEFormPMCHW_8h_source}{SIEForm\+PMCHW.\+h}}.
+
+\Hypertarget{classSIEFormPMCHW_aa50f0ed0ba3fd971157b05002c6a2214}\index{SIEFormPMCHW@{SIEFormPMCHW}!grnFunLayered@{grnFunLayered}}
+\index{grnFunLayered@{grnFunLayered}!SIEFormPMCHW@{SIEFormPMCHW}}
+\doxysubsubsection{\texorpdfstring{grnFunLayered}{grnFunLayered}}
+{\footnotesize\ttfamily \label{classSIEFormPMCHW_aa50f0ed0ba3fd971157b05002c6a2214} 
+\mbox{\hyperlink{classGreenF}{GreenF}}\texorpdfstring{$\ast$}{*} SIEForm\+PMCHW\+::grn\+Fun\+Layered\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Layered Green\textquotesingle{}s function provider. 
+
+
+
+Definition at line \mbox{\hyperlink{SIEFormPMCHW_8h_source_l00070}{70}} of file \mbox{\hyperlink{SIEFormPMCHW_8h_source}{SIEForm\+PMCHW.\+h}}.
+
+\Hypertarget{classSIEFormPMCHW_afba0d187de12c7fdc66b1a3c0c6e2e6e}\index{SIEFormPMCHW@{SIEFormPMCHW}!midLayerIndex@{midLayerIndex}}
+\index{midLayerIndex@{midLayerIndex}!SIEFormPMCHW@{SIEFormPMCHW}}
+\doxysubsubsection{\texorpdfstring{midLayerIndex}{midLayerIndex}}
+{\footnotesize\ttfamily \label{classSIEFormPMCHW_afba0d187de12c7fdc66b1a3c0c6e2e6e} 
+int SIEForm\+PMCHW\+::mid\+Layer\+Index\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Layer index of the mesh middle point. 
+
+
+
+Definition at line \mbox{\hyperlink{SIEFormPMCHW_8h_source_l00069}{69}} of file \mbox{\hyperlink{SIEFormPMCHW_8h_source}{SIEForm\+PMCHW.\+h}}.
+
+\Hypertarget{classSIEFormPMCHW_af072caaa80e55f3c6676ecda58e32666}\index{SIEFormPMCHW@{SIEFormPMCHW}!mu@{mu}}
+\index{mu@{mu}!SIEFormPMCHW@{SIEFormPMCHW}}
+\doxysubsubsection{\texorpdfstring{mu}{mu}}
+{\footnotesize\ttfamily \label{classSIEFormPMCHW_af072caaa80e55f3c6676ecda58e32666} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} SIEForm\+PMCHW\+::mu\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Relative permeability for homogeneous case. 
+
+
+
+Definition at line \mbox{\hyperlink{SIEFormPMCHW_8h_source_l00055}{55}} of file \mbox{\hyperlink{SIEFormPMCHW_8h_source}{SIEForm\+PMCHW.\+h}}.
+
+\Hypertarget{classSIEFormPMCHW_a21a8a8047ae8a4a20b0f9c82b81b7aad}\index{SIEFormPMCHW@{SIEFormPMCHW}!muLayered@{muLayered}}
+\index{muLayered@{muLayered}!SIEFormPMCHW@{SIEFormPMCHW}}
+\doxysubsubsection{\texorpdfstring{muLayered}{muLayered}}
+{\footnotesize\ttfamily \label{classSIEFormPMCHW_a21a8a8047ae8a4a20b0f9c82b81b7aad} 
+std\+::vector$<$\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}$>$ SIEForm\+PMCHW\+::mu\+Layered\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Layer-\/wise relative permeabilities. 
+
+
+
+Definition at line \mbox{\hyperlink{SIEFormPMCHW_8h_source_l00067}{67}} of file \mbox{\hyperlink{SIEFormPMCHW_8h_source}{SIEForm\+PMCHW.\+h}}.
+
+\Hypertarget{classSIEFormPMCHW_afefc288a5c108896f375c14bd734e474}\index{SIEFormPMCHW@{SIEFormPMCHW}!threads@{threads}}
+\index{threads@{threads}!SIEFormPMCHW@{SIEFormPMCHW}}
+\doxysubsubsection{\texorpdfstring{threads}{threads}}
+{\footnotesize\ttfamily \label{classSIEFormPMCHW_afefc288a5c108896f375c14bd734e474} 
+int SIEForm\+PMCHW\+::threads = 1\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Number of worker threads for parallel assembly. 
+
+
+
+Definition at line \mbox{\hyperlink{SIEFormPMCHW_8h_source_l00082}{82}} of file \mbox{\hyperlink{SIEFormPMCHW_8h_source}{SIEForm\+PMCHW.\+h}}.
+
+\Hypertarget{classSIEFormPMCHW_a905a0dbdfbcdecabe5c9ca04c2a41233}\index{SIEFormPMCHW@{SIEFormPMCHW}!zValsInterfaces@{zValsInterfaces}}
+\index{zValsInterfaces@{zValsInterfaces}!SIEFormPMCHW@{SIEFormPMCHW}}
+\doxysubsubsection{\texorpdfstring{zValsInterfaces}{zValsInterfaces}}
+{\footnotesize\ttfamily \label{classSIEFormPMCHW_a905a0dbdfbcdecabe5c9ca04c2a41233} 
+std\+::vector$<$double$>$ SIEForm\+PMCHW\+::z\+Vals\+Interfaces\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Interface z-\/positions (ascending) 
+
+
+
+Definition at line \mbox{\hyperlink{SIEFormPMCHW_8h_source_l00068}{68}} of file \mbox{\hyperlink{SIEFormPMCHW_8h_source}{SIEForm\+PMCHW.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{SIEFormPMCHW_8h}{SIEForm\+PMCHW.\+h}}\item 
+\mbox{\hyperlink{SIEFormPMCHW_8cpp}{SIEForm\+PMCHW.\+cpp}}\end{DoxyCompactItemize}

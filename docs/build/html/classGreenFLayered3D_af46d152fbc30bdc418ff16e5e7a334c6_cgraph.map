@@ -1,0 +1,49 @@
+<map id="GreenFLayered3D::SameTriDeltaKappa" name="GreenFLayered3D::SameTriDeltaKappa">
+<area shape="rect" id="Node000001" title="Point–triangle delta/kappa contributions for RHS assembly." alt="" coords="5,346,204,391"/>
+<area shape="rect" id="Node000002" href="$classGreenFLayered3D.html#a44686db66fc60d5a0f7613f692a73a28" title="Checks whether the given positions exceed a predefined distance threshold." alt="" coords="252,5,503,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,345,120,285,146,205,165,163,188,121,217,83,250,49,267,38,270,42,253,53,221,86,193,124,170,165,151,207,125,287,112,346"/>
+<area shape="rect" id="Node000003" href="$classTriangle.html#a1d3d08deeb999f339d2e821a877521ba" title="Surface area of the triangle." alt="" coords="598,55,709,82"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="108,345,122,291,149,221,167,185,190,150,218,119,250,93,276,81,311,73,400,63,497,61,583,63,583,68,497,66,400,69,312,78,278,86,253,97,222,123,195,153,172,188,153,223,127,293,113,347"/>
+<area shape="rect" id="Node000004" href="$classTriangle.html#ab78508a340ec5d345adf114b43563dbf" title="Centroid of the triangle." alt="" coords="316,208,439,236"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="125,344,178,294,213,268,251,246,299,230,301,235,253,251,216,272,182,298,129,348"/>
+<area shape="rect" id="Node000005" href="$classTriangle.html#aad716a04591b5c9af864d6c2a89d3a65" title="Test whether a point lies on (or very near) the triangle." alt="" coords="293,107,462,134"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="112,344,131,303,161,250,201,196,224,172,250,150,277,136,280,140,253,155,228,175,205,199,165,253,136,305,117,347"/>
+<area shape="rect" id="Node000007" href="$classTriangle.html#a0752d2c9488c7c44b851b8f75abcaa79" title="Node position (by value) for local index 0..2." alt="" coords="596,159,711,186"/>
+<area shape="poly" id="edge25_Node000001_Node000007" title=" " alt="" coords="115,344,136,309,166,267,204,226,250,194,292,177,335,165,424,152,509,152,581,158,581,163,509,157,425,158,336,170,293,182,253,199,208,230,170,271,140,312,120,347"/>
+<area shape="rect" id="Node000008" href="$group__greenFunction.html#gac0a52dce23be7dacdf97c68653b6c137" title="Complex square root with a branch cut along the negative real axis." alt="" coords="351,260,404,288"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="146,343,195,319,251,297,335,277,336,282,252,302,197,324,148,348"/>
+<area shape="rect" id="Node000010" href="$classGreenFLayered3D.html#a65ac22e62ec3e3131ffbb10d7bdea307" title="Evaluate quasi&#45;static (QS) contributions for inter&#45;layer interactions." alt="" coords="271,381,484,426"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="204,378,255,385,255,390,204,384"/>
+<area shape="rect" id="Node000012" href="$classGreenFLayered3D.html#a1fb4fa93c84d77750cac364641945725" title="Return layer index of a 3D point." alt="" coords="551,450,756,495"/>
+<area shape="poly" id="edge22_Node000001_Node000012" title=" " alt="" coords="123,390,145,418,175,451,211,482,253,505,293,517,335,525,378,527,421,526,503,514,573,497,574,502,504,520,421,531,378,532,334,530,292,523,251,510,208,486,171,455,141,422,119,393"/>
+<area shape="rect" id="Node000013" href="$classGreenFLayered3D.html#a7fbd8a47a0074f53111d52920a910392" title="Evaluate quasi&#45;static (QS) contributions for intra&#45;layer interactions." alt="" coords="271,450,484,495"/>
+<area shape="poly" id="edge14_Node000001_Node000013" title=" " alt="" coords="150,389,253,435,273,442,271,447,251,440,148,394"/>
+<area shape="rect" id="Node000014" href="$classGreenFLayered3D.html#abb50e8621c63f2b29862c32a8447dd9c" title="Evaluate Green&#39;s&#45;function components for inter&#45;layer interactions by interpolating the smooth (Sommer..." alt="" coords="271,570,484,615"/>
+<area shape="poly" id="edge17_Node000001_Node000014" title=" " alt="" coords="120,390,141,425,172,468,209,511,253,549,274,561,271,566,250,553,206,515,167,471,137,428,116,392"/>
+<area shape="rect" id="Node000017" href="$classGreenFLayered3D.html#a834a94e21f64163f651a4729eccc6699" title="Evaluate Green&#39;s function components for intra&#45;layer interactions by interpolating the smooth (Sommer..." alt="" coords="271,640,484,684"/>
+<area shape="poly" id="edge20_Node000001_Node000017" title=" " alt="" coords="115,391,131,440,160,503,200,569,225,599,253,625,259,630,256,634,250,629,221,603,196,572,155,506,127,442,110,392"/>
+<area shape="rect" id="Node000018" href="$classTriQuadPol.html#a937d9b0718e7914525a47db7954a1ef4" title="Quadrature nodes (barycentric triples)." alt="" coords="281,708,474,736"/>
+<area shape="poly" id="edge23_Node000001_Node000018" title=" " alt="" coords="111,391,123,452,148,535,167,579,190,622,219,661,253,694,268,704,265,708,250,699,215,664,186,625,162,581,143,537,118,453,106,392"/>
+<area shape="rect" id="Node000019" href="$classTriQuadPol.html#a23097391f76d79ed0e0a3584400d4497" title="Quadrature weights (include all Jacobian factors and r)." alt="" coords="275,760,480,788"/>
+<area shape="poly" id="edge24_Node000001_Node000019" title=" " alt="" coords="110,391,119,461,142,557,161,609,185,659,215,705,253,745,263,752,259,756,250,749,211,709,180,662,156,611,137,559,114,462,105,392"/>
+<area shape="rect" id="Node000020" href="$classGreenFLayered3D.html#a74a468a93bf93bd4acd39989502a10fd" title="Write complex data with associated 2D coordinates to a text file." alt="" coords="267,312,488,356"/>
+<area shape="poly" id="edge26_Node000001_Node000020" title=" " alt="" coords="204,353,251,347,252,352,204,359"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="454,103,583,79,584,84,455,109"/>
+<area shape="rect" id="Node000006" href="$classTriangle.html#a837631cb39cc7af167b9f54436aadcae" title="Small helper to zero tiny values (for robust barycentric math)." alt="" coords="596,107,711,134"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="462,118,580,118,580,123,462,123"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="455,132,582,156,581,162,454,138"/>
+<area shape="rect" id="Node000009" href="$Domain_8cpp.html#aafa3e4fa6318b2f8740f4dbd50c367e5" title="Extract the real part of each component of a complex 3&#45;vector." alt="" coords="630,291,677,318"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="405,274,615,298,614,303,404,279"/>
+<area shape="poly" id="edge10_Node000009_Node000009" title=" " alt="" coords="628,298,615,287,615,275,628,267,654,264,674,266,688,271,694,279,692,288,687,286,689,280,685,275,673,271,654,269,630,272,619,278,620,285,632,294"/>
+<area shape="rect" id="Node000011" href="$classGreenFLayered3D.html#a41c1370112d040a3dc4c44a5853022ed" title="Fresnel reflection/transmission at interface (delegates to utils)." alt="" coords="557,381,750,426"/>
+<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="484,400,542,400,542,406,484,406"/>
+<area shape="poly" id="edge13_Node000010_Node000012" title=" " alt="" coords="470,424,548,443,546,448,469,429"/>
+<area shape="poly" id="edge15_Node000013_Node000011" title=" " alt="" coords="469,447,546,427,548,432,470,452"/>
+<area shape="poly" id="edge16_Node000013_Node000012" title=" " alt="" coords="484,470,535,470,535,475,484,475"/>
+<area shape="rect" id="Node000015" href="$classGreenFLayered3D.html#a6c09f9ac63d604111b76842e774c65c8" title="Evaluate 2D interpolant at one query point." alt="" coords="552,605,755,650"/>
+<area shape="poly" id="edge18_Node000014_Node000015" title=" " alt="" coords="485,603,537,610,536,615,484,609"/>
+<area shape="rect" id="Node000016" href="$GreenFLayered3D_8cpp.html#a8aa29777c4e70a4d7c032b4c6fb0387d" title="External REGRIDPACK routine for evaluating a 2D interpolation function." alt="" coords="804,613,909,641"/>
+<area shape="poly" id="edge19_Node000015_Node000016" title=" " alt="" coords="756,624,789,624,789,630,756,630"/>
+<area shape="poly" id="edge21_Node000017_Node000015" title=" " alt="" coords="484,646,536,639,537,644,485,651"/>
+<area shape="poly" id="edge27_Node000020_Node000009" title=" " alt="" coords="488,319,615,306,615,311,488,325"/>
+</map>

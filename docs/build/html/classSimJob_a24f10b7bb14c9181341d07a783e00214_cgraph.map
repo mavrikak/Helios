@@ -1,0 +1,13 @@
+<map id="SimJob::EandHField" name="SimJob::EandHField">
+<area shape="rect" id="Node000001" title="Return both , &#160;incident and secondary pairs at pos." alt="" coords="5,57,153,85"/>
+<area shape="rect" id="Node000002" href="$classDomain.html#afe5c1f862e335ab05031b1d6b0b87c42" title="Total incident electric field at a point from all incident sources." alt="" coords="220,5,358,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="137,54,214,35,216,40,139,59"/>
+<area shape="rect" id="Node000003" href="$classDomain.html#a832a36e6ba8ae02be3dd493bd2577d4a" title="Total incident magnetic field at a point from all incident sources." alt="" coords="219,57,359,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="153,68,203,68,203,74,153,74"/>
+<area shape="rect" id="Node000004" href="$classDomain.html#a1d339cb7979c5b2d03d069fc09b40696" title="Secondary fields &#160;at a point." alt="" coords="201,109,377,137"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="139,83,216,102,214,108,137,88"/>
+<area shape="rect" id="Node000005" href="$classDomain.html#a928ea926ed97bac309194301a8b509c3" title="Relative permittivity at a spatial location." alt="" coords="425,83,552,110"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="377,109,409,104,410,110,378,114"/>
+<area shape="rect" id="Node000006" href="$classDomain.html#a22745c7dfa178d41cfa4fb0b5b120595" title="Relative permeability at a spatial location." alt="" coords="438,135,539,162"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="378,132,424,138,423,143,377,137"/>
+</map>

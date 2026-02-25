@@ -1,0 +1,9 @@
+<map id="Gaussian::IntegrateH" name="Gaussian::IntegrateH">
+<area shape="rect" id="Node000001" title="RWG projection of the incident magnetic field." alt="" coords="5,32,164,60"/>
+<area shape="rect" id="Node000002" href="$classGaussian.html#ad420298383fc00144d4f1dc9e87b8ee7" title="Evaluate the incident magnetic field ." alt="" coords="212,5,368,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,33,196,29,196,34,165,38"/>
+<area shape="rect" id="Node000004" href="$classGaussian.html#a3621600be0f1a452bc426f15041d4ed4" title="Construct a Gaussian beam in a homogeneous medium." alt="" coords="215,57,364,85"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="165,53,200,57,200,63,164,58"/>
+<area shape="rect" id="Node000003" href="$classGaussian.html#a0cccdedf53f0840888d57144566442b4" title="Evaluate the incident electric field ." alt="" coords="416,5,570,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="368,16,400,16,400,22,368,22"/>
+</map>

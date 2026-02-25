@@ -1,0 +1,43 @@
+\doxysection{globals.\+h}
+\hypertarget{globals_8h_source}{}\label{globals_8h_source}\index{globals.h@{globals.h}}
+\mbox{\hyperlink{globals_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{globals_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{globals_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{globals_8h_source_l00014}00014\ \textcolor{comment}{//\ Only\ define\ these\ once\ during\ compiling}}
+\DoxyCodeLine{\Hypertarget{globals_8h_source_l00015}00015\ \textcolor{preprocessor}{\#ifndef\ GLOBALS\_H}}
+\DoxyCodeLine{\Hypertarget{globals_8h_source_l00016}00016\ \textcolor{preprocessor}{\#define\ GLOBALS\_H}}
+\DoxyCodeLine{\Hypertarget{globals_8h_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{globals_8h_source_l00018}00018\ \textcolor{preprocessor}{\#include\ <blitz/array.h>}}
+\DoxyCodeLine{\Hypertarget{globals_8h_source_l00019}00019\ \textcolor{preprocessor}{\#include\ <blitz/tinyvec2.h>}}
+\DoxyCodeLine{\Hypertarget{globals_8h_source_l00020}00020\ \textcolor{preprocessor}{\#include\ <blitz/tvecglobs.h>}}
+\DoxyCodeLine{\Hypertarget{globals_8h_source_l00021}00021\ \textcolor{preprocessor}{\#include\ <complex>}}
+\DoxyCodeLine{\Hypertarget{globals_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{globals_8h_source_l00023}00023\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{globals_8h_source_l00024}00024\ \textcolor{comment}{//\ Types}}
+\DoxyCodeLine{\Hypertarget{globals_8h_source_l00025}00025\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{globals_8h_source_l00027}\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{00027}}\ \textcolor{keyword}{typedef}\ std::complex<double>\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}};}
+\DoxyCodeLine{\Hypertarget{globals_8h_source_l00029}\mbox{\hyperlink{globals_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{00029}}\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{globals_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}};}
+\DoxyCodeLine{\Hypertarget{globals_8h_source_l00031}\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{00031}}\ \textcolor{keyword}{typedef}\ blitz::TinyVector<double,\ 3>\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}};}
+\DoxyCodeLine{\Hypertarget{globals_8h_source_l00033}\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{00033}}\ \textcolor{keyword}{typedef}\ blitz::TinyVector<dcmplx,\ 3>\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}};}
+\DoxyCodeLine{\Hypertarget{globals_8h_source_l00035}\mbox{\hyperlink{globals_8h_ac062d767acbc2b8149a4039dc4a1a18f}{00035}}\ \textcolor{keyword}{typedef}\ blitz::TinyVector<cvec,\ 3>\ \mbox{\hyperlink{globals_8h_ac062d767acbc2b8149a4039dc4a1a18f}{cdyad}};}
+\DoxyCodeLine{\Hypertarget{globals_8h_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{globals_8h_source_l00037}00037\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{globals_8h_source_l00038}00038\ \textcolor{comment}{//\ Physical\ constants\ (SI)}}
+\DoxyCodeLine{\Hypertarget{globals_8h_source_l00039}00039\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{globals_8h_source_l00041}00041\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{globals_8h_a952eac791b596a61bba0a133a3bb439f}{PI}};}
+\DoxyCodeLine{\Hypertarget{globals_8h_source_l00043}00043\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c}{I}};}
+\DoxyCodeLine{\Hypertarget{globals_8h_source_l00045}00045\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{globals_8h_af49dbd4a09008d240ff694cde0ccb713}{CVAC}};}
+\DoxyCodeLine{\Hypertarget{globals_8h_source_l00047}00047\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{globals_8h_ade68b010588957aef9890077adb7565f}{EPS0}};}
+\DoxyCodeLine{\Hypertarget{globals_8h_source_l00049}00049\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{globals_8h_a09881352f321afed09cedb054fd9ee15}{MU0}};}
+\DoxyCodeLine{\Hypertarget{globals_8h_source_l00051}00051\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{globals_8h_ae2fa3234ecbb729a46bf56ba671df9f3}{Z0}};}
+\DoxyCodeLine{\Hypertarget{globals_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{globals_8h_source_l00053}00053\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{globals_8h_source_l00054}00054\ \textcolor{comment}{//\ Geometric\ tags}}
+\DoxyCodeLine{\Hypertarget{globals_8h_source_l00055}00055\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{globals_8h_source_l00057}\mbox{\hyperlink{globals_8h_ac25c6a324554f8ae267ad7c1638074a8}{00057}}\ \textcolor{preprocessor}{\#define\ FRONT\ 0}}
+\DoxyCodeLine{\Hypertarget{globals_8h_source_l00059}\mbox{\hyperlink{globals_8h_ab303ee384877c80cb8855bf0113faf88}{00059}}\ \textcolor{preprocessor}{\#define\ BACK\ 1}}
+\DoxyCodeLine{\Hypertarget{globals_8h_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{globals_8h_source_l00061}00061\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

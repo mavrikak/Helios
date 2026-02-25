@@ -1,0 +1,266 @@
+\doxysection{Domain\+Layered3\+D.\+cpp File Reference}
+\hypertarget{DomainLayered3D_8cpp}{}\label{DomainLayered3D_8cpp}\index{DomainLayered3D.cpp@{DomainLayered3D.cpp}}
+
+
+Implementation of the layered 3D domain.  
+
+
+{\ttfamily \#include "{}Domain\+Layered3\+D.\+h"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include "{}Dipole.\+h"{}}\newline
+{\ttfamily \#include "{}Incident\+Field.\+h"{}}\newline
+{\ttfamily \#include "{}Plane\+Wave.\+h"{}}\newline
+{\ttfamily \#include "{}SIEForm\+PMCHW.\+h"{}}\newline
+{\ttfamily \#include "{}Sommerfeld\+Integrator.\+h"{}}\newline
+{\ttfamily \#include "{}iofunctions.\+h"{}}\newline
+{\ttfamily \#include "{}Gaussian.\+h"{}}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+Include dependency graph for Domain\+Layered3\+D.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{DomainLayered3D_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} $>$ \mbox{\hyperlink{DomainLayered3D_8cpp_ad63ce0a587a110740b2a7a51b927d893}{read\+Positions\+From\+File}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Reads a set of 3D positions from a file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{DomainLayered3D_8cpp_ad123e1ae452426e2c00e3189488dedac}{zgetrf\+\_\+}} (int \texorpdfstring{$\ast$}{*}dim1, int \texorpdfstring{$\ast$}{*}dim2, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \texorpdfstring{$\ast$}{*}a, int \texorpdfstring{$\ast$}{*}lda, int \texorpdfstring{$\ast$}{*}ipiv, int \texorpdfstring{$\ast$}{*}info)
+\begin{DoxyCompactList}\small\item\em Computes the LU factorization of a general M-\/by-\/N matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{DomainLayered3D_8cpp_a0d498505ce3081c778d322cdd12e60a4}{zgetrs\+\_\+}} (char \texorpdfstring{$\ast$}{*}TRANS, int \texorpdfstring{$\ast$}{*}N, int \texorpdfstring{$\ast$}{*}NRHS, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \texorpdfstring{$\ast$}{*}A, int \texorpdfstring{$\ast$}{*}LDA, int \texorpdfstring{$\ast$}{*}IPIV, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \texorpdfstring{$\ast$}{*}B, int \texorpdfstring{$\ast$}{*}LDB, int \texorpdfstring{$\ast$}{*}INFO)
+\begin{DoxyCompactList}\small\item\em Solves a system of linear equations using the LU factorization. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{DomainLayered3D_8cpp_a83b3a83c01e3d7a487d4ae2ec65695f5}{adjust\+ZRange}} (const std\+::vector$<$ double $>$ \&z, const std\+::vector$<$ double $>$ \&zlayer, double zmin, double margin)
+\begin{DoxyCompactList}\small\item\em Adjusts the Z-\/coordinate range with a margin while ensuring boundaries. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{DomainLayered3D_8cpp_a37aee72ef7a00576c814a1370473cce7}{conj\+VecL}} (\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} in)
+\begin{DoxyCompactList}\small\item\em Compute the element-\/wise complex conjugate of a 3-\/vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{DomainLayered3D_8cpp_a2c019c7f0fe35eb5871f0c0b1ae9bd96}{real\+VecL}} (\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} in)
+\begin{DoxyCompactList}\small\item\em Extract the real part of each component of a complex 3-\/vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of the layered 3D domain. 
+
+
+
+Definition in file \mbox{\hyperlink{DomainLayered3D_8cpp_source}{Domain\+Layered3\+D.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{DomainLayered3D_8cpp_a83b3a83c01e3d7a487d4ae2ec65695f5}\index{DomainLayered3D.cpp@{DomainLayered3D.cpp}!adjustZRange@{adjustZRange}}
+\index{adjustZRange@{adjustZRange}!DomainLayered3D.cpp@{DomainLayered3D.cpp}}
+\doxysubsubsection{\texorpdfstring{adjustZRange()}{adjustZRange()}}
+{\footnotesize\ttfamily \label{DomainLayered3D_8cpp_a83b3a83c01e3d7a487d4ae2ec65695f5} 
+std\+::vector$<$ double $>$ adjust\+ZRange (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{z}{, }\item[{const std\+::vector$<$ double $>$ \&}]{zlayer}{, }\item[{double}]{zmin}{, }\item[{double}]{margin}{}\end{DoxyParamCaption})}
+
+
+
+Adjusts the Z-\/coordinate range with a margin while ensuring boundaries. 
+
+This helper function modifies the input Z-\/range by adding a margin while ensuring that the adjusted range stays within the specified layer boundaries.
+
+
+\begin{DoxyParams}{Parameters}
+{\em z} & The original Z-\/coordinate range as a vector of two values (min, max). \\
+\hline
+{\em zlayer} & The Z-\/coordinate boundaries of the layer. \\
+\hline
+{\em zmin} & Minimum allowed vertical range. \\
+\hline
+{\em margin} & Fraction of the range used to adjust the boundaries. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector containing the adjusted Z-\/range (min, max). 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{DomainLayered3D_8cpp_source_l00481}{481}} of file \mbox{\hyperlink{DomainLayered3D_8cpp_source}{Domain\+Layered3\+D.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{DomainLayered3D_8cpp_a83b3a83c01e3d7a487d4ae2ec65695f5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{DomainLayered3D_8cpp_a37aee72ef7a00576c814a1370473cce7}\index{DomainLayered3D.cpp@{DomainLayered3D.cpp}!conjVecL@{conjVecL}}
+\index{conjVecL@{conjVecL}!DomainLayered3D.cpp@{DomainLayered3D.cpp}}
+\doxysubsubsection{\texorpdfstring{conjVecL()}{conjVecL()}}
+{\footnotesize\ttfamily \label{DomainLayered3D_8cpp_a37aee72ef7a00576c814a1370473cce7} 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} conj\+VecL (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}}]{in}{}\end{DoxyParamCaption})}
+
+
+
+Compute the element-\/wise complex conjugate of a 3-\/vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & Input complex vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex vector containing conjugated components of {\ttfamily in}. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{DomainLayered3D_8cpp_source_l00797}{797}} of file \mbox{\hyperlink{DomainLayered3D_8cpp_source}{Domain\+Layered3\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{DomainLayered3D_8cpp_a37aee72ef7a00576c814a1370473cce7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{DomainLayered3D_8cpp_a37aee72ef7a00576c814a1370473cce7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{DomainLayered3D_8cpp_ad63ce0a587a110740b2a7a51b927d893}\index{DomainLayered3D.cpp@{DomainLayered3D.cpp}!readPositionsFromFile@{readPositionsFromFile}}
+\index{readPositionsFromFile@{readPositionsFromFile}!DomainLayered3D.cpp@{DomainLayered3D.cpp}}
+\doxysubsubsection{\texorpdfstring{readPositionsFromFile()}{readPositionsFromFile()}}
+{\footnotesize\ttfamily \label{DomainLayered3D_8cpp_ad63ce0a587a110740b2a7a51b927d893} 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} $>$ read\+Positions\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Reads a set of 3D positions from a file. 
+
+This function reads a file containing 3D coordinates (x, y, z) line by line and returns a vector of rvec objects representing these positions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the file containing position data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of rvec objects containing the parsed positions. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the file cannot be opened. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{DomainLayered3D_8cpp_source_l00032}{32}} of file \mbox{\hyperlink{DomainLayered3D_8cpp_source}{Domain\+Layered3\+D.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{DomainLayered3D_8cpp_ad63ce0a587a110740b2a7a51b927d893_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{DomainLayered3D_8cpp_a2c019c7f0fe35eb5871f0c0b1ae9bd96}\index{DomainLayered3D.cpp@{DomainLayered3D.cpp}!realVecL@{realVecL}}
+\index{realVecL@{realVecL}!DomainLayered3D.cpp@{DomainLayered3D.cpp}}
+\doxysubsubsection{\texorpdfstring{realVecL()}{realVecL()}}
+{\footnotesize\ttfamily \label{DomainLayered3D_8cpp_a2c019c7f0fe35eb5871f0c0b1ae9bd96} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} real\+VecL (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}}]{in}{}\end{DoxyParamCaption})}
+
+
+
+Extract the real part of each component of a complex 3-\/vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & Input complex vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Real vector with the real parts of {\ttfamily in}. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{DomainLayered3D_8cpp_source_l00804}{804}} of file \mbox{\hyperlink{DomainLayered3D_8cpp_source}{Domain\+Layered3\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{DomainLayered3D_8cpp_a2c019c7f0fe35eb5871f0c0b1ae9bd96_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{DomainLayered3D_8cpp_a2c019c7f0fe35eb5871f0c0b1ae9bd96_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{DomainLayered3D_8cpp_ad123e1ae452426e2c00e3189488dedac}\index{DomainLayered3D.cpp@{DomainLayered3D.cpp}!zgetrf\_@{zgetrf\_}}
+\index{zgetrf\_@{zgetrf\_}!DomainLayered3D.cpp@{DomainLayered3D.cpp}}
+\doxysubsubsection{\texorpdfstring{zgetrf\_()}{zgetrf\_()}}
+{\footnotesize\ttfamily \label{DomainLayered3D_8cpp_ad123e1ae452426e2c00e3189488dedac} 
+void zgetrf\+\_\+ (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{dim1}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{dim2}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{lda}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{ipiv}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{info}{}\end{DoxyParamCaption})}
+
+
+
+Computes the LU factorization of a general M-\/by-\/N matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dim1} & Number of rows of the matrix (for {\ttfamily zgetrf\+\_\+}). \\
+\hline
+{\em dim2} & Number of columns of the matrix (for {\ttfamily zgetrf\+\_\+}). \\
+\hline
+{\em a} & Pointer to the matrix to be factored or solved. \\
+\hline
+{\em lda} & Leading dimension of the matrix. \\
+\hline
+{\em ipiv} & Pointer to the pivot indices. \\
+\hline
+{\em info} & Output status (0 if successful). \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{DomainLayered3D_8cpp_ad123e1ae452426e2c00e3189488dedac_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{DomainLayered3D_8cpp_a0d498505ce3081c778d322cdd12e60a4}\index{DomainLayered3D.cpp@{DomainLayered3D.cpp}!zgetrs\_@{zgetrs\_}}
+\index{zgetrs\_@{zgetrs\_}!DomainLayered3D.cpp@{DomainLayered3D.cpp}}
+\doxysubsubsection{\texorpdfstring{zgetrs\_()}{zgetrs\_()}}
+{\footnotesize\ttfamily \label{DomainLayered3D_8cpp_a0d498505ce3081c778d322cdd12e60a4} 
+void zgetrs\+\_\+ (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{TRANS}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{N}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{NRHS}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \texorpdfstring{$\ast$}{*}}]{A}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{LDA}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{IPIV}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \texorpdfstring{$\ast$}{*}}]{B}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{LDB}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{INFO}{}\end{DoxyParamCaption})}
+
+
+
+Solves a system of linear equations using the LU factorization. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em TRANS} & Specifies the form of the system of equations (\textquotesingle{}N\textquotesingle{} for no transpose, etc.). \\
+\hline
+{\em N} & Order of the coefficient matrix. \\
+\hline
+{\em NRHS} & Number of right-\/hand sides. \\
+\hline
+{\em A} & Pointer to the LU-\/factored coefficient matrix. \\
+\hline
+{\em LDA} & Leading dimension of A. \\
+\hline
+{\em IPIV} & Pointer to the pivot indices from {\ttfamily zgetrf\+\_\+}. \\
+\hline
+{\em B} & Pointer to the right-\/hand side vector(s). \\
+\hline
+{\em LDB} & Leading dimension of B. \\
+\hline
+{\em INFO} & Output status (0 if successful). \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{DomainLayered3D_8cpp_a0d498505ce3081c778d322cdd12e60a4_icgraph}
+\end{center}
+\end{figure}

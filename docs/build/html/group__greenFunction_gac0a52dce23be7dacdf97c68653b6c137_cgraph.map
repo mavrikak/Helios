@@ -1,0 +1,6 @@
+<map id="csqrt" name="csqrt">
+<area shape="rect" id="Node000001" title="Complex square root with a branch cut along the negative real axis." alt="" coords="5,29,59,57"/>
+<area shape="rect" id="Node000002" href="$Domain_8cpp.html#aafa3e4fa6318b2f8740f4dbd50c367e5" title="Extract the real part of each component of a complex 3&#45;vector." alt="" coords="107,29,153,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="59,40,91,40,91,46,59,46"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="112,30,109,20,111,11,118,5,130,3,142,5,149,12,145,15,140,10,130,8,121,10,116,14,114,20,117,28"/>
+</map>

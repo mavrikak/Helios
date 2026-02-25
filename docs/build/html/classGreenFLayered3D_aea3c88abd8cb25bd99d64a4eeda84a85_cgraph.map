@@ -1,0 +1,32 @@
+<map id="GreenFLayered3D::EvaluateDyadic" name="GreenFLayered3D::EvaluateDyadic">
+<area shape="rect" id="Node000001" title="Evaluates the secondary terms for dipole incident field in layered background." alt="" coords="5,233,209,278"/>
+<area shape="rect" id="Node000002" href="$group__greenFunction.html#gac0a52dce23be7dacdf97c68653b6c137" title="Complex square root with a branch cut along the negative real axis." alt="" coords="337,29,390,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,231,139,195,170,150,209,106,255,68,288,53,321,45,322,50,289,58,258,72,213,109,174,154,143,198,122,234"/>
+<area shape="rect" id="Node000004" href="$GreenFLayered3D_8cpp.html#af70e64942498ae51d2c2f9c57b43560c" title="Creates a dyadic product of two 3D vectors." alt="" coords="331,81,396,109"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="125,230,179,174,216,144,255,118,285,106,315,98,317,104,287,111,258,123,219,148,183,178,129,234"/>
+<area shape="rect" id="Node000005" href="$classGreenFLayered3D.html#a65ac22e62ec3e3131ffbb10d7bdea307" title="Evaluate quasi&#45;static (QS) contributions for inter&#45;layer interactions." alt="" coords="257,133,470,178"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="156,230,256,187,274,181,276,186,258,192,158,235"/>
+<area shape="rect" id="Node000007" href="$classGreenFLayered3D.html#a1fb4fa93c84d77750cac364641945725" title="Return layer index of a 3D point." alt="" coords="518,202,723,247"/>
+<area shape="poly" id="edge16_Node000001_Node000007" title=" " alt="" coords="209,260,334,264,402,262,470,257,521,248,522,253,470,262,403,267,334,269,209,266"/>
+<area shape="rect" id="Node000008" href="$classGreenFLayered3D.html#a7fbd8a47a0074f53111d52920a910392" title="Evaluate quasi&#45;static (QS) contributions for intra&#45;layer interactions." alt="" coords="257,202,470,247"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="209,240,241,236,242,242,210,246"/>
+<area shape="rect" id="Node000009" href="$classGreenFLayered3D.html#abb50e8621c63f2b29862c32a8447dd9c" title="Evaluate Green&#39;s&#45;function components for inter&#45;layer interactions by interpolating the smooth (Sommer..." alt="" coords="257,322,470,367"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="174,275,284,314,282,319,172,280"/>
+<area shape="rect" id="Node000012" href="$classGreenFLayered3D.html#a834a94e21f64163f651a4729eccc6699" title="Evaluate Green&#39;s function components for intra&#45;layer interactions by interpolating the smooth (Sommer..." alt="" coords="257,392,470,436"/>
+<area shape="poly" id="edge14_Node000001_Node000012" title=" " alt="" coords="132,276,186,326,221,353,258,377,269,382,267,387,255,381,218,358,183,330,128,280"/>
+<area shape="rect" id="Node000013" href="$GreenFLayered3D_8cpp.html#ada57d57674c0b17b830f10579db01b30" title="Computes the cross product of a vector with each row or column of a dyad." alt="" coords="306,460,420,488"/>
+<area shape="poly" id="edge17_Node000001_Node000013" title=" " alt="" coords="121,276,142,314,172,360,211,407,258,446,292,461,290,466,255,451,208,411,168,363,137,317,117,279"/>
+<area shape="rect" id="Node000003" href="$Domain_8cpp.html#aafa3e4fa6318b2f8740f4dbd50c367e5" title="Extract the real part of each component of a complex 3&#45;vector." alt="" coords="598,29,644,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="390,40,582,40,582,46,390,46"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="595,37,582,26,582,14,595,6,621,3,641,4,655,10,661,18,659,27,654,25,656,19,652,14,640,10,621,8,597,11,586,16,587,24,599,33"/>
+<area shape="rect" id="Node000006" href="$classGreenFLayered3D.html#a41c1370112d040a3dc4c44a5853022ed" title="Fresnel reflection/transmission at interface (delegates to utils)." alt="" coords="524,133,717,178"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="470,152,508,152,508,158,470,158"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="450,176,521,195,520,200,448,181"/>
+<area shape="poly" id="edge9_Node000008_Node000006" title=" " alt="" coords="448,199,520,179,521,185,450,204"/>
+<area shape="poly" id="edge10_Node000008_Node000007" title=" " alt="" coords="470,222,503,222,503,227,470,227"/>
+<area shape="rect" id="Node000010" href="$classGreenFLayered3D.html#a6c09f9ac63d604111b76842e774c65c8" title="Evaluate 2D interpolant at one query point." alt="" coords="519,357,722,402"/>
+<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="471,356,504,361,503,366,470,362"/>
+<area shape="rect" id="Node000011" href="$GreenFLayered3D_8cpp.html#a8aa29777c4e70a4d7c032b4c6fb0387d" title="External REGRIDPACK routine for evaluating a 2D interpolation function." alt="" coords="771,365,876,393"/>
+<area shape="poly" id="edge13_Node000010_Node000011" title=" " alt="" coords="723,376,756,376,756,382,723,382"/>
+<area shape="poly" id="edge15_Node000012_Node000010" title=" " alt="" coords="470,397,503,392,504,398,471,402"/>
+</map>

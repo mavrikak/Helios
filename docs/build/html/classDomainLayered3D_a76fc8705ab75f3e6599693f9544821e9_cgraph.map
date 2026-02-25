@@ -1,0 +1,5 @@
+<map id="DomainLayered3D::slice" name="DomainLayered3D::slice">
+<area shape="rect" id="Node000001" title="Computes the slicing of points with respect to interfaces." alt="" coords="5,14,186,42"/>
+<area shape="rect" id="Node000002" href="$classDomainLayered3D.html#ae8e9daf2ca4d1ed649a1e0fe83880160" title="Returns the layer index corresponding to a spatial position." alt="" coords="234,5,443,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="186,25,218,25,218,30,186,30"/>
+</map>

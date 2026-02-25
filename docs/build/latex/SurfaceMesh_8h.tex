@@ -1,0 +1,44 @@
+\doxysection{Surface\+Mesh.\+h File Reference}
+\hypertarget{SurfaceMesh_8h}{}\label{SurfaceMesh_8h}\index{SurfaceMesh.h@{SurfaceMesh.h}}
+
+
+Declaration of the \doxylink{classSurfaceMesh}{Surface\+Mesh} class and mesh edge struct.  
+
+
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include "{}Job\+Parser.\+h"{}}\newline
+{\ttfamily \#include "{}Triangle.\+h"{}}\newline
+{\ttfamily \#include "{}globals.\+h"{}}\newline
+{\ttfamily \#include "{}math\+Functions.\+h"{}}\newline
+Include dependency graph for Surface\+Mesh.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{SurfaceMesh_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{SurfaceMesh_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structedge}{edge}}
+\begin{DoxyCompactList}\small\item\em Mesh edge record (unique and unoriented for membership; oriented for vectors). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classSurfaceMesh}{Surface\+Mesh}}
+\begin{DoxyCompactList}\small\item\em Lightweight surface mesh container with file I/O and BC helpers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declaration of the \doxylink{classSurfaceMesh}{Surface\+Mesh} class and mesh edge struct. 
+
+Holds nodes, triangles, and unique edges of a surface mesh; supports reading/writing meshes (custom .mesh, COMSOL .mphtxt, Gmsh .msh), periodic translations/symmetries, and a few utilities for geometry queries used by RWG-\/based SIE solvers. 
+
+Definition in file \mbox{\hyperlink{SurfaceMesh_8h_source}{Surface\+Mesh.\+h}}.
+

@@ -1,0 +1,21 @@
+<map id="DomainHom3D::absorptionCS" name="DomainHom3D::absorptionCS">
+<area shape="rect" id="Node000001" title="Absorption cross section via surface quadrature." alt="" coords="5,160,221,188"/>
+<area shape="rect" id="Node000002" href="$DomainHom3D_8cpp.html#acf27d554499921efb016e1a01ac8b94e" title="Compute the element&#45;wise complex conjugate of a 3&#45;vector." alt="" coords="311,29,413,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="130,157,189,114,227,89,268,67,295,57,297,62,270,72,230,94,192,118,133,162"/>
+<area shape="rect" id="Node000004" href="$classTriangle.html#a691ff1d8d3f33df1fe0aae161d14ec49" title="FRONT/BACK normal: FRONT &#45;&gt; +normal, BACK &#45;&gt; −normal." alt="" coords="269,81,455,109"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="155,157,268,119,294,111,296,116,269,124,156,162"/>
+<area shape="rect" id="Node000005" href="$classDomain.html#afe5c1f862e335ab05031b1d6b0b87c42" title="Total incident electric field at a point from all incident sources." alt="" coords="293,133,431,161"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="221,160,277,154,278,159,222,165"/>
+<area shape="rect" id="Node000006" href="$classDomain.html#a832a36e6ba8ae02be3dd493bd2577d4a" title="Total incident magnetic field at a point from all incident sources." alt="" coords="292,185,432,213"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="222,182,276,188,276,193,221,187"/>
+<area shape="rect" id="Node000007" href="$classTriangle.html#a0752d2c9488c7c44b851b8f75abcaa79" title="Node position (by value) for local index 0..2." alt="" coords="305,237,419,265"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="158,186,269,222,296,230,294,235,268,227,156,191"/>
+<area shape="rect" id="Node000008" href="$DomainHom3D_8cpp.html#a40914d7aec9b5a14a562be6061d9324b" title="Extract the real part of each component of a complex 3&#45;vector." alt="" coords="312,289,412,317"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="133,186,192,229,230,253,270,274,298,285,296,290,268,279,227,258,189,233,130,190"/>
+<area shape="rect" id="Node000003" href="$Domain_8cpp.html#abbd88d15240455cf734121fcd73b3a03" title="Compute the element&#45;wise complex conjugate of a 3&#45;vector." alt="" coords="503,29,551,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="413,40,487,40,487,46,413,46"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="500,32,494,22,496,12,508,5,527,3,550,6,560,15,556,19,547,11,527,8,510,10,501,15,499,21,505,29"/>
+<area shape="rect" id="Node000009" href="$Domain_8cpp.html#aafa3e4fa6318b2f8740f4dbd50c367e5" title="Extract the real part of each component of a complex 3&#45;vector." alt="" coords="504,289,550,317"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="412,300,488,300,488,306,412,306"/>
+<area shape="poly" id="edge10_Node000009_Node000009" title=" " alt="" coords="501,293,494,283,496,272,508,265,527,263,551,267,560,277,556,280,548,271,527,268,509,270,500,275,499,282,506,290"/>
+</map>

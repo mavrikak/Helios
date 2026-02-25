@@ -1,0 +1,12 @@
+<map id="IntegrandInter::getValue" name="IntegrandInter::getValue">
+<area shape="rect" id="Node000001" title="Bounds&#45;checked access to a 3D array element." alt="" coords="896,14,1074,42"/>
+<area shape="rect" id="Node000002" href="$structIntegrandInter.html#a2ea9f2fbbfb494f9b9debd5f7f4f362b" title="Extract selected elements from a 3D array into a compact 3D structure." alt="" coords="643,14,848,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="880,30,848,30,848,25,880,25"/>
+<area shape="rect" id="Node000003" href="$structIntegrandInter.html#a2668c7d108e647d129889975d618ecfc" title="Function to create a flattened structure." alt="" coords="432,14,595,42"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="628,30,596,30,596,25,628,25"/>
+<area shape="rect" id="Node000004" href="$classSommerfeldIntegrator.html#a2537d36d62ecdecc297e19c8127f827a" title="Computes inter&#45;layer coefficients for Green&#39;s function interpolation." alt="" coords="5,5,171,50"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="416,26,384,25,219,25,171,26,171,21,219,20,384,20,416,21"/>
+<area shape="rect" id="Node000005" href="$classSommerfeldIntegrator.html#a5479217de11e54b823a970c39580fa64" title="Computes the inter&#45;layer integration function." alt="" coords="219,35,384,79"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="417,44,385,48,384,43,416,38"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="203,46,171,42,172,36,204,41"/>
+</map>

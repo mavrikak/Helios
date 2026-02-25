@@ -1,0 +1,15 @@
+<map id="GreenFHom3DPer2D::EwaldSpectral" name="GreenFHom3DPer2D::EwaldSpectral">
+<area shape="rect" id="Node000001" title="Spectral (reciprocal&#45;lattice) part of Ewald sum for ." alt="" coords="601,100,857,128"/>
+<area shape="rect" id="Node000002" href="$classGreenFHom3DPer2D.html#a268d4706bd313c8eadb38e26b15184f0" title="Scalar &#160;for a specific lattice translation." alt="" coords="308,5,529,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="666,98,552,65,509,53,510,48,554,60,667,93"/>
+<area shape="rect" id="Node000003" href="$classGreenFHom3DPer2D.html#a359a21bc178e1c0d21125f8af5ae4fcb" title="Ewald&#45;summed scalar kernel (2D periodic)." alt="" coords="317,74,520,102"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="585,105,520,99,521,94,586,99"/>
+<area shape="rect" id="Node000005" href="$classGreenFHom3DPer2D.html#aa6a46238cd2d01600780fd176a36971d" title="Ewald&#45;summed smoothed scalar kernel." alt="" coords="284,126,553,154"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="586,129,554,131,553,126,585,123"/>
+<area shape="rect" id="Node000007" href="$classGreenFHom3DPer2D.html#ab327d41ca91c33e57a154eae221b4016" title="Smoothed scalar kernel &#160;for a specific translation." alt="" coords="303,177,534,222"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="665,136,554,168,510,179,509,174,552,162,664,131"/>
+<area shape="rect" id="Node000004" href="$classGreenFHom3DPer2D.html#a4fcccf5350453546ac226492ff19bcd0" title="Scalar Bloch&#45;periodic Green&#39;s function ." alt="" coords="10,74,231,102"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="301,90,232,90,232,85,301,85"/>
+<area shape="rect" id="Node000006" href="$classGreenFHom3DPer2D.html#a6ab5b9db19bf30afa1828652d428d4a8" title="Smoothed scalar kernel ." alt="" coords="5,126,236,154"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="268,142,236,142,236,137,268,137"/>
+</map>

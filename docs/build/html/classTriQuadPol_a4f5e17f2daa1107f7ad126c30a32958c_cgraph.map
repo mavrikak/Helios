@@ -1,0 +1,21 @@
+<map id="TriQuadPol::TriQuadPol" name="TriQuadPol::TriQuadPol">
+<area shape="rect" id="Node000001" title="Construct and immediately adapt the polar quadrature." alt="" coords="5,148,173,176"/>
+<area shape="rect" id="Node000002" href="$classTriQuadPol.html#abb4388c4a651d097c0c93376c45010e3" title="Build angular sectors and radial bounds, then assemble nodes/weights." alt="" coords="221,148,389,176"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="173,159,205,159,205,164,173,164"/>
+<area shape="rect" id="Node000003" href="$classTriQuadPol.html#aa0a0a7af46125d5359ae00fca0621de2" title="Build angular bins and radial bounds when the point is inside the triangle." alt="" coords="468,5,616,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="316,146,365,96,398,68,436,43,453,36,455,40,438,48,402,72,368,100,320,150"/>
+<area shape="rect" id="Node000004" href="$classTriQuadPol.html#a3f18d2c370480a52cb1364f9dd95ed06" title="Build angular bins/radial bounds when the point is outside the triangle." alt="" coords="463,57,621,85"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="329,145,378,120,436,94,457,87,458,92,438,99,380,124,332,150"/>
+<area shape="rect" id="Node000005" href="$classTriQuadPol.html#a70845b7e565aa1befcffd099f850215b" title="Expand &#45;bins into ( ) Gauss products and convert to barycentric nodes." alt="" coords="445,109,639,154"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="389,148,429,143,430,148,390,154"/>
+<area shape="rect" id="Node000006" href="$classTriQuadPol.html#a143954247825794d0dc5c0d0e3d98365" title="Straight&#45;line segment between two vertices written in polar form about posInPlane." alt="" coords="458,177,626,205"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="390,170,444,176,443,182,389,175"/>
+<area shape="rect" id="Node000007" href="$classTriQuadPol.html#ad2163791262ee9d63337474eb7bbe8d7" title="2D triangle membership test (local plane coordinates)." alt="" coords="445,229,639,257"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="338,174,438,214,465,222,463,227,436,219,336,179"/>
+<area shape="rect" id="Node000009" href="$classTriQuadPol.html#aea4deef1068d5095c5c6afbb741be8d7" title="Build an orthonormal basis on the triangle plane and project (vertices, point)." alt="" coords="437,281,647,309"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="321,174,370,220,403,245,438,266,455,273,452,278,436,271,400,249,367,224,318,178"/>
+<area shape="rect" id="Node000008" href="$classTriQuadPol.html#a7573c6d68c4bfe8898024684eda5e12e" title="Return true if a, b, c all have the same sign (non&#45;strict)." alt="" coords="695,229,858,257"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="640,240,679,240,679,246,640,246"/>
+<area shape="rect" id="Node000010" href="$classTriQuadPol.html#ad0a8c886e263961bc2935f21ef14dcf7" title="Zero out tiny values for numeric stability." alt="" coords="710,281,843,309"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="648,292,694,292,694,298,648,298"/>
+</map>

@@ -1,0 +1,1255 @@
+\doxysection{Domain Class Reference}
+\hypertarget{classDomain}{}\label{classDomain}\index{Domain@{Domain}}
+
+
+Abstract base class for domains.  
+
+
+
+
+{\ttfamily \#include $<$Domain.\+h$>$}
+
+
+
+Inheritance diagram for Domain\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classDomain__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Domain\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classDomain__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDomain_a3f6f9e8ec932680440098679b6fe3300}{Domain}} (\mbox{\hyperlink{classSurfaceMesh}{Surface\+Mesh}} \texorpdfstring{$\ast$}{*}mesh, int d\+Index, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} in\+Vacuum\+Wavelength)
+\begin{DoxyCompactList}\small\item\em Construct a domain over a mesh region at a given vacuum wavelength. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classDomain_a29cec9afb2e54c810ba1f3c1a49543a8}{\texorpdfstring{$\sim$}{\string~}\+Domain}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classDomain_a753296cc63cedb73b537311031521178}{Add\+Triangles\+From\+Mesh}} (\mbox{\hyperlink{classSurfaceMesh}{Surface\+Mesh}} \texorpdfstring{$\ast$}{*}mesh, int d\+Index)
+\begin{DoxyCompactList}\small\item\em Add all boundary triangles belonging to region {\ttfamily d\+Index} and build RWGs. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classDomain_a3eaedce45621dee107b082aca51d80ea}{Print\+All\+RWGCentroids}} ()
+\begin{DoxyCompactList}\small\item\em Debug\+: print triangle centroids and RWG evaluations at centroids. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classDomain_aab504e2e699c789b209cf0e288b8a389}{Print\+All\+Edges}} (\mbox{\hyperlink{classSurfaceMesh}{Surface\+Mesh}} \texorpdfstring{$\ast$}{*}mesh)
+\begin{DoxyCompactList}\small\item\em Debug\+: print all edges and the RWGs that live on them. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classDomain_a885bd8196776413b39025f2ccf23e702}{RGWFun\+Ptr}} (int \mbox{\hyperlink{classDomain_a0242b8dac23da9fe639f62bda97ea85c}{index}})
+\begin{DoxyCompactList}\small\item\em Direct access to an RWG basis function by global index. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classDomain_a4ca094ed1d16b191f026d0c23e1fc75a}{Index}} ()
+\begin{DoxyCompactList}\small\item\em Return this domain\textquotesingle{}s integer index. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classDomain_af80d3694a871a28872ada50e0a4e4aed}{Init\+Formulation}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} vac\+Wavelength)=0
+\begin{DoxyCompactList}\small\item\em Initialize the SIE formulation object at the given wavelength. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classDomain_aee28d04b8f8f6fec0c8f4ec181da385f}{Fill\+LSEMatrix}} (blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 2 $>$ \texorpdfstring{$\ast$}{*}matrix)
+\begin{DoxyCompactList}\small\item\em Assemble the linear system matrix using the active formulation. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classDomain_a8291b7d47e8ee08ba7699b6c0dae5f7d}{Fill\+LSEMatrix\+And\+Gradient}} (blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 2 $>$ \texorpdfstring{$\ast$}{*}matrix, blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 2 $>$ \texorpdfstring{$\ast$}{*}gradmatrix\mbox{[}3\mbox{]})
+\begin{DoxyCompactList}\small\item\em Assemble the linear system matrix and its gradient w.\+r.\+t. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classDomain_a86bb59b09fe39f43b2e65811fb058c83}{Fill\+LSEVector}} (blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 1 $>$ \texorpdfstring{$\ast$}{*}vector)
+\begin{DoxyCompactList}\small\item\em Assemble the right-\/hand-\/side (RHS) vector using the active formulation. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDomain_a6f7b0190794a8ee0a026b0dcf2159aef}{Is\+Inside}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} point)
+\begin{DoxyCompactList}\small\item\em Test whether a spatial point lies inside the domain. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classDomain_ad0af818f04c737b2c021aeb3c3c46abd}{Is\+Layered}} ()=0
+\begin{DoxyCompactList}\small\item\em Is this a layered domain? \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDomain_a8bd77bbd144186387e71441866606e05}{has\+Dipoles}} ()
+\begin{DoxyCompactList}\small\item\em Check whether any incident field is a dipole. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classDomain_ae1e6975d3ddc5fe177020d447673fdf7}{Sec\+FieldE}} (blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 1 $>$ \texorpdfstring{$\ast$}{*}sol\+Vector, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} pos)
+\begin{DoxyCompactList}\small\item\em Secondary (scattered) electric field at a point from the solution vector. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classDomain_afe5c1f862e335ab05031b1d6b0b87c42}{Inc\+FieldE}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} pos)
+\begin{DoxyCompactList}\small\item\em Total incident electric field at a point from all incident sources. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classDomain_a507d3690b3a17a9f01beb83a2d6b026e}{Sec\+FieldH}} (blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 1 $>$ \texorpdfstring{$\ast$}{*}sol\+Vector, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} pos)
+\begin{DoxyCompactList}\small\item\em Secondary (scattered) magnetic field at a point from the solution vector. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classDomain_a832a36e6ba8ae02be3dd493bd2577d4a}{Inc\+FieldH}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} pos)
+\begin{DoxyCompactList}\small\item\em Total incident magnetic field at a point from all incident sources. \end{DoxyCompactList}\item 
+virtual std\+::pair$<$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ \mbox{\hyperlink{classDomain_a1d339cb7979c5b2d03d069fc09b40696}{Sec\+Field\+EandH}} (blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 1 $>$ \texorpdfstring{$\ast$}{*}sol\+Vector, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} pos)
+\begin{DoxyCompactList}\small\item\em Secondary fields $(\mathbf E^{sc}, \mathbf H^{sc})$ at a point. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classDomain_a3087596044d4c345f84faaad1291946d}{Power}} (blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 1 $>$ \texorpdfstring{$\ast$}{*}sol\+Vector)
+\begin{DoxyCompactList}\small\item\em Power crossing the domain boundary computed from the RWG solution. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ double $>$ \mbox{\hyperlink{classDomain_ae3d63e9f403a667aafad7575076e9975}{scattering\+CS}} (blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 1 $>$ \texorpdfstring{$\ast$}{*}sol\+Vector)=0
+\begin{DoxyCompactList}\small\item\em Scattering cross section. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{classDomain_ab2bafcb18de17fbe57d244ffad6d9061}{absorption\+CS}} (blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 1 $>$ \texorpdfstring{$\ast$}{*}sol\+Vector)=0
+\begin{DoxyCompactList}\small\item\em Absorption cross section. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{classDomain_a1a077dfc89bc49abc4db5404ae271ef8}{extinction\+CS}} (blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 1 $>$ \texorpdfstring{$\ast$}{*}sol\+Vector)=0
+\begin{DoxyCompactList}\small\item\em Extinction cross section. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classDomain_a61682b9c0223ce875cc240575306b398}{Add\+Incident}} (\mbox{\hyperlink{classIncidentField}{Incident\+Field}} \texorpdfstring{$\ast$}{*}in\+Incident)
+\begin{DoxyCompactList}\small\item\em Add a new incident source (ownership transferred to \doxylink{classDomain}{Domain}). \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classDomain_a3740efee36b6693e4fda2bc916552efd}{Clear\+Incident\+Fields}} ()
+\begin{DoxyCompactList}\small\item\em Delete and clear all incident sources. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classDomain_a928ea926ed97bac309194301a8b509c3}{Epsilon}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} pos)=0
+\begin{DoxyCompactList}\small\item\em Relative permittivity at a spatial location. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classDomain_a22745c7dfa178d41cfa4fb0b5b120595}{Mu}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} pos)=0
+\begin{DoxyCompactList}\small\item\em Relative permeability at a spatial location. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classGreenF}{GreenF}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classDomain_ae2697ee45cd30df42819468565ae9388}{Get\+Grn\+Fun\+Layered\+Fields}} () const =0
+\begin{DoxyCompactList}\small\item\em Accessor to the Green\textquotesingle{}s function used for layered-\/media post-\/processing. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classDomain_aef23b3e4cdee7b3aac4abcb4900422c3}{new\+Grn\+Fun\+Layered}} (std\+::vector$<$ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} $>$ \&posvec)=0
+\begin{DoxyCompactList}\small\item\em Build or refresh layered Green\textquotesingle{}s function tables for positions of interest. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classDomain_a9a4b6b74c8cbe071772a0f0809d119c8}{Add\+Plane\+Wave}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} wavelength, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} propagation\+Direction, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} polarization)=0
+\begin{DoxyCompactList}\small\item\em Add a \doxylink{classPlaneWave}{Plane\+Wave} excitation (ownership transferred to \doxylink{classDomain}{Domain}). \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classDomain_a6a3c61914bab1ebbc02613a6ec8db802}{Add\+Dipole}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} location, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} polarization)=0
+\begin{DoxyCompactList}\small\item\em Add a \doxylink{classDipole}{Dipole} excitation (ownership transferred to \doxylink{classDomain}{Domain}). \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classDomain_a6118a37b055d24a8e1bc288a5e0a6a84}{Add\+Gaussian}} (double wavelength, double waist, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} focal\+\_\+point, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} propagationdirection, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} polarization)=0
+\begin{DoxyCompactList}\small\item\em Add a \doxylink{classGaussian}{Gaussian} beam excitation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classDomain_a2b8fcaa668f1959aa9864f7a016d3ee1}{Init\+Lookup\+Table}} (\mbox{\hyperlink{classLookupTableBin}{Lookup\+Table\+Bin}} \texorpdfstring{$\ast$}{*}tin)
+\begin{DoxyCompactList}\small\item\em Provide an erfc lookup table to the Green\textquotesingle{}s function implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classDomain_a43fee8ac7865b98f0b2342102c9f676c}{Enable\+Accurate}} ()
+\begin{DoxyCompactList}\small\item\em Enable globally more accurate (and usually slower) evaluation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int \mbox{\hyperlink{classDomain_aae8b1766332b01596272c9d53a62bb64}{Init\+Grn\+Fun}} ()=0
+\begin{DoxyCompactList}\small\item\em Initialize the Green\textquotesingle{}s function (to be implemented by derived classes). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} $>$ \mbox{\hyperlink{classDomain_aab3938e964f6b4ad0be5ef1d19d06e32}{rwg\+Funs}}
+\begin{DoxyCompactList}\small\item\em RWG basis functions on the boundary. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classIncidentField}{Incident\+Field}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classDomain_a008758cf27a4687b33f380753bb81eac}{incident\+Fields}}
+\begin{DoxyCompactList}\small\item\em List of incident excitations. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBsp3D}{Bsp3D}} \mbox{\hyperlink{classDomain_a0cfa7e1e9a82d715c62d47e986ca183d}{bsp\+Tree}}
+\begin{DoxyCompactList}\small\item\em BSP tree for classification. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGreenF}{GreenF}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classDomain_a0735c67cde08e0a22bfd9e592f7933d3}{grn\+Fun}}
+\begin{DoxyCompactList}\small\item\em Green\textquotesingle{}s function for this domain. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSIEForm}{SIEForm}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classDomain_aeab97e3aa73855ff68c5714dcb4ea4f4}{formulation}}
+\begin{DoxyCompactList}\small\item\em Formulation used for SIE. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classDomain_a68521459794a680a39bd4f91fb682080}{vacuum\+Wavelength}}
+\begin{DoxyCompactList}\small\item\em Wavelength in vacuum. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classDomain_a8f93b8546f2a3373c88eb9da14dc9bd8}{omega}}
+\begin{DoxyCompactList}\small\item\em Angular frequency. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classDomain_a0242b8dac23da9fe639f62bda97ea85c}{index}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classDomain}{Domain} index (mesh region). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classDomain_a07dd1780c94c96f3decd65232f7f82b5}{Needs\+Accurate}} = false
+\begin{DoxyCompactList}\small\item\em Flag for accurate computation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for domains. 
+
+Provides methods to assemble the linear system of equations, compute fields, and query material properties. Derived classes must implement Green\textquotesingle{}s function initialization, material permittivity/permeability, and scattering metrics. 
+
+Definition at line \mbox{\hyperlink{Domain_8h_source_l00038}{38}} of file \mbox{\hyperlink{Domain_8h_source}{Domain.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classDomain_a3f6f9e8ec932680440098679b6fe3300}\index{Domain@{Domain}!Domain@{Domain}}
+\index{Domain@{Domain}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{Domain()}{Domain()}}
+{\footnotesize\ttfamily \label{classDomain_a3f6f9e8ec932680440098679b6fe3300} 
+Domain\+::\+Domain (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSurfaceMesh}{Surface\+Mesh}} \texorpdfstring{$\ast$}{*}}]{mesh}{, }\item[{int}]{d\+Index}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{in\+Vacuum\+Wavelength}{}\end{DoxyParamCaption})}
+
+
+
+Construct a domain over a mesh region at a given vacuum wavelength. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mesh} & Surface mesh containing all boundary triangles. \\
+\hline
+{\em d\+Index} & Integer region index (as labeled in {\ttfamily mesh}). \\
+\hline
+{\em in\+Vacuum\+Wavelength} & Vacuum wavelength $\lambda_0$ (complex to allow dispersion). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Domain_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{Domain_8cpp_source}{Domain.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDomain_a3f6f9e8ec932680440098679b6fe3300_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDomain_a3f6f9e8ec932680440098679b6fe3300_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDomain_a29cec9afb2e54c810ba1f3c1a49543a8}\index{Domain@{Domain}!````~Domain@{\texorpdfstring{$\sim$}{\string~}Domain}}
+\index{````~Domain@{\texorpdfstring{$\sim$}{\string~}Domain}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Domain()}{\string~Domain()}}
+{\footnotesize\ttfamily \label{classDomain_a29cec9afb2e54c810ba1f3c1a49543a8} 
+Domain\+::\texorpdfstring{$\sim$}{\string~}\+Domain (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual destructor. 
+
+
+
+Definition at line \mbox{\hyperlink{Domain_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{Domain_8cpp_source}{Domain.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classDomain_ab2bafcb18de17fbe57d244ffad6d9061}\index{Domain@{Domain}!absorptionCS@{absorptionCS}}
+\index{absorptionCS@{absorptionCS}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{absorptionCS()}{absorptionCS()}}
+{\footnotesize\ttfamily \label{classDomain_ab2bafcb18de17fbe57d244ffad6d9061} 
+virtual double Domain\+::absorption\+CS (\begin{DoxyParamCaption}\item[{blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 1 $>$ \texorpdfstring{$\ast$}{*}}]{sol\+Vector}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Absorption cross section. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sol\+Vector} & Solution coefficients $\mathbf{x}$. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Absorption cross section. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Not always accurate (volumetric methods based on Ohmic losses have better accuracy). 
+\end{DoxyNote}
+
+
+Implemented in \mbox{\hyperlink{classDomainHom3D_ad19635c8b33f69ebf6cb3cd8788f7f23}{Domain\+Hom3D}}, and \mbox{\hyperlink{classDomainLayered3D_a4e5fb098bcc6edc2f594da23e0b64fb3}{Domain\+Layered3D}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDomain_ab2bafcb18de17fbe57d244ffad6d9061_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDomain_a6a3c61914bab1ebbc02613a6ec8db802}\index{Domain@{Domain}!AddDipole@{AddDipole}}
+\index{AddDipole@{AddDipole}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{AddDipole()}{AddDipole()}}
+{\footnotesize\ttfamily \label{classDomain_a6a3c61914bab1ebbc02613a6ec8db802} 
+virtual int Domain\+::\+Add\+Dipole (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{location}{, }\item[{\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}}]{polarization}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Add a \doxylink{classDipole}{Dipole} excitation (ownership transferred to \doxylink{classDomain}{Domain}). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & \doxylink{classDipole}{Dipole} position. \\
+\hline
+{\em polarization} & Complex dipole moment vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success; non-\/zero otherwise. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classDomainHom3D_a08b2e0c472b20193f23c4dd4b3c3a731}{Domain\+Hom3D}}, and \mbox{\hyperlink{classDomainLayered3D_a6551ae7ca5dac2a5dda2d78b15d78ecc}{Domain\+Layered3D}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDomain_a6a3c61914bab1ebbc02613a6ec8db802_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDomain_a6118a37b055d24a8e1bc288a5e0a6a84}\index{Domain@{Domain}!AddGaussian@{AddGaussian}}
+\index{AddGaussian@{AddGaussian}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{AddGaussian()}{AddGaussian()}}
+{\footnotesize\ttfamily \label{classDomain_a6118a37b055d24a8e1bc288a5e0a6a84} 
+virtual int Domain\+::\+Add\+Gaussian (\begin{DoxyParamCaption}\item[{double}]{wavelength}{, }\item[{double}]{waist}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{focal\+\_\+point}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{propagationdirection}{, }\item[{\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}}]{polarization}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Add a \doxylink{classGaussian}{Gaussian} beam excitation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wavelength} & Vacuum wavelength. \\
+\hline
+{\em waist} & Beam waist radius $ w_0 $. \\
+\hline
+{\em focal\+\_\+point} & Beam focus position. \\
+\hline
+{\em propagationdirection} & Unit vector of beam propagation. \\
+\hline
+{\em polarization} & Complex polarization vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success; non-\/zero otherwise. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Not implemented for layered media. 
+\end{DoxyNote}
+
+
+Implemented in \mbox{\hyperlink{classDomainHom3D_addce520ad0085aae8f454c377131fce7}{Domain\+Hom3D}}, and \mbox{\hyperlink{classDomainLayered3D_aaa6b950bf905f5bc98710271815d910d}{Domain\+Layered3D}}.
+
+\Hypertarget{classDomain_a61682b9c0223ce875cc240575306b398}\index{Domain@{Domain}!AddIncident@{AddIncident}}
+\index{AddIncident@{AddIncident}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{AddIncident()}{AddIncident()}}
+{\footnotesize\ttfamily \label{classDomain_a61682b9c0223ce875cc240575306b398} 
+int Domain\+::\+Add\+Incident (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classIncidentField}{Incident\+Field}} \texorpdfstring{$\ast$}{*}}]{in\+Incident}{}\end{DoxyParamCaption})}
+
+
+
+Add a new incident source (ownership transferred to \doxylink{classDomain}{Domain}). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in\+Incident} & Pointer to dynamically allocated incident field. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success; non-\/zero otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Domain_8cpp_source_l00093}{93}} of file \mbox{\hyperlink{Domain_8cpp_source}{Domain.\+cpp}}.
+
+\Hypertarget{classDomain_a9a4b6b74c8cbe071772a0f0809d119c8}\index{Domain@{Domain}!AddPlaneWave@{AddPlaneWave}}
+\index{AddPlaneWave@{AddPlaneWave}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{AddPlaneWave()}{AddPlaneWave()}}
+{\footnotesize\ttfamily \label{classDomain_a9a4b6b74c8cbe071772a0f0809d119c8} 
+virtual int Domain\+::\+Add\+Plane\+Wave (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{wavelength}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{propagation\+Direction}{, }\item[{\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}}]{polarization}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Add a \doxylink{classPlaneWave}{Plane\+Wave} excitation (ownership transferred to \doxylink{classDomain}{Domain}). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wavelength} & Vacuum wavelength $\lambda_0$ (complex allowed). \\
+\hline
+{\em propagation\+Direction} & Unit vector $\hat{\mathbf k}$ (direction of travel). \\
+\hline
+{\em polarization} & Complex polarization vector (transverse to $\hat{\mathbf k}$). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success; non-\/zero otherwise. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classDomainHom3D_ac0c154d55efe4f3819ee764fa58e3e2d}{Domain\+Hom3D}}, and \mbox{\hyperlink{classDomainLayered3D_af915245a562206c20725942120a5d06e}{Domain\+Layered3D}}.
+
+\Hypertarget{classDomain_a753296cc63cedb73b537311031521178}\index{Domain@{Domain}!AddTrianglesFromMesh@{AddTrianglesFromMesh}}
+\index{AddTrianglesFromMesh@{AddTrianglesFromMesh}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{AddTrianglesFromMesh()}{AddTrianglesFromMesh()}}
+{\footnotesize\ttfamily \label{classDomain_a753296cc63cedb73b537311031521178} 
+int Domain\+::\+Add\+Triangles\+From\+Mesh (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSurfaceMesh}{Surface\+Mesh}} \texorpdfstring{$\ast$}{*}}]{mesh}{, }\item[{int}]{d\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Add all boundary triangles belonging to region {\ttfamily d\+Index} and build RWGs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mesh} & Input surface mesh. \\
+\hline
+{\em d\+Index} & Region index to extract. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of boundary triangles added. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Domain_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{Domain_8cpp_source}{Domain.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDomain_a753296cc63cedb73b537311031521178_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDomain_a753296cc63cedb73b537311031521178_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDomain_a3740efee36b6693e4fda2bc916552efd}\index{Domain@{Domain}!ClearIncidentFields@{ClearIncidentFields}}
+\index{ClearIncidentFields@{ClearIncidentFields}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{ClearIncidentFields()}{ClearIncidentFields()}}
+{\footnotesize\ttfamily \label{classDomain_a3740efee36b6693e4fda2bc916552efd} 
+int Domain\+::\+Clear\+Incident\+Fields (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Delete and clear all incident sources. 
+
+\begin{DoxyReturn}{Returns}
+0 on success. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classDomainLayered3D_a4e4355cfe34e6edd8e3587df4b5b115f}{Domain\+Layered3D}}.
+
+
+
+Definition at line \mbox{\hyperlink{Domain_8cpp_source_l00294}{294}} of file \mbox{\hyperlink{Domain_8cpp_source}{Domain.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDomain_a3740efee36b6693e4fda2bc916552efd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDomain_a43fee8ac7865b98f0b2342102c9f676c}\index{Domain@{Domain}!EnableAccurate@{EnableAccurate}}
+\index{EnableAccurate@{EnableAccurate}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{EnableAccurate()}{EnableAccurate()}}
+{\footnotesize\ttfamily \label{classDomain_a43fee8ac7865b98f0b2342102c9f676c} 
+void Domain\+::\+Enable\+Accurate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Enable globally more accurate (and usually slower) evaluation. 
+
+
+
+Definition at line \mbox{\hyperlink{Domain_8cpp_source_l00055}{55}} of file \mbox{\hyperlink{Domain_8cpp_source}{Domain.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{classDomain_a43fee8ac7865b98f0b2342102c9f676c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDomain_a928ea926ed97bac309194301a8b509c3}\index{Domain@{Domain}!Epsilon@{Epsilon}}
+\index{Epsilon@{Epsilon}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{Epsilon()}{Epsilon()}}
+{\footnotesize\ttfamily \label{classDomain_a928ea926ed97bac309194301a8b509c3} 
+virtual \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Domain\+::\+Epsilon (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{pos}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Relative permittivity at a spatial location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & Query location. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex relative permittivity $\varepsilon_r(\mathbf r)$. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classDomainHom3D_a2527e53d1a3a3821dfb0b05deb6f685e}{Domain\+Hom3D}}, and \mbox{\hyperlink{classDomainLayered3D_a281513a4cb865b8c688dd920a6789955}{Domain\+Layered3D}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDomain_a928ea926ed97bac309194301a8b509c3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDomain_a1a077dfc89bc49abc4db5404ae271ef8}\index{Domain@{Domain}!extinctionCS@{extinctionCS}}
+\index{extinctionCS@{extinctionCS}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{extinctionCS()}{extinctionCS()}}
+{\footnotesize\ttfamily \label{classDomain_a1a077dfc89bc49abc4db5404ae271ef8} 
+virtual double Domain\+::extinction\+CS (\begin{DoxyParamCaption}\item[{blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 1 $>$ \texorpdfstring{$\ast$}{*}}]{sol\+Vector}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Extinction cross section. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sol\+Vector} & Solution coefficients $\mathbf{x}$. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Extinction cross section. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Not always accurate (volumetric methods have better accuracy). 
+\end{DoxyNote}
+
+
+Implemented in \mbox{\hyperlink{classDomainHom3D_aa6a76dafe56204c15b80e491e6a2b21d}{Domain\+Hom3D}}, and \mbox{\hyperlink{classDomainLayered3D_a847bdddcbf4257a73cfcd2766c882f8b}{Domain\+Layered3D}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDomain_a1a077dfc89bc49abc4db5404ae271ef8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDomain_aee28d04b8f8f6fec0c8f4ec181da385f}\index{Domain@{Domain}!FillLSEMatrix@{FillLSEMatrix}}
+\index{FillLSEMatrix@{FillLSEMatrix}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{FillLSEMatrix()}{FillLSEMatrix()}}
+{\footnotesize\ttfamily \label{classDomain_aee28d04b8f8f6fec0c8f4ec181da385f} 
+int Domain\+::\+Fill\+LSEMatrix (\begin{DoxyParamCaption}\item[{blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 2 $>$ \texorpdfstring{$\ast$}{*}}]{matrix}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Assemble the linear system matrix using the active formulation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & Output system matrix $\mathbf{A}$ (modified in place). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success; non-\/zero otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Domain_8cpp_source_l00060}{60}} of file \mbox{\hyperlink{Domain_8cpp_source}{Domain.\+cpp}}.
+
+\Hypertarget{classDomain_a8291b7d47e8ee08ba7699b6c0dae5f7d}\index{Domain@{Domain}!FillLSEMatrixAndGradient@{FillLSEMatrixAndGradient}}
+\index{FillLSEMatrixAndGradient@{FillLSEMatrixAndGradient}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{FillLSEMatrixAndGradient()}{FillLSEMatrixAndGradient()}}
+{\footnotesize\ttfamily \label{classDomain_a8291b7d47e8ee08ba7699b6c0dae5f7d} 
+int Domain\+::\+Fill\+LSEMatrix\+And\+Gradient (\begin{DoxyParamCaption}\item[{blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 2 $>$ \texorpdfstring{$\ast$}{*}}]{matrix}{, }\item[{blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 2 $>$ \texorpdfstring{$\ast$}{*}}]{gradmatrix}{\mbox{[}3\mbox{]}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Assemble the linear system matrix and its gradient w.\+r.\+t. 
+
+geometry/parameters. 
+\begin{DoxyParams}{Parameters}
+{\em matrix} & Output system matrix $\mathbf{A}$. \\
+\hline
+{\em gradmatrix} & Array of three pointers to gradient matrices. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success; non-\/zero otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Domain_8cpp_source_l00064}{64}} of file \mbox{\hyperlink{Domain_8cpp_source}{Domain.\+cpp}}.
+
+\Hypertarget{classDomain_a86bb59b09fe39f43b2e65811fb058c83}\index{Domain@{Domain}!FillLSEVector@{FillLSEVector}}
+\index{FillLSEVector@{FillLSEVector}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{FillLSEVector()}{FillLSEVector()}}
+{\footnotesize\ttfamily \label{classDomain_a86bb59b09fe39f43b2e65811fb058c83} 
+int Domain\+::\+Fill\+LSEVector (\begin{DoxyParamCaption}\item[{blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 1 $>$ \texorpdfstring{$\ast$}{*}}]{vector}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Assemble the right-\/hand-\/side (RHS) vector using the active formulation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vector} & Output RHS $\mathbf{b}$ (modified in place). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success; non-\/zero otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Domain_8cpp_source_l00069}{69}} of file \mbox{\hyperlink{Domain_8cpp_source}{Domain.\+cpp}}.
+
+\Hypertarget{classDomain_ae2697ee45cd30df42819468565ae9388}\index{Domain@{Domain}!GetGrnFunLayeredFields@{GetGrnFunLayeredFields}}
+\index{GetGrnFunLayeredFields@{GetGrnFunLayeredFields}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{GetGrnFunLayeredFields()}{GetGrnFunLayeredFields()}}
+{\footnotesize\ttfamily \label{classDomain_ae2697ee45cd30df42819468565ae9388} 
+virtual \mbox{\hyperlink{classGreenF}{GreenF}} \texorpdfstring{$\ast$}{*} Domain\+::\+Get\+Grn\+Fun\+Layered\+Fields (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Accessor to the Green\textquotesingle{}s function used for layered-\/media post-\/processing. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the layered Green\textquotesingle{}s function instance. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classDomainHom3D_af63b748ae545711c226bf89934858cd6}{Domain\+Hom3D}}, and \mbox{\hyperlink{classDomainLayered3D_a81a50dca5e2c5f0415bc08dc0bcd7a79}{Domain\+Layered3D}}.
+
+\Hypertarget{classDomain_a8bd77bbd144186387e71441866606e05}\index{Domain@{Domain}!hasDipoles@{hasDipoles}}
+\index{hasDipoles@{hasDipoles}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{hasDipoles()}{hasDipoles()}}
+{\footnotesize\ttfamily \label{classDomain_a8bd77bbd144186387e71441866606e05} 
+bool Domain\+::has\+Dipoles (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Check whether any incident field is a dipole. 
+
+\begin{DoxyReturn}{Returns}
+true if a dipole source exists; false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Domain_8cpp_source_l00084}{84}} of file \mbox{\hyperlink{Domain_8cpp_source}{Domain.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDomain_a8bd77bbd144186387e71441866606e05_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDomain_afe5c1f862e335ab05031b1d6b0b87c42}\index{Domain@{Domain}!IncFieldE@{IncFieldE}}
+\index{IncFieldE@{IncFieldE}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{IncFieldE()}{IncFieldE()}}
+{\footnotesize\ttfamily \label{classDomain_afe5c1f862e335ab05031b1d6b0b87c42} 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} Domain\+::\+Inc\+FieldE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{pos}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Total incident electric field at a point from all incident sources. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & Observation point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex electric field vector $\mathbf{E}^{inc}(\mathbf{r})$. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classDomainLayered3D_ae2e6a313e8a32a981d6d698a47e238cb}{Domain\+Layered3D}}.
+
+
+
+Definition at line \mbox{\hyperlink{Domain_8cpp_source_l00135}{135}} of file \mbox{\hyperlink{Domain_8cpp_source}{Domain.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDomain_afe5c1f862e335ab05031b1d6b0b87c42_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDomain_a832a36e6ba8ae02be3dd493bd2577d4a}\index{Domain@{Domain}!IncFieldH@{IncFieldH}}
+\index{IncFieldH@{IncFieldH}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{IncFieldH()}{IncFieldH()}}
+{\footnotesize\ttfamily \label{classDomain_a832a36e6ba8ae02be3dd493bd2577d4a} 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} Domain\+::\+Inc\+FieldH (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{pos}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Total incident magnetic field at a point from all incident sources. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & Observation point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex magnetic field vector $\mathbf{H}^{inc}(\mathbf{r})$. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classDomainLayered3D_a1224cc02268d1cfe5b51ebf363cda79e}{Domain\+Layered3D}}.
+
+
+
+Definition at line \mbox{\hyperlink{Domain_8cpp_source_l00214}{214}} of file \mbox{\hyperlink{Domain_8cpp_source}{Domain.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDomain_a832a36e6ba8ae02be3dd493bd2577d4a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDomain_a4ca094ed1d16b191f026d0c23e1fc75a}\index{Domain@{Domain}!Index@{Index}}
+\index{Index@{Index}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{Index()}{Index()}}
+{\footnotesize\ttfamily \label{classDomain_a4ca094ed1d16b191f026d0c23e1fc75a} 
+int Domain\+::\+Index (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Return this domain\textquotesingle{}s integer index. 
+
+\begin{DoxyReturn}{Returns}
+Region index associated with this domain. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Domain_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{Domain_8cpp_source}{Domain.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDomain_a4ca094ed1d16b191f026d0c23e1fc75a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDomain_af80d3694a871a28872ada50e0a4e4aed}\index{Domain@{Domain}!InitFormulation@{InitFormulation}}
+\index{InitFormulation@{InitFormulation}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{InitFormulation()}{InitFormulation()}}
+{\footnotesize\ttfamily \label{classDomain_af80d3694a871a28872ada50e0a4e4aed} 
+virtual int Domain\+::\+Init\+Formulation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{vac\+Wavelength}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Initialize the SIE formulation object at the given wavelength. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vac\+Wavelength} & Vacuum wavelength $\lambda_0$ used to configure the formulation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success; non-\/zero otherwise. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classDomainHom3D_ae1bfe7c17902aac07736f3070aac748a}{Domain\+Hom3D}}, and \mbox{\hyperlink{classDomainLayered3D_a29d39ee560fefa7c1262f2d50f2deedd}{Domain\+Layered3D}}.
+
+\Hypertarget{classDomain_aae8b1766332b01596272c9d53a62bb64}\index{Domain@{Domain}!InitGrnFun@{InitGrnFun}}
+\index{InitGrnFun@{InitGrnFun}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{InitGrnFun()}{InitGrnFun()}}
+{\footnotesize\ttfamily \label{classDomain_aae8b1766332b01596272c9d53a62bb64} 
+virtual int Domain\+::\+Init\+Grn\+Fun (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Initialize the Green\textquotesingle{}s function (to be implemented by derived classes). 
+
+\begin{DoxyReturn}{Returns}
+0 on success; non-\/zero otherwise. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classDomainHom3D_a3877e2d1f2020c251b5e3c74e5c40594}{Domain\+Hom3D}}, and \mbox{\hyperlink{classDomainLayered3D_af630820f17df76fa4348a9dc121c70e7}{Domain\+Layered3D}}.
+
+\Hypertarget{classDomain_a2b8fcaa668f1959aa9864f7a016d3ee1}\index{Domain@{Domain}!InitLookupTable@{InitLookupTable}}
+\index{InitLookupTable@{InitLookupTable}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{InitLookupTable()}{InitLookupTable()}}
+{\footnotesize\ttfamily \label{classDomain_a2b8fcaa668f1959aa9864f7a016d3ee1} 
+int Domain\+::\+Init\+Lookup\+Table (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classLookupTableBin}{Lookup\+Table\+Bin}} \texorpdfstring{$\ast$}{*}}]{tin}{}\end{DoxyParamCaption})}
+
+
+
+Provide an erfc lookup table to the Green\textquotesingle{}s function implementation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tin} & Pointer to a binary erfc lookup table. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success; non-\/zero otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Domain_8cpp_source_l00343}{343}} of file \mbox{\hyperlink{Domain_8cpp_source}{Domain.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDomain_a2b8fcaa668f1959aa9864f7a016d3ee1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDomain_a6f7b0190794a8ee0a026b0dcf2159aef}\index{Domain@{Domain}!IsInside@{IsInside}}
+\index{IsInside@{IsInside}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{IsInside()}{IsInside()}}
+{\footnotesize\ttfamily \label{classDomain_a6f7b0190794a8ee0a026b0dcf2159aef} 
+bool Domain\+::\+Is\+Inside (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{point}{}\end{DoxyParamCaption})}
+
+
+
+Test whether a spatial point lies inside the domain. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & Query location. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if inside; false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Domain_8cpp_source_l00076}{76}} of file \mbox{\hyperlink{Domain_8cpp_source}{Domain.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDomain_a6f7b0190794a8ee0a026b0dcf2159aef_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDomain_ad0af818f04c737b2c021aeb3c3c46abd}\index{Domain@{Domain}!IsLayered@{IsLayered}}
+\index{IsLayered@{IsLayered}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{IsLayered()}{IsLayered()}}
+{\footnotesize\ttfamily \label{classDomain_ad0af818f04c737b2c021aeb3c3c46abd} 
+virtual bool Domain\+::\+Is\+Layered (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Is this a layered domain? 
+
+Must be defined by subclasses. \begin{DoxyReturn}{Returns}
+true for layered domains; false otherwise. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classDomainHom3D_ab4328b1e3b1fb719590ad088b1e474b9}{Domain\+Hom3D}}, and \mbox{\hyperlink{classDomainLayered3D_a799790429ac806eed16efe1014b0f2bd}{Domain\+Layered3D}}.
+
+\Hypertarget{classDomain_a22745c7dfa178d41cfa4fb0b5b120595}\index{Domain@{Domain}!Mu@{Mu}}
+\index{Mu@{Mu}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{Mu()}{Mu()}}
+{\footnotesize\ttfamily \label{classDomain_a22745c7dfa178d41cfa4fb0b5b120595} 
+virtual \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Domain\+::\+Mu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{pos}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Relative permeability at a spatial location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & Query location. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex relative permeability $\mu_r(\mathbf r)$. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classDomainHom3D_a341ad7a1fe44cac9debfcae58ae1b142}{Domain\+Hom3D}}, and \mbox{\hyperlink{classDomainLayered3D_a295274a8176b2d6f9fc07c7aea9fd89c}{Domain\+Layered3D}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDomain_a22745c7dfa178d41cfa4fb0b5b120595_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDomain_aef23b3e4cdee7b3aac4abcb4900422c3}\index{Domain@{Domain}!newGrnFunLayered@{newGrnFunLayered}}
+\index{newGrnFunLayered@{newGrnFunLayered}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{newGrnFunLayered()}{newGrnFunLayered()}}
+{\footnotesize\ttfamily \label{classDomain_aef23b3e4cdee7b3aac4abcb4900422c3} 
+virtual void Domain\+::new\+Grn\+Fun\+Layered (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} $>$ \&}]{posvec}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Build or refresh layered Green\textquotesingle{}s function tables for positions of interest. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em posvec} & Vector of observation positions used to seed/refresh tables. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classDomainHom3D_a7f3d22569004c8116270b249012aa762}{Domain\+Hom3D}}, and \mbox{\hyperlink{classDomainLayered3D_ab55a37fee77313a2f5e2bd4c2be927f0}{Domain\+Layered3D}}.
+
+\Hypertarget{classDomain_a3087596044d4c345f84faaad1291946d}\index{Domain@{Domain}!Power@{Power}}
+\index{Power@{Power}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{Power()}{Power()}}
+{\footnotesize\ttfamily \label{classDomain_a3087596044d4c345f84faaad1291946d} 
+double Domain\+::\+Power (\begin{DoxyParamCaption}\item[{blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 1 $>$ \texorpdfstring{$\ast$}{*}}]{sol\+Vector}{}\end{DoxyParamCaption})}
+
+
+
+Power crossing the domain boundary computed from the RWG solution. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sol\+Vector} & Solution coefficients $\mathbf{x}$. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Time-\/averaged outward power. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Not implemented for layered media. 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{Domain_8cpp_source_l00245}{245}} of file \mbox{\hyperlink{Domain_8cpp_source}{Domain.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{classDomain_a3087596044d4c345f84faaad1291946d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDomain_a3087596044d4c345f84faaad1291946d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDomain_aab504e2e699c789b209cf0e288b8a389}\index{Domain@{Domain}!PrintAllEdges@{PrintAllEdges}}
+\index{PrintAllEdges@{PrintAllEdges}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{PrintAllEdges()}{PrintAllEdges()}}
+{\footnotesize\ttfamily \label{classDomain_aab504e2e699c789b209cf0e288b8a389} 
+int Domain\+::\+Print\+All\+Edges (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSurfaceMesh}{Surface\+Mesh}} \texorpdfstring{$\ast$}{*}}]{mesh}{}\end{DoxyParamCaption})}
+
+
+
+Debug\+: print all edges and the RWGs that live on them. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mesh} & Input surface mesh. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Domain_8cpp_source_l00322}{322}} of file \mbox{\hyperlink{Domain_8cpp_source}{Domain.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDomain_aab504e2e699c789b209cf0e288b8a389_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDomain_a3eaedce45621dee107b082aca51d80ea}\index{Domain@{Domain}!PrintAllRWGCentroids@{PrintAllRWGCentroids}}
+\index{PrintAllRWGCentroids@{PrintAllRWGCentroids}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{PrintAllRWGCentroids()}{PrintAllRWGCentroids()}}
+{\footnotesize\ttfamily \label{classDomain_a3eaedce45621dee107b082aca51d80ea} 
+int Domain\+::\+Print\+All\+RWGCentroids (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Debug\+: print triangle centroids and RWG evaluations at centroids. 
+
+\begin{DoxyReturn}{Returns}
+0 on success. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Domain_8cpp_source_l00305}{305}} of file \mbox{\hyperlink{Domain_8cpp_source}{Domain.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDomain_a3eaedce45621dee107b082aca51d80ea_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDomain_a885bd8196776413b39025f2ccf23e702}\index{Domain@{Domain}!RGWFunPtr@{RGWFunPtr}}
+\index{RGWFunPtr@{RGWFunPtr}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{RGWFunPtr()}{RGWFunPtr()}}
+{\footnotesize\ttfamily \label{classDomain_a885bd8196776413b39025f2ccf23e702} 
+\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*} Domain\+::\+RGWFun\+Ptr (\begin{DoxyParamCaption}\item[{int}]{index}{}\end{DoxyParamCaption})}
+
+
+
+Direct access to an RWG basis function by global index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Global RWG index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the corresponding RWG basis function. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Domain_8cpp_source_l00341}{341}} of file \mbox{\hyperlink{Domain_8cpp_source}{Domain.\+cpp}}.
+
+\Hypertarget{classDomain_ae3d63e9f403a667aafad7575076e9975}\index{Domain@{Domain}!scatteringCS@{scatteringCS}}
+\index{scatteringCS@{scatteringCS}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{scatteringCS()}{scatteringCS()}}
+{\footnotesize\ttfamily \label{classDomain_ae3d63e9f403a667aafad7575076e9975} 
+virtual std\+::vector$<$ double $>$ Domain\+::scattering\+CS (\begin{DoxyParamCaption}\item[{blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 1 $>$ \texorpdfstring{$\ast$}{*}}]{sol\+Vector}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Scattering cross section. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sol\+Vector} & Solution coefficients $\mathbf{x}$. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Scattering cross section and near-\/field intensity. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classDomainHom3D_af51c0166dbce1642b143f7bf910b7c12}{Domain\+Hom3D}}, and \mbox{\hyperlink{classDomainLayered3D_a267135f0a2f5bfff12f7ac3b25429176}{Domain\+Layered3D}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDomain_ae3d63e9f403a667aafad7575076e9975_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDomain_ae1e6975d3ddc5fe177020d447673fdf7}\index{Domain@{Domain}!SecFieldE@{SecFieldE}}
+\index{SecFieldE@{SecFieldE}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{SecFieldE()}{SecFieldE()}}
+{\footnotesize\ttfamily \label{classDomain_ae1e6975d3ddc5fe177020d447673fdf7} 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} Domain\+::\+Sec\+FieldE (\begin{DoxyParamCaption}\item[{blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 1 $>$ \texorpdfstring{$\ast$}{*}}]{sol\+Vector}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{pos}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Secondary (scattered) electric field at a point from the solution vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sol\+Vector} & Solution coefficients $\mathbf{x}$ (current unknowns). \\
+\hline
+{\em pos} & Observation point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex electric field vector $\mathbf{E}^{sc}(\mathbf{r})$. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classDomainLayered3D_a110d03c8733184e065d4e41ba22b113f}{Domain\+Layered3D}}.
+
+
+
+Definition at line \mbox{\hyperlink{Domain_8cpp_source_l00102}{102}} of file \mbox{\hyperlink{Domain_8cpp_source}{Domain.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{classDomain_ae1e6975d3ddc5fe177020d447673fdf7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDomain_ae1e6975d3ddc5fe177020d447673fdf7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDomain_a1d339cb7979c5b2d03d069fc09b40696}\index{Domain@{Domain}!SecFieldEandH@{SecFieldEandH}}
+\index{SecFieldEandH@{SecFieldEandH}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{SecFieldEandH()}{SecFieldEandH()}}
+{\footnotesize\ttfamily \label{classDomain_a1d339cb7979c5b2d03d069fc09b40696} 
+std\+::pair$<$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ Domain\+::\+Sec\+Field\+EandH (\begin{DoxyParamCaption}\item[{blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 1 $>$ \texorpdfstring{$\ast$}{*}}]{sol\+Vector}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{pos}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Secondary fields $(\mathbf E^{sc}, \mathbf H^{sc})$ at a point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sol\+Vector} & Solution coefficients $\mathbf{x}$. \\
+\hline
+{\em pos} & Observation point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pair $\{\mathbf E^{sc}(\mathbf r), \mathbf H^{sc}(\mathbf r)\}$. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classDomainLayered3D_a2572d0a6f9105bf4f90c42970f76f8a0}{Domain\+Layered3D}}.
+
+
+
+Definition at line \mbox{\hyperlink{Domain_8cpp_source_l00176}{176}} of file \mbox{\hyperlink{Domain_8cpp_source}{Domain.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{classDomain_a1d339cb7979c5b2d03d069fc09b40696_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDomain_a1d339cb7979c5b2d03d069fc09b40696_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDomain_a507d3690b3a17a9f01beb83a2d6b026e}\index{Domain@{Domain}!SecFieldH@{SecFieldH}}
+\index{SecFieldH@{SecFieldH}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{SecFieldH()}{SecFieldH()}}
+{\footnotesize\ttfamily \label{classDomain_a507d3690b3a17a9f01beb83a2d6b026e} 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} Domain\+::\+Sec\+FieldH (\begin{DoxyParamCaption}\item[{blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 1 $>$ \texorpdfstring{$\ast$}{*}}]{sol\+Vector}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{pos}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Secondary (scattered) magnetic field at a point from the solution vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sol\+Vector} & Solution coefficients $\mathbf{x}$ (current unknowns). \\
+\hline
+{\em pos} & Observation point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex magnetic field vector $\mathbf{H}^{sc}(\mathbf{r})$. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classDomainLayered3D_ae0399e203da7a532c55264015d172e99}{Domain\+Layered3D}}.
+
+
+
+Definition at line \mbox{\hyperlink{Domain_8cpp_source_l00144}{144}} of file \mbox{\hyperlink{Domain_8cpp_source}{Domain.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{classDomain_a507d3690b3a17a9f01beb83a2d6b026e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDomain_a507d3690b3a17a9f01beb83a2d6b026e_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classDomain_a0cfa7e1e9a82d715c62d47e986ca183d}\index{Domain@{Domain}!bspTree@{bspTree}}
+\index{bspTree@{bspTree}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{bspTree}{bspTree}}
+{\footnotesize\ttfamily \label{classDomain_a0cfa7e1e9a82d715c62d47e986ca183d} 
+\mbox{\hyperlink{classBsp3D}{Bsp3D}} Domain\+::bsp\+Tree\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+BSP tree for classification. 
+
+
+
+Definition at line \mbox{\hyperlink{Domain_8h_source_l00043}{43}} of file \mbox{\hyperlink{Domain_8h_source}{Domain.\+h}}.
+
+\Hypertarget{classDomain_aeab97e3aa73855ff68c5714dcb4ea4f4}\index{Domain@{Domain}!formulation@{formulation}}
+\index{formulation@{formulation}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{formulation}{formulation}}
+{\footnotesize\ttfamily \label{classDomain_aeab97e3aa73855ff68c5714dcb4ea4f4} 
+\mbox{\hyperlink{classSIEForm}{SIEForm}}\texorpdfstring{$\ast$}{*} Domain\+::formulation\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Formulation used for SIE. 
+
+
+
+Definition at line \mbox{\hyperlink{Domain_8h_source_l00047}{47}} of file \mbox{\hyperlink{Domain_8h_source}{Domain.\+h}}.
+
+\Hypertarget{classDomain_a0735c67cde08e0a22bfd9e592f7933d3}\index{Domain@{Domain}!grnFun@{grnFun}}
+\index{grnFun@{grnFun}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{grnFun}{grnFun}}
+{\footnotesize\ttfamily \label{classDomain_a0735c67cde08e0a22bfd9e592f7933d3} 
+\mbox{\hyperlink{classGreenF}{GreenF}}\texorpdfstring{$\ast$}{*} Domain\+::grn\+Fun\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Green\textquotesingle{}s function for this domain. 
+
+
+
+Definition at line \mbox{\hyperlink{Domain_8h_source_l00046}{46}} of file \mbox{\hyperlink{Domain_8h_source}{Domain.\+h}}.
+
+\Hypertarget{classDomain_a008758cf27a4687b33f380753bb81eac}\index{Domain@{Domain}!incidentFields@{incidentFields}}
+\index{incidentFields@{incidentFields}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{incidentFields}{incidentFields}}
+{\footnotesize\ttfamily \label{classDomain_a008758cf27a4687b33f380753bb81eac} 
+std\+::vector$<$\mbox{\hyperlink{classIncidentField}{Incident\+Field}} \texorpdfstring{$\ast$}{*}$>$ Domain\+::incident\+Fields\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+List of incident excitations. 
+
+
+
+Definition at line \mbox{\hyperlink{Domain_8h_source_l00042}{42}} of file \mbox{\hyperlink{Domain_8h_source}{Domain.\+h}}.
+
+\Hypertarget{classDomain_a0242b8dac23da9fe639f62bda97ea85c}\index{Domain@{Domain}!index@{index}}
+\index{index@{index}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{index}{index}}
+{\footnotesize\ttfamily \label{classDomain_a0242b8dac23da9fe639f62bda97ea85c} 
+int Domain\+::index\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxylink{classDomain}{Domain} index (mesh region). 
+
+
+
+Definition at line \mbox{\hyperlink{Domain_8h_source_l00052}{52}} of file \mbox{\hyperlink{Domain_8h_source}{Domain.\+h}}.
+
+\Hypertarget{classDomain_a07dd1780c94c96f3decd65232f7f82b5}\index{Domain@{Domain}!NeedsAccurate@{NeedsAccurate}}
+\index{NeedsAccurate@{NeedsAccurate}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{NeedsAccurate}{NeedsAccurate}}
+{\footnotesize\ttfamily \label{classDomain_a07dd1780c94c96f3decd65232f7f82b5} 
+bool Domain\+::\+Needs\+Accurate = false\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Flag for accurate computation. 
+
+
+
+Definition at line \mbox{\hyperlink{Domain_8h_source_l00053}{53}} of file \mbox{\hyperlink{Domain_8h_source}{Domain.\+h}}.
+
+\Hypertarget{classDomain_a8f93b8546f2a3373c88eb9da14dc9bd8}\index{Domain@{Domain}!omega@{omega}}
+\index{omega@{omega}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{omega}{omega}}
+{\footnotesize\ttfamily \label{classDomain_a8f93b8546f2a3373c88eb9da14dc9bd8} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Domain\+::omega\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Angular frequency. 
+
+
+
+Definition at line \mbox{\hyperlink{Domain_8h_source_l00051}{51}} of file \mbox{\hyperlink{Domain_8h_source}{Domain.\+h}}.
+
+\Hypertarget{classDomain_aab3938e964f6b4ad0be5ef1d19d06e32}\index{Domain@{Domain}!rwgFuns@{rwgFuns}}
+\index{rwgFuns@{rwgFuns}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{rwgFuns}{rwgFuns}}
+{\footnotesize\ttfamily \label{classDomain_aab3938e964f6b4ad0be5ef1d19d06e32} 
+std\+::vector$<$\mbox{\hyperlink{classRWGFun}{RWGFun}}$>$ Domain\+::rwg\+Funs\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+RWG basis functions on the boundary. 
+
+
+
+Definition at line \mbox{\hyperlink{Domain_8h_source_l00041}{41}} of file \mbox{\hyperlink{Domain_8h_source}{Domain.\+h}}.
+
+\Hypertarget{classDomain_a68521459794a680a39bd4f91fb682080}\index{Domain@{Domain}!vacuumWavelength@{vacuumWavelength}}
+\index{vacuumWavelength@{vacuumWavelength}!Domain@{Domain}}
+\doxysubsubsection{\texorpdfstring{vacuumWavelength}{vacuumWavelength}}
+{\footnotesize\ttfamily \label{classDomain_a68521459794a680a39bd4f91fb682080} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Domain\+::vacuum\+Wavelength\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Wavelength in vacuum. 
+
+
+
+Definition at line \mbox{\hyperlink{Domain_8h_source_l00050}{50}} of file \mbox{\hyperlink{Domain_8h_source}{Domain.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Domain_8h}{Domain.\+h}}\item 
+\mbox{\hyperlink{Domain_8cpp}{Domain.\+cpp}}\end{DoxyCompactItemize}

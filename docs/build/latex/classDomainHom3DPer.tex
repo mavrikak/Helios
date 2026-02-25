@@ -1,0 +1,226 @@
+\doxysection{Domain\+Hom3\+DPer Class Reference}
+\hypertarget{classDomainHom3DPer}{}\label{classDomainHom3DPer}\index{DomainHom3DPer@{DomainHom3DPer}}
+
+
+Homogeneous medium with Bloch‑periodic excitation/\+Green\textquotesingle{}s function.  
+
+
+
+
+{\ttfamily \#include $<$Domain\+Hom3\+DPer.\+h$>$}
+
+
+
+Inheritance diagram for Domain\+Hom3\+DPer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classDomainHom3DPer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Domain\+Hom3\+DPer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classDomainHom3DPer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDomainHom3DPer_a973f16aa5d1165725d3d0bdab331781f}{Domain\+Hom3\+DPer}} (\mbox{\hyperlink{classSurfaceMesh}{Surface\+Mesh}} \texorpdfstring{$\ast$}{*}in\+Mesh, int in\+DIndex, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} in\+Epsilon, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} in\+Mu, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} in\+Vacuum\+Wavelength, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} bloch\+Vector, std\+::vector$<$ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} $>$ lattice\+Vectors)
+\begin{DoxyCompactList}\small\item\em Construct a periodic homogeneous domain and select a periodic Green\textquotesingle{}s function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDomainHom3DPer_a26794cac91c772c16f60b2ce9018ee31}{\texorpdfstring{$\sim$}{\string~}\+Domain\+Hom3\+DPer}} ()
+\begin{DoxyCompactList}\small\item\em Destructor\+: deletes the internally owned Green\textquotesingle{}s function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classDomainHom3D}{Domain\+Hom3D}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDomainHom3D_ae2c7b0309cdbeda660e9e937de24c2b6}{Domain\+Hom3D}} (\mbox{\hyperlink{classSurfaceMesh}{Surface\+Mesh}} \texorpdfstring{$\ast$}{*}in\+Mesh, int in\+DIndex, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} in\+Epsilon, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} in\+Mu, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} in\+Vacuum\+Wavelength)
+\begin{DoxyCompactList}\small\item\em Construct a homogeneous domain and immediately create its Green\textquotesingle{}s function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDomainHom3D_a711da6da038d5667d1dffeed2431ae11}{Domain\+Hom3D}} (\mbox{\hyperlink{classSurfaceMesh}{Surface\+Mesh}} \texorpdfstring{$\ast$}{*}in\+Mesh, int in\+DIndex, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} in\+Epsilon, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} in\+Mu, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} in\+Vacuum\+Wavelength, bool parent)
+\begin{DoxyCompactList}\small\item\em Construct a homogeneous domain, optionally skipping Green\textquotesingle{}s function creation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDomainHom3D_ae574808b6729d8bdbd5aabe6c069eaf8}{\texorpdfstring{$\sim$}{\string~}\+Domain\+Hom3D}} ()
+\begin{DoxyCompactList}\small\item\em Destructor (deletes \doxylink{classDomain_a0735c67cde08e0a22bfd9e592f7933d3}{grn\+Fun}). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classDomainHom3D_ae1bfe7c17902aac07736f3070aac748a}{Init\+Formulation}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} in\+Vac\+Wavelength)
+\begin{DoxyCompactList}\small\item\em Initialize the PMCHWT formulation object at the given wavelength. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classDomainHom3D_a2527e53d1a3a3821dfb0b05deb6f685e}{Epsilon}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} pos)
+\begin{DoxyCompactList}\small\item\em Relative permittivity at a spatial location. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classDomainHom3D_a341ad7a1fe44cac9debfcae58ae1b142}{Mu}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} pos)
+\begin{DoxyCompactList}\small\item\em Relative permeability at a spatial location. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classDomainHom3D_ab4328b1e3b1fb719590ad088b1e474b9}{Is\+Layered}} ()
+\begin{DoxyCompactList}\small\item\em Is this a layered domain? \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classGreenF}{GreenF}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classDomainHom3D_af63b748ae545711c226bf89934858cd6}{Get\+Grn\+Fun\+Layered\+Fields}} () const
+\begin{DoxyCompactList}\small\item\em Accessor to the Green\textquotesingle{}s function used for layered-\/media post-\/processing. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classDomainHom3D_a7f3d22569004c8116270b249012aa762}{new\+Grn\+Fun\+Layered}} (std\+::vector$<$ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} $>$ \&posvec)
+\begin{DoxyCompactList}\small\item\em Build or refresh layered Green\textquotesingle{}s function tables for positions of interest. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ double $>$ \mbox{\hyperlink{classDomainHom3D_af51c0166dbce1642b143f7bf910b7c12}{scattering\+CS}} (blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 1 $>$ \texorpdfstring{$\ast$}{*}sol\+Vector)
+\begin{DoxyCompactList}\small\item\em Scattering cross section via surface quadrature. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{classDomainHom3D_ad19635c8b33f69ebf6cb3cd8788f7f23}{absorption\+CS}} (blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 1 $>$ \texorpdfstring{$\ast$}{*}sol\+Vector)
+\begin{DoxyCompactList}\small\item\em Absorption cross section via surface quadrature. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{classDomainHom3D_aa6a76dafe56204c15b80e491e6a2b21d}{extinction\+CS}} (blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 1 $>$ \texorpdfstring{$\ast$}{*}sol\+Vector)
+\begin{DoxyCompactList}\small\item\em Extinction cross section via surface quadrature. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classDomainHom3D_ac0c154d55efe4f3819ee764fa58e3e2d}{Add\+Plane\+Wave}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} wavelength, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} propagation\+Direction, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} polarization)
+\begin{DoxyCompactList}\small\item\em Add a \doxylink{classPlaneWave}{Plane\+Wave} excitation (ownership transferred to \doxylink{classDomain}{Domain}). \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classDomainHom3D_a08b2e0c472b20193f23c4dd4b3c3a731}{Add\+Dipole}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} position, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} polarization)
+\begin{DoxyCompactList}\small\item\em Add a \doxylink{classDipole}{Dipole} excitation (ownership transferred to \doxylink{classDomain}{Domain}). \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classDomainHom3D_addce520ad0085aae8f454c377131fce7}{Add\+Gaussian}} (double wavelength, double waist, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} focal\+\_\+point, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} propagationdirection, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} polarization)
+\begin{DoxyCompactList}\small\item\em Add a \doxylink{classGaussian}{Gaussian} beam excitation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classDomain}{Domain}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDomain_a3f6f9e8ec932680440098679b6fe3300}{Domain}} (\mbox{\hyperlink{classSurfaceMesh}{Surface\+Mesh}} \texorpdfstring{$\ast$}{*}mesh, int d\+Index, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} in\+Vacuum\+Wavelength)
+\begin{DoxyCompactList}\small\item\em Construct a domain over a mesh region at a given vacuum wavelength. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classDomain_a29cec9afb2e54c810ba1f3c1a49543a8}{\texorpdfstring{$\sim$}{\string~}\+Domain}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classDomain_a753296cc63cedb73b537311031521178}{Add\+Triangles\+From\+Mesh}} (\mbox{\hyperlink{classSurfaceMesh}{Surface\+Mesh}} \texorpdfstring{$\ast$}{*}mesh, int d\+Index)
+\begin{DoxyCompactList}\small\item\em Add all boundary triangles belonging to region {\ttfamily d\+Index} and build RWGs. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classDomain_a3eaedce45621dee107b082aca51d80ea}{Print\+All\+RWGCentroids}} ()
+\begin{DoxyCompactList}\small\item\em Debug\+: print triangle centroids and RWG evaluations at centroids. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classDomain_aab504e2e699c789b209cf0e288b8a389}{Print\+All\+Edges}} (\mbox{\hyperlink{classSurfaceMesh}{Surface\+Mesh}} \texorpdfstring{$\ast$}{*}mesh)
+\begin{DoxyCompactList}\small\item\em Debug\+: print all edges and the RWGs that live on them. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classDomain_a885bd8196776413b39025f2ccf23e702}{RGWFun\+Ptr}} (int \mbox{\hyperlink{classDomain_a0242b8dac23da9fe639f62bda97ea85c}{index}})
+\begin{DoxyCompactList}\small\item\em Direct access to an RWG basis function by global index. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classDomain_a4ca094ed1d16b191f026d0c23e1fc75a}{Index}} ()
+\begin{DoxyCompactList}\small\item\em Return this domain\textquotesingle{}s integer index. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classDomain_aee28d04b8f8f6fec0c8f4ec181da385f}{Fill\+LSEMatrix}} (blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 2 $>$ \texorpdfstring{$\ast$}{*}matrix)
+\begin{DoxyCompactList}\small\item\em Assemble the linear system matrix using the active formulation. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classDomain_a8291b7d47e8ee08ba7699b6c0dae5f7d}{Fill\+LSEMatrix\+And\+Gradient}} (blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 2 $>$ \texorpdfstring{$\ast$}{*}matrix, blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 2 $>$ \texorpdfstring{$\ast$}{*}gradmatrix\mbox{[}3\mbox{]})
+\begin{DoxyCompactList}\small\item\em Assemble the linear system matrix and its gradient w.\+r.\+t. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classDomain_a86bb59b09fe39f43b2e65811fb058c83}{Fill\+LSEVector}} (blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 1 $>$ \texorpdfstring{$\ast$}{*}vector)
+\begin{DoxyCompactList}\small\item\em Assemble the right-\/hand-\/side (RHS) vector using the active formulation. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDomain_a6f7b0190794a8ee0a026b0dcf2159aef}{Is\+Inside}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} point)
+\begin{DoxyCompactList}\small\item\em Test whether a spatial point lies inside the domain. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDomain_a8bd77bbd144186387e71441866606e05}{has\+Dipoles}} ()
+\begin{DoxyCompactList}\small\item\em Check whether any incident field is a dipole. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classDomain_ae1e6975d3ddc5fe177020d447673fdf7}{Sec\+FieldE}} (blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 1 $>$ \texorpdfstring{$\ast$}{*}sol\+Vector, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} pos)
+\begin{DoxyCompactList}\small\item\em Secondary (scattered) electric field at a point from the solution vector. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classDomain_afe5c1f862e335ab05031b1d6b0b87c42}{Inc\+FieldE}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} pos)
+\begin{DoxyCompactList}\small\item\em Total incident electric field at a point from all incident sources. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classDomain_a507d3690b3a17a9f01beb83a2d6b026e}{Sec\+FieldH}} (blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 1 $>$ \texorpdfstring{$\ast$}{*}sol\+Vector, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} pos)
+\begin{DoxyCompactList}\small\item\em Secondary (scattered) magnetic field at a point from the solution vector. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classDomain_a832a36e6ba8ae02be3dd493bd2577d4a}{Inc\+FieldH}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} pos)
+\begin{DoxyCompactList}\small\item\em Total incident magnetic field at a point from all incident sources. \end{DoxyCompactList}\item 
+virtual std\+::pair$<$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ \mbox{\hyperlink{classDomain_a1d339cb7979c5b2d03d069fc09b40696}{Sec\+Field\+EandH}} (blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 1 $>$ \texorpdfstring{$\ast$}{*}sol\+Vector, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} pos)
+\begin{DoxyCompactList}\small\item\em Secondary fields $(\mathbf E^{sc}, \mathbf H^{sc})$ at a point. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classDomain_a3087596044d4c345f84faaad1291946d}{Power}} (blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 1 $>$ \texorpdfstring{$\ast$}{*}sol\+Vector)
+\begin{DoxyCompactList}\small\item\em Power crossing the domain boundary computed from the RWG solution. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classDomain_a61682b9c0223ce875cc240575306b398}{Add\+Incident}} (\mbox{\hyperlink{classIncidentField}{Incident\+Field}} \texorpdfstring{$\ast$}{*}in\+Incident)
+\begin{DoxyCompactList}\small\item\em Add a new incident source (ownership transferred to \doxylink{classDomain}{Domain}). \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classDomain_a3740efee36b6693e4fda2bc916552efd}{Clear\+Incident\+Fields}} ()
+\begin{DoxyCompactList}\small\item\em Delete and clear all incident sources. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classDomain_a2b8fcaa668f1959aa9864f7a016d3ee1}{Init\+Lookup\+Table}} (\mbox{\hyperlink{classLookupTableBin}{Lookup\+Table\+Bin}} \texorpdfstring{$\ast$}{*}tin)
+\begin{DoxyCompactList}\small\item\em Provide an erfc lookup table to the Green\textquotesingle{}s function implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classDomain}{Domain}}}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classDomain_a43fee8ac7865b98f0b2342102c9f676c}{Enable\+Accurate}} ()
+\begin{DoxyCompactList}\small\item\em Enable globally more accurate (and usually slower) evaluation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classDomainHom3D}{Domain\+Hom3D}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual int \mbox{\hyperlink{classDomainHom3D_a3877e2d1f2020c251b5e3c74e5c40594}{Init\+Grn\+Fun}} ()
+\begin{DoxyCompactList}\small\item\em Instantiate the homogeneous Green\textquotesingle{}s function for this domain. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classDomainHom3D}{Domain\+Hom3D}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classDomainHom3D_a218194b0bb7ed93132584fe32d8582b0}{epsilon}}
+\begin{DoxyCompactList}\small\item\em Complex relative permittivity of the domain. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classDomainHom3D_af00d5867cbaffa8a36f0bedf7210def2}{mu}}
+\begin{DoxyCompactList}\small\item\em Complex relative permeability of the domain. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classDomain}{Domain}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} $>$ \mbox{\hyperlink{classDomain_aab3938e964f6b4ad0be5ef1d19d06e32}{rwg\+Funs}}
+\begin{DoxyCompactList}\small\item\em RWG basis functions on the boundary. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classIncidentField}{Incident\+Field}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classDomain_a008758cf27a4687b33f380753bb81eac}{incident\+Fields}}
+\begin{DoxyCompactList}\small\item\em List of incident excitations. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBsp3D}{Bsp3D}} \mbox{\hyperlink{classDomain_a0cfa7e1e9a82d715c62d47e986ca183d}{bsp\+Tree}}
+\begin{DoxyCompactList}\small\item\em BSP tree for classification. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGreenF}{GreenF}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classDomain_a0735c67cde08e0a22bfd9e592f7933d3}{grn\+Fun}}
+\begin{DoxyCompactList}\small\item\em Green\textquotesingle{}s function for this domain. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSIEForm}{SIEForm}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classDomain_aeab97e3aa73855ff68c5714dcb4ea4f4}{formulation}}
+\begin{DoxyCompactList}\small\item\em Formulation used for SIE. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classDomain_a68521459794a680a39bd4f91fb682080}{vacuum\+Wavelength}}
+\begin{DoxyCompactList}\small\item\em Wavelength in vacuum. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classDomain_a8f93b8546f2a3373c88eb9da14dc9bd8}{omega}}
+\begin{DoxyCompactList}\small\item\em Angular frequency. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classDomain_a0242b8dac23da9fe639f62bda97ea85c}{index}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classDomain}{Domain} index (mesh region). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{classDomain}{Domain}}}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classDomain_a07dd1780c94c96f3decd65232f7f82b5}{Needs\+Accurate}} = false
+\begin{DoxyCompactList}\small\item\em Flag for accurate computation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Homogeneous medium with Bloch‑periodic excitation/\+Green\textquotesingle{}s function. 
+
+The constructor selects a periodic Green\textquotesingle{}s function according to the number of provided lattice vectors. Currently a 2D periodic Green\textquotesingle{}s function is created when two lattice vectors are given; otherwise a warning is printed (extension point for 1D/3D periodicity). 
+
+Definition at line \mbox{\hyperlink{DomainHom3DPer_8h_source_l00028}{28}} of file \mbox{\hyperlink{DomainHom3DPer_8h_source}{Domain\+Hom3\+DPer.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classDomainHom3DPer_a973f16aa5d1165725d3d0bdab331781f}\index{DomainHom3DPer@{DomainHom3DPer}!DomainHom3DPer@{DomainHom3DPer}}
+\index{DomainHom3DPer@{DomainHom3DPer}!DomainHom3DPer@{DomainHom3DPer}}
+\doxysubsubsection{\texorpdfstring{DomainHom3DPer()}{DomainHom3DPer()}}
+{\footnotesize\ttfamily \label{classDomainHom3DPer_a973f16aa5d1165725d3d0bdab331781f} 
+Domain\+Hom3\+DPer\+::\+Domain\+Hom3\+DPer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSurfaceMesh}{Surface\+Mesh}} \texorpdfstring{$\ast$}{*}}]{in\+Mesh}{, }\item[{int}]{in\+DIndex}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{in\+Epsilon}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{in\+Mu}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{in\+Vacuum\+Wavelength}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{bloch\+Vector}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} $>$}]{lattice\+Vectors}{}\end{DoxyParamCaption})}
+
+
+
+Construct a periodic homogeneous domain and select a periodic Green\textquotesingle{}s function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in\+Mesh} & Surface mesh containing the region {\ttfamily in\+DIndex}. \\
+\hline
+{\em in\+DIndex} & Region index within {\ttfamily in\+Mesh}. \\
+\hline
+{\em in\+Epsilon} & Relative permittivity of the homogeneous medium. \\
+\hline
+{\em in\+Mu} & Relative permeability of the homogeneous medium. \\
+\hline
+{\em in\+Vacuum\+Wavelength} & Free‑space wavelength. \\
+\hline
+{\em bloch\+Vector} & Bloch vector used for Floquet–\+Bloch conditions. \\
+\hline
+{\em lattice\+Vectors} & List of lattice vectors defining periodicity. If the list has size 2, a 2D periodic Green\textquotesingle{}s function is created with these vectors.\\
+\hline
+\end{DoxyParams}
+If exactly two lattice vectors are provided, a 2D periodic homogeneous Green\textquotesingle{}s function (\doxylink{classGreenFHom3DPer2D}{Green\+FHom3\+DPer2D}) is instantiated. Otherwise, a warning is printed (hook for future 1D/3D periodic Green\textquotesingle{}s function implementations). 
+
+Definition at line \mbox{\hyperlink{DomainHom3DPer_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{DomainHom3DPer_8cpp_source}{Domain\+Hom3\+DPer.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDomainHom3DPer_a973f16aa5d1165725d3d0bdab331781f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDomainHom3DPer_a26794cac91c772c16f60b2ce9018ee31}\index{DomainHom3DPer@{DomainHom3DPer}!````~DomainHom3DPer@{\texorpdfstring{$\sim$}{\string~}DomainHom3DPer}}
+\index{````~DomainHom3DPer@{\texorpdfstring{$\sim$}{\string~}DomainHom3DPer}!DomainHom3DPer@{DomainHom3DPer}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}DomainHom3DPer()}{\string~DomainHom3DPer()}}
+{\footnotesize\ttfamily \label{classDomainHom3DPer_a26794cac91c772c16f60b2ce9018ee31} 
+Domain\+Hom3\+DPer\+::\texorpdfstring{$\sim$}{\string~}\+Domain\+Hom3\+DPer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destructor\+: deletes the internally owned Green\textquotesingle{}s function. 
+
+
+
+Definition at line \mbox{\hyperlink{DomainHom3DPer_8cpp_source_l00037}{37}} of file \mbox{\hyperlink{DomainHom3DPer_8cpp_source}{Domain\+Hom3\+DPer.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{DomainHom3DPer_8h}{Domain\+Hom3\+DPer.\+h}}\item 
+\mbox{\hyperlink{DomainHom3DPer_8cpp}{Domain\+Hom3\+DPer.\+cpp}}\end{DoxyCompactItemize}

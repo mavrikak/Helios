@@ -1,0 +1,39 @@
+<map id="SurfaceMesh.h" name="SurfaceMesh.h">
+<area shape="rect" id="Node000001" title="Declaration of the SurfaceMesh class and mesh edge struct." alt="" coords="226,5,343,33"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,81,47,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="231,36,62,83,61,78,229,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="71,81,130,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="253,36,146,78,144,73,251,31"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="319,157,381,184"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="290,33,298,67,312,108,333,143,329,145,308,110,293,69,285,34"/>
+<area shape="rect" id="Node000005" href="$JobParser_8h.html" title="Lightweight XML&#45;like tag parser for the solver job file." alt="" coords="154,81,247,109"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="271,36,229,73,225,69,268,32"/>
+<area shape="rect" id="Node000009" href="$Triangle_8h.html" title="Declaration of the Triangle class (surface element with cached geometry)." alt="" coords="322,81,407,109"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="301,32,341,68,337,72,297,36"/>
+<area shape="rect" id="Node000010" href="$globals_8h.html" title="Global numerical constants, fundamental types, and simple macros." alt="" coords="406,157,486,184"/>
+<area shape="poly" id="edge16_Node000001_Node000010" title=" " alt="" coords="341,31,383,50,404,63,421,79,438,109,446,141,441,142,433,111,417,83,400,67,381,54,339,36"/>
+<area shape="rect" id="Node000015" href="$mathFunctions_8h.html" title="Header file of the class that provides auxiliary mathematical functionalities for the SIE solver." alt="" coords="483,81,612,109"/>
+<area shape="poly" id="edge17_Node000001_Node000015" title=" " alt="" coords="332,31,486,74,485,79,331,36"/>
+<area shape="poly" id="edge8_Node000005_Node000004" title=" " alt="" coords="229,107,311,147,309,152,226,112"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="36,157,109,184"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="179,112,110,151,107,147,176,107"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="133,157,212,184"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="198,110,186,143,181,141,193,108"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="237,157,295,184"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="214,107,247,143,243,147,210,111"/>
+<area shape="poly" id="edge10_Node000009_Node000004" title=" " alt="" coords="365,110,358,142,353,141,359,109"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="381,107,422,144,419,148,377,111"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="159,232,256,260"/>
+<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="406,187,265,230,263,225,405,182"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="280,232,401,260"/>
+<area shape="poly" id="edge13_Node000010_Node000012" title=" " alt="" coords="429,187,373,226,370,221,426,183"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="426,232,554,260"/>
+<area shape="poly" id="edge14_Node000010_Node000013" title=" " alt="" coords="456,184,477,218,472,220,452,186"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="578,232,655,260"/>
+<area shape="poly" id="edge15_Node000010_Node000014" title=" " alt="" coords="478,182,573,223,571,228,475,187"/>
+<area shape="poly" id="edge20_Node000015_Node000004" title=" " alt="" coords="513,112,397,155,395,150,511,107"/>
+<area shape="poly" id="edge21_Node000015_Node000010" title=" " alt="" coords="531,111,478,150,475,145,528,107"/>
+<area shape="poly" id="edge19_Node000015_Node000014" title=" " alt="" coords="561,108,578,129,594,155,606,187,614,217,609,218,601,188,589,158,573,132,557,111"/>
+<area shape="rect" id="Node000016" title=" " alt="" coords="512,157,580,184"/>
+<area shape="poly" id="edge18_Node000015_Node000016" title=" " alt="" coords="550,109,549,141,544,141,544,109"/>
+</map>

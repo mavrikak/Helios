@@ -1,0 +1,65 @@
+<map id="GreenFHom3D::SameTriDK" name="GreenFHom3D::SameTriDK">
+<area shape="rect" id="Node000001" title="Compute &#160;and &#160;for all RWG pairs on two triangles." alt="" coords="5,575,202,602"/>
+<area shape="rect" id="Node000002" href="$classGreenFHom3D.html#a139d04e746cd17d5b738a972dc5128ad" title="Heuristic test based on ." alt="" coords="258,5,488,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,574,119,469,149,309,169,226,192,149,218,86,233,62,248,44,252,40,256,44,252,48,237,65,223,89,197,151,174,227,154,310,125,470,109,575"/>
+<area shape="rect" id="Node000003" href="$classTriangle.html#a1d3d08deeb999f339d2e821a877521ba" title="Surface area of the triangle." alt="" coords="318,57,428,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="102,574,103,491,108,430,119,362,136,290,163,219,199,153,222,123,248,96,273,80,302,71,303,76,275,85,251,100,226,127,204,156,168,221,142,292,124,363,114,431,108,491,107,574"/>
+<area shape="rect" id="Node000004" href="$classTriangle.html#ab78508a340ec5d345adf114b43563dbf" title="Centroid of the triangle." alt="" coords="312,109,435,137"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="102,574,106,498,113,444,125,383,143,319,169,257,203,198,248,148,270,133,296,125,297,130,273,138,251,152,208,201,174,259,148,321,130,384,119,445,112,499,107,574"/>
+<area shape="rect" id="Node000005" href="$classSingSub.html#a9d74100325023b4d1c156bd97ae240b3" title="Update only the RWG/triangle; keep the same observation point r." alt="" coords="267,161,480,189"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="103,574,110,506,132,405,150,349,175,294,207,244,248,200,253,195,257,200,251,204,211,247,180,297,155,351,137,406,115,507,108,575"/>
+<area shape="rect" id="Node000006" href="$classGreenFHom3D.html#a049e83f08bff1b6c003a35f478973609" title="Scalar Green&#39;s function ." alt="" coords="282,213,464,241"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="104,574,114,514,138,426,157,379,181,332,211,289,248,252,267,240,269,244,251,256,215,292,186,335,162,381,143,428,119,515,109,574"/>
+<area shape="rect" id="Node000007" href="$classRWGFun.html#a7540ce2f84c6b42a29c2808504c47d42" title="Evaluate the RWG vector shape function at a point on the triangle." alt="" coords="303,265,444,293"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="105,574,118,523,145,449,164,409,187,370,215,334,248,304,266,293,286,285,288,290,269,297,251,308,219,338,191,373,168,412,150,451,123,524,110,575"/>
+<area shape="rect" id="Node000008" href="$classTriangle.html#a6a5a3532e273e1fbb69b26eea2f509c0" title="Count common nodes with triangle T (0..3)." alt="" coords="286,317,460,345"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="107,573,124,531,153,474,195,413,220,385,248,361,271,348,274,353,251,365,224,389,199,416,158,476,129,534,112,575"/>
+<area shape="rect" id="Node000012" href="$classTriangle.html#a0752d2c9488c7c44b851b8f75abcaa79" title="Node position (by value) for local index 0..2." alt="" coords="1011,343,1125,370"/>
+<area shape="poly" id="edge29_Node000001_Node000012" title=" " alt="" coords="109,573,127,537,157,490,198,442,222,422,249,405,292,393,367,383,577,368,809,359,995,355,995,360,809,365,577,374,368,388,293,398,251,410,225,426,201,446,161,493,132,540,113,576"/>
+<area shape="rect" id="Node000013" href="$classRWGFun.html#a44b3739f9b872e917c6101928a2888a3" title="Get the free vertex position (by value)." alt="" coords="296,419,450,446"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="114,572,168,516,206,484,248,457,280,444,282,449,251,462,209,488,172,520,118,576"/>
+<area shape="rect" id="Node000014" href="$classRWGFun.html#a4b60d75c2f221271c3915f20374c580f" title="Get the pointer to the free vertex." alt="" coords="287,471,460,498"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="126,572,180,540,249,509,276,500,277,505,251,514,183,545,128,576"/>
+<area shape="rect" id="Node000015" href="$classTriangle.html#aa83f57574ddbd7514530a554eb96bc0e" title="Return cached I1." alt="" coords="317,523,430,550"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="179,571,301,548,302,553,180,577"/>
+<area shape="rect" id="Node000016" href="$classTriangle.html#a02693a813e9e7b1225be9f19e465d01e" title="Return cached I2 (single&#45;vertex) for node pointer r." alt="" coords="317,575,430,602"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="202,586,301,586,301,591,202,591"/>
+<area shape="rect" id="Node000017" href="$classGreenFHom3D.html#a30fa3b981731ca85587da62ed511f547" title="Gradient w.r.t." alt="" coords="283,627,464,654"/>
+<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="180,600,283,621,282,626,179,606"/>
+<area shape="rect" id="Node000018" href="$classGreenFHom3D.html#a39ccf7f27bff59110fb0d667bb74146f" title="Smoothed gradient kernel." alt="" coords="250,679,497,706"/>
+<area shape="poly" id="edge17_Node000001_Node000018" title=" " alt="" coords="128,601,183,632,251,663,277,672,276,677,249,668,180,637,126,605"/>
+<area shape="rect" id="Node000019" href="$classGreenFHom3D.html#ac928f16e6e79c75c002d9a721a8858d8" title="Default constructor (initializes with zeroed wavenumber and no lookup table)." alt="" coords="263,731,484,758"/>
+<area shape="poly" id="edge18_Node000001_Node000019" title=" " alt="" coords="118,601,172,657,209,689,251,715,267,723,265,728,248,720,206,693,168,661,114,605"/>
+<area shape="rect" id="Node000023" href="$classGreenFHom3D.html#a701791540c59726195148449d4adda07" title="Half&#45;smoothed scalar kernel for coincident triangles." alt="" coords="265,783,482,810"/>
+<area shape="poly" id="edge23_Node000001_Node000023" title=" " alt="" coords="114,601,133,636,163,681,203,728,251,768,263,774,260,779,248,772,199,732,159,684,129,639,109,604"/>
+<area shape="rect" id="Node000024" href="$classSingSub.html#ac65ad1ad2d03f9de274b24d19f457f6e" title="K1(q) scalar term." alt="" coords="324,835,422,862"/>
+<area shape="poly" id="edge24_Node000001_Node000024" title=" " alt="" coords="112,602,128,645,156,705,197,767,223,796,251,820,279,834,309,842,308,847,277,839,248,824,219,799,193,771,152,707,123,647,107,604"/>
+<area shape="rect" id="Node000025" href="$classSingSub.html#aed0bb257cd3c94dccd5b6cc0ecdd1c5e" title="K2(q) vector term." alt="" coords="324,887,422,914"/>
+<area shape="poly" id="edge25_Node000001_Node000025" title=" " alt="" coords="110,602,123,654,149,727,168,767,191,806,219,841,251,872,279,887,310,895,308,900,277,892,248,876,215,845,187,809,163,769,144,729,118,655,105,603"/>
+<area shape="rect" id="Node000026" href="$classSingSub.html#aa4dc7cddb70399aab67741fe6b0a9397" title="K3n(q) = normal&#45;only contribution of K3(q)." alt="" coords="320,939,426,966"/>
+<area shape="poly" id="edge26_Node000001_Node000026" title=" " alt="" coords="109,602,119,662,143,750,161,797,185,844,215,887,251,924,277,939,306,947,304,952,275,943,248,928,211,890,181,847,157,800,138,752,114,663,104,603"/>
+<area shape="rect" id="Node000027" href="$classSingSub.html#ab61a21e3498d2d6a4c0796254cf126ed" title="K4(q) vector term." alt="" coords="324,991,422,1018"/>
+<area shape="poly" id="edge27_Node000001_Node000027" title=" " alt="" coords="108,603,115,671,136,772,155,828,179,882,211,933,251,976,279,992,309,1000,308,1005,276,997,248,980,207,936,175,885,150,829,131,773,110,671,103,603"/>
+<area shape="rect" id="Node000029" href="$classRWGFun.html#a7cd7779305937d48196453e53d0d4df8" title="Return L_n / A_n (missing factor 1/2 by convention)." alt="" coords="285,1043,462,1070"/>
+<area shape="poly" id="edge30_Node000001_Node000029" title=" " alt="" coords="107,602,112,678,118,733,130,793,148,857,173,920,207,978,251,1028,272,1041,269,1046,248,1032,203,981,168,922,143,859,125,795,113,733,106,679,102,603"/>
+<area shape="rect" id="Node000030" href="$classSingSub.html#a20337fe20529d26c1775c8ba6d47cad0" title="Preferred initialization that fills all cached arrays (ILar/ISar)." alt="" coords="281,1095,466,1122"/>
+<area shape="poly" id="edge31_Node000001_Node000030" title=" " alt="" coords="107,603,108,686,113,747,124,815,141,887,167,958,203,1023,226,1053,251,1080,268,1092,265,1096,248,1084,222,1056,199,1026,162,960,136,888,119,816,108,748,103,686,102,603"/>
+<area shape="rect" id="Node000031" href="$classGreenFHom3D.html#adff9d901394dd07c05a111b607c89075" title="Smoothed scalar kernel used under singularity subtraction." alt="" coords="278,1147,469,1174"/>
+<area shape="poly" id="edge32_Node000001_Node000031" title=" " alt="" coords="109,602,124,707,154,868,174,952,197,1028,223,1091,237,1114,252,1132,265,1142,262,1146,248,1136,233,1117,218,1093,192,1030,169,953,149,869,119,708,104,603"/>
+<area shape="rect" id="Node000009" href="$classTriangle.html#aeecc82e57a00841cb83fd790316b25a3" title="Node pointer for local index 0..2." alt="" coords="545,265,677,293"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="441,314,496,302,531,294,532,300,498,307,442,319"/>
+<area shape="rect" id="Node000010" href="$classTriangle.html#a2eae6a9b0378e4b5ba4616a6b6af86fe" title="Construct from 3 node pointers and bordering domains." alt="" coords="546,317,677,345"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="461,328,530,328,530,334,461,334"/>
+<area shape="rect" id="Node000011" href="$classTriangle.html#ae13d69e28fb7a81ab8257fe0af84ceaa" title="Compute/cached geometry (normal, area, perimeter, center, I1/I2s/I2d)." alt="" coords="725,317,963,345"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="677,328,709,328,709,334,677,334"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="963,342,996,346,995,351,963,347"/>
+<area shape="rect" id="Node000020" href="$classGreenF.html#a332ac24f39288170f77c18f37fde2c82" title="Constructor for a homogeneous, non&#45;magnetic medium." alt="" coords="550,731,672,758"/>
+<area shape="poly" id="edge19_Node000019_Node000020" title=" " alt="" coords="484,742,535,742,535,747,484,747"/>
+<area shape="rect" id="Node000021" href="$group__greenFunction.html#gac0a52dce23be7dacdf97c68653b6c137" title="Complex square root with a branch cut along the negative real axis." alt="" coords="817,731,871,758"/>
+<area shape="poly" id="edge20_Node000020_Node000021" title=" " alt="" coords="673,742,802,742,802,747,673,747"/>
+<area shape="rect" id="Node000022" href="$Domain_8cpp.html#aafa3e4fa6318b2f8740f4dbd50c367e5" title="Extract the real part of each component of a complex 3&#45;vector." alt="" coords="1045,731,1091,758"/>
+<area shape="poly" id="edge21_Node000021_Node000022" title=" " alt="" coords="871,742,1029,742,1029,747,871,747"/>
+<area shape="poly" id="edge22_Node000022_Node000022" title=" " alt="" coords="1043,739,1026,728,1025,716,1039,707,1068,704,1092,706,1107,712,1112,722,1106,731,1102,728,1107,721,1104,716,1091,711,1068,709,1041,712,1029,718,1031,726,1046,735"/>
+<area shape="rect" id="Node000028" href="$classSingSub.html#a3e9e0b5a61df98d8f8138544c7df3da0" title="K3(q) vector term." alt="" coords="562,991,660,1018"/>
+<area shape="poly" id="edge28_Node000027_Node000028" title=" " alt="" coords="423,1002,546,1002,546,1007,423,1007"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="GreenFHom3D::AboveThreshold" name="GreenFHom3D::AboveThreshold">
+<area shape="rect" id="Node000001" title="Heuristic test for two triangles using center distance vs." alt="" coords="5,32,236,60"/>
+<area shape="rect" id="Node000002" href="$classTriangle.html#ab78508a340ec5d345adf114b43563dbf" title="Centroid of the triangle." alt="" coords="294,5,418,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="236,30,279,25,279,30,236,35"/>
+<area shape="rect" id="Node000003" href="$classTriangle.html#a6e7daa074db3d147b33763bfd2a6e83b" title="Perimeter (sum of edge lengths)." alt="" coords="284,57,428,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="236,56,269,59,268,64,236,61"/>
+</map>

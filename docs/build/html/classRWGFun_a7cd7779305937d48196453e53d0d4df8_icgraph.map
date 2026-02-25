@@ -1,0 +1,34 @@
+<map id="RWGFun::RWGPreFactor" name="RWGFun::RWGPreFactor">
+<area shape="rect" id="Node000001" title="Return L_n / A_n (missing factor 1/2 by convention)." alt="" coords="509,409,685,437"/>
+<area shape="rect" id="Node000002" href="$classGaussQuad.html#afecf86c6fbc2362c30d56fb10454621e" title="I1: integral of scalar kernel times RWG prefactor over the test triangle." alt="" coords="286,5,401,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="591,394,583,325,561,232,544,184,522,136,494,92,459,53,432,36,401,26,402,21,434,31,463,49,498,89,526,133,549,182,566,231,588,324,597,394"/>
+<area shape="rect" id="Node000003" href="$classGaussQuad.html#ab01b06d5cd9d9d15b01d0c9078b8dc5e" title="Two‑triangle integral for the D operator (Eq." alt="" coords="5,31,178,58"/>
+<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="591,394,581,330,558,249,541,206,519,166,492,129,459,97,439,86,411,77,339,63,256,54,178,49,178,44,257,49,339,57,413,72,442,81,463,93,496,125,524,163,546,204,563,247,586,329,596,393"/>
+<area shape="rect" id="Node000004" href="$classGaussQuad.html#a446b0b21a34640c901189c53ec4081b3" title="I1 with on‑the‑fly kernel evaluation at (r,rp) using gF." alt="" coords="286,107,401,134"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="588,395,574,341,549,275,511,206,487,176,459,149,431,134,400,126,402,121,433,129,463,145,491,172,516,203,554,272,579,340,593,393"/>
+<area shape="rect" id="Node000005" href="$classGaussQuad.html#a7b4dd3082686af22451b5f405073d33e" title="I5 variant: vector kernel weighted by RWG prefactor (centroid)." alt="" coords="286,159,401,186"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="584,396,568,352,541,299,505,246,484,222,460,201,431,187,400,179,402,174,433,182,462,197,487,218,510,242,546,296,572,350,589,394"/>
+<area shape="rect" id="Node000006" href="$classGreenFHom3D.html#aca136b03c44ad1da34acf91eb5a5e390" title="term at an observation point." alt="" coords="234,211,453,238"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="580,397,561,363,533,323,500,284,460,252,438,241,440,237,462,248,503,281,538,320,565,360,585,394"/>
+<area shape="rect" id="Node000007" href="$classGreenFHom3DPer2D.html#a233c2185952220bd16acae2142f05cc1" title="term at an observation point." alt="" coords="232,262,455,307"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="569,401,520,360,460,322,433,310,435,305,462,317,523,356,572,397"/>
+<area shape="rect" id="Node000008" href="$classGreenFLayered3D.html#afbdbfdc8fc40fc885f6377d5be242d36" title="term at an observation point." alt="" coords="241,332,446,376"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="528,407,427,379,428,374,530,402"/>
+<area shape="rect" id="Node000009" href="$classGreenFLayered3D.html#a439eddb43f46fb52f6c84898ea12aa40" title="term at an observation point." alt="" coords="241,401,446,446"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="493,426,446,426,446,420,493,420"/>
+<area shape="rect" id="Node000010" href="$classGreenFHom3D.html#a48e8471aabb445e0e50a01c005ff3b98" title="Compute &#160;for all RWGs on a source triangle." alt="" coords="237,470,450,515"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="530,444,428,472,427,467,528,439"/>
+<area shape="rect" id="Node000011" href="$classGreenFHom3DPer2D.html#a84a8c855a27c895ff24f6771037284a5" title="Compute &#160;for all RWGs on a source triangle." alt="" coords="235,540,452,584"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="572,450,523,490,462,530,435,541,433,537,460,525,520,486,569,445"/>
+<area shape="rect" id="Node000012" href="$classGreenFHom3D.html#a419cbe00b5a2aed70ac546904a8a8d6f" title="Compute &#160;and &#160;for all RWG pairs on two triangles." alt="" coords="245,608,442,636"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="585,452,565,486,538,526,503,566,462,599,440,610,438,605,460,594,500,562,533,523,561,483,580,450"/>
+<area shape="rect" id="Node000013" href="$classGreenFHom3DPer2D.html#a1dc9dd84c93ee10b2fb4b1866103d957" title="Compute &#160;and &#160;for all RWG pairs on two triangles." alt="" coords="226,660,461,688"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="589,453,572,497,546,550,510,604,487,628,463,649,440,662,437,657,459,645,484,624,505,601,541,547,568,495,584,451"/>
+<area shape="rect" id="Node000014" href="$classGreenFLayered3D.html#a6c88af86169f8d148c3e9f4da77a77d0" title="Triangle–triangle D/K blocks assembly for all RWG pairs on two triangles." alt="" coords="235,712,452,740"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="593,453,579,507,554,574,516,643,491,674,463,701,442,714,439,709,459,697,487,671,511,640,549,572,574,505,588,452"/>
+<area shape="rect" id="Node000015" href="$classGreenFHom3D.html#aee15ec1616a294e10b554f1afbb97845" title="Same as SameTriDK plus gradients (if provided by the GF)." alt="" coords="240,764,446,792"/>
+<area shape="poly" id="edge15_Node000001_Node000015" title=" " alt="" coords="595,453,584,516,561,597,544,640,522,681,495,720,463,753,443,766,440,761,459,749,491,716,518,679,539,638,556,595,579,514,590,452"/>
+<area shape="rect" id="Node000016" href="$classGreenFLayered3D.html#a52cce9be0f67bd1b5aa9b2cdb01e4164" title="Same as SameTriDK and additionally accumulates gradients." alt="" coords="230,816,457,844"/>
+<area shape="poly" id="edge16_Node000001_Node000016" title=" " alt="" coords="597,453,589,524,569,620,551,670,528,720,499,765,463,805,444,818,441,813,459,801,495,762,524,717,546,668,563,618,584,524,592,452"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="271,29,178,38,178,33,270,24"/>
+</map>

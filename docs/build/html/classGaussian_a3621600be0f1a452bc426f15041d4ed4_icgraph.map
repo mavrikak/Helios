@@ -1,0 +1,7 @@
+<map id="Gaussian::Gaussian" name="Gaussian::Gaussian">
+<area shape="rect" id="Node000001" title="Construct a Gaussian beam in a homogeneous medium." alt="" coords="212,32,361,60"/>
+<area shape="rect" id="Node000002" href="$classGaussian.html#a7c63c2889ab8b3c019c3d04c568c2ad4" title="RWG projection of the incident electric field." alt="" coords="6,5,163,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="196,37,163,32,163,27,197,31"/>
+<area shape="rect" id="Node000003" href="$classGaussian.html#a5a2bbd00d15351a497efe6cd5fb333d3" title="RWG projection of the incident magnetic field." alt="" coords="5,57,164,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="197,60,164,64,164,59,196,54"/>
+</map>

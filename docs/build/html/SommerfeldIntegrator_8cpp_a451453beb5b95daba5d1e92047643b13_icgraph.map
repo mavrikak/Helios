@@ -1,0 +1,7 @@
+<map id="gaussKronrod" name="gaussKronrod">
+<area shape="rect" id="Node000001" title="Performs Gauss&#45;Kronrod integration." alt="" coords="219,48,329,76"/>
+<area shape="rect" id="Node000002" href="$classSommerfeldIntegrator.html#a2537d36d62ecdecc297e19c8127f827a" title="Computes inter&#45;layer coefficients for Green&#39;s function interpolation." alt="" coords="5,5,171,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="203,52,171,46,172,41,204,47"/>
+<area shape="rect" id="Node000003" href="$classSommerfeldIntegrator.html#a3f148b96c090e06e67fb00aea41e7f94" title="Computes intra&#45;layer coefficients for Green&#39;s function interpolation." alt="" coords="5,75,171,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="204,78,172,84,171,79,203,73"/>
+</map>

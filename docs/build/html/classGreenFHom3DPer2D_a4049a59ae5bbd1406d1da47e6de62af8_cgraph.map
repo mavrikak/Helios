@@ -1,0 +1,7 @@
+<map id="GreenFHom3DPer2D::AboveThresholdTranslate" name="GreenFHom3DPer2D::AboveThresholdTranslate">
+<area shape="rect" id="Node000001" title="Far/near heuristic for translated triangle pairs." alt="" coords="5,24,275,68"/>
+<area shape="rect" id="Node000002" href="$classTriangle.html#ab78508a340ec5d345adf114b43563dbf" title="Centroid of the triangle." alt="" coords="333,5,456,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="275,29,318,24,318,30,275,34"/>
+<area shape="rect" id="Node000003" href="$classTriangle.html#a6e7daa074db3d147b33763bfd2a6e83b" title="Perimeter (sum of edge lengths)." alt="" coords="323,57,467,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="275,57,308,60,307,65,275,62"/>
+</map>

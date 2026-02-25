@@ -1,0 +1,22 @@
+<map id="TriQuadPol.h" name="TriQuadPol.h">
+<area shape="rect" id="Node000001" title="Polar quadrature on a single triangle around an observation point." alt="" coords="405,5,507,33"/>
+<area shape="rect" id="Node000002" href="$GreenFLayered3D_8h.html" title="Layered‑medium 3D Green&#39;s function (scalar/gradient/dyadic) + RWG integrals." alt="" coords="302,81,452,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="432,46,393,83,389,79,429,42"/>
+<area shape="rect" id="Node000010" href="$TriQuadPol_8cpp.html" title="Polar&#45;quadrature assembly about an observation point on a triangle." alt="" coords="476,81,593,109"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="483,42,522,79,519,83,479,46"/>
+<area shape="rect" id="Node000003" href="$Dipole_8h.html" title="Incident field generator for electric dipole illumination in homogeneous or layered media." alt="" coords="180,157,255,184"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="336,118,247,159,244,154,334,113"/>
+<area shape="rect" id="Node000007" href="$DomainLayered3D_8h.html" title="Layered 3D simulation domain (derived from Domain)." alt="" coords="300,157,454,184"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="380,124,380,156,374,156,374,124"/>
+<area shape="rect" id="Node000009" href="$GreenFLayered3D_8cpp.html" title="Implementation of the 3D Green&#39;s Function class in a layered background." alt="" coords="478,157,644,184"/>
+<area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="425,112,530,154,528,159,423,117"/>
+<area shape="rect" id="Node000004" href="$Dipole_8cpp.html" title="Implementation of the Dipole incident source." alt="" coords="5,232,96,260"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="175,193,81,234,79,229,173,188"/>
+<area shape="rect" id="Node000005" href="$DomainHom3D_8cpp.html" title="Implementation of the homogeneous 3D domain." alt="" coords="120,232,269,260"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="211,200,201,233,196,231,206,199"/>
+<area shape="rect" id="Node000006" href="$DomainLayered3D_8cpp.html" title="Implementation of the layered 3D domain." alt="" coords="292,232,462,260"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="261,189,350,229,348,234,259,194"/>
+<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="380,200,380,232,374,232,374,200"/>
+<area shape="rect" id="Node000008" href="$SimJob_8cpp.html" title="Implementation for the SimJob class." alt="" coords="486,232,580,260"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="420,189,507,229,504,234,417,194"/>
+</map>

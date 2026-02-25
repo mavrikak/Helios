@@ -1,0 +1,27 @@
+var classDipole =
+[
+    [ "Dipole", "classDipole.html#a0649c906cc011322eb38c42d86543f29", null ],
+    [ "Dipole", "classDipole.html#a56537bec7348da0eb9e1ed858d6594a1", null ],
+    [ "EvaluateE", "classDipole.html#ab4873557b39cc8d504446c35392ab2a0", null ],
+    [ "EvaluateH", "classDipole.html#a4d85fde503ac7167f832503d5256c5e9", null ],
+    [ "EvaluateLayeredEandH", "classDipole.html#a5ffb98d7b929694cd41ec4e3a9593864", null ],
+    [ "IntegrateE", "classDipole.html#a212daff5bb4e371b91e138e128722edd", null ],
+    [ "IntegrateH", "classDipole.html#a1dd3ce01913b5cff62ea44cc9590e49d", null ],
+    [ "IntegrateLayeredEandH", "classDipole.html#ad6b98d59b3e4e25f5715c0d55f7802a4", null ],
+    [ "IsDipole", "classDipole.html#a5cbd149068ebf7d40f1776285124c390", null ],
+    [ "IsGaussian", "classDipole.html#a40f2ba72f8dccd762a8c4084a58a12df", null ],
+    [ "IsPlaneWave", "classDipole.html#a056558ea28c9ae3bea6e49e409f75c9b", null ],
+    [ "Location", "classDipole.html#af0be5b4af0cd662c8684b01255b92433", null ],
+    [ "Polarization", "classDipole.html#a6dfe13a5697de45442ea2366a77753be", null ],
+    [ "setGrnFunLayered", "classDipole.html#a2e30bf49055a001b5d8c3e695f103e3d", null ],
+    [ "grnFun", "classDipole.html#a94da534906aac15e1abc6e80d3b83e98", null ],
+    [ "grnFunLayered", "classDipole.html#ac4fe58389c6851319547c866c205940c", null ],
+    [ "grnFunLayeredFields", "classDipole.html#abd0ff6142ade5410fb2653de867f1a53", null ],
+    [ "layeredUtils", "classDipole.html#a838c697f42b297a69e6417400fbf944d", null ],
+    [ "muMedium", "classDipole.html#a057019005d78f7fd73fd2f01b27246e1", null ],
+    [ "omega", "classDipole.html#ac2a421dd9a02e0a3a763cee52f4df5f7", null ],
+    [ "p", "classDipole.html#aba20b25654611d13c1c19c864c81f5bc", null ],
+    [ "r0", "classDipole.html#a11919a062b4040f8009cb06311605148", null ],
+    [ "tabulationGrids", "classDipole.html#af3eb8faa0e08d236f47cf623c2d52f2c", null ],
+    [ "tabulationGridsFields", "classDipole.html#a2c16bd3d938248ed055857c348ea77c6", null ]
+];

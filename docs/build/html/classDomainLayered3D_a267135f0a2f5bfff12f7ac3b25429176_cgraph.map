@@ -1,0 +1,31 @@
+<map id="DomainLayered3D::scatteringCS" name="DomainLayered3D::scatteringCS">
+<area shape="rect" id="Node000001" title="Scattering cross section." alt="" coords="5,240,238,268"/>
+<area shape="rect" id="Node000002" href="$classTriangle.html#ab78508a340ec5d345adf114b43563dbf" title="Centroid of the triangle." alt="" coords="329,5,452,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,238,149,199,183,146,229,91,255,65,284,44,313,30,315,35,287,48,259,70,232,95,187,150,153,202,132,241"/>
+<area shape="rect" id="Node000003" href="$DomainLayered3D_8cpp.html#a37aee72ef7a00576c814a1370473cce7" title="Compute the element&#45;wise complex conjugate of a 3&#45;vector." alt="" coords="352,57,430,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="131,238,191,170,235,130,284,96,310,84,336,77,337,82,311,89,287,100,238,134,195,173,135,241"/>
+<area shape="rect" id="Node000005" href="$classDomainLayered3D.html#a281513a4cb865b8c688dd920a6789955" title="Relative permittivity at a spatial location." alt="" coords="292,109,490,137"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="139,237,201,193,242,169,285,147,305,140,307,145,287,152,245,173,204,198,142,242"/>
+<area shape="rect" id="Node000007" href="$classTriangle.html#a691ff1d8d3f33df1fe0aae161d14ec49" title="FRONT/BACK normal: FRONT &#45;&gt; +normal, BACK &#45;&gt; −normal." alt="" coords="298,161,484,189"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="165,237,285,199,316,191,317,196,286,204,167,242"/>
+<area shape="rect" id="Node000008" href="$classDomainLayered3D.html#ae2e6a313e8a32a981d6d698a47e238cb" title="Total incident electric field at a point from all incident sources." alt="" coords="287,213,495,241"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="238,240,271,236,271,242,239,245"/>
+<area shape="rect" id="Node000009" href="$classDomainLayered3D.html#a1224cc02268d1cfe5b51ebf363cda79e" title="Total incident magnetic field at a point from all incident sources." alt="" coords="286,265,496,293"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="238,262,271,265,270,270,238,267"/>
+<area shape="rect" id="Node000010" href="$classDomainLayered3D.html#a295274a8176b2d6f9fc07c7aea9fd89c" title="Relative permeability at a spatial location." alt="" coords="306,317,476,345"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="168,266,286,302,317,310,316,316,285,307,166,271"/>
+<area shape="rect" id="Node000011" href="$classTriangle.html#a0752d2c9488c7c44b851b8f75abcaa79" title="Node position (by value) for local index 0..2." alt="" coords="334,369,448,397"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="143,266,205,309,245,333,287,354,320,366,318,371,285,359,242,338,202,314,140,270"/>
+<area shape="rect" id="Node000012" href="$Domain_8cpp.html#aafa3e4fa6318b2f8740f4dbd50c367e5" title="Extract the real part of each component of a complex 3&#45;vector." alt="" coords="626,445,672,473"/>
+<area shape="poly" id="edge13_Node000001_Node000012" title=" " alt="" coords="135,266,158,297,193,335,237,375,287,406,329,423,373,437,464,453,546,459,610,459,610,464,546,464,463,458,372,442,327,428,284,411,234,379,190,339,154,300,131,270"/>
+<area shape="rect" id="Node000013" href="$DomainLayered3D_8cpp.html#a2c019c7f0fe35eb5871f0c0b1ae9bd96" title="Extract the real part of each component of a complex 3&#45;vector." alt="" coords="353,471,429,498"/>
+<area shape="poly" id="edge15_Node000001_Node000013" title=" " alt="" coords="133,267,155,304,189,353,234,405,287,450,312,463,338,472,336,477,310,468,284,455,230,409,185,357,151,307,128,270"/>
+<area shape="rect" id="Node000004" href="$Domain_8cpp.html#abbd88d15240455cf734121fcd73b3a03" title="Compute the element&#45;wise complex conjugate of a 3&#45;vector." alt="" coords="624,57,673,85"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="430,68,609,68,609,74,430,74"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="623,67,602,56,598,50,599,43,616,34,649,31,678,33,695,40,699,51,688,61,685,57,694,49,692,43,677,38,649,36,617,39,604,46,603,49,606,52,625,62"/>
+<area shape="rect" id="Node000006" href="$classDomainLayered3D.html#ae8e9daf2ca4d1ed649a1e0fe83880160" title="Returns the layer index corresponding to a spatial position." alt="" coords="544,209,753,254"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="459,135,497,147,551,172,599,198,597,203,548,177,495,152,457,140"/>
+<area shape="poly" id="edge11_Node000010_Node000006" title=" " alt="" coords="456,314,495,302,592,259,594,263,497,307,457,319"/>
+<area shape="poly" id="edge14_Node000012_Node000012" title=" " alt="" coords="624,456,603,445,598,438,599,431,615,422,649,419,678,421,696,428,699,439,688,449,684,445,694,437,692,432,677,426,649,424,617,427,603,434,603,437,606,441,626,451"/>
+<area shape="poly" id="edge16_Node000013_Node000012" title=" " alt="" coords="429,478,610,460,610,466,430,483"/>
+</map>

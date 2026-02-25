@@ -1,0 +1,9 @@
+<map id="DomainLayered3D::test_slice" name="DomainLayered3D::test_slice">
+<area shape="rect" id="Node000001" title="Self&#45;test: slicing of points with respect to interfaces (prints to console)." alt="" coords="5,24,181,68"/>
+<area shape="rect" id="Node000002" href="$DomainLayered3D_8cpp.html#ad63ce0a587a110740b2a7a51b927d893" title="Reads a set of 3D positions from a file." alt="" coords="236,5,402,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,33,220,28,221,33,182,38"/>
+<area shape="rect" id="Node000003" href="$classDomainLayered3D.html#a76fc8705ab75f3e6599693f9544821e9" title="Computes the slicing of points with respect to interfaces." alt="" coords="229,57,409,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="182,53,214,57,213,62,181,58"/>
+<area shape="rect" id="Node000004" href="$classDomainLayered3D.html#ae8e9daf2ca4d1ed649a1e0fe83880160" title="Returns the layer index corresponding to a spatial position." alt="" coords="457,49,666,94"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="410,68,442,68,442,74,410,74"/>
+</map>

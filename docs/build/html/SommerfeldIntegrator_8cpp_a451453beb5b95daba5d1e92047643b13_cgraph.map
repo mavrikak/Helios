@@ -1,0 +1,5 @@
+<map id="gaussKronrod" name="gaussKronrod">
+<area shape="rect" id="Node000001" title="Performs Gauss&#45;Kronrod integration." alt="" coords="5,5,116,33"/>
+<area shape="rect" id="Node000002" href="$SommerfeldIntegrator_8cpp.html#a9d3834c50a37c06607ab377700f8ba4d" title="Adaptive Gauss–Kronrod quadrature (QUADPACK driver routine DQAGE)." alt="" coords="164,5,232,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="116,16,148,16,148,22,116,22"/>
+</map>

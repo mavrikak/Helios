@@ -1,0 +1,10 @@
+<map id="SommerfeldIntegrator::Secondary" name="SommerfeldIntegrator::Secondary">
+<area shape="rect" id="Node000001" title="Computes secondary wave contributions in a layered medium." alt="" coords="645,5,811,50"/>
+<area shape="rect" id="Node000002" href="$classSommerfeldIntegrator.html#a9467786ef80af13f1b6f4317fb6ae80a" title="Computes the inter&#45;layer Green&#39;s function integrand." alt="" coords="432,5,597,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="630,30,598,30,598,25,630,25"/>
+<area shape="rect" id="Node000003" href="$classSommerfeldIntegrator.html#a2537d36d62ecdecc297e19c8127f827a" title="Computes inter&#45;layer coefficients for Green&#39;s function interpolation." alt="" coords="5,5,171,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="416,26,384,25,219,25,171,26,171,21,219,20,384,20,416,21"/>
+<area shape="rect" id="Node000004" href="$classSommerfeldIntegrator.html#a5479217de11e54b823a970c39580fa64" title="Computes the inter&#45;layer integration function." alt="" coords="219,35,384,79"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="417,44,385,48,384,43,416,38"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="203,46,171,42,172,36,204,41"/>
+</map>

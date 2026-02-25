@@ -1,0 +1,42 @@
+\doxysection{Domain\+Layered3\+D.\+h File Reference}
+\hypertarget{DomainLayered3D_8h}{}\label{DomainLayered3D_8h}\index{DomainLayered3D.h@{DomainLayered3D.h}}
+
+
+Layered 3D simulation domain (derived from \doxylink{classDomain}{Domain}).  
+
+
+{\ttfamily \#include "{}Domain.\+h"{}}\newline
+{\ttfamily \#include "{}Green\+FHom3\+D.\+h"{}}\newline
+{\ttfamily \#include "{}Green\+FLayered3\+D.\+h"{}}\newline
+{\ttfamily \#include "{}Surface\+Mesh.\+h"{}}\newline
+{\ttfamily \#include $<$blitz/array.\+h$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+set$>$}\newline
+Include dependency graph for Domain\+Layered3\+D.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{DomainLayered3D_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{DomainLayered3D_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classDomainLayered3D}{Domain\+Layered3D}}
+\begin{DoxyCompactList}\small\item\em 3D stratified (layered) medium domain. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Layered 3D simulation domain (derived from \doxylink{classDomain}{Domain}). 
+
+A \doxylink{classDomain}{Domain} that supports a stack of planar layers with piecewise‑homogeneous, isotropic materials. It owns an array of homogeneous Green\textquotesingle{}s functions (one per layer) used for intra‑layer interactions and a layered Green\textquotesingle{}s function used to account for reflections/transmissions across the stack (Sommerfeld integrals with tabulation). Utilities in \doxylink{classLayeredMediaUtils}{Layered\+Media\+Utils} provide Fresnel coefficients, transfer matrices, and other per‑layer helpers reused here. 
+
+Definition in file \mbox{\hyperlink{DomainLayered3D_8h_source}{Domain\+Layered3\+D.\+h}}.
+

@@ -1,0 +1,20 @@
+<map id="SimJob::LoadDipole" name="SimJob::LoadDipole">
+<area shape="rect" id="Node000001" title="Parse and load dipole excitation from ." alt="" coords="542,84,690,112"/>
+<area shape="rect" id="Node000002" href="$classSimJob.html#a83d402c189aeefdce43afbd3cb66f709" title="Parse a full &#160;block from the already&#45;open JobParser." alt="" coords="311,57,472,85"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="527,90,472,83,473,78,528,85"/>
+<area shape="rect" id="Node000008" href="$classSimJob.html#adba2c6ff445d17b3d75443f94a7de5eb" title="Parse one &#160;(incident specification + label)." alt="" coords="289,109,494,137"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="527,111,495,114,494,109,527,105"/>
+<area shape="rect" id="Node000003" href="$classSimJob.html#a12a443329f3e49a5a94a6af72403d93b" title="Casimir workflow entry (uses gradient matrices if enabled)." alt="" coords="112,5,236,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="315,56,235,36,236,31,317,51"/>
+<area shape="rect" id="Node000005" href="$classSimJob.html#a20b37e2e0aa2502a3ec465a5705b1774" title="Evaluate fields on a set of points read from a file." alt="" coords="108,57,241,85"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="295,74,242,74,242,68,295,68"/>
+<area shape="rect" id="Node000007" href="$classSimJob.html#aeca9fd8ceee84fdef75996581fe1093a" title="High&#45;level entry: run a simulation for a given job file." alt="" coords="108,109,240,137"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="317,92,236,111,235,106,315,87"/>
+<area shape="rect" id="Node000004" href="$casimir_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Main driver routine for the simulation program." alt="" coords="5,5,60,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="96,22,60,22,60,16,96,16"/>
+<area shape="rect" id="Node000006" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Main driver routine for the HELIOS SIE simulation program." alt="" coords="5,83,60,110"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="93,88,61,94,60,89,92,83"/>
+<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="92,110,60,104,61,99,93,105"/>
+<area shape="poly" id="edge9_Node000008_Node000005" title=" " alt="" coords="315,108,235,88,236,83,317,103"/>
+<area shape="poly" id="edge10_Node000008_Node000007" title=" " alt="" coords="273,126,241,126,241,120,273,120"/>
+</map>

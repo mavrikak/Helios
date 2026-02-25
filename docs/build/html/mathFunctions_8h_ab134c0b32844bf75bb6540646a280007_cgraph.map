@@ -1,0 +1,5 @@
+<map id="InterpBilinear" name="InterpBilinear">
+<area shape="rect" id="Node000001" title="Perform bilinear interpolation on a rectangular surface." alt="" coords="5,5,115,33"/>
+<area shape="rect" id="Node000002" href="$mathFunctions_8h.html#a6a44a67d00b12380d2bf85996378a609" title="Perform linear interpolation between two samples." alt="" coords="163,5,262,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,16,147,16,147,22,115,22"/>
+</map>

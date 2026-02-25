@@ -1,0 +1,11 @@
+<map id="Dipole" name="Dipole">
+<area shape="rect" id="Node000001" title="Point electric dipole excitation." alt="" coords="209,895,399,1369"/>
+<area shape="rect" id="Node000002" href="$classIncidentField.html" title="Abstract base for incident fields (excitations) used in SIE." alt="" coords="5,400,195,718"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,731,223,894,218,896,159,733"/>
+<area shape="rect" id="Node000003" href="$classGreenF.html" title="Abstract base for Green&#39;s function kernels." alt="" coords="219,321,389,796"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="307,796,307,878,302,878,302,796"/>
+<area shape="rect" id="Node000004" href="$classLookupTableBin.html" title="Represents a 2D lookup table for complex functions (binary format)." alt="" coords="235,5,373,256"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="307,256,307,304,302,304,302,256"/>
+<area shape="rect" id="Node000005" href="$classLayeredMediaUtils.html" title="Utility class for calculations related to layered media." alt="" coords="414,355,603,762"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="482,762,468,818,451,872,410,964,405,962,446,870,463,816,476,761"/>
+</map>

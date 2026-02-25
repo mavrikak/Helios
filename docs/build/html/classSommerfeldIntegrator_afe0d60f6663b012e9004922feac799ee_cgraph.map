@@ -1,0 +1,8 @@
+<map id="SommerfeldIntegrator::FresnelCoeff" name="SommerfeldIntegrator::FresnelCoeff">
+<area shape="rect" id="Node000001" title="Computes the Fresnel reflection and transmission coefficients between two layers." alt="" coords="5,21,171,66"/>
+<area shape="rect" id="Node000002" href="$group__greenFunction.html#gac0a52dce23be7dacdf97c68653b6c137" title="Complex square root with a branch cut along the negative real axis." alt="" coords="219,29,272,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,40,203,40,203,46,171,46"/>
+<area shape="rect" id="Node000003" href="$Domain_8cpp.html#aafa3e4fa6318b2f8740f4dbd50c367e5" title="Extract the real part of each component of a complex 3&#45;vector." alt="" coords="320,29,366,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="272,40,304,40,304,46,272,46"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="325,30,322,20,324,11,332,5,343,3,355,5,362,12,358,15,353,10,343,8,334,10,329,14,328,20,330,28"/>
+</map>

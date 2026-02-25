@@ -1,0 +1,24 @@
+<map id="GreenFLayered3D::GreenFLayered3D" name="GreenFLayered3D::GreenFLayered3D">
+<area shape="rect" id="Node000001" title="Construct layered Green&#39;s function (magnetic layers)." alt="" coords="5,256,269,284"/>
+<area shape="rect" id="Node000002" href="$classGreenFLayered3D.html#ac014fbe12a1544418cc22938332942a4" title="Fill all interpolation tables with Green&#39;s function values." alt="" coords="317,126,521,171"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,253,350,175,352,180,173,258"/>
+<area shape="rect" id="Node000007" href="$classGreenF.html#a332ac24f39288170f77c18f37fde2c82" title="Constructor for a homogeneous, non&#45;magnetic medium." alt="" coords="358,229,480,257"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="269,255,342,248,342,253,269,260"/>
+<area shape="rect" id="Node000010" href="$GreenFLayered3D_8cpp.html#a00cc14542110c9977f8a47cf96cbfe60" title="Initialize the selector map for inter&#45;layer coefficients." alt="" coords="379,281,458,309"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="269,279,364,288,363,293,269,284"/>
+<area shape="rect" id="Node000011" href="$GreenFLayered3D_8cpp.html#a4ed7a5ed9f037ca61716cecc33bb3a52" title="Initialize the selector map for intra&#45;layer coefficients." alt="" coords="379,333,458,361"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="189,282,317,318,365,331,363,336,316,323,188,287"/>
+<area shape="rect" id="Node000003" href="$classGreenFLayered3D.html#a412af9133282962ec12affb1509c6507" title="Fill inter&#45;layer tables between two different layers." alt="" coords="569,5,764,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="445,124,499,82,568,42,583,36,585,41,570,47,502,87,448,128"/>
+<area shape="rect" id="Node000004" href="$classGreenFLayered3D.html#a0cb3c4922d84b741f69e6a8996ebd5d5" title="Fill intra&#45;layer tables for internal layers (plus/minus sides)." alt="" coords="569,57,764,102"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="501,123,569,104,570,109,502,128"/>
+<area shape="rect" id="Node000005" href="$classGreenFLayered3D.html#abe83b87d2228f9ad198e2924d841682d" title="Fill intra&#45;layer tables for bottom/top half&#45;spaces." alt="" coords="569,126,764,171"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="522,146,553,146,553,151,522,151"/>
+<area shape="rect" id="Node000006" href="$classGreenFLayered3D.html#a41c1370112d040a3dc4c44a5853022ed" title="Fresnel reflection/transmission at interface (delegates to utils)." alt="" coords="570,196,763,240"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="502,169,570,188,569,193,501,174"/>
+<area shape="rect" id="Node000008" href="$group__greenFunction.html#gac0a52dce23be7dacdf97c68653b6c137" title="Complex square root with a branch cut along the negative real axis." alt="" coords="640,264,693,292"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="481,249,625,269,624,275,480,254"/>
+<area shape="rect" id="Node000009" href="$Domain_8cpp.html#aafa3e4fa6318b2f8740f4dbd50c367e5" title="Extract the real part of each component of a complex 3&#45;vector." alt="" coords="812,264,859,292"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="694,275,797,275,797,280,694,280"/>
+<area shape="poly" id="edge9_Node000009_Node000009" title=" " alt="" coords="810,268,802,258,804,247,815,240,836,237,860,242,869,252,865,256,858,246,835,243,817,245,808,250,807,257,814,265"/>
+</map>

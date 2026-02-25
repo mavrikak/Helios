@@ -1,0 +1,9 @@
+<map id="GreenFHom3D" name="GreenFHom3D">
+<area shape="rect" id="Node000001" title="Free‑space (homogeneous) Green&#39;s function provider." alt="" coords="125,861,269,1156"/>
+<area shape="rect" id="Node000002" href="$classGreenF.html" title="Abstract base for Green&#39;s function kernels." alt="" coords="5,321,175,796"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="153,809,165,860,160,861,147,811"/>
+<area shape="rect" id="Node000003" href="$classLookupTableBin.html" title="Represents a 2D lookup table for complex functions (binary format)." alt="" coords="21,5,159,256"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="93,256,93,304,88,304,88,256"/>
+<area shape="rect" id="Node000004" href="$classGaussQuad.html" title=" " alt="" coords="200,411,410,706"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="272,707,239,845,234,844,267,706"/>
+</map>

@@ -1,0 +1,31 @@
+<map id="SimJob::ContainingDomain" name="SimJob::ContainingDomain">
+<area shape="rect" id="Node000001" title="Find which domain contains a point." alt="" coords="738,83,933,110"/>
+<area shape="rect" id="Node000002" href="$classSimJob.html#a746e46ef2aa6843c2f4da96e472c75a3" title="Incident and secondary &#160;at pos (domain auto&#45;detected)." alt="" coords="559,57,673,85"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="722,86,673,80,674,75,722,81"/>
+<area shape="rect" id="Node000004" href="$classSimJob.html#a20b37e2e0aa2502a3ec465a5705b1774" title="Evaluate fields on a set of points read from a file." alt="" coords="108,108,241,136"/>
+<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="722,103,241,122,241,117,722,98"/>
+<area shape="rect" id="Node000006" href="$classSimJob.html#ae9e4bc91d7636bf3e7fd151c870cd01f" title="Incident and secondary &#160;at pos (domain auto&#45;detected)." alt="" coords="558,5,674,33"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="778,80,657,36,659,31,780,74"/>
+<area shape="rect" id="Node000007" href="$classSimJob.html#ae16a5d8bdcf14121a812acd22b3c573a" title="Parse and load dipole excitation from ." alt="" coords="542,159,690,186"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="779,118,659,161,658,156,778,113"/>
+<area shape="rect" id="Node000003" href="$classSimJob.html#aa492cf9e3639f2dfa91e36364a76729a" title="Thread worker to evaluate fields over posvec in parallel." alt="" coords="301,57,482,85"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="544,74,483,74,483,68,544,68"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="315,92,237,110,236,105,314,86"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Main driver routine for the HELIOS SIE simulation program." alt="" coords="5,135,60,162"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="93,140,61,146,60,141,92,135"/>
+<area shape="poly" id="edge7_Node000006_Node000003" title=" " alt="" coords="544,38,455,59,454,54,543,33"/>
+<area shape="rect" id="Node000008" href="$classSimJob.html#a83d402c189aeefdce43afbd3cb66f709" title="Parse a full &#160;block from the already&#45;open JobParser." alt="" coords="311,211,472,238"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="539,193,455,213,454,207,538,188"/>
+<area shape="rect" id="Node000012" href="$classSimJob.html#adba2c6ff445d17b3d75443f94a7de5eb" title="Parse one &#160;(incident specification + label)." alt="" coords="289,159,494,186"/>
+<area shape="poly" id="edge15_Node000007_Node000012" title=" " alt="" coords="527,175,495,175,495,170,527,170"/>
+<area shape="poly" id="edge12_Node000008_Node000004" title=" " alt="" coords="301,207,288,200,272,188,262,175,254,163,239,151,217,139,220,134,243,146,257,159,267,172,276,184,290,196,304,202"/>
+<area shape="rect" id="Node000009" href="$classSimJob.html#a12a443329f3e49a5a94a6af72403d93b" title="Casimir workflow entry (uses gradient matrices if enabled)." alt="" coords="112,212,236,240"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="295,228,237,228,237,223,295,222"/>
+<area shape="rect" id="Node000011" href="$classSimJob.html#aeca9fd8ceee84fdef75996581fe1093a" title="High&#45;level entry: run a simulation for a given job file." alt="" coords="108,160,240,188"/>
+<area shape="poly" id="edge13_Node000008_Node000011" title=" " alt="" coords="314,209,236,191,237,186,315,204"/>
+<area shape="rect" id="Node000010" href="$casimir_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Main driver routine for the simulation program." alt="" coords="5,212,60,240"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="96,228,60,228,60,223,96,223"/>
+<area shape="poly" id="edge14_Node000011_Node000005" title=" " alt="" coords="92,162,60,156,61,151,93,157"/>
+<area shape="poly" id="edge16_Node000012_Node000004" title=" " alt="" coords="314,157,236,139,237,134,315,152"/>
+<area shape="poly" id="edge17_Node000012_Node000011" title=" " alt="" coords="273,176,241,176,241,171,273,171"/>
+</map>

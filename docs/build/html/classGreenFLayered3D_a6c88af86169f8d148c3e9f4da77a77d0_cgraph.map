@@ -1,0 +1,60 @@
+<map id="GreenFLayered3D::SameTriDK" name="GreenFLayered3D::SameTriDK">
+<area shape="rect" id="Node000001" title="Triangle–triangle D/K blocks assembly for all RWG pairs on two triangles." alt="" coords="5,408,223,436"/>
+<area shape="rect" id="Node000002" href="$classGreenFLayered3D.html#a44686db66fc60d5a0f7613f692a73a28" title="Checks whether the given positions exceed a predefined distance threshold." alt="" coords="271,5,522,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="114,407,124,341,149,242,169,188,195,135,228,86,269,44,275,39,279,43,272,48,232,89,199,138,173,190,154,244,129,342,119,408"/>
+<area shape="rect" id="Node000003" href="$classTriangle.html#a1d3d08deeb999f339d2e821a877521ba" title="Surface area of the triangle." alt="" coords="341,57,452,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="115,407,128,349,155,264,176,218,201,173,232,131,269,96,296,81,325,72,327,77,298,85,272,100,236,135,205,176,180,220,160,266,133,350,120,408"/>
+<area shape="rect" id="Node000004" href="$classTriangle.html#ab78508a340ec5d345adf114b43563dbf" title="Centroid of the triangle." alt="" coords="335,109,458,137"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="116,407,132,357,162,286,182,248,207,211,236,177,269,148,293,135,319,126,320,131,295,139,272,152,240,181,211,214,187,251,167,289,137,359,121,409"/>
+<area shape="rect" id="Node000005" href="$group__greenFunction.html#gac0a52dce23be7dacdf97c68653b6c137" title="Complex square root with a branch cut along the negative real axis." alt="" coords="370,161,423,189"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="119,407,138,366,171,312,214,254,240,228,269,205,311,185,354,176,355,181,313,190,272,209,244,232,218,258,175,315,143,369,124,409"/>
+<area shape="rect" id="Node000007" href="$classGreenFLayered3D.html#a65ac22e62ec3e3131ffbb10d7bdea307" title="Evaluate quasi&#45;static (QS) contributions for inter&#45;layer interactions." alt="" coords="570,185,783,230"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="122,406,145,375,178,335,220,295,269,262,340,234,414,216,487,206,554,202,555,207,487,211,415,221,341,239,272,267,224,299,182,339,149,378,127,409"/>
+<area shape="rect" id="Node000009" href="$classGreenFLayered3D.html#a1fb4fa93c84d77750cac364641945725" title="Return layer index of a 3D point." alt="" coords="847,300,1053,344"/>
+<area shape="poly" id="edge24_Node000001_Node000009" title=" " alt="" coords="223,406,832,333,833,338,223,412"/>
+<area shape="rect" id="Node000010" href="$classGreenFLayered3D.html#a7fbd8a47a0074f53111d52920a910392" title="Evaluate quasi&#45;static (QS) contributions for intra&#45;layer interactions." alt="" coords="570,254,783,299"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="126,405,184,351,225,322,270,299,341,279,415,267,488,263,554,263,554,269,488,268,416,273,342,284,272,304,227,327,187,355,130,409"/>
+<area shape="rect" id="Node000011" href="$classGreenFLayered3D.html#abb50e8621c63f2b29862c32a8447dd9c" title="Evaluate Green&#39;s&#45;function components for inter&#45;layer interactions by interpolating the smooth (Sommer..." alt="" coords="570,425,783,470"/>
+<area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="223,424,555,439,555,444,223,429"/>
+<area shape="rect" id="Node000014" href="$classGreenFLayered3D.html#a834a94e21f64163f651a4729eccc6699" title="Evaluate Green&#39;s function components for intra&#45;layer interactions by interpolating the smooth (Sommer..." alt="" coords="570,494,783,539"/>
+<area shape="poly" id="edge16_Node000001_Node000014" title=" " alt="" coords="201,434,555,494,554,499,201,439"/>
+<area shape="rect" id="Node000015" href="$classRWGFun.html#a7540ce2f84c6b42a29c2808504c47d42" title="Evaluate the RWG vector shape function at a point on the triangle." alt="" coords="326,535,467,562"/>
+<area shape="poly" id="edge18_Node000001_Node000015" title=" " alt="" coords="136,434,195,473,272,514,312,528,310,533,270,519,192,478,133,438"/>
+<area shape="rect" id="Node000016" href="$classTriangle.html#a6a5a3532e273e1fbb69b26eea2f509c0" title="Count common nodes with triangle T (0..3)." alt="" coords="309,587,484,614"/>
+<area shape="poly" id="edge19_Node000001_Node000016" title=" " alt="" coords="128,435,184,501,225,540,272,571,296,582,294,587,269,576,222,544,180,505,123,438"/>
+<area shape="rect" id="Node000020" href="$classTriangle.html#a0752d2c9488c7c44b851b8f75abcaa79" title="Node position (by value) for local index 0..2." alt="" coords="1117,640,1231,668"/>
+<area shape="poly" id="edge27_Node000001_Node000020" title=" " alt="" coords="124,435,142,474,174,527,217,581,243,604,272,623,302,637,340,648,434,664,547,672,669,675,912,669,1101,657,1102,662,913,674,669,680,546,678,434,669,339,653,300,642,269,628,240,608,214,584,170,530,138,477,119,437"/>
+<area shape="rect" id="Node000021" href="$classSingCancellation.html#a9f0341d9a5435ccf830d35c34a752d13" title="Access the paired barycentric nodes for triangle i." alt="" coords="283,701,510,729"/>
+<area shape="poly" id="edge25_Node000001_Node000021" title=" " alt="" coords="122,435,139,482,169,549,213,621,241,653,272,681,292,693,289,697,269,685,237,657,209,624,164,552,134,484,117,437"/>
+<area shape="rect" id="Node000022" href="$classSingCancellation.html#a1e39f550c512d7f609257be4f9610082" title="Access the weights associated with each paired sampling point." alt="" coords="291,753,502,781"/>
+<area shape="poly" id="edge26_Node000001_Node000022" title=" " alt="" coords="120,435,133,493,161,575,181,620,206,664,236,704,272,738,280,743,276,748,269,743,232,708,201,667,176,622,156,577,128,494,115,437"/>
+<area shape="rect" id="Node000023" href="$classRWGFun.html#a7cd7779305937d48196453e53d0d4df8" title="Return L_n / A_n (missing factor 1/2 by convention)." alt="" coords="308,805,484,833"/>
+<area shape="poly" id="edge28_Node000001_Node000023" title=" " alt="" coords="119,436,129,501,154,598,174,650,200,702,233,750,272,790,295,804,292,809,269,795,228,753,195,705,169,653,149,599,124,502,114,437"/>
+<area shape="rect" id="Node000024" href="$classGreenFLayered3D.html#a87c30d7c2782fd16b17a54bf12777cf0" title="Test assembly of same&#45;triangle D and K matrix elements." alt="" coords="292,314,500,359"/>
+<area shape="poly" id="edge29_Node000001_Node000024" title=" " alt="" coords="162,405,305,361,306,366,164,410"/>
+<area shape="rect" id="Node000006" href="$Domain_8cpp.html#aafa3e4fa6318b2f8740f4dbd50c367e5" title="Extract the real part of each component of a complex 3&#45;vector." alt="" coords="654,133,700,161"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="423,170,638,148,638,154,424,175"/>
+<area shape="poly" id="edge6_Node000006_Node000006" title=" " alt="" coords="652,144,628,133,623,126,624,119,641,110,677,107,709,109,727,116,730,128,716,138,713,134,724,126,723,120,707,114,677,112,643,115,629,122,628,125,632,129,654,139"/>
+<area shape="rect" id="Node000008" href="$classGreenFLayered3D.html#a41c1370112d040a3dc4c44a5853022ed" title="Fresnel reflection/transmission at interface (delegates to utils)." alt="" coords="853,201,1047,246"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="784,211,838,214,838,219,784,216"/>
+<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="752,227,784,239,893,290,891,295,782,244,751,232"/>
+<area shape="poly" id="edge11_Node000010_Node000008" title=" " alt="" coords="783,253,838,242,839,248,784,258"/>
+<area shape="poly" id="edge12_Node000010_Node000009" title=" " alt="" coords="784,292,833,300,832,305,783,297"/>
+<area shape="rect" id="Node000012" href="$classGreenFLayered3D.html#a6c09f9ac63d604111b76842e774c65c8" title="Evaluate 2D interpolant at one query point." alt="" coords="848,460,1052,504"/>
+<area shape="poly" id="edge14_Node000011_Node000012" title=" " alt="" coords="784,458,833,464,833,470,783,463"/>
+<area shape="rect" id="Node000013" href="$GreenFLayered3D_8cpp.html#a8aa29777c4e70a4d7c032b4c6fb0387d" title="External REGRIDPACK routine for evaluating a 2D interpolation function." alt="" coords="1122,468,1226,496"/>
+<area shape="poly" id="edge15_Node000012_Node000013" title=" " alt="" coords="1052,479,1106,479,1106,484,1052,484"/>
+<area shape="poly" id="edge17_Node000014_Node000012" title=" " alt="" coords="783,500,833,494,833,499,784,506"/>
+<area shape="rect" id="Node000017" href="$classTriangle.html#aeecc82e57a00841cb83fd790316b25a3" title="Node pointer for local index 0..2." alt="" coords="610,563,743,590"/>
+<area shape="poly" id="edge20_Node000016_Node000017" title=" " alt="" coords="484,590,595,581,595,586,484,596"/>
+<area shape="rect" id="Node000018" href="$classTriangle.html#a2eae6a9b0378e4b5ba4616a6b6af86fe" title="Construct from 3 node pointers and bordering domains." alt="" coords="611,615,742,642"/>
+<area shape="poly" id="edge21_Node000016_Node000018" title=" " alt="" coords="484,607,596,618,595,623,484,612"/>
+<area shape="rect" id="Node000019" href="$classTriangle.html#ae13d69e28fb7a81ab8257fe0af84ceaa" title="Compute/cached geometry (normal, area, perimeter, center, I1/I2s/I2d)." alt="" coords="831,615,1069,642"/>
+<area shape="poly" id="edge22_Node000018_Node000019" title=" " alt="" coords="743,626,816,626,816,631,743,631"/>
+<area shape="poly" id="edge23_Node000019_Node000020" title=" " alt="" coords="1069,639,1102,643,1101,648,1069,645"/>
+<area shape="poly" id="edge30_Node000024_Node000007" title=" " alt="" coords="433,311,496,276,569,239,585,233,587,238,571,244,498,280,436,316"/>
+<area shape="poly" id="edge34_Node000024_Node000009" title=" " alt="" coords="501,331,832,322,832,328,501,336"/>
+<area shape="poly" id="edge31_Node000024_Node000010" title=" " alt="" coords="500,312,554,300,555,305,502,317"/>
+<area shape="poly" id="edge32_Node000024_Node000011" title=" " alt="" coords="456,357,605,416,603,421,454,362"/>
+<area shape="poly" id="edge33_Node000024_Node000014" title=" " alt="" coords="421,357,485,418,527,451,571,480,582,485,580,490,569,484,523,455,481,422,417,361"/>
+</map>

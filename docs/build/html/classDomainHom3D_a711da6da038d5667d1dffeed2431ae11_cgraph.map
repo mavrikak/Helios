@@ -1,0 +1,11 @@
+<map id="DomainHom3D::DomainHom3D" name="DomainHom3D::DomainHom3D">
+<area shape="rect" id="Node000001" title="Construct a homogeneous domain, optionally skipping Green&#39;s function creation." alt="" coords="5,32,235,60"/>
+<area shape="rect" id="Node000002" href="$classDomain.html#a3f6f9e8ec932680440098679b6fe3300" title="Construct a domain over a mesh region at a given vacuum wavelength." alt="" coords="315,5,446,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="235,31,299,25,300,30,236,37"/>
+<area shape="rect" id="Node000005" href="$classDomainHom3D.html#a3877e2d1f2020c251b5e3c74e5c40594" title="Instantiate the homogeneous Green&#39;s function for this domain." alt="" coords="283,57,479,85"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="236,54,267,57,267,63,235,60"/>
+<area shape="rect" id="Node000003" href="$classDomain.html#a753296cc63cedb73b537311031521178" title="Add all boundary triangles belonging to region dIndex and build RWGs." alt="" coords="527,5,758,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="447,16,512,16,512,22,447,22"/>
+<area shape="rect" id="Node000004" href="$classSurfaceMesh.html#a7681019f61e9c1542c893c177117dac4" title="Triangles bordering a given domain (FRONT or BACK)." alt="" coords="806,5,1041,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="759,16,791,16,791,22,759,22"/>
+</map>

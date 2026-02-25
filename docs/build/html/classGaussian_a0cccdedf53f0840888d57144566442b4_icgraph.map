@@ -1,0 +1,9 @@
+<map id="Gaussian::EvaluateE" name="Gaussian::EvaluateE">
+<area shape="rect" id="Node000001" title="Evaluate the incident electric field ." alt="" coords="416,32,570,60"/>
+<area shape="rect" id="Node000002" href="$classGaussian.html#ad420298383fc00144d4f1dc9e87b8ee7" title="Evaluate the incident magnetic field ." alt="" coords="212,5,368,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="400,36,368,32,368,27,401,31"/>
+<area shape="rect" id="Node000004" href="$classGaussian.html#a7c63c2889ab8b3c019c3d04c568c2ad4" title="RWG projection of the incident electric field." alt="" coords="212,57,368,85"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="401,60,368,64,368,59,400,55"/>
+<area shape="rect" id="Node000003" href="$classGaussian.html#a5a2bbd00d15351a497efe6cd5fb333d3" title="RWG projection of the incident magnetic field." alt="" coords="5,5,164,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="196,22,164,22,164,16,196,16"/>
+</map>

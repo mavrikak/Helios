@@ -1,0 +1,25 @@
+<map id="Triangle::CalculateGeometryData" name="Triangle::CalculateGeometryData">
+<area shape="rect" id="Node000001" title="Compute/cached geometry (normal, area, perimeter, center, I1/I2s/I2d)." alt="" coords="795,84,1033,112"/>
+<area shape="rect" id="Node000002" href="$classTriangle.html#a6d275a4d9441732ebcd00c514ff4bb2f" title="Replace the three node pointers and recompute cached geometry." alt="" coords="564,5,728,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="853,81,747,48,702,36,704,31,748,43,855,76"/>
+<area shape="rect" id="Node000003" href="$classTriangle.html#aa59e8d6a6ca3db504228bff7913812bb" title="Set front/back domain indices; recomputes cached geometry." alt="" coords="545,57,747,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="779,87,748,84,748,79,780,82"/>
+<area shape="rect" id="Node000004" href="$classTriangle.html#afaab90bcc5fa1fcf60db1e924b8cc856" title="Construct from 3 node pointers; domains can be set later." alt="" coords="580,109,712,137"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="780,113,713,120,712,114,780,108"/>
+<area shape="rect" id="Node000005" href="$classTriangle.html#a2eae6a9b0378e4b5ba4616a6b6af86fe" title="Construct from 3 node pointers and bordering domains." alt="" coords="580,161,712,189"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="854,119,748,151,704,163,702,158,747,146,852,114"/>
+<area shape="rect" id="Node000006" href="$classTriangle.html#a6a5a3532e273e1fbb69b26eea2f509c0" title="Count common nodes with triangle T (0..3)." alt="" coords="306,79,480,106"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="565,159,544,151,520,136,496,122,461,109,462,104,498,117,522,132,546,146,566,154"/>
+<area shape="rect" id="Node000010" href="$classTriangle.html#a110eb211c31cc4fa6a936d8d4c201306" title="Count common nodes with T after translating T by vector t." alt="" coords="306,131,480,158"/>
+<area shape="poly" id="edge9_Node000005_Node000010" title=" " alt="" coords="565,168,480,158,481,152,566,163"/>
+<area shape="rect" id="Node000011" href="$classTriangle.html#aab413203fc04781220ce7cf8224105bd" title="Find common edge local indices with T." alt="" coords="294,182,492,227"/>
+<area shape="poly" id="edge10_Node000005_Node000011" title=" " alt="" coords="566,187,493,196,492,190,565,182"/>
+<area shape="rect" id="Node000012" href="$classTriangle.html#aa137190a0a6fd9adadee37a8228313d6" title="Find common vertex local indices with T." alt="" coords="289,252,497,296"/>
+<area shape="poly" id="edge11_Node000005_Node000012" title=" " alt="" coords="601,198,498,242,466,253,464,248,496,237,599,193"/>
+<area shape="rect" id="Node000007" href="$classGreenFHom3D.html#a419cbe00b5a2aed70ac546904a8a8d6f" title="Compute &#160;and &#160;for all RWG pairs on two triangles." alt="" coords="25,27,221,54"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="302,78,198,58,199,52,303,72"/>
+<area shape="rect" id="Node000008" href="$classGreenFHom3DPer2D.html#a1dc9dd84c93ee10b2fb4b1866103d957" title="Compute &#160;and &#160;for all RWG pairs on two triangles." alt="" coords="5,79,241,106"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="290,95,241,95,241,90,290,90"/>
+<area shape="rect" id="Node000009" href="$classGreenFLayered3D.html#a6c88af86169f8d148c3e9f4da77a77d0" title="Triangle–triangle D/K blocks assembly for all RWG pairs on two triangles." alt="" coords="14,131,232,158"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="303,113,199,133,198,127,302,107"/>
+</map>

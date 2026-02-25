@@ -1,0 +1,9 @@
+<map id="GreenFHom3DPer2D::EwaldSpatialSmoothed" name="GreenFHom3DPer2D::EwaldSpatialSmoothed">
+<area shape="rect" id="Node000001" title="Spatial part for the smoothed scalar kernel ." alt="" coords="601,28,849,72"/>
+<area shape="rect" id="Node000002" href="$classGreenFHom3DPer2D.html#aa6a46238cd2d01600780fd176a36971d" title="Ewald&#45;summed smoothed scalar kernel." alt="" coords="284,5,553,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="585,39,553,35,554,30,586,33"/>
+<area shape="rect" id="Node000004" href="$classGreenFHom3DPer2D.html#ab327d41ca91c33e57a154eae221b4016" title="Smoothed scalar kernel &#160;for a specific translation." alt="" coords="303,57,534,102"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="586,66,534,71,534,66,585,61"/>
+<area shape="rect" id="Node000003" href="$classGreenFHom3DPer2D.html#a6ab5b9db19bf30afa1828652d428d4a8" title="Smoothed scalar kernel ." alt="" coords="5,5,236,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="268,22,236,22,236,16,268,16"/>
+</map>

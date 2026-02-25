@@ -1,0 +1,62 @@
+\doxysection{Incident\+Field.\+h}
+\hypertarget{IncidentField_8h_source}{}\label{IncidentField_8h_source}\index{IncidentField.h@{IncidentField.h}}
+\mbox{\hyperlink{IncidentField_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00016}00016\ \textcolor{preprocessor}{\#ifndef\ INCIDENTFIELD\_H}}
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00017}00017\ \textcolor{preprocessor}{\#define\ INCIDENTFIELD\_H}}
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00019}00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{RWGFun_8h}{RWGFun.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00020}00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{globals_8h}{globals.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00021}00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{LayeredMediaUtils_8h}{LayeredMediaUtils.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00022}00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{GreenF_8h}{GreenF.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00034}\mbox{\hyperlink{classIncidentField}{00034}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classIncidentField}{IncidentField}}\ \{}
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00035}00035\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00037}\mbox{\hyperlink{classIncidentField_af45c81c859bda7b0a43818eb8fcf5887}{00037}}\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classIncidentField_af45c81c859bda7b0a43818eb8fcf5887}{NeedsAccurate}};}
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00038}00038\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00040}00040\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classIncidentField_a79ee067f9cdb57c3ec8a82c937541dc5}{\string~IncidentField}}();}
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00041}00041\ \ \ }
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00042}00042\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00043}00043\ \ \ \textcolor{comment}{//\ Controls}}
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00044}00044\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00048}00048\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classIncidentField_aa8e0e6dc5e0acf432cc06a76f5d33baf}{EnableAccurate}}();}
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00050}00050\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00051}00051\ \ \ \textcolor{comment}{//\ Pointwise\ field\ evaluation}}
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00052}00052\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00058}\mbox{\hyperlink{classIncidentField_a2c6e363fff67c453f9ab2b550bb6bb20}{00058}}\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ \mbox{\hyperlink{classIncidentField_a2c6e363fff67c453f9ab2b550bb6bb20}{EvaluateE}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ position)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00059}00059\ \ \ }
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00065}\mbox{\hyperlink{classIncidentField_a7f960fdcdeaf381ad12a49c190f180ff}{00065}}\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ \mbox{\hyperlink{classIncidentField_a7f960fdcdeaf381ad12a49c190f180ff}{EvaluateH}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ position)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00066}00066\ \ \ }
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00073}\mbox{\hyperlink{classIncidentField_a2fbb18ff29205e11b3c0bff676b15a7e}{00073}}\ \ \ \textcolor{keyword}{virtual}\ std::vector<cvec>\ \mbox{\hyperlink{classIncidentField_a2fbb18ff29205e11b3c0bff676b15a7e}{EvaluateLayeredEandH}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ position)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00074}00074\ \ \ }
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00075}00075\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00076}00076\ \ \ \textcolor{comment}{//\ RWG\ excitation\ integrals}}
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00077}00077\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00085}\mbox{\hyperlink{classIncidentField_a277e316a752da5fcb0a0c17088c62ba9}{00085}}\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classIncidentField_a277e316a752da5fcb0a0c17088c62ba9}{IntegrateE}}(\mbox{\hyperlink{classRWGFun}{RWGFun}}*\ f)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00092}\mbox{\hyperlink{classIncidentField_af220ad23b231a3d6d7da35c5799c25cc}{00092}}\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classIncidentField_af220ad23b231a3d6d7da35c5799c25cc}{IntegrateH}}(\mbox{\hyperlink{classRWGFun}{RWGFun}}*\ f)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00099}\mbox{\hyperlink{classIncidentField_a7183dd5a80a0b88580fc0969cc25bc25}{00099}}\ \ \ \textcolor{keyword}{virtual}\ std::vector<dcmplx>\ \mbox{\hyperlink{classIncidentField_a7183dd5a80a0b88580fc0969cc25bc25}{IntegrateLayeredEandH}}(\mbox{\hyperlink{classRWGFun}{RWGFun}}*\ f)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00100}00100\ \ \ }
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00101}00101\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00102}00102\ \ \ \textcolor{comment}{//\ Type\ identification}}
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00103}00103\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00107}\mbox{\hyperlink{classIncidentField_a55dd80cfe4e8c55ae5dfe44c916b2055}{00107}}\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classIncidentField_a55dd80cfe4e8c55ae5dfe44c916b2055}{IsPlaneWave}}()\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00112}\mbox{\hyperlink{classIncidentField_ab6e619e10e894f1df66bd1966bb40b21}{00112}}\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classIncidentField_ab6e619e10e894f1df66bd1966bb40b21}{IsDipole}}()\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00117}\mbox{\hyperlink{classIncidentField_a16663eb644835d5a7a5979360e5fcbb7}{00117}}\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classIncidentField_a16663eb644835d5a7a5979360e5fcbb7}{IsGaussian}}()\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00119}00119\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00120}00120\ \ \ \textcolor{comment}{//\ Layered-\/media\ configuration}}
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00121}00121\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00128}\mbox{\hyperlink{classIncidentField_a03028097aa5da8ba73cd92af43c78cd9}{00128}}\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classIncidentField_a03028097aa5da8ba73cd92af43c78cd9}{setGrnFunLayered}}(\mbox{\hyperlink{classGreenF}{GreenF}}\ *fGrnFields,\ std::vector<Grid>\ tabGrids)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00129}00129\ \};}
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{IncidentField_8h_source_l00131}00131\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

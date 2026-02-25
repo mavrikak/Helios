@@ -1,0 +1,27 @@
+<map id="GreenFHom3DPer2D::PrimitiveCell" name="GreenFHom3DPer2D::PrimitiveCell">
+<area shape="rect" id="Node000001" title="Map a displacement to the primitive cell." alt="" coords="601,221,849,249"/>
+<area shape="rect" id="Node000002" href="$classGreenFHom3DPer2D.html#a359a21bc178e1c0d21125f8af5ae4fcb" title="Ewald&#45;summed scalar kernel (2D periodic)." alt="" coords="317,5,520,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="706,210,680,173,645,128,602,84,552,48,519,35,522,30,554,44,605,80,649,125,684,169,710,207"/>
+<area shape="rect" id="Node000004" href="$classGreenFHom3DPer2D.html#aa6a46238cd2d01600780fd176a36971d" title="Ewald&#45;summed smoothed scalar kernel." alt="" coords="284,57,553,85"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="699,212,636,154,596,124,552,99,523,88,524,83,554,94,599,119,640,150,703,208"/>
+<area shape="rect" id="Node000006" href="$classGreenFHom3DPer2D.html#afdc08576760ed0ae9a61dc378a7faac3" title="Ewald&#45;summed source&#45;gradient." alt="" coords="308,109,528,154"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="678,217,552,168,513,157,515,152,554,163,679,212"/>
+<area shape="rect" id="Node000008" href="$classGreenFHom3DPer2D.html#a86d2cbdfe3ecb724651159902fabcdad" title="Ewald&#45;summed smoothed source&#45;gradient." alt="" coords="308,178,528,223"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="585,222,529,216,529,210,586,217"/>
+<area shape="rect" id="Node000010" href="$classGreenFHom3DPer2D.html#a233c2185952220bd16acae2142f05cc1" title="term at an observation point." alt="" coords="307,248,530,292"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="586,254,531,260,530,255,585,248"/>
+<area shape="rect" id="Node000011" href="$classGreenFHom3DPer2D.html#aadb534ef4509422e6f3e78a0e3999758" title="term at an observation point." alt="" coords="307,317,530,362"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="679,258,554,307,515,319,513,314,552,302,678,253"/>
+<area shape="rect" id="Node000012" href="$classGreenFHom3DPer2D.html#a84a8c855a27c895ff24f6771037284a5" title="Compute &#160;for all RWGs on a source triangle." alt="" coords="310,386,526,431"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="702,262,639,320,598,350,554,376,526,388,524,383,552,371,595,346,635,315,698,258"/>
+<area shape="rect" id="Node000013" href="$classGreenFHom3DPer2D.html#a1dc9dd84c93ee10b2fb4b1866103d957" title="Compute &#160;and &#160;for all RWG pairs on two triangles." alt="" coords="301,455,536,482"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="712,263,688,305,653,355,608,404,554,445,531,457,529,452,552,441,604,400,648,351,683,302,708,261"/>
+<area shape="rect" id="Node000003" href="$classGreenFHom3DPer2D.html#a4fcccf5350453546ac226492ff19bcd0" title="Scalar Bloch&#45;periodic Green&#39;s function ." alt="" coords="10,5,231,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="301,22,232,22,232,16,301,16"/>
+<area shape="rect" id="Node000005" href="$classGreenFHom3DPer2D.html#a6ab5b9db19bf30afa1828652d428d4a8" title="Smoothed scalar kernel ." alt="" coords="5,57,236,85"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="268,74,236,74,236,68,268,68"/>
+<area shape="rect" id="Node000007" href="$classGreenFHom3DPer2D.html#adff724f327912641a20c99fa4c9bb464" title="Source&#45;gradient ." alt="" coords="10,117,231,145"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="293,134,231,134,231,128,293,128"/>
+<area shape="rect" id="Node000009" href="$classGreenFHom3DPer2D.html#accc5e668a1b137a5279747db2ef0d560" title="Smoothed source&#45;gradient ." alt="" coords="10,178,231,223"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="293,203,231,203,231,198,293,198"/>
+</map>

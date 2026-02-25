@@ -1,0 +1,5 @@
+<map id="TriQuadPol::adaptPolar" name="TriQuadPol::adaptPolar">
+<area shape="rect" id="Node000001" title="Build angular sectors and radial bounds, then assemble nodes/weights." alt="" coords="221,5,389,33"/>
+<area shape="rect" id="Node000002" href="$classTriQuadPol.html#a4f5e17f2daa1107f7ad126c30a32958c" title="Construct and immediately adapt the polar quadrature." alt="" coords="5,5,173,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="205,22,173,22,173,16,205,16"/>
+</map>

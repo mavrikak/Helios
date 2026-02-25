@@ -1,0 +1,45 @@
+\doxysection{Sing\+Cancellation.\+h File Reference}
+\hypertarget{SingCancellation_8h}{}\label{SingCancellation_8h}\index{SingCancellation.h@{SingCancellation.h}}
+
+
+Quadrature point/weight builders for singularity-\/cancellation on triangles.  
+
+
+{\ttfamily \#include "{}Triangle.\+h"{}}\newline
+{\ttfamily \#include "{}RWGFun.\+h"{}}\newline
+{\ttfamily \#include "{}quadrature.\+h"{}}\newline
+Include dependency graph for Sing\+Cancellation.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{SingCancellation_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{SingCancellation_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classSingCancellation}{Sing\+Cancellation}}
+\begin{DoxyCompactList}\small\item\em Builds synchronized quadrature nodes/weights for a pair of touching triangles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Quadrature point/weight builders for singularity-\/cancellation on triangles. 
+
+This utility constructs {\itshape paired} quadrature rules on two triangles that share a {\bfseries{vertex}}, an {\bfseries{edge}}, or have the {\bfseries{same facet}}. The rules follow mappings used in Taylor (2003), D\textquotesingle{}Elia et al. (2011), Sarraf et al. (2014), and produce synchronized barycentric nodes on each triangle together with compensated Jacobians to cancel kernel singularities.
+
+Usage pattern\+:
+\begin{DoxyItemize}
+\item Construct with the pair of triangles and a chosen 1D Gauss–\+Legendre rule (n = 1, 4, or 8 nodes is typical\+: see quadrature.\{h,cpp\}).
+\item Internally, the constructor detects how the triangles touch (1,2,3 common nodes) and calls the matching builder\+: common\+Vertex(), common\+Edge(), or common\+Facet().
+\item Retrieve the paired barycentric points via get\+Points\+Map() and the weights via get\+Weights(). 
+\end{DoxyItemize}
+
+Definition in file \mbox{\hyperlink{SingCancellation_8h_source}{Sing\+Cancellation.\+h}}.
+

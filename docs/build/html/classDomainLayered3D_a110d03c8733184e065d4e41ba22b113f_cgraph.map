@@ -1,0 +1,8 @@
+<map id="DomainLayered3D::SecFieldE" name="DomainLayered3D::SecFieldE">
+<area shape="rect" id="Node000001" title="Secondary (scattered) electric field at a point from the solution vector." alt="" coords="5,14,218,42"/>
+<area shape="rect" id="Node000002" href="$classDomainLayered3D.html#ae8e9daf2ca4d1ed649a1e0fe83880160" title="Returns the layer index corresponding to a spatial position." alt="" coords="484,5,693,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="218,25,468,25,468,30,218,30"/>
+<area shape="rect" id="Node000003" href="$classDomainLayered3D.html#a295274a8176b2d6f9fc07c7aea9fd89c" title="Relative permeability at a spatial location." alt="" coords="266,39,436,67"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="218,36,251,40,250,45,218,42"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="436,41,468,38,469,43,437,47"/>
+</map>

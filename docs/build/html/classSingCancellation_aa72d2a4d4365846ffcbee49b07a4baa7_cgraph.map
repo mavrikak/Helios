@@ -1,0 +1,9 @@
+<map id="SingCancellation::commonEdge" name="SingCancellation::commonEdge">
+<area shape="rect" id="Node000001" title="Build paired quadrature for triangles sharing a common edge." alt="" coords="5,65,233,93"/>
+<area shape="rect" id="Node000002" href="$classSingCancellation.html#af51fe5685bf1d5a85afd61a50eb375fe" title="Permutation of barycentric components induced by vertex/edge alignment." alt="" coords="281,5,520,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="186,62,280,42,316,34,317,39,281,47,188,67"/>
+<area shape="rect" id="Node000003" href="$classSingCancellation.html#a671bbe3bcc58c21a3fa62e605fd36be8" title="Write a single matrix column (chosen component) as a MATLAB style vector." alt="" coords="292,57,508,102"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="233,76,277,76,277,82,233,82"/>
+<area shape="rect" id="Node000004" href="$classSingCancellation.html#a099933b83efb63d62f2b5d1c26b6b7e8" title="Write a real vector as a MATLAB style column vector." alt="" coords="292,126,508,171"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="179,91,293,119,292,125,178,96"/>
+</map>

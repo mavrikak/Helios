@@ -1,0 +1,9 @@
+<map id="Domain::ClearIncidentFields" name="Domain::ClearIncidentFields">
+<area shape="rect" id="Node000001" title="Delete and clear all incident sources." alt="" coords="392,44,596,72"/>
+<area shape="rect" id="Node000002" href="$classDomainLayered3D.html#a4e4355cfe34e6edd8e3587df4b5b115f" title="Clears all incident fields and resets the cached layered Green&#39;s function for field evaluation." alt="" coords="108,5,344,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="376,48,344,44,345,39,377,42"/>
+<area shape="rect" id="Node000003" href="$classSimJob.html#a20b37e2e0aa2502a3ec465a5705b1774" title="Evaluate fields on a set of points read from a file." alt="" coords="159,74,292,102"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="377,74,293,83,293,78,376,69"/>
+<area shape="rect" id="Node000004" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Main driver routine for the HELIOS SIE simulation program." alt="" coords="5,74,60,102"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="144,90,60,90,60,85,144,85"/>
+</map>

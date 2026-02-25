@@ -1,0 +1,5 @@
+<map id="Triangle::containsPoint" name="Triangle::containsPoint">
+<area shape="rect" id="Node000001" title="Test whether a point lies on (or very near) the triangle." alt="" coords="252,14,420,42"/>
+<area shape="rect" id="Node000002" href="$classGreenFLayered3D.html#af46d152fbc30bdc418ff16e5e7a334c6" title="Point–triangle delta/kappa contributions for RHS assembly." alt="" coords="5,5,204,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="236,30,204,30,204,25,236,25"/>
+</map>

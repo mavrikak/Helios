@@ -1,0 +1,129 @@
+\doxysection{CLParser.\+h}
+\hypertarget{CLParser_8h_source}{}\label{CLParser_8h_source}\index{CLParser.h@{CLParser.h}}
+\mbox{\hyperlink{CLParser_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00012}00012\ \textcolor{preprocessor}{\#ifndef\ CLPARSER\_H}}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00013}00013\ \textcolor{preprocessor}{\#define\ CLPARSER\_H}}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00015}00015\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00016}00016\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00017}00017\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00019}00019\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00020}00020\ \textcolor{comment}{//\ Base\ parser\ class}}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00021}00021\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00030}\mbox{\hyperlink{classCLParser}{00030}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCLParser_ae3702d514303a9f957e3381d71c4d6df}{CLParser}}\ \{}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00031}00031\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00032}\mbox{\hyperlink{classCLParser_a2d671ec2fea71aaf31ead23092d05d41}{00032}}\ \ \ std::string\ \mbox{\hyperlink{classCLParser_a2d671ec2fea71aaf31ead23092d05d41}{option}};\ }
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00034}00034\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00039}\mbox{\hyperlink{classCLParser_ae3702d514303a9f957e3381d71c4d6df}{00039}}\ \ \ \mbox{\hyperlink{classCLParser_ae3702d514303a9f957e3381d71c4d6df}{CLParser}}(std::string\ opt)\ :\ \mbox{\hyperlink{classCLParser_a2d671ec2fea71aaf31ead23092d05d41}{option}}(opt)\{\};}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00045}\mbox{\hyperlink{classCLParser_ad84575776050c4cc5492815ef8eb5dd5}{00045}}\ \ \ \mbox{\hyperlink{classCLParser_ad84575776050c4cc5492815ef8eb5dd5}{CLParser}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *opt)\ :\ \mbox{\hyperlink{classCLParser_a2d671ec2fea71aaf31ead23092d05d41}{option}}(opt)\{\};}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00046}00046\ \ \ }
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00048}\mbox{\hyperlink{classCLParser_a988eff2b562e1df1bc63e7a221a1e4dc}{00048}}\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classCLParser_a988eff2b562e1df1bc63e7a221a1e4dc}{\string~CLParser}}()\{\};}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00056}\mbox{\hyperlink{classCLParser_a966387c58560ab2006b6158b62ea75ce}{00056}}\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCLParser_a966387c58560ab2006b6158b62ea75ce}{Parse}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}\ *argv[])\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00057}00057\ \};}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00059}00059\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00060}00060\ \textcolor{comment}{//\ Generic\ option\ class\ (expects\ a\ typed\ value)}}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00061}00061\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00068}00068\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00069}\mbox{\hyperlink{classCLOption}{00069}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCLOption_ac0b0b5639205ec8c053fecf8d68cc469}{CLOption}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classCLParser_ae3702d514303a9f957e3381d71c4d6df}{CLParser}}\ \{}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00070}00070\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00071}\mbox{\hyperlink{classCLOption_a1c5a6af86590b0f54c7423c03d0e31cc}{00071}}\ \ \ T\ *\mbox{\hyperlink{classCLOption_a1c5a6af86590b0f54c7423c03d0e31cc}{target}};\ \ }
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00073}00073\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00079}\mbox{\hyperlink{classCLOption_ac0b0b5639205ec8c053fecf8d68cc469}{00079}}\ \ \ \mbox{\hyperlink{classCLOption_ac0b0b5639205ec8c053fecf8d68cc469}{CLOption}}(std::string\ opt,\ T\ *targ)\ :\ \mbox{\hyperlink{classCLParser_ae3702d514303a9f957e3381d71c4d6df}{CLParser}}(opt),\ \mbox{\hyperlink{classCLOption_a1c5a6af86590b0f54c7423c03d0e31cc}{target}}(targ)\{\};}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00086}\mbox{\hyperlink{classCLOption_a7037b52c35d80fbcb5fc904f0a355eb0}{00086}}\ \ \ \mbox{\hyperlink{classCLOption_a7037b52c35d80fbcb5fc904f0a355eb0}{CLOption}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *opt,\ T\ *targ)\ :\ \mbox{\hyperlink{classCLParser_ae3702d514303a9f957e3381d71c4d6df}{CLParser}}(opt),\ \mbox{\hyperlink{classCLOption_a1c5a6af86590b0f54c7423c03d0e31cc}{target}}(targ)\{\};}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00089}\mbox{\hyperlink{classCLOption_a24733736e2f2105e2ecd385e1f161c40}{00089}}\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classCLOption_a24733736e2f2105e2ecd385e1f161c40}{\string~CLOption}}()\{\};}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00097}\mbox{\hyperlink{classCLOption_a1be40ec2f61a7d0635fd1b8a1d5552c4}{00097}}\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCLOption_a1be40ec2f61a7d0635fd1b8a1d5552c4}{Parse}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}\ *argv[])\ \{}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00098}00098\ \ \ \ \ std::stringstream\ strStream(std::stringstream::in);}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00099}00099\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <\ argc;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00100}00100\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::string(argv[i])\ ==\ \mbox{\hyperlink{classCLParser_a2d671ec2fea71aaf31ead23092d05d41}{option}})\ \{}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00101}00101\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00102}00102\ \ \ \ \ \ \ \ \ strStream.str(argv[i]);}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00103}00103\ \ \ \ \ \ \ \ \ strStream\ >>\ *\mbox{\hyperlink{classCLOption_a1c5a6af86590b0f54c7423c03d0e31cc}{target}};}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00104}00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strStream.fail())\ \{}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Invalid\ argument\ \(\backslash\)"{}"{}}\ <<\ argv[i]\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ for\ option\ "{}}}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classCLParser_a2d671ec2fea71aaf31ead23092d05d41}{option}}\ <<\ \textcolor{stringliteral}{"{}."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00108}00108\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00110}00110\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00111}00111\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00112}00112\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00113}00113\ \ \ \};}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00114}00114\ \};}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00116}00116\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00117}00117\ \textcolor{comment}{//\ String\ option\ class}}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00118}00118\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00125}\mbox{\hyperlink{classCLStringOption}{00125}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCLStringOption_a1b34fe91547f81abac032eee3c94e72e}{CLStringOption}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classCLParser_ae3702d514303a9f957e3381d71c4d6df}{CLParser}}\ \{}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00126}00126\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00127}\mbox{\hyperlink{classCLStringOption_a8ff60cbcb6d19b4ea5b3d68ed5bfc18c}{00127}}\ \ \ std::string\ *\mbox{\hyperlink{classCLStringOption_a8ff60cbcb6d19b4ea5b3d68ed5bfc18c}{target}};\ \ }
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00129}00129\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00135}\mbox{\hyperlink{classCLStringOption_a1b34fe91547f81abac032eee3c94e72e}{00135}}\ \ \ \mbox{\hyperlink{classCLStringOption_a1b34fe91547f81abac032eee3c94e72e}{CLStringOption}}(std::string\ opt,\ std::string\ *targ)}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00136}00136\ \ \ \ \ \ \ :\ \mbox{\hyperlink{classCLParser_ae3702d514303a9f957e3381d71c4d6df}{CLParser}}(opt),\ \mbox{\hyperlink{classCLStringOption_a8ff60cbcb6d19b4ea5b3d68ed5bfc18c}{target}}(targ)\{\};}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00137}00137\ \ \ }
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00143}\mbox{\hyperlink{classCLStringOption_af7e84e8bff6743836766864e69df4432}{00143}}\ \ \ \mbox{\hyperlink{classCLStringOption_af7e84e8bff6743836766864e69df4432}{CLStringOption}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *opt,\ std::string\ *targ)}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00144}00144\ \ \ \ \ \ \ :\ \mbox{\hyperlink{classCLParser_ae3702d514303a9f957e3381d71c4d6df}{CLParser}}(opt),\ \mbox{\hyperlink{classCLStringOption_a8ff60cbcb6d19b4ea5b3d68ed5bfc18c}{target}}(targ)\{\};}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00147}\mbox{\hyperlink{classCLStringOption_ab2335589bd67a3f329860494bb3830bc}{00147}}\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classCLStringOption_ab2335589bd67a3f329860494bb3830bc}{\string~CLStringOption}}()\{\};}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00155}\mbox{\hyperlink{classCLStringOption_ae457cbbf263b06c9258c1e501f56c12d}{00155}}\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCLStringOption_ae457cbbf263b06c9258c1e501f56c12d}{Parse}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}\ *argv[])\ \{}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00156}00156\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <\ argc;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00157}00157\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::string(argv[i])\ ==\ \mbox{\hyperlink{classCLParser_a2d671ec2fea71aaf31ead23092d05d41}{option}})\ \{}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00158}00158\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00159}00159\ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{classCLStringOption_a8ff60cbcb6d19b4ea5b3d68ed5bfc18c}{target}}\ =\ std::string(argv[i]);}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00160}00160\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00161}00161\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00162}00162\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00163}00163\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00164}00164\ \ \ \};}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00165}00165\ \};}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00167}00167\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00168}00168\ \textcolor{comment}{//\ Flag\ option\ class}}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00169}00169\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00170}00170\ }
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00172}00172\ }
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00176}\mbox{\hyperlink{classCLFlag}{00176}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCLFlag_abf908121289adb95e2775fa130ea15a1}{CLFlag}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classCLParser_ae3702d514303a9f957e3381d71c4d6df}{CLParser}}\ \{}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00177}00177\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00178}\mbox{\hyperlink{classCLFlag_a06f234f4287e787c49c24c08d3ded6a3}{00178}}\ \ \ \textcolor{keywordtype}{bool}\ *\mbox{\hyperlink{classCLFlag_a06f234f4287e787c49c24c08d3ded6a3}{target}};\ }
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00179}00179\ }
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00180}00180\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00187}\mbox{\hyperlink{classCLFlag_abf908121289adb95e2775fa130ea15a1}{00187}}\ \ \ \mbox{\hyperlink{classCLFlag_abf908121289adb95e2775fa130ea15a1}{CLFlag}}(std::string\ opt,\ \textcolor{keywordtype}{bool}\ *targ)\ :\ \mbox{\hyperlink{classCLParser_ae3702d514303a9f957e3381d71c4d6df}{CLParser}}(opt),\ \mbox{\hyperlink{classCLFlag_a06f234f4287e787c49c24c08d3ded6a3}{target}}(targ)\{\};}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00188}00188\ }
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00194}\mbox{\hyperlink{classCLFlag_a5bc94e73d6b20d467223406a2633a159}{00194}}\ \ \ \mbox{\hyperlink{classCLFlag_a5bc94e73d6b20d467223406a2633a159}{CLFlag}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *opt,\ \textcolor{keywordtype}{bool}\ *targ)\ :\ \mbox{\hyperlink{classCLParser_ae3702d514303a9f957e3381d71c4d6df}{CLParser}}(opt),\ \mbox{\hyperlink{classCLFlag_a06f234f4287e787c49c24c08d3ded6a3}{target}}(targ)\{\};}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00197}\mbox{\hyperlink{classCLFlag_a41858f8d43111e63aac1d578d03432eb}{00197}}\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classCLFlag_a41858f8d43111e63aac1d578d03432eb}{\string~CLFlag}}()\{\};}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00198}00198\ }
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00205}\mbox{\hyperlink{classCLFlag_a6b13d3697a743ce2106e8cc874c9ee29}{00205}}\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCLFlag_a6b13d3697a743ce2106e8cc874c9ee29}{Parse}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}\ *argv[])\ \{}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00206}00206\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <\ argc;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00207}00207\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::string(argv[i])\ ==\ \mbox{\hyperlink{classCLParser_a2d671ec2fea71aaf31ead23092d05d41}{option}})\ \{}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00208}00208\ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{classCLFlag_a06f234f4287e787c49c24c08d3ded6a3}{target}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00209}00209\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00210}00210\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00211}00211\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00212}00212\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00213}00213\ \ \ \};}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00214}00214\ \};}
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00215}00215\ }
+\DoxyCodeLine{\Hypertarget{CLParser_8h_source_l00216}00216\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

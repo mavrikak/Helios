@@ -1,0 +1,15 @@
+<map id="GreenFHom3DPer2D::Init" name="GreenFHom3DPer2D::Init">
+<area shape="rect" id="Node000001" title="Common initialization: set lookup flags, build reciprocal lattice, project k, choose Ewald parameter." alt="" coords="587,83,772,111"/>
+<area shape="rect" id="Node000002" href="$classGreenFHom3DPer2D.html#ad3b0693d618bd75c472df152d72760e7" title="Constructor for a magnetic medium (2D periodic)." alt="" coords="289,40,539,85"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="571,86,539,81,540,76,572,80"/>
+<area shape="rect" id="Node000003" href="$classGreenFHom3DPer2D.html#a6e7bfc8640c70e6dfaa9f8e14cb916ea" title="Constructor for a non&#45;magnetic medium (2D periodic)." alt="" coords="289,109,539,154"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="572,114,540,118,539,113,571,108"/>
+<area shape="rect" id="Node000004" href="$classGreenFHom3DPer2D.html#a233c2185952220bd16acae2142f05cc1" title="term at an observation point." alt="" coords="11,5,235,50"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="302,106,287,99,263,82,239,65,212,53,214,48,242,60,266,78,290,95,304,101"/>
+<area shape="rect" id="Node000005" href="$classGreenFHom3DPer2D.html#aadb534ef4509422e6f3e78a0e3999758" title="term at an observation point." alt="" coords="11,75,235,119"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="273,118,235,113,235,108,274,112"/>
+<area shape="rect" id="Node000006" href="$classGreenFHom3DPer2D.html#a84a8c855a27c895ff24f6771037284a5" title="Compute &#160;for all RWGs on a source triangle." alt="" coords="15,144,231,189"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="273,151,232,156,231,151,273,146"/>
+<area shape="rect" id="Node000007" href="$classGreenFHom3DPer2D.html#a1dc9dd84c93ee10b2fb4b1866103d957" title="Compute &#160;and &#160;for all RWG pairs on two triangles." alt="" coords="5,212,241,240"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="349,163,241,204,200,215,199,209,240,198,347,158"/>
+</map>

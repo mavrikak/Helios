@@ -1,0 +1,5 @@
+<map id="TriQuadPol::pointInTriangle" name="TriQuadPol::pointInTriangle">
+<area shape="rect" id="Node000001" title="2D triangle membership test (local plane coordinates)." alt="" coords="5,5,200,33"/>
+<area shape="rect" id="Node000002" href="$classTriQuadPol.html#a7573c6d68c4bfe8898024684eda5e12e" title="Return true if a, b, c all have the same sign (non&#45;strict)." alt="" coords="248,5,410,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="200,16,232,16,232,22,200,22"/>
+</map>

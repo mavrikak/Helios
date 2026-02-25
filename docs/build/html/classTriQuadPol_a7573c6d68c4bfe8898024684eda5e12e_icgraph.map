@@ -1,0 +1,9 @@
+<map id="TriQuadPol::sameSign" name="TriQuadPol::sameSign">
+<area shape="rect" id="Node000001" title="Return true if a, b, c all have the same sign (non&#45;strict)." alt="" coords="679,5,842,33"/>
+<area shape="rect" id="Node000002" href="$classTriQuadPol.html#ad2163791262ee9d63337474eb7bbe8d7" title="2D triangle membership test (local plane coordinates)." alt="" coords="437,5,631,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="664,22,632,22,632,16,664,16"/>
+<area shape="rect" id="Node000003" href="$classTriQuadPol.html#abb4388c4a651d097c0c93376c45010e3" title="Build angular sectors and radial bounds, then assemble nodes/weights." alt="" coords="221,5,389,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="422,22,390,22,390,16,422,16"/>
+<area shape="rect" id="Node000004" href="$classTriQuadPol.html#a4f5e17f2daa1107f7ad126c30a32958c" title="Construct and immediately adapt the polar quadrature." alt="" coords="5,5,173,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="205,22,173,22,173,16,205,16"/>
+</map>

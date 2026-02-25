@@ -1,0 +1,34 @@
+\doxysection{Green\+FHom3\+DPer2\+D.\+cpp File Reference}
+\hypertarget{GreenFHom3DPer2D_8cpp}{}\label{GreenFHom3DPer2D_8cpp}\index{GreenFHom3DPer2D.cpp@{GreenFHom3DPer2D.cpp}}
+
+
+Implementation of the 2D-\/periodic homogeneous 3D Green\textquotesingle{}s function.  
+
+
+{\ttfamily \#include "{}Green\+FHom3\+DPer2\+D.\+h"{}}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include "{}quadrature.\+h"{}}\newline
+Include dependency graph for Green\+FHom3\+DPer2\+D.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{GreenFHom3DPer2D_8cpp__incl}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Detailed Description}
+Implementation of the 2D-\/periodic homogeneous 3D Green\textquotesingle{}s function. 
+
+This file provides the Bloch-\/periodic (2D lattice) free-\/space Green\textquotesingle{}s function and its utilities\+:
+\begin{DoxyItemize}
+\item Ewald-\/split evaluation of the scalar kernel G and source-\/gradient grad\textquotesingle{}G, including smoothed variants used in singularity subtraction.
+\item RWG-\/weighted point–triangle integrals for vectors used in the SIE RHS and post-\/processing.
+\item Batched same-\/triangle helpers for efficient assembly.
+\end{DoxyItemize}
+
+Important\+: This is a specialization of \doxylink{classGreenFHom3DPer}{Green\+FHom3\+DPer}; triangle–triangle assembly of D/K in the periodic free-\/space case is disabled in favor of layered kernels. Point–triangle routines are used for RHS/fields. 
+
+Definition in file \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source}{Green\+FHom3\+DPer2\+D.\+cpp}}.
+

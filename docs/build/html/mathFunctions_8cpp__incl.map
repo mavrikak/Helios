@@ -1,0 +1,33 @@
+<map id="mathFunctions.cpp" name="mathFunctions.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="370,5,514,33"/>
+<area shape="rect" id="Node000002" href="$mathFunctions_8h.html" title="Header file of the class that provides auxiliary mathematical functionalities for the SIE solver." alt="" coords="132,81,261,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="399,36,255,79,254,74,397,31"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="414,232,542,260"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="436,35,421,63,407,101,400,143,402,163,408,183,423,204,442,221,439,225,419,208,403,186,397,164,395,143,402,99,416,61,431,32"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="418,157,490,184"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="446,33,454,141,449,141,440,33"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="514,157,594,184"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="454,32,537,143,533,146,449,35"/>
+<area shape="rect" id="Node000012" href="$iofunctions_8h.html" title="Small helper templates for reading whitespace&#45;separated values from text files while skipping line co..." alt="" coords="530,81,636,109"/>
+<area shape="poly" id="edge13_Node000001_Node000012" title=" " alt="" coords="468,31,546,71,543,76,466,36"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="92,157,160,184"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="186,111,151,147,147,144,182,107"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="44,232,122,260"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="198,110,191,146,184,167,173,186,151,209,126,227,123,222,148,205,169,183,179,164,186,144,193,109"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="5,157,68,184"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="169,112,80,152,78,147,167,107"/>
+<area shape="rect" id="Node000006" href="$globals_8h.html" title="Global numerical constants, fundamental types, and simple macros." alt="" coords="234,157,314,184"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="212,107,251,144,247,148,208,111"/>
+<area shape="poly" id="edge9_Node000006_Node000004" title=" " alt="" coords="241,187,132,229,130,224,239,182"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="292,232,389,260"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="288,183,321,219,317,223,284,187"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="146,232,268,260"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="264,187,231,223,227,219,260,183"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="311,182,428,224,426,229,309,187"/>
+<area shape="poly" id="edge14_Node000012_Node000010" title=" " alt="" coords="561,112,491,151,489,147,559,107"/>
+<area shape="poly" id="edge15_Node000012_Node000011" title=" " alt="" coords="580,110,567,143,562,141,575,108"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="701,157,775,184"/>
+<area shape="poly" id="edge16_Node000012_Node000013" title=" " alt="" coords="612,107,698,147,695,152,610,112"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="618,157,676,184"/>
+<area shape="poly" id="edge17_Node000012_Node000014" title=" " alt="" coords="597,107,628,143,624,147,593,111"/>
+</map>

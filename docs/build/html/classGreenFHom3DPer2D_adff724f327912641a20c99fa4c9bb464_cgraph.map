@@ -1,0 +1,24 @@
+<map id="GreenFHom3DPer2D::Gradient" name="GreenFHom3DPer2D::Gradient">
+<area shape="rect" id="Node000001" title="Source&#45;gradient ." alt="" coords="5,83,226,111"/>
+<area shape="rect" id="Node000002" href="$classGreenFHom3DPer2D.html#afdc08576760ed0ae9a61dc378a7faac3" title="Ewald&#45;summed source&#45;gradient." alt="" coords="274,75,494,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="226,94,258,94,258,100,226,100"/>
+<area shape="rect" id="Node000003" href="$classGreenFHom3DPer2D.html#a9e049d83cd897078023b76fb89558d31" title="Spatial part of the source&#45;gradient." alt="" coords="556,5,776,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="477,71,557,52,558,57,479,77"/>
+<area shape="rect" id="Node000008" href="$classGreenFHom3DPer2D.html#a1ab7bcf35b15f67bb9824040c34c8bbc" title="Spectral part of the source&#45;gradient ." alt="" coords="556,75,776,119"/>
+<area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="494,94,540,94,540,100,494,100"/>
+<area shape="rect" id="Node000010" href="$classGreenFHom3DPer2D.html#a098b4d59dde268718483b4ac9906e446" title="Map a displacement to the primitive cell." alt="" coords="542,143,790,171"/>
+<area shape="poly" id="edge12_Node000002_Node000010" title=" " alt="" coords="489,117,543,129,580,137,578,142,541,134,487,123"/>
+<area shape="rect" id="Node000004" href="$classGreenF.html#abf00726011a4eca4109bc43125218d30" title="Evaluate erfc via the 2D lookup table if available." alt="" coords="838,23,955,51"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="777,29,823,31,823,37,777,35"/>
+<area shape="rect" id="Node000005" href="$mathFunctions_8cpp.html#a7916c6b62310fe9cf38ec2a2890aaad4" title="Complementary error function for complex arguments." alt="" coords="1003,7,1056,35"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="955,27,987,23,987,29,956,33"/>
+<area shape="rect" id="Node000007" href="$Domain_8cpp.html#aafa3e4fa6318b2f8740f4dbd50c367e5" title="Extract the real part of each component of a complex 3&#45;vector." alt="" coords="1006,83,1052,111"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="930,49,993,78,991,83,928,54"/>
+<area shape="rect" id="Node000006" href="$mathFunctions_8cpp.html#abc57cde75234d7e165a9ebcdb45f2c29" title="Error function for complex arguments." alt="" coords="1104,7,1150,35"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1056,18,1088,18,1088,24,1056,24"/>
+<area shape="poly" id="edge7_Node000007_Node000007" title=" " alt="" coords="1011,83,1008,74,1010,65,1018,59,1029,57,1042,59,1048,66,1044,69,1039,64,1029,62,1020,64,1015,68,1014,74,1016,82"/>
+<area shape="poly" id="edge11_Node000008_Node000004" title=" " alt="" coords="754,72,825,53,827,58,755,77"/>
+<area shape="rect" id="Node000009" href="$group__greenFunction.html#gac0a52dce23be7dacdf97c68653b6c137" title="Complex square root with a branch cut along the negative real axis." alt="" coords="870,83,923,111"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="777,94,855,94,855,100,777,100"/>
+<area shape="poly" id="edge10_Node000009_Node000007" title=" " alt="" coords="924,94,991,94,991,100,924,100"/>
+</map>

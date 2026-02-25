@@ -1,0 +1,5 @@
+<map id="TriQuadPol::transformInPlane" name="TriQuadPol::transformInPlane">
+<area shape="rect" id="Node000001" title="Build an orthonormal basis on the triangle plane and project (vertices, point)." alt="" coords="5,5,216,33"/>
+<area shape="rect" id="Node000002" href="$classTriQuadPol.html#ad0a8c886e263961bc2935f21ef14dcf7" title="Zero out tiny values for numeric stability." alt="" coords="264,5,397,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="216,16,248,16,248,22,216,22"/>
+</map>

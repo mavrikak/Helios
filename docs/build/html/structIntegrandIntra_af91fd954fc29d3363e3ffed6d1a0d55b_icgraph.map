@@ -1,0 +1,5 @@
+<map id="IntegrandIntra::multiplyVector" name="IntegrandIntra::multiplyVector">
+<area shape="rect" id="Node000001" title="Helper function to multiply a 2D vector by a scalar." alt="" coords="237,5,412,50"/>
+<area shape="rect" id="Node000002" href="$structIntegrandIntra.html#a1cab8cb7bdffb958fc76e2d4b8eb59cc" title="Overloaded multiplication operator (scalar * structure)." alt="" coords="5,14,189,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="221,30,189,30,189,25,221,25"/>
+</map>

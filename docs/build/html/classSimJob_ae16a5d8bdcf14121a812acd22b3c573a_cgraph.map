@@ -1,0 +1,9 @@
+<map id="SimJob::LoadDipole" name="SimJob::LoadDipole">
+<area shape="rect" id="Node000001" title="Parse and load dipole excitation from ." alt="" coords="5,57,153,85"/>
+<area shape="rect" id="Node000002" href="$classDomain.html#a6a3c61914bab1ebbc02613a6ec8db802" title="Add a Dipole excitation (ownership transferred to Domain)." alt="" coords="225,5,372,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,54,221,35,222,40,141,59"/>
+<area shape="rect" id="Node000003" href="$classSimJob.html#ab3887eb9e217b1d6424ff85aec4b1793" title="Find which domain contains a point." alt="" coords="201,57,396,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="153,68,185,68,185,74,153,74"/>
+<area shape="rect" id="Node000004" href="$classDomain.html#a4ca094ed1d16b191f026d0c23e1fc75a" title="Return this domain&#39;s integer index." alt="" coords="240,109,356,137"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="141,83,225,103,224,108,140,88"/>
+</map>

@@ -1,0 +1,32 @@
+<map id="GreenFLayered3D::FresnelCoeff" name="GreenFLayered3D::FresnelCoeff">
+<area shape="rect" id="Node000001" title="Fresnel reflection/transmission at interface (delegates to utils)." alt="" coords="843,262,1037,306"/>
+<area shape="rect" id="Node000002" href="$classGreenFLayered3D.html#a65ac22e62ec3e3131ffbb10d7bdea307" title="Evaluate quasi&#45;static (QS) contributions for inter&#45;layer interactions." alt="" coords="582,192,795,237"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="841,260,772,240,773,235,843,254"/>
+<area shape="rect" id="Node000009" href="$classGreenFLayered3D.html#a7fbd8a47a0074f53111d52920a910392" title="Evaluate quasi&#45;static (QS) contributions for intra&#45;layer interactions." alt="" coords="582,262,795,306"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="828,287,796,287,796,281,828,281"/>
+<area shape="rect" id="Node000010" href="$classGreenFLayered3D.html#ac014fbe12a1544418cc22938332942a4" title="Fill all interpolation tables with Green&#39;s function values." alt="" coords="586,442,791,486"/>
+<area shape="poly" id="edge16_Node000001_Node000010" title=" " alt="" coords="897,318,723,443,720,439,894,313"/>
+<area shape="rect" id="Node000003" href="$classGreenFLayered3D.html#aea3c88abd8cb25bd99d64a4eeda84a85" title="Evaluates the secondary terms for dipole incident field in layered background." alt="" coords="301,262,504,306"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="579,244,498,264,497,258,578,239"/>
+<area shape="rect" id="Node000004" href="$classGreenFLayered3D.html#afbdbfdc8fc40fc885f6377d5be242d36" title="term at an observation point." alt="" coords="300,331,505,376"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="590,247,584,251,568,268,561,285,552,303,536,321,507,336,504,332,532,316,548,300,556,283,564,265,580,247,587,243"/>
+<area shape="rect" id="Node000005" href="$classGreenFLayered3D.html#a439eddb43f46fb52f6c84898ea12aa40" title="term at an observation point." alt="" coords="300,54,505,98"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="647,185,594,147,533,113,503,101,505,96,535,108,597,143,650,181"/>
+<area shape="rect" id="Node000006" href="$classGreenFLayered3D.html#af46d152fbc30bdc418ff16e5e7a334c6" title="Point–triangle delta/kappa contributions for RHS assembly." alt="" coords="303,123,502,168"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="578,191,497,171,498,166,579,185"/>
+<area shape="rect" id="Node000007" href="$classGreenFLayered3D.html#a6c88af86169f8d148c3e9f4da77a77d0" title="Triangle–triangle D/K blocks assembly for all RWG pairs on two triangles." alt="" coords="5,201,223,228"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="666,180,643,145,613,106,576,71,533,44,462,17,432,10,402,8,373,10,343,17,272,44,245,59,220,77,178,122,145,167,125,202,120,199,141,164,173,118,217,73,242,54,270,39,341,12,372,5,402,3,432,5,464,12,535,39,579,67,617,103,648,142,670,177"/>
+<area shape="rect" id="Node000008" href="$classGreenFLayered3D.html#a87c30d7c2782fd16b17a54bf12777cf0" title="Test assembly of same&#45;triangle D and K matrix elements." alt="" coords="298,192,506,237"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="567,217,507,217,507,212,567,212"/>
+<area shape="poly" id="edge8_Node000008_Node000007" title=" " alt="" coords="283,217,223,217,223,212,283,212"/>
+<area shape="poly" id="edge10_Node000009_Node000003" title=" " alt="" coords="567,287,504,287,504,281,567,281"/>
+<area shape="poly" id="edge11_Node000009_Node000004" title=" " alt="" coords="579,313,498,333,497,328,578,308"/>
+<area shape="poly" id="edge12_Node000009_Node000005" title=" " alt="" coords="583,254,580,251,566,233,559,215,556,180,553,145,546,129,532,113,504,94,506,90,536,109,550,126,558,144,561,179,564,214,571,231,584,247,587,250"/>
+<area shape="poly" id="edge13_Node000009_Node000006" title=" " alt="" coords="587,256,580,251,564,233,556,215,548,198,532,182,501,166,503,161,536,178,552,195,561,213,568,231,584,247,590,252"/>
+<area shape="poly" id="edge14_Node000009_Node000007" title=" " alt="" coords="654,319,601,359,569,377,535,390,461,412,401,421,371,421,340,415,270,390,242,375,217,356,173,311,141,265,120,230,125,228,145,263,178,307,220,352,245,371,272,386,342,410,372,415,400,416,460,407,533,385,566,372,598,354,651,314"/>
+<area shape="poly" id="edge15_Node000009_Node000008" title=" " alt="" coords="578,260,497,240,498,235,579,255"/>
+<area shape="rect" id="Node000011" href="$classGreenFLayered3D.html#a4f699484c9505951b38acc2cb5fa3194" title="Construct layered Green&#39;s function (magnetic layers)." alt="" coords="271,502,534,530"/>
+<area shape="poly" id="edge17_Node000010_Node000011" title=" " alt="" coords="572,488,483,504,482,499,571,483"/>
+<area shape="rect" id="Node000012" href="$classGreenFLayered3D.html#a865947398024c01996eba4018b9201b7" title="Construct layered Green&#39;s function (non&#45;magnetic layers)." alt="" coords="271,450,534,478"/>
+<area shape="poly" id="edge18_Node000010_Node000012" title=" " alt="" coords="571,467,535,467,535,461,571,461"/>
+</map>

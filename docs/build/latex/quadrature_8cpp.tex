@@ -1,0 +1,36 @@
+\doxysection{quadrature.\+cpp File Reference}
+\hypertarget{quadrature_8cpp}{}\label{quadrature_8cpp}\index{quadrature.cpp@{quadrature.cpp}}
+
+
+Definitions of Dunavant (triangle) and Gauss–\+Legendre (1D) quadrature rules.  
+
+
+{\ttfamily \#include "{}quadrature.\+h"{}}\newline
+Include dependency graph for quadrature.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{quadrature_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacedunavant}{dunavant}}
+\item 
+namespace \mbox{\hyperlink{namespacegausslegendre}{gausslegendre}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Definitions of Dunavant (triangle) and Gauss–\+Legendre (1D) quadrature rules. 
+
+Notes\+:
+\begin{DoxyItemize}
+\item Dunavant rules are specified in barycentric coordinates $ (\lambda_1, \lambda_2, \lambda_3) $ over the reference triangle.
+\item Gauss–\+Legendre rules here are tabulated on \mbox{[}0,1\mbox{]}. Each node is stored as $ (\xi, 1-\xi) $ so tensor products with barycentric/edge formulas are straightforward.
+\item The numerical values are standard references; do not alter unless you know what you are doing. 
+\end{DoxyItemize}
+
+Definition in file \mbox{\hyperlink{quadrature_8cpp_source}{quadrature.\+cpp}}.
+

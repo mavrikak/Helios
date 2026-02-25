@@ -1,0 +1,257 @@
+\doxysection{SIEForm Class Reference}
+\hypertarget{classSIEForm}{}\label{classSIEForm}\index{SIEForm@{SIEForm}}
+
+
+Abstract base class for SIE formulations.  
+
+
+
+
+{\ttfamily \#include $<$SIEForm.\+h$>$}
+
+
+
+Inheritance diagram for SIEForm\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classSIEForm__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for SIEForm\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classSIEForm__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSIEForm_a30c5e86bcde04c2ea9ffb83f4ae124b6}{SIEForm}} (std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} $>$ \texorpdfstring{$\ast$}{*}in\+RWGFuns, \mbox{\hyperlink{classGreenF}{GreenF}} \texorpdfstring{$\ast$}{*}in\+Grn\+Fun, std\+::vector$<$ \mbox{\hyperlink{classIncidentField}{Incident\+Field}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*}in\+Inc\+Fields, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} in\+Vac\+Wavelength)
+\begin{DoxyCompactList}\small\item\em Construct the SIE formulation context. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classSIEForm_af1377ff161e001f3bdb08d8a789ede67}{\texorpdfstring{$\sim$}{\string~}\+SIEForm}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classSIEForm_adb9adfe191240392dec2e902810f64d7}{Fill\+LSEMatrix}} (blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 2 $>$ \texorpdfstring{$\ast$}{*}matrix)=0
+\begin{DoxyCompactList}\small\item\em Assemble the system matrix $ \mathbf{A} $. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classSIEForm_ac9e576744fb7aa010cf20a0e9a95b056}{Fill\+LSEMatrix\+And\+Gradient}} (blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 2 $>$ \texorpdfstring{$\ast$}{*}matrix, blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 2 $>$ \texorpdfstring{$\ast$}{*}gradmatrix\mbox{[}3\mbox{]})=0
+\begin{DoxyCompactList}\small\item\em Assemble system matrix and its gradient w.\+r.\+t. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classSIEForm_aa183795c25b9cd746109b8241d44c762}{Fill\+LSEVector}} (blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 1 $>$ \texorpdfstring{$\ast$}{*}vector)=0
+\begin{DoxyCompactList}\small\item\em Assemble the right-\/hand side vector $ \mathbf{b} $. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSIEForm_ad9582e70410cd1489daef4fd568fcbe9}{rwg\+Funs}}
+\begin{DoxyCompactList}\small\item\em Pointer to collection of RWG basis functions. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGreenF}{GreenF}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSIEForm_af0daa3e52b4bd7fdedf1d532a40031ad}{grn\+Fun}}
+\begin{DoxyCompactList}\small\item\em Green\textquotesingle{}s function provider (homogeneous/layered) \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classIncidentField}{Incident\+Field}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSIEForm_abe76634df0190690fb61f44aecc49b70}{inc\+Fields}}
+\begin{DoxyCompactList}\small\item\em Incident field(s) used to build excitation vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classSIEForm_a83bf09002e4af4e392a75054a8a8c8ae}{omega}}
+\begin{DoxyCompactList}\small\item\em Angular frequency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for SIE formulations. 
+
+Derived classes (e.\+g., PMCHWT) implement the routines that assemble the system matrix and right-\/hand side using the provided RWG basis, Green\textquotesingle{}s function back-\/end, and a list of incident fields. 
+
+Definition at line \mbox{\hyperlink{SIEForm_8h_source_l00031}{31}} of file \mbox{\hyperlink{SIEForm_8h_source}{SIEForm.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classSIEForm_a30c5e86bcde04c2ea9ffb83f4ae124b6}\index{SIEForm@{SIEForm}!SIEForm@{SIEForm}}
+\index{SIEForm@{SIEForm}!SIEForm@{SIEForm}}
+\doxysubsubsection{\texorpdfstring{SIEForm()}{SIEForm()}}
+{\footnotesize\ttfamily \label{classSIEForm_a30c5e86bcde04c2ea9ffb83f4ae124b6} 
+SIEForm\+::\+SIEForm (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} $>$ \texorpdfstring{$\ast$}{*}}]{in\+RWGFuns}{, }\item[{\mbox{\hyperlink{classGreenF}{GreenF}} \texorpdfstring{$\ast$}{*}}]{in\+Grn\+Fun}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{classIncidentField}{Incident\+Field}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*}}]{in\+Inc\+Fields}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{in\+Vac\+Wavelength}{}\end{DoxyParamCaption})}
+
+
+
+Construct the SIE formulation context. 
+
+Stores pointers to basis functions, Green\textquotesingle{}s function back-\/end, and incident fields. Computes the angular frequency from the given vacuum wavelength.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in\+RWGFuns} & RWG basis function array (owned elsewhere). \\
+\hline
+{\em in\+Grn\+Fun} & Green\textquotesingle{}s function object (owned elsewhere). \\
+\hline
+{\em in\+Inc\+Fields} & List of incident fields (owned elsewhere). \\
+\hline
+{\em in\+Vac\+Wavelength} & Vacuum wavelength used to compute omega. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{SIEForm_8cpp_source_l00009}{9}} of file \mbox{\hyperlink{SIEForm_8cpp_source}{SIEForm.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSIEForm_a30c5e86bcde04c2ea9ffb83f4ae124b6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSIEForm_af1377ff161e001f3bdb08d8a789ede67}\index{SIEForm@{SIEForm}!````~SIEForm@{\texorpdfstring{$\sim$}{\string~}SIEForm}}
+\index{````~SIEForm@{\texorpdfstring{$\sim$}{\string~}SIEForm}!SIEForm@{SIEForm}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}SIEForm()}{\string~SIEForm()}}
+{\footnotesize\ttfamily \label{classSIEForm_af1377ff161e001f3bdb08d8a789ede67} 
+SIEForm\+::\texorpdfstring{$\sim$}{\string~}\+SIEForm (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual destructor. 
+
+
+
+Definition at line \mbox{\hyperlink{SIEForm_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{SIEForm_8cpp_source}{SIEForm.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSIEForm_adb9adfe191240392dec2e902810f64d7}\index{SIEForm@{SIEForm}!FillLSEMatrix@{FillLSEMatrix}}
+\index{FillLSEMatrix@{FillLSEMatrix}!SIEForm@{SIEForm}}
+\doxysubsubsection{\texorpdfstring{FillLSEMatrix()}{FillLSEMatrix()}}
+{\footnotesize\ttfamily \label{classSIEForm_adb9adfe191240392dec2e902810f64d7} 
+virtual int SIEForm\+::\+Fill\+LSEMatrix (\begin{DoxyParamCaption}\item[{blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 2 $>$ \texorpdfstring{$\ast$}{*}}]{matrix}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Assemble the system matrix $ \mathbf{A} $. 
+
+Populates the complex matrix used in the linear system $ \mathbf{A}\mathbf{x}=\mathbf{b} $. Derived classes must resize/fill {\ttfamily matrix} entirely.
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & Output pointer to a 2D Blitz array to be filled. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success; non-\/zero on error. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classSIEFormPMCHW_a65dca87d3c16fbf2c82200d597e18417}{SIEForm\+PMCHW}}.
+
+\Hypertarget{classSIEForm_ac9e576744fb7aa010cf20a0e9a95b056}\index{SIEForm@{SIEForm}!FillLSEMatrixAndGradient@{FillLSEMatrixAndGradient}}
+\index{FillLSEMatrixAndGradient@{FillLSEMatrixAndGradient}!SIEForm@{SIEForm}}
+\doxysubsubsection{\texorpdfstring{FillLSEMatrixAndGradient()}{FillLSEMatrixAndGradient()}}
+{\footnotesize\ttfamily \label{classSIEForm_ac9e576744fb7aa010cf20a0e9a95b056} 
+virtual int SIEForm\+::\+Fill\+LSEMatrix\+And\+Gradient (\begin{DoxyParamCaption}\item[{blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 2 $>$ \texorpdfstring{$\ast$}{*}}]{matrix}{, }\item[{blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 2 $>$ \texorpdfstring{$\ast$}{*}}]{gradmatrix}{\mbox{[}3\mbox{]}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Assemble system matrix and its gradient w.\+r.\+t. 
+
+geometry parameters.
+
+Some inverse/design workflows require gradients of the operator with respect to three geometry parameters (e.\+g., dx, dy, dz). Derived classes must fill {\ttfamily matrix} and the three gradient matrices in {\ttfamily gradmatrix}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & Output system matrix. \\
+\hline
+{\em gradmatrix} & Array of three pointers to gradient matrices $(\partial Z / \partial p_i)$. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success; non-\/zero on error. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classSIEFormPMCHW_a6b8755f234cd116ae3f3a44cacf85813}{SIEForm\+PMCHW}}.
+
+\Hypertarget{classSIEForm_aa183795c25b9cd746109b8241d44c762}\index{SIEForm@{SIEForm}!FillLSEVector@{FillLSEVector}}
+\index{FillLSEVector@{FillLSEVector}!SIEForm@{SIEForm}}
+\doxysubsubsection{\texorpdfstring{FillLSEVector()}{FillLSEVector()}}
+{\footnotesize\ttfamily \label{classSIEForm_aa183795c25b9cd746109b8241d44c762} 
+virtual int SIEForm\+::\+Fill\+LSEVector (\begin{DoxyParamCaption}\item[{blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 1 $>$ \texorpdfstring{$\ast$}{*}}]{vector}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Assemble the right-\/hand side vector $ \mathbf{b} $. 
+
+Uses the incident fields and testing with the RWG basis to construct the excitation vector compatible with the chosen formulation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vector} & Output pointer to a 1D Blitz array to be filled. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success; non-\/zero on error. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classSIEFormPMCHW_ad44f68bc82374b4d26a60f18a98ced6d}{SIEForm\+PMCHW}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classSIEForm_af0daa3e52b4bd7fdedf1d532a40031ad}\index{SIEForm@{SIEForm}!grnFun@{grnFun}}
+\index{grnFun@{grnFun}!SIEForm@{SIEForm}}
+\doxysubsubsection{\texorpdfstring{grnFun}{grnFun}}
+{\footnotesize\ttfamily \label{classSIEForm_af0daa3e52b4bd7fdedf1d532a40031ad} 
+\mbox{\hyperlink{classGreenF}{GreenF}}\texorpdfstring{$\ast$}{*} SIEForm\+::grn\+Fun\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Green\textquotesingle{}s function provider (homogeneous/layered) 
+
+
+
+Definition at line \mbox{\hyperlink{SIEForm_8h_source_l00034}{34}} of file \mbox{\hyperlink{SIEForm_8h_source}{SIEForm.\+h}}.
+
+\Hypertarget{classSIEForm_abe76634df0190690fb61f44aecc49b70}\index{SIEForm@{SIEForm}!incFields@{incFields}}
+\index{incFields@{incFields}!SIEForm@{SIEForm}}
+\doxysubsubsection{\texorpdfstring{incFields}{incFields}}
+{\footnotesize\ttfamily \label{classSIEForm_abe76634df0190690fb61f44aecc49b70} 
+std\+::vector$<$\mbox{\hyperlink{classIncidentField}{Incident\+Field}} \texorpdfstring{$\ast$}{*}$>$\texorpdfstring{$\ast$}{*} SIEForm\+::inc\+Fields\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Incident field(s) used to build excitation vector. 
+
+
+
+Definition at line \mbox{\hyperlink{SIEForm_8h_source_l00035}{35}} of file \mbox{\hyperlink{SIEForm_8h_source}{SIEForm.\+h}}.
+
+\Hypertarget{classSIEForm_a83bf09002e4af4e392a75054a8a8c8ae}\index{SIEForm@{SIEForm}!omega@{omega}}
+\index{omega@{omega}!SIEForm@{SIEForm}}
+\doxysubsubsection{\texorpdfstring{omega}{omega}}
+{\footnotesize\ttfamily \label{classSIEForm_a83bf09002e4af4e392a75054a8a8c8ae} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} SIEForm\+::omega\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Angular frequency. 
+
+
+
+Definition at line \mbox{\hyperlink{SIEForm_8h_source_l00036}{36}} of file \mbox{\hyperlink{SIEForm_8h_source}{SIEForm.\+h}}.
+
+\Hypertarget{classSIEForm_ad9582e70410cd1489daef4fd568fcbe9}\index{SIEForm@{SIEForm}!rwgFuns@{rwgFuns}}
+\index{rwgFuns@{rwgFuns}!SIEForm@{SIEForm}}
+\doxysubsubsection{\texorpdfstring{rwgFuns}{rwgFuns}}
+{\footnotesize\ttfamily \label{classSIEForm_ad9582e70410cd1489daef4fd568fcbe9} 
+std\+::vector$<$\mbox{\hyperlink{classRWGFun}{RWGFun}}$>$\texorpdfstring{$\ast$}{*} SIEForm\+::rwg\+Funs\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Pointer to collection of RWG basis functions. 
+
+
+
+Definition at line \mbox{\hyperlink{SIEForm_8h_source_l00033}{33}} of file \mbox{\hyperlink{SIEForm_8h_source}{SIEForm.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{SIEForm_8h}{SIEForm.\+h}}\item 
+\mbox{\hyperlink{SIEForm_8cpp}{SIEForm.\+cpp}}\end{DoxyCompactItemize}

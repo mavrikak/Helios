@@ -1,0 +1,1008 @@
+\doxysection{Triangle Class Reference}
+\hypertarget{classTriangle}{}\label{classTriangle}\index{Triangle@{Triangle}}
+
+
+Triangular surface element with cached geometry and utilities.  
+
+
+
+
+{\ttfamily \#include $<$Triangle.\+h$>$}
+
+
+
+Collaboration diagram for Triangle\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{classTriangle__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTriangle_a2eae6a9b0378e4b5ba4616a6b6af86fe}{Triangle}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}n1, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}n2, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}n3, int d\+Index1, int d\+Index2)
+\begin{DoxyCompactList}\small\item\em Construct from 3 node pointers and bordering domains. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTriangle_afaab90bcc5fa1fcf60db1e924b8cc856}{Triangle}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}n1, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}n2, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}n3)
+\begin{DoxyCompactList}\small\item\em Construct from 3 node pointers; domains can be set later. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTriangle_aaefe4ed500c07918d30c6f0e286332c5}{Triangle}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor (uninitialized geometry). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classTriangle_a6d275a4d9441732ebcd00c514ff4bb2f}{Assign\+Nodes}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}n1, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}n2, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}n3)
+\begin{DoxyCompactList}\small\item\em Replace the three node pointers and recompute cached geometry. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classTriangle_aa59e8d6a6ca3db504228bff7913812bb}{Set\+Domain\+Indeces}} (int d\+Index1, int d\+Index2)
+\begin{DoxyCompactList}\small\item\em Set front/back domain indices; recomputes cached geometry. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classTriangle_ae13d69e28fb7a81ab8257fe0af84ceaa}{Calculate\+Geometry\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Compute/cached geometry (normal, area, perimeter, center, I1/\+I2s/\+I2d). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classTriangle_ab2dab378529e51bd6e2a43e7676e8a23}{Invert}} ()
+\begin{DoxyCompactList}\small\item\em Invert orientation (swap first two nodes). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classTriangle_a0752d2c9488c7c44b851b8f75abcaa79}{Node}} (int index)
+\begin{DoxyCompactList}\small\item\em Node position (by value) for local index 0..2. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTriangle_aeecc82e57a00841cb83fd790316b25a3}{Node\+Ptr}} (int index)
+\begin{DoxyCompactList}\small\item\em Node pointer for local index 0..2. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classTriangle_a88b683f8af44c4297fd5bec9e5d874d0}{Domain\+Position}} (int d\+Index)
+\begin{DoxyCompactList}\small\item\em Whether a domain id matches FRONT/\+BACK; returns FRONT, BACK, or −1. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classTriangle_abc4d7cef789f114978e3cf3d5a8f5471}{Ref\+Normal\+Vector}} ()
+\begin{DoxyCompactList}\small\item\em Reference unit normal (points to FRONT). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classTriangle_a691ff1d8d3f33df1fe0aae161d14ec49}{FBNormal\+Vector}} (int side)
+\begin{DoxyCompactList}\small\item\em FRONT/\+BACK normal\+: FRONT -\/\texorpdfstring{$>$}{>} +normal, BACK -\/\texorpdfstring{$>$}{>} −normal. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classTriangle_a1d3d08deeb999f339d2e821a877521ba}{Area}} ()
+\begin{DoxyCompactList}\small\item\em Surface area of the triangle. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classTriangle_a6e7daa074db3d147b33763bfd2a6e83b}{Perimeter}} ()
+\begin{DoxyCompactList}\small\item\em Perimeter (sum of edge lengths). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classTriangle_ab78508a340ec5d345adf114b43563dbf}{Center}} ()
+\begin{DoxyCompactList}\small\item\em Centroid of the triangle. \end{DoxyCompactList}\item 
+std\+::pair$<$ int, int $>$ \mbox{\hyperlink{classTriangle_a360c6e73186c76642bb74775a011237a}{Bordering\+Indeces}} ()
+\begin{DoxyCompactList}\small\item\em Bordering domain indices as \{front, back\}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classTriangle_a1aa819d0c6694d43b61c657e863267a9}{Int\+RR}} ()
+\begin{DoxyCompactList}\small\item\em Double integral of R\texorpdfstring{$^\wedge$}{\string^}2 over the triangle (analytic, self term). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classTriangle_a8df83f0cbfd24e35c8e8ac9544ed6184}{Switch\+Index}} (int n1, int n2)
+\begin{DoxyCompactList}\small\item\em Replace a bordering domain index n1 with n2 (if present). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classTriangle_a6a5a3532e273e1fbb69b26eea2f509c0}{Find\+Adjacency}} (\mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*}T)
+\begin{DoxyCompactList}\small\item\em Count common nodes with triangle T (0..3). \end{DoxyCompactList}\item 
+std\+::pair$<$ int, int $>$ \mbox{\hyperlink{classTriangle_aab413203fc04781220ce7cf8224105bd}{Find\+Common\+Edge\+Indices}} (\mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*}T)
+\begin{DoxyCompactList}\small\item\em Find common edge local indices with T. \end{DoxyCompactList}\item 
+std\+::pair$<$ int, int $>$ \mbox{\hyperlink{classTriangle_aa137190a0a6fd9adadee37a8228313d6}{Find\+Common\+Vertex\+Indices}} (\mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*}T)
+\begin{DoxyCompactList}\small\item\em Find common vertex local indices with T. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classTriangle_a110eb211c31cc4fa6a936d8d4c201306}{Find\+Adjacency}} (\mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*}T, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} t)
+\begin{DoxyCompactList}\small\item\em Count common nodes with T after translating T by vector t. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTriangle_aad716a04591b5c9af864d6c2a89d3a65}{contains\+Point}} (const \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \&p, double tol=1e-\/6)
+\begin{DoxyCompactList}\small\item\em Test whether a point lies on (or very near) the triangle. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classTriangle_a837631cb39cc7af167b9f54436aadcae}{clean}} (double x, double eps=1e-\/10)
+\begin{DoxyCompactList}\small\item\em Small helper to zero tiny values (for robust barycentric math). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classTriangle_aa83f57574ddbd7514530a554eb96bc0e}{get\+I1}} ()
+\begin{DoxyCompactList}\small\item\em Return cached I1. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classTriangle_a02693a813e9e7b1225be9f19e465d01e}{get\+I2}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}r)
+\begin{DoxyCompactList}\small\item\em Return cached I2 (single-\/vertex) for node pointer r. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classTriangle_affd2713ded0f6110ef1eee98877b4f16}{get\+I2}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}r1, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}r2)
+\begin{DoxyCompactList}\small\item\em Return cached I2 (double-\/vertex) for node pair (r1,r2). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classTriangle_a1ee77c16f0a6159fecd4a421b391187a}{get\+I2\+Translated}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r1, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r2, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} t)
+\begin{DoxyCompactList}\small\item\em Return I2 for a translated configuration (periodic images). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classTriangle_a05caf123712afc1f7eafa244f8d65152}{nodes}}
+\begin{DoxyCompactList}\small\item\em Pointers to the three corner nodes. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{classTriangle_a178724e62304428e88240d9a3684872e}{domain\+Indeces}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}FRONT, BACK\mbox{]} domain indices \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classTriangle_afbeb61b5e47079cd5bf65f4187524106}{normal\+Vector}}
+\begin{DoxyCompactList}\small\item\em Unit normal pointing to FRONT. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classTriangle_a1ecbac7f823b07d87cc0b8604f0502f5}{surface\+Area}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classTriangle}{Triangle} area. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classTriangle_a4c2ecb0cca1354c2d3a6d1a1753725a2}{perimeter}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classTriangle}{Triangle} perimeter (sum of edge lengths) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classTriangle_ae8aa592597d1ef78793969314dda41a4}{I1}}
+\begin{DoxyCompactList}\small\item\em Analytic self integral (R\texorpdfstring{$^\wedge$}{\string^}2 over triangle) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classTriangle_a20f3d572ee23cfd88e2d854ca1e63c70}{I2s}} \mbox{[}3\mbox{]}
+\begin{DoxyCompactList}\small\item\em Analytic self integrals (single-\/vertex cases) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classTriangle_a620e3cc9113a9be75e809755ff511d62}{I2d}} \mbox{[}3\mbox{]}
+\begin{DoxyCompactList}\small\item\em Analytic self integrals (double-\/vertex cases) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classTriangle_a7a5fc1667e146b724589b1e99dc7f55b}{center}}
+\begin{DoxyCompactList}\small\item\em Centroid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Triangular surface element with cached geometry and utilities. 
+
+Stores node pointers and bordering domains, computes and caches\+:
+\begin{DoxyItemize}
+\item reference unit normal (pointing to FRONT),
+\item surface area and perimeter,
+\item centroid (center of gravity),
+\item analytic integrals I1, I2s, I2d.
+\end{DoxyItemize}
+
+Notes\+:
+\begin{DoxyItemize}
+\item Node accessors return by value (Node) or pointer (Node\+Ptr).
+\item \doxylink{classTriangle_a691ff1d8d3f33df1fe0aae161d14ec49}{FBNormal\+Vector()} flips the reference normal for BACK. 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{Triangle_8h_source_l00032}{32}} of file \mbox{\hyperlink{Triangle_8h_source}{Triangle.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classTriangle_a2eae6a9b0378e4b5ba4616a6b6af86fe}\index{Triangle@{Triangle}!Triangle@{Triangle}}
+\index{Triangle@{Triangle}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{Triangle()}{Triangle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classTriangle_a2eae6a9b0378e4b5ba4616a6b6af86fe} 
+Triangle\+::\+Triangle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}}]{n1}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}}]{n2}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}}]{n3}{, }\item[{int}]{d\+Index1}{, }\item[{int}]{d\+Index2}{}\end{DoxyParamCaption})}
+
+
+
+Construct from 3 node pointers and bordering domains. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n1,n2,n3} & Node pointers. \\
+\hline
+{\em d\+Index1} & Front domain index. \\
+\hline
+{\em d\+Index2} & Back domain index. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Triangle_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{Triangle_8cpp_source}{Triangle.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriangle_a2eae6a9b0378e4b5ba4616a6b6af86fe_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriangle_a2eae6a9b0378e4b5ba4616a6b6af86fe_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classTriangle_afaab90bcc5fa1fcf60db1e924b8cc856}\index{Triangle@{Triangle}!Triangle@{Triangle}}
+\index{Triangle@{Triangle}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{Triangle()}{Triangle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classTriangle_afaab90bcc5fa1fcf60db1e924b8cc856} 
+Triangle\+::\+Triangle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}}]{n1}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}}]{n2}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}}]{n3}{}\end{DoxyParamCaption})}
+
+
+
+Construct from 3 node pointers; domains can be set later. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n1,n2,n3} & Node pointers. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Triangle_8cpp_source_l00023}{23}} of file \mbox{\hyperlink{Triangle_8cpp_source}{Triangle.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriangle_afaab90bcc5fa1fcf60db1e924b8cc856_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classTriangle_aaefe4ed500c07918d30c6f0e286332c5}\index{Triangle@{Triangle}!Triangle@{Triangle}}
+\index{Triangle@{Triangle}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{Triangle()}{Triangle()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classTriangle_aaefe4ed500c07918d30c6f0e286332c5} 
+Triangle\+::\+Triangle (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor (uninitialized geometry). 
+
+
+
+Definition at line \mbox{\hyperlink{Triangle_8h_source_l00062}{62}} of file \mbox{\hyperlink{Triangle_8h_source}{Triangle.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTriangle_a1d3d08deeb999f339d2e821a877521ba}\index{Triangle@{Triangle}!Area@{Area}}
+\index{Area@{Area}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{Area()}{Area()}}
+{\footnotesize\ttfamily \label{classTriangle_a1d3d08deeb999f339d2e821a877521ba} 
+double Triangle\+::\+Area (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Surface area of the triangle. 
+
+\begin{DoxyReturn}{Returns}
+Area. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Triangle_8cpp_source_l00190}{190}} of file \mbox{\hyperlink{Triangle_8cpp_source}{Triangle.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classTriangle_a1d3d08deeb999f339d2e821a877521ba_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classTriangle_a6d275a4d9441732ebcd00c514ff4bb2f}\index{Triangle@{Triangle}!AssignNodes@{AssignNodes}}
+\index{AssignNodes@{AssignNodes}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{AssignNodes()}{AssignNodes()}}
+{\footnotesize\ttfamily \label{classTriangle_a6d275a4d9441732ebcd00c514ff4bb2f} 
+int Triangle\+::\+Assign\+Nodes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}}]{n1}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}}]{n2}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}}]{n3}{}\end{DoxyParamCaption})}
+
+
+
+Replace the three node pointers and recompute cached geometry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n1,n2,n3} & Node pointers. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Triangle_8cpp_source_l00204}{204}} of file \mbox{\hyperlink{Triangle_8cpp_source}{Triangle.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriangle_a6d275a4d9441732ebcd00c514ff4bb2f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classTriangle_a360c6e73186c76642bb74775a011237a}\index{Triangle@{Triangle}!BorderingIndeces@{BorderingIndeces}}
+\index{BorderingIndeces@{BorderingIndeces}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{BorderingIndeces()}{BorderingIndeces()}}
+{\footnotesize\ttfamily \label{classTriangle_a360c6e73186c76642bb74775a011237a} 
+std\+::pair$<$ int, int $>$ Triangle\+::\+Bordering\+Indeces (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Bordering domain indices as \{front, back\}. 
+
+\begin{DoxyReturn}{Returns}
+\{front, back\}. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Triangle_8cpp_source_l00199}{199}} of file \mbox{\hyperlink{Triangle_8cpp_source}{Triangle.\+cpp}}.
+
+\Hypertarget{classTriangle_ae13d69e28fb7a81ab8257fe0af84ceaa}\index{Triangle@{Triangle}!CalculateGeometryData@{CalculateGeometryData}}
+\index{CalculateGeometryData@{CalculateGeometryData}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{CalculateGeometryData()}{CalculateGeometryData()}}
+{\footnotesize\ttfamily \label{classTriangle_ae13d69e28fb7a81ab8257fe0af84ceaa} 
+int Triangle\+::\+Calculate\+Geometry\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Compute/cached geometry (normal, area, perimeter, center, I1/\+I2s/\+I2d). 
+
+\begin{DoxyReturn}{Returns}
+0 on success.
+\end{DoxyReturn}
+Recompute normal (FRONT), area, perimeter, centroid, and I1/\+I2s/\+I2d.
+
+Normal and area\+:  $ \mathbf{n} = (\mathbf{n_2}-\mathbf{n_1}) \times (\mathbf{n_3}-\mathbf{n_1}), 
+  A = |\mathbf{n}|/2, \hat{\mathbf{n}} = \mathbf{n}/|\mathbf{n}| $.
+
+Perimeter and centroid\+:  $ \mathbf{r_{cnt}} = (\mathbf{n_1}+\mathbf{n_2}+\mathbf{n_3})/3, 
+      \Pi = \sum_{i=1}^3 |\mathbf{e_i}|$ (sum of edge lengths).
+
+Analytic integrals (I1,I2s,I2d) follow the project\textquotesingle{}s closed forms. 
+
+Definition at line \mbox{\hyperlink{Triangle_8cpp_source_l00062}{62}} of file \mbox{\hyperlink{Triangle_8cpp_source}{Triangle.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriangle_ae13d69e28fb7a81ab8257fe0af84ceaa_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriangle_ae13d69e28fb7a81ab8257fe0af84ceaa_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classTriangle_ab78508a340ec5d345adf114b43563dbf}\index{Triangle@{Triangle}!Center@{Center}}
+\index{Center@{Center}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{Center()}{Center()}}
+{\footnotesize\ttfamily \label{classTriangle_ab78508a340ec5d345adf114b43563dbf} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} Triangle\+::\+Center (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Centroid of the triangle. 
+
+\begin{DoxyReturn}{Returns}
+Centroid. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Triangle_8cpp_source_l00196}{196}} of file \mbox{\hyperlink{Triangle_8cpp_source}{Triangle.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classTriangle_ab78508a340ec5d345adf114b43563dbf_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classTriangle_a837631cb39cc7af167b9f54436aadcae}\index{Triangle@{Triangle}!clean@{clean}}
+\index{clean@{clean}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{clean()}{clean()}}
+{\footnotesize\ttfamily \label{classTriangle_a837631cb39cc7af167b9f54436aadcae} 
+double Triangle\+::clean (\begin{DoxyParamCaption}\item[{double}]{x}{, }\item[{double}]{eps}{ = {\ttfamily 1e-\/10}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Small helper to zero tiny values (for robust barycentric math). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Value. \\
+\hline
+{\em eps} & Tolerance. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zeroed value. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Triangle_8h_source_l00212}{212}} of file \mbox{\hyperlink{Triangle_8h_source}{Triangle.\+h}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriangle_a837631cb39cc7af167b9f54436aadcae_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classTriangle_aad716a04591b5c9af864d6c2a89d3a65}\index{Triangle@{Triangle}!containsPoint@{containsPoint}}
+\index{containsPoint@{containsPoint}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{containsPoint()}{containsPoint()}}
+{\footnotesize\ttfamily \label{classTriangle_aad716a04591b5c9af864d6c2a89d3a65} 
+bool Triangle\+::contains\+Point (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \&}]{p}{, }\item[{double}]{tol}{ = {\ttfamily 1e-\/6}}\end{DoxyParamCaption})}
+
+
+
+Test whether a point lies on (or very near) the triangle. 
+
+The point is projected to the triangle plane and tested using barycentric/simplex coordinates with tolerance {\ttfamily tol}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Observation point. \\
+\hline
+{\em tol} & Tolerance for coplanarity and barycentric tests. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if p is on/near the facet; false otherwise.
+\end{DoxyReturn}
+Check if a point lies on/near the triangle (plane-\/project + barycentric).
+
+Steps\+: 1) Reject if $ |(\mathbf{p} − \mathbf{n_0}) \cdot \mathbf{n}| > tol $ (off the plane). 2) Build an orthonormal basis \{unitX, unitY\} in the triangle plane. 3) Compute simplex (barycentric) coordinates (zeta) in 2D. 4) Accept if zeta\+\_\+i \texorpdfstring{$>$}{>}= −tol and sum(zeta) \texorpdfstring{$<$}{<}= 1+tol. 
+
+Definition at line \mbox{\hyperlink{Triangle_8cpp_source_l00322}{322}} of file \mbox{\hyperlink{Triangle_8cpp_source}{Triangle.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{classTriangle_aad716a04591b5c9af864d6c2a89d3a65_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriangle_aad716a04591b5c9af864d6c2a89d3a65_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classTriangle_a88b683f8af44c4297fd5bec9e5d874d0}\index{Triangle@{Triangle}!DomainPosition@{DomainPosition}}
+\index{DomainPosition@{DomainPosition}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{DomainPosition()}{DomainPosition()}}
+{\footnotesize\ttfamily \label{classTriangle_a88b683f8af44c4297fd5bec9e5d874d0} 
+int Triangle\+::\+Domain\+Position (\begin{DoxyParamCaption}\item[{int}]{d\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Whether a domain id matches FRONT/\+BACK; returns FRONT, BACK, or −1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d\+Index} & \doxylink{classDomain}{Domain} index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+FRONT, BACK, or −1. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Triangle_8cpp_source_l00169}{169}} of file \mbox{\hyperlink{Triangle_8cpp_source}{Triangle.\+cpp}}.
+
+\Hypertarget{classTriangle_a691ff1d8d3f33df1fe0aae161d14ec49}\index{Triangle@{Triangle}!FBNormalVector@{FBNormalVector}}
+\index{FBNormalVector@{FBNormalVector}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{FBNormalVector()}{FBNormalVector()}}
+{\footnotesize\ttfamily \label{classTriangle_a691ff1d8d3f33df1fe0aae161d14ec49} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} Triangle\+::\+FBNormal\+Vector (\begin{DoxyParamCaption}\item[{int}]{side}{}\end{DoxyParamCaption})}
+
+
+
+FRONT/\+BACK normal\+: FRONT -\/\texorpdfstring{$>$}{>} +normal, BACK -\/\texorpdfstring{$>$}{>} −normal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em side} & FRONT or BACK. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Normal. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Triangle_8cpp_source_l00182}{182}} of file \mbox{\hyperlink{Triangle_8cpp_source}{Triangle.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriangle_a691ff1d8d3f33df1fe0aae161d14ec49_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classTriangle_a6a5a3532e273e1fbb69b26eea2f509c0}\index{Triangle@{Triangle}!FindAdjacency@{FindAdjacency}}
+\index{FindAdjacency@{FindAdjacency}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{FindAdjacency()}{FindAdjacency()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classTriangle_a6a5a3532e273e1fbb69b26eea2f509c0} 
+int Triangle\+::\+Find\+Adjacency (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*}}]{T}{}\end{DoxyParamCaption})}
+
+
+
+Count common nodes with triangle T (0..3). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & \doxylink{classTriangle}{Triangle}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of shared nodes. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Triangle_8cpp_source_l00254}{254}} of file \mbox{\hyperlink{Triangle_8cpp_source}{Triangle.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriangle_a6a5a3532e273e1fbb69b26eea2f509c0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriangle_a6a5a3532e273e1fbb69b26eea2f509c0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classTriangle_a110eb211c31cc4fa6a936d8d4c201306}\index{Triangle@{Triangle}!FindAdjacency@{FindAdjacency}}
+\index{FindAdjacency@{FindAdjacency}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{FindAdjacency()}{FindAdjacency()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classTriangle_a110eb211c31cc4fa6a936d8d4c201306} 
+int Triangle\+::\+Find\+Adjacency (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*}}]{T}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{t}{}\end{DoxyParamCaption})}
+
+
+
+Count common nodes with T after translating T by vector t. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & \doxylink{classTriangle}{Triangle}. \\
+\hline
+{\em t} & \doxylink{classTranslation}{Translation} vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of shared nodes. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Triangle_8cpp_source_l00297}{297}} of file \mbox{\hyperlink{Triangle_8cpp_source}{Triangle.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriangle_a110eb211c31cc4fa6a936d8d4c201306_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classTriangle_aab413203fc04781220ce7cf8224105bd}\index{Triangle@{Triangle}!FindCommonEdgeIndices@{FindCommonEdgeIndices}}
+\index{FindCommonEdgeIndices@{FindCommonEdgeIndices}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{FindCommonEdgeIndices()}{FindCommonEdgeIndices()}}
+{\footnotesize\ttfamily \label{classTriangle_aab413203fc04781220ce7cf8224105bd} 
+std\+::pair$<$ int, int $>$ Triangle\+::\+Find\+Common\+Edge\+Indices (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*}}]{T}{}\end{DoxyParamCaption})}
+
+
+
+Find common edge local indices with T. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & \doxylink{classTriangle}{Triangle}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{i+1, -\/(j+1)\} if edges match (sign conveys orientation), or \{0,0\}. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Triangle_8cpp_source_l00268}{268}} of file \mbox{\hyperlink{Triangle_8cpp_source}{Triangle.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriangle_aab413203fc04781220ce7cf8224105bd_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classTriangle_aa137190a0a6fd9adadee37a8228313d6}\index{Triangle@{Triangle}!FindCommonVertexIndices@{FindCommonVertexIndices}}
+\index{FindCommonVertexIndices@{FindCommonVertexIndices}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{FindCommonVertexIndices()}{FindCommonVertexIndices()}}
+{\footnotesize\ttfamily \label{classTriangle_aa137190a0a6fd9adadee37a8228313d6} 
+std\+::pair$<$ int, int $>$ Triangle\+::\+Find\+Common\+Vertex\+Indices (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*}}]{T}{}\end{DoxyParamCaption})}
+
+
+
+Find common vertex local indices with T. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & \doxylink{classTriangle}{Triangle}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{i+1, j+1\} if a shared node exists, or \{0,0\}. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Triangle_8cpp_source_l00285}{285}} of file \mbox{\hyperlink{Triangle_8cpp_source}{Triangle.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriangle_aa137190a0a6fd9adadee37a8228313d6_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classTriangle_aa83f57574ddbd7514530a554eb96bc0e}\index{Triangle@{Triangle}!getI1@{getI1}}
+\index{getI1@{getI1}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{getI1()}{getI1()}}
+{\footnotesize\ttfamily \label{classTriangle_aa83f57574ddbd7514530a554eb96bc0e} 
+double Triangle\+::get\+I1 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Return cached I1. 
+
+\begin{DoxyReturn}{Returns}
+I1. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Triangle_8cpp_source_l00113}{113}} of file \mbox{\hyperlink{Triangle_8cpp_source}{Triangle.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriangle_aa83f57574ddbd7514530a554eb96bc0e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classTriangle_a02693a813e9e7b1225be9f19e465d01e}\index{Triangle@{Triangle}!getI2@{getI2}}
+\index{getI2@{getI2}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{getI2()}{getI2()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classTriangle_a02693a813e9e7b1225be9f19e465d01e} 
+double Triangle\+::get\+I2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}}]{r}{}\end{DoxyParamCaption})}
+
+
+
+Return cached I2 (single-\/vertex) for node pointer r. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Node pointer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I2. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Triangle_8cpp_source_l00115}{115}} of file \mbox{\hyperlink{Triangle_8cpp_source}{Triangle.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{classTriangle_a02693a813e9e7b1225be9f19e465d01e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classTriangle_affd2713ded0f6110ef1eee98877b4f16}\index{Triangle@{Triangle}!getI2@{getI2}}
+\index{getI2@{getI2}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{getI2()}{getI2()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classTriangle_affd2713ded0f6110ef1eee98877b4f16} 
+double Triangle\+::get\+I2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}}]{r1}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}}]{r2}{}\end{DoxyParamCaption})}
+
+
+
+Return cached I2 (double-\/vertex) for node pair (r1,r2). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r1,r2} & Node pointers. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I2. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Triangle_8cpp_source_l00123}{123}} of file \mbox{\hyperlink{Triangle_8cpp_source}{Triangle.\+cpp}}.
+
+\Hypertarget{classTriangle_a1ee77c16f0a6159fecd4a421b391187a}\index{Triangle@{Triangle}!getI2Translated@{getI2Translated}}
+\index{getI2Translated@{getI2Translated}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{getI2Translated()}{getI2Translated()}}
+{\footnotesize\ttfamily \label{classTriangle_a1ee77c16f0a6159fecd4a421b391187a} 
+double Triangle\+::get\+I2\+Translated (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r1}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r2}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{t}{}\end{DoxyParamCaption})}
+
+
+
+Return I2 for a translated configuration (periodic images). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r1,r2} & Endpoints in original cell. \\
+\hline
+{\em t} & \doxylink{classTranslation}{Translation} vector for r1. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I2.
+\end{DoxyReturn}
+I2 for a translated configuration (periodic images).
+
+If r1 translated by t coincides with r2, returns the single-\/vertex value I2s; otherwise returns the double-\/vertex value I2d associated with the remaining node. 
+
+Definition at line \mbox{\hyperlink{Triangle_8cpp_source_l00137}{137}} of file \mbox{\hyperlink{Triangle_8cpp_source}{Triangle.\+cpp}}.
+
+\Hypertarget{classTriangle_a1aa819d0c6694d43b61c657e863267a9}\index{Triangle@{Triangle}!IntRR@{IntRR}}
+\index{IntRR@{IntRR}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{IntRR()}{IntRR()}}
+{\footnotesize\ttfamily \label{classTriangle_a1aa819d0c6694d43b61c657e863267a9} 
+double Triangle\+::\+Int\+RR (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Double integral of R\texorpdfstring{$^\wedge$}{\string^}2 over the triangle (analytic, self term). 
+
+\begin{DoxyReturn}{Returns}
+Double integral. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Triangle_8cpp_source_l00214}{214}} of file \mbox{\hyperlink{Triangle_8cpp_source}{Triangle.\+cpp}}.
+
+\Hypertarget{classTriangle_ab2dab378529e51bd6e2a43e7676e8a23}\index{Triangle@{Triangle}!Invert@{Invert}}
+\index{Invert@{Invert}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{Invert()}{Invert()}}
+{\footnotesize\ttfamily \label{classTriangle_ab2dab378529e51bd6e2a43e7676e8a23} 
+int Triangle\+::\+Invert (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Invert orientation (swap first two nodes). 
+
+\begin{DoxyReturn}{Returns}
+0 on success. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Triangle_8cpp_source_l00040}{40}} of file \mbox{\hyperlink{Triangle_8cpp_source}{Triangle.\+cpp}}.
+
+\Hypertarget{classTriangle_a0752d2c9488c7c44b851b8f75abcaa79}\index{Triangle@{Triangle}!Node@{Node}}
+\index{Node@{Node}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{Node()}{Node()}}
+{\footnotesize\ttfamily \label{classTriangle_a0752d2c9488c7c44b851b8f75abcaa79} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} Triangle\+::\+Node (\begin{DoxyParamCaption}\item[{int}]{index}{}\end{DoxyParamCaption})}
+
+
+
+Node position (by value) for local index 0..2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Local index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Node position. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Triangle_8cpp_source_l00163}{163}} of file \mbox{\hyperlink{Triangle_8cpp_source}{Triangle.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriangle_a0752d2c9488c7c44b851b8f75abcaa79_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classTriangle_aeecc82e57a00841cb83fd790316b25a3}\index{Triangle@{Triangle}!NodePtr@{NodePtr}}
+\index{NodePtr@{NodePtr}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{NodePtr()}{NodePtr()}}
+{\footnotesize\ttfamily \label{classTriangle_aeecc82e57a00841cb83fd790316b25a3} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*} Triangle\+::\+Node\+Ptr (\begin{DoxyParamCaption}\item[{int}]{index}{}\end{DoxyParamCaption})}
+
+
+
+Node pointer for local index 0..2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Local index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Node pointer. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Triangle_8cpp_source_l00166}{166}} of file \mbox{\hyperlink{Triangle_8cpp_source}{Triangle.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriangle_aeecc82e57a00841cb83fd790316b25a3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classTriangle_a6e7daa074db3d147b33763bfd2a6e83b}\index{Triangle@{Triangle}!Perimeter@{Perimeter}}
+\index{Perimeter@{Perimeter}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{Perimeter()}{Perimeter()}}
+{\footnotesize\ttfamily \label{classTriangle_a6e7daa074db3d147b33763bfd2a6e83b} 
+double Triangle\+::\+Perimeter (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Perimeter (sum of edge lengths). 
+
+\begin{DoxyReturn}{Returns}
+Perimeter. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Triangle_8cpp_source_l00193}{193}} of file \mbox{\hyperlink{Triangle_8cpp_source}{Triangle.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriangle_a6e7daa074db3d147b33763bfd2a6e83b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classTriangle_abc4d7cef789f114978e3cf3d5a8f5471}\index{Triangle@{Triangle}!RefNormalVector@{RefNormalVector}}
+\index{RefNormalVector@{RefNormalVector}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{RefNormalVector()}{RefNormalVector()}}
+{\footnotesize\ttfamily \label{classTriangle_abc4d7cef789f114978e3cf3d5a8f5471} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} Triangle\+::\+Ref\+Normal\+Vector (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Reference unit normal (points to FRONT). 
+
+\begin{DoxyReturn}{Returns}
+Reference normal. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Triangle_8cpp_source_l00179}{179}} of file \mbox{\hyperlink{Triangle_8cpp_source}{Triangle.\+cpp}}.
+
+\Hypertarget{classTriangle_aa59e8d6a6ca3db504228bff7913812bb}\index{Triangle@{Triangle}!SetDomainIndeces@{SetDomainIndeces}}
+\index{SetDomainIndeces@{SetDomainIndeces}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{SetDomainIndeces()}{SetDomainIndeces()}}
+{\footnotesize\ttfamily \label{classTriangle_aa59e8d6a6ca3db504228bff7913812bb} 
+int Triangle\+::\+Set\+Domain\+Indeces (\begin{DoxyParamCaption}\item[{int}]{d\+Index1}{, }\item[{int}]{d\+Index2}{}\end{DoxyParamCaption})}
+
+
+
+Set front/back domain indices; recomputes cached geometry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d\+Index1} & Front domain index. \\
+\hline
+{\em d\+Index2} & Back domain index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Triangle_8cpp_source_l00032}{32}} of file \mbox{\hyperlink{Triangle_8cpp_source}{Triangle.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriangle_aa59e8d6a6ca3db504228bff7913812bb_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classTriangle_a8df83f0cbfd24e35c8e8ac9544ed6184}\index{Triangle@{Triangle}!SwitchIndex@{SwitchIndex}}
+\index{SwitchIndex@{SwitchIndex}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{SwitchIndex()}{SwitchIndex()}}
+{\footnotesize\ttfamily \label{classTriangle_a8df83f0cbfd24e35c8e8ac9544ed6184} 
+int Triangle\+::\+Switch\+Index (\begin{DoxyParamCaption}\item[{int}]{n1}{, }\item[{int}]{n2}{}\end{DoxyParamCaption})}
+
+
+
+Replace a bordering domain index n1 with n2 (if present). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n1,n2} & Bordering domain indices. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Triangle_8cpp_source_l00246}{246}} of file \mbox{\hyperlink{Triangle_8cpp_source}{Triangle.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classTriangle_a7a5fc1667e146b724589b1e99dc7f55b}\index{Triangle@{Triangle}!center@{center}}
+\index{center@{center}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{center}{center}}
+{\footnotesize\ttfamily \label{classTriangle_a7a5fc1667e146b724589b1e99dc7f55b} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} Triangle\+::center\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Centroid. 
+
+
+
+Definition at line \mbox{\hyperlink{Triangle_8h_source_l00043}{43}} of file \mbox{\hyperlink{Triangle_8h_source}{Triangle.\+h}}.
+
+\Hypertarget{classTriangle_a178724e62304428e88240d9a3684872e}\index{Triangle@{Triangle}!domainIndeces@{domainIndeces}}
+\index{domainIndeces@{domainIndeces}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{domainIndeces}{domainIndeces}}
+{\footnotesize\ttfamily \label{classTriangle_a178724e62304428e88240d9a3684872e} 
+std\+::vector$<$int$>$ Triangle\+::domain\+Indeces\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{[}FRONT, BACK\mbox{]} domain indices 
+
+
+
+Definition at line \mbox{\hyperlink{Triangle_8h_source_l00036}{36}} of file \mbox{\hyperlink{Triangle_8h_source}{Triangle.\+h}}.
+
+\Hypertarget{classTriangle_ae8aa592597d1ef78793969314dda41a4}\index{Triangle@{Triangle}!I1@{I1}}
+\index{I1@{I1}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{I1}{I1}}
+{\footnotesize\ttfamily \label{classTriangle_ae8aa592597d1ef78793969314dda41a4} 
+double Triangle\+::\+I1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Analytic self integral (R\texorpdfstring{$^\wedge$}{\string^}2 over triangle) 
+
+
+
+Definition at line \mbox{\hyperlink{Triangle_8h_source_l00040}{40}} of file \mbox{\hyperlink{Triangle_8h_source}{Triangle.\+h}}.
+
+\Hypertarget{classTriangle_a620e3cc9113a9be75e809755ff511d62}\index{Triangle@{Triangle}!I2d@{I2d}}
+\index{I2d@{I2d}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{I2d}{I2d}}
+{\footnotesize\ttfamily \label{classTriangle_a620e3cc9113a9be75e809755ff511d62} 
+double Triangle\+::\+I2d\mbox{[}3\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Analytic self integrals (double-\/vertex cases) 
+
+
+
+Definition at line \mbox{\hyperlink{Triangle_8h_source_l00042}{42}} of file \mbox{\hyperlink{Triangle_8h_source}{Triangle.\+h}}.
+
+\Hypertarget{classTriangle_a20f3d572ee23cfd88e2d854ca1e63c70}\index{Triangle@{Triangle}!I2s@{I2s}}
+\index{I2s@{I2s}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{I2s}{I2s}}
+{\footnotesize\ttfamily \label{classTriangle_a20f3d572ee23cfd88e2d854ca1e63c70} 
+double Triangle\+::\+I2s\mbox{[}3\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Analytic self integrals (single-\/vertex cases) 
+
+
+
+Definition at line \mbox{\hyperlink{Triangle_8h_source_l00041}{41}} of file \mbox{\hyperlink{Triangle_8h_source}{Triangle.\+h}}.
+
+\Hypertarget{classTriangle_a05caf123712afc1f7eafa244f8d65152}\index{Triangle@{Triangle}!nodes@{nodes}}
+\index{nodes@{nodes}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{nodes}{nodes}}
+{\footnotesize\ttfamily \label{classTriangle_a05caf123712afc1f7eafa244f8d65152} 
+std\+::vector$<$\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}$>$ Triangle\+::nodes\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pointers to the three corner nodes. 
+
+
+
+Definition at line \mbox{\hyperlink{Triangle_8h_source_l00035}{35}} of file \mbox{\hyperlink{Triangle_8h_source}{Triangle.\+h}}.
+
+\Hypertarget{classTriangle_afbeb61b5e47079cd5bf65f4187524106}\index{Triangle@{Triangle}!normalVector@{normalVector}}
+\index{normalVector@{normalVector}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{normalVector}{normalVector}}
+{\footnotesize\ttfamily \label{classTriangle_afbeb61b5e47079cd5bf65f4187524106} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} Triangle\+::normal\+Vector\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Unit normal pointing to FRONT. 
+
+
+
+Definition at line \mbox{\hyperlink{Triangle_8h_source_l00037}{37}} of file \mbox{\hyperlink{Triangle_8h_source}{Triangle.\+h}}.
+
+\Hypertarget{classTriangle_a4c2ecb0cca1354c2d3a6d1a1753725a2}\index{Triangle@{Triangle}!perimeter@{perimeter}}
+\index{perimeter@{perimeter}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{perimeter}{perimeter}}
+{\footnotesize\ttfamily \label{classTriangle_a4c2ecb0cca1354c2d3a6d1a1753725a2} 
+double Triangle\+::perimeter\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{classTriangle}{Triangle} perimeter (sum of edge lengths) 
+
+
+
+Definition at line \mbox{\hyperlink{Triangle_8h_source_l00039}{39}} of file \mbox{\hyperlink{Triangle_8h_source}{Triangle.\+h}}.
+
+\Hypertarget{classTriangle_a1ecbac7f823b07d87cc0b8604f0502f5}\index{Triangle@{Triangle}!surfaceArea@{surfaceArea}}
+\index{surfaceArea@{surfaceArea}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{surfaceArea}{surfaceArea}}
+{\footnotesize\ttfamily \label{classTriangle_a1ecbac7f823b07d87cc0b8604f0502f5} 
+double Triangle\+::surface\+Area\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{classTriangle}{Triangle} area. 
+
+
+
+Definition at line \mbox{\hyperlink{Triangle_8h_source_l00038}{38}} of file \mbox{\hyperlink{Triangle_8h_source}{Triangle.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Triangle_8h}{Triangle.\+h}}\item 
+\mbox{\hyperlink{Triangle_8cpp}{Triangle.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,9 @@
+<map id="Triangle::containsPoint" name="Triangle::containsPoint">
+<area shape="rect" id="Node000001" title="Test whether a point lies on (or very near) the triangle." alt="" coords="5,57,174,85"/>
+<area shape="rect" id="Node000002" href="$classTriangle.html#a1d3d08deeb999f339d2e821a877521ba" title="Surface area of the triangle." alt="" coords="224,5,334,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="142,54,211,35,212,40,144,59"/>
+<area shape="rect" id="Node000003" href="$classTriangle.html#a837631cb39cc7af167b9f54436aadcae" title="Small helper to zero tiny values (for robust barycentric math)." alt="" coords="222,57,337,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="174,68,206,68,206,74,174,74"/>
+<area shape="rect" id="Node000004" href="$classTriangle.html#a0752d2c9488c7c44b851b8f75abcaa79" title="Node position (by value) for local index 0..2." alt="" coords="222,109,336,137"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="144,83,212,102,211,107,142,88"/>
+</map>

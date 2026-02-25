@@ -1,0 +1,15 @@
+<map id="GreenFHom3DPer2D::EwaldSpectral" name="GreenFHom3DPer2D::EwaldSpectral">
+<area shape="rect" id="Node000001" title="Spectral (reciprocal&#45;lattice) part of Ewald sum for ." alt="" coords="5,56,262,84"/>
+<area shape="rect" id="Node000002" href="$group__greenFunction.html#gac0a52dce23be7dacdf97c68653b6c137" title="Complex square root with a branch cut along the negative real axis." alt="" coords="341,29,394,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="260,53,325,45,326,51,261,58"/>
+<area shape="rect" id="Node000004" href="$classGreenF.html#abf00726011a4eca4109bc43125218d30" title="Evaluate erfc via the 2D lookup table if available." alt="" coords="310,81,426,109"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="262,81,294,85,294,90,262,86"/>
+<area shape="rect" id="Node000003" href="$Domain_8cpp.html#aafa3e4fa6318b2f8740f4dbd50c367e5" title="Extract the real part of each component of a complex 3&#45;vector." alt="" coords="478,29,524,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="395,40,462,40,462,46,395,46"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="482,30,480,20,482,11,489,5,501,3,513,5,520,12,516,15,510,10,501,8,491,10,486,14,485,20,487,28"/>
+<area shape="poly" id="edge7_Node000004_Node000003" title=" " alt="" coords="404,78,462,55,464,60,406,83"/>
+<area shape="rect" id="Node000005" href="$mathFunctions_8cpp.html#a7916c6b62310fe9cf38ec2a2890aaad4" title="Complementary error function for complex arguments." alt="" coords="474,81,527,109"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="427,92,458,92,458,98,427,98"/>
+<area shape="rect" id="Node000006" href="$mathFunctions_8cpp.html#abc57cde75234d7e165a9ebcdb45f2c29" title="Error function for complex arguments." alt="" coords="575,81,622,109"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="528,92,560,92,560,98,528,98"/>
+</map>

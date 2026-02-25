@@ -1,0 +1,11 @@
+<map id="SingSub::ChangeTriangleRWG" name="SingSub::ChangeTriangleRWG">
+<area shape="rect" id="Node000001" title="Update only the RWG/triangle; keep the same observation point r." alt="" coords="289,114,502,142"/>
+<area shape="rect" id="Node000002" href="$classGreenFHom3D.html#a48e8471aabb445e0e50a01c005ff3b98" title="Compute &#160;for all RWGs on a source triangle." alt="" coords="17,5,229,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="348,110,240,65,205,53,206,48,242,60,350,105"/>
+<area shape="rect" id="Node000003" href="$classGreenFHom3DPer2D.html#a84a8c855a27c895ff24f6771037284a5" title="Compute &#160;for all RWGs on a source triangle." alt="" coords="15,75,231,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="273,117,231,112,232,107,274,111"/>
+<area shape="rect" id="Node000004" href="$classGreenFHom3D.html#a419cbe00b5a2aed70ac546904a8a8d6f" title="Compute &#160;and &#160;for all RWG pairs on two triangles." alt="" coords="25,143,221,171"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="273,143,222,149,221,144,273,138"/>
+<area shape="rect" id="Node000005" href="$classGreenFHom3DPer2D.html#a1dc9dd84c93ee10b2fb4b1866103d957" title="Compute &#160;and &#160;for all RWG pairs on two triangles." alt="" coords="5,195,241,223"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="344,150,241,185,194,197,193,192,240,180,342,145"/>
+</map>

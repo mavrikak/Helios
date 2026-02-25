@@ -1,0 +1,5 @@
+<map id="LayeredMediaUtils::cartesianToLayeredQS" name="LayeredMediaUtils::cartesianToLayeredQS">
+<area shape="rect" id="Node000001" title="Transforms Cartesian coordinates to stratified medium coordinates for the calculation of the quasista..." alt="" coords="5,5,171,50"/>
+<area shape="rect" id="Node000002" href="$classLayeredMediaUtils.html#a4b40e9fd70634bc3066c31e34a002df4" title="Returns the layer index for a given spatial position." alt="" coords="219,5,370,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,25,203,25,203,30,171,30"/>
+</map>

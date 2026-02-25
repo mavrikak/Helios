@@ -1,0 +1,282 @@
+\doxysection{Sim\+Job.\+cpp File Reference}
+\hypertarget{SimJob_8cpp}{}\label{SimJob_8cpp}\index{SimJob.cpp@{SimJob.cpp}}
+
+
+Implementation for the \doxylink{classSimJob}{Sim\+Job} class.  
+
+
+{\ttfamily \#include "{}Sim\+Job.\+h"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include "{}iofunctions.\+h"{}}\newline
+{\ttfamily \#include "{}Domain\+Hom3\+D.\+h"{}}\newline
+{\ttfamily \#include "{}Domain\+Layered3\+D.\+h"{}}\newline
+{\ttfamily \#include "{}Domain\+Hom3\+DPer.\+h"{}}\newline
+{\ttfamily \#include "{}Incident\+Field.\+h"{}}\newline
+{\ttfamily \#include "{}Plane\+Wave.\+h"{}}\newline
+Include dependency graph for Sim\+Job.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{SimJob_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{SimJob_8cpp_a5689047dc461187481588ab4352aa2da}{cgsqr\+\_\+}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \texorpdfstring{$\ast$}{*}ca, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \texorpdfstring{$\ast$}{*}cy, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \texorpdfstring{$\ast$}{*}cx, int \texorpdfstring{$\ast$}{*}mxn, int \texorpdfstring{$\ast$}{*}n, double \texorpdfstring{$\ast$}{*}err, int \texorpdfstring{$\ast$}{*}mxiter, int \texorpdfstring{$\ast$}{*}iter, float \texorpdfstring{$\ast$}{*}time)
+\begin{DoxyCompactList}\small\item\em External conjugate gradient solver (complex version) from cg.\+f. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{SimJob_8cpp_ad123e1ae452426e2c00e3189488dedac}{zgetrf\+\_\+}} (int \texorpdfstring{$\ast$}{*}dim1, int \texorpdfstring{$\ast$}{*}dim2, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \texorpdfstring{$\ast$}{*}a, int \texorpdfstring{$\ast$}{*}lda, int \texorpdfstring{$\ast$}{*}ipiv, int \texorpdfstring{$\ast$}{*}info)
+\begin{DoxyCompactList}\small\item\em Computes the LU factorization of a general M-\/by-\/N matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{SimJob_8cpp_a0d498505ce3081c778d322cdd12e60a4}{zgetrs\+\_\+}} (char \texorpdfstring{$\ast$}{*}TRANS, int \texorpdfstring{$\ast$}{*}N, int \texorpdfstring{$\ast$}{*}NRHS, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \texorpdfstring{$\ast$}{*}A, int \texorpdfstring{$\ast$}{*}LDA, int \texorpdfstring{$\ast$}{*}IPIV, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \texorpdfstring{$\ast$}{*}B, int \texorpdfstring{$\ast$}{*}LDB, int \texorpdfstring{$\ast$}{*}INFO)
+\begin{DoxyCompactList}\small\item\em Solves a system of linear equations using the LU factorization. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{SimJob_8cpp_a81dafa8ebba533efb547fc5dda890a4b}{Jacobi\+Precondition}} (blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 2 $>$ \texorpdfstring{$\ast$}{*}in\+Matrix, blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 1 $>$ \texorpdfstring{$\ast$}{*}in\+Vector)
+\begin{DoxyCompactList}\small\item\em Apply Jacobi preconditioning to a complex linear system. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{SimJob_8cpp_a4e11941feabcc94ac6a1f50dc8d90394}{Clean\+Up\+Files}} (std\+::map$<$ const char \texorpdfstring{$\ast$}{*}, std\+::ofstream \texorpdfstring{$\ast$}{*} $>$ files)
+\begin{DoxyCompactList}\small\item\em Close and deallocate a set of open output files. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{SimJob_8cpp_a6c07f30d5cdc5dc98cdc21ce445933cb}{Conj\+Vec}} (\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} in)
+\begin{DoxyCompactList}\small\item\em Compute the element-\/wise complex conjugate of a 3-\/vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{SimJob_8cpp_afd2614e8171c7074caa9db28bfd14092}{Real\+Vec}} (\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} in)
+\begin{DoxyCompactList}\small\item\em Extract the real part of each component of a complex 3-\/vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation for the \doxylink{classSimJob}{Sim\+Job} class. 
+
+
+
+Definition in file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{SimJob_8cpp_a5689047dc461187481588ab4352aa2da}\index{SimJob.cpp@{SimJob.cpp}!cgsqr\_@{cgsqr\_}}
+\index{cgsqr\_@{cgsqr\_}!SimJob.cpp@{SimJob.cpp}}
+\doxysubsubsection{\texorpdfstring{cgsqr\_()}{cgsqr\_()}}
+{\footnotesize\ttfamily \label{SimJob_8cpp_a5689047dc461187481588ab4352aa2da} 
+void cgsqr\+\_\+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \texorpdfstring{$\ast$}{*}}]{ca}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \texorpdfstring{$\ast$}{*}}]{cy}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \texorpdfstring{$\ast$}{*}}]{cx}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{mxn}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{n}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{err}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{mxiter}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{iter}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{time}{}\end{DoxyParamCaption})}
+
+
+
+External conjugate gradient solver (complex version) from cg.\+f. 
+
+Solves a linear system Ax = y iteratively using the conjugate gradient squared (CGS) algorithm for complex-\/valued matrices.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ca} & Pointer to the complex system matrix A (flattened). \\
+\hline
+{\em cy} & Pointer to the complex right-\/hand side vector y. \\
+\hline
+{\em cx} & Pointer to the complex solution vector x (input guess, then result). \\
+\hline
+{\em mxn} & Total number of elements in A. \\
+\hline
+{\em n} & Dimension of the linear system. \\
+\hline
+{\em err} & Target relative error tolerance. \\
+\hline
+{\em mxiter} & Maximum number of iterations allowed. \\
+\hline
+{\em iter} & On exit, the number of iterations performed. \\
+\hline
+{\em time} & On exit, elapsed time in seconds. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{SimJob_8cpp_a5689047dc461187481588ab4352aa2da_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{SimJob_8cpp_a4e11941feabcc94ac6a1f50dc8d90394}\index{SimJob.cpp@{SimJob.cpp}!CleanUpFiles@{CleanUpFiles}}
+\index{CleanUpFiles@{CleanUpFiles}!SimJob.cpp@{SimJob.cpp}}
+\doxysubsubsection{\texorpdfstring{CleanUpFiles()}{CleanUpFiles()}}
+{\footnotesize\ttfamily \label{SimJob_8cpp_a4e11941feabcc94ac6a1f50dc8d90394} 
+int Clean\+Up\+Files (\begin{DoxyParamCaption}\item[{std\+::map$<$ const char \texorpdfstring{$\ast$}{*}, std\+::ofstream \texorpdfstring{$\ast$}{*} $>$}]{files}{}\end{DoxyParamCaption})}
+
+
+
+Close and deallocate a set of open output files. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em files} & Map of filenames (as C-\/string keys) to open file stream pointers. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Always returns 0.
+\end{DoxyReturn}
+Iterates through a map of file streams, closing and deleting each associated {\ttfamily std\+::ofstream} pointer, then clears the container. Each entry\textquotesingle{}s stream is closed and its pointer freed using {\ttfamily delete}. The input map is then cleared to remove all entries. 
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l00836}{836}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{SimJob_8cpp_a4e11941feabcc94ac6a1f50dc8d90394_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{SimJob_8cpp_a6c07f30d5cdc5dc98cdc21ce445933cb}\index{SimJob.cpp@{SimJob.cpp}!ConjVec@{ConjVec}}
+\index{ConjVec@{ConjVec}!SimJob.cpp@{SimJob.cpp}}
+\doxysubsubsection{\texorpdfstring{ConjVec()}{ConjVec()}}
+{\footnotesize\ttfamily \label{SimJob_8cpp_a6c07f30d5cdc5dc98cdc21ce445933cb} 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} Conj\+Vec (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}}]{in}{}\end{DoxyParamCaption})}
+
+
+
+Compute the element-\/wise complex conjugate of a 3-\/vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & Input complex vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex vector containing conjugated components of {\ttfamily in}. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l00851}{851}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{SimJob_8cpp_a6c07f30d5cdc5dc98cdc21ce445933cb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{SimJob_8cpp_a6c07f30d5cdc5dc98cdc21ce445933cb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{SimJob_8cpp_a81dafa8ebba533efb547fc5dda890a4b}\index{SimJob.cpp@{SimJob.cpp}!JacobiPrecondition@{JacobiPrecondition}}
+\index{JacobiPrecondition@{JacobiPrecondition}!SimJob.cpp@{SimJob.cpp}}
+\doxysubsubsection{\texorpdfstring{JacobiPrecondition()}{JacobiPrecondition()}}
+{\footnotesize\ttfamily \label{SimJob_8cpp_a81dafa8ebba533efb547fc5dda890a4b} 
+int Jacobi\+Precondition (\begin{DoxyParamCaption}\item[{blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 2 $>$ \texorpdfstring{$\ast$}{*}}]{in\+Matrix}{, }\item[{blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 1 $>$ \texorpdfstring{$\ast$}{*}}]{in\+Vector}{}\end{DoxyParamCaption})}
+
+
+
+Apply Jacobi preconditioning to a complex linear system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in\+Matrix} & Pointer to the complex system matrix (modified in place). \\
+\hline
+{\em in\+Vector} & Pointer to the complex right-\/hand side vector (modified in place). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Always returns 0.
+\end{DoxyReturn}
+Scales each row of the input matrix and corresponding vector element by the inverse of the diagonal entry, effectively normalizing the system\textquotesingle{}s diagonal to unity. For each row i, this routine multiplies both the i-\/th vector element and the entire row of {\ttfamily in\+Matrix} by 1 / A(i,i). 
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l00544}{544}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{SimJob_8cpp_a81dafa8ebba533efb547fc5dda890a4b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{SimJob_8cpp_afd2614e8171c7074caa9db28bfd14092}\index{SimJob.cpp@{SimJob.cpp}!RealVec@{RealVec}}
+\index{RealVec@{RealVec}!SimJob.cpp@{SimJob.cpp}}
+\doxysubsubsection{\texorpdfstring{RealVec()}{RealVec()}}
+{\footnotesize\ttfamily \label{SimJob_8cpp_afd2614e8171c7074caa9db28bfd14092} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} Real\+Vec (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}}]{in}{}\end{DoxyParamCaption})}
+
+
+
+Extract the real part of each component of a complex 3-\/vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & Input complex vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Real vector with the real parts of {\ttfamily in}. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SimJob_8cpp_source_l00858}{858}} of file \mbox{\hyperlink{SimJob_8cpp_source}{Sim\+Job.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{SimJob_8cpp_afd2614e8171c7074caa9db28bfd14092_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{SimJob_8cpp_afd2614e8171c7074caa9db28bfd14092_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{SimJob_8cpp_ad123e1ae452426e2c00e3189488dedac}\index{SimJob.cpp@{SimJob.cpp}!zgetrf\_@{zgetrf\_}}
+\index{zgetrf\_@{zgetrf\_}!SimJob.cpp@{SimJob.cpp}}
+\doxysubsubsection{\texorpdfstring{zgetrf\_()}{zgetrf\_()}}
+{\footnotesize\ttfamily \label{SimJob_8cpp_ad123e1ae452426e2c00e3189488dedac} 
+void zgetrf\+\_\+ (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{dim1}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{dim2}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{lda}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{ipiv}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{info}{}\end{DoxyParamCaption})}
+
+
+
+Computes the LU factorization of a general M-\/by-\/N matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dim1} & Number of rows of the matrix (for {\ttfamily zgetrf\+\_\+}). \\
+\hline
+{\em dim2} & Number of columns of the matrix (for {\ttfamily zgetrf\+\_\+}). \\
+\hline
+{\em a} & Pointer to the matrix to be factored or solved. \\
+\hline
+{\em lda} & Leading dimension of the matrix. \\
+\hline
+{\em ipiv} & Pointer to the pivot indices. \\
+\hline
+{\em info} & Output status (0 if successful). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{SimJob_8cpp_a0d498505ce3081c778d322cdd12e60a4}\index{SimJob.cpp@{SimJob.cpp}!zgetrs\_@{zgetrs\_}}
+\index{zgetrs\_@{zgetrs\_}!SimJob.cpp@{SimJob.cpp}}
+\doxysubsubsection{\texorpdfstring{zgetrs\_()}{zgetrs\_()}}
+{\footnotesize\ttfamily \label{SimJob_8cpp_a0d498505ce3081c778d322cdd12e60a4} 
+void zgetrs\+\_\+ (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{TRANS}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{N}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{NRHS}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \texorpdfstring{$\ast$}{*}}]{A}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{LDA}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{IPIV}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \texorpdfstring{$\ast$}{*}}]{B}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{LDB}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{INFO}{}\end{DoxyParamCaption})}
+
+
+
+Solves a system of linear equations using the LU factorization. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em TRANS} & Specifies the form of the system of equations (\textquotesingle{}N\textquotesingle{} for no transpose, etc.). \\
+\hline
+{\em N} & Order of the coefficient matrix. \\
+\hline
+{\em NRHS} & Number of right-\/hand sides. \\
+\hline
+{\em A} & Pointer to the LU-\/factored coefficient matrix. \\
+\hline
+{\em LDA} & Leading dimension of A. \\
+\hline
+{\em IPIV} & Pointer to the pivot indices from {\ttfamily zgetrf\+\_\+}. \\
+\hline
+{\em B} & Pointer to the right-\/hand side vector(s). \\
+\hline
+{\em LDB} & Leading dimension of B. \\
+\hline
+{\em INFO} & Output status (0 if successful). \\
+\hline
+\end{DoxyParams}

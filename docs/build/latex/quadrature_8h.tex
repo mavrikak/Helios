@@ -1,0 +1,93 @@
+\doxysection{quadrature.\+h File Reference}
+\hypertarget{quadrature_8h}{}\label{quadrature_8h}\index{quadrature.h@{quadrature.h}}
+
+
+Declarations of Dunavant (triangle) and Gauss–\+Legendre (1D) quadrature rules.  
+
+
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{quadrature_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacedunavant}{dunavant}}
+\item 
+namespace \mbox{\hyperlink{namespacegausslegendre}{gausslegendre}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{namespacedunavant_af58e993ed1b610dc1dfef3fe0952ea68}{dunavant\+::\+N1}} = 1
+\begin{DoxyCompactList}\small\item\em Order-\/1 (1-\/point) Dunavant rule on a triangle\+: centroid only. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{namespacedunavant_a1e043db830b4c85039542955acca52b8}{dunavant\+::x1}} \mbox{[}1\mbox{]}\mbox{[}3\mbox{]} = \{\{0.\+333333333333333, 0.\+333333333333333, 0.\+333333333333334\}\}
+\begin{DoxyCompactList}\small\item\em Barycentric nodes, size N1x3. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{namespacedunavant_aec3459816716d1a6ebed2975dd954f84}{dunavant\+::w1}} \mbox{[}1\mbox{]} = \{1.\}
+\begin{DoxyCompactList}\small\item\em Weights, size N1. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacedunavant_a78db0b14f9330efb00cdec8e739b88ff}{dunavant\+::\+N5}} = 7
+\begin{DoxyCompactList}\small\item\em Order-\/5 (7-\/point) Dunavant rule on a triangle. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{namespacedunavant_a9802599aa0c185b6f570450941c5134d}{dunavant\+::x5}} \mbox{[}7\mbox{]}\mbox{[}3\mbox{]}
+\begin{DoxyCompactList}\small\item\em Barycentric nodes, size N5x3. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{namespacedunavant_a9a7dd7b1990b8b02231ac6ad5b62062a}{dunavant\+::w5}} \mbox{[}7\mbox{]}
+\begin{DoxyCompactList}\small\item\em Weights, size N5. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacedunavant_a0f2378187266872eb14ec62b81d41077}{dunavant\+::\+N17}} = 61
+\begin{DoxyCompactList}\small\item\em Order-\/17 (61-\/point) Dunavant rule on a triangle. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{namespacedunavant_a0d2a36234283075f6fa987a93a9458dd}{dunavant\+::x17}} \mbox{[}61\mbox{]}\mbox{[}3\mbox{]}
+\begin{DoxyCompactList}\small\item\em Barycentric nodes, size N17x3. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{namespacedunavant_afd3e81f1730c90be401a09bdff55e99d}{dunavant\+::w17}} \mbox{[}61\mbox{]}
+\begin{DoxyCompactList}\small\item\em Weights, size N17. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacegausslegendre_ad03a610387652669b1a5ebbc0ad7512a}{gausslegendre\+::\+N1}} = 1
+\begin{DoxyCompactList}\small\item\em Order-\/1 Gauss–\+Legendre rule on \mbox{[}0,1\mbox{]}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{namespacegausslegendre_a94dcca1883537aafbb4b886b95ba4124}{gausslegendre\+::x1}} \mbox{[}1\mbox{]}\mbox{[}2\mbox{]} = \{\{0.\+500000000000000, 0.\+500000000000000\}\}
+\begin{DoxyCompactList}\small\item\em $ (\xi, 1-\xi) $ nodes, size N1x2 \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{namespacegausslegendre_aec08211173e0a957fead62379d2ca493}{gausslegendre\+::w1}} \mbox{[}1\mbox{]} = \{1.\}
+\begin{DoxyCompactList}\small\item\em Weights, size N1. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacegausslegendre_aeeb683469f18795c7cc9d34e8f11f662}{gausslegendre\+::\+N3}} = 3
+\begin{DoxyCompactList}\small\item\em Order-\/3 Gauss–\+Legendre rule on \mbox{[}0,1\mbox{]}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{namespacegausslegendre_a0e6071d68a9067834d550979f5567a0e}{gausslegendre\+::x3}} \mbox{[}3\mbox{]}\mbox{[}2\mbox{]}
+\begin{DoxyCompactList}\small\item\em $ (\xi, 1-\xi) $ nodes, size N3x2 \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{namespacegausslegendre_ab8d2b4053bb3f2edacd16c62c657dcfb}{gausslegendre\+::w3}} \mbox{[}3\mbox{]} = \{0.\+277777777777777, 0.\+444444444444444, 0.\+277777777777777\}
+\begin{DoxyCompactList}\small\item\em Weights, size N3. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacegausslegendre_a274b53c7eadda5af3281f73c272df566}{gausslegendre\+::\+N4}} = 4
+\begin{DoxyCompactList}\small\item\em Order-\/4 Gauss–\+Legendre rule on \mbox{[}0,1\mbox{]}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{namespacegausslegendre_a96aea78e973c77a8766449cc2441a66c}{gausslegendre\+::x4}} \mbox{[}4\mbox{]}\mbox{[}2\mbox{]}
+\begin{DoxyCompactList}\small\item\em $ (\xi, 1-\xi) $ nodes, size N4x2 \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{namespacegausslegendre_a851455eadbdef132d18a540238319688}{gausslegendre\+::w4}} \mbox{[}4\mbox{]} = \{0.\+173927422568727, 0.\+326072577431273, 0.\+326072577431273, 0.\+173927422568727\}
+\begin{DoxyCompactList}\small\item\em Weights, size N4. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacegausslegendre_a2f1352e9de34694ae0f45fd7643282c0}{gausslegendre\+::\+N8}} = 8
+\begin{DoxyCompactList}\small\item\em Order-\/8 Gauss–\+Legendre rule on \mbox{[}0,1\mbox{]}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{namespacegausslegendre_ac39c983267ead56be5b8dbc5806498b5}{gausslegendre\+::x8}} \mbox{[}8\mbox{]}\mbox{[}2\mbox{]}
+\begin{DoxyCompactList}\small\item\em $ (\xi, 1-\xi) $ nodes, size N8x2 \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{namespacegausslegendre_a8f3164eb46c8fd8401517d3ff1aaa1e1}{gausslegendre\+::w8}} \mbox{[}8\mbox{]}
+\begin{DoxyCompactList}\small\item\em Weights, size N8. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespacegausslegendre_ae30057dbd0303df64fb275515addf70e}{gausslegendre\+::\+N17}} = 68
+\begin{DoxyCompactList}\small\item\em Order-\/17 Gauss–\+Legendre rule on \mbox{[}0,1\mbox{]}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{namespacegausslegendre_aa92adf5bdcab9329d87424ed298c7375}{gausslegendre\+::x17}} \mbox{[}68\mbox{]}\mbox{[}2\mbox{]}
+\begin{DoxyCompactList}\small\item\em $ (\xi, 1-\xi) $ nodes, size N17x2 \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{namespacegausslegendre_a3b01b696bf14d90839d420422c6689ce}{gausslegendre\+::w17}} \mbox{[}68\mbox{]}
+\begin{DoxyCompactList}\small\item\em Weights, size N17. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declarations of Dunavant (triangle) and Gauss–\+Legendre (1D) quadrature rules. 
+
+Provides compile-\/time tables of nodes (barycentric / 1D) and weights for\+:
+\begin{DoxyItemize}
+\item Dunavant Orders 1 (1 pt), 5 (7 pts), and 17 (61 pts) on triangles.
+\begin{DoxyItemize}
+\item Nodes xN are given as barycentric triples $ (\lambda_1, \lambda_2, \lambda_3) $, row-\/major.
+\item Weights wN integrate over the reference triangle with area 1.
+\end{DoxyItemize}
+\item Gauss–\+Legendre Orders 1, 3, 4, 8, and 17 on \mbox{[}0,1\mbox{]} (mapped from \mbox{[}-\/1,1\mbox{]}).
+\begin{DoxyItemize}
+\item Nodes xN are given as $ (\xi, 1-\xi) $ pairs for convenience in tensor products.
+\item Weights wN integrate over the unit interval \mbox{[}0,1\mbox{]}. 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Definition in file \mbox{\hyperlink{quadrature_8h_source}{quadrature.\+h}}.
+

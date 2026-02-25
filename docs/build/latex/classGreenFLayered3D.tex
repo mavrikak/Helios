@@ -1,0 +1,1841 @@
+\doxysection{Green\+FLayered3D Class Reference}
+\hypertarget{classGreenFLayered3D}{}\label{classGreenFLayered3D}\index{GreenFLayered3D@{GreenFLayered3D}}
+
+
+Layered background Green\textquotesingle{}s function with tabulation and D/\+K/delta/kappa integrals.  
+
+
+
+
+{\ttfamily \#include $<$Green\+FLayered3\+D.\+h$>$}
+
+
+
+Inheritance diagram for Green\+FLayered3D\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classGreenFLayered3D__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Green\+FLayered3D\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classGreenFLayered3D__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classGreenFLayered3D_a44686db66fc60d5a0f7613f692a73a28}{Above\+Threshold}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp)
+\begin{DoxyCompactList}\small\item\em Checks whether the given positions exceed a predefined distance threshold. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGreenFLayered3D_a1e2aea0bdd06e2c0082b6ae0787a018b}{Above\+Threshold}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*}Tp)
+\begin{DoxyCompactList}\small\item\em Checks whether the given point-\/triangle pair exceeds a predefined distance threshold. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGreenFLayered3D_a41dad600791549400d82f6c44238f373}{Above\+Threshold}} (\mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*}T, \mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*}Tp)
+\begin{DoxyCompactList}\small\item\em Checks whether the given triangles exceed a predefined threshold. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGreenFLayered3D_a865947398024c01996eba4018b9201b7}{Green\+FLayered3D}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} in\+Wavelength, const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&in\+Epsilon\+Medium, const std\+::vector$<$ double $>$ \&in\+ZVals\+Interfaces, const std\+::vector$<$ double $>$ \&in\+Thickness, const std\+::vector$<$ \mbox{\hyperlink{structGrid}{Grid}} $>$ \&in\+Tabulation\+Grids, const bool enable\+Line\+Int=false, int in\+Mid\+Layer\+Index=0)
+\begin{DoxyCompactList}\small\item\em Construct layered Green\textquotesingle{}s function (non-\/magnetic layers). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGreenFLayered3D_a4f699484c9505951b38acc2cb5fa3194}{Green\+FLayered3D}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} in\+Wavelength, const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&in\+Epsilon\+Medium, const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&in\+Mu\+Medium, const std\+::vector$<$ double $>$ \&in\+ZVals\+Interfaces, const std\+::vector$<$ double $>$ \&in\+Thickness, const std\+::vector$<$ \mbox{\hyperlink{structGrid}{Grid}} $>$ \&in\+Tabulation\+Grids, const bool enable\+Line\+Int=false, int in\+Mid\+Layer\+Index=0)
+\begin{DoxyCompactList}\small\item\em Construct layered Green\textquotesingle{}s function (magnetic layers). \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classGreenFLayered3D_ab4c35735d41673a0ceb4c73a253a702d}{\texorpdfstring{$\sim$}{\string~}\+Green\+FLayered3D}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGreenFLayered3D_a1fb4fa93c84d77750cac364641945725}{Get\+Layer\+Index}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} pos) const
+\begin{DoxyCompactList}\small\item\em Return layer index of a 3D point. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGreenFLayered3D_a3d7d1fd5119cd94113055a44cea0c132}{write\+Grids\+To\+File}} (const std\+::string \&filename, const std\+::vector$<$ \mbox{\hyperlink{structGrid}{Grid}} $>$ \&grids)
+\begin{DoxyCompactList}\small\item\em Writes tabulation grids to a file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLayeredMediaUtils}{Layered\+Media\+Utils}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classGreenFLayered3D_a8cbaa420eb0f3564b8724a220318f4de}{get\+Layered\+Utils}} ()
+\begin{DoxyCompactList}\small\item\em Getter for layered\+Utils pointer. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenFLayered3D_a54c70952913e53eee87cc136d49be1be}{Evaluate}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp)
+\begin{DoxyCompactList}\small\item\em Evaluates the homogeneous Green\textquotesingle{}s function for given positions. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globals_8h_ac062d767acbc2b8149a4039dc4a1a18f}{cdyad}} \mbox{\hyperlink{classGreenFLayered3D_af0c9108b2256fc3952840fcfb6e75268}{Evaluate\+Dyadic}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp)
+\begin{DoxyCompactList}\small\item\em Evaluates the dyadic homogeneous Green\textquotesingle{}s function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ac062d767acbc2b8149a4039dc4a1a18f}{cdyad}} \mbox{\hyperlink{classGreenFLayered3D_aea3c88abd8cb25bd99d64a4eeda84a85}{Evaluate\+Dyadic}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp, std\+::string dyadic\+Type)
+\begin{DoxyCompactList}\small\item\em Evaluates the secondary terms for dipole incident field in layered background. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classGreenFLayered3D_a1d139ef4068dd5dcc0dcabfc5a1d817a}{Gradient}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp)
+\begin{DoxyCompactList}\small\item\em Computes the derivative with respect to rp (homogeneous). \end{DoxyCompactList}\item 
+virtual std\+::tuple$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}, \mbox{\hyperlink{globals_8h_ac062d767acbc2b8149a4039dc4a1a18f}{cdyad}} $>$ \mbox{\hyperlink{classGreenFLayered3D_a2bf451bc4d5bfb63f282cacceea29e9e}{Evaluate\+All}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp)
+\begin{DoxyCompactList}\small\item\em Computes all the aforementioned (homogeneous) with respect to rp. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenFLayered3D_aa0034ad7c58dc67e405079b99bce03b7}{Smoothed}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp)
+\begin{DoxyCompactList}\small\item\em Smoothed homogeneous Green\textquotesingle{}s function. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenFLayered3D_a6d215b2398fc7043561fd0111091124e}{half\+Smoothed}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp)
+\begin{DoxyCompactList}\small\item\em Half-\/smoothed homogeneous Green\textquotesingle{}s function. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classGreenFLayered3D_a986c6b91e89e94ea88af5f7bc98dc4eb}{Gradient\+Smoothed}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp)
+\begin{DoxyCompactList}\small\item\em Smoothed homogeneous Green\textquotesingle{}s function gradient. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenFLayered3D_ae82e58d4ae830b0bb65d34bf9993fa38}{IntegrateD}} (\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}f, \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}fp)
+\begin{DoxyCompactList}\small\item\em D-\/operator matrix element $\langle \mathbf{f}(\mathbf{r}),\,\overline{\overline G},\,\mathbf{f}(\mathbf{r}^{\prime})\rangle$. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenFLayered3D_adb3ae37fcc7e64b323938f00a2146b1b}{IntegrateK}} (\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}f, \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}fp)
+\begin{DoxyCompactList}\small\item\em K-\/operator matrix element $\langle \mathbf{f}(\mathbf{r}),\,\nabla \times \overline{\overline G},\,\mathbf{f}(\mathbf{r}^{\prime})\rangle$. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classGreenFLayered3D_afbdbfdc8fc40fc885f6377d5be242d36}{Integrate\+Delta}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}fp)
+\begin{DoxyCompactList}\small\item\em $\boldsymbol \delta$ term at an observation point. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classGreenFLayered3D_a439eddb43f46fb52f6c84898ea12aa40}{Integrate\+Kappa}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}fp)
+\begin{DoxyCompactList}\small\item\em $\boldsymbol \kappa$ term at an observation point. \end{DoxyCompactList}\item 
+virtual std\+::pair$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{classGreenFLayered3D_af7843f0f6e7e0d4d64b96c81b0ee35d2}{PairD}} (\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}f, \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}fp)
+\begin{DoxyCompactList}\small\item\em Pair of D elements with swapped triangle roles. \end{DoxyCompactList}\item 
+virtual std\+::pair$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{classGreenFLayered3D_a1e2f37ec60c2a4e720eb08309337be94}{PairK}} (\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}f, \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}fp)
+\begin{DoxyCompactList}\small\item\em Pair of K elements with swapped triangle roles. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGreenFLayered3D_a6c88af86169f8d148c3e9f4da77a77d0}{Same\+Tri\+DK}} (const std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*} $>$ \&fvec, const std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*} $>$ \&fpvec, std\+::vector$<$ std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ $>$ \&DK)
+\begin{DoxyCompactList}\small\item\em Triangle–triangle D/K blocks assembly for all RWG pairs on two triangles. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGreenFLayered3D_a52cce9be0f67bd1b5aa9b2cdb01e4164}{Same\+Tri\+DKG}} (const std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*} $>$ \&fvec, const std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*} $>$ \&fpvec, std\+::vector$<$ std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ $>$ \&DK, std\+::vector$<$ std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ $>$ $>$ \&DKG)
+\begin{DoxyCompactList}\small\item\em Same as \doxylink{classGreenFLayered3D_a6c88af86169f8d148c3e9f4da77a77d0}{Same\+Tri\+DK} and additionally accumulates gradients. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGreenFLayered3D_af46d152fbc30bdc418ff16e5e7a334c6}{Same\+Tri\+Delta\+Kappa}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, const std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*} $>$ \&fpvec, std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ $>$ \&Delta\+Kappa)
+\begin{DoxyCompactList}\small\item\em Point–triangle delta/kappa contributions for RHS assembly. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{classGreenFLayered3D_a41c1370112d040a3dc4c44a5853022ed}{Fresnel\+Coeff}} (int layer\+IndexI, int layer\+IndexJ, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} krho, const std\+::string \&waves) const
+\begin{DoxyCompactList}\small\item\em Fresnel reflection/transmission at interface (delegates to utils). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGreenFLayered3D_abe83b87d2228f9ad198e2924d841682d}{Fill\+Intra\+Top\+Bottom}} (const \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \&rq\+\_\+te, const \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \&rq\+\_\+tm, const \mbox{\hyperlink{structGrid}{Grid}} \&in\+Grid)
+\begin{DoxyCompactList}\small\item\em Fill intra-\/layer tables for bottom/top half-\/spaces. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGreenFLayered3D_a0cb3c4922d84b741f69e6a8996ebd5d5}{Fill\+Intra\+Inside}} (const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&rq\+\_\+te, const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&rq\+\_\+tm, const \mbox{\hyperlink{structGrid}{Grid}} \&in\+Grid)
+\begin{DoxyCompactList}\small\item\em Fill intra-\/layer tables for internal layers (plus/minus sides). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGreenFLayered3D_a412af9133282962ec12affb1509c6507}{Fill\+Inter}} (const \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \&tq\+\_\+te, const \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \&tq\+\_\+tm, const \mbox{\hyperlink{structGrid}{Grid}} \&in\+Grid)
+\begin{DoxyCompactList}\small\item\em Fill inter-\/layer tables between two different layers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGreenFLayered3D_ac014fbe12a1544418cc22938332942a4}{Fill\+Green\+FTable}} ()
+\begin{DoxyCompactList}\small\item\em Fill all interpolation tables with Green\textquotesingle{}s function values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGreenFLayered3D_adb66750a1f30911e4e64f2cb05b61f98}{test\+Fill\+Green\+FTable}} (const std\+::string \&intra\+TBType, const std\+::string \&intra\+PMType, const std\+::string \&inter\+Type, const int \&num\+Points)
+\begin{DoxyCompactList}\small\item\em Test filling of interpolation tables with Green\textquotesingle{}s function values. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classGreenFLayered3D_a6c09f9ac63d604111b76842e774c65c8}{evaluate\+Single\+Point}} (double x, double y, std\+::tuple$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$, std\+::vector$<$ int $>$, std\+::vector$<$ int $>$, std\+::vector$<$ double $>$, std\+::vector$<$ double $>$ $>$ \&in\+Coeffs, std\+::string type)
+\begin{DoxyCompactList}\small\item\em Evaluate 2D interpolant at one query point. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classGreenFLayered3D_a2ba55b37d08a36252d6a5f4910bd2397}{evaluate\+Single\+Point}} (double x, double y, double z, std\+::tuple$<$ std\+::vector$<$ double $>$, std\+::vector$<$ double $>$, std\+::vector$<$ double $>$, std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ \&in\+Coeffs, std\+::string type)
+\begin{DoxyCompactList}\small\item\em Evaluate 3D interpolant at one query point using per-\/slice 2D regridding and Catmull–\+Rom cubic in z. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGreenFLayered3D_a74a468a93bf93bd4acd39989502a10fd}{write\+Vector\+To\+File}} (const std\+::vector$<$ double $>$ \&x, const std\+::vector$<$ double $>$ \&y, const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&in\+Vec, const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Write complex data with associated 2D coordinates to a text file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGreenFLayered3D_a5a5a7a977776b2970afd629c67a4cd7b}{write\+Vector\+To\+File}} (const std\+::vector$<$ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} $>$ \&rho, const std\+::vector$<$ double $>$ \&in\+Vec, const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Write real data with associated 2D coordinates (rho as rvec) to a text file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGreenFLayered3D_afbbeb440a2dcc7d185d9ae5ca5a46a87}{write\+Vector\+To\+File}} (const std\+::vector$<$ double $>$ \&x, const std\+::vector$<$ double $>$ \&y, const std\+::vector$<$ double $>$ \&z, const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&in\+Vec, const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Write complex data with associated 3D coordinates to a text file. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{classGreenFLayered3D_a834a94e21f64163f651a4729eccc6699}{eval\+Green\+Smooth\+Intra}} (const std\+::string \&interaction\+Type, double R, double Z1, double Z2, int coeff\+Index)
+\begin{DoxyCompactList}\small\item\em Evaluate Green\textquotesingle{}s function components for {\bfseries{intra-\/layer}} interactions by interpolating the smooth (Sommerfeld) coefficient tables. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{classGreenFLayered3D_abb50e8621c63f2b29862c32a8447dd9c}{eval\+Green\+Smooth\+Inter}} (double R, double Z1, double Z2, int coeff\+Index)
+\begin{DoxyCompactList}\small\item\em Evaluate Green\textquotesingle{}s-\/function components for {\bfseries{inter-\/layer}} interactions by interpolating the smooth (Sommerfeld) coefficient volume. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{classGreenFLayered3D_a7fbd8a47a0074f53111d52920a910392}{eval\+Green\+QSIntra}} (const \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} pos, const std\+::string \&interaction\+Type, double rho, double Z1, double Z2, double R1, double R2, bool sing\+Canc\+Fields=false)
+\begin{DoxyCompactList}\small\item\em Evaluate {\bfseries{quasi-\/static (QS)}} contributions for {\bfseries{intra-\/layer}} interactions. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{classGreenFLayered3D_a65ac22e62ec3e3131ffbb10d7bdea307}{eval\+Green\+QSInter}} (const \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} pos1, const \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} pos2, double rho, double Z, double R, bool sing\+Canc\+Fields=false)
+\begin{DoxyCompactList}\small\item\em Evaluate {\bfseries{quasi-\/static (QS)}} contributions for {\bfseries{inter-\/layer}} interactions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGreenFLayered3D_a87c30d7c2782fd16b17a54bf12777cf0}{test\+Same\+Tri\+DK}} (std\+::vector$<$ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} $>$ verts1, std\+::vector$<$ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} $>$ verts2, std\+::string g\+Type, std\+::string vert\+Print)
+\begin{DoxyCompactList}\small\item\em Test assembly of same-\/triangle D and K matrix elements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classGreenF}{GreenF}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGreenF_a332ac24f39288170f77c18f37fde2c82}{GreenF}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenF_a551f07ab3b294c7b200eb578026bfa02}{wavelength}}, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} epsilon\+Medium)
+\begin{DoxyCompactList}\small\item\em Constructor for a homogeneous, non-\/magnetic medium. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGreenF_a8f4bd71bf23024ff5859ea791b8a17df}{GreenF}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenF_a551f07ab3b294c7b200eb578026bfa02}{wavelength}}, const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&epsilon\+Medium)
+\begin{DoxyCompactList}\small\item\em Constructor for a layered, non-\/magnetic medium. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGreenF_a37b267f203bf4d571d7510e0a92bdd4f}{GreenF}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenF_a551f07ab3b294c7b200eb578026bfa02}{wavelength}}, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} epsilon\+Medium, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} mu\+Medium)
+\begin{DoxyCompactList}\small\item\em Constructor for a homogeneous, magnetic medium. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGreenF_a90c26315201fbb2b80a7ce30b0d369cf}{GreenF}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenF_a551f07ab3b294c7b200eb578026bfa02}{wavelength}}, const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&epsilon\+Medium, const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&mu\+Medium)
+\begin{DoxyCompactList}\small\item\em Constructor for a layered, magnetic medium. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classGreenF_ad60758ba43be153d6521e2f2e108334a}{\texorpdfstring{$\sim$}{\string~}\+GreenF}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenF_a00b8e60822da0d787d66c4554c59189d}{Wave\+Vec}} ()
+\begin{DoxyCompactList}\small\item\em Return homogeneous wavevector $ k_B $ (if defined). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenF_abf00726011a4eca4109bc43125218d30}{Ev\+Erfc}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} z)
+\begin{DoxyCompactList}\small\item\em Evaluate {\ttfamily erfc} via the 2D lookup table if available. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGreenF_ae0c99d3bdbee9b75342be3e0664ba598}{Init\+Lookup\+Table}} (\mbox{\hyperlink{classLookupTableBin}{Lookup\+Table\+Bin}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classGreenF_af4be67948114ed6bd9f273a3193c23e6}{t}})
+\begin{DoxyCompactList}\small\item\em Initialize the {\ttfamily erfc} lookup table pointer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenF_a64c00505ed1ff4270d5c9ebcb76cc154}{Get\+Layer\+Wavenumber}} (size\+\_\+t index) const
+\begin{DoxyCompactList}\small\item\em Get layer wavenumber by index. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{classGreenF_a9b07899d8fa4d69ed69025bf785c64a4}{Get\+Layers\+Wavenumbers}} () const
+\begin{DoxyCompactList}\small\item\em Get all layer wavenumbers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{classGreenFLayered3D_a7061fdbe71928ca6f6474cdbdf9064ed}{epsilon}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{classGreenFLayered3D_ab874f11fcb973bead4dae43e5c01bbea}{mu}}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classGreenFLayered3D_a98dc4d5bad9eb55bf5e9ab049f5093b9}{z\+Vals\+Interfaces}}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classGreenFLayered3D_a0b5f6fa79b01f4cacfb414455ef3a2c9}{thickness}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structGrid}{Grid}} $>$ \mbox{\hyperlink{classGreenFLayered3D_a39dd801edfe7901b66d23eb950e76930}{tabulation\+Grids}}
+\item 
+int \mbox{\hyperlink{classGreenFLayered3D_a9440534bdb17a6380ae799db88dbfa4b}{mid\+Layer\+Index}}
+\item 
+\mbox{\hyperlink{classLayeredMediaUtils}{Layered\+Media\+Utils}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classGreenFLayered3D_a996a58a66e9b53412d389e5687f44c96}{layered\+Utils}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structCoeffsIntra}{Coeffs\+Intra}} $>$ \mbox{\hyperlink{classGreenFLayered3D_a98c7e84d061f78606c15b0e0646265da}{coeff\+Intra\+TB}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structCoeffsIntra}{Coeffs\+Intra}} $>$ \mbox{\hyperlink{classGreenFLayered3D_aa2faaa3facfc3da6f32ef575167c779a}{coeff\+Intra\+Minus}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structCoeffsIntra}{Coeffs\+Intra}} $>$ \mbox{\hyperlink{classGreenFLayered3D_a37997b50143372aa43724021dafb8224}{coeff\+Intra\+Plus}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structCoeffsInter}{Coeffs\+Inter}} $>$ \mbox{\hyperlink{classGreenFLayered3D_ae7b0d2ef0d33d4b14dd74fbfb53dc24e}{coeff\+Inter}}
+\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{classGreenFLayered3D_a547ee95a3343dbafcca49f3d3ae0680a}{intra\+TBIndex}}
+\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{classGreenFLayered3D_ad317420112d0215efabe86a4993542c4}{intra\+PMIndex}}
+\item 
+std\+::vector$<$ std\+::complex$<$ int $>$ $>$ \mbox{\hyperlink{classGreenFLayered3D_aac9a7fd8302158fded9e65294a969942}{inter\+Indeces}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classSommerfeldIntegrator}{Sommerfeld\+Integrator}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classGreenFLayered3D_a2c7630a5bbb7d94ac1e39fffe6d340db}{somm\+Int\+Intra\+TB}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classSommerfeldIntegrator}{Sommerfeld\+Integrator}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classGreenFLayered3D_a0cdd4e6c624dac46130976b1cad9ecf6}{somm\+Int\+Intra\+Minus}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classSommerfeldIntegrator}{Sommerfeld\+Integrator}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classGreenFLayered3D_a864dc84be9427268470c7cf9ed721edc}{somm\+Int\+Intra\+Plus}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classSommerfeldIntegrator}{Sommerfeld\+Integrator}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classGreenFLayered3D_a96bb3ac13c9db827bad9fd25c70ac033}{somm\+Int\+Inter}}
+\item 
+bool \mbox{\hyperlink{classGreenFLayered3D_aa303c7163dfdf2911d984d4fefc8d855}{enable\+Line\+Integrals}} = false
+\item 
+\mbox{\hyperlink{classGaussQuad}{Gauss\+Quad}}$<$ \mbox{\hyperlink{classGreenFLayered3D}{Green\+FLayered3D}} $>$ \mbox{\hyperlink{classGreenFLayered3D_acc41cdee2feb55e72db1a5d4881df5cb}{gauss}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classGreenF}{GreenF}}}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classGreenF_ada52587b39995134c895324efbaf5919}{Enable\+Accurate}} ()
+\begin{DoxyCompactList}\small\item\em Request high‑accuracy evaluation paths (global). \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classGreenF_ae8ee4d28ca884aab65018979e3d443ac}{Requires\+Accurate}} ()
+\begin{DoxyCompactList}\small\item\em Query whether high-\/accuracy evaluation is requested. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classGreenF_a0471f415be8e4d0f2fc7268e66ff38f5}{Assign\+Etm}} (int n)
+\begin{DoxyCompactList}\small\item\em Set number of periodic evaluation terms (for periodic GFs). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classGreenF}{GreenF}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenF_a551f07ab3b294c7b200eb578026bfa02}{wavelength}}
+\begin{DoxyCompactList}\small\item\em Wavelength in medium. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\+\_\+B}}
+\begin{DoxyCompactList}\small\item\em Homogeneous wavenumber (if applicable). \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{classGreenF_a8712c50916bb76ad1edd14ea8b27b1a0}{k\+\_\+L}}
+\begin{DoxyCompactList}\small\item\em Per‑layer wavenumbers for layered problems. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLookupTableBin}{Lookup\+Table\+Bin}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classGreenF_af4be67948114ed6bd9f273a3193c23e6}{t}}
+\begin{DoxyCompactList}\small\item\em Pointer to error‑function lookup table (owned elsewhere). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGreenF_aa8b9f7c53607d829dacd82b657f65515}{there\+Is\+No\+Lookup\+Table}}
+\begin{DoxyCompactList}\small\item\em If true, fall back to direct \doxylink{mathFunctions_8h_a7916c6b62310fe9cf38ec2a2890aaad4}{cerfc()} evaluation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{classGreenF}{GreenF}}}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classGreenF_afb8bbc3614d84fa516766d49d71f5071}{Needs\+Accurate}} = false
+\begin{DoxyCompactList}\small\item\em Request high‑accuracy integration where available. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{classGreenF_aa2f846b8735322f9e33660c443eb3910}{Etm}} = 1
+\begin{DoxyCompactList}\small\item\em Number of periodic evaluation terms (for periodic GFs). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Layered background Green\textquotesingle{}s function with tabulation and D/\+K/delta/kappa integrals. 
+
+A high-\/level facade around Sommerfeld-\/integral evaluation for layered media. It owns\+:
+\begin{DoxyItemize}
+\item Per-\/layer wavenumbers {\ttfamily k\+\_\+L} (from \doxylink{classGreenF}{GreenF} base class).
+\item Medium parameters {\ttfamily epsilon}, {\ttfamily mu} and interface depths {\ttfamily z\+Vals\+Interfaces} with derived {\ttfamily thickness}.
+\item Precomputed coefficient tables for different interaction types\+: intra-\/layer (top/bottom vs internal) and inter-\/layer.
+\item Interpolation grids (r, z1\mbox{[}, z2\mbox{]}) per interaction group, chosen from mesh-\/based ranges (triangle barycenters / quadrature points).
+\end{DoxyItemize}
+
+The class exposes pointwise kernels (scalar/grad/dyadic) and assembly helpers (Same\+Tri\+DK, Same\+Tri\+Delta\+Kappa) used by \doxylink{classSIEFormPMCHW}{SIEForm\+PMCHW}. 
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8h_source_l00058}{58}} of file \mbox{\hyperlink{GreenFLayered3D_8h_source}{Green\+FLayered3\+D.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classGreenFLayered3D_a865947398024c01996eba4018b9201b7}\index{GreenFLayered3D@{GreenFLayered3D}!GreenFLayered3D@{GreenFLayered3D}}
+\index{GreenFLayered3D@{GreenFLayered3D}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{GreenFLayered3D()}{GreenFLayered3D()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_a865947398024c01996eba4018b9201b7} 
+Green\+FLayered3\+D\+::\+Green\+FLayered3D (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{in\+Wavelength}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&}]{in\+Epsilon\+Medium}{, }\item[{const std\+::vector$<$ double $>$ \&}]{in\+ZVals\+Interfaces}{, }\item[{const std\+::vector$<$ double $>$ \&}]{in\+Thickness}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{structGrid}{Grid}} $>$ \&}]{in\+Tabulation\+Grids}{, }\item[{const bool}]{enable\+Line\+Int}{ = {\ttfamily false}, }\item[{int}]{in\+Mid\+Layer\+Index}{ = {\ttfamily 0}}\end{DoxyParamCaption})}
+
+
+
+Construct layered Green\textquotesingle{}s function (non-\/magnetic layers). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in\+Wavelength} & Vacuum wavelength $\lambda_0$. \\
+\hline
+{\em in\+Epsilon\+Medium} & Relative permittivities for all layers (bottom-\/\texorpdfstring{$>$}{>}top). \\
+\hline
+{\em in\+ZVals\+Interfaces} & Monotone increasing z of interfaces (size = n\+Layers-\/1). \\
+\hline
+{\em in\+Thickness} & Layer thicknesses (size = n\+Layers-\/2). \\
+\hline
+{\em in\+Tabulation\+Grids} & Interpolation grids per interaction bucket. \\
+\hline
+{\em enable\+Line\+Int} & Enable interface line-\/integrals for singular cancellation. \\
+\hline
+{\em in\+Mid\+Layer\+Index} & Layer index of the middle point in the mesh. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l00372}{372}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFLayered3D_a865947398024c01996eba4018b9201b7_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFLayered3D_a4f699484c9505951b38acc2cb5fa3194}\index{GreenFLayered3D@{GreenFLayered3D}!GreenFLayered3D@{GreenFLayered3D}}
+\index{GreenFLayered3D@{GreenFLayered3D}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{GreenFLayered3D()}{GreenFLayered3D()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_a4f699484c9505951b38acc2cb5fa3194} 
+Green\+FLayered3\+D\+::\+Green\+FLayered3D (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{in\+Wavelength}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&}]{in\+Epsilon\+Medium}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&}]{in\+Mu\+Medium}{, }\item[{const std\+::vector$<$ double $>$ \&}]{in\+ZVals\+Interfaces}{, }\item[{const std\+::vector$<$ double $>$ \&}]{in\+Thickness}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{structGrid}{Grid}} $>$ \&}]{in\+Tabulation\+Grids}{, }\item[{const bool}]{enable\+Line\+Int}{ = {\ttfamily false}, }\item[{int}]{in\+Mid\+Layer\+Index}{ = {\ttfamily 0}}\end{DoxyParamCaption})}
+
+
+
+Construct layered Green\textquotesingle{}s function (magnetic layers). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in\+Wavelength} & Vacuum wavelength $\lambda_0$. \\
+\hline
+{\em in\+Epsilon\+Medium} & Relative permittivities for all layers (bottom -\/\texorpdfstring{$>$}{>} top). \\
+\hline
+{\em in\+Mu\+Medium} & Relative permeabilities for all layers (bottom -\/\texorpdfstring{$>$}{>} top). \\
+\hline
+{\em in\+ZVals\+Interfaces} & Monotone increasing z of interfaces (size = n\+Layers-\/1). \\
+\hline
+{\em in\+Thickness} & Layer thicknesses (size = n\+Layers-\/2). \\
+\hline
+{\em in\+Tabulation\+Grids} & Interpolation grids per interaction bucket. \\
+\hline
+{\em enable\+Line\+Int} & Enable interface line-\/integrals for singular cancellation. \\
+\hline
+{\em in\+Mid\+Layer\+Index} & Layer index of the middle point in the mesh. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l00396}{396}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFLayered3D_a4f699484c9505951b38acc2cb5fa3194_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFLayered3D_ab4c35735d41673a0ceb4c73a253a702d}\index{GreenFLayered3D@{GreenFLayered3D}!````~GreenFLayered3D@{\texorpdfstring{$\sim$}{\string~}GreenFLayered3D}}
+\index{````~GreenFLayered3D@{\texorpdfstring{$\sim$}{\string~}GreenFLayered3D}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}GreenFLayered3D()}{\string~GreenFLayered3D()}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_ab4c35735d41673a0ceb4c73a253a702d} 
+virtual Green\+FLayered3\+D\+::\texorpdfstring{$\sim$}{\string~}\+Green\+FLayered3D (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8h_source_l00162}{162}} of file \mbox{\hyperlink{GreenFLayered3D_8h_source}{Green\+FLayered3\+D.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classGreenFLayered3D_a44686db66fc60d5a0f7613f692a73a28}\index{GreenFLayered3D@{GreenFLayered3D}!AboveThreshold@{AboveThreshold}}
+\index{AboveThreshold@{AboveThreshold}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{AboveThreshold()}{AboveThreshold()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_a44686db66fc60d5a0f7613f692a73a28} 
+bool Green\+FLayered3\+D\+::\+Above\+Threshold (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{rp}{}\end{DoxyParamCaption})}
+
+
+
+Checks whether the given positions exceed a predefined distance threshold. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & First position. \\
+\hline
+{\em rp} & Second position. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if above threshold, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l00459}{459}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFLayered3D_a44686db66fc60d5a0f7613f692a73a28_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFLayered3D_a1e2aea0bdd06e2c0082b6ae0787a018b}\index{GreenFLayered3D@{GreenFLayered3D}!AboveThreshold@{AboveThreshold}}
+\index{AboveThreshold@{AboveThreshold}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{AboveThreshold()}{AboveThreshold()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_a1e2aea0bdd06e2c0082b6ae0787a018b} 
+bool Green\+FLayered3\+D\+::\+Above\+Threshold (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{\mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*}}]{Tp}{}\end{DoxyParamCaption})}
+
+
+
+Checks whether the given point-\/triangle pair exceeds a predefined distance threshold. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation point. \\
+\hline
+{\em Tp} & Source triangle. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if above threshold, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l00464}{464}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFLayered3D_a1e2aea0bdd06e2c0082b6ae0787a018b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFLayered3D_a41dad600791549400d82f6c44238f373}\index{GreenFLayered3D@{GreenFLayered3D}!AboveThreshold@{AboveThreshold}}
+\index{AboveThreshold@{AboveThreshold}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{AboveThreshold()}{AboveThreshold()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_a41dad600791549400d82f6c44238f373} 
+bool Green\+FLayered3\+D\+::\+Above\+Threshold (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*}}]{T}{, }\item[{\mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*}}]{Tp}{}\end{DoxyParamCaption})}
+
+
+
+Checks whether the given triangles exceed a predefined threshold. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & First triangle. \\
+\hline
+{\em Tp} & Second triangle. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if above threshold, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l00530}{530}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFLayered3D_a41dad600791549400d82f6c44238f373_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFLayered3D_a65ac22e62ec3e3131ffbb10d7bdea307}\index{GreenFLayered3D@{GreenFLayered3D}!evalGreenQSInter@{evalGreenQSInter}}
+\index{evalGreenQSInter@{evalGreenQSInter}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{evalGreenQSInter()}{evalGreenQSInter()}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_a65ac22e62ec3e3131ffbb10d7bdea307} 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ Green\+FLayered3\+D\+::eval\+Green\+QSInter (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{pos1}{, }\item[{const \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{pos2}{, }\item[{double}]{rho}{, }\item[{double}]{Z}{, }\item[{double}]{R}{, }\item[{bool}]{sing\+Canc\+Fields}{ = {\ttfamily false}}\end{DoxyParamCaption})}
+
+
+
+Evaluate {\bfseries{quasi-\/static (QS)}} contributions for {\bfseries{inter-\/layer}} interactions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos1} & Observation point (Cartesian) in layer i. \\
+\hline
+{\em pos2} & Source point (Cartesian) in layer j (j != i). \\
+\hline
+{\em rho} & In-\/plane separation $\rho$ between pos1 and pos2. \\
+\hline
+{\em Z} & Vertical distance between the two points. \\
+\hline
+{\em R} & Full 3D source–observer separation. \\
+\hline
+{\em sing\+Canc\+Fields} & If true, arrange/return terms for singular-\/cancellation formulations used by line/surface splits. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Map from component name to complex QS value. The key set follows the tabulation. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Uses the low-\/krho limits of the Fresnel coefficients as implemented in the layered-\/media utilities. 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l03028}{3028}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFLayered3D_a65ac22e62ec3e3131ffbb10d7bdea307_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFLayered3D_a65ac22e62ec3e3131ffbb10d7bdea307_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFLayered3D_a7fbd8a47a0074f53111d52920a910392}\index{GreenFLayered3D@{GreenFLayered3D}!evalGreenQSIntra@{evalGreenQSIntra}}
+\index{evalGreenQSIntra@{evalGreenQSIntra}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{evalGreenQSIntra()}{evalGreenQSIntra()}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_a7fbd8a47a0074f53111d52920a910392} 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ Green\+FLayered3\+D\+::eval\+Green\+QSIntra (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{pos}{, }\item[{const std\+::string \&}]{interaction\+Type}{, }\item[{double}]{rho}{, }\item[{double}]{Z1}{, }\item[{double}]{Z2}{, }\item[{double}]{R1}{, }\item[{double}]{R2}{, }\item[{bool}]{sing\+Canc\+Fields}{ = {\ttfamily false}}\end{DoxyParamCaption})}
+
+
+
+Evaluate {\bfseries{quasi-\/static (QS)}} contributions for {\bfseries{intra-\/layer}} interactions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & Reference Cartesian position used to determine the type of intra-\/layer interaction and the appropriate QS images. \\
+\hline
+{\em interaction\+Type} & Interaction identifier (e.\+g., "{}intra\+TB"{} or "{}intra\+In"{}). \\
+\hline
+{\em rho} & In-\/plane separation $\rho$ between the two points. \\
+\hline
+{\em Z1} & Vertical distance z+z\textquotesingle{} for half-\/space intra-\/layer interactions or z-\/z\textquotesingle{} for inner intra-\/layer interactions (the different definitions, can be found in {\ttfamily cartesian\+To\+Layered\+QS()} of {\ttfamily \doxylink{classLayeredMediaUtils}{Layered\+Media\+Utils}}). \\
+\hline
+{\em Z2} & Vertical distance z+z\textquotesingle{} inner intra-\/layer (the definition can be found in {\ttfamily cartesian\+To\+Layered\+QS()} of {\ttfamily \doxylink{classLayeredMediaUtils}{Layered\+Media\+Utils}}). \\
+\hline
+{\em R1} & Full 3D distance in (rho, Z1). \\
+\hline
+{\em R2} & Full 3D distance in (rho, Z2). \\
+\hline
+{\em sing\+Canc\+Fields} & If true, arrange/return terms for singular-\/cancellation formulations used by line/surface splits. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Map from component name to complex QS value. The key set follows the tabulation. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l02915}{2915}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFLayered3D_a7fbd8a47a0074f53111d52920a910392_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFLayered3D_a7fbd8a47a0074f53111d52920a910392_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFLayered3D_abb50e8621c63f2b29862c32a8447dd9c}\index{GreenFLayered3D@{GreenFLayered3D}!evalGreenSmoothInter@{evalGreenSmoothInter}}
+\index{evalGreenSmoothInter@{evalGreenSmoothInter}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{evalGreenSmoothInter()}{evalGreenSmoothInter()}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_abb50e8621c63f2b29862c32a8447dd9c} 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ Green\+FLayered3\+D\+::eval\+Green\+Smooth\+Inter (\begin{DoxyParamCaption}\item[{double}]{R}{, }\item[{double}]{Z1}{, }\item[{double}]{Z2}{, }\item[{int}]{coeff\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Evaluate Green\textquotesingle{}s-\/function components for {\bfseries{inter-\/layer}} interactions by interpolating the smooth (Sommerfeld) coefficient volume. 
+
+Uses the 3D tables built for pairs of distinct layers; indices and table keys must match those produced in {\ttfamily Fill\+Green\+FTable}. 
+\begin{DoxyParams}{Parameters}
+{\em R} & In-\/plane radial separation $\rho$ between source and observation. \\
+\hline
+{\em Z1} & Vertical distance z inter-\/layer interaction (definition can be found in {\ttfamily cartesian\+To\+Layered\+Tab()} of {\ttfamily \doxylink{classLayeredMediaUtils}{Layered\+Media\+Utils}}). \\
+\hline
+{\em Z2} & Vertical distance z\textquotesingle{} inter-\/layer (definition can be found in {\ttfamily cartesian\+To\+Layered\+Tab()} of {\ttfamily \doxylink{classLayeredMediaUtils}{Layered\+Media\+Utils}}). \\
+\hline
+{\em coeff\+Index} & Index selecting which interpolation coefficients to use. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::map from component name to complex value at (R, Z1, Z2). The key set follows the tabulation. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Queries are clamped to the volume bounds; linear blending may be used along sparse axes depending on grid density. 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l02891}{2891}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFLayered3D_abb50e8621c63f2b29862c32a8447dd9c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFLayered3D_abb50e8621c63f2b29862c32a8447dd9c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFLayered3D_a834a94e21f64163f651a4729eccc6699}\index{GreenFLayered3D@{GreenFLayered3D}!evalGreenSmoothIntra@{evalGreenSmoothIntra}}
+\index{evalGreenSmoothIntra@{evalGreenSmoothIntra}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{evalGreenSmoothIntra()}{evalGreenSmoothIntra()}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_a834a94e21f64163f651a4729eccc6699} 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ Green\+FLayered3\+D\+::eval\+Green\+Smooth\+Intra (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{interaction\+Type}{, }\item[{double}]{R}{, }\item[{double}]{Z1}{, }\item[{double}]{Z2}{, }\item[{int}]{coeff\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Evaluate Green\textquotesingle{}s function components for {\bfseries{intra-\/layer}} interactions by interpolating the smooth (Sommerfeld) coefficient tables. 
+
+Interpolates pretabulated complex coefficients on the (R, Z1, Z2) grid built during {\ttfamily Fill\+Green\+FTable} for the requested bucket. 
+\begin{DoxyParams}{Parameters}
+{\em interaction\+Type} & Identifier for the intra-\/layer type. Must match the key used at tabulation time. \\
+\hline
+{\em R} & In-\/plane radial separation $\rho$ between source and observation. \\
+\hline
+{\em Z1} & Vertical distance z+z\textquotesingle{} for half-\/space intra-\/layer interactions or z-\/z\textquotesingle{} for inner intra-\/layer interactions (the different definitions, can be found in {\ttfamily cartesian\+To\+Layered\+Tab()} of {\ttfamily \doxylink{classLayeredMediaUtils}{Layered\+Media\+Utils}}). \\
+\hline
+{\em Z2} & Vertical distance z+z\textquotesingle{} inner intra-\/layer (the definition can be found in {\ttfamily cartesian\+To\+Layered\+Tab()} of {\ttfamily \doxylink{classLayeredMediaUtils}{Layered\+Media\+Utils}}). \\
+\hline
+{\em coeff\+Index} & Index selecting which interpolation coefficients to use. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::map from component name to complex value at (R, Z1, Z2). The key set follows the tabulation. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Queries are clamped to the grid box; outside-\/range inputs fall back to boundary interpolation. 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l02855}{2855}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFLayered3D_a834a94e21f64163f651a4729eccc6699_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFLayered3D_a834a94e21f64163f651a4729eccc6699_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFLayered3D_a54c70952913e53eee87cc136d49be1be}\index{GreenFLayered3D@{GreenFLayered3D}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{Evaluate()}{Evaluate()}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_a54c70952913e53eee87cc136d49be1be} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Green\+FLayered3\+D\+::\+Evaluate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{rp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Evaluates the homogeneous Green\textquotesingle{}s function for given positions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation position. \\
+\hline
+{\em rp} & Source position. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Scalar Green\textquotesingle{}s function value. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classGreenF_ace035fbe9855e3f05caac9229e1f6b2a}{GreenF}}.
+
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l00632}{632}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+\Hypertarget{classGreenFLayered3D_a2bf451bc4d5bfb63f282cacceea29e9e}\index{GreenFLayered3D@{GreenFLayered3D}!EvaluateAll@{EvaluateAll}}
+\index{EvaluateAll@{EvaluateAll}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{EvaluateAll()}{EvaluateAll()}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_a2bf451bc4d5bfb63f282cacceea29e9e} 
+std\+::tuple$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}, \mbox{\hyperlink{globals_8h_ac062d767acbc2b8149a4039dc4a1a18f}{cdyad}} $>$ Green\+FLayered3\+D\+::\+Evaluate\+All (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{rp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Computes all the aforementioned (homogeneous) with respect to rp. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation position. \\
+\hline
+{\em rp} & Source position. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Tuple of scalar, gradient vector, dyadic Green\textquotesingle{}s function. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l01014}{1014}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFLayered3D_a2bf451bc4d5bfb63f282cacceea29e9e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFLayered3D_af0c9108b2256fc3952840fcfb6e75268}\index{GreenFLayered3D@{GreenFLayered3D}!EvaluateDyadic@{EvaluateDyadic}}
+\index{EvaluateDyadic@{EvaluateDyadic}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{EvaluateDyadic()}{EvaluateDyadic()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_af0c9108b2256fc3952840fcfb6e75268} 
+\mbox{\hyperlink{globals_8h_ac062d767acbc2b8149a4039dc4a1a18f}{cdyad}} Green\+FLayered3\+D\+::\+Evaluate\+Dyadic (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{rp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Evaluates the dyadic homogeneous Green\textquotesingle{}s function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation position. \\
+\hline
+{\em rp} & Source position. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Dyadic Green\textquotesingle{}s function value. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classGreenF_a2541c9c8ed53e70c2ddd0f3603eca40d}{GreenF}}.
+
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l00639}{639}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+\Hypertarget{classGreenFLayered3D_aea3c88abd8cb25bd99d64a4eeda84a85}\index{GreenFLayered3D@{GreenFLayered3D}!EvaluateDyadic@{EvaluateDyadic}}
+\index{EvaluateDyadic@{EvaluateDyadic}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{EvaluateDyadic()}{EvaluateDyadic()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_aea3c88abd8cb25bd99d64a4eeda84a85} 
+\mbox{\hyperlink{globals_8h_ac062d767acbc2b8149a4039dc4a1a18f}{cdyad}} Green\+FLayered3\+D\+::\+Evaluate\+Dyadic (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{rp}{, }\item[{std\+::string}]{dyadic\+Type}{}\end{DoxyParamCaption})}
+
+
+
+Evaluates the secondary terms for dipole incident field in layered background. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation position. \\
+\hline
+{\em rp} & Source position. \\
+\hline
+{\em dyadic\+Type} & Type of dyadic Green\textquotesingle{}s function (\textquotesingle{}normal\textquotesingle{} or \textquotesingle{}curl\textquotesingle{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Dyadic Green\textquotesingle{}s function value. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l00654}{654}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFLayered3D_aea3c88abd8cb25bd99d64a4eeda84a85_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFLayered3D_a2ba55b37d08a36252d6a5f4910bd2397}\index{GreenFLayered3D@{GreenFLayered3D}!evaluateSinglePoint@{evaluateSinglePoint}}
+\index{evaluateSinglePoint@{evaluateSinglePoint}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{evaluateSinglePoint()}{evaluateSinglePoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_a2ba55b37d08a36252d6a5f4910bd2397} 
+double Green\+FLayered3\+D\+::evaluate\+Single\+Point (\begin{DoxyParamCaption}\item[{double}]{x}{, }\item[{double}]{y}{, }\item[{double}]{z}{, }\item[{std\+::tuple$<$ std\+::vector$<$ double $>$, std\+::vector$<$ double $>$, std\+::vector$<$ double $>$, std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ \&}]{in\+Coeffs}{, }\item[{std\+::string}]{type}{}\end{DoxyParamCaption})}
+
+
+
+Evaluate 3D interpolant at one query point using per-\/slice 2D regridding and Catmull–\+Rom cubic in z. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Query X (typically r). \\
+\hline
+{\em y} & Query Y (typically z1). \\
+\hline
+{\em z} & Query Z (typically z2). \\
+\hline
+{\em in\+Coeffs} & Tuple (Xv,Yv,Zv,Fc) where Fc is complex column-\/major volume. \\
+\hline
+{\em type} & "{}real"{} or "{}imag"{} to select part of Fc. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Interpolated value (real-\/valued) at (x,y,z).
+\end{DoxyReturn}
+Performs bicubic 2D interpolation on bracketing z-\/slices and blends along z with Catmull–\+Rom. Clamps queries to the grid box; uses linear interpolation if mz==1. 
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l00272}{272}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{classGreenFLayered3D_a2ba55b37d08a36252d6a5f4910bd2397_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFLayered3D_a6c09f9ac63d604111b76842e774c65c8}\index{GreenFLayered3D@{GreenFLayered3D}!evaluateSinglePoint@{evaluateSinglePoint}}
+\index{evaluateSinglePoint@{evaluateSinglePoint}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{evaluateSinglePoint()}{evaluateSinglePoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_a6c09f9ac63d604111b76842e774c65c8} 
+double Green\+FLayered3\+D\+::evaluate\+Single\+Point (\begin{DoxyParamCaption}\item[{double}]{x}{, }\item[{double}]{y}{, }\item[{std\+::tuple$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$, std\+::vector$<$ int $>$, std\+::vector$<$ int $>$, std\+::vector$<$ double $>$, std\+::vector$<$ double $>$ $>$ \&}]{in\+Coeffs}{, }\item[{std\+::string}]{type}{}\end{DoxyParamCaption})}
+
+
+
+Evaluate 2D interpolant at one query point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Query X (e.\+g., radial distance r). \\
+\hline
+{\em y} & Query Y (e.\+g., z-\/like coordinate). \\
+\hline
+{\em in\+Coeffs} & Tuple produced by tabulation\+: (F\+\_\+flat, px, py, Xc, Yc). F\+\_\+flat is column-\/major (x fastest) complex values on grid. \\
+\hline
+{\em type} & Which component of F to interpolate\+: "{}real"{} or "{}imag"{}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Interpolated value (real-\/valued) of the requested component. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Uses regridpack (bicubic by default). Inputs are clamped to grid box. 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+If {\ttfamily ier!=0} is reported, the regridpack call failed; result is still returned but may be inaccurate. 
+\end{DoxyWarning}
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l00215}{215}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{classGreenFLayered3D_a6c09f9ac63d604111b76842e774c65c8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFLayered3D_a6c09f9ac63d604111b76842e774c65c8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFLayered3D_ac014fbe12a1544418cc22938332942a4}\index{GreenFLayered3D@{GreenFLayered3D}!FillGreenFTable@{FillGreenFTable}}
+\index{FillGreenFTable@{FillGreenFTable}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{FillGreenFTable()}{FillGreenFTable()}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_ac014fbe12a1544418cc22938332942a4} 
+void Green\+FLayered3\+D\+::\+Fill\+Green\+FTable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Fill all interpolation tables with Green\textquotesingle{}s function values. 
+
+Loops over all interaction buckets and calls the respective filling routines. 
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l02763}{2763}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFLayered3D_ac014fbe12a1544418cc22938332942a4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFLayered3D_ac014fbe12a1544418cc22938332942a4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFLayered3D_a412af9133282962ec12affb1509c6507}\index{GreenFLayered3D@{GreenFLayered3D}!FillInter@{FillInter}}
+\index{FillInter@{FillInter}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{FillInter()}{FillInter()}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_a412af9133282962ec12affb1509c6507} 
+void Green\+FLayered3\+D\+::\+Fill\+Inter (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \&}]{tq\+\_\+te}{, }\item[{const \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \&}]{tq\+\_\+tm}{, }\item[{const \mbox{\hyperlink{structGrid}{Grid}} \&}]{in\+Grid}{}\end{DoxyParamCaption})}
+
+
+
+Fill inter-\/layer tables between two different layers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tq\+\_\+te} & Quasi-\/static TE transmission coefficient at $k_{\rho}$ -\/\texorpdfstring{$>$}{>} 0. \\
+\hline
+{\em tq\+\_\+tm} & Quasi-\/static TM transmission coefficient at $k_{\rho}$ -\/\texorpdfstring{$>$}{>} 0. \\
+\hline
+{\em in\+Grid} & 3D grid $(r, z1, z2)$ for this pair. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l02727}{2727}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFLayered3D_a412af9133282962ec12affb1509c6507_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFLayered3D_a0cb3c4922d84b741f69e6a8996ebd5d5}\index{GreenFLayered3D@{GreenFLayered3D}!FillIntraInside@{FillIntraInside}}
+\index{FillIntraInside@{FillIntraInside}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{FillIntraInside()}{FillIntraInside()}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_a0cb3c4922d84b741f69e6a8996ebd5d5} 
+void Green\+FLayered3\+D\+::\+Fill\+Intra\+Inside (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&}]{rq\+\_\+te}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&}]{rq\+\_\+tm}{, }\item[{const \mbox{\hyperlink{structGrid}{Grid}} \&}]{in\+Grid}{}\end{DoxyParamCaption})}
+
+
+
+Fill intra-\/layer tables for internal layers (plus/minus sides). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rq\+\_\+te} & $\{r_q^- , r_q^+\}$ TE quasi-\/static coefficients at $k_{\rho}$ -\/\texorpdfstring{$>$}{>} 0. \\
+\hline
+{\em rq\+\_\+tm} & $\{r_q^- , r_q^+\}$ TM quasi-\/static coefficients at $k_{\rho}$ -\/\texorpdfstring{$>$}{>} 0. \\
+\hline
+{\em in\+Grid} & Interpolation grid for this bucket. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l02693}{2693}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFLayered3D_a0cb3c4922d84b741f69e6a8996ebd5d5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFLayered3D_abe83b87d2228f9ad198e2924d841682d}\index{GreenFLayered3D@{GreenFLayered3D}!FillIntraTopBottom@{FillIntraTopBottom}}
+\index{FillIntraTopBottom@{FillIntraTopBottom}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{FillIntraTopBottom()}{FillIntraTopBottom()}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_abe83b87d2228f9ad198e2924d841682d} 
+void Green\+FLayered3\+D\+::\+Fill\+Intra\+Top\+Bottom (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \&}]{rq\+\_\+te}{, }\item[{const \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \&}]{rq\+\_\+tm}{, }\item[{const \mbox{\hyperlink{structGrid}{Grid}} \&}]{in\+Grid}{}\end{DoxyParamCaption})}
+
+
+
+Fill intra-\/layer tables for bottom/top half-\/spaces. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rq\+\_\+te} & Quasi-\/static TE reflection coefficient at $k_{\rho}$ -\/\texorpdfstring{$>$}{>} 0. \\
+\hline
+{\em rq\+\_\+tm} & Quasi-\/static TM reflection coefficient at $k_{\rho}$ -\/\texorpdfstring{$>$}{>} 0. \\
+\hline
+{\em in\+Grid} & Interpolation grid for this bucket. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l02666}{2666}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFLayered3D_abe83b87d2228f9ad198e2924d841682d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFLayered3D_a41c1370112d040a3dc4c44a5853022ed}\index{GreenFLayered3D@{GreenFLayered3D}!FresnelCoeff@{FresnelCoeff}}
+\index{FresnelCoeff@{FresnelCoeff}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{FresnelCoeff()}{FresnelCoeff()}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_a41c1370112d040a3dc4c44a5853022ed} 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ Green\+FLayered3\+D\+::\+Fresnel\+Coeff (\begin{DoxyParamCaption}\item[{int}]{layer\+IndexI}{, }\item[{int}]{layer\+IndexJ}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{krho}{, }\item[{const std\+::string \&}]{waves}{}\end{DoxyParamCaption}) const}
+
+
+
+Fresnel reflection/transmission at interface (delegates to utils). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em layer\+IndexI} & First layer index. \\
+\hline
+{\em layer\+IndexJ} & Second layer index. \\
+\hline
+{\em krho} & Transverse wavenumber. \\
+\hline
+{\em waves} & "{}\+TE"{} or "{}\+TM"{}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\{r, t\}$ complex coefficients. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l02660}{2660}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFLayered3D_a41c1370112d040a3dc4c44a5853022ed_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFLayered3D_a8cbaa420eb0f3564b8724a220318f4de}\index{GreenFLayered3D@{GreenFLayered3D}!getLayeredUtils@{getLayeredUtils}}
+\index{getLayeredUtils@{getLayeredUtils}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{getLayeredUtils()}{getLayeredUtils()}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_a8cbaa420eb0f3564b8724a220318f4de} 
+\mbox{\hyperlink{classLayeredMediaUtils}{Layered\+Media\+Utils}} \texorpdfstring{$\ast$}{*} Green\+FLayered3\+D\+::get\+Layered\+Utils (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter for layered\+Utils pointer. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to layered\+Utils. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8h_source_l00187}{187}} of file \mbox{\hyperlink{GreenFLayered3D_8h_source}{Green\+FLayered3\+D.\+h}}.
+
+\Hypertarget{classGreenFLayered3D_a1fb4fa93c84d77750cac364641945725}\index{GreenFLayered3D@{GreenFLayered3D}!GetLayerIndex@{GetLayerIndex}}
+\index{GetLayerIndex@{GetLayerIndex}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{GetLayerIndex()}{GetLayerIndex()}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_a1fb4fa93c84d77750cac364641945725} 
+int Green\+FLayered3\+D\+::\+Get\+Layer\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{pos}{}\end{DoxyParamCaption}) const}
+
+
+
+Return layer index of a 3D point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & Cartesian position. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 for bottom half-\/space, 1..n-\/1 for internal layers, n for top half-\/space.
+\end{DoxyReturn}
+This function identifies the index of the layer in which a given point resides based on its z-\/coordinate relative to the predefined interface positions. 
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l00423}{423}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFLayered3D_a1fb4fa93c84d77750cac364641945725_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFLayered3D_a1d139ef4068dd5dcc0dcabfc5a1d817a}\index{GreenFLayered3D@{GreenFLayered3D}!Gradient@{Gradient}}
+\index{Gradient@{Gradient}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{Gradient()}{Gradient()}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_a1d139ef4068dd5dcc0dcabfc5a1d817a} 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} Green\+FLayered3\+D\+::\+Gradient (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{rp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Computes the derivative with respect to rp (homogeneous). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation position. \\
+\hline
+{\em rp} & Source position. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Gradient vector. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classGreenF_a6edf9744ddc9670915e319901c8ec9fd}{GreenF}}.
+
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l01005}{1005}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+\Hypertarget{classGreenFLayered3D_a986c6b91e89e94ea88af5f7bc98dc4eb}\index{GreenFLayered3D@{GreenFLayered3D}!GradientSmoothed@{GradientSmoothed}}
+\index{GradientSmoothed@{GradientSmoothed}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{GradientSmoothed()}{GradientSmoothed()}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_a986c6b91e89e94ea88af5f7bc98dc4eb} 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} Green\+FLayered3\+D\+::\+Gradient\+Smoothed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{rp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Smoothed homogeneous Green\textquotesingle{}s function gradient. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation position. \\
+\hline
+{\em rp} & Source position. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Smoothed gradient vector. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l01036}{1036}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+\Hypertarget{classGreenFLayered3D_a6d215b2398fc7043561fd0111091124e}\index{GreenFLayered3D@{GreenFLayered3D}!halfSmoothed@{halfSmoothed}}
+\index{halfSmoothed@{halfSmoothed}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{halfSmoothed()}{halfSmoothed()}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_a6d215b2398fc7043561fd0111091124e} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Green\+FLayered3\+D\+::half\+Smoothed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{rp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Half-\/smoothed homogeneous Green\textquotesingle{}s function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation position. \\
+\hline
+{\em rp} & Source position. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Half-\/smoothed scalar Green\textquotesingle{}s function value. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l00995}{995}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+\Hypertarget{classGreenFLayered3D_ae82e58d4ae830b0bb65d34bf9993fa38}\index{GreenFLayered3D@{GreenFLayered3D}!IntegrateD@{IntegrateD}}
+\index{IntegrateD@{IntegrateD}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{IntegrateD()}{IntegrateD()}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_ae82e58d4ae830b0bb65d34bf9993fa38} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Green\+FLayered3\+D\+::\+IntegrateD (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{f}{, }\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{fp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+D-\/operator matrix element $\langle \mathbf{f}(\mathbf{r}),\,\overline{\overline G},\,\mathbf{f}(\mathbf{r}^{\prime})\rangle$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Testing RWG function (on observation triangle). \\
+\hline
+{\em fp} & Basis RWG function (on source triangle). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex scalar entry of $\mathbf D$. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Not used here. 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{classGreenF_a6c12dde27af5c29efc4aa30dd0274f8d}{GreenF}}.
+
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l01049}{1049}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFLayered3D_ae82e58d4ae830b0bb65d34bf9993fa38_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFLayered3D_afbdbfdc8fc40fc885f6377d5be242d36}\index{GreenFLayered3D@{GreenFLayered3D}!IntegrateDelta@{IntegrateDelta}}
+\index{IntegrateDelta@{IntegrateDelta}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{IntegrateDelta()}{IntegrateDelta()}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_afbdbfdc8fc40fc885f6377d5be242d36} 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} Green\+FLayered3\+D\+::\+Integrate\+Delta (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{fp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+$\boldsymbol \delta$ term at an observation point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation point $\mathbf r$. \\
+\hline
+{\em fp} & Source RWG function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex 3-\/vector contribution $\boldsymbol \delta(\mathbf r)$. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classGreenF_abea72f8596b233344eb6c6ab35e49b41}{GreenF}}.
+
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l01055}{1055}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFLayered3D_afbdbfdc8fc40fc885f6377d5be242d36_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFLayered3D_adb3ae37fcc7e64b323938f00a2146b1b}\index{GreenFLayered3D@{GreenFLayered3D}!IntegrateK@{IntegrateK}}
+\index{IntegrateK@{IntegrateK}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{IntegrateK()}{IntegrateK()}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_adb3ae37fcc7e64b323938f00a2146b1b} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Green\+FLayered3\+D\+::\+IntegrateK (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{f}{, }\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{fp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+K-\/operator matrix element $\langle \mathbf{f}(\mathbf{r}),\,\nabla \times \overline{\overline G},\,\mathbf{f}(\mathbf{r}^{\prime})\rangle$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Testing RWG function (on observation triangle). \\
+\hline
+{\em fp} & Basis RWG function (on source triangle). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex scalar entry of $\mathbf K$. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Not used here. 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{classGreenF_ab23558e114b6c84cb38d380fdb0d47b8}{GreenF}}.
+
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l01052}{1052}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFLayered3D_adb3ae37fcc7e64b323938f00a2146b1b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFLayered3D_a439eddb43f46fb52f6c84898ea12aa40}\index{GreenFLayered3D@{GreenFLayered3D}!IntegrateKappa@{IntegrateKappa}}
+\index{IntegrateKappa@{IntegrateKappa}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{IntegrateKappa()}{IntegrateKappa()}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_a439eddb43f46fb52f6c84898ea12aa40} 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} Green\+FLayered3\+D\+::\+Integrate\+Kappa (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{fp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+$\boldsymbol \kappa$ term at an observation point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation point $\mathbf r$. \\
+\hline
+{\em fp} & Source RWG function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex 3-\/vector contribution $\boldsymbol \kappa(\mathbf r)$. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classGreenF_a0875ef994ae942ef623a49a5c6fc0f4d}{GreenF}}.
+
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l01369}{1369}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFLayered3D_a439eddb43f46fb52f6c84898ea12aa40_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFLayered3D_af7843f0f6e7e0d4d64b96c81b0ee35d2}\index{GreenFLayered3D@{GreenFLayered3D}!PairD@{PairD}}
+\index{PairD@{PairD}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{PairD()}{PairD()}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_af7843f0f6e7e0d4d64b96c81b0ee35d2} 
+std\+::pair$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ Green\+FLayered3\+D\+::\+PairD (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{f}{, }\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{fp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Pair of D elements with swapped triangle roles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Testing RWG function. \\
+\hline
+{\em fp} & Basis RWG function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$( D(f,fp),\, D(fp,f) )$. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Returns the same value for \doxylink{classGreenFLayered3D}{Green\+FLayered3D}. 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{classGreenF_a99e706146fbd3da5b24ef605ed03deec}{GreenF}}.
+
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l01678}{1678}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFLayered3D_af7843f0f6e7e0d4d64b96c81b0ee35d2_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFLayered3D_a1e2f37ec60c2a4e720eb08309337be94}\index{GreenFLayered3D@{GreenFLayered3D}!PairK@{PairK}}
+\index{PairK@{PairK}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{PairK()}{PairK()}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_a1e2f37ec60c2a4e720eb08309337be94} 
+std\+::pair$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ Green\+FLayered3\+D\+::\+PairK (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{f}{, }\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{fp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Pair of K elements with swapped triangle roles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Testing RWG function. \\
+\hline
+{\em fp} & Basis RWG function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$( K(f,fp),\, K(fp,f) )$. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Returns the same value for \doxylink{classGreenFLayered3D}{Green\+FLayered3D}. 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{classGreenF_a5bf93d82e80aef7c1d399fef001e7eaf}{GreenF}}.
+
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l01686}{1686}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFLayered3D_a1e2f37ec60c2a4e720eb08309337be94_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFLayered3D_af46d152fbc30bdc418ff16e5e7a334c6}\index{GreenFLayered3D@{GreenFLayered3D}!SameTriDeltaKappa@{SameTriDeltaKappa}}
+\index{SameTriDeltaKappa@{SameTriDeltaKappa}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{SameTriDeltaKappa()}{SameTriDeltaKappa()}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_af46d152fbc30bdc418ff16e5e7a334c6} 
+void Green\+FLayered3\+D\+::\+Same\+Tri\+Delta\+Kappa (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*} $>$ \&}]{fpvec}{, }\item[{std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ $>$ \&}]{Delta\+Kappa}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Point–triangle delta/kappa contributions for RHS assembly. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation point. \\
+\hline
+{\em fpvec} & RWG list on the source triangle. \\
+\hline
+{\em Delta\+Kappa} & Output pair per RWG\+: (delta vector, kappa vector).\\
+\hline
+\end{DoxyParams}
+Uses near-\/singular smoothing and, for layered media, augments with reflected/quasistatic parts from the tables. 
+
+Implements \mbox{\hyperlink{classGreenF_ae0dabe2240b6e9d7ff628fc70971d3d1}{GreenF}}.
+
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l02261}{2261}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFLayered3D_af46d152fbc30bdc418ff16e5e7a334c6_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFLayered3D_a6c88af86169f8d148c3e9f4da77a77d0}\index{GreenFLayered3D@{GreenFLayered3D}!SameTriDK@{SameTriDK}}
+\index{SameTriDK@{SameTriDK}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{SameTriDK()}{SameTriDK()}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_a6c88af86169f8d148c3e9f4da77a77d0} 
+void Green\+FLayered3\+D\+::\+Same\+Tri\+DK (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*} $>$ \&}]{fvec}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*} $>$ \&}]{fpvec}{, }\item[{std\+::vector$<$ std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ $>$ \&}]{DK}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Triangle–triangle D/K blocks assembly for all RWG pairs on two triangles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fvec} & RWGs on test triangle T. \\
+\hline
+{\em fpvec} & RWGs on basis triangle Tp. \\
+\hline
+{\em DK} & Output matrix with pairs \{D,K\} for every (f,fp) pair.\\
+\hline
+\end{DoxyParams}
+Chooses between free-\/space and layered contributions; for layered media, splits smooth (tabulated) and quasistatic parts and adds optional interface line-\/integrals when needed. 
+
+Implements \mbox{\hyperlink{classGreenF_a7968a039dbd8e597bf21973f72714ef8}{GreenF}}.
+
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l01695}{1695}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFLayered3D_a6c88af86169f8d148c3e9f4da77a77d0_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFLayered3D_a52cce9be0f67bd1b5aa9b2cdb01e4164}\index{GreenFLayered3D@{GreenFLayered3D}!SameTriDKG@{SameTriDKG}}
+\index{SameTriDKG@{SameTriDKG}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{SameTriDKG()}{SameTriDKG()}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_a52cce9be0f67bd1b5aa9b2cdb01e4164} 
+void Green\+FLayered3\+D\+::\+Same\+Tri\+DKG (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*} $>$ \&}]{fvec}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*} $>$ \&}]{fpvec}{, }\item[{std\+::vector$<$ std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ $>$ \&}]{DK}{, }\item[{std\+::vector$<$ std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ $>$ $>$ \&}]{DKG}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Same as \doxylink{classGreenFLayered3D_a6c88af86169f8d148c3e9f4da77a77d0}{Same\+Tri\+DK} and additionally accumulates gradients. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fvec} & RWGs on the observation triangle. \\
+\hline
+{\em fpvec} & RWGs on the source triangle. \\
+\hline
+{\em DK} & Output matrix of $(D,K)$ pairs. \\
+\hline
+{\em DKG} & Output matrix of gradient pairs per entry. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Not implemented for layered media. 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{classGreenF_a2fb24564bc2011138ffcc29d0ae7fbb3}{GreenF}}.
+
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l02189}{2189}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFLayered3D_a52cce9be0f67bd1b5aa9b2cdb01e4164_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFLayered3D_aa0034ad7c58dc67e405079b99bce03b7}\index{GreenFLayered3D@{GreenFLayered3D}!Smoothed@{Smoothed}}
+\index{Smoothed@{Smoothed}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{Smoothed()}{Smoothed()}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_aa0034ad7c58dc67e405079b99bce03b7} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Green\+FLayered3\+D\+::\+Smoothed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{rp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Smoothed homogeneous Green\textquotesingle{}s function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation position. \\
+\hline
+{\em rp} & Source position. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Smoothed scalar Green\textquotesingle{}s function value. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l00983}{983}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+\Hypertarget{classGreenFLayered3D_adb66750a1f30911e4e64f2cb05b61f98}\index{GreenFLayered3D@{GreenFLayered3D}!testFillGreenFTable@{testFillGreenFTable}}
+\index{testFillGreenFTable@{testFillGreenFTable}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{testFillGreenFTable()}{testFillGreenFTable()}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_adb66750a1f30911e4e64f2cb05b61f98} 
+void Green\+FLayered3\+D\+::test\+Fill\+Green\+FTable (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{intra\+TBType}{, }\item[{const std\+::string \&}]{intra\+PMType}{, }\item[{const std\+::string \&}]{inter\+Type}{, }\item[{const int \&}]{num\+Points}{}\end{DoxyParamCaption})}
+
+
+
+Test filling of interpolation tables with Green\textquotesingle{}s function values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em intra\+TBType} & Intra-\/layer top/bottom selector. \\
+\hline
+{\em intra\+PMType} & Intra-\/layer plus/minus selector. \\
+\hline
+{\em inter\+Type} & Inter-\/layer coefficient family selector. \\
+\hline
+{\em num\+Points} & Number of sample points to generate per table/dimension. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l03112}{3112}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFLayered3D_adb66750a1f30911e4e64f2cb05b61f98_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFLayered3D_a87c30d7c2782fd16b17a54bf12777cf0}\index{GreenFLayered3D@{GreenFLayered3D}!testSameTriDK@{testSameTriDK}}
+\index{testSameTriDK@{testSameTriDK}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{testSameTriDK()}{testSameTriDK()}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_a87c30d7c2782fd16b17a54bf12777cf0} 
+void Green\+FLayered3\+D\+::test\+Same\+Tri\+DK (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} $>$}]{verts1}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} $>$}]{verts2}{, }\item[{std\+::string}]{g\+Type}{, }\item[{std\+::string}]{vert\+Print}{}\end{DoxyParamCaption})}
+
+
+
+Test assembly of same-\/triangle D and K matrix elements. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em verts1} & Vertices of the first triangle (3 entries\+: r0,r1,r2). \\
+\hline
+{\em verts2} & Vertices of the second triangle (3 entries\+: r0\textquotesingle{},r1\textquotesingle{},r2\textquotesingle{}). \\
+\hline
+{\em g\+Type} & Green\textquotesingle{}s function tag used in the test. \\
+\hline
+{\em vert\+Print} & Verbose label or mode controlling vertex printing in the debug output. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l03300}{3300}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFLayered3D_a87c30d7c2782fd16b17a54bf12777cf0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFLayered3D_a87c30d7c2782fd16b17a54bf12777cf0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFLayered3D_a3d7d1fd5119cd94113055a44cea0c132}\index{GreenFLayered3D@{GreenFLayered3D}!writeGridsToFile@{writeGridsToFile}}
+\index{writeGridsToFile@{writeGridsToFile}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{writeGridsToFile()}{writeGridsToFile()}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_a3d7d1fd5119cd94113055a44cea0c132} 
+void Green\+FLayered3\+D\+::write\+Grids\+To\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{structGrid}{Grid}} $>$ \&}]{grids}{}\end{DoxyParamCaption})}
+
+
+
+Writes tabulation grids to a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Name of the file. \\
+\hline
+{\em grids} & Tabulation grids. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l00602}{602}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+\Hypertarget{classGreenFLayered3D_a74a468a93bf93bd4acd39989502a10fd}\index{GreenFLayered3D@{GreenFLayered3D}!writeVectorToFile@{writeVectorToFile}}
+\index{writeVectorToFile@{writeVectorToFile}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{writeVectorToFile()}{writeVectorToFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_a74a468a93bf93bd4acd39989502a10fd} 
+void Green\+FLayered3\+D\+::write\+Vector\+To\+File (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{x}{, }\item[{const std\+::vector$<$ double $>$ \&}]{y}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&}]{in\+Vec}{, }\item[{const std\+::string \&}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Write complex data with associated 2D coordinates to a text file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X-\/coordinates (size N). \\
+\hline
+{\em y} & Y-\/coordinates (size N). \\
+\hline
+{\em in\+Vec} & Complex values at (x,y) (size N). \\
+\hline
+{\em filename} & Output .txt filename (overwritten if exists). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l03246}{3246}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{classGreenFLayered3D_a74a468a93bf93bd4acd39989502a10fd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFLayered3D_a74a468a93bf93bd4acd39989502a10fd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFLayered3D_afbbeb440a2dcc7d185d9ae5ca5a46a87}\index{GreenFLayered3D@{GreenFLayered3D}!writeVectorToFile@{writeVectorToFile}}
+\index{writeVectorToFile@{writeVectorToFile}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{writeVectorToFile()}{writeVectorToFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_afbbeb440a2dcc7d185d9ae5ca5a46a87} 
+void Green\+FLayered3\+D\+::write\+Vector\+To\+File (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{x}{, }\item[{const std\+::vector$<$ double $>$ \&}]{y}{, }\item[{const std\+::vector$<$ double $>$ \&}]{z}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&}]{in\+Vec}{, }\item[{const std\+::string \&}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Write complex data with associated 3D coordinates to a text file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X-\/coordinates (size N). \\
+\hline
+{\em y} & Y-\/coordinates (size N). \\
+\hline
+{\em z} & Z-\/coordinates (size N). \\
+\hline
+{\em in\+Vec} & Complex values at (x,y,z) (size N). \\
+\hline
+{\em filename} & Output .txt filename (overwritten if exists). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l03281}{3281}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{classGreenFLayered3D_afbbeb440a2dcc7d185d9ae5ca5a46a87_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFLayered3D_a5a5a7a977776b2970afd629c67a4cd7b}\index{GreenFLayered3D@{GreenFLayered3D}!writeVectorToFile@{writeVectorToFile}}
+\index{writeVectorToFile@{writeVectorToFile}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{writeVectorToFile()}{writeVectorToFile()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_a5a5a7a977776b2970afd629c67a4cd7b} 
+void Green\+FLayered3\+D\+::write\+Vector\+To\+File (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} $>$ \&}]{rho}{, }\item[{const std\+::vector$<$ double $>$ \&}]{in\+Vec}{, }\item[{const std\+::string \&}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Write real data with associated 2D coordinates (rho as rvec) to a text file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rho} & 2D positions as rvec entries (size N); only in-\/plane components are used. \\
+\hline
+{\em in\+Vec} & Real values at positions (size N). \\
+\hline
+{\em filename} & Output .txt filename (overwritten if exists). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l03264}{3264}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classGreenFLayered3D_ae7b0d2ef0d33d4b14dd74fbfb53dc24e}\index{GreenFLayered3D@{GreenFLayered3D}!coeffInter@{coeffInter}}
+\index{coeffInter@{coeffInter}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{coeffInter}{coeffInter}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_ae7b0d2ef0d33d4b14dd74fbfb53dc24e} 
+std\+::vector$<$\mbox{\hyperlink{structCoeffsInter}{Coeffs\+Inter}}$>$ Green\+FLayered3\+D\+::coeff\+Inter\hspace{0.3cm}{\ttfamily [private]}}
+
+Interpolation coefficients for inter-\/layer interactions. 
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8h_source_l00075}{75}} of file \mbox{\hyperlink{GreenFLayered3D_8h_source}{Green\+FLayered3\+D.\+h}}.
+
+\Hypertarget{classGreenFLayered3D_aa2faaa3facfc3da6f32ef575167c779a}\index{GreenFLayered3D@{GreenFLayered3D}!coeffIntraMinus@{coeffIntraMinus}}
+\index{coeffIntraMinus@{coeffIntraMinus}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{coeffIntraMinus}{coeffIntraMinus}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_aa2faaa3facfc3da6f32ef575167c779a} 
+std\+::vector$<$\mbox{\hyperlink{structCoeffsIntra}{Coeffs\+Intra}}$>$ Green\+FLayered3\+D\+::coeff\+Intra\+Minus\hspace{0.3cm}{\ttfamily [private]}}
+
+Interpolation coefficients for internal intra-\/layer interactions. 
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8h_source_l00073}{73}} of file \mbox{\hyperlink{GreenFLayered3D_8h_source}{Green\+FLayered3\+D.\+h}}.
+
+\Hypertarget{classGreenFLayered3D_a37997b50143372aa43724021dafb8224}\index{GreenFLayered3D@{GreenFLayered3D}!coeffIntraPlus@{coeffIntraPlus}}
+\index{coeffIntraPlus@{coeffIntraPlus}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{coeffIntraPlus}{coeffIntraPlus}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_a37997b50143372aa43724021dafb8224} 
+std\+::vector$<$\mbox{\hyperlink{structCoeffsIntra}{Coeffs\+Intra}}$>$ Green\+FLayered3\+D\+::coeff\+Intra\+Plus\hspace{0.3cm}{\ttfamily [private]}}
+
+Interpolation coefficients for internal intra-\/layer interactions. 
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8h_source_l00074}{74}} of file \mbox{\hyperlink{GreenFLayered3D_8h_source}{Green\+FLayered3\+D.\+h}}.
+
+\Hypertarget{classGreenFLayered3D_a98c7e84d061f78606c15b0e0646265da}\index{GreenFLayered3D@{GreenFLayered3D}!coeffIntraTB@{coeffIntraTB}}
+\index{coeffIntraTB@{coeffIntraTB}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{coeffIntraTB}{coeffIntraTB}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_a98c7e84d061f78606c15b0e0646265da} 
+std\+::vector$<$\mbox{\hyperlink{structCoeffsIntra}{Coeffs\+Intra}}$>$ Green\+FLayered3\+D\+::coeff\+Intra\+TB\hspace{0.3cm}{\ttfamily [private]}}
+
+Interpolation coefficients for top/bottom intra-\/layer interactions. 
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8h_source_l00072}{72}} of file \mbox{\hyperlink{GreenFLayered3D_8h_source}{Green\+FLayered3\+D.\+h}}.
+
+\Hypertarget{classGreenFLayered3D_aa303c7163dfdf2911d984d4fefc8d855}\index{GreenFLayered3D@{GreenFLayered3D}!enableLineIntegrals@{enableLineIntegrals}}
+\index{enableLineIntegrals@{enableLineIntegrals}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{enableLineIntegrals}{enableLineIntegrals}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_aa303c7163dfdf2911d984d4fefc8d855} 
+bool Green\+FLayered3\+D\+::enable\+Line\+Integrals = false\hspace{0.3cm}{\ttfamily [private]}}
+
+Flag to enable line integrals. 
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8h_source_l00088}{88}} of file \mbox{\hyperlink{GreenFLayered3D_8h_source}{Green\+FLayered3\+D.\+h}}.
+
+\Hypertarget{classGreenFLayered3D_a7061fdbe71928ca6f6474cdbdf9064ed}\index{GreenFLayered3D@{GreenFLayered3D}!epsilon@{epsilon}}
+\index{epsilon@{epsilon}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{epsilon}{epsilon}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_a7061fdbe71928ca6f6474cdbdf9064ed} 
+std\+::vector$<$\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}$>$ Green\+FLayered3\+D\+::epsilon\hspace{0.3cm}{\ttfamily [private]}}
+
+Layered medium electric permittivity. 
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8h_source_l00063}{63}} of file \mbox{\hyperlink{GreenFLayered3D_8h_source}{Green\+FLayered3\+D.\+h}}.
+
+\Hypertarget{classGreenFLayered3D_acc41cdee2feb55e72db1a5d4881df5cb}\index{GreenFLayered3D@{GreenFLayered3D}!gauss@{gauss}}
+\index{gauss@{gauss}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{gauss}{gauss}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_acc41cdee2feb55e72db1a5d4881df5cb} 
+\mbox{\hyperlink{classGaussQuad}{Gauss\+Quad}}$<$\mbox{\hyperlink{classGreenFLayered3D}{Green\+FLayered3D}}$>$ Green\+FLayered3\+D\+::gauss\hspace{0.3cm}{\ttfamily [private]}}
+
+\doxylink{classGaussian}{Gaussian} quadrature object for integrations. 
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8h_source_l00090}{90}} of file \mbox{\hyperlink{GreenFLayered3D_8h_source}{Green\+FLayered3\+D.\+h}}.
+
+\Hypertarget{classGreenFLayered3D_aac9a7fd8302158fded9e65294a969942}\index{GreenFLayered3D@{GreenFLayered3D}!interIndeces@{interIndeces}}
+\index{interIndeces@{interIndeces}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{interIndeces}{interIndeces}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_aac9a7fd8302158fded9e65294a969942} 
+std\+::vector$<$std\+::complex$<$int$>$ $>$ Green\+FLayered3\+D\+::inter\+Indeces\hspace{0.3cm}{\ttfamily [private]}}
+
+Indices for inter-\/layer interactions. 
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8h_source_l00080}{80}} of file \mbox{\hyperlink{GreenFLayered3D_8h_source}{Green\+FLayered3\+D.\+h}}.
+
+\Hypertarget{classGreenFLayered3D_ad317420112d0215efabe86a4993542c4}\index{GreenFLayered3D@{GreenFLayered3D}!intraPMIndex@{intraPMIndex}}
+\index{intraPMIndex@{intraPMIndex}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{intraPMIndex}{intraPMIndex}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_ad317420112d0215efabe86a4993542c4} 
+std\+::vector$<$int$>$ Green\+FLayered3\+D\+::intra\+PMIndex\hspace{0.3cm}{\ttfamily [private]}}
+
+Indices for internal intra-\/layer interactions. 
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8h_source_l00079}{79}} of file \mbox{\hyperlink{GreenFLayered3D_8h_source}{Green\+FLayered3\+D.\+h}}.
+
+\Hypertarget{classGreenFLayered3D_a547ee95a3343dbafcca49f3d3ae0680a}\index{GreenFLayered3D@{GreenFLayered3D}!intraTBIndex@{intraTBIndex}}
+\index{intraTBIndex@{intraTBIndex}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{intraTBIndex}{intraTBIndex}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_a547ee95a3343dbafcca49f3d3ae0680a} 
+std\+::vector$<$int$>$ Green\+FLayered3\+D\+::intra\+TBIndex\hspace{0.3cm}{\ttfamily [private]}}
+
+Indices for top/bottom intra-\/layer interactions. 
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8h_source_l00078}{78}} of file \mbox{\hyperlink{GreenFLayered3D_8h_source}{Green\+FLayered3\+D.\+h}}.
+
+\Hypertarget{classGreenFLayered3D_a996a58a66e9b53412d389e5687f44c96}\index{GreenFLayered3D@{GreenFLayered3D}!layeredUtils@{layeredUtils}}
+\index{layeredUtils@{layeredUtils}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{layeredUtils}{layeredUtils}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_a996a58a66e9b53412d389e5687f44c96} 
+\mbox{\hyperlink{classLayeredMediaUtils}{Layered\+Media\+Utils}}\texorpdfstring{$\ast$}{*} Green\+FLayered3\+D\+::layered\+Utils\hspace{0.3cm}{\ttfamily [private]}}
+
+Utility functions for layered media domain. 
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8h_source_l00069}{69}} of file \mbox{\hyperlink{GreenFLayered3D_8h_source}{Green\+FLayered3\+D.\+h}}.
+
+\Hypertarget{classGreenFLayered3D_a9440534bdb17a6380ae799db88dbfa4b}\index{GreenFLayered3D@{GreenFLayered3D}!midLayerIndex@{midLayerIndex}}
+\index{midLayerIndex@{midLayerIndex}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{midLayerIndex}{midLayerIndex}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_a9440534bdb17a6380ae799db88dbfa4b} 
+int Green\+FLayered3\+D\+::mid\+Layer\+Index\hspace{0.3cm}{\ttfamily [private]}}
+
+Layer index of the mesh middle point. 
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8h_source_l00068}{68}} of file \mbox{\hyperlink{GreenFLayered3D_8h_source}{Green\+FLayered3\+D.\+h}}.
+
+\Hypertarget{classGreenFLayered3D_ab874f11fcb973bead4dae43e5c01bbea}\index{GreenFLayered3D@{GreenFLayered3D}!mu@{mu}}
+\index{mu@{mu}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{mu}{mu}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_ab874f11fcb973bead4dae43e5c01bbea} 
+std\+::vector$<$\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}$>$ Green\+FLayered3\+D\+::mu\hspace{0.3cm}{\ttfamily [private]}}
+
+Layered medium magnetic permeability. 
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8h_source_l00064}{64}} of file \mbox{\hyperlink{GreenFLayered3D_8h_source}{Green\+FLayered3\+D.\+h}}.
+
+\Hypertarget{classGreenFLayered3D_a96bb3ac13c9db827bad9fd25c70ac033}\index{GreenFLayered3D@{GreenFLayered3D}!sommIntInter@{sommIntInter}}
+\index{sommIntInter@{sommIntInter}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{sommIntInter}{sommIntInter}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_a96bb3ac13c9db827bad9fd25c70ac033} 
+std\+::vector$<$\mbox{\hyperlink{classSommerfeldIntegrator}{Sommerfeld\+Integrator}}\texorpdfstring{$\ast$}{*}$>$ Green\+FLayered3\+D\+::somm\+Int\+Inter\hspace{0.3cm}{\ttfamily [private]}}
+
+Sommerfeld integrator for inter-\/layer interactions. 
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8h_source_l00086}{86}} of file \mbox{\hyperlink{GreenFLayered3D_8h_source}{Green\+FLayered3\+D.\+h}}.
+
+\Hypertarget{classGreenFLayered3D_a0cdd4e6c624dac46130976b1cad9ecf6}\index{GreenFLayered3D@{GreenFLayered3D}!sommIntIntraMinus@{sommIntIntraMinus}}
+\index{sommIntIntraMinus@{sommIntIntraMinus}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{sommIntIntraMinus}{sommIntIntraMinus}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_a0cdd4e6c624dac46130976b1cad9ecf6} 
+std\+::vector$<$\mbox{\hyperlink{classSommerfeldIntegrator}{Sommerfeld\+Integrator}}\texorpdfstring{$\ast$}{*}$>$ Green\+FLayered3\+D\+::somm\+Int\+Intra\+Minus\hspace{0.3cm}{\ttfamily [private]}}
+
+Sommerfeld integrator for internal intra-\/layer interactions. 
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8h_source_l00084}{84}} of file \mbox{\hyperlink{GreenFLayered3D_8h_source}{Green\+FLayered3\+D.\+h}}.
+
+\Hypertarget{classGreenFLayered3D_a864dc84be9427268470c7cf9ed721edc}\index{GreenFLayered3D@{GreenFLayered3D}!sommIntIntraPlus@{sommIntIntraPlus}}
+\index{sommIntIntraPlus@{sommIntIntraPlus}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{sommIntIntraPlus}{sommIntIntraPlus}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_a864dc84be9427268470c7cf9ed721edc} 
+std\+::vector$<$\mbox{\hyperlink{classSommerfeldIntegrator}{Sommerfeld\+Integrator}}\texorpdfstring{$\ast$}{*}$>$ Green\+FLayered3\+D\+::somm\+Int\+Intra\+Plus\hspace{0.3cm}{\ttfamily [private]}}
+
+Sommerfeld integrator for internal intra-\/layer interactions. 
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8h_source_l00085}{85}} of file \mbox{\hyperlink{GreenFLayered3D_8h_source}{Green\+FLayered3\+D.\+h}}.
+
+\Hypertarget{classGreenFLayered3D_a2c7630a5bbb7d94ac1e39fffe6d340db}\index{GreenFLayered3D@{GreenFLayered3D}!sommIntIntraTB@{sommIntIntraTB}}
+\index{sommIntIntraTB@{sommIntIntraTB}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{sommIntIntraTB}{sommIntIntraTB}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_a2c7630a5bbb7d94ac1e39fffe6d340db} 
+std\+::vector$<$\mbox{\hyperlink{classSommerfeldIntegrator}{Sommerfeld\+Integrator}}\texorpdfstring{$\ast$}{*}$>$ Green\+FLayered3\+D\+::somm\+Int\+Intra\+TB\hspace{0.3cm}{\ttfamily [private]}}
+
+Sommerfeld integrator for top/bottom intra-\/layer interactions. 
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8h_source_l00083}{83}} of file \mbox{\hyperlink{GreenFLayered3D_8h_source}{Green\+FLayered3\+D.\+h}}.
+
+\Hypertarget{classGreenFLayered3D_a39dd801edfe7901b66d23eb950e76930}\index{GreenFLayered3D@{GreenFLayered3D}!tabulationGrids@{tabulationGrids}}
+\index{tabulationGrids@{tabulationGrids}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{tabulationGrids}{tabulationGrids}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_a39dd801edfe7901b66d23eb950e76930} 
+std\+::vector$<$\mbox{\hyperlink{structGrid}{Grid}}$>$ Green\+FLayered3\+D\+::tabulation\+Grids\hspace{0.3cm}{\ttfamily [private]}}
+
+Tabulation grids for Green\textquotesingle{}s function. 
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8h_source_l00067}{67}} of file \mbox{\hyperlink{GreenFLayered3D_8h_source}{Green\+FLayered3\+D.\+h}}.
+
+\Hypertarget{classGreenFLayered3D_a0b5f6fa79b01f4cacfb414455ef3a2c9}\index{GreenFLayered3D@{GreenFLayered3D}!thickness@{thickness}}
+\index{thickness@{thickness}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{thickness}{thickness}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_a0b5f6fa79b01f4cacfb414455ef3a2c9} 
+std\+::vector$<$double$>$ Green\+FLayered3\+D\+::thickness\hspace{0.3cm}{\ttfamily [private]}}
+
+Internal layers\textquotesingle{} thicknesses. 
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8h_source_l00066}{66}} of file \mbox{\hyperlink{GreenFLayered3D_8h_source}{Green\+FLayered3\+D.\+h}}.
+
+\Hypertarget{classGreenFLayered3D_a98dc4d5bad9eb55bf5e9ab049f5093b9}\index{GreenFLayered3D@{GreenFLayered3D}!zValsInterfaces@{zValsInterfaces}}
+\index{zValsInterfaces@{zValsInterfaces}!GreenFLayered3D@{GreenFLayered3D}}
+\doxysubsubsection{\texorpdfstring{zValsInterfaces}{zValsInterfaces}}
+{\footnotesize\ttfamily \label{classGreenFLayered3D_a98dc4d5bad9eb55bf5e9ab049f5093b9} 
+std\+::vector$<$double$>$ Green\+FLayered3\+D\+::z\+Vals\+Interfaces\hspace{0.3cm}{\ttfamily [private]}}
+
+z-\/coordinates of layered medium interfaces. 
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8h_source_l00065}{65}} of file \mbox{\hyperlink{GreenFLayered3D_8h_source}{Green\+FLayered3\+D.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{GreenFLayered3D_8h}{Green\+FLayered3\+D.\+h}}\item 
+\mbox{\hyperlink{GreenFLayered3D_8cpp}{Green\+FLayered3\+D.\+cpp}}\end{DoxyCompactItemize}

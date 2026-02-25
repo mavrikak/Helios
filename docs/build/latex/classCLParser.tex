@@ -1,0 +1,165 @@
+\doxysection{CLParser Class Reference}
+\hypertarget{classCLParser}{}\label{classCLParser}\index{CLParser@{CLParser}}
+
+
+Abstract base for all command-\/line option parsers.  
+
+
+
+
+{\ttfamily \#include $<$CLParser.\+h$>$}
+
+
+
+Inheritance diagram for CLParser\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCLParser__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CLParser\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=158pt]{classCLParser__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCLParser_ae3702d514303a9f957e3381d71c4d6df}{CLParser}} (std\+::string opt)
+\begin{DoxyCompactList}\small\item\em Construct with an option token. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCLParser_ad84575776050c4cc5492815ef8eb5dd5}{CLParser}} (const char \texorpdfstring{$\ast$}{*}opt)
+\begin{DoxyCompactList}\small\item\em Construct with an option token. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classCLParser_a988eff2b562e1df1bc63e7a221a1e4dc}{\texorpdfstring{$\sim$}{\string~}\+CLParser}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classCLParser_a966387c58560ab2006b6158b62ea75ce}{Parse}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})=0
+\begin{DoxyCompactList}\small\item\em Attempt to parse this option from argv\mbox{[}\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classCLParser_a2d671ec2fea71aaf31ead23092d05d41}{option}}
+\begin{DoxyCompactList}\small\item\em Option keyword to match against argv\mbox{[}\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base for all command-\/line option parsers. 
+
+Holds the option string (e.\+g. "{}-\/th"{} or "{}-\/-\/help"{}) and exposes a virtual {\ttfamily \doxylink{classCLParser_a966387c58560ab2006b6158b62ea75ce}{Parse()}} method to be implemented by derived classes. 
+
+Definition at line \mbox{\hyperlink{CLParser_8h_source_l00030}{30}} of file \mbox{\hyperlink{CLParser_8h_source}{CLParser.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCLParser_ae3702d514303a9f957e3381d71c4d6df}\index{CLParser@{CLParser}!CLParser@{CLParser}}
+\index{CLParser@{CLParser}!CLParser@{CLParser}}
+\doxysubsubsection{\texorpdfstring{CLParser()}{CLParser()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classCLParser_ae3702d514303a9f957e3381d71c4d6df} 
+CLParser\+::\+CLParser (\begin{DoxyParamCaption}\item[{std\+::string}]{opt}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct with an option token. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em opt} & Option keyword (e.\+g., "{}-\/th"{}, "{}-\/-\/help"{}). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{CLParser_8h_source_l00039}{39}} of file \mbox{\hyperlink{CLParser_8h_source}{CLParser.\+h}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCLParser_ae3702d514303a9f957e3381d71c4d6df_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classCLParser_ad84575776050c4cc5492815ef8eb5dd5}\index{CLParser@{CLParser}!CLParser@{CLParser}}
+\index{CLParser@{CLParser}!CLParser@{CLParser}}
+\doxysubsubsection{\texorpdfstring{CLParser()}{CLParser()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classCLParser_ad84575776050c4cc5492815ef8eb5dd5} 
+CLParser\+::\+CLParser (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{opt}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct with an option token. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em opt} & Option keyword (e.\+g., "{}-\/th"{}, "{}-\/-\/help"{}). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{CLParser_8h_source_l00045}{45}} of file \mbox{\hyperlink{CLParser_8h_source}{CLParser.\+h}}.
+
+\Hypertarget{classCLParser_a988eff2b562e1df1bc63e7a221a1e4dc}\index{CLParser@{CLParser}!````~CLParser@{\texorpdfstring{$\sim$}{\string~}CLParser}}
+\index{````~CLParser@{\texorpdfstring{$\sim$}{\string~}CLParser}!CLParser@{CLParser}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CLParser()}{\string~CLParser()}}
+{\footnotesize\ttfamily \label{classCLParser_a988eff2b562e1df1bc63e7a221a1e4dc} 
+virtual CLParser\+::\texorpdfstring{$\sim$}{\string~}\+CLParser (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Virtual destructor. 
+
+
+
+Definition at line \mbox{\hyperlink{CLParser_8h_source_l00048}{48}} of file \mbox{\hyperlink{CLParser_8h_source}{CLParser.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCLParser_a966387c58560ab2006b6158b62ea75ce}\index{CLParser@{CLParser}!Parse@{Parse}}
+\index{Parse@{Parse}!CLParser@{CLParser}}
+\doxysubsubsection{\texorpdfstring{Parse()}{Parse()}}
+{\footnotesize\ttfamily \label{classCLParser_a966387c58560ab2006b6158b62ea75ce} 
+virtual int CLParser\+::\+Parse (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{argv}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Attempt to parse this option from argv\mbox{[}\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Argument count. \\
+\hline
+{\em argv} & Argument vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if found and parsed, -\/1 if found but invalid, 0 if not found. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classCLFlag_a6b13d3697a743ce2106e8cc874c9ee29}{CLFlag}}, \mbox{\hyperlink{classCLOption_a1be40ec2f61a7d0635fd1b8a1d5552c4}{CLOption$<$ T $>$}}, and \mbox{\hyperlink{classCLStringOption_ae457cbbf263b06c9258c1e501f56c12d}{CLString\+Option}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classCLParser_a2d671ec2fea71aaf31ead23092d05d41}\index{CLParser@{CLParser}!option@{option}}
+\index{option@{option}!CLParser@{CLParser}}
+\doxysubsubsection{\texorpdfstring{option}{option}}
+{\footnotesize\ttfamily \label{classCLParser_a2d671ec2fea71aaf31ead23092d05d41} 
+std\+::string CLParser\+::option\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Option keyword to match against argv\mbox{[}\mbox{]}. 
+
+
+
+Definition at line \mbox{\hyperlink{CLParser_8h_source_l00032}{32}} of file \mbox{\hyperlink{CLParser_8h_source}{CLParser.\+h}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{CLParser_8h}{CLParser.\+h}}\end{DoxyCompactItemize}

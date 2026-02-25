@@ -1,0 +1,7 @@
+<map id="PlaneWave::IntegrateE" name="PlaneWave::IntegrateE">
+<area shape="rect" id="Node000001" title="Integrate electric field against an RWG basis function." alt="" coords="5,32,174,60"/>
+<area shape="rect" id="Node000002" href="$classPlaneWave.html#a21e80621788fddf887cf27b7c6f9bdf7" title="Evaluate the electric field at a given position (homogeneous)." alt="" coords="225,5,392,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="173,33,209,29,210,34,174,38"/>
+<area shape="rect" id="Node000003" href="$classPlaneWave.html#afb2520b5ec768a6ad1bdedf1ec1e8025" title="Construct a homogeneous plane wave." alt="" coords="222,57,395,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="174,53,206,57,206,62,173,58"/>
+</map>

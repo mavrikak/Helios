@@ -1,0 +1,5 @@
+<map id="ReadAndPrint" name="ReadAndPrint">
+<area shape="rect" id="Node000001" title="Debug helper: read a value of type T and print it to std::cout." alt="" coords="5,5,115,33"/>
+<area shape="rect" id="Node000002" href="$group__driver.html#ga3859b179ce92396b3d9187e4437d8826" title="Read a value of type T from a text stream, skipping lines beginning with &#39;#&#39;." alt="" coords="163,5,297,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,16,147,16,147,22,115,22"/>
+</map>

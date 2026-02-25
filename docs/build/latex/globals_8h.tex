@@ -1,0 +1,263 @@
+\doxysection{globals.\+h File Reference}
+\hypertarget{globals_8h}{}\label{globals_8h}\index{globals.h@{globals.h}}
+
+
+Global numerical constants, fundamental types, and simple macros.  
+
+
+{\ttfamily \#include $<$blitz/array.\+h$>$}\newline
+{\ttfamily \#include $<$blitz/tinyvec2.\+h$>$}\newline
+{\ttfamily \#include $<$blitz/tvecglobs.\+h$>$}\newline
+{\ttfamily \#include $<$complex$>$}\newline
+Include dependency graph for globals.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{globals_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{globals_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{globals_8h_ac25c6a324554f8ae267ad7c1638074a8}{FRONT}}~0
+\begin{DoxyCompactList}\small\item\em Orientation tag for the front face of a triangle. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{globals_8h_ab303ee384877c80cb8855bf0113faf88}{BACK}}~1
+\begin{DoxyCompactList}\small\item\em Orientation tag for the back face of a triangle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::complex$<$ double $>$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}
+\begin{DoxyCompactList}\small\item\em Complex scalar type (double precision) \end{DoxyCompactList}\item 
+typedef unsigned int \mbox{\hyperlink{globals_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}
+\begin{DoxyCompactList}\small\item\em Unsigned integer shorthand. \end{DoxyCompactList}\item 
+typedef blitz\+::\+Tiny\+Vector$<$ double, 3 $>$ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}
+\begin{DoxyCompactList}\small\item\em 3‑vector of real doubles \end{DoxyCompactList}\item 
+typedef blitz\+::\+Tiny\+Vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 3 $>$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}
+\begin{DoxyCompactList}\small\item\em 3‑vector of complex doubles \end{DoxyCompactList}\item 
+typedef blitz\+::\+Tiny\+Vector$<$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}, 3 $>$ \mbox{\hyperlink{globals_8h_ac062d767acbc2b8149a4039dc4a1a18f}{cdyad}}
+\begin{DoxyCompactList}\small\item\em 3x3 dyadic composed of complex 3‑vectors \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const double \mbox{\hyperlink{globals_8h_a952eac791b596a61bba0a133a3bb439f}{PI}}
+\begin{DoxyCompactList}\small\item\em pi = 3.\+141592653589793... \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c}{I}}
+\begin{DoxyCompactList}\small\item\em Imaginary unit $ i=\sqrt{-1} $. \end{DoxyCompactList}\item 
+const double \mbox{\hyperlink{globals_8h_af49dbd4a09008d240ff694cde0ccb713}{CVAC}}
+\begin{DoxyCompactList}\small\item\em Speed of light in vacuum. \end{DoxyCompactList}\item 
+const double \mbox{\hyperlink{globals_8h_ade68b010588957aef9890077adb7565f}{EPS0}}
+\begin{DoxyCompactList}\small\item\em Vacuum permittivity. \end{DoxyCompactList}\item 
+const double \mbox{\hyperlink{globals_8h_a09881352f321afed09cedb054fd9ee15}{MU0}}
+\begin{DoxyCompactList}\small\item\em Vacuum permeability. \end{DoxyCompactList}\item 
+const double \mbox{\hyperlink{globals_8h_ae2fa3234ecbb729a46bf56ba671df9f3}{Z0}}
+\begin{DoxyCompactList}\small\item\em Free‑space impedance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Global numerical constants, fundamental types, and simple macros. 
+
+This header is included broadly across the project to provide\+:
+\begin{DoxyItemize}
+\item Fundamental {\bfseries{typedefs}} for complex numbers and 3‑vectors.
+\item Physical {\bfseries{constants}} (pi, i, c0, epsilon0, mu0, Z0).
+\item Minimal geometric {\bfseries{tags}} (FRONT/\+BACK) used for triangle orientation.
+\end{DoxyItemize}
+
+Keep this header lean\+: do {\bfseries{not}} put run‑time configuration, wavelengths, or any domain‑specific variables here. 
+
+Definition in file \mbox{\hyperlink{globals_8h_source}{globals.\+h}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{globals_8h_ab303ee384877c80cb8855bf0113faf88}\index{globals.h@{globals.h}!BACK@{BACK}}
+\index{BACK@{BACK}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{BACK}{BACK}}
+{\footnotesize\ttfamily \label{globals_8h_ab303ee384877c80cb8855bf0113faf88} 
+\#define BACK~1}
+
+
+
+Orientation tag for the back face of a triangle. 
+
+
+
+Definition at line \mbox{\hyperlink{globals_8h_source_l00059}{59}} of file \mbox{\hyperlink{globals_8h_source}{globals.\+h}}.
+
+\Hypertarget{globals_8h_ac25c6a324554f8ae267ad7c1638074a8}\index{globals.h@{globals.h}!FRONT@{FRONT}}
+\index{FRONT@{FRONT}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{FRONT}{FRONT}}
+{\footnotesize\ttfamily \label{globals_8h_ac25c6a324554f8ae267ad7c1638074a8} 
+\#define FRONT~0}
+
+
+
+Orientation tag for the front face of a triangle. 
+
+
+
+Definition at line \mbox{\hyperlink{globals_8h_source_l00057}{57}} of file \mbox{\hyperlink{globals_8h_source}{globals.\+h}}.
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{globals_8h_ac062d767acbc2b8149a4039dc4a1a18f}\index{globals.h@{globals.h}!cdyad@{cdyad}}
+\index{cdyad@{cdyad}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{cdyad}{cdyad}}
+{\footnotesize\ttfamily \label{globals_8h_ac062d767acbc2b8149a4039dc4a1a18f} 
+typedef blitz\+::\+Tiny\+Vector$<$\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}, 3$>$ \mbox{\hyperlink{globals_8h_ac062d767acbc2b8149a4039dc4a1a18f}{cdyad}}}
+
+
+
+3x3 dyadic composed of complex 3‑vectors 
+
+
+
+Definition at line \mbox{\hyperlink{globals_8h_source_l00035}{35}} of file \mbox{\hyperlink{globals_8h_source}{globals.\+h}}.
+
+\Hypertarget{globals_8h_a876530d0f199e8f774203e2998d14f7f}\index{globals.h@{globals.h}!cvec@{cvec}}
+\index{cvec@{cvec}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{cvec}{cvec}}
+{\footnotesize\ttfamily \label{globals_8h_a876530d0f199e8f774203e2998d14f7f} 
+typedef blitz\+::\+Tiny\+Vector$<$\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 3$>$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}}
+
+
+
+3‑vector of complex doubles 
+
+
+
+Definition at line \mbox{\hyperlink{globals_8h_source_l00033}{33}} of file \mbox{\hyperlink{globals_8h_source}{globals.\+h}}.
+
+\Hypertarget{globals_8h_a52196b4b274b585226e0614490f7defc}\index{globals.h@{globals.h}!dcmplx@{dcmplx}}
+\index{dcmplx@{dcmplx}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{dcmplx}{dcmplx}}
+{\footnotesize\ttfamily \label{globals_8h_a52196b4b274b585226e0614490f7defc} 
+typedef std\+::complex$<$double$>$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}
+
+
+
+Complex scalar type (double precision) 
+
+
+
+Definition at line \mbox{\hyperlink{globals_8h_source_l00027}{27}} of file \mbox{\hyperlink{globals_8h_source}{globals.\+h}}.
+
+\Hypertarget{globals_8h_ae4271193b04e5d22237184d4fad54fb0}\index{globals.h@{globals.h}!rvec@{rvec}}
+\index{rvec@{rvec}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{rvec}{rvec}}
+{\footnotesize\ttfamily \label{globals_8h_ae4271193b04e5d22237184d4fad54fb0} 
+typedef blitz\+::\+Tiny\+Vector$<$double, 3$>$ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}
+
+
+
+3‑vector of real doubles 
+
+
+
+Definition at line \mbox{\hyperlink{globals_8h_source_l00031}{31}} of file \mbox{\hyperlink{globals_8h_source}{globals.\+h}}.
+
+\Hypertarget{globals_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}\index{globals.h@{globals.h}!uint@{uint}}
+\index{uint@{uint}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{uint}{uint}}
+{\footnotesize\ttfamily \label{globals_8h_a91ad9478d81a7aaf2593e8d9c3d06a14} 
+typedef unsigned int \mbox{\hyperlink{globals_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}}
+
+
+
+Unsigned integer shorthand. 
+
+
+
+Definition at line \mbox{\hyperlink{globals_8h_source_l00029}{29}} of file \mbox{\hyperlink{globals_8h_source}{globals.\+h}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{globals_8h_af49dbd4a09008d240ff694cde0ccb713}\index{globals.h@{globals.h}!CVAC@{CVAC}}
+\index{CVAC@{CVAC}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{CVAC}{CVAC}}
+{\footnotesize\ttfamily \label{globals_8h_af49dbd4a09008d240ff694cde0ccb713} 
+const double CVAC\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Speed of light in vacuum. 
+
+
+
+Definition at line \mbox{\hyperlink{globals_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{globals_8cpp_source}{globals.\+cpp}}.
+
+\Hypertarget{globals_8h_ade68b010588957aef9890077adb7565f}\index{globals.h@{globals.h}!EPS0@{EPS0}}
+\index{EPS0@{EPS0}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{EPS0}{EPS0}}
+{\footnotesize\ttfamily \label{globals_8h_ade68b010588957aef9890077adb7565f} 
+const double EPS0\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Vacuum permittivity. 
+
+
+
+Definition at line \mbox{\hyperlink{globals_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{globals_8cpp_source}{globals.\+cpp}}.
+
+\Hypertarget{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c}\index{globals.h@{globals.h}!I@{I}}
+\index{I@{I}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{I}{I}}
+{\footnotesize\ttfamily \label{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c} 
+const \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} I\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Imaginary unit $ i=\sqrt{-1} $. 
+
+\Hypertarget{globals_8h_a09881352f321afed09cedb054fd9ee15}\index{globals.h@{globals.h}!MU0@{MU0}}
+\index{MU0@{MU0}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{MU0}{MU0}}
+{\footnotesize\ttfamily \label{globals_8h_a09881352f321afed09cedb054fd9ee15} 
+const double MU0\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Vacuum permeability. 
+
+
+
+Definition at line \mbox{\hyperlink{globals_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{globals_8cpp_source}{globals.\+cpp}}.
+
+\Hypertarget{globals_8h_a952eac791b596a61bba0a133a3bb439f}\index{globals.h@{globals.h}!PI@{PI}}
+\index{PI@{PI}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{PI}{PI}}
+{\footnotesize\ttfamily \label{globals_8h_a952eac791b596a61bba0a133a3bb439f} 
+const double PI\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+pi = 3.\+141592653589793... 
+
+pi = 3.\+141592653589793... 
+
+Definition at line \mbox{\hyperlink{globals_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{globals_8cpp_source}{globals.\+cpp}}.
+
+\Hypertarget{globals_8h_ae2fa3234ecbb729a46bf56ba671df9f3}\index{globals.h@{globals.h}!Z0@{Z0}}
+\index{Z0@{Z0}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{Z0}{Z0}}
+{\footnotesize\ttfamily \label{globals_8h_ae2fa3234ecbb729a46bf56ba671df9f3} 
+const double Z0\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Free‑space impedance. 
+
+Free‑space impedance. 
+
+Definition at line \mbox{\hyperlink{globals_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{globals_8cpp_source}{globals.\+cpp}}.
+

@@ -1,0 +1,9 @@
+<map id="GreenFHom3D" name="GreenFHom3D">
+<area shape="rect" id="Node000001" title="Free‑space (homogeneous) Green&#39;s function provider." alt="" coords="34,550,178,846"/>
+<area shape="rect" id="Node000003" href="$classGreenFHom3DPer.html" title="Base class for homogeneous 3D Green&#39;s functions with lattice periodicity." alt="" coords="24,894,189,1167"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="109,861,109,894,104,894,104,861"/>
+<area shape="rect" id="Node000002" href="$classGreenF.html" title="Abstract base for Green&#39;s function kernels." alt="" coords="21,5,191,502"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,517,109,550,104,550,104,517"/>
+<area shape="rect" id="Node000004" href="$classGreenFHom3DPer2D.html" title="2D‑periodic homogeneous 3D Green&#39;s function with Ewald acceleration." alt="" coords="5,1215,207,2024"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="109,1182,109,1215,104,1215,104,1182"/>
+</map>

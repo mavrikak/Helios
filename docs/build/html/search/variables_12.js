@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['scales_0',['scales',['../structCoeffsInter.html#aa95f6c98f1f2a16fe2a8e0da86283ab3',1,'CoeffsInter']]],
+  ['semiimag_1',['semiImag',['../classSommerfeldIntegrator.html#a6c8a0e8bccc622a7b702866cc7e34013',1,'SommerfeldIntegrator']]],
+  ['semireal_2',['semiReal',['../classSommerfeldIntegrator.html#a91cb94cb37cad13f2a6718cfad3f33c5',1,'SommerfeldIntegrator']]],
+  ['side_3',['side',['../structbspPolygon.html#a223ccf04463cdd41f4026d0476ecdc71',1,'bspPolygon::side'],['../classRWGFun.html#af58dc7a2d730a0198b5a8b4de4398921',1,'RWGFun::side']]],
+  ['sizeim_4',['sizeIm',['../classLookupTable.html#abb858d416dff348b9f247aefd350bf9e',1,'LookupTable::sizeIm'],['../classLookupTableBin.html#a667480536aba14eb253df98229d1d3b8',1,'LookupTableBin::sizeIm']]],
+  ['sizere_5',['sizeRe',['../classLookupTable.html#a0e16d61af82fd44504de9960825907fc',1,'LookupTable::sizeRe'],['../classLookupTableBin.html#a17897e0346bc3357bc7b16433da6229b',1,'LookupTableBin::sizeRe']]],
+  ['solvectors_6',['solVectors',['../classSimJob.html#aef0ea2080610b6caee4eba901329397d',1,'SimJob']]],
+  ['sommintinter_7',['sommIntInter',['../classGreenFLayered3D.html#a96bb3ac13c9db827bad9fd25c70ac033',1,'GreenFLayered3D']]],
+  ['sommintintraminus_8',['sommIntIntraMinus',['../classGreenFLayered3D.html#a0cdd4e6c624dac46130976b1cad9ecf6',1,'GreenFLayered3D']]],
+  ['sommintintraplus_9',['sommIntIntraPlus',['../classGreenFLayered3D.html#a864dc84be9427268470c7cf9ed721edc',1,'GreenFLayered3D']]],
+  ['sommintintratb_10',['sommIntIntraTB',['../classGreenFLayered3D.html#a2c7630a5bbb7d94ac1e39fffe6d340db',1,'GreenFLayered3D']]],
+  ['sourceindex_11',['sourceIndex',['../classSommerfeldIntegrator.html#abfddd71b30488fd49ba9bf99ddd06de7',1,'SommerfeldIntegrator']]],
+  ['splitter_12',['splitter',['../classBsp3D.html#ac9a2bca5c6e38d8833c68314a75c24ed',1,'Bsp3D']]],
+  ['subjobincidentfields_13',['subjobIncidentFields',['../classSimJob.html#a0364566dc4961d9b6c67530aef8ac1a3',1,'SimJob']]],
+  ['supnodes_14',['supNodes',['../classSurfaceMesh.html#a1de6a9eb8ebab94507f2f213661ad6cc',1,'SurfaceMesh']]],
+  ['suptriangles_15',['supTriangles',['../classSurfaceMesh.html#a3f69f0b0f14a90b0bdc8c957b9c79fc1',1,'SurfaceMesh']]],
+  ['surfacearea_16',['surfaceArea',['../classTriangle.html#a1ecbac7f823b07d87cc0b8604f0502f5',1,'Triangle']]]
+];

@@ -1,0 +1,27 @@
+<map id="ReadCommented" name="ReadCommented">
+<area shape="rect" id="Node000001" title="Read a value of type T from a text stream, skipping lines beginning with &#39;#&#39;." alt="" coords="921,148,1055,175"/>
+<area shape="rect" id="Node000002" href="$classSimJob.html#a20b37e2e0aa2502a3ec465a5705b1774" title="Evaluate fields on a set of points read from a file." alt="" coords="412,44,545,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="970,135,930,81,903,54,872,34,826,19,777,10,728,8,679,11,590,26,520,45,519,40,589,21,679,6,728,3,778,5,827,14,874,30,907,50,935,77,974,132"/>
+<area shape="rect" id="Node000004" href="$classSurfaceMesh.html#ad8ac4a9fe716d917b92e245d091ab553" title="Read mesh from the custom &quot;.mesh&quot; text format." alt="" coords="632,96,867,123"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="907,146,872,139,817,126,818,121,873,133,908,141"/>
+<area shape="rect" id="Node000007" href="$classSurfaceMesh.html#ab392f262cacf93c286ef49cbe95f2a66" title="Read mesh from a COMSOL &quot;.mphtxt&quot; file." alt="" coords="626,148,873,175"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="905,164,873,164,873,159,905,159"/>
+<area shape="rect" id="Node000008" href="$classSurfaceMesh.html#ae7486b3dfa647ae8ee6063bd6297f5ff" title="Read mesh from a Gmsh &quot;.msh&quot; file (v2 text)." alt="" coords="636,200,863,227"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="908,182,873,189,818,202,817,196,872,184,907,176"/>
+<area shape="rect" id="Node000009" href="$classSimJob.html#a5845b99ec65d0662225efd5482a4ccd1" title="Load a previously saved solution vector into solVectors.back()." alt="" coords="659,44,840,71"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="957,140,918,112,872,87,836,74,838,69,874,82,920,107,960,136"/>
+<area shape="rect" id="Node000010" href="$classLookupTable.html#ae6e7b00a09e1e8150e013df55820cbb0" title="Construct a LookupTable from a text file." alt="" coords="655,252,844,279"/>
+<area shape="poly" id="edge13_Node000001_Node000010" title=" " alt="" coords="960,187,920,216,874,241,838,253,836,248,872,236,918,211,957,183"/>
+<area shape="rect" id="Node000011" href="$group__driver.html#ga3b2ef62f0ee5a558bf60dfa50d961d7a" title="Debug helper: read a value of type T and print it to std::cout." alt="" coords="695,304,804,331"/>
+<area shape="poly" id="edge14_Node000001_Node000011" title=" " alt="" coords="972,190,932,243,905,270,874,293,840,308,805,316,804,310,838,303,871,288,902,266,928,240,968,187"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Main driver routine for the HELIOS SIE simulation program." alt="" coords="5,96,60,123"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="396,70,60,109,60,104,396,64"/>
+<area shape="rect" id="Node000005" href="$classSurfaceMesh.html#aa64ebb4992ea98778f79c272568c68d2" title="Load a mesh from file by extension." alt="" coords="378,121,578,149"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="617,124,579,128,579,123,616,119"/>
+<area shape="rect" id="Node000006" href="$classSurfaceMesh.html#aa8811e2b8b03caa6028d5d154a69ea71" title="Convert/modify a mesh according to a conversion job file." alt="" coords="108,121,330,149"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="362,137,331,137,331,132,362,132"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="98,121,60,116,61,110,98,116"/>
+<area shape="poly" id="edge8_Node000007_Node000005" title=" " alt="" coords="611,150,579,147,579,142,611,145"/>
+<area shape="poly" id="edge10_Node000008_Node000005" title=" " alt="" coords="659,198,626,189,515,152,517,147,627,184,661,193"/>
+<area shape="poly" id="edge12_Node000009_Node000002" title=" " alt="" coords="643,60,545,60,545,55,643,55"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$classGreenF.html" title="Abstract base for Green&#39;s function kernels." alt="" coords="5,32,74,60"/>
+<area shape="rect" id="Node000001" href="$classGreenFHom3D.html" title="Free‑space (homogeneous) Green&#39;s function provider." alt="" coords="132,5,250,33"/>
+<area shape="poly" id="edge7_Node000000_Node000001" title=" " alt="" coords="88,35,131,27,132,32,89,40"/>
+<area shape="rect" id="Node000004" href="$classGreenFLayered3D.html" title="Layered background Green&#39;s function with tabulation and D/K/delta/kappa integrals." alt="" coords="122,57,260,85"/>
+<area shape="poly" id="edge10_Node000000_Node000004" title=" " alt="" coords="90,51,122,57,121,62,89,57"/>
+<area shape="rect" id="Node000002" href="$classGreenFHom3DPer.html" title="Base class for homogeneous 3D Green&#39;s functions with lattice periodicity." alt="" coords="308,5,446,33"/>
+<area shape="poly" id="edge8_Node000001_Node000002" title=" " alt="" coords="265,16,307,16,307,22,265,22"/>
+<area shape="rect" id="Node000003" href="$classGreenFHom3DPer2D.html" title="2D‑periodic homogeneous 3D Green&#39;s function with Ewald acceleration." alt="" coords="494,5,651,33"/>
+<area shape="poly" id="edge9_Node000002_Node000003" title=" " alt="" coords="462,16,494,16,494,22,462,22"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Bsp3D::SplitPoly" name="Bsp3D::SplitPoly">
+<area shape="rect" id="Node000001" title="Clip a polygon against the splitter, dispatching fragments to children." alt="" coords="170,5,298,33"/>
+<area shape="rect" id="Node000002" href="$classBsp3D.html#a214442602cb9f9276144dbe828ed793d" title="Recursively branch on the current splitter and distribute elements." alt="" coords="5,5,122,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,22,122,22,122,16,154,16"/>
+</map>

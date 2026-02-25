@@ -1,0 +1,12 @@
+<map id="Bsp3D::Branch" name="Bsp3D::Branch">
+<area shape="rect" id="Node000001" title="Recursively branch on the current splitter and distribute elements." alt="" coords="5,32,122,60"/>
+<area shape="rect" id="Node000002" href="$classBsp3D.html#a6780d5d9e7994fb46159aae82c98a229" title="Construct an empty node (non&#45;bud by default)." alt="" coords="177,5,290,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,34,162,28,162,33,122,39"/>
+<area shape="rect" id="Node000003" href="$classBsp3D.html#a53fed4500360085faceb956c49913117" title="Clip a polygon against the splitter, dispatching fragments to children." alt="" coords="170,57,298,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="122,52,154,57,154,62,122,57"/>
+<area shape="rect" id="Node000004" href="$classBsp3D.html#ab86d60e3ac1a432328b7b3115ba76d1b" title="Signed distance from a point to the splitter plane." alt="" coords="513,57,633,85"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="298,68,498,68,498,74,298,74"/>
+<area shape="rect" id="Node000005" href="$classBsp3D.html#aeef40776817ce8cec917de1fb2e84f7a" title="Classify a point relative to the splitter plane." alt="" coords="346,83,465,110"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="299,78,331,83,330,88,298,83"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="466,85,498,80,499,85,466,90"/>
+</map>

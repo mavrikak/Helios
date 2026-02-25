@@ -1,0 +1,7 @@
+<map id="Domain::PrintAllEdges" name="Domain::PrintAllEdges">
+<area shape="rect" id="Node000001" title="Debug: print all edges and the RWGs that live on them." alt="" coords="5,32,172,60"/>
+<area shape="rect" id="Node000002" href="$classSurfaceMesh.html#aff6d5c69ce476f61d264b8fbc28e8b23" title="Total number of stored unique edges." alt="" coords="220,5,403,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,33,204,29,204,35,172,39"/>
+<area shape="rect" id="Node000003" href="$classTriangle.html#a0752d2c9488c7c44b851b8f75abcaa79" title="Node position (by value) for local index 0..2." alt="" coords="254,57,368,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="172,53,239,60,238,66,172,58"/>
+</map>

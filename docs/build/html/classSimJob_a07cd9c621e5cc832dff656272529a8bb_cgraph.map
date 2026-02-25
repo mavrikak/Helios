@@ -1,0 +1,5 @@
+<map id="SimJob::absorptionCS" name="SimJob::absorptionCS">
+<area shape="rect" id="Node000001" title="Absorption cross&#45;section." alt="" coords="5,5,166,33"/>
+<area shape="rect" id="Node000002" href="$classDomain.html#ab2bafcb18de17fbe57d244ffad6d9061" title="Absorption cross section." alt="" coords="214,5,380,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="166,16,198,16,198,22,166,22"/>
+</map>

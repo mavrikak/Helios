@@ -1,0 +1,97 @@
+\doxysection{Symmetry\+Operation Class Reference}
+\hypertarget{classSymmetryOperation}{}\label{classSymmetryOperation}\index{SymmetryOperation@{SymmetryOperation}}
+
+
+Abstract base class for spatial symmetry operations.  
+
+
+
+
+{\ttfamily \#include $<$math\+Functions.\+h$>$}
+
+
+
+Inheritance diagram for Symmetry\+Operation\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classSymmetryOperation__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Symmetry\+Operation\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classSymmetryOperation__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classSymmetryOperation_a47fd81354601023185ebe9be8451c5e5}{\texorpdfstring{$\sim$}{\string~}\+Symmetry\+Operation}} ()
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classSymmetryOperation_a25060dd050f293e32a636234f1146188}{Apply}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} input\+Vector)=0
+\begin{DoxyCompactList}\small\item\em Apply a translation to a given vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for spatial symmetry operations. 
+
+Definition at line \mbox{\hyperlink{mathFunctions_8h_source_l00095}{95}} of file \mbox{\hyperlink{mathFunctions_8h_source}{math\+Functions.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classSymmetryOperation_a47fd81354601023185ebe9be8451c5e5}\index{SymmetryOperation@{SymmetryOperation}!````~SymmetryOperation@{\texorpdfstring{$\sim$}{\string~}SymmetryOperation}}
+\index{````~SymmetryOperation@{\texorpdfstring{$\sim$}{\string~}SymmetryOperation}!SymmetryOperation@{SymmetryOperation}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}SymmetryOperation()}{\string~SymmetryOperation()}}
+{\footnotesize\ttfamily \label{classSymmetryOperation_a47fd81354601023185ebe9be8451c5e5} 
+virtual Symmetry\+Operation\+::\texorpdfstring{$\sim$}{\string~}\+Symmetry\+Operation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Default destructor. 
+
+
+
+Definition at line \mbox{\hyperlink{mathFunctions_8h_source_l00098}{98}} of file \mbox{\hyperlink{mathFunctions_8h_source}{math\+Functions.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSymmetryOperation_a25060dd050f293e32a636234f1146188}\index{SymmetryOperation@{SymmetryOperation}!Apply@{Apply}}
+\index{Apply@{Apply}!SymmetryOperation@{SymmetryOperation}}
+\doxysubsubsection{\texorpdfstring{Apply()}{Apply()}}
+{\footnotesize\ttfamily \label{classSymmetryOperation_a25060dd050f293e32a636234f1146188} 
+virtual \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} Symmetry\+Operation\+::\+Apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{input\+Vector}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Apply a translation to a given vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Vector} & Input position vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Translated vector (input minus translation vector). 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classTranslation_a0cd5ba7aab503bf0733ea1e1759f9fad}{Translation}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{classSymmetryOperation_a25060dd050f293e32a636234f1146188_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{mathFunctions_8h}{math\+Functions.\+h}}\end{DoxyCompactItemize}

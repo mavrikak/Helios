@@ -1,0 +1,148 @@
+\doxysection{Sim\+Job.\+h}
+\hypertarget{SimJob_8h_source}{}\label{SimJob_8h_source}\index{SimJob.h@{SimJob.h}}
+\mbox{\hyperlink{SimJob_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00010}00010\ \textcolor{comment}{//\ Only\ include\ this\ once\ during\ compiling}}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00011}00011\ \textcolor{preprocessor}{\#ifndef\ SIMJOB\_H}}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00012}00012\ \textcolor{preprocessor}{\#define\ SIMJOB\_H}}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00014}\mbox{\hyperlink{SimJob_8h_a8263a262e3a4d744b08556f9bf181436}{00014}}\ \textcolor{preprocessor}{\#define\ EFIELD\ 1\ \ \ }}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00015}\mbox{\hyperlink{SimJob_8h_a279145c6fa24dc48d310a768b996744c}{00015}}\ \textcolor{preprocessor}{\#define\ HFIELD\ 2\ \ \ }}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00016}\mbox{\hyperlink{SimJob_8h_aa175bacfd8fb9b53cad24a7cb94db1f4}{00016}}\ \textcolor{preprocessor}{\#define\ DFIELD\ 4\ \ \ }}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00017}\mbox{\hyperlink{SimJob_8h_a0809674a029a31eaccea6dd07e590529}{00017}}\ \textcolor{preprocessor}{\#define\ BFIELD\ 8\ \ \ }}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00018}\mbox{\hyperlink{SimJob_8h_abe086912e6dddeeb2bd68bc6712bf576}{00018}}\ \textcolor{preprocessor}{\#define\ POYVEC\ 16\ \ }}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00019}\mbox{\hyperlink{SimJob_8h_a88e090a808630e22e34d9f69c0be9c66}{00019}}\ \textcolor{preprocessor}{\#define\ FORCE\ 32\ \ \ }}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00020}\mbox{\hyperlink{SimJob_8h_a0d5e23bac60070676b465522a140f5c7}{00020}}\ \textcolor{preprocessor}{\#define\ POWER\ 64\ \ \ }}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00022}00022\ \textcolor{preprocessor}{\#include\ <blitz/array.h>}}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00023}00023\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00024}00024\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00025}00025\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00026}00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Domain_8h}{Domain.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00027}00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{JobParser_8h}{JobParser.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00028}00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{SIEForm_8h}{SIEForm.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00043}\mbox{\hyperlink{classSimJob}{00043}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSimJob_a59a7b9db9a265d1b7976e327140299b0}{SimJob}}\ \{}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00044}00044\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00045}00045\ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Model\ state\ shared\ across\ a\ job\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00046}\mbox{\hyperlink{classSimJob_a8c0412c95abe53ba97566f3db24d084e}{00046}}\ \ \ std::vector<Domain*>\ \mbox{\hyperlink{classSimJob_a8c0412c95abe53ba97566f3db24d084e}{domains}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00047}\mbox{\hyperlink{classSimJob_a658edbf2559cc4e4946f809a1eac00c9}{00047}}\ \ \ \mbox{\hyperlink{classSurfaceMesh}{SurfaceMesh}}*\ \mbox{\hyperlink{classSimJob_a658edbf2559cc4e4946f809a1eac00c9}{mesh}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00048}\mbox{\hyperlink{classSimJob_a2cff4226f3d21370966a1d898ba591eb}{00048}}\ \ \ blitz::Array<dcmplx,\ 2>*\ \mbox{\hyperlink{classSimJob_a2cff4226f3d21370966a1d898ba591eb}{lseMatrix}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00049}\mbox{\hyperlink{classSimJob_ab5bb81122a5e8e5dab204977448016cb}{00049}}\ \ \ blitz::Array<dcmplx,\ 2>*\ \mbox{\hyperlink{classSimJob_ab5bb81122a5e8e5dab204977448016cb}{lseGradientMatrix}}[3];\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00050}\mbox{\hyperlink{classSimJob_a4b25f30e9aad5734bf5b9ee657ef96ec}{00050}}\ \ \ std::vector<blitz::Array<dcmplx,\ 1>*>\ \mbox{\hyperlink{classSimJob_a4b25f30e9aad5734bf5b9ee657ef96ec}{lseVectors}};\ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00051}\mbox{\hyperlink{classSimJob_aef0ea2080610b6caee4eba901329397d}{00051}}\ \ \ std::vector<blitz::Array<dcmplx,\ 1>*>\ \mbox{\hyperlink{classSimJob_aef0ea2080610b6caee4eba901329397d}{solVectors}};\ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00052}\mbox{\hyperlink{classSimJob_a961fa91f07275f6102516769b3b3de76}{00052}}\ \ \ std::vector<std::string>\ \mbox{\hyperlink{classSimJob_a961fa91f07275f6102516769b3b3de76}{labels}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00053}\mbox{\hyperlink{classSimJob_a8a09d28d2edf64bc1cdcc1f50d288216}{00053}}\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classSimJob_a8a09d28d2edf64bc1cdcc1f50d288216}{vacuumWavelength}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00054}\mbox{\hyperlink{classSimJob_aaf7a38bc82218ed93f0fe7882656a638}{00054}}\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ \mbox{\hyperlink{classSimJob_aaf7a38bc82218ed93f0fe7882656a638}{blochVector}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00055}\mbox{\hyperlink{classSimJob_ae7bcb4189cc176a904c7c3a99690e7af}{00055}}\ \ \ std::vector<rvec>\ \mbox{\hyperlink{classSimJob_ae7bcb4189cc176a904c7c3a99690e7af}{latticeVectors}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00056}\mbox{\hyperlink{classSimJob_ab80a0f001d2247b79f057f0e9645f572}{00056}}\ \ \ \mbox{\hyperlink{classJobParser}{JobParser}}\ \mbox{\hyperlink{classSimJob_ab80a0f001d2247b79f057f0e9645f572}{jobParser}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00057}\mbox{\hyperlink{classSimJob_a0364566dc4961d9b6c67530aef8ac1a3}{00057}}\ \ \ std::vector<IncidentField*>\ \mbox{\hyperlink{classSimJob_a0364566dc4961d9b6c67530aef8ac1a3}{subjobIncidentFields}};\ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00058}\mbox{\hyperlink{classSimJob_aab75aedec664ee0862d4c574c28ba1f1}{00058}}\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classSimJob_aab75aedec664ee0862d4c574c28ba1f1}{isCasimirJob}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00059}\mbox{\hyperlink{classSimJob_ae682550ed6bf641ead0349dcf4eef829}{00059}}\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSimJob_ae682550ed6bf641ead0349dcf4eef829}{threads}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00061}00061\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/\ Parsers\ used\ inside\ LoadFromFile()\ -\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00066}00066\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSimJob_a6d48eb7a13a50bdc8f9dc965165ed873}{LoadLabel}}();}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00072}00072\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSimJob_a7bb5eda7b7e62f899d8bf72ba8f33742}{LoadMesh}}();}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00078}00078\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSimJob_ac940b4b962fac361f3746deef6eb2e19}{LoadMeshPer}}();}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00084}00084\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSimJob_a21c36c1d2aa7937ca484527515e35263}{LoadWavelength}}();}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00090}00090\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSimJob_a9a630e54dbd3c59d8d0c5872fe082478}{LoadDomain}}();}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00096}00096\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSimJob_a4aed0b2fa9b728b0fcb8834d6cd9c3fd}{LoadDomainLayered}}();}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00102}00102\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSimJob_a9d261a88162a72dc73b70f0f71d69164}{LoadDomainPer}}();}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00108}00108\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSimJob_a9b33589923ea7f4e5b671e55ecf2b320}{LoadPlanewave}}();}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00114}00114\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSimJob_ae16a5d8bdcf14121a812acd22b3c573a}{LoadDipole}}();}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00120}00120\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSimJob_a762457879a5f323daff8a2802ee937bd}{LoadGaussian}}();}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00126}00126\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSimJob_a99c23586a8ba7184a750c694da6d9628}{LoadPeriodicity}}();}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00128}\mbox{\hyperlink{classSimJob_a89345aeacef9984753d0951eae28d0d0}{00128}}\ \ \ \mbox{\hyperlink{classLookupTableBin}{LookupTableBin}}*\ \mbox{\hyperlink{classSimJob_a89345aeacef9984753d0951eae28d0d0}{t}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00129}\mbox{\hyperlink{classSimJob_a6df921a04c5f4e0152e9d00e4378e3e4}{00129}}\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classSimJob_a6df921a04c5f4e0152e9d00e4378e3e4}{thereIsALookupTable}};\ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00131}00131\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00132}00132\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Lifecycle\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00134}00134\ \ \ \mbox{\hyperlink{classSimJob_a59a7b9db9a265d1b7976e327140299b0}{SimJob}}();}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00136}00136\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classSimJob_ab51d5f364601dd136bfdc696cdd91c69}{\string~SimJob}}();}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00137}00137\ \ \ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00138}00138\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Job\ I/O\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00143}00143\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSimJob_a83d402c189aeefdce43afbd3cb66f709}{LoadFromFile}}();}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00144}00144\ \ \ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00149}00149\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSimJob_adba2c6ff445d17b3d75443f94a7de5eb}{LoadSubjobFromFile}}();}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00150}00150\ \ \ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00151}00151\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Linear\ system\ construction\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00157}00157\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSimJob_aab5e82b9e59f35e95195fe298b1aaeaf}{CreateLSEMatrix}}();}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00158}00158\ \ \ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00163}00163\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSimJob_a85f2c21f521105259a5dcbaabb9c4e7a}{CreateLSEVec}}();}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00169}00169\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSimJob_a6db37fa49c08fa49ae7888c32c8f382d}{CreateSolVec}}();}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00170}00170\ \ \ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00171}00171\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Solvers\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00177}00177\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSimJob_a3af5b2630698df72bd1aa6b3efdcbb66}{SolveLSE}}(\textcolor{keywordtype}{int}\ solverType);}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00178}00178\ \ \ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00186}00186\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00187}00187\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSimJob_ac98a015c25c8e733475caf3c44317d0c}{WriteVectorToFile}}(std::string\ fileName,\ blitz::Array<T,\ 1>*\ vector);}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00188}00188\ \ \ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00194}00194\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSimJob_a5845b99ec65d0662225efd5482a4ccd1}{LoadSolFromFile}}(std::string\ solFile);}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00196}00196\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Orchestration\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00204}00204\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSimJob_aeca9fd8ceee84fdef75996581fe1093a}{Simulate}}(std::string\ jobFile,\ \textcolor{keywordtype}{int}\ solverType,\ std::string\ outPrefix);}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00205}00205\ \ \ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00206}00206\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Point-\/wise\ queries\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00212}00212\ \ \ \mbox{\hyperlink{classDomain}{Domain}}*\ \mbox{\hyperlink{classSimJob_ab3887eb9e217b1d6424ff85aec4b1793}{ContainingDomain}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ pos);}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00213}00213\ \ \ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00219}00219\ \ \ std::pair<cvec,\ cvec>\ \mbox{\hyperlink{classSimJob_a746e46ef2aa6843c2f4da96e472c75a3}{EField}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ pos);}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00220}00220\ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00227}00227\ \ \ std::pair<cvec,\ cvec>\ \mbox{\hyperlink{classSimJob_a746e46ef2aa6843c2f4da96e472c75a3}{EField}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ pos,\ \mbox{\hyperlink{classDomain}{Domain}}*\ contDomain);}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00228}00228\ \ \ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00234}00234\ \ \ std::pair<cvec,\ cvec>\ \mbox{\hyperlink{classSimJob_ae9e4bc91d7636bf3e7fd151c870cd01f}{HField}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ pos);}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00235}00235\ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00242}00242\ \ \ std::pair<cvec,\ cvec>\ \mbox{\hyperlink{classSimJob_ae9e4bc91d7636bf3e7fd151c870cd01f}{HField}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ pos,\ \mbox{\hyperlink{classDomain}{Domain}}*\ contDomain);}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00243}00243\ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00251}00251\ \ \ std::pair<std::pair<cvec,\ cvec>,\ std::pair<cvec,\ cvec>\ >\ \mbox{\hyperlink{classSimJob_a24f10b7bb14c9181341d07a783e00214}{EandHField}}(}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00252}00252\ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ pos,\ \mbox{\hyperlink{classDomain}{Domain}}*\ contDomain);}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00253}00253\ \ \ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00254}00254\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Diagnostics\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00261}00261\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classSimJob_a201222576f4e7d4dba3372d1f0615765}{Power}}(\mbox{\hyperlink{classDomain}{Domain}}*\ domain);}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00262}00262\ \ \ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00267}00267\ \ \ std::vector<double>\ \mbox{\hyperlink{classSimJob_a0ddeadc300108c36a5fd446397ce63a3}{scatteringCS}}(\mbox{\hyperlink{classDomain}{Domain}}*\ domain);}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00268}00268\ \ \ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00274}00274\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classSimJob_a07cd9c621e5cc832dff656272529a8bb}{absorptionCS}}(\mbox{\hyperlink{classDomain}{Domain}}*\ domain);}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00275}00275\ \ \ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00281}00281\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classSimJob_a6d465e65b1b6b9cf7cf9446369885786}{extinctionCS}}(\mbox{\hyperlink{classDomain}{Domain}}*\ domain);}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00282}00282\ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00283}00283\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Field\ evaluation\ over\ many\ points\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00297}00297\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSimJob_a20b37e2e0aa2502a3ec465a5705b1774}{FieldEval}}(std::string\ jobFile,\ std::string\ posFile,\ std::string\ outPrefix,}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00298}00298\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\ fields,\ \textcolor{keywordtype}{bool}\ needsCS\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00299}00299\ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00313}00313\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSimJob_aa492cf9e3639f2dfa91e36364a76729a}{FieldEvalParallel}}(}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00314}00314\ \ \ \ \ \ \ std::vector<rvec>\&\ posvec,\ \textcolor{keywordtype}{bool}\ needsE,\ \textcolor{keywordtype}{bool}\ needsH,}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00315}00315\ \ \ \ \ \ \ std::vector<std::pair<std::pair<cvec,\ cvec>,\ std::pair<cvec,\ cvec>>>\&}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00316}00316\ \ \ \ \ \ \ \ \ \ \ result,}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00317}00317\ \ \ \ \ \ \ std::vector<Domain*>\&\ contDom,\ \textcolor{keywordtype}{int}\&\ nPoint,\ std::mutex\&\ mut);}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00318}00318\ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00319}00319\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Casimir\ force\ computation\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00326}00326\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSimJob_a12a443329f3e49a5a94a6af72403d93b}{Casimir}}(std::string\ jobFile,\ std::string\ outPrefix);}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00327}00327\ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00328}00328\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Utilities\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00334}00334\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSimJob_a76044195996b2e4b7d30654549e9af9b}{LoadTableFromFile}}(std::string\ fileName);}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00335}00335\ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00340}00340\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSimJob_a4ea29b8acaa7e36fbc9478c2ed9df0c6}{AssignThreads}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSimJob_a89345aeacef9984753d0951eae28d0d0}{t}});}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00341}00341\ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00347}00347\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSimJob_a3e2febefec163d7d178559b7ecc47eab}{dumpLSEMatrix}}(blitz::Array<dcmplx,2>*\ \mbox{\hyperlink{classSimJob_a2cff4226f3d21370966a1d898ba591eb}{lseMatrix}},\ \textcolor{keyword}{const}\ std::string\ \&filename);}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00348}00348\ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00354}00354\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSimJob_ad4379daaf974c35ffd98b1e2add63b6e}{dumpLSEVector}}(blitz::Array<dcmplx,1>*\ lseVector,\ \textcolor{keyword}{const}\ std::string\ \&filename);}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00355}00355\ \};}
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00356}00356\ }
+\DoxyCodeLine{\Hypertarget{SimJob_8h_source_l00357}00357\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

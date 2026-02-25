@@ -1,0 +1,5 @@
+<map id="CLFlag" name="CLFlag">
+<area shape="rect" id="Node000001" title="Boolean flag option with no argument." alt="" coords="11,193,103,332"/>
+<area shape="rect" id="Node000002" href="$classCLParser.html" title="Abstract base for all command&#45;line option parsers." alt="" coords="5,5,109,145"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="60,160,60,193,55,193,55,160"/>
+</map>

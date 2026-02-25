@@ -1,0 +1,15 @@
+<map id="Domain::AddTrianglesFromMesh" name="Domain::AddTrianglesFromMesh">
+<area shape="rect" id="Node000001" title="Add all boundary triangles belonging to region dIndex and build RWGs." alt="" coords="823,84,1055,112"/>
+<area shape="rect" id="Node000002" href="$classDomain.html#a3f6f9e8ec932680440098679b6fe3300" title="Construct a domain over a mesh region at a given vacuum wavelength." alt="" coords="644,84,775,112"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="808,100,776,100,776,95,808,95"/>
+<area shape="rect" id="Node000003" href="$classDomainHom3D.html#ae2c7b0309cdbeda660e9e937de24c2b6" title="Construct a homogeneous domain and immediately create its Green&#39;s function." alt="" coords="346,5,575,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="667,79,595,48,550,36,551,31,597,43,669,74"/>
+<area shape="rect" id="Node000005" href="$classDomainHom3D.html#a711da6da038d5667d1dffeed2431ae11" title="Construct a homogeneous domain, optionally skipping Green&#39;s function creation." alt="" coords="346,57,575,85"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="628,92,575,86,576,81,629,87"/>
+<area shape="rect" id="Node000006" href="$classDomainLayered3D.html#ad0d867ee7289e485c4bc01077fbdb59a" title="Constructs a 3D layered domain with given material properties and geometry." alt="" coords="325,109,596,137"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="629,109,597,112,596,107,628,103"/>
+<area shape="rect" id="Node000007" href="$classDomainLayered3D.html#a35b7f667fbf74add0773fd4d1a3d0146" title="Construct without creating Green&#39;s functions (owner/aggregate path)." alt="" coords="325,161,596,189"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="669,121,597,151,550,163,549,158,595,146,667,116"/>
+<area shape="rect" id="Node000004" href="$classDomainHom3DPer.html#a973f16aa5d1165725d3d0bdab331781f" title="Construct a periodic homogeneous domain and select a periodic Green&#39;s function." alt="" coords="5,5,277,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="330,22,277,22,277,16,330,16"/>
+</map>

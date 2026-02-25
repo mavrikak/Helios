@@ -1,0 +1,158 @@
+<map id="mathFunctions.h" name="mathFunctions.h">
+<area shape="rect" id="Node000001" title="Header file of the class that provides auxiliary mathematical functionalities for the SIE solver." alt="" coords="2302,5,2431,33"/>
+<area shape="rect" id="Node000002" href="$GreenF_8h.html" title="Abstract base class for electromagnetic Green&#39;s functions." alt="" coords="549,308,627,336"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="2286,25,1785,38,1064,65,708,83,403,105,182,130,115,144,94,151,83,159,65,184,59,206,63,225,78,242,101,257,132,270,210,290,302,304,396,312,548,318,548,323,396,317,302,309,209,296,130,275,99,262,74,246,59,227,53,206,60,181,80,155,92,147,114,139,182,125,402,100,708,78,1064,59,1785,33,2286,20"/>
+<area shape="rect" id="Node000025" href="$GreenFHom3DPer_8h.html" title="Periodic homogeneous 3D Green&#39;s function (abstract base)." alt="" coords="2191,459,2340,487"/>
+<area shape="poly" id="edge72_Node000001_Node000025" title=" " alt="" coords="2347,47,2329,71,2312,101,2299,134,2293,169,2293,323,2285,401,2272,459,2266,458,2280,400,2288,323,2288,169,2293,133,2307,98,2325,68,2343,43"/>
+<area shape="rect" id="Node000027" href="$GreenFHom3DPer2D_8h.html" title="Periodic homogeneous 3D Green&#39;s function with 2D in‑plane periodicity." alt="" coords="2333,535,2502,563"/>
+<area shape="poly" id="edge73_Node000001_Node000027" title=" " alt="" coords="2384,46,2408,101,2416,135,2420,169,2420,399,2420,534,2415,534,2415,399,2415,169,2411,136,2403,103,2379,48"/>
+<area shape="rect" id="Node000040" href="$SurfaceMesh_8h.html" title="Declaration of the SurfaceMesh class and mesh edge struct." alt="" coords="1385,81,1503,109"/>
+<area shape="poly" id="edge74_Node000001_Node000040" title=" " alt="" coords="2286,30,1504,91,1503,86,2286,24"/>
+<area shape="rect" id="Node000050" href="$maintable_8cpp.html" title="Command&#45;line utility to generate, read, and write periodic error&#45;function lookup tables used in the S..." alt="" coords="2455,81,2569,109"/>
+<area shape="poly" id="edge105_Node000001_Node000050" title=" " alt="" coords="2408,38,2487,78,2485,83,2405,43"/>
+<area shape="rect" id="Node000051" href="$mathFunctions_8cpp.html" title=" " alt="" coords="2593,81,2738,109"/>
+<area shape="poly" id="edge106_Node000001_Node000051" title=" " alt="" coords="2436,35,2612,78,2611,83,2435,40"/>
+<area shape="rect" id="Node000003" href="$Domain_8h.html" title="Abstract simulation domain class for SIE scattering." alt="" coords="584,535,669,563"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="595,350,627,534,622,535,590,351"/>
+<area shape="rect" id="Node000012" href="$GreenFLayered3D_8h.html" title="Layered‑medium 3D Green&#39;s function (scalar/gradient/dyadic) + RWG integrals." alt="" coords="1546,762,1696,790"/>
+<area shape="poly" id="edge38_Node000002_Node000012" title=" " alt="" coords="643,325,834,343,1080,375,1195,395,1292,417,1358,442,1377,456,1384,471,1384,550,1390,589,1407,625,1431,657,1461,685,1495,710,1529,730,1589,759,1586,764,1526,735,1492,714,1458,689,1427,660,1402,628,1385,591,1379,550,1379,472,1373,460,1356,447,1290,422,1194,400,1079,380,833,349,642,330"/>
+<area shape="rect" id="Node000019" href="$casimir_8cpp.html" title="Main entry point for the HELIOS Casimir force routine." alt="" coords="366,686,461,714"/>
+<area shape="poly" id="edge70_Node000002_Node000019" title=" " alt="" coords="534,332,471,350,439,365,411,386,373,426,349,465,343,486,341,508,348,562,360,598,375,632,406,684,402,687,371,635,355,600,343,563,336,508,338,485,344,463,368,423,408,382,436,361,469,345,533,327"/>
+<area shape="rect" id="Node000020" href="$main_8cpp.html" title="This is the main file for the HELIOS program." alt="" coords="250,686,331,714"/>
+<area shape="poly" id="edge71_Node000002_Node000020" title=" " alt="" coords="534,330,497,336,456,347,415,363,379,386,348,418,324,458,308,501,298,546,291,629,292,686,287,686,285,629,293,545,303,499,320,455,343,415,376,382,413,358,454,342,495,331,533,325"/>
+<area shape="rect" id="Node000022" href="$GreenF_8cpp.html" title="Implementation of the GreenF base class." alt="" coords="421,384,515,411"/>
+<area shape="poly" id="edge28_Node000002_Node000022" title=" " alt="" coords="555,346,491,386,488,381,552,342"/>
+<area shape="rect" id="Node000023" href="$GreenFHom3D_8h.html" title="3D scalar/dyadic Green&#39;s function in a homogeneous background." alt="" coords="1721,384,1850,411"/>
+<area shape="poly" id="edge29_Node000002_Node000023" title=" " alt="" coords="643,324,1720,390,1720,395,642,329"/>
+<area shape="rect" id="Node000029" href="$IncidentField_8h.html" title="Abstract interface for incident electromagnetic excitations." alt="" coords="892,384,1009,411"/>
+<area shape="poly" id="edge39_Node000002_Node000029" title=" " alt="" coords="643,331,893,382,892,387,642,337"/>
+<area shape="rect" id="Node000035" href="$SIEForm_8h.html" title="Header for the SIEForm class." alt="" coords="396,459,482,487"/>
+<area shape="poly" id="edge67_Node000002_Node000035" title=" " alt="" coords="576,350,555,382,529,413,496,440,464,461,461,456,493,436,525,409,551,379,571,348"/>
+<area shape="rect" id="Node000037" href="$SIEFormPMCHW_8h.html" title="Header file for the SIEFormPMCHW class." alt="" coords="674,611,811,638"/>
+<area shape="poly" id="edge68_Node000002_Node000037" title=" " alt="" coords="604,348,738,609,734,612,599,351"/>
+<area shape="rect" id="Node000039" href="$SingSub_8cpp.html" title="Implementation of exact edge/surface integrals and K1–K4 kernels." alt="" coords="195,384,296,411"/>
+<area shape="poly" id="edge69_Node000002_Node000039" title=" " alt="" coords="534,337,296,388,295,383,533,332"/>
+<area shape="rect" id="Node000004" href="$Domain_8cpp.html" title="Implementation of the Domain base class." alt="" coords="550,611,650,638"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="619,578,607,611,602,609,614,576"/>
+<area shape="rect" id="Node000005" href="$DomainHom3D_8h.html" title="Homogeneous 3D simulation domain (derived from Domain)." alt="" coords="1936,611,2069,638"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="685,551,1936,617,1935,622,684,556"/>
+<area shape="rect" id="Node000015" href="$DomainLayered3D_8h.html" title="Layered 3D simulation domain (derived from Domain)." alt="" coords="1358,838,1512,865"/>
+<area shape="poly" id="edge22_Node000003_Node000015" title=" " alt="" coords="685,564,825,608,998,671,1166,737,1405,835,1403,840,1164,742,996,676,823,613,683,569"/>
+<area shape="rect" id="Node000018" href="$SimJob_8h.html" title="Orchestrates a full simulation run: parse job/subjobs, build the linear system, solve it,..." alt="" coords="448,611,526,638"/>
+<area shape="poly" id="edge23_Node000003_Node000018" title=" " alt="" coords="589,573,513,613,510,608,587,568"/>
+<area shape="rect" id="Node000006" href="$DomainHom3D_8cpp.html" title="Implementation of the homogeneous 3D domain." alt="" coords="818,913,966,941"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1921,640,1761,666,1547,708,1307,766,1185,801,1068,840,982,878,915,915,912,911,979,874,1066,835,1184,796,1305,761,1546,703,1761,661,1921,635"/>
+<area shape="rect" id="Node000007" href="$DomainHom3DPer_8h.html" title="Homogeneous 3D domain with in‑plane periodicity (derived from DomainHom3D)." alt="" coords="2210,686,2363,714"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="2069,640,2237,683,2235,688,2067,645"/>
+<area shape="rect" id="Node000009" href="$SimJob_8cpp.html" title="Implementation for the SimJob class." alt="" coords="1851,913,1944,941"/>
+<area shape="poly" id="edge9_Node000005_Node000009" title=" " alt="" coords="2039,646,2058,663,2073,685,2078,722,2079,782,2077,866,2049,893,2015,911,1979,922,1945,927,1944,922,1978,916,2013,906,2046,889,2072,864,2074,782,2073,722,2068,687,2054,667,2035,650"/>
+<area shape="rect" id="Node000010" href="$SommerfeldIntegrator_8h.html" title="Declaration of the SommerfeldIntegrator class, which evaluates Sommerfeld&#45;type integrals for layered ..." alt="" coords="1834,686,2011,714"/>
+<area shape="poly" id="edge10_Node000005_Node000010" title=" " alt="" coords="1979,651,1939,688,1935,684,1975,647"/>
+<area shape="rect" id="Node000008" href="$DomainHom3DPer_8cpp.html" title="Implementation of the homogeneous, periodically replicated 3D domain." alt="" coords="2308,762,2476,790"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="2319,721,2375,759,2372,764,2316,725"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="2279,730,2263,762,2241,799,2213,837,2177,868,2119,897,2056,915,1996,925,1945,929,1944,923,1995,920,2055,910,2117,892,2175,863,2209,833,2237,796,2258,759,2274,727"/>
+<area shape="rect" id="Node000011" href="$DomainLayered3D_8cpp.html" title="Implementation of the layered 3D domain." alt="" coords="1106,913,1275,941"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="1882,724,1816,764,1787,792,1769,819,1748,845,1715,868,1655,893,1602,907,1554,914,1507,915,1410,911,1354,911,1288,916,1276,917,1275,912,1288,911,1353,905,1410,905,1507,909,1553,909,1601,902,1653,888,1712,863,1745,841,1764,816,1783,789,1813,760,1879,719"/>
+<area shape="poly" id="edge12_Node000010_Node000012" title=" " alt="" coords="1854,721,1676,764,1675,759,1853,716"/>
+<area shape="rect" id="Node000017" href="$SommerfeldIntegrator_8cpp.html" title="Implementation of SommerfeldIntegrator: contour construction, integrand assembly, QUADPACK integratio..." alt="" coords="1827,762,2018,790"/>
+<area shape="poly" id="edge21_Node000010_Node000017" title=" " alt="" coords="1925,730,1925,762,1920,762,1920,730"/>
+<area shape="rect" id="Node000013" href="$Dipole_8h.html" title="Incident field generator for electric dipole illumination in homogeneous or layered media." alt="" coords="1078,838,1154,865"/>
+<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="1531,793,1155,847,1154,842,1530,788"/>
+<area shape="poly" id="edge17_Node000012_Node000015" title=" " alt="" coords="1575,798,1469,840,1467,835,1573,793"/>
+<area shape="rect" id="Node000016" href="$GreenFLayered3D_8cpp.html" title="Implementation of the 3D Green&#39;s Function class in a layered background." alt="" coords="1536,838,1701,865"/>
+<area shape="poly" id="edge20_Node000012_Node000016" title=" " alt="" coords="1623,806,1622,837,1616,837,1618,805"/>
+<area shape="poly" id="edge15_Node000013_Node000006" title=" " alt="" coords="1065,872,933,915,931,910,1063,867"/>
+<area shape="poly" id="edge16_Node000013_Node000011" title=" " alt="" coords="1142,875,1179,911,1176,915,1138,879"/>
+<area shape="rect" id="Node000014" href="$Dipole_8cpp.html" title="Implementation of the Dipole incident source." alt="" coords="992,913,1082,941"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="1093,878,1053,915,1049,911,1089,874"/>
+<area shape="poly" id="edge19_Node000015_Node000009" title=" " alt="" coords="1527,865,1850,916,1850,921,1526,870"/>
+<area shape="poly" id="edge18_Node000015_Node000011" title=" " alt="" coords="1378,873,1235,915,1234,910,1376,868"/>
+<area shape="poly" id="edge24_Node000018_Node000009" title=" " alt="" coords="542,636,634,649,720,657,874,662,1012,658,1140,652,1266,652,1331,657,1398,665,1469,679,1543,698,1623,725,1709,760,1768,794,1820,836,1862,879,1889,911,1885,914,1858,882,1817,840,1765,798,1707,764,1621,730,1542,704,1468,684,1397,670,1331,662,1266,658,1140,658,1012,663,874,667,720,662,634,654,541,641"/>
+<area shape="poly" id="edge25_Node000018_Node000019" title=" " alt="" coords="465,651,428,688,424,684,461,648"/>
+<area shape="poly" id="edge26_Node000018_Node000020" title=" " alt="" coords="438,647,326,688,324,683,436,642"/>
+<area shape="rect" id="Node000021" href="$mainpp_8cpp.html" title="This is the main file for the HELIOS program, specifically the post&#45;processing portion." alt="" coords="490,686,587,714"/>
+<area shape="poly" id="edge27_Node000018_Node000021" title=" " alt="" coords="507,650,532,684,527,687,502,653"/>
+<area shape="poly" id="edge30_Node000023_Node000005" title=" " alt="" coords="1810,420,1992,608,1988,612,1806,424"/>
+<area shape="poly" id="edge31_Node000023_Node000015" title=" " alt="" coords="1790,427,1789,457,1780,488,1769,505,1757,515,1730,537,1562,715,1448,839,1444,836,1558,711,1726,533,1754,511,1765,501,1775,486,1783,456,1785,427"/>
+<area shape="rect" id="Node000024" href="$GreenFHom3D_8cpp.html" title="Implementation of the 3D Green&#39;s Function class in a homogeneous background." alt="" coords="1621,459,1766,487"/>
+<area shape="poly" id="edge32_Node000023_Node000024" title=" " alt="" coords="1759,423,1711,461,1708,457,1756,419"/>
+<area shape="poly" id="edge33_Node000023_Node000025" title=" " alt="" coords="1866,408,2191,458,2190,463,1865,414"/>
+<area shape="rect" id="Node000026" href="$GreenFHom3DPer_8cpp.html" title="Implementation of the periodic homogeneous 3D Green&#39;s function base." alt="" coords="2144,535,2309,563"/>
+<area shape="poly" id="edge34_Node000025_Node000026" title=" " alt="" coords="2254,502,2236,536,2231,533,2249,500"/>
+<area shape="poly" id="edge35_Node000025_Node000027" title=" " alt="" coords="2307,492,2392,532,2389,537,2305,496"/>
+<area shape="poly" id="edge36_Node000027_Node000008" title=" " alt="" coords="2417,578,2396,762,2391,761,2412,577"/>
+<area shape="rect" id="Node000028" href="$GreenFHom3DPer2D_8cpp.html" title="Implementation of the 2D&#45;periodic homogeneous 3D Green&#39;s function." alt="" coords="2196,611,2380,638"/>
+<area shape="poly" id="edge37_Node000027_Node000028" title=" " alt="" coords="2382,573,2312,613,2310,608,2380,568"/>
+<area shape="poly" id="edge41_Node000029_Node000003" title=" " alt="" coords="910,420,656,537,654,532,908,416"/>
+<area shape="poly" id="edge42_Node000029_Node000006" title=" " alt="" coords="940,427,920,482,912,514,909,548,909,626,904,795,896,913,890,913,899,795,904,626,904,547,907,514,915,480,935,425"/>
+<area shape="poly" id="edge66_Node000029_Node000009" title=" " alt="" coords="1024,404,1169,424,1335,457,1685,562,1911,636,1989,666,2024,684,2041,711,2047,735,2043,761,2033,791,2010,831,1979,866,1947,895,1919,915,1916,911,1944,891,1975,863,2006,828,2028,789,2038,760,2041,736,2036,713,2021,688,1986,670,1909,641,1683,567,1334,462,1168,429,1024,409"/>
+<area shape="poly" id="edge43_Node000029_Node000011" title=" " alt="" coords="955,427,960,547,960,701,962,731,968,755,977,775,989,793,1024,826,1068,863,1110,891,1152,910,1150,915,1107,896,1065,867,1020,830,985,796,972,778,963,757,957,732,955,702,955,548,950,427"/>
+<area shape="poly" id="edge40_Node000029_Node000013" title=" " alt="" coords="1025,400,1056,407,1087,418,1116,434,1140,458,1147,475,1144,491,1135,504,1121,516,1093,531,1079,537,1066,578,1060,621,1062,666,1069,709,1091,786,1112,836,1107,838,1086,787,1064,710,1057,666,1055,621,1060,576,1075,533,1090,526,1118,511,1131,501,1139,489,1141,476,1135,461,1113,439,1085,422,1055,412,1024,405"/>
+<area shape="rect" id="Node000030" href="$Gaussian_8h.html" title="Incident field: paraxial Gaussian beam in a homogeneous medium." alt="" coords="1200,459,1293,487"/>
+<area shape="poly" id="edge44_Node000029_Node000030" title=" " alt="" coords="1019,413,1200,458,1199,463,1018,418"/>
+<area shape="rect" id="Node000032" href="$IncidentField_8cpp.html" title="Minimal implementation pieces for IncidentField." alt="" coords="994,459,1126,487"/>
+<area shape="poly" id="edge48_Node000029_Node000032" title=" " alt="" coords="984,418,1042,457,1039,461,981,423"/>
+<area shape="rect" id="Node000033" href="$PlaneWave_8h.html" title="Defines the PlaneWave class: representation of a plane‐wave incident field." alt="" coords="1229,838,1334,865"/>
+<area shape="poly" id="edge49_Node000029_Node000033" title=" " alt="" coords="1025,400,1102,406,1185,417,1258,433,1287,444,1307,457,1324,477,1332,498,1333,547,1333,702,1329,742,1317,780,1291,838,1286,836,1312,779,1323,741,1328,701,1328,548,1327,499,1320,480,1304,461,1284,449,1257,439,1184,422,1101,411,1024,405"/>
+<area shape="poly" id="edge54_Node000029_Node000035" title=" " alt="" coords="878,412,483,468,482,463,877,407"/>
+<area shape="poly" id="edge65_Node000029_Node000037" title=" " alt="" coords="927,424,890,461,812,546,756,612,752,608,808,543,886,457,923,421"/>
+<area shape="poly" id="edge45_Node000030_Node000006" title=" " alt="" coords="1212,498,1185,516,1161,537,1114,588,1070,642,993,754,935,851,901,914,896,912,930,848,988,751,1066,639,1110,584,1157,533,1182,511,1209,493"/>
+<area shape="poly" id="edge46_Node000030_Node000011" title=" " alt="" coords="1210,498,1190,515,1174,536,1165,569,1162,615,1167,727,1180,838,1191,913,1186,913,1174,839,1161,728,1157,615,1160,568,1170,534,1186,511,1206,494"/>
+<area shape="rect" id="Node000031" href="$Gaussian_8cpp.html" title="Implementation of the paraxial Gaussian beam incident field." alt="" coords="1184,535,1293,563"/>
+<area shape="poly" id="edge47_Node000030_Node000031" title=" " alt="" coords="1246,503,1243,535,1237,534,1241,502"/>
+<area shape="poly" id="edge50_Node000033_Node000006" title=" " alt="" coords="1214,868,963,915,962,910,1213,863"/>
+<area shape="poly" id="edge53_Node000033_Node000009" title=" " alt="" coords="1350,863,1638,899,1851,919,1850,925,1637,904,1349,868"/>
+<area shape="poly" id="edge51_Node000033_Node000011" title=" " alt="" coords="1255,878,1208,915,1205,911,1252,873"/>
+<area shape="rect" id="Node000034" href="$PlaneWave_8cpp.html" title="Implementation for the PlaneWave class." alt="" coords="1300,913,1420,941"/>
+<area shape="poly" id="edge52_Node000033_Node000034" title=" " alt="" coords="1308,874,1348,911,1344,915,1305,878"/>
+<area shape="poly" id="edge55_Node000035_Node000003" title=" " alt="" coords="487,491,594,532,592,537,485,496"/>
+<area shape="poly" id="edge64_Node000035_Node000018" title=" " alt="" coords="457,499,473,534,483,575,488,610,483,611,478,576,468,536,452,502"/>
+<area shape="rect" id="Node000036" href="$SIEForm_8cpp.html" title="Implementation for the SIEForm class." alt="" coords="357,535,459,563"/>
+<area shape="poly" id="edge56_Node000035_Node000036" title=" " alt="" coords="430,503,416,536,411,534,425,501"/>
+<area shape="poly" id="edge57_Node000035_Node000037" title=" " alt="" coords="469,494,517,528,573,560,637,587,697,608,695,613,635,592,571,565,514,532,466,499"/>
+<area shape="poly" id="edge58_Node000037_Node000006" title=" " alt="" coords="698,648,675,665,657,688,653,700,657,713,676,748,701,781,759,838,819,882,868,910,865,915,816,886,756,842,697,785,672,751,652,715,648,700,652,685,671,662,695,644"/>
+<area shape="poly" id="edge59_Node000037_Node000011" title=" " alt="" coords="778,645,832,684,887,735,925,779,965,820,1024,863,1082,891,1139,910,1138,915,1080,896,1021,868,961,824,921,783,883,739,829,688,775,649"/>
+<area shape="poly" id="edge61_Node000037_Node000019" title=" " alt="" coords="669,645,462,691,461,686,668,640"/>
+<area shape="poly" id="edge62_Node000037_Node000020" title=" " alt="" coords="659,641,354,689,332,693,331,688,353,684,658,636"/>
+<area shape="poly" id="edge63_Node000037_Node000021" title=" " alt="" coords="693,646,576,688,574,683,691,641"/>
+<area shape="rect" id="Node000038" href="$SIEFormPMCHW_8cpp.html" title="Implementation for the SIEFormPMCHW class." alt="" coords="666,686,819,714"/>
+<area shape="poly" id="edge60_Node000037_Node000038" title=" " alt="" coords="745,654,745,686,740,686,740,654"/>
+<area shape="poly" id="edge75_Node000040_Node000003" title=" " alt="" coords="1370,103,1098,125,919,146,732,174,551,211,467,233,389,258,321,286,263,316,217,349,185,385,180,398,185,410,208,425,242,435,331,443,424,446,464,450,494,457,530,474,563,494,613,532,610,537,560,499,527,478,492,462,463,455,424,451,330,448,241,440,205,430,181,413,174,398,180,382,213,345,260,311,319,281,388,253,465,228,550,206,731,169,919,140,1097,120,1370,98"/>
+<area shape="poly" id="edge76_Node000040_Node000005" title=" " alt="" coords="1518,96,1666,103,1840,115,1992,132,2046,142,2076,154,2096,174,2106,194,2109,217,2109,245,2109,323,2106,368,2098,413,2070,497,2038,566,2013,612,2008,609,2033,564,2065,495,2092,411,2101,367,2104,323,2104,245,2104,217,2100,195,2091,177,2073,159,2044,147,1991,137,1839,120,1665,109,1518,102"/>
+<area shape="poly" id="edge77_Node000040_Node000007" title=" " alt="" coords="1518,96,1658,101,1828,112,1990,129,2056,141,2106,154,2212,196,2254,217,2291,240,2360,298,2438,382,2480,427,2514,468,2525,489,2530,512,2527,537,2516,564,2499,588,2479,610,2432,645,2382,671,2336,688,2334,683,2379,666,2429,641,2476,606,2495,585,2511,561,2522,535,2524,512,2520,491,2510,471,2476,430,2434,385,2356,302,2288,245,2251,222,2210,201,2104,159,2055,146,1989,135,1828,118,1658,107,1518,101"/>
+<area shape="poly" id="edge101_Node000040_Node000010" title=" " alt="" coords="1518,98,1659,111,1740,122,1819,137,1892,156,1952,179,1975,193,1993,209,2004,226,2008,245,2008,399,2005,433,1998,462,1974,507,1947,551,1936,578,1927,611,1923,652,1924,686,1919,686,1918,652,1921,610,1930,576,1942,549,1970,504,1993,460,2000,432,2003,399,2003,245,1999,228,1989,212,1972,198,1949,184,1891,161,1818,142,1739,127,1658,116,1518,103"/>
+<area shape="poly" id="edge78_Node000040_Node000015" title=" " alt="" coords="1519,96,1671,107,1760,117,1849,131,1930,150,1996,174,2022,189,2042,206,2054,224,2059,245,2059,323,2061,358,2066,386,2084,434,2101,483,2107,512,2109,547,2109,702,2104,735,2088,758,2063,775,2032,792,1985,809,1925,820,1782,831,1637,835,1524,840,1512,842,1512,836,1524,835,1636,829,1782,826,1925,815,1984,804,2030,787,2061,771,2084,754,2099,733,2104,701,2104,548,2102,513,2096,484,2079,436,2061,388,2056,358,2053,323,2053,245,2049,226,2038,209,2019,194,1994,179,1928,155,1848,136,1760,122,1671,112,1518,101"/>
+<area shape="poly" id="edge103_Node000040_Node000019" title=" " alt="" coords="1370,100,1059,105,641,116,265,134,140,145,102,152,83,159,66,177,59,195,59,245,59,550,61,561,67,573,92,595,129,615,175,634,276,666,366,687,365,692,275,671,173,639,127,620,89,599,63,576,56,563,53,550,53,245,54,194,62,174,80,154,100,147,140,140,265,128,641,111,1059,100,1370,94"/>
+<area shape="poly" id="edge104_Node000040_Node000020" title=" " alt="" coords="1370,100,1054,107,628,119,245,136,116,147,76,153,56,159,33,176,18,194,10,216,8,245,8,550,15,586,34,616,63,640,99,659,139,673,179,683,250,693,249,699,178,688,137,678,97,664,60,644,30,620,10,588,3,550,3,245,5,215,13,191,29,172,53,154,75,148,116,142,244,131,628,113,1054,101,1370,95"/>
+<area shape="rect" id="Node000041" href="$RWGFun_8h.html" title="Header for the RWGFun class." alt="" coords="838,157,927,184"/>
+<area shape="poly" id="edge79_Node000040_Node000041" title=" " alt="" coords="1370,108,928,166,927,161,1370,103"/>
+<area shape="rect" id="Node000049" href="$SurfaceMesh_8cpp.html" title="Implementation of SurfaceMesh mesh I/O and utilities." alt="" coords="94,157,226,184"/>
+<area shape="poly" id="edge102_Node000040_Node000049" title=" " alt="" coords="1370,100,897,116,574,133,246,159,227,161,226,156,245,154,574,128,896,110,1370,95"/>
+<area shape="poly" id="edge88_Node000041_Node000002" title=" " alt="" coords="824,185,756,204,687,235,661,252,637,273,601,310,597,306,633,269,657,248,684,230,754,199,823,180"/>
+<area shape="poly" id="edge80_Node000041_Node000003" title=" " alt="" coords="824,185,775,203,751,217,731,234,716,254,709,273,707,321,707,399,699,441,682,480,661,512,641,536,637,533,656,509,677,477,694,439,701,399,701,320,704,272,711,252,727,231,748,212,772,198,822,180"/>
+<area shape="poly" id="edge89_Node000041_Node000029" title=" " alt="" coords="894,199,904,232,949,383,944,384,899,233,889,200"/>
+<area shape="poly" id="edge91_Node000041_Node000035" title=" " alt="" coords="824,182,660,206,557,225,450,248,348,276,257,308,185,345,159,364,141,385,136,398,141,410,157,423,182,434,251,451,328,461,395,467,395,472,327,467,250,456,181,439,154,427,137,413,130,398,136,382,156,361,183,340,255,303,346,271,449,243,556,220,659,201,823,176"/>
+<area shape="poly" id="edge92_Node000041_Node000037" title=" " alt="" coords="878,200,860,261,749,611,744,609,855,259,872,198"/>
+<area shape="rect" id="Node000042" href="$GaussQuad_8h.html" title="Gaussian quadrature helpers for Green&#39;s functions and incident fields." alt="" coords="1378,232,1486,260"/>
+<area shape="poly" id="edge81_Node000041_Node000042" title=" " alt="" coords="942,177,1378,235,1378,240,942,182"/>
+<area shape="rect" id="Node000043" href="$RWGFun_8cpp.html" title="Implementation for the RWGFun class." alt="" coords="742,232,845,260"/>
+<area shape="poly" id="edge90_Node000041_Node000043" title=" " alt="" coords="857,197,811,234,807,230,853,192"/>
+<area shape="rect" id="Node000044" href="$SingCancellation_8h.html" title="Quadrature point/weight builders for singularity&#45;cancellation on triangles." alt="" coords="1045,232,1187,260"/>
+<area shape="poly" id="edge93_Node000041_Node000044" title=" " alt="" coords="939,187,1075,229,1073,234,938,192"/>
+<area shape="rect" id="Node000046" href="$SingSub_8h.html" title="Exact subtractions for singular/near&#45;singular triangle integrals." alt="" coords="531,232,616,260"/>
+<area shape="poly" id="edge96_Node000041_Node000046" title=" " alt="" coords="824,188,617,237,616,232,823,183"/>
+<area shape="rect" id="Node000047" href="$TriQuadPol_8h.html" title="Polar quadrature on a single triangle around an observation point." alt="" coords="1866,308,1968,336"/>
+<area shape="poly" id="edge99_Node000041_Node000047" title=" " alt="" coords="943,173,1186,192,1341,209,1498,230,1703,268,1867,305,1865,310,1702,273,1497,235,1340,214,1185,198,942,178"/>
+<area shape="poly" id="edge84_Node000042_Node000002" title=" " alt="" coords="1363,256,628,320,627,314,1363,251"/>
+<area shape="poly" id="edge86_Node000042_Node000012" title=" " alt="" coords="1500,262,1717,321,1814,354,1847,369,1865,382,1869,397,1865,412,1840,471,1792,567,1740,661,1706,716,1676,743,1646,764,1643,759,1673,739,1702,712,1736,658,1787,564,1835,469,1860,410,1864,397,1860,385,1844,373,1812,359,1716,326,1499,267"/>
+<area shape="poly" id="edge82_Node000042_Node000013" title=" " alt="" coords="1435,276,1435,396,1435,550,1432,579,1426,606,1402,657,1366,702,1323,741,1276,774,1230,802,1151,840,1149,835,1227,797,1273,770,1320,737,1362,698,1397,654,1421,605,1427,578,1429,550,1429,396,1429,276"/>
+<area shape="poly" id="edge85_Node000042_Node000023" title=" " alt="" coords="1478,264,1755,381,1753,386,1476,269"/>
+<area shape="poly" id="edge83_Node000042_Node000030" title=" " alt="" coords="1414,274,1260,460,1255,457,1410,270"/>
+<area shape="poly" id="edge87_Node000042_Node000033" title=" " alt="" coords="1445,274,1453,307,1469,401,1478,475,1474,548,1453,639,1440,673,1423,705,1380,762,1336,808,1300,839,1296,835,1332,804,1376,759,1418,702,1435,670,1448,638,1469,548,1472,475,1463,401,1448,309,1440,275"/>
+<area shape="poly" id="edge94_Node000044_Node000012" title=" " alt="" coords="1162,264,1224,295,1301,338,1380,393,1418,424,1453,458,1486,497,1516,540,1565,629,1600,708,1620,761,1615,763,1595,710,1560,632,1511,543,1482,500,1449,461,1415,428,1377,397,1298,343,1222,300,1159,269"/>
+<area shape="rect" id="Node000045" href="$SingCancellation_8cpp.html" title="Implementation of the singularity&#45;cancellation paired quadrature builders." alt="" coords="1037,308,1195,336"/>
+<area shape="poly" id="edge95_Node000044_Node000045" title=" " alt="" coords="1119,276,1119,308,1113,308,1113,276"/>
+<area shape="poly" id="edge97_Node000046_Node000002" title=" " alt="" coords="582,275,588,307,583,308,576,276"/>
+<area shape="poly" id="edge98_Node000046_Node000039" title=" " alt="" coords="532,269,275,386,273,381,530,264"/>
+<area shape="poly" id="edge100_Node000047_Node000012" title=" " alt="" coords="1929,350,1937,380,1941,416,1938,453,1925,488,1915,501,1903,509,1879,515,1854,521,1843,527,1831,537,1815,560,1807,582,1801,626,1795,670,1785,693,1767,716,1748,732,1727,746,1682,764,1680,759,1724,741,1745,728,1763,712,1780,690,1789,668,1796,625,1801,580,1811,557,1827,533,1840,522,1853,516,1878,510,1901,504,1911,497,1920,486,1933,452,1935,416,1931,381,1924,351"/>
+</map>

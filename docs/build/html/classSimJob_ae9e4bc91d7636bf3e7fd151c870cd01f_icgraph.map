@@ -1,0 +1,9 @@
+<map id="SimJob::HField" name="SimJob::HField">
+<area shape="rect" id="Node000001" title="Incident and secondary &#160;at pos (domain auto&#45;detected)." alt="" coords="518,5,634,33"/>
+<area shape="rect" id="Node000002" href="$classSimJob.html#aa492cf9e3639f2dfa91e36364a76729a" title="Thread worker to evaluate fields over posvec in parallel." alt="" coords="289,5,470,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="503,22,471,22,471,16,503,16"/>
+<area shape="rect" id="Node000003" href="$classSimJob.html#a20b37e2e0aa2502a3ec465a5705b1774" title="Evaluate fields on a set of points read from a file." alt="" coords="108,5,241,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="274,22,242,22,242,16,274,16"/>
+<area shape="rect" id="Node000004" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Main driver routine for the HELIOS SIE simulation program." alt="" coords="5,5,60,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="92,22,60,22,60,16,92,16"/>
+</map>

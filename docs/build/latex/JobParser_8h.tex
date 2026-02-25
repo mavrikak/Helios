@@ -1,0 +1,43 @@
+\doxysection{Job\+Parser.\+h File Reference}
+\hypertarget{JobParser_8h}{}\label{JobParser_8h}\index{JobParser.h@{JobParser.h}}
+
+
+Lightweight XML-\/like tag parser for the solver job file.  
+
+
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for Job\+Parser.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{JobParser_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{JobParser_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classJobParser}{Job\+Parser}}
+\begin{DoxyCompactList}\small\item\em Streaming, stack-\/based reader for simple tag-\/delimited job files. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Lightweight XML-\/like tag parser for the solver job file. 
+
+Provides a minimal, streaming parser that understands a restricted, whitespace-\/ separated tag syntax, e.\+g.\+:
+
+$<job> <mesh> mesh.mesh </mesh> <excitation> ... </excitation> </job>$
+
+The class keeps a stack of open tags to allow nested blocks and exposes helpers to read typed values and to jump to the end of the current tag. 
+
+Definition in file \mbox{\hyperlink{JobParser_8h_source}{Job\+Parser.\+h}}.
+

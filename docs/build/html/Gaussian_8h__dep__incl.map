@@ -1,0 +1,9 @@
+<map id="Gaussian.h" name="Gaussian.h">
+<area shape="rect" id="Node000001" title="Incident field: paraxial Gaussian beam in a homogeneous medium." alt="" coords="216,5,309,33"/>
+<area shape="rect" id="Node000002" href="$DomainHom3D_8cpp.html" title="Implementation of the homogeneous 3D domain." alt="" coords="5,81,154,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="216,42,113,83,111,78,214,37"/>
+<area shape="rect" id="Node000003" href="$DomainLayered3D_8cpp.html" title="Implementation of the layered 3D domain." alt="" coords="178,81,347,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="265,49,265,81,260,81,260,49"/>
+<area shape="rect" id="Node000004" href="$Gaussian_8cpp.html" title="Implementation of the paraxial Gaussian beam incident field." alt="" coords="371,81,479,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="306,37,397,78,395,83,304,42"/>
+</map>

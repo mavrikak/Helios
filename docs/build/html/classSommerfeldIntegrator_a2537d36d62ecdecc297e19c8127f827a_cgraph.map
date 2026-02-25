@@ -1,0 +1,50 @@
+<map id="SommerfeldIntegrator::Evaluate" name="SommerfeldIntegrator::Evaluate">
+<area shape="rect" id="Node000001" title="Computes inter&#45;layer coefficients for Green&#39;s function interpolation." alt="" coords="5,293,171,338"/>
+<area shape="rect" id="Node000002" href="$structIntegrandInter.html#a2668c7d108e647d129889975d618ecfc" title="Function to create a flattened structure." alt="" coords="441,105,604,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,292,106,247,131,191,167,136,190,112,217,93,249,79,283,71,318,68,352,69,419,80,474,97,472,102,417,86,352,75,318,73,284,76,251,84,220,97,194,116,171,139,135,194,111,249,97,293"/>
+<area shape="rect" id="Node000005" href="$SommerfeldIntegrator_8cpp.html#a451453beb5b95daba5d1e92047643b13" title="Performs Gauss&#45;Kronrod integration." alt="" coords="250,5,360,33"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="92,292,106,242,131,177,167,109,190,77,217,49,234,37,237,41,220,53,194,81,171,112,135,180,111,244,97,293"/>
+<area shape="rect" id="Node000007" href="$SommerfeldIntegrator_8cpp.html#a5c189341c1c2b58a6edd7bb6d77f3390" title="Extract one row (across all columns) at a specific depth in a 3D matrix." alt="" coords="219,107,392,134"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="99,291,144,219,178,179,217,145,227,139,229,144,220,149,181,183,148,223,103,294"/>
+<area shape="rect" id="Node000008" href="$SommerfeldIntegrator_8cpp.html#a227a630955115f778548ee81c152897b" title="Extract all depth elements at a specific row and column in a 3D matrix." alt="" coords="219,159,392,186"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="107,290,154,243,185,218,217,197,231,190,233,195,220,201,188,223,158,247,111,294"/>
+<area shape="rect" id="Node000009" href="$SommerfeldIntegrator_8cpp.html#a85b9f46fa6967ea992a869f4371d5214" title="Extract one column (across all rows) at a specific depth in a 3D matrix." alt="" coords="219,211,392,238"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="129,290,218,247,235,241,237,246,220,252,131,295"/>
+<area shape="rect" id="Node000010" href="$classSommerfeldIntegrator.html#a5479217de11e54b823a970c39580fa64" title="Computes the inter&#45;layer integration function." alt="" coords="223,262,388,307"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="171,301,207,296,207,301,171,306"/>
+<area shape="rect" id="Node000011" href="$classSommerfeldIntegrator.html#a9467786ef80af13f1b6f4317fb6ae80a" title="Computes the inter&#45;layer Green&#39;s function integrand." alt="" coords="440,293,605,338"/>
+<area shape="poly" id="edge18_Node000001_Node000011" title=" " alt="" coords="171,315,219,317,392,317,424,316,424,321,392,322,219,322,171,321"/>
+<area shape="rect" id="Node000018" href="$SommerfeldIntegrator_8cpp.html#a5535ba494c54ae267b6b889fbf34a339" title="Flatten 3D complex tensor grid (column&#45;major order)." alt="" coords="244,381,366,409"/>
+<area shape="poly" id="edge19_Node000001_Node000018" title=" " alt="" coords="152,336,252,373,250,378,150,341"/>
+<area shape="rect" id="Node000019" href="$SommerfeldIntegrator_8cpp.html#a5384eb4c9aebb470421b74dae88a9a1c" title="Retrieves the imaginary part of a selected member of the computed integrand." alt="" coords="238,433,373,461"/>
+<area shape="poly" id="edge20_Node000001_Node000019" title=" " alt="" coords="113,336,160,378,220,418,234,425,232,430,217,423,157,382,110,340"/>
+<area shape="rect" id="Node000020" href="$SommerfeldIntegrator_8cpp.html#a959789f60c38ac9b62d804949d79fe03" title="Retrieves the real part of a selected member of the computed integrand." alt="" coords="240,485,371,513"/>
+<area shape="poly" id="edge21_Node000001_Node000020" title=" " alt="" coords="104,336,150,403,183,439,220,470,231,476,228,481,217,475,179,443,146,406,100,340"/>
+<area shape="rect" id="Node000021" href="$classSommerfeldIntegrator.html#a22d5ef6859dfee2cb33c026abeafa091" title="Selects and processes 3D data based on the given input parameters." alt="" coords="223,537,388,582"/>
+<area shape="poly" id="edge22_Node000001_Node000021" title=" " alt="" coords="100,337,117,376,143,426,178,477,220,523,225,526,222,530,217,526,174,481,139,429,113,379,95,339"/>
+<area shape="rect" id="Node000022" href="$classSommerfeldIntegrator.html#ae6b066494d7f0e8d6dfd9c8e282f9e5a" title="Dump a 3D complex matrix to text (i j k Re Im) for debugging." alt="" coords="223,606,388,651"/>
+<area shape="poly" id="edge23_Node000001_Node000022" title=" " alt="" coords="97,337,110,389,134,457,170,529,194,562,221,592,224,595,220,599,217,596,189,565,166,531,129,459,105,390,91,339"/>
+<area shape="rect" id="Node000003" href="$structIntegrandInter.html#a2ea9f2fbbfb494f9b9debd5f7f4f362b" title="Extract selected elements from a 3D array into a compact 3D structure." alt="" coords="653,105,858,133"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="605,116,637,116,637,122,605,122"/>
+<area shape="rect" id="Node000004" href="$structIntegrandInter.html#adb71cb8507ba98a63b290ec0acd8d628" title="Bounds&#45;checked access to a 3D array element." alt="" coords="906,105,1084,133"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="858,116,890,116,890,122,858,122"/>
+<area shape="rect" id="Node000006" href="$SommerfeldIntegrator_8cpp.html#a9d3834c50a37c06607ab377700f8ba4d" title="Adaptive Gauss–Kronrod quadrature (QUADPACK driver routine DQAGE)." alt="" coords="488,5,557,33"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="361,16,473,16,473,22,361,22"/>
+<area shape="poly" id="edge10_Node000010_Node000002" title=" " alt="" coords="370,259,391,248,423,223,452,196,499,144,503,147,456,199,426,227,393,252,372,264"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="389,294,425,299,424,304,388,299"/>
+<area shape="rect" id="Node000012" href="$SommerfeldIntegrator_8cpp.html#a93b85379d21563ca5aba6f5eff053826" title="Computes the Bessel function ." alt="" coords="722,301,789,329"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="606,312,706,312,706,318,606,318"/>
+<area shape="rect" id="Node000014" href="$SommerfeldIntegrator_8cpp.html#aa15340ecd95146df9ef36735f56c3417" title="Computes the Hankel function ." alt="" coords="718,353,793,381"/>
+<area shape="poly" id="edge14_Node000011_Node000014" title=" " alt="" coords="606,331,704,353,703,358,605,336"/>
+<area shape="rect" id="Node000016" href="$classSommerfeldIntegrator.html#a81c32ffee2aefc0eecbbbd7235c80e70" title="Computes secondary wave contributions in a layered medium." alt="" coords="673,233,838,278"/>
+<area shape="poly" id="edge16_Node000011_Node000016" title=" " alt="" coords="605,291,657,278,659,283,606,296"/>
+<area shape="rect" id="Node000013" href="$SommerfeldIntegrator_8cpp.html#a384f5925eef2fc5d52e72a65c50174c7" title="Compute complex Bessel functions of the first kind ." alt="" coords="964,301,1026,329"/>
+<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="790,312,948,312,948,318,790,318"/>
+<area shape="rect" id="Node000015" href="$SommerfeldIntegrator_8cpp.html#a2119f72fafe396d33e9c85025883db96" title="Compute complex Hankel functions of the first kind or second kind ." alt="" coords="962,353,1028,381"/>
+<area shape="poly" id="edge15_Node000014_Node000015" title=" " alt="" coords="793,364,946,364,946,370,793,370"/>
+<area shape="rect" id="Node000017" href="$classSommerfeldIntegrator.html#ac555c6dc86d0b7fb03ea49df9668daf8" title="Computes distances from interfaces for inter&#45;layer secondary wave calculations." alt="" coords="912,233,1078,278"/>
+<area shape="poly" id="edge17_Node000016_Node000017" title=" " alt="" coords="838,252,896,252,896,258,838,258"/>
+<area shape="rect" id="Node000023" href="$Domain_8cpp.html#aafa3e4fa6318b2f8740f4dbd50c367e5" title="Extract the real part of each component of a complex 3&#45;vector." alt="" coords="500,615,546,642"/>
+<area shape="poly" id="edge24_Node000022_Node000023" title=" " alt="" coords="388,626,484,626,484,631,388,631"/>
+<area shape="poly" id="edge25_Node000023_Node000023" title=" " alt="" coords="498,623,482,612,481,600,495,591,523,588,546,590,561,596,566,605,561,615,556,612,561,605,557,600,545,595,523,593,497,596,486,602,486,609,501,619"/>
+</map>

@@ -1,0 +1,15 @@
+<map id="Triangle::NodePtr" name="Triangle::NodePtr">
+<area shape="rect" id="Node000001" title="Node pointer for local index 0..2." alt="" coords="545,117,677,145"/>
+<area shape="rect" id="Node000002" href="$classTriangle.html#a6a5a3532e273e1fbb69b26eea2f509c0" title="Count common nodes with triangle T (0..3)." alt="" coords="306,57,480,85"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="550,115,496,99,455,88,456,83,498,94,551,110"/>
+<area shape="rect" id="Node000006" href="$classTriangle.html#aab413203fc04781220ce7cf8224105bd" title="Find common edge local indices with T." alt="" coords="294,109,492,154"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="529,134,493,134,493,128,529,128"/>
+<area shape="rect" id="Node000007" href="$classTriangle.html#aa137190a0a6fd9adadee37a8228313d6" title="Find common vertex local indices with T." alt="" coords="289,178,497,223"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="551,153,466,180,465,175,550,148"/>
+<area shape="rect" id="Node000003" href="$classGreenFHom3D.html#a419cbe00b5a2aed70ac546904a8a8d6f" title="Compute &#160;and &#160;for all RWG pairs on two triangles." alt="" coords="25,5,221,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="302,56,198,36,199,31,303,51"/>
+<area shape="rect" id="Node000004" href="$classGreenFHom3DPer2D.html#a1dc9dd84c93ee10b2fb4b1866103d957" title="Compute &#160;and &#160;for all RWG pairs on two triangles." alt="" coords="5,57,241,85"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="290,74,241,74,241,68,290,68"/>
+<area shape="rect" id="Node000005" href="$classGreenFLayered3D.html#a6c88af86169f8d148c3e9f4da77a77d0" title="Triangle–triangle D/K blocks assembly for all RWG pairs on two triangles." alt="" coords="14,109,232,137"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="303,91,199,111,198,106,302,86"/>
+</map>

@@ -1,0 +1,31 @@
+<map id="conj" name="conj">
+<area shape="rect" id="Node000001" title="Compute the element&#45;wise complex conjugate of a 3&#45;vector." alt="" coords="742,178,790,206"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="787,164,780,159,766,157,753,159,746,163,744,169,747,177,742,179,738,169,741,160,751,154,766,151,782,154,790,160"/>
+<area shape="rect" id="Node000002" href="$SimJob_8cpp.html#a6c07f30d5cdc5dc98cdc21ce445933cb" title="Compute the element&#45;wise complex conjugate of a 3&#45;vector." alt="" coords="597,23,670,51"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="741,168,645,53,649,50,745,165"/>
+<area shape="rect" id="Node000005" href="$DomainHom3D_8cpp.html#acf27d554499921efb016e1a01ac8b94e" title="Compute the element&#45;wise complex conjugate of a 3&#45;vector." alt="" coords="582,126,685,154"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="726,179,670,157,672,152,728,175"/>
+<area shape="rect" id="Node000009" href="$DomainLayered3D_8cpp.html#a37aee72ef7a00576c814a1370473cce7" title="Compute the element&#45;wise complex conjugate of a 3&#45;vector." alt="" coords="594,230,673,258"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="728,209,672,232,670,227,726,204"/>
+<area shape="rect" id="Node000013" href="$classDomain.html#a3087596044d4c345f84faaad1291946d" title="Power crossing the domain boundary computed from the RWG solution." alt="" coords="573,307,694,335"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="744,219,696,271,654,309,650,305,692,267,741,215"/>
+<area shape="rect" id="Node000003" href="$classSimJob.html#a20b37e2e0aa2502a3ec465a5705b1774" title="Evaluate fields on a set of points read from a file." alt="" coords="108,178,241,206"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="581,26,519,14,444,8,405,9,365,14,327,23,290,38,269,52,251,68,219,108,197,147,183,179,178,177,192,145,215,105,247,65,266,47,288,34,325,18,364,9,404,4,445,3,520,9,582,21"/>
+<area shape="rect" id="Node000004" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Main driver routine for the HELIOS SIE simulation program." alt="" coords="5,178,60,206"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="92,195,60,195,60,189,92,189"/>
+<area shape="rect" id="Node000006" href="$classDomainHom3D.html#ad19635c8b33f69ebf6cb3cd8788f7f23" title="Absorption cross section via surface quadrature." alt="" coords="300,47,515,75"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="592,121,524,90,483,78,484,73,526,85,595,116"/>
+<area shape="rect" id="Node000007" href="$classDomainHom3D.html#aa6a76dafe56204c15b80e491e6a2b21d" title="Extinction cross section via surface quadrature." alt="" coords="302,99,513,127"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="567,135,513,128,514,123,567,130"/>
+<area shape="rect" id="Node000008" href="$classDomainHom3D.html#af51c0166dbce1642b143f7bf910b7c12" title="Scattering cross section via surface quadrature." alt="" coords="302,151,513,179"/>
+<area shape="poly" id="edge8_Node000005_Node000008" title=" " alt="" coords="567,150,514,156,513,151,567,145"/>
+<area shape="rect" id="Node000010" href="$classDomainLayered3D.html#a4e5fb098bcc6edc2f594da23e0b64fb3" title="Absorption cross section." alt="" coords="289,203,525,231"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="578,240,525,234,526,229,579,235"/>
+<area shape="rect" id="Node000011" href="$classDomainLayered3D.html#a847bdddcbf4257a73cfcd2766c882f8b" title="Extinction cross section." alt="" coords="291,255,523,283"/>
+<area shape="poly" id="edge11_Node000009_Node000011" title=" " alt="" coords="579,253,524,259,524,254,578,247"/>
+<area shape="rect" id="Node000012" href="$classDomainLayered3D.html#a267135f0a2f5bfff12f7ac3b25429176" title="Scattering cross section." alt="" coords="291,307,523,335"/>
+<area shape="poly" id="edge12_Node000009_Node000012" title=" " alt="" coords="594,268,526,297,483,309,482,304,524,292,592,263"/>
+<area shape="rect" id="Node000014" href="$classSimJob.html#a201222576f4e7d4dba3372d1f0615765" title="Net time&#45;averaged power crossing the domain&#39;s surface." alt="" coords="350,359,464,387"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="559,341,526,349,466,363,464,358,525,344,557,336"/>
+<area shape="poly" id="edge15_Node000014_Node000003" title=" " alt="" coords="334,368,310,360,288,349,249,315,218,276,194,237,179,207,184,205,199,235,222,273,253,312,290,344,312,355,336,363"/>
+</map>

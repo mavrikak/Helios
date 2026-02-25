@@ -1,0 +1,10 @@
+<map id="PlaneWave::EvaluateLayeredEandH" name="PlaneWave::EvaluateLayeredEandH">
+<area shape="rect" id="Node000001" title="Evaluate the electric and magnetic fields at a given position in layered media." alt="" coords="487,65,697,110"/>
+<area shape="rect" id="Node000002" href="$classPlaneWave.html#a80fe83d9acd52a14f7b2f0ea2317b036" title="Integrate layered E and H fields against an RWG basis function." alt="" coords="227,5,439,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="478,64,432,53,433,48,479,59"/>
+<area shape="rect" id="Node000003" href="$classPlaneWave.html#a07739002b987553f07df880745707fad" title="Construct a plane wave in a layered medium." alt="" coords="5,99,179,127"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="471,96,179,111,179,106,471,91"/>
+<area shape="rect" id="Node000004" href="$classPlaneWave.html#a1f1fd1b5140ab23b3ec7899e6962e60f" title="Write E and H field values at sample points to CSV files." alt="" coords="241,124,424,152"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="472,114,408,126,407,121,471,109"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="226,130,179,125,179,119,226,124"/>
+</map>

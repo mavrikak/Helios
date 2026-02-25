@@ -1,0 +1,9 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$classDomain.html" title="Abstract base class for domains." alt="" coords="5,32,78,60"/>
+<area shape="rect" id="Node000001" href="$classDomainHom3D.html" title="Concrete domain for homogeneous 3D media." alt="" coords="136,5,258,33"/>
+<area shape="poly" id="edge4_Node000000_Node000001" title=" " alt="" coords="93,34,135,27,136,32,93,40"/>
+<area shape="rect" id="Node000003" href="$classDomainLayered3D.html" title="3D stratified (layered) medium domain." alt="" coords="126,57,268,85"/>
+<area shape="poly" id="edge6_Node000000_Node000003" title=" " alt="" coords="94,52,126,57,125,62,93,57"/>
+<area shape="rect" id="Node000002" href="$classDomainHom3DPer.html" title="Homogeneous medium with Bloch‑periodic excitation/Green&#39;s function." alt="" coords="316,5,458,33"/>
+<area shape="poly" id="edge5_Node000001_Node000002" title=" " alt="" coords="273,16,315,16,315,22,273,22"/>
+</map>

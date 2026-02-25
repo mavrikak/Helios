@@ -1,0 +1,7 @@
+<map id="SIEFormPMCHW::FillLSEMatrix" name="SIEFormPMCHW::FillLSEMatrix">
+<area shape="rect" id="Node000001" title="Assemble the PMCHWT system matrix for a homogeneous/layered medium." alt="" coords="5,14,223,42"/>
+<area shape="rect" id="Node000002" href="$classSIEFormPMCHW.html#aa9f13c8634ee9f20c1839a91da17b4a1" title="Worker for parallel homogeneous/layered media assembly (triangle&#45;group partition)." alt="" coords="271,5,488,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="223,25,255,25,255,30,223,30"/>
+<area shape="rect" id="Node000003" href="$classSIEFormPMCHW.html#acae01d25783587fe8197f3b69811b1f7" title="Return the layer index for a 3D position (based on z)." alt="" coords="536,14,764,42"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="489,25,520,25,520,30,489,30"/>
+</map>

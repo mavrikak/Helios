@@ -1,0 +1,6 @@
+<map id="LayeredMediaUtils::totalTransferMatrix" name="LayeredMediaUtils::totalTransferMatrix">
+<area shape="rect" id="Node000001" title="Computes the total transfer matrix for the entire layered structure." alt="" coords="205,29,356,74"/>
+<area shape="rect" id="Node000002" href="$classLayeredMediaUtils.html#a55529dbdb069b59a6252ab2e446186a0" title="Computes reflection and transmission coefficients for the entire layered structure." alt="" coords="5,29,157,74"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="189,54,157,54,157,49,189,49"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="113,16,101,10,81,8,63,10,51,15,47,21,48,28,43,29,41,19,48,10,61,5,81,3,102,5,115,11"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="GreenFHom3D::Smoothed" name="GreenFHom3D::Smoothed">
+<area shape="rect" id="Node000001" title="Smoothed scalar kernel used under singularity subtraction." alt="" coords="273,65,464,93"/>
+<area shape="rect" id="Node000002" href="$classGreenFHom3D.html#aca136b03c44ad1da34acf91eb5a5e390" title="term at an observation point." alt="" coords="5,5,225,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="293,64,224,47,178,36,179,31,225,42,294,58"/>
+<area shape="rect" id="Node000003" href="$classGreenFHom3D.html#a48e8471aabb445e0e50a01c005ff3b98" title="Compute &#160;for all RWGs on a source triangle." alt="" coords="9,57,221,102"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="257,82,222,82,222,76,257,76"/>
+<area shape="rect" id="Node000004" href="$classGreenFHom3D.html#a419cbe00b5a2aed70ac546904a8a8d6f" title="Compute &#160;and &#160;for all RWG pairs on two triangles." alt="" coords="17,125,213,153"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="294,100,225,116,179,127,178,122,224,111,293,95"/>
+</map>

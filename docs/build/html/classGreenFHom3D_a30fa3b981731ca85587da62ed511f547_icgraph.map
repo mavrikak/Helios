@@ -1,0 +1,11 @@
+<map id="GreenFHom3D::Gradient" name="GreenFHom3D::Gradient">
+<area shape="rect" id="Node000001" title="Gradient w.r.t." alt="" coords="279,88,460,116"/>
+<area shape="rect" id="Node000002" href="$classGreenFHom3D.html#aca136b03c44ad1da34acf91eb5a5e390" title="term at an observation point." alt="" coords="8,5,228,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="322,84,230,48,186,36,188,31,232,43,324,79"/>
+<area shape="rect" id="Node000003" href="$classGreenFHom3D.html#a9cece8a4056d65455cfcc94c8c61decd" title="term at an observation point." alt="" coords="5,57,231,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="263,92,231,88,231,82,264,86"/>
+<area shape="rect" id="Node000004" href="$classGreenFHom3D.html#a48e8471aabb445e0e50a01c005ff3b98" title="Compute &#160;for all RWGs on a source triangle." alt="" coords="12,109,224,154"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="264,117,225,121,224,116,263,112"/>
+<area shape="rect" id="Node000005" href="$classGreenFHom3D.html#a419cbe00b5a2aed70ac546904a8a8d6f" title="Compute &#160;and &#160;for all RWG pairs on two triangles." alt="" coords="20,177,216,205"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="329,126,283,148,232,168,194,179,192,174,230,163,281,143,327,121"/>
+</map>

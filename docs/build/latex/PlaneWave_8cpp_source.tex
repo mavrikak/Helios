@@ -1,0 +1,212 @@
+\doxysection{Plane\+Wave.\+cpp}
+\hypertarget{PlaneWave_8cpp_source}{}\label{PlaneWave_8cpp_source}\index{PlaneWave.cpp@{PlaneWave.cpp}}
+\mbox{\hyperlink{PlaneWave_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{PlaneWave_8h}{PlaneWave.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00014}\mbox{\hyperlink{classPlaneWave_afb2520b5ec768a6ad1bdedf1ec1e8025}{00014}}\ \mbox{\hyperlink{classPlaneWave_afb2520b5ec768a6ad1bdedf1ec1e8025}{PlaneWave::PlaneWave}}(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ wvl,\ \textcolor{keywordtype}{double}\ eps,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ \mbox{\hyperlink{classPlaneWave_ab54cdf91faa1f37bc2f1c3b0e8694f78}{dir}},\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ po)\ \{}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00015}00015\ \ \ \mbox{\hyperlink{classPlaneWave_aecde65abb68ba39fa4d6d7ce7138a815}{layeredUtils}}\ =\ \textcolor{keyword}{nullptr};\ \textcolor{comment}{//\ No\ layered\ media\ utilities\ for\ this\ constructor}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00016}00016\ \ \ \mbox{\hyperlink{classPlaneWave_ab54cdf91faa1f37bc2f1c3b0e8694f78}{dir}}\ /=\ sqrt(dot(\mbox{\hyperlink{classPlaneWave_ab54cdf91faa1f37bc2f1c3b0e8694f78}{dir}},\ \mbox{\hyperlink{classPlaneWave_ab54cdf91faa1f37bc2f1c3b0e8694f78}{dir}}));}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00017}00017\ \ \ \mbox{\hyperlink{classPlaneWave_a0d905a16520cb278fd50fff86a51eccf}{k}}\ =\ (2\ *\ \mbox{\hyperlink{globals_8h_a952eac791b596a61bba0a133a3bb439f}{PI}}\ *\ sqrt(eps)\ /\ wvl)\ *\ \mbox{\hyperlink{classPlaneWave_ab54cdf91faa1f37bc2f1c3b0e8694f78}{dir}};}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00018}00018\ \ \ \mbox{\hyperlink{classPlaneWave_ad86721e04a76637cd02b653486491655}{z}}\ =\ \mbox{\hyperlink{globals_8h_ae2fa3234ecbb729a46bf56ba671df9f3}{Z0}}\ /\ sqrt(eps);}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00019}00019\ \ \ \mbox{\hyperlink{classPlaneWave_a5e4cc282d994bdb3edc5f2e0c301d26f}{p}}\ =\ po;}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00020}00020\ \}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00027}\mbox{\hyperlink{classPlaneWave_a07739002b987553f07df880745707fad}{00027}}\ \mbox{\hyperlink{classPlaneWave_afb2520b5ec768a6ad1bdedf1ec1e8025}{PlaneWave::PlaneWave}}(std::vector<dcmplx>\ k\_L,\ std::vector<dcmplx>\ epsL,}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<dcmplx>\ muL,\ std::vector<double>\ zValsInterfaces,}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<double>\ thickness,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ propDir,\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ po)\ \{}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00030}00030\ \ \ \mbox{\hyperlink{classPlaneWave_aecde65abb68ba39fa4d6d7ce7138a815}{layeredUtils}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classLayeredMediaUtils}{LayeredMediaUtils}}(k\_L,\ epsL,\ muL,\ zValsInterfaces,\ thickness);}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00031}00031\ \ \ propDir\ /=\ sqrt(dot(propDir,\ propDir));}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00032}00032\ \ \ \mbox{\hyperlink{classPlaneWave_ab54cdf91faa1f37bc2f1c3b0e8694f78}{dir}}\ =\ propDir;}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00033}00033\ \ \ \mbox{\hyperlink{classPlaneWave_ad86721e04a76637cd02b653486491655}{z}}\ =\ 1.0;}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00034}00034\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classPlaneWave_ab54cdf91faa1f37bc2f1c3b0e8694f78}{dir}}[2]\ >\ 0.0)\ \{}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00035}00035\ \ \ \ \ \textcolor{comment}{//\ Propagation\ in\ the\ positive\ z-\/direction}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00036}00036\ \ \ \ \ \mbox{\hyperlink{classPlaneWave_a0d905a16520cb278fd50fff86a51eccf}{k}}\ \ =\ k\_L[0]\ *\ \mbox{\hyperlink{classPlaneWave_ab54cdf91faa1f37bc2f1c3b0e8694f78}{dir}};}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00037}00037\ \ \ \ \ \mbox{\hyperlink{classPlaneWave_a1f095386eab09f332c3310f806163f57}{zL}}\ =\ \mbox{\hyperlink{globals_8h_ae2fa3234ecbb729a46bf56ba671df9f3}{Z0}}\ *\ sqrt(muL[0]\ /\ epsL[0]);}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00038}00038\ \ \ \ \ \mbox{\hyperlink{classPlaneWave_a9f2f01d57babaa07cecaaee52eadaa90}{incLayerZ}}\ =\ zValsInterfaces[0];}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00039}00039\ \ \ \ \ \mbox{\hyperlink{classPlaneWave_aa865592736f333f9c86d5aeb797f0e1f}{incLayerIndex}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00040}00040\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{comment}{//\ Propagation\ in\ the\ negative\ z-\/direction}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00042}00042\ \ \ \ \ \mbox{\hyperlink{classPlaneWave_a0d905a16520cb278fd50fff86a51eccf}{k}}\ \ =\ k\_L.back()\ *\ \mbox{\hyperlink{classPlaneWave_ab54cdf91faa1f37bc2f1c3b0e8694f78}{dir}};}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00043}00043\ \ \ \ \ \mbox{\hyperlink{classPlaneWave_a1f095386eab09f332c3310f806163f57}{zL}}\ =\ \mbox{\hyperlink{globals_8h_ae2fa3234ecbb729a46bf56ba671df9f3}{Z0}}\ *\ sqrt(muL.back()\ /\ epsL.back());}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00044}00044\ \ \ \ \ \mbox{\hyperlink{classPlaneWave_a9f2f01d57babaa07cecaaee52eadaa90}{incLayerZ}}\ =\ zValsInterfaces.back();}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00045}00045\ \ \ \ \ \mbox{\hyperlink{classPlaneWave_aa865592736f333f9c86d5aeb797f0e1f}{incLayerIndex}}\ =\ zValsInterfaces.size();}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00046}00046\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00047}00047\ \ \ \mbox{\hyperlink{classPlaneWave_a5e4cc282d994bdb3edc5f2e0c301d26f}{p}}\ =\ po;}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00048}00048\ \ \ \mbox{\hyperlink{classPlaneWave_aeca25da3f6d45a6bb3b1bd6f67a830bb}{krho}}\ =\ sqrt(\mbox{\hyperlink{classPlaneWave_a0d905a16520cb278fd50fff86a51eccf}{k}}[0]\ *\ \mbox{\hyperlink{classPlaneWave_a0d905a16520cb278fd50fff86a51eccf}{k}}[0]\ +\ \mbox{\hyperlink{classPlaneWave_a0d905a16520cb278fd50fff86a51eccf}{k}}[1]\ *\ \mbox{\hyperlink{classPlaneWave_a0d905a16520cb278fd50fff86a51eccf}{k}}[1]);}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00049}00049\ \textcolor{preprocessor}{\#ifdef\ DEBUG}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00050}00050\ \ \ std::string\ filename\ =\ \textcolor{stringliteral}{"{}pos\_inc.txt"{}};}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00051}00051\ \ \ std::vector<rvec>\ points\ =\ this-\/>\mbox{\hyperlink{classPlaneWave_aecde65abb68ba39fa4d6d7ce7138a815}{layeredUtils}}-\/>readPositionsFromFile(filename);}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00052}00052\ \ \ \mbox{\hyperlink{classPlaneWave_a1f1fd1b5140ab23b3ec7899e6962e60f}{writeEHData}}(points,\ \textcolor{stringliteral}{"{}E\_data.csv"{}},\ \textcolor{stringliteral}{"{}H\_data.csv"{}});}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00053}00053\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ points.size();\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00054}00054\ \ \ \ \ std::vector<cvec>\ EandH\ =\ \mbox{\hyperlink{classPlaneWave_ade82a6ff2d60f8df4553d51837525a1c}{EvaluateLayeredEandH}}(points[i]);}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00055}00055\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}E"{}}\ <<\ i\ <<\ \textcolor{stringliteral}{"{}\ at\ point\ "{}}\ <<\ points[i]\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ EandH[0]\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00056}00056\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}H"{}}\ <<\ i\ <<\ \textcolor{stringliteral}{"{}\ at\ point\ "{}}\ <<\ points[i]\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ EandH[1]\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00057}00057\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00058}00058\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00059}00059\ \}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00064}\mbox{\hyperlink{classPlaneWave_a21e80621788fddf887cf27b7c6f9bdf7}{00064}}\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ \mbox{\hyperlink{classPlaneWave_a21e80621788fddf887cf27b7c6f9bdf7}{PlaneWave::EvaluateE}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classPlaneWave_a5e4cc282d994bdb3edc5f2e0c301d26f}{p}}\ *\ exp(\mbox{\hyperlink{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c}{I}}\ *\ dot(\mbox{\hyperlink{classPlaneWave_a0d905a16520cb278fd50fff86a51eccf}{k}},\ r));\ \}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00074}\mbox{\hyperlink{classPlaneWave_ade82a6ff2d60f8df4553d51837525a1c}{00074}}\ std::vector<cvec>\ \mbox{\hyperlink{classPlaneWave_ade82a6ff2d60f8df4553d51837525a1c}{PlaneWave::EvaluateLayeredEandH}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r)\ \{}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00075}00075\ \ \ \textcolor{keywordtype}{bool}\ normalInc\ =\ std::abs(\mbox{\hyperlink{classPlaneWave_ab54cdf91faa1f37bc2f1c3b0e8694f78}{dir}}[2])\ ==\ 1.0;}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00076}00076\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ te(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(0.0,\ 0.0),\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(0.0,\ 0.0),\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(0.0,\ 0.0));}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00077}00077\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ tm(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(0.0,\ 0.0),\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(0.0,\ 0.0),\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(0.0,\ 0.0));}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00078}00078\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ Einc(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(0.0,\ 0.0),\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(0.0,\ 0.0),\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(0.0,\ 0.0));}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00079}00079\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ Hinc(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(0.0,\ 0.0),\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(0.0,\ 0.0),\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(0.0,\ 0.0));}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00081}00081\ \ \ \textcolor{comment}{//\ Build\ TE/TM\ basis}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00082}00082\ \ \ \textcolor{keywordflow}{if}\ (normalInc)\ \{}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00083}00083\ \ \ \ \ te\ =\ \mbox{\hyperlink{classPlaneWave_a5e4cc282d994bdb3edc5f2e0c301d26f}{p}}\ /\ sqrt(dot(\mbox{\hyperlink{classPlaneWave_a5e4cc282d994bdb3edc5f2e0c301d26f}{p}},\ \mbox{\hyperlink{classPlaneWave_a5e4cc282d994bdb3edc5f2e0c301d26f}{p}}));}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00084}00084\ \ \ \ \ tm\ =\ cross(te,\ \mbox{\hyperlink{classPlaneWave_aa6b2d336c79c07cf23471fe99642d933}{rvec2cvec}}(\mbox{\hyperlink{classPlaneWave_ab54cdf91faa1f37bc2f1c3b0e8694f78}{dir}}));}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00085}00085\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00086}00086\ \ \ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ temp\ =\ cross(\mbox{\hyperlink{classPlaneWave_ab54cdf91faa1f37bc2f1c3b0e8694f78}{dir}},\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}(0.0,\ 0.0,\ 1.0));}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00087}00087\ \ \ \ \ temp\ =\ temp\ /\ sqrt(dot(temp,\ temp));}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00088}00088\ \ \ \ \ te\ =\ \mbox{\hyperlink{classPlaneWave_aa6b2d336c79c07cf23471fe99642d933}{rvec2cvec}}(temp);}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00089}00089\ \ \ \ \ tm\ =\ cross(te,\ \mbox{\hyperlink{classPlaneWave_aa6b2d336c79c07cf23471fe99642d933}{rvec2cvec}}(\mbox{\hyperlink{classPlaneWave_ab54cdf91faa1f37bc2f1c3b0e8694f78}{dir}}));}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00090}00090\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00092}00092\ \ \ \textcolor{comment}{//\ Incident\ amplitudes\ at\ the\ incidence\ interface}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00093}00093\ \ \ std::map<std::string,\ dcmplx>\ amplitude;}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00094}00094\ \ \ amplitude[\textcolor{stringliteral}{"{}TE"{}}]\ =\ dot(te,\ \mbox{\hyperlink{classPlaneWave_a5e4cc282d994bdb3edc5f2e0c301d26f}{p}})\ *\ exp(\mbox{\hyperlink{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c}{I}}\ *\ \mbox{\hyperlink{classPlaneWave_a0d905a16520cb278fd50fff86a51eccf}{k}}[2]\ *\ \mbox{\hyperlink{classPlaneWave_a9f2f01d57babaa07cecaaee52eadaa90}{incLayerZ}});}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00095}00095\ \ \ amplitude[\textcolor{stringliteral}{"{}TM"{}}]\ =\ dot(tm,\ \mbox{\hyperlink{classPlaneWave_a5e4cc282d994bdb3edc5f2e0c301d26f}{p}})\ *\ exp(\mbox{\hyperlink{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c}{I}}\ *\ \mbox{\hyperlink{classPlaneWave_a0d905a16520cb278fd50fff86a51eccf}{k}}[2]\ *\ \mbox{\hyperlink{classPlaneWave_a9f2f01d57babaa07cecaaee52eadaa90}{incLayerZ}})\ /\ \mbox{\hyperlink{classPlaneWave_a1f095386eab09f332c3310f806163f57}{zL}};}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00096}00096\ \ \ }
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00097}00097\ \ \ \textcolor{comment}{//\ Observation\ layer\ and\ secondary\ coefficients}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00098}00098\ \ \ \textcolor{keywordtype}{int}\ obsLayerIndex\ =\ this-\/>\mbox{\hyperlink{classPlaneWave_aecde65abb68ba39fa4d6d7ce7138a815}{layeredUtils}}-\/>GetLayerIndex(r);}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00099}00099\ \ \ std::map<std::string,\ blitz::Array<dcmplx,\ 2>>\ secondary;}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00100}00100\ \ \ secondary.emplace(\textcolor{stringliteral}{"{}TE"{}},\ this-\/>\mbox{\hyperlink{classPlaneWave_aecde65abb68ba39fa4d6d7ce7138a815}{layeredUtils}}-\/>Secondary(\mbox{\hyperlink{classPlaneWave_aeca25da3f6d45a6bb3b1bd6f67a830bb}{krho}},\ obsLayerIndex,\ \mbox{\hyperlink{classPlaneWave_aa865592736f333f9c86d5aeb797f0e1f}{incLayerIndex}},\ \textcolor{stringliteral}{"{}TE"{}}));}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00101}00101\ \ \ secondary.emplace(\textcolor{stringliteral}{"{}TM"{}},\ this-\/>\mbox{\hyperlink{classPlaneWave_aecde65abb68ba39fa4d6d7ce7138a815}{layeredUtils}}-\/>Secondary(\mbox{\hyperlink{classPlaneWave_aeca25da3f6d45a6bb3b1bd6f67a830bb}{krho}},\ obsLayerIndex,\ \mbox{\hyperlink{classPlaneWave_aa865592736f333f9c86d5aeb797f0e1f}{incLayerIndex}},\ \textcolor{stringliteral}{"{}TM"{}}));}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00102}00102\ \ \ }
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00103}00103\ \ \ \textcolor{comment}{//\ Longitudinal\ component\ in\ the\ observation\ layer}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00104}00104\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ kZ\ =\ this-\/>\mbox{\hyperlink{classPlaneWave_aecde65abb68ba39fa4d6d7ce7138a815}{layeredUtils}}-\/>getkL(obsLayerIndex);}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00105}00105\ \ \ kZ\ =\ this-\/>\mbox{\hyperlink{classPlaneWave_a66641ca1cfa189357ce861df408c1d67}{complexSqrt}}(kZ\ *\ kZ\ -\/\ \mbox{\hyperlink{classPlaneWave_aeca25da3f6d45a6bb3b1bd6f67a830bb}{krho}}\ *\ \mbox{\hyperlink{classPlaneWave_aeca25da3f6d45a6bb3b1bd6f67a830bb}{krho}});}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00107}00107\ \ \ \textcolor{comment}{//\ Assemble\ E\ and\ H\ from\ secondary\ waves}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00108}00108\ \ \ std::array<std::string,2>\ polarizations\ =\ \{\ \textcolor{stringliteral}{"{}TE"{}},\ \textcolor{stringliteral}{"{}TM"{}}\ \};}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00109}00109\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ E(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(0.0,\ 0.0),\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(0.0,\ 0.0),\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(0.0,\ 0.0));}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00110}00110\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ H(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(0.0,\ 0.0),\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(0.0,\ 0.0),\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(0.0,\ 0.0));}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00112}00112\ \ \ \textcolor{comment}{//\ Sum\ contributions\ for\ TE\ and\ TM}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00113}00113\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ name\ :\ polarizations)\ \{}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00114}00114\ \ \ \ \ \textcolor{keyword}{auto}\ sec\ =\ secondary[name];}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00115}00115\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ sec.extent(0);\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00116}00116\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ dir1\ \ =\ (i\ ==\ 0\ \&\&\ obsLayerIndex\ !=\ 0)\ ?\ 1.0\ :\ -\/1.0;}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00117}00117\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ zeta\ \ =\ (i\ ==\ 0\ \&\&\ obsLayerIndex\ !=\ 0)}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ (r[2]\ -\/\ this-\/>\mbox{\hyperlink{classPlaneWave_aecde65abb68ba39fa4d6d7ce7138a815}{layeredUtils}}-\/>getZValInterface(obsLayerIndex\ -\/\ 1))}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ (this-\/>\mbox{\hyperlink{classPlaneWave_aecde65abb68ba39fa4d6d7ce7138a815}{layeredUtils}}-\/>getZValInterface(obsLayerIndex)\ -\/\ r[2]);}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00120}00120\ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ xpar\ =\ \mbox{\hyperlink{classPlaneWave_a0d905a16520cb278fd50fff86a51eccf}{k}}[0]\ *\ r[0]\ +\ \mbox{\hyperlink{classPlaneWave_a0d905a16520cb278fd50fff86a51eccf}{k}}[1]\ *\ r[1]\ +\ kZ\ *\ zeta;}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00121}00121\ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ dirNew(\mbox{\hyperlink{classPlaneWave_a0d905a16520cb278fd50fff86a51eccf}{k}}[0]\ /\ this-\/>\mbox{\hyperlink{classPlaneWave_aecde65abb68ba39fa4d6d7ce7138a815}{layeredUtils}}-\/>getkL(obsLayerIndex),}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPlaneWave_a0d905a16520cb278fd50fff86a51eccf}{k}}[1]\ /\ this-\/>layeredUtils-\/>getkL(obsLayerIndex),}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dir1\ *\ kZ\ /\ this-\/>layeredUtils-\/>getkL(obsLayerIndex));}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00124}00124\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (name\ ==\ \textcolor{stringliteral}{"{}TE"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ E\ =\ te\ *\ amplitude[name]\ *\ sec(i,\ 0)\ *\ exp(\mbox{\hyperlink{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c}{I}}\ *\ xpar);}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ H\ =\ cross(dirNew,\ E)\ /\ (\ \mbox{\hyperlink{globals_8h_ae2fa3234ecbb729a46bf56ba671df9f3}{Z0}}\ *\ sqrt(\ this-\/>\mbox{\hyperlink{classPlaneWave_aecde65abb68ba39fa4d6d7ce7138a815}{layeredUtils}}-\/>getMu(obsLayerIndex)\ /\ }
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>layeredUtils-\/>getEps(obsLayerIndex)\ )\ );}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00128}00128\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (name\ ==\ \textcolor{stringliteral}{"{}TM"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ H\ =\ amplitude[name]\ *\ sec(i,\ 0)\ *\ exp(\mbox{\hyperlink{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c}{I}}\ *\ xpar)\ *\ cross(\mbox{\hyperlink{classPlaneWave_ab54cdf91faa1f37bc2f1c3b0e8694f78}{dir}},\ \mbox{\hyperlink{classPlaneWave_a5e4cc282d994bdb3edc5f2e0c301d26f}{p}});}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ E\ =\ -\/cross(dirNew,\ H)\ *\ (\ \mbox{\hyperlink{globals_8h_ae2fa3234ecbb729a46bf56ba671df9f3}{Z0}}\ *\ sqrt(\ this-\/>\mbox{\hyperlink{classPlaneWave_aecde65abb68ba39fa4d6d7ce7138a815}{layeredUtils}}-\/>getMu(obsLayerIndex)\ /\ }
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>layeredUtils-\/>getEps(obsLayerIndex)\ )\ );}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00132}00132\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00133}00133\ \ \ \ \ \ \ Einc\ +=\ E;\ Hinc\ +=\ H;}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00134}00134\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00135}00135\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00136}00136\ \ \ }
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00137}00137\ \ \ \textcolor{comment}{//\ Add\ direct\ incident\ field\ when\ observation\ ==\ incidence\ layer}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00138}00138\ \ \ \textcolor{keywordflow}{if}\ (obsLayerIndex\ ==\ \mbox{\hyperlink{classPlaneWave_aa865592736f333f9c86d5aeb797f0e1f}{incLayerIndex}})\ \{}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00139}00139\ \ \ \ \ Einc\ +=\ this-\/>\mbox{\hyperlink{classPlaneWave_a21e80621788fddf887cf27b7c6f9bdf7}{EvaluateE}}(r);}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00140}00140\ \ \ \ \ Hinc\ +=\ this-\/>\mbox{\hyperlink{classPlaneWave_a25c1de1e9cee6a241765539a4b22f103}{EvaluateH}}(r)\ /\ }
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ (\ \mbox{\hyperlink{globals_8h_ae2fa3234ecbb729a46bf56ba671df9f3}{Z0}}\ *\ sqrt(\ this-\/>\mbox{\hyperlink{classPlaneWave_aecde65abb68ba39fa4d6d7ce7138a815}{layeredUtils}}-\/>getMu(obsLayerIndex)\ /\ }
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>layeredUtils-\/>getEps(obsLayerIndex)\ )\ );}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00143}00143\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00144}00144\ \ \ \textcolor{keywordflow}{return}\ \{Einc,\ Hinc\};}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00145}00145\ \}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00150}\mbox{\hyperlink{classPlaneWave_a25c1de1e9cee6a241765539a4b22f103}{00150}}\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ \mbox{\hyperlink{classPlaneWave_a25c1de1e9cee6a241765539a4b22f103}{PlaneWave::EvaluateH}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r)\ \{}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00151}00151\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ prop(\mbox{\hyperlink{classPlaneWave_a0d905a16520cb278fd50fff86a51eccf}{k}});}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00152}00152\ \ \ prop\ /=\ sqrt(dot(prop,\ prop));}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00153}00153\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ hp(cross(prop,\ \mbox{\hyperlink{classPlaneWave_a5e4cc282d994bdb3edc5f2e0c301d26f}{p}}));}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00154}00154\ \ \ \textcolor{keywordflow}{return}\ hp\ *\ exp(\mbox{\hyperlink{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c}{I}}\ *\ dot(\mbox{\hyperlink{classPlaneWave_a0d905a16520cb278fd50fff86a51eccf}{k}},\ r))\ /\ \mbox{\hyperlink{classPlaneWave_ad86721e04a76637cd02b653486491655}{z}};}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00155}00155\ \}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00160}\mbox{\hyperlink{classPlaneWave_abe7fa331497162f9b0e3cd59c3332c34}{00160}}\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classPlaneWave_abe7fa331497162f9b0e3cd59c3332c34}{PlaneWave::IntegrateE}}(\mbox{\hyperlink{classRWGFun}{RWGFun}}*\ f)\ \{}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00161}00161\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ out;}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00162}00162\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ (\mbox{\hyperlink{classPlaneWave_afb2520b5ec768a6ad1bdedf1ec1e8025}{PlaneWave}}::*EvaluationFunction)(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r);}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00163}00163\ \ \ EvaluationFunction\ =\ \&\mbox{\hyperlink{classPlaneWave_a21e80621788fddf887cf27b7c6f9bdf7}{PlaneWave::EvaluateE}};}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00164}00164\ \ \ out\ =\ \mbox{\hyperlink{classPlaneWave_a62efc0919cff4aba04757a1a6f814c57}{gauss}}.Integrate(\textcolor{keyword}{this},\ EvaluationFunction,\ f);}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00165}00165\ \ \ \textcolor{keywordflow}{return}\ out;}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00166}00166\ \}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00167}00167\ }
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00172}\mbox{\hyperlink{classPlaneWave_a9b36a0f26c234a178795b1a431d53a03}{00172}}\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classPlaneWave_a9b36a0f26c234a178795b1a431d53a03}{PlaneWave::IntegrateH}}(\mbox{\hyperlink{classRWGFun}{RWGFun}}*\ f)\ \{}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00173}00173\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ out;}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00174}00174\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ (\mbox{\hyperlink{classPlaneWave_afb2520b5ec768a6ad1bdedf1ec1e8025}{PlaneWave}}::*EvaluationFunction)(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r);}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00175}00175\ \ \ EvaluationFunction\ =\ \&\mbox{\hyperlink{classPlaneWave_a25c1de1e9cee6a241765539a4b22f103}{PlaneWave::EvaluateH}};}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00176}00176\ \ \ out\ =\ \mbox{\hyperlink{classPlaneWave_a62efc0919cff4aba04757a1a6f814c57}{gauss}}.Integrate(\textcolor{keyword}{this},\ EvaluationFunction,\ f);}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00177}00177\ \ \ \textcolor{keywordflow}{return}\ out;}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00178}00178\ \}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00179}00179\ }
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00184}\mbox{\hyperlink{classPlaneWave_a80fe83d9acd52a14f7b2f0ea2317b036}{00184}}\ std::vector<dcmplx>\ \mbox{\hyperlink{classPlaneWave_a80fe83d9acd52a14f7b2f0ea2317b036}{PlaneWave::IntegrateLayeredEandH}}(\mbox{\hyperlink{classRWGFun}{RWGFun}}*\ f)\ \{}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00185}00185\ \ \ std::vector<dcmplx>\ out;}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00186}00186\ \ \ std::vector<cvec>\ (\mbox{\hyperlink{classPlaneWave_afb2520b5ec768a6ad1bdedf1ec1e8025}{PlaneWave}}::*EvaluationFunction)(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r);}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00187}00187\ \ \ EvaluationFunction\ =\ \&\mbox{\hyperlink{classPlaneWave_ade82a6ff2d60f8df4553d51837525a1c}{PlaneWave::EvaluateLayeredEandH}};}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00188}00188\ \ \ out\ =\ \mbox{\hyperlink{classPlaneWave_a62efc0919cff4aba04757a1a6f814c57}{gauss}}.Integrate(\textcolor{keyword}{this},\ EvaluationFunction,\ f,\ \mbox{\hyperlink{classIncidentField_af45c81c859bda7b0a43818eb8fcf5887}{NeedsAccurate}});}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00189}00189\ \ \ \textcolor{keywordflow}{return}\ out;}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00190}00190\ \}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00191}00191\ }
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00192}00192\ \textcolor{comment}{//\ Get\ the\ wavevector\ \(\backslash\)f\$\(\backslash\)mathbf\{k\}\(\backslash\)f\$.}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00193}\mbox{\hyperlink{classPlaneWave_aef5b0a933a9727948336bcdb707d8399}{00193}}\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ \mbox{\hyperlink{classPlaneWave_aef5b0a933a9727948336bcdb707d8399}{PlaneWave::Wavevector}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classPlaneWave_a0d905a16520cb278fd50fff86a51eccf}{k}};\ \}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00194}00194\ }
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00195}00195\ \textcolor{comment}{//\ @brief\ Get\ the\ polarization\ vector\ \(\backslash\)f\$\(\backslash\)mathbf\{p\}\(\backslash\)f\$.}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00196}\mbox{\hyperlink{classPlaneWave_a7a434b5205266e729210d41ad3ae1b34}{00196}}\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ \mbox{\hyperlink{classPlaneWave_a7a434b5205266e729210d41ad3ae1b34}{PlaneWave::Polarization}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classPlaneWave_a5e4cc282d994bdb3edc5f2e0c301d26f}{p}};\ \}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00201}\mbox{\hyperlink{classPlaneWave_ae4945c7b5e38022304cc31b270625c88}{00201}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPlaneWave_ae4945c7b5e38022304cc31b270625c88}{PlaneWave::setGrnFunLayered}}(\mbox{\hyperlink{classGreenF}{GreenF}}*\ \textcolor{comment}{/*fGrnFields*/},\ std::vector<Grid>\ \textcolor{comment}{/*tabGrids*/})\ \{}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00202}00202\ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}PlaneWave\ does\ not\ support\ layered\ Green's\ functions."{}});}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00203}00203\ \}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00204}00204\ }
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00211}\mbox{\hyperlink{classPlaneWave_a1f1fd1b5140ab23b3ec7899e6962e60f}{00211}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPlaneWave_a1f1fd1b5140ab23b3ec7899e6962e60f}{PlaneWave::writeEHData}}(}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00212}00212\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<rvec>\&\ points,}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00213}00213\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ eFilename,}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00214}00214\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ hFilename)}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00215}00215\ \{}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00216}00216\ \ \ \ \ \textcolor{comment}{//\ 1)\ open\ output\ streams}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00217}00217\ \ \ \ \ std::ofstream\ eFile(eFilename);}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00218}00218\ \ \ \ \ std::ofstream\ hFile(hFilename);}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00219}00219\ \ \ \ \ \textcolor{keywordflow}{if}\ (!eFile.is\_open()\ ||\ !hFile.is\_open())\ \{}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00220}00220\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Failed\ to\ open\ E/H\ output\ files"{}});}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00221}00221\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00222}00222\ }
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00223}00223\ \ \ \ \ \textcolor{comment}{//\ 2)\ write\ CSV\ headers}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00224}00224\ \ \ \ \ eFile\ <<\ \textcolor{stringliteral}{"{}x,y,z,Ex\_re,Ex\_im,Ey\_re,Ey\_im,Ez\_re,Ez\_im\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00225}00225\ \ \ \ \ hFile\ <<\ \textcolor{stringliteral}{"{}x,y,z,Hx\_re,Hx\_im,Hy\_re,Hy\_im,Hz\_re,Hz\_im\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00226}00226\ }
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00227}00227\ \ \ \ \ \textcolor{comment}{//\ 3)\ loop\ over\ points}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00228}00228\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ points.size();\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00229}00229\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ pt\ =\ points[i];}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ fields\ \ =\ \mbox{\hyperlink{classPlaneWave_ade82a6ff2d60f8df4553d51837525a1c}{EvaluateLayeredEandH}}(pt);}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00231}00231\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\&\ E\ =\ fields[0];}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00232}00232\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\&\ H\ =\ fields[1];}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00233}00233\ }
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00234}00234\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ write\ E\ line}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00235}00235\ \ \ \ \ \ \ \ \ eFile}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ <<\ pt[0]\ <<\ \textcolor{charliteral}{','}\ <<\ pt[1]\ <<\ \textcolor{charliteral}{','}\ <<\ pt[2]\ <<\ \textcolor{charliteral}{','}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ <<\ std::real(E[0])\ <<\ \textcolor{charliteral}{','}\ <<\ std::imag(E[0])\ <<\ \textcolor{charliteral}{','}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ <<\ std::real(E[1])\ <<\ \textcolor{charliteral}{','}\ <<\ std::imag(E[1])\ <<\ \textcolor{charliteral}{','}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ <<\ std::real(E[2])\ <<\ \textcolor{charliteral}{','}\ <<\ std::imag(E[2])\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00240}00240\ }
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00241}00241\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ write\ H\ line}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00242}00242\ \ \ \ \ \ \ \ \ hFile}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ <<\ pt[0]\ <<\ \textcolor{charliteral}{','}\ <<\ pt[1]\ <<\ \textcolor{charliteral}{','}\ <<\ pt[2]\ <<\ \textcolor{charliteral}{','}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ <<\ std::real(H[0])\ <<\ \textcolor{charliteral}{','}\ <<\ std::imag(H[0])\ <<\ \textcolor{charliteral}{','}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ <<\ std::real(H[1])\ <<\ \textcolor{charliteral}{','}\ <<\ std::imag(H[1])\ <<\ \textcolor{charliteral}{','}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ <<\ std::real(H[2])\ <<\ \textcolor{charliteral}{','}\ <<\ std::imag(H[2])\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00247}00247\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00248}00248\ }
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00249}00249\ \ \ \ \ \textcolor{comment}{//\ 4)\ close\ files}}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00250}00250\ \ \ \ \ eFile.close();}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00251}00251\ \ \ \ \ hFile.close();}
+\DoxyCodeLine{\Hypertarget{PlaneWave_8cpp_source_l00252}00252\ \}}
+
+\end{DoxyCode}

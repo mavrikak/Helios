@@ -1,0 +1,452 @@
+\doxysection{SIEForm\+PMCHW.\+cpp}
+\hypertarget{SIEFormPMCHW_8cpp_source}{}\label{SIEFormPMCHW_8cpp_source}\index{SIEFormPMCHW.cpp@{SIEFormPMCHW.cpp}}
+\mbox{\hyperlink{SIEFormPMCHW_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{SIEFormPMCHW_8h}{SIEFormPMCHW.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00010}00010\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Constructors\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00011}00011\ \textcolor{comment}{//\ Construct\ PMCHWT\ for\ a\ homogeneous\ medium\ (no\ layered\ back-\/end).}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00012}\mbox{\hyperlink{classSIEFormPMCHW_a2d13661bd0a92a339d703ebf5c93bd2b}{00012}}\ \mbox{\hyperlink{classSIEFormPMCHW_a2d13661bd0a92a339d703ebf5c93bd2b}{SIEFormPMCHW::SIEFormPMCHW}}(std::vector<RWGFun>\ *inRWGFuns,\ \mbox{\hyperlink{classGreenF}{GreenF}}\ *inGrnFun,}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<IncidentField\ *>\ *inIncFields,}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ inVacWavelength,\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ inEpsilon,}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ inMu)}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00016}00016\ \ \ \ \ :\ \mbox{\hyperlink{classSIEForm_a30c5e86bcde04c2ea9ffb83f4ae124b6}{SIEForm}}(inRWGFuns,\ inGrnFun,\ inIncFields,\ inVacWavelength),}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00017}00017\ \ \ \ \ \ \ \mbox{\hyperlink{classSIEFormPMCHW_ae433154437f25a5dfcecbcc22549203d}{epsilon}}(inEpsilon),}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00018}00018\ \ \ \ \ \ \ \mbox{\hyperlink{classSIEFormPMCHW_af072caaa80e55f3c6676ecda58e32666}{mu}}(inMu)\ \{\ \mbox{\hyperlink{classSIEFormPMCHW_aa50f0ed0ba3fd971157b05002c6a2214}{grnFunLayered}}\ =\ \textcolor{keyword}{nullptr};\ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00021}00021\ \textcolor{comment}{//\ Construct\ PMCHWT\ for\ a\ layered\ medium\ (requires\ layered\ Green's).}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00022}\mbox{\hyperlink{classSIEFormPMCHW_ae2ae42499fdc0816fc7bef695f6ec488}{00022}}\ \mbox{\hyperlink{classSIEFormPMCHW_a2d13661bd0a92a339d703ebf5c93bd2b}{SIEFormPMCHW::SIEFormPMCHW}}(std::vector<RWGFun>\ *inRWGFuns,}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGreenF}{GreenF}}\ *inGrnFun,}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<IncidentField\ *>\ *inIncFields,}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ inVacWavelength,}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGreenF}{GreenF}}\ *inGrnFunLayered,}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<dcmplx>\&\ inEpsilon,}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<dcmplx>\&\ inMu,}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\&\ inZVals,}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ inMidLayerIndex)}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00031}00031\ \ \ \ \ :\ \mbox{\hyperlink{classSIEForm_a30c5e86bcde04c2ea9ffb83f4ae124b6}{SIEForm}}(inRWGFuns,\ inGrnFun,\ inIncFields,\ inVacWavelength),}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00032}00032\ \ \ \ \ \ \ \mbox{\hyperlink{classSIEFormPMCHW_a5c5f7bb255b5c69e723795d4b8dc67b5}{epsilonLayered}}(inEpsilon),}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00033}00033\ \ \ \ \ \ \ \mbox{\hyperlink{classSIEFormPMCHW_a21a8a8047ae8a4a20b0f9c82b81b7aad}{muLayered}}(inMu),}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00034}00034\ \ \ \ \ \ \ \mbox{\hyperlink{classSIEFormPMCHW_a905a0dbdfbcdecabe5c9ca04c2a41233}{zValsInterfaces}}(inZVals),}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00035}00035\ \ \ \ \ \ \ \mbox{\hyperlink{classSIEFormPMCHW_aa50f0ed0ba3fd971157b05002c6a2214}{grnFunLayered}}(inGrnFunLayered),}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00036}00036\ \ \ \ \ \ \ \mbox{\hyperlink{classSIEFormPMCHW_afba0d187de12c7fdc66b1a3c0c6e2e6e}{midLayerIndex}}(inMidLayerIndex)\ \{\}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00038}00038\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Medium\ helpers\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00039}00039\ \textcolor{comment}{//\ Homogeneous\ wave\ impedance\ Zr\ =\ sqrt(mu/epsilon).}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00040}\mbox{\hyperlink{classSIEFormPMCHW_adf804d1025aebf0dcdfd709bb231d708}{00040}}\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classSIEFormPMCHW_adf804d1025aebf0dcdfd709bb231d708}{SIEFormPMCHW::Zr}}(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ e,\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ m)\ \{\ \textcolor{keywordflow}{return}\ sqrt(m\ /\ e);\ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00042}00042\ \textcolor{comment}{//\ Layer-\/wise\ impedances\ Zr\_l\ =\ sqrt(μ\_l/ε\_l)\ with\ safe\ length.}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00043}\mbox{\hyperlink{classSIEFormPMCHW_a2b301e815a6a5c0d81062935e5476278}{00043}}\ std::vector<dcmplx>\ \mbox{\hyperlink{classSIEFormPMCHW_a2b301e815a6a5c0d81062935e5476278}{SIEFormPMCHW::ZrLayered}}(\textcolor{keyword}{const}\ std::vector<dcmplx>\&\ e,\ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<dcmplx>\&\ m)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00045}00045\ \ \ \textcolor{comment}{//\ Ensure\ both\ vectors\ have\ the\ same\ size}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00046}00046\ \ \ \textcolor{keywordtype}{size\_t}\ size\ =\ std::min(e.size(),\ m.size());}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00047}00047\ \ \ std::vector<dcmplx>\ Zr\_values(size);}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00048}00048\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ size;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00049}00049\ \ \ \ \ Zr\_values[i]\ =\ \mbox{\hyperlink{group__greenFunction_gac0a52dce23be7dacdf97c68653b6c137}{csqrt}}(m[i]\ /\ e[i]);\ \ \textcolor{comment}{//\ Zr\ =\ sqrt(mu\ /\ epsilon)}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00050}00050\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00051}00051\ \ \ \textcolor{keywordflow}{return}\ Zr\_values;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00052}00052\ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00054}00054\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Matrix\ assembly\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00060}\mbox{\hyperlink{classSIEFormPMCHW_a65dca87d3c16fbf2c82200d597e18417}{00060}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSIEFormPMCHW_a65dca87d3c16fbf2c82200d597e18417}{SIEFormPMCHW::FillLSEMatrix}}(blitz::Array<dcmplx,\ 2>\ *lseMatrix)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00061}00061\ \ \ \textcolor{keyword}{using\ }std::vector;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00062}00062\ \ \ \textcolor{keyword}{using\ }std::pair;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00063}00063\ \ \ vector<RWGFun>::iterator\ rwgM,\ rwgN;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00065}00065\ \ \ \textcolor{comment}{//\ Partition\ the\ RWG\ functions\ to\ groups\ over\ same\ triangle}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00066}00066\ \ \ vector<vector<RWGFun\ *>>\ rwgPerTri;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00067}00067\ \ \ \textcolor{keywordflow}{for}\ (rwgM\ =\ \mbox{\hyperlink{classSIEForm_ad9582e70410cd1489daef4fd568fcbe9}{rwgFuns}}-\/>begin();\ rwgM\ !=\ \mbox{\hyperlink{classSIEForm_ad9582e70410cd1489daef4fd568fcbe9}{rwgFuns}}-\/>end();)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00068}00068\ \ \ \ \ rwgPerTri.push\_back(vector<RWGFun\ *>());}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00069}00069\ \ \ \ \ \textcolor{keywordflow}{for}\ (rwgN\ =\ rwgM;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ rwgN\ !=\ \mbox{\hyperlink{classSIEForm_ad9582e70410cd1489daef4fd568fcbe9}{rwgFuns}}-\/>end()\ and\ rwgN-\/>TrianglePtr()\ ==\ rwgM-\/>TrianglePtr();}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ rwgN++)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00072}00072\ \ \ \ \ \ \ rwgPerTri.back().push\_back(\&(*rwgN));}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00073}00073\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00074}00074\ \ \ \ \ rwgM\ =\ rwgN;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00075}00075\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00077}00077\ \textcolor{preprocessor}{\#ifdef\ DEBUG}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00078}00078\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ rwgTriLen;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00079}00079\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Group\ "{}}\ <<\ i\ <<\ \textcolor{stringliteral}{"{}\ :\ size\ "{}}\ <<\ rwgPerTri[i].size()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00080}00080\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00081}00081\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00083}00083\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Filling\ matrix\ with\ "{}}\ <<\ \mbox{\hyperlink{classSIEForm_ad9582e70410cd1489daef4fd568fcbe9}{rwgFuns}}-\/>size()\ <<\ \textcolor{stringliteral}{"{}\ elements."{}}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00086}00086\ \ \ \textcolor{keywordtype}{int}\ mxOffset(lseMatrix-\/>shape()(0)\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00087}00087\ \ \ std::mutex\ *mut\ =\ \textcolor{keyword}{new}\ std::mutex[mxOffset\ +\ 1];}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00088}00088\ \ \ std::thread\ *th\ =\ \textcolor{keyword}{new}\ std::thread[\mbox{\hyperlink{classSIEFormPMCHW_afefc288a5c108896f375c14bd734e474}{threads}}\ -\/\ 1];}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00089}00089\ \ \ \textcolor{keywordtype}{int}\ index\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00090}00090\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classSIEFormPMCHW_afefc288a5c108896f375c14bd734e474}{threads}}\ -\/\ 1;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00091}00091\ \ \ \ \ th[i]\ =\ std::thread(\&\mbox{\hyperlink{classSIEFormPMCHW_aa9f13c8634ee9f20c1839a91da17b4a1}{SIEFormPMCHW::FillLSEMatrixParallel}},\ \textcolor{keyword}{this},\ lseMatrix,}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::ref(rwgPerTri),\ std::ref(index),\ mut);}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00093}00093\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00094}00094\ \ \ \mbox{\hyperlink{classSIEFormPMCHW_aa9f13c8634ee9f20c1839a91da17b4a1}{FillLSEMatrixParallel}}(lseMatrix,\ rwgPerTri,\ index,\ mut);}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00095}00095\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classSIEFormPMCHW_afefc288a5c108896f375c14bd734e474}{threads}}\ -\/\ 1;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00096}00096\ \ \ \ \ th[i].join();}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00097}00097\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00098}00098\ \ \ \textcolor{keyword}{delete}[]\ th;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00099}00099\ \ \ \textcolor{keyword}{delete}[]\ mut;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00101}00101\ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00102}00102\ \textcolor{preprocessor}{\#ifdef\ DEBUG}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00103}00103\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 2\ *\ mxOffset;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00104}00104\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 2\ *\ mxOffset;\ ++j)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00105}00105\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}M("{}}\ <<\ i\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ j\ <<\ \textcolor{stringliteral}{"{})\ =\ "{}}\ <<\ std::setprecision(16)}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ (*lseMatrix)(i,\ j)\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00107}00107\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00108}00108\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00109}00109\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00110}00110\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00111}00111\ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00112}00112\ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00114}00114\ \textcolor{comment}{//\ Worker:\ fill\ blocks\ for\ one\ triangle-\/group\ i\ against\ all\ j.}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00115}\mbox{\hyperlink{classSIEFormPMCHW_aa9f13c8634ee9f20c1839a91da17b4a1}{00115}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSIEFormPMCHW_aa9f13c8634ee9f20c1839a91da17b4a1}{SIEFormPMCHW::FillLSEMatrixParallel}}(}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00116}00116\ \ \ \ \ blitz::Array<dcmplx,\ 2>\ *lseMatrix,}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00117}00117\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<RWGFun\ *>>\ \&rwgPerTri,\ \textcolor{keywordtype}{int}\ \&index,}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00118}00118\ \ \ \ \ std::mutex\ *mut)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00119}00119\ \ \ \textcolor{keyword}{using\ }std::vector;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00120}00120\ \ \ \textcolor{keyword}{using\ }std::pair;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00121}00121\ \ \ \textcolor{keywordtype}{int}\ mxOffset(lseMatrix-\/>shape()(0)\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00122}00122\ \ \ \textcolor{keywordflow}{while}\ (1)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00123}00123\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00124}00124\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00125}00125\ \ \ \ \ \ \ \textcolor{comment}{//\ Important\ :\ do\ not\ remove\ braces,\ they\ are\ there\ to\ block-\/scope\ mutex}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00126}00126\ \ \ \ \ \ \ \textcolor{comment}{//\ lock}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00127}00127\ \ \ \ \ \ \ std::lock\_guard<std::mutex>\ lock(mut[mxOffset]);}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00128}00128\ \ \ \ \ \ \ i\ =\ index;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00129}00129\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ >=\ rwgPerTri.size())\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00130}00130\ \ \ \ \ \ \ ++index;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00131}00131\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00132}00132\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}."{}};}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00133}00133\ \ \ \ \ std::cout.flush();}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00134}00134\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&trii\ =\ rwgPerTri[i];}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00135}00135\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classSIEFormPMCHW_aa50f0ed0ba3fd971157b05002c6a2214}{grnFunLayered}}\ ==\ \textcolor{keyword}{nullptr})\ \textcolor{comment}{//\ Homogeneous\ medium}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00136}00136\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00137}00137\ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ factor1\ =\ \mbox{\hyperlink{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c}{I}}\ *\ \mbox{\hyperlink{classSIEForm_a83bf09002e4af4e392a75054a8a8c8ae}{omega}}\ *\ \mbox{\hyperlink{globals_8h_a09881352f321afed09cedb054fd9ee15}{MU0}}\ *\ \mbox{\hyperlink{classSIEFormPMCHW_af072caaa80e55f3c6676ecda58e32666}{mu}};}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00138}00138\ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ factor2\ =\ -\/\mbox{\hyperlink{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c}{I}}\ *\ \mbox{\hyperlink{classSIEForm_a83bf09002e4af4e392a75054a8a8c8ae}{omega}}\ *\ \mbox{\hyperlink{globals_8h_ade68b010588957aef9890077adb7565f}{EPS0}}\ *\ \mbox{\hyperlink{classSIEFormPMCHW_ae433154437f25a5dfcecbcc22549203d}{epsilon}};}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00139}00139\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&trij\ :\ rwgPerTri)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ vector<vector<pair<dcmplx,\ dcmplx>>>\ DK(}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ trii.size(),\ vector<pair<dcmplx,\ dcmplx>>(}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ trij.size(),\ make\_pair(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(0),\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(0))));}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSIEForm_af0daa3e52b4bd7fdedf1d532a40031ad}{grnFun}}-\/>SameTriDK(trii,\ trij,\ DK);}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00144}00144\ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ 0;\ k\ <\ (int)rwgPerTri[i].size();\ ++k)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ m(trii[k]-\/>EdgeIndex());}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ std::lock\_guard<std::mutex>\ lock(mut[m]);}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ l\ =\ 0;\ l\ <\ (int)trij.size();\ ++l)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n(trij[l]-\/>EdgeIndex());}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ (*lseMatrix)(m,\ n)\ +=\ factor1\ *\ DK[k][l].first;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ (*lseMatrix)(m,\ n\ +\ mxOffset)\ +=\ DK[k][l].second;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ (*lseMatrix)(m\ +\ mxOffset,\ n)\ +=\ DK[k][l].second;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ (*lseMatrix)(m\ +\ mxOffset,\ n\ +\ mxOffset)\ +=\ factor2\ *\ DK[k][l].first;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00156}00156\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00157}00157\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{\ \textcolor{comment}{//\ Layered\ medium}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00158}00158\ \textcolor{preprocessor}{\#ifdef\ DEBUG}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00159}00159\ \ \ \ \ \ \ vector<vector<pair<dcmplx,\ dcmplx>>>\ DK\_test(}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ trii.size(),\ vector<pair<dcmplx,\ dcmplx>>(}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rwgPerTri[0].size(),\ make\_pair(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(0),\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(0))));}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00162}00162\ \ \ \ \ \ \ \mbox{\hyperlink{classSIEFormPMCHW_aa50f0ed0ba3fd971157b05002c6a2214}{grnFunLayered}}-\/>SameTriDK(trii,\ rwgPerTri[0],\ DK\_test);}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00163}00163\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00164}00164\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&trij\ :\ rwgPerTri)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ vector<vector<pair<dcmplx,\ dcmplx>>>\ DK\_hom(}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ trii.size(),\ vector<pair<dcmplx,\ dcmplx>>(}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ trij.size(),\ make\_pair(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(0.0),\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(0.0))));}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00169}00169\ \ \ \ \ \ \ \ \ vector<vector<pair<dcmplx,\ dcmplx>>>\ DK\_E(}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ trii.size(),\ vector<pair<dcmplx,\ dcmplx>>(}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ trij.size(),\ make\_pair(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(0.0),\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(0.0))));}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00172}00172\ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ vector<vector<pair<dcmplx,\ dcmplx>>>\ DK\_H(}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ trii.size(),\ vector<pair<dcmplx,\ dcmplx>>(}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ trij.size(),\ make\_pair(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(1.0),\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(0.0))));}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ iCenter\ =\ trii[0]-\/>TrianglePtr()-\/>Center();}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ jCenter\ =\ trij[0]-\/>TrianglePtr()-\/>Center();}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classSIEFormPMCHW_acae01d25783587fe8197f3b69811b1f7}{GetLayerIndex}}(iCenter)\ ==\ \mbox{\hyperlink{classSIEFormPMCHW_acae01d25783587fe8197f3b69811b1f7}{GetLayerIndex}}(jCenter))\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSIEForm_af0daa3e52b4bd7fdedf1d532a40031ad}{grnFun}}[\mbox{\hyperlink{classSIEFormPMCHW_acae01d25783587fe8197f3b69811b1f7}{GetLayerIndex}}(iCenter)].SameTriDK(trii,\ trij,\ DK\_hom);}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00181}00181\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00182}00182\ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Calculate\ the\ factors\ based\ on\ the\ layered\ medium\ properties}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ factor1\ =\ \mbox{\hyperlink{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c}{I}}\ *\ \mbox{\hyperlink{classSIEForm_a83bf09002e4af4e392a75054a8a8c8ae}{omega}}\ *\ \mbox{\hyperlink{globals_8h_a09881352f321afed09cedb054fd9ee15}{MU0}}\ *\ \mbox{\hyperlink{classSIEFormPMCHW_a21a8a8047ae8a4a20b0f9c82b81b7aad}{muLayered}}[\mbox{\hyperlink{classSIEFormPMCHW_acae01d25783587fe8197f3b69811b1f7}{GetLayerIndex}}(jCenter)];}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ factor2\ =\ -\/\mbox{\hyperlink{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c}{I}}\ *\ \mbox{\hyperlink{classSIEForm_a83bf09002e4af4e392a75054a8a8c8ae}{omega}}\ *\ \mbox{\hyperlink{globals_8h_ade68b010588957aef9890077adb7565f}{EPS0}}\ *\ \mbox{\hyperlink{classSIEFormPMCHW_a5c5f7bb255b5c69e723795d4b8dc67b5}{epsilonLayered}}[\mbox{\hyperlink{classSIEFormPMCHW_acae01d25783587fe8197f3b69811b1f7}{GetLayerIndex}}(jCenter)];}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00186}00186\ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Calculate\ DK\_E\ and\ DK\_H\ for\ the\ layered\ medium}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSIEFormPMCHW_aa50f0ed0ba3fd971157b05002c6a2214}{grnFunLayered}}-\/>SameTriDK(trii,\ trij,\ DK\_E);}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSIEFormPMCHW_aa50f0ed0ba3fd971157b05002c6a2214}{grnFunLayered}}-\/>SameTriDK(trii,\ trij,\ DK\_H);}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00190}00190\ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ 0;\ k\ <\ (int)rwgPerTri[i].size();\ ++k)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ m(trii[k]-\/>EdgeIndex());}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ std::lock\_guard<std::mutex>\ lock(mut[m]);}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ l\ =\ 0;\ l\ <\ (int)trij.size();\ ++l)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n(trij[l]-\/>EdgeIndex());}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ (*lseMatrix)(m,\ n)\ +=\ factor1\ *\ (DK\_hom[k][l].first\ +\ DK\_E[k][l].first);}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ (*lseMatrix)(m,\ n\ +\ mxOffset)\ +=\ DK\_hom[k][l].second\ +\ DK\_E[k][l].second;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ (*lseMatrix)(m\ +\ mxOffset,\ n)\ +=\ DK\_hom[k][l].second\ +\ DK\_H[k][l].second;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ (*lseMatrix)(m\ +\ mxOffset,\ n\ +\ mxOffset)\ +=\ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ factor2\ *\ (DK\_hom[k][l].first\ +\ DK\_H[k][l].first);}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00203}00203\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00204}00204\ \ \ \ \ \}\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00205}00205\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00206}00206\ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00207}00207\ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00208}00208\ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00209}00209\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Matrix\ +\ gradient\ (homogeneous)\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00215}\mbox{\hyperlink{classSIEFormPMCHW_a6b8755f234cd116ae3f3a44cacf85813}{00215}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSIEFormPMCHW_a6b8755f234cd116ae3f3a44cacf85813}{SIEFormPMCHW::FillLSEMatrixAndGradient}}(}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00216}00216\ \ \ \ \ blitz::Array<dcmplx,\ 2>\ *lseMatrix,}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00217}00217\ \ \ \ \ blitz::Array<dcmplx,\ 2>\ *lseGradientMatrix[3])\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00218}00218\ \ \ \textcolor{keyword}{using\ }std::vector;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00219}00219\ \ \ \textcolor{keyword}{using\ }std::pair;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00220}00220\ \ \ vector<RWGFun>::iterator\ rwgM,\ rwgN;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00221}00221\ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00222}00222\ \ \ \textcolor{comment}{//\ Partition\ the\ RWG\ functions\ to\ groups\ over\ same\ triangle}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00223}00223\ \ \ vector<vector<RWGFun\ *>>\ rwgPerTri;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00224}00224\ \ \ \textcolor{comment}{//\ Whether\ each\ triangle\ is\ between}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00225}00225\ \ \ \textcolor{comment}{//\ 1\ :\ 0\ and\ 1}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00226}00226\ \ \ \textcolor{comment}{//\ 2\ :\ 0\ and\ some\ other\ domain}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00227}00227\ \ \ \textcolor{comment}{//\ 0\ :\ any\ other\ case}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00228}00228\ \ \ vector<int>\ bordertype;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00229}00229\ \ \ \textcolor{keywordflow}{for}\ (rwgM\ =\ \mbox{\hyperlink{classSIEForm_ad9582e70410cd1489daef4fd568fcbe9}{rwgFuns}}-\/>begin();\ rwgM\ !=\ \mbox{\hyperlink{classSIEForm_ad9582e70410cd1489daef4fd568fcbe9}{rwgFuns}}-\/>end();)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00230}00230\ \ \ \ \ rwgPerTri.push\_back(vector<RWGFun\ *>());}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00231}00231\ \ \ \ \ \textcolor{keywordflow}{if}\ (std::min(rwgM-\/>TrianglePtr()-\/>BorderingIndeces().first,}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rwgM-\/>TrianglePtr()-\/>BorderingIndeces().second)\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00233}00233\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::max(rwgM-\/>TrianglePtr()-\/>BorderingIndeces().first,}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rwgM-\/>TrianglePtr()-\/>BorderingIndeces().second)\ ==\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00235}00235\ \ \ \ \ \ \ \ \ bordertype.push\_back(1);}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00236}00236\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00237}00237\ \ \ \ \ \ \ \ \ bordertype.push\_back(2);}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00238}00238\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00239}00239\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00240}00240\ \ \ \ \ \ \ bordertype.push\_back(0);}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00241}00241\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00242}00242\ \ \ \ \ \textcolor{keywordflow}{for}\ (rwgN\ =\ rwgM;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00243}00243\ \ \ \ \ \ \ \ \ \ rwgN\ !=\ \mbox{\hyperlink{classSIEForm_ad9582e70410cd1489daef4fd568fcbe9}{rwgFuns}}-\/>end()\ and\ rwgN-\/>TrianglePtr()\ ==\ rwgM-\/>TrianglePtr();}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00244}00244\ \ \ \ \ \ \ \ \ \ rwgN++)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00245}00245\ \ \ \ \ \ \ rwgPerTri.back().push\_back(\&(*rwgN));}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00246}00246\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00247}00247\ \ \ \ \ rwgM\ =\ rwgN;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00248}00248\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00249}00249\ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00250}00250\ \textcolor{preprocessor}{\#ifdef\ DEBUG}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00251}00251\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ rwgTriLen;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00252}00252\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Group\ "{}}\ <<\ i\ <<\ \textcolor{stringliteral}{"{}\ :\ size\ "{}}\ <<\ rwgPerTri[i].size()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00253}00253\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00254}00254\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00255}00255\ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00256}00256\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Filling\ matrix\ with\ "{}}\ <<\ \mbox{\hyperlink{classSIEForm_ad9582e70410cd1489daef4fd568fcbe9}{rwgFuns}}-\/>size()\ <<\ \textcolor{stringliteral}{"{}\ elements."{}}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00258}00258\ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00259}00259\ \ \ \textcolor{keywordtype}{int}\ mxOffset(lseMatrix-\/>shape()(0)\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00260}00260\ \ \ std::mutex\ *mut\ =\ \textcolor{keyword}{new}\ std::mutex[mxOffset\ +\ 1];}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00261}00261\ \ \ std::thread\ *th\ =\ \textcolor{keyword}{new}\ std::thread[\mbox{\hyperlink{classSIEFormPMCHW_afefc288a5c108896f375c14bd734e474}{threads}}\ -\/\ 1];}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00262}00262\ \ \ \textcolor{keywordtype}{int}\ index\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00263}00263\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classSIEFormPMCHW_afefc288a5c108896f375c14bd734e474}{threads}}\ -\/\ 1;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00264}00264\ \ \ \ \ th[i]\ =\ std::thread(\&\mbox{\hyperlink{classSIEFormPMCHW_a1039869e349d42d354a1b354ee09767b}{SIEFormPMCHW::FillLSEMatrixAndGradientParallel}},\ \textcolor{keyword}{this},}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lseMatrix,\ lseGradientMatrix,\ std::ref(rwgPerTri),}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::ref(bordertype),\ std::ref(index),\ mut);}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00267}00267\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00268}00268\ \ \ \mbox{\hyperlink{classSIEFormPMCHW_a1039869e349d42d354a1b354ee09767b}{FillLSEMatrixAndGradientParallel}}(lseMatrix,\ lseGradientMatrix,\ rwgPerTri,}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00269}00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bordertype,\ index,\ mut);}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00270}00270\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classSIEFormPMCHW_afefc288a5c108896f375c14bd734e474}{threads}}\ -\/\ 1;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00271}00271\ \ \ \ \ th[i].join();}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00272}00272\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00273}00273\ \ \ \textcolor{keyword}{delete}[]\ th;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00274}00274\ \ \ \textcolor{keyword}{delete}[]\ mut;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00275}00275\ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00276}00276\ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00277}00277\ \textcolor{preprocessor}{\#ifdef\ DEBUG}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00278}00278\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 2\ *\ mxOffset;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00279}00279\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 2\ *\ mxOffset;\ ++j)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00280}00280\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}M("{}}\ <<\ i\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ j\ <<\ \textcolor{stringliteral}{"{})\ =\ "{}}\ <<\ (*lseMatrix)(i,\ j)}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00282}00282\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ 0;\ k\ <\ 3;\ ++k)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00283}00283\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}GM"{}}\ <<\ k\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ i\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ j}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00284}00284\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{})\ =\ "{}}\ <<\ (*(lseGradientMatrix[k]))(i,\ j)\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00285}00285\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00286}00286\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00287}00287\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00288}00288\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00289}00289\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00290}00290\ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00291}00291\ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00292}00292\ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00297}\mbox{\hyperlink{classSIEFormPMCHW_a1039869e349d42d354a1b354ee09767b}{00297}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSIEFormPMCHW_a1039869e349d42d354a1b354ee09767b}{SIEFormPMCHW::FillLSEMatrixAndGradientParallel}}(}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00298}00298\ \ \ \ \ blitz::Array<dcmplx,\ 2>\ *lseMatrix,}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00299}00299\ \ \ \ \ blitz::Array<dcmplx,\ 2>\ *lseGradientMatrix[3],}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00300}00300\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<RWGFun\ *>>\ \&rwgPerTri,}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00301}00301\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<int>\ \&bordertype,\ \textcolor{keywordtype}{int}\ \&index,\ std::mutex\ *mut)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00302}00302\ \ \ \textcolor{keyword}{using\ }std::vector;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00303}00303\ \ \ \textcolor{keyword}{using\ }std::pair;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00304}00304\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ factor1\ =\ \mbox{\hyperlink{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c}{I}}\ *\ \mbox{\hyperlink{classSIEForm_a83bf09002e4af4e392a75054a8a8c8ae}{omega}}\ *\ \mbox{\hyperlink{globals_8h_a09881352f321afed09cedb054fd9ee15}{MU0}}\ *\ \mbox{\hyperlink{classSIEFormPMCHW_af072caaa80e55f3c6676ecda58e32666}{mu}};}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00305}00305\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ factor2\ =\ -\/\mbox{\hyperlink{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c}{I}}\ *\ \mbox{\hyperlink{classSIEForm_a83bf09002e4af4e392a75054a8a8c8ae}{omega}}\ *\ \mbox{\hyperlink{globals_8h_ade68b010588957aef9890077adb7565f}{EPS0}}\ *\ \mbox{\hyperlink{classSIEFormPMCHW_ae433154437f25a5dfcecbcc22549203d}{epsilon}};}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00306}00306\ \ \ \textcolor{keywordtype}{int}\ mxOffset(lseMatrix-\/>shape()(0)\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00307}00307\ \ \ \textcolor{keywordflow}{while}\ (1)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00308}00308\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00309}00309\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00310}00310\ \ \ \ \ \ \ \textcolor{comment}{//\ Important\ :\ do\ not\ remove\ braces,\ they\ are\ there\ to\ block-\/scope\ mutex}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00311}00311\ \ \ \ \ \ \ \textcolor{comment}{//\ lock}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00312}00312\ \ \ \ \ \ \ std::lock\_guard<std::mutex>\ lock(mut[mxOffset]);}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00313}00313\ \ \ \ \ \ \ i\ =\ index;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00314}00314\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ >=\ rwgPerTri.size())\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00315}00315\ \ \ \ \ \ \ ++index;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00316}00316\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00317}00317\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}."{}};}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00318}00318\ \ \ \ \ std::cout.flush();}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00319}00319\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&trii\ =\ rwgPerTri[i];}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00320}00320\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ rwgPerTri.size();\ ++j)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00321}00321\ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&trij\ =\ rwgPerTri[j];}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00322}00322\ \ \ \ \ \ \ \textcolor{comment}{//\ Gradient\ calculation\ required\ only\ when\ one\ triangle\ is\ between\ 0-\/1\ and}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00323}00323\ \ \ \ \ \ \ \textcolor{comment}{//\ the\ other\ is\ between\ 0-\/!1}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00324}00324\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bordertype[i]\ +\ bordertype[j]\ !=\ 3)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00325}00325\ \ \ \ \ \ \ \ \ vector<vector<pair<dcmplx,\ dcmplx>>>\ DK(}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00326}00326\ \ \ \ \ \ \ \ \ \ \ \ \ trii.size(),\ vector<pair<dcmplx,\ dcmplx>>(}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00327}00327\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ trij.size(),\ make\_pair(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(0),\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(0))));}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00328}00328\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSIEForm_af0daa3e52b4bd7fdedf1d532a40031ad}{grnFun}}-\/>SameTriDK(trii,\ trij,\ DK);}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00329}00329\ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00330}00330\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ 0;\ k\ <\ (int)trii.size();\ ++k)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00331}00331\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ m(trii[k]-\/>EdgeIndex());}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00332}00332\ \ \ \ \ \ \ \ \ \ \ std::lock\_guard<std::mutex>\ lock(mut[m]);}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00333}00333\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ l\ =\ 0;\ l\ <\ (int)trij.size();\ ++l)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00334}00334\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n(trij[l]-\/>EdgeIndex());}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00335}00335\ \ \ \ \ \ \ \ \ \ \ \ \ (*lseMatrix)(m,\ n)\ +=\ factor1\ *\ DK[k][l].first;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00336}00336\ \ \ \ \ \ \ \ \ \ \ \ \ (*lseMatrix)(m,\ n\ +\ mxOffset)\ +=\ DK[k][l].second;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00337}00337\ \ \ \ \ \ \ \ \ \ \ \ \ (*lseMatrix)(m\ +\ mxOffset,\ n)\ +=\ DK[k][l].second;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00338}00338\ \ \ \ \ \ \ \ \ \ \ \ \ (*lseMatrix)(m\ +\ mxOffset,\ n\ +\ mxOffset)\ +=}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00339}00339\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ factor2\ *\ DK[k][l].first;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00340}00340\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00341}00341\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00342}00342\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00343}00343\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ sgn\ =\ (bordertype[i]\ ==\ 1)\ ?\ 1\ :\ -\/1;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00344}00344\ \ \ \ \ \ \ \ \ vector<vector<pair<dcmplx,\ dcmplx>>>\ DK(}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00345}00345\ \ \ \ \ \ \ \ \ \ \ \ \ trii.size(),\ vector<pair<dcmplx,\ dcmplx>>(}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00346}00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ trij.size(),\ make\_pair(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(0),\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(0))));}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00347}00347\ \ \ \ \ \ \ \ \ vector<vector<pair<cvec,\ cvec>>>\ DKG(}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00348}00348\ \ \ \ \ \ \ \ \ \ \ \ \ trii.size(),}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00349}00349\ \ \ \ \ \ \ \ \ \ \ \ \ vector<pair<cvec,\ cvec>>(trij.size(),}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00350}00350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ make\_pair(\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}(0,\ 0,\ 0),\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}(0,\ 0,\ 0))));}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00351}00351\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSIEForm_af0daa3e52b4bd7fdedf1d532a40031ad}{grnFun}}-\/>SameTriDKG(trii,\ trij,\ DK,\ DKG);}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00352}00352\ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00353}00353\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ 0;\ k\ <\ (int)trii.size();\ ++k)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00354}00354\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ m(trii[k]-\/>EdgeIndex());}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00355}00355\ \ \ \ \ \ \ \ \ \ \ std::lock\_guard<std::mutex>\ lock(mut[m]);}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00356}00356\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ l\ =\ 0;\ l\ <\ (int)trij.size();\ ++l)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00357}00357\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n(trij[l]-\/>EdgeIndex());}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00358}00358\ \ \ \ \ \ \ \ \ \ \ \ \ (*lseMatrix)(m,\ n)\ +=\ factor1\ *\ DK[k][l].first;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00359}00359\ \ \ \ \ \ \ \ \ \ \ \ \ (*lseMatrix)(m,\ n\ +\ mxOffset)\ +=\ DK[k][l].second;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00360}00360\ \ \ \ \ \ \ \ \ \ \ \ \ (*lseMatrix)(m\ +\ mxOffset,\ n)\ +=\ DK[k][l].second;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00361}00361\ \ \ \ \ \ \ \ \ \ \ \ \ (*lseMatrix)(m\ +\ mxOffset,\ n\ +\ mxOffset)\ +=}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00362}00362\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ factor2\ *\ DK[k][l].first;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00363}00363\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ p\ =\ 0;\ p\ <\ 3;\ ++p)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00364}00364\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (*(lseGradientMatrix[p]))(m,\ n)\ +=}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00365}00365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sgn\ *\ factor1\ *\ DKG[k][l].first[p];}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00366}00366\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (*(lseGradientMatrix[p]))(m,\ n\ +\ mxOffset)\ +=}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00367}00367\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sgn\ *\ DKG[k][l].second[p];}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00368}00368\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (*(lseGradientMatrix[p]))(m\ +\ mxOffset,\ n)\ +=}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00369}00369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sgn\ *\ DKG[k][l].second[p];}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00370}00370\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (*(lseGradientMatrix[p]))(m\ +\ mxOffset,\ n\ +\ mxOffset)\ +=}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00371}00371\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sgn\ *\ factor2\ *\ DKG[k][l].first[p];}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00372}00372\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00373}00373\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00374}00374\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00375}00375\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00376}00376\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00377}00377\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00378}00378\ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00379}00379\ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00380}00380\ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00381}00381\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ RHS\ vector\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00386}\mbox{\hyperlink{classSIEFormPMCHW_ad44f68bc82374b4d26a60f18a98ced6d}{00386}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSIEFormPMCHW_ad44f68bc82374b4d26a60f18a98ced6d}{SIEFormPMCHW::FillLSEVector}}(blitz::Array<dcmplx,\ 1>\ *lseVector)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00387}00387\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Filling\ vector."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00388}00388\ \ \ \textcolor{keywordtype}{int}\ mxOffset(lseVector-\/>shape()(0)\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00389}00389\ \ \ \textcolor{keywordflow}{for}\ (std::vector<RWGFun>::iterator\ rwgM\ =\ \mbox{\hyperlink{classSIEForm_ad9582e70410cd1489daef4fd568fcbe9}{rwgFuns}}-\/>begin();}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00390}00390\ \ \ \ \ \ \ \ rwgM\ !=\ \mbox{\hyperlink{classSIEForm_ad9582e70410cd1489daef4fd568fcbe9}{rwgFuns}}-\/>end();\ rwgM++)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00391}00391\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::vector<IncidentField\ *>::iterator\ incIter\ =\ \mbox{\hyperlink{classSIEForm_abe76634df0190690fb61f44aecc49b70}{incFields}}-\/>begin();}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00392}00392\ \ \ \ \ \ \ \ \ \ incIter\ !=\ \mbox{\hyperlink{classSIEForm_abe76634df0190690fb61f44aecc49b70}{incFields}}-\/>end();\ incIter++)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00393}00393\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ m(rwgM-\/>EdgeIndex());}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00394}00394\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classSIEFormPMCHW_aa50f0ed0ba3fd971157b05002c6a2214}{grnFunLayered}}\ ==\ \textcolor{keyword}{nullptr})\ \{\ \textcolor{comment}{//\ Homogeneous\ medium}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00395}00395\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ temp;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00396}00396\ \ \ \ \ \ \ \ \ temp\ =\ (*incIter)-\/>IntegrateE(\&(*rwgM));}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00397}00397\ \textcolor{preprocessor}{\#ifdef\ DEBUG}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00398}00398\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}δ\ ("{}}\ <<\ m\ <<\ \textcolor{stringliteral}{"{})="{}}\ <<\ temp\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00399}00399\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00400}00400\ \ \ \ \ \ \ \ \ (*lseVector)(m)\ +=\ temp;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00401}00401\ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00402}00402\ \ \ \ \ \ \ \ \ temp\ =\ (*incIter)-\/>IntegrateH(\&(*rwgM));}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00403}00403\ \textcolor{preprocessor}{\#ifdef\ DEBUG}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00404}00404\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}κ\ ("{}}\ <<\ m\ <<\ \textcolor{stringliteral}{"{})="{}}\ <<\ temp\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00405}00405\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00406}00406\ \ \ \ \ \ \ \ \ (*lseVector)(m\ +\ mxOffset)\ -\/=\ temp;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00407}00407\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{\ \textcolor{comment}{//\ Layered\ medium}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00408}00408\ \ \ \ \ \ \ \ \ std::vector<dcmplx>\ temp;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00409}00409\ \ \ \ \ \ \ \ \ temp\ =\ (*incIter)-\/>IntegrateLayeredEandH(\&(*rwgM));}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00410}00410\ \textcolor{preprocessor}{\#ifdef\ DEBUG}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00411}00411\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}δ\ ("{}}\ <<\ m\ <<\ \textcolor{stringliteral}{"{})="{}}\ <<\ temp[0]\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00412}00412\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00413}00413\ \ \ \ \ \ \ \ \ (*lseVector)(m)\ +=\ temp[0];}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00414}00414\ \textcolor{preprocessor}{\#ifdef\ DEBUG}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00415}00415\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}κ\ ("{}}\ <<\ m\ <<\ \textcolor{stringliteral}{"{})="{}}\ <<\ temp[1]\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00416}00416\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00417}00417\ \ \ \ \ \ \ \ \ (*lseVector)(m\ +\ mxOffset)\ -\/=\ temp[1];}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00418}00418\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00419}00419\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00420}00420\ \textcolor{preprocessor}{\#ifdef\ DEBUG}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00421}00421\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00422}00422\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00423}00423\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00424}00424\ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00425}00425\ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00426}00426\ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00427}00427\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Layer\ indexing\ (utility)\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00435}\mbox{\hyperlink{classSIEFormPMCHW_acae01d25783587fe8197f3b69811b1f7}{00435}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSIEFormPMCHW_acae01d25783587fe8197f3b69811b1f7}{SIEFormPMCHW::GetLayerIndex}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ pos)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00436}00436\ \ \ \textcolor{keywordtype}{double}\ z\ =\ pos[2];\ \ \textcolor{comment}{//\ Extract\ the\ z-\/component\ of\ the\ position}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00437}00437\ \ \ \textcolor{keywordtype}{int}\ index\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00438}00438\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ eps\ =\ 1e-\/6;\ \textcolor{comment}{//\ Small\ tolerance\ for\ floating-\/point\ comparisons}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00439}00439\ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00440}00440\ \ \ \textcolor{comment}{//\ Check\ if\ point\ is\ on\ an\ interface}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00441}00441\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classSIEFormPMCHW_a905a0dbdfbcdecabe5c9ca04c2a41233}{zValsInterfaces}}.size();\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00442}00442\ \ \ \ \ \textcolor{keywordflow}{if}\ (std::abs(z\ -\/\ \mbox{\hyperlink{classSIEFormPMCHW_a905a0dbdfbcdecabe5c9ca04c2a41233}{zValsInterfaces}}[i])\ <=\ eps)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00443}00443\ \ \ \ \ \ \ \textcolor{comment}{//\ Interface\ i\ separates\ layer\ i\ and\ layer\ i+1}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00444}00444\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ l\_lower\ =\ i;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00445}00445\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ l\_upper\ =\ i\ +\ 1;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00446}00446\ \ \ \ \ \ \ index\ =\ std::abs(l\_lower\ -\/\ \mbox{\hyperlink{classSIEFormPMCHW_afba0d187de12c7fdc66b1a3c0c6e2e6e}{midLayerIndex}})\ <\ std::abs(l\_upper\ -\/\ \mbox{\hyperlink{classSIEFormPMCHW_afba0d187de12c7fdc66b1a3c0c6e2e6e}{midLayerIndex}})\ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00447}00447\ \ \ \ \ \ \ \ \ \ \ \ \ ?\ l\_lower\ :\ l\_upper;\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00448}00448\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00449}00449\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00450}00450\ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00451}00451\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classSIEFormPMCHW_a905a0dbdfbcdecabe5c9ca04c2a41233}{zValsInterfaces}}.size()\ -\/\ 1;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00452}00452\ \ \ \ \ \textcolor{keywordflow}{if}\ (z\ >\ \mbox{\hyperlink{classSIEFormPMCHW_a905a0dbdfbcdecabe5c9ca04c2a41233}{zValsInterfaces}}[i]\ +\ eps\ \&\&\ z\ <\ \mbox{\hyperlink{classSIEFormPMCHW_a905a0dbdfbcdecabe5c9ca04c2a41233}{zValsInterfaces}}[i\ +\ 1]\ -\/\ eps)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00453}00453\ \ \ \ \ \ \ index\ =\ i\ +\ 1;\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00454}00454\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00455}00455\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00456}00456\ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00457}00457\ \ \ \textcolor{comment}{//\ If\ z\ is\ beyond\ the\ last\ interface,\ return\ the\ index\ of\ the\ last\ layer}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00458}00458\ \ \ \textcolor{keywordflow}{if}\ (z\ >\ \mbox{\hyperlink{classSIEFormPMCHW_a905a0dbdfbcdecabe5c9ca04c2a41233}{zValsInterfaces}}.back()\ +\ eps)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00459}00459\ \ \ \ \ index\ =\ \mbox{\hyperlink{classSIEFormPMCHW_a905a0dbdfbcdecabe5c9ca04c2a41233}{zValsInterfaces}}.size();}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00460}00460\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00461}00461\ \ \ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00462}00462\ \ \ \textcolor{comment}{//\ If\ z\ is\ below\ the\ first\ interface,\ return\ the\ index\ of\ the\ first\ layer}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00463}00463\ \ \ \textcolor{keywordflow}{if}\ (z\ <\ \mbox{\hyperlink{classSIEFormPMCHW_a905a0dbdfbcdecabe5c9ca04c2a41233}{zValsInterfaces}}.front()\ -\/\ eps)\ \{}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00464}00464\ \ \ \ \ index\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00465}00465\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00466}00466\ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00467}00467\ \ \ \textcolor{keywordflow}{return}\ index;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00468}00468\ \}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00469}00469\ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00470}00470\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Threading\ control\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00471}00471\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSIEFormPMCHW_afefc288a5c108896f375c14bd734e474}{SIEFormPMCHW::threads}}\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00472}00472\ }
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00473}00473\ \textcolor{comment}{//\ Set\ the\ number\ of\ worker\ threads\ used\ in\ parallel\ assembly.}}
+\DoxyCodeLine{\Hypertarget{SIEFormPMCHW_8cpp_source_l00474}\mbox{\hyperlink{classSIEFormPMCHW_a9d91e407f50e49fd90dd1bc25db22532}{00474}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSIEFormPMCHW_a9d91e407f50e49fd90dd1bc25db22532}{SIEFormPMCHW::AssignThreads}}(\textcolor{keywordtype}{int}\ t)\ \{\ \mbox{\hyperlink{classSIEFormPMCHW_afefc288a5c108896f375c14bd734e474}{threads}}\ =\ t;\ \}}
+
+\end{DoxyCode}

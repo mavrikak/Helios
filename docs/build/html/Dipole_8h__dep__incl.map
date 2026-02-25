@@ -1,0 +1,9 @@
+<map id="Dipole.h" name="Dipole.h">
+<area shape="rect" id="Node000001" title="Incident field generator for electric dipole illumination in homogeneous or layered media." alt="" coords="157,5,232,33"/>
+<area shape="rect" id="Node000002" href="$Dipole_8cpp.html" title="Implementation of the Dipole incident source." alt="" coords="5,81,96,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,43,77,83,75,78,154,38"/>
+<area shape="rect" id="Node000003" href="$DomainHom3D_8cpp.html" title="Implementation of the homogeneous 3D domain." alt="" coords="120,81,269,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="197,49,197,81,192,81,192,49"/>
+<area shape="rect" id="Node000004" href="$DomainLayered3D_8cpp.html" title="Implementation of the layered 3D domain." alt="" coords="292,81,462,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="242,37,346,78,344,83,240,42"/>
+</map>

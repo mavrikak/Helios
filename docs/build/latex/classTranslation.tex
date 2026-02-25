@@ -1,0 +1,127 @@
+\doxysection{Translation Class Reference}
+\hypertarget{classTranslation}{}\label{classTranslation}\index{Translation@{Translation}}
+
+
+Concrete translation symmetry operation.  
+
+
+
+
+{\ttfamily \#include $<$math\+Functions.\+h$>$}
+
+
+
+Inheritance diagram for Translation\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classTranslation__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Translation\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classTranslation__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTranslation_a770a96d62d9565887bea28f7d86ae12c}{Translation}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} translation\+Vector)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classTranslation_a0cd5ba7aab503bf0733ea1e1759f9fad}{Apply}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} input\+Vector)
+\begin{DoxyCompactList}\small\item\em Apply the translation to a given vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classSymmetryOperation}{Symmetry\+Operation}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classSymmetryOperation_a47fd81354601023185ebe9be8451c5e5}{\texorpdfstring{$\sim$}{\string~}\+Symmetry\+Operation}} ()
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classTranslation_a8ab56d3d77e6d9c2e90af7dc61c1cdf0}{t}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classTranslation}{Translation} vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete translation symmetry operation. 
+
+Definition at line \mbox{\hyperlink{mathFunctions_8h_source_l00113}{113}} of file \mbox{\hyperlink{mathFunctions_8h_source}{math\+Functions.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classTranslation_a770a96d62d9565887bea28f7d86ae12c}\index{Translation@{Translation}!Translation@{Translation}}
+\index{Translation@{Translation}!Translation@{Translation}}
+\doxysubsubsection{\texorpdfstring{Translation()}{Translation()}}
+{\footnotesize\ttfamily \label{classTranslation_a770a96d62d9565887bea28f7d86ae12c} 
+Translation\+::\+Translation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{translation\+Vector}{}\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em translation\+Vector} & \doxylink{classTranslation}{Translation} vector to apply to coordinates. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{mathFunctions_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{mathFunctions_8cpp_source}{math\+Functions.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTranslation_a0cd5ba7aab503bf0733ea1e1759f9fad}\index{Translation@{Translation}!Apply@{Apply}}
+\index{Apply@{Apply}!Translation@{Translation}}
+\doxysubsubsection{\texorpdfstring{Apply()}{Apply()}}
+{\footnotesize\ttfamily \label{classTranslation_a0cd5ba7aab503bf0733ea1e1759f9fad} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} Translation\+::\+Apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{input\+Vector}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Apply the translation to a given vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Vector} & Input position vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Translated vector (input minus translation vector). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classSymmetryOperation_a25060dd050f293e32a636234f1146188}{Symmetry\+Operation}}.
+
+
+
+Definition at line \mbox{\hyperlink{mathFunctions_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{mathFunctions_8cpp_source}{math\+Functions.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classTranslation_a8ab56d3d77e6d9c2e90af7dc61c1cdf0}\index{Translation@{Translation}!t@{t}}
+\index{t@{t}!Translation@{Translation}}
+\doxysubsubsection{\texorpdfstring{t}{t}}
+{\footnotesize\ttfamily \label{classTranslation_a8ab56d3d77e6d9c2e90af7dc61c1cdf0} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} Translation\+::t\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{classTranslation}{Translation} vector. 
+
+
+
+Definition at line \mbox{\hyperlink{mathFunctions_8h_source_l00115}{115}} of file \mbox{\hyperlink{mathFunctions_8h_source}{math\+Functions.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{mathFunctions_8h}{math\+Functions.\+h}}\item 
+\mbox{\hyperlink{mathFunctions_8cpp}{math\+Functions.\+cpp}}\end{DoxyCompactItemize}

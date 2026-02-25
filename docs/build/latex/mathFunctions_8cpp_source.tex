@@ -1,0 +1,288 @@
+\doxysection{math\+Functions.\+cpp}
+\hypertarget{mathFunctions_8cpp_source}{}\label{mathFunctions_8cpp_source}\index{mathFunctions.cpp@{mathFunctions.cpp}}
+\mbox{\hyperlink{mathFunctions_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mathFunctions_8h}{mathFunctions.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <blitz/tvecglobs.h>}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{iofunctions_8h}{iofunctions.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00007}00007\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00008}00008\ \textcolor{comment}{//\ SymmetryOperation\ implementations}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00009}00009\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00010}\mbox{\hyperlink{classTranslation_a770a96d62d9565887bea28f7d86ae12c}{00010}}\ \mbox{\hyperlink{classTranslation_a770a96d62d9565887bea28f7d86ae12c}{Translation::Translation}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ translationVector)\ :\ \mbox{\hyperlink{classTranslation_a8ab56d3d77e6d9c2e90af7dc61c1cdf0}{t}}(translationVector)\{\};}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00012}\mbox{\hyperlink{classTranslation_a0cd5ba7aab503bf0733ea1e1759f9fad}{00012}}\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ \mbox{\hyperlink{classTranslation_a0cd5ba7aab503bf0733ea1e1759f9fad}{Translation::Apply}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ inputVector)\ \{}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00013}00013\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ out(inputVector);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00014}00014\ \ \ out\ -\/=\ \mbox{\hyperlink{classTranslation_a8ab56d3d77e6d9c2e90af7dc61c1cdf0}{t}};}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00015}00015\ \ \ \textcolor{keywordflow}{return}\ out;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00016}00016\ \}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00018}00018\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00019}00019\ \textcolor{comment}{//\ Special\ function\ implementations}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00020}00020\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00021}00021\ \textcolor{comment}{//\ Error\ function\ erf(z)\ for\ complex\ arguments\ (series\ and\ asymptotics).}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00022}\mbox{\hyperlink{mathFunctions_8h_abc57cde75234d7e165a9ebcdb45f2c29}{00022}}\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{mathFunctions_8cpp_abc57cde75234d7e165a9ebcdb45f2c29}{cerf}}(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ arg)\ \{}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00023}00023\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ c0,\ z1,\ result;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00024}00024\ \ \ c0\ =\ exp(-\/arg\ *\ arg);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00026}00026\ \ \ \textcolor{keywordflow}{if}\ (arg.real()\ <\ 0)}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00027}00027\ \ \ \ \ z1\ =\ -\/arg;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00028}00028\ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00029}00029\ \ \ \ \ z1\ =\ arg;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00031}00031\ \ \ \textcolor{keywordflow}{if}\ (abs(arg)\ <\ 5.8)\ \{}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00032}00032\ \ \ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ cs\ =\ z1;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00033}00033\ \ \ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ cr\ =\ z1;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00034}00034\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ 0;\ k\ <\ 120;\ k++)\ \{}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00035}00035\ \ \ \ \ \ \ cr\ *=\ z1\ *\ z1\ /\ (k\ +\ 1.5);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00036}00036\ \ \ \ \ \ \ cs\ +=\ cr;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00037}00037\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (abs(cr\ /\ cs)\ <\ 1e-\/15)\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00038}00038\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00039}00039\ \ \ \ \ result\ =\ 2.\ *\ c0\ *\ cs\ /\ sqrt(\mbox{\hyperlink{globals_8h_a952eac791b596a61bba0a133a3bb439f}{PI}});}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00040}00040\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00041}00041\ \ \ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ cl\ =\ 1.\ /\ z1;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00042}00042\ \ \ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ cr\ =\ cl;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00043}00043\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ 0;\ k\ <\ 13;\ k++)\ \{}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00044}00044\ \ \ \ \ \ \ cr\ *=\ -\/(k\ +\ 0.5)\ /\ (z1\ *\ z1);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00045}00045\ \ \ \ \ \ \ cl\ +=\ cr;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00046}00046\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (abs(cr\ /\ cl)\ <\ 1e-\/15)\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00048}00048\ \ \ \ \ result\ =\ 1.\ -\/\ c0\ *\ cl\ /\ sqrt(\mbox{\hyperlink{globals_8h_a952eac791b596a61bba0a133a3bb439f}{PI}});}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00049}00049\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00051}00051\ \ \ \textcolor{keywordflow}{if}\ (arg.real()\ <\ 0)\ \textcolor{keywordflow}{return}\ -\/result;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00053}00053\ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00054}00054\ \}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00056}00056\ \textcolor{comment}{//\ Complementary\ error\ function\ erfc(z).}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00057}\mbox{\hyperlink{mathFunctions_8h_a7916c6b62310fe9cf38ec2a2890aaad4}{00057}}\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{mathFunctions_8cpp_a7916c6b62310fe9cf38ec2a2890aaad4}{cerfc}}(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ arg)\ \{}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00058}00058\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ id(1.,\ 0.);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00059}00059\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keywordtype}{id}\ -\/\ \mbox{\hyperlink{mathFunctions_8cpp_abc57cde75234d7e165a9ebcdb45f2c29}{cerf}}(arg);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00060}00060\ \}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00062}00062\ \textcolor{comment}{//\ Exponential\ integral\ Ei(x)\ for\ positive\ real\ x.}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00063}\mbox{\hyperlink{mathFunctions_8h_a08aa713aa80e71c4c0e2c81ff7d1df50}{00063}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{mathFunctions_8cpp_a08aa713aa80e71c4c0e2c81ff7d1df50}{Ei}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \&x)\ \{}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00064}00064\ \ \ \textcolor{keywordtype}{double}\ EI\_TOLERANCE\ =\ 1e-\/9;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00065}00065\ \ \ \textcolor{keywordtype}{double}\ EULER\ =\ 0.57721566490153;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00066}00066\ \ \ \textcolor{keywordtype}{int}\ n;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00067}00067\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{mathFunctions_8h_a08aa713aa80e71c4c0e2c81ff7d1df50}{Ei}},\ term;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00068}00068\ \ \ \mbox{\hyperlink{mathFunctions_8h_a08aa713aa80e71c4c0e2c81ff7d1df50}{Ei}}\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00069}00069\ \ \ \textcolor{keywordflow}{if}\ (x\ <\ 15.0)\ \{}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00070}00070\ \ \ \ \ n\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00071}00071\ \ \ \ \ term\ =\ x;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00072}00072\ \ \ \ \ \mbox{\hyperlink{mathFunctions_8h_a08aa713aa80e71c4c0e2c81ff7d1df50}{Ei}}\ =\ EULER\ +\ log(x)\ +\ term;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00073}00073\ \ \ \ \ \textcolor{keywordflow}{while}\ (fabs(term)\ >\ EI\_TOLERANCE)\ \{}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00074}00074\ \ \ \ \ \ \ term\ *=\ x\ *\ n\ /\ (n\ +\ 1)\ /\ (n\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00075}00075\ \ \ \ \ \ \ \mbox{\hyperlink{mathFunctions_8h_a08aa713aa80e71c4c0e2c81ff7d1df50}{Ei}}\ +=\ term;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00076}00076\ \ \ \ \ \ \ n++;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00077}00077\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00078}00078\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00079}00079\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{mathFunctions_8h_a08aa713aa80e71c4c0e2c81ff7d1df50}{Ei}};}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00080}00080\ \}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00082}00082\ \textcolor{comment}{//\ Exponential\ integral\ Ep(x,p)\ of\ order\ p.}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00083}\mbox{\hyperlink{mathFunctions_8h_ad467dbbc9a8479eecf74b3c13d1384d9}{00083}}\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{mathFunctions_8cpp_ad467dbbc9a8479eecf74b3c13d1384d9}{Ep}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \&x,\ \textcolor{keywordtype}{int}\ p)\ \{}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00084}00084\ \ \ \textcolor{keywordtype}{int}\ n(1);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00085}00085\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{mathFunctions_8h_ad467dbbc9a8479eecf74b3c13d1384d9}{Ep}};}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00086}00086\ \ \ \textcolor{keywordflow}{if}\ (x\ >=\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00087}00087\ \ \ \ \ \textcolor{keywordtype}{double}\ E1\_TOLERANCE\ =\ 1e-\/9;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00088}00088\ \ \ \ \ \textcolor{keywordtype}{double}\ EULER\ =\ 0.57721566490153;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00089}00089\ \ \ \ \ \textcolor{keywordtype}{int}\ m;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00090}00090\ \ \ \ \ \textcolor{keywordtype}{double}\ E1,\ term;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00091}00091\ \ \ \ \ E1\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00092}00092\ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ <\ 15.0)\ \{}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00093}00093\ \ \ \ \ \ \ m\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00094}00094\ \ \ \ \ \ \ term\ =\ -\/x;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00095}00095\ \ \ \ \ \ \ E1\ =\ -\/EULER\ -\/\ log(x)\ -\/\ term;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00096}00096\ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (fabs(term)\ >\ E1\_TOLERANCE)\ \{}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ term\ *=\ -\/x\ *\ m\ /\ (m\ +\ 1)\ /\ (m\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ E1\ -\/=\ term;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ m++;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00100}00100\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00101}00101\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00102}00102\ \ \ \ \ \mbox{\hyperlink{mathFunctions_8h_ad467dbbc9a8479eecf74b3c13d1384d9}{Ep}}\ =\ E1;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00103}00103\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00104}00104\ \ \ \ \ \mbox{\hyperlink{mathFunctions_8h_ad467dbbc9a8479eecf74b3c13d1384d9}{Ep}}\ =\ -\/\mbox{\hyperlink{mathFunctions_8cpp_a08aa713aa80e71c4c0e2c81ff7d1df50}{Ei}}(-\/x)\ +\ \mbox{\hyperlink{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c}{I}}\ *\ \mbox{\hyperlink{globals_8h_a952eac791b596a61bba0a133a3bb439f}{PI}};}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00105}00105\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00106}00106\ \ \ \textcolor{keywordflow}{while}\ (n\ <\ p)\ \{}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00107}00107\ \ \ \ \ \mbox{\hyperlink{mathFunctions_8h_ad467dbbc9a8479eecf74b3c13d1384d9}{Ep}}\ =\ 1.\ /\ n\ *\ (exp(-\/x)\ -\/\ x\ *\ \mbox{\hyperlink{mathFunctions_8h_ad467dbbc9a8479eecf74b3c13d1384d9}{Ep}});}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00108}00108\ \ \ \ \ ++n;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00109}00109\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00110}00110\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{mathFunctions_8h_ad467dbbc9a8479eecf74b3c13d1384d9}{Ep}};}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00111}00111\ \}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00113}00113\ \textcolor{comment}{//\ Compute\ factorial\ of\ integer\ n.}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00114}\mbox{\hyperlink{mathFunctions_8h_a7ca0205c081d7fe4c5b2d7637e556e2b}{00114}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{mathFunctions_8cpp_a7ca0205c081d7fe4c5b2d7637e556e2b}{factorial}}(\textcolor{keywordtype}{int}\ num)\ \{}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00115}00115\ \ \ \textcolor{keywordtype}{int}\ result(1);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00116}00116\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <=\ num;\ ++i)\ result\ *=\ i;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00117}00117\ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00118}00118\ \}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00120}00120\ \textcolor{comment}{//\ Transpose\ of\ a\ complex\ dyadic\ (3x3\ matrix).}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00121}\mbox{\hyperlink{mathFunctions_8h_a3e09d80ae5d4038d0acf33eaa605bfe6}{00121}}\ \mbox{\hyperlink{globals_8h_ac062d767acbc2b8149a4039dc4a1a18f}{cdyad}}\ \mbox{\hyperlink{mathFunctions_8cpp_a3e09d80ae5d4038d0acf33eaa605bfe6}{transpose}}(\mbox{\hyperlink{globals_8h_ac062d767acbc2b8149a4039dc4a1a18f}{cdyad}}\ d)\ \{}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00122}00122\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{globals_8h_ac062d767acbc2b8149a4039dc4a1a18f}{cdyad}}(\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}(d(0)(0),\ d(1)(0),\ d(2)(0)),\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}(d(0)(1),\ d(1)(1),\ d(2)(1)),}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}(d(0)(2),\ d(1)(2),\ d(2)(2)));}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00124}00124\ \}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00126}00126\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00127}00127\ \textcolor{comment}{//\ Table\ generation\ routines}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00128}00128\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00129}00129\ \textcolor{comment}{//\ Generate\ and\ save\ text\ lookup\ table\ of\ cerfc\ values.}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00130}\mbox{\hyperlink{mathFunctions_8h_ab5ae92d9600ad72d4c0c18a49f876831}{00130}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{mathFunctions_8cpp_ab5ae92d9600ad72d4c0c18a49f876831}{ErfcLookupTable}}(std::string\ filename,\ \textcolor{keywordtype}{double}\ maxRe,\ \textcolor{keywordtype}{double}\ maxIm,}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ incRe,\ \textcolor{keywordtype}{double}\ incIm)\ \{}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00132}00132\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ z;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00133}00133\ \ \ std::vector<std::vector<dcmplx>\ >\ erfcTable;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00134}00134\ \ \ std::vector<std::vector<dcmplx>\ >\ posTable;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00135}00135\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Computing\ look-\/up\ table"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00136}00136\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{double}\ x\ =\ -\/maxRe;\ x\ <=\ maxRe;\ x\ +=\ incRe)\ \{}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00137}00137\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}."{}}\ <<\ std::flush;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00138}00138\ \ \ \ \ std::vector<dcmplx>\ buffer,\ buffer1;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00139}00139\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{double}\ y\ =\ -\/maxIm;\ y\ <=\ maxIm;\ y\ +=\ incIm)\ \{}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00140}00140\ \ \ \ \ \ \ z\ =\ x\ +\ \mbox{\hyperlink{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c}{I}}\ *\ y;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00141}00141\ \ \ \ \ \ \ buffer.push\_back(\mbox{\hyperlink{mathFunctions_8cpp_a7916c6b62310fe9cf38ec2a2890aaad4}{cerfc}}(z));}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00142}00142\ \ \ \ \ \ \ buffer1.push\_back(z);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00143}00143\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00144}00144\ \ \ \ \ erfcTable.push\_back(buffer);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00145}00145\ \ \ \ \ posTable.push\_back(buffer1);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00146}00146\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00147}00147\ \ \ std::ofstream\ outputFile(filename.c\_str());}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00148}00148\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}finished...writing\ file\ "{}}\ <<\ filename\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00149}00149\ \ \ \textcolor{keywordflow}{if}\ (!outputFile.is\_open())\ \{}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00150}00150\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ opening\ erfc\ output\ file:\ "{}}\ <<\ filename\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00151}00151\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00152}00152\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00153}00153\ \ \ outputFile\ <<\ \textcolor{stringliteral}{"{}\#\ Look-\/up\ table\ for\ erfc\ function"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00154}00154\ \ \ outputFile\ <<\ \textcolor{stringliteral}{"{}\#\ Table\ parameters:\ size\ along\ x,\ size\ along\ y"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00155}00155\ \ \ outputFile\ <<\ erfcTable.size()\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ erfcTable[0].size()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00156}00156\ \ \ outputFile\ <<\ \textcolor{stringliteral}{"{}\#\ Table:\ x,\ y,\ re(erfc(x+iy)),im(erfc(x+iy))"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00157}00157\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i(0);\ i\ <\ erfcTable.size();\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00158}00158\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ j(0);\ j\ <\ erfcTable[i].size();\ ++j)\ \{}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00159}00159\ \ \ \ \ \ \ outputFile\ <<\ posTable[i][j]\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ erfcTable[i][j]\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00160}00160\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00161}00161\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00162}00162\ \ \ outputFile.close();}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00163}00163\ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00164}00164\ \}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00166}00166\ \textcolor{comment}{//\ Construct\ LookupTable\ from\ text\ file.}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00167}\mbox{\hyperlink{classLookupTable_aad2ce33f88d3b9d1594fa43639afd04b}{00167}}\ \mbox{\hyperlink{classLookupTable_aad2ce33f88d3b9d1594fa43639afd04b}{LookupTable::LookupTable}}()}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00168}00168\ \ \ \ \ :\ \mbox{\hyperlink{classLookupTable_a0e16d61af82fd44504de9960825907fc}{sizeRe}}(0),\ \mbox{\hyperlink{classLookupTable_abb858d416dff348b9f247aefd350bf9e}{sizeIm}}(0),\ \mbox{\hyperlink{classLookupTable_a8cbd9aa7e94d9de1700f11d69609f7a8}{maxRe}}(0),\ \mbox{\hyperlink{classLookupTable_a39f15ca38af6eaa9defcbc4eab24cd0f}{maxIm}}(0),\ \mbox{\hyperlink{classLookupTable_a68e4429b3dfa69fa9feb43345ae35235}{incRe}}(0),\ \mbox{\hyperlink{classLookupTable_aa6a2f49d4f7ff001bf2d7bf5cad653c6}{incIm}}(0)\ \{\}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00170}00170\ \textcolor{comment}{//\ Construct\ LookupTable\ from\ text\ file.}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00171}\mbox{\hyperlink{classLookupTable_ae6e7b00a09e1e8150e013df55820cbb0}{00171}}\ \mbox{\hyperlink{classLookupTable_aad2ce33f88d3b9d1594fa43639afd04b}{LookupTable::LookupTable}}(std::string\ fileName)\ \{}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00172}00172\ \ \ std::ifstream\ fin(fileName.c\_str());}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00173}00173\ \ \ \textcolor{keywordflow}{if}\ (!fin.is\_open())\ \{}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00174}00174\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ opening\ look-\/up\ table\ file:\ "{}}\ <<\ fileName\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00175}00175\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00176}00176\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ z;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00177}00177\ \ \ \textcolor{keywordtype}{int}\ err\ =\ \mbox{\hyperlink{group__driver_ga3859b179ce92396b3d9187e4437d8826}{ReadCommented<int>}}(\&fin,\ \&\mbox{\hyperlink{classLookupTable_a0e16d61af82fd44504de9960825907fc}{sizeRe}});}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00178}00178\ \ \ err\ +=\ \mbox{\hyperlink{group__driver_ga3859b179ce92396b3d9187e4437d8826}{ReadCommented<int>}}(\&fin,\ \&\mbox{\hyperlink{classLookupTable_abb858d416dff348b9f247aefd350bf9e}{sizeIm}});}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00179}00179\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i(0);\ i\ <\ \mbox{\hyperlink{classLookupTable_a0e16d61af82fd44504de9960825907fc}{sizeRe}};\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00180}00180\ \ \ \ \ std::vector<dcmplx>\ buffer,\ buffer1;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00181}00181\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j(0);\ j\ <\ \mbox{\hyperlink{classLookupTable_abb858d416dff348b9f247aefd350bf9e}{sizeIm}};\ ++j)\ \{}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00182}00182\ \ \ \ \ \ \ err\ +=\ \mbox{\hyperlink{group__driver_ga3859b179ce92396b3d9187e4437d8826}{ReadCommented<dcmplx>}}(\&fin,\ \&z);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00183}00183\ \ \ \ \ \ \ buffer1.push\_back(z);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00184}00184\ \ \ \ \ \ \ err\ +=\ \mbox{\hyperlink{group__driver_ga3859b179ce92396b3d9187e4437d8826}{ReadCommented<dcmplx>}}(\&fin,\ \&z);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00185}00185\ \ \ \ \ \ \ buffer.push\_back(z);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00186}00186\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00187}00187\ \ \ \ \ \mbox{\hyperlink{classLookupTable_ab96a1f939d8f1a7e37dc4d6811bb8a61}{fun}}.push\_back(buffer);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00188}00188\ \ \ \ \ \mbox{\hyperlink{classLookupTable_a16122241ad91c9d12e064818c7f14431}{arg}}.push\_back(buffer1);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00189}00189\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00190}00190\ \ \ \mbox{\hyperlink{classLookupTable_a8cbd9aa7e94d9de1700f11d69609f7a8}{maxRe}}\ =\ -\/\mbox{\hyperlink{Domain_8cpp_aafa3e4fa6318b2f8740f4dbd50c367e5}{real}}(\mbox{\hyperlink{classLookupTable_a16122241ad91c9d12e064818c7f14431}{arg}}[0][0]);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00191}00191\ \ \ \mbox{\hyperlink{classLookupTable_a39f15ca38af6eaa9defcbc4eab24cd0f}{maxIm}}\ =\ -\/imag(\mbox{\hyperlink{classLookupTable_a16122241ad91c9d12e064818c7f14431}{arg}}[0][0]);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00192}00192\ \ \ \mbox{\hyperlink{classLookupTable_a68e4429b3dfa69fa9feb43345ae35235}{incRe}}\ =\ \mbox{\hyperlink{Domain_8cpp_aafa3e4fa6318b2f8740f4dbd50c367e5}{real}}(\mbox{\hyperlink{classLookupTable_a16122241ad91c9d12e064818c7f14431}{arg}}[1][0]\ -\/\ \mbox{\hyperlink{classLookupTable_a16122241ad91c9d12e064818c7f14431}{arg}}[0][0]);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00193}00193\ \ \ \mbox{\hyperlink{classLookupTable_aa6a2f49d4f7ff001bf2d7bf5cad653c6}{incIm}}\ =\ imag(\mbox{\hyperlink{classLookupTable_a16122241ad91c9d12e064818c7f14431}{arg}}[0][1]\ -\/\ \mbox{\hyperlink{classLookupTable_a16122241ad91c9d12e064818c7f14431}{arg}}[0][0]);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00194}00194\ \ \ fin.close();}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00195}00195\ \}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00196}00196\ }
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00197}00197\ \textcolor{comment}{//\ Generate\ and\ save\ binary\ lookup\ table\ of\ cerfc\ values.}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00198}\mbox{\hyperlink{mathFunctions_8h_a619bd9a7be3251a7f44191aaeaa6ab7c}{00198}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{mathFunctions_8cpp_a619bd9a7be3251a7f44191aaeaa6ab7c}{ErfcLookupTableBin}}(std::string\ filename,\ \textcolor{keywordtype}{double}\ maxRe,\ \textcolor{keywordtype}{double}\ maxIm,}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ incRe,\ \textcolor{keywordtype}{double}\ incIm)\ \{}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00200}00200\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ z;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00201}00201\ \ \ std::vector<std::vector<dcmplx>\ >\ erfcTable;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00202}00202\ \ \ std::vector<std::vector<dcmplx>\ >\ posTable;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00203}00203\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Computing\ look-\/up\ table"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00204}00204\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{double}\ x\ =\ -\/maxRe;\ x\ <=\ maxRe;\ x\ +=\ incRe)\ \{}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00205}00205\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}."{}}\ <<\ std::flush;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00206}00206\ \ \ \ \ std::vector<dcmplx>\ buffer,\ buffer1;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00207}00207\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{double}\ y\ =\ -\/maxIm;\ y\ <=\ maxIm;\ y\ +=\ incIm)\ \{}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00208}00208\ \ \ \ \ \ \ z\ =\ x\ +\ \mbox{\hyperlink{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c}{I}}\ *\ y;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00209}00209\ \ \ \ \ \ \ buffer.push\_back(\mbox{\hyperlink{mathFunctions_8cpp_a7916c6b62310fe9cf38ec2a2890aaad4}{cerfc}}(z));}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00210}00210\ \ \ \ \ \ \ buffer1.push\_back(z);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00211}00211\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00212}00212\ \ \ \ \ erfcTable.push\_back(buffer);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00213}00213\ \ \ \ \ posTable.push\_back(buffer1);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00214}00214\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00215}00215\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}finished...writing\ file\ "{}}\ <<\ filename\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00216}00216\ }
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00217}00217\ \ \ FILE*\ fp\ =\ fopen(filename.c\_str(),\ \textcolor{stringliteral}{"{}wb"{}});}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00218}00218\ \ \ \textcolor{keywordflow}{if}\ (fp==NULL)\ \{}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00219}00219\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ opening\ erfc\ output\ file:\ "{}}\ <<\ filename\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00220}00220\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00221}00221\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00222}00222\ \ \ \textcolor{keywordtype}{int}\ temp\ =\ erfcTable.size();}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00223}00223\ \ \ fwrite(\&temp,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}),\ 1,\ fp);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00224}00224\ \ \ temp\ =\ erfcTable[0].size();}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00225}00225\ \ \ fwrite(\&temp,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}),\ 1,\ fp);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00226}00226\ \ \ \textcolor{keywordtype}{double}\ temp2;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00227}00227\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i(0);\ i\ <\ erfcTable.size();\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00228}00228\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ j(0);\ j\ <\ erfcTable[i].size();\ ++j)\ \{}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00229}00229\ \ \ \ \ \ \ temp2\ =\ posTable[i][j].real();}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00230}00230\ \ \ \ \ \ \ fwrite(\&temp2,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}),\ 1,\ fp);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00231}00231\ \ \ \ \ \ \ temp2\ =\ posTable[i][j].imag();}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00232}00232\ \ \ \ \ \ \ fwrite(\&temp2,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}),\ 1,\ fp);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00233}00233\ \ \ \ \ \ \ temp2\ =\ erfcTable[i][j].real();}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00234}00234\ \ \ \ \ \ \ fwrite(\&temp2,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}),\ 1,\ fp);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00235}00235\ \ \ \ \ \ \ temp2\ =\ erfcTable[i][j].imag();}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00236}00236\ \ \ \ \ \ \ fwrite(\&temp2,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}),\ 1,\ fp);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00237}00237\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00238}00238\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00239}00239\ \ \ fclose(fp);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00240}00240\ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00241}00241\ \}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00242}00242\ }
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00243}00243\ \textcolor{comment}{//\ Construct\ LookupTable\ from\ bin\ file.}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00244}\mbox{\hyperlink{classLookupTableBin_a4f590850454270ba04aac092270e4e7e}{00244}}\ \mbox{\hyperlink{classLookupTableBin_a4f590850454270ba04aac092270e4e7e}{LookupTableBin::LookupTableBin}}()}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00245}00245\ \ \ \ \ :\ \mbox{\hyperlink{classLookupTableBin_a17897e0346bc3357bc7b16433da6229b}{sizeRe}}(0),\ \mbox{\hyperlink{classLookupTableBin_a667480536aba14eb253df98229d1d3b8}{sizeIm}}(0),\ \mbox{\hyperlink{classLookupTableBin_ace7419412cd9a99ebc21e39f77e6dbfc}{maxRe}}(0),\ \mbox{\hyperlink{classLookupTableBin_a215c8a5987d6fe6227903e45767c2a20}{maxIm}}(0),\ \mbox{\hyperlink{classLookupTableBin_ac90e3df8c8dd9483ed0dfba6deb9c1c3}{incRe}}(0),\ \mbox{\hyperlink{classLookupTableBin_a037dcf58c2330664bf67dbd5de5e28e2}{incIm}}(0)\ \{\}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00246}00246\ }
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00247}00247\ \textcolor{comment}{//\ Construct\ LookupTable\ from\ bin\ file.}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00248}\mbox{\hyperlink{classLookupTableBin_a48c684661180b6c3b561d7d8a0d8da3f}{00248}}\ \mbox{\hyperlink{classLookupTableBin_a4f590850454270ba04aac092270e4e7e}{LookupTableBin::LookupTableBin}}(std::string\ fileName)\ \{}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00249}00249\ }
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00250}00250\ \ \ FILE*\ fp\ =\ fopen(fileName.c\_str(),\ \textcolor{stringliteral}{"{}rb"{}});}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00251}00251\ }
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00252}00252\ \ \ \textcolor{keywordtype}{double}\ temp1,temp2;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00253}00253\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ z;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00254}00254\ }
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00255}00255\ \ \ \textcolor{keywordflow}{if}\ (fp==NULL)\ \{}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00256}00256\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ opening\ look-\/up\ table\ file:\ "{}}\ <<\ fileName\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00257}00257\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00258}00258\ }
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00259}00259\ \ \ \textcolor{keywordtype}{int}\ err\ =\ fread(\&\mbox{\hyperlink{classLookupTableBin_a17897e0346bc3357bc7b16433da6229b}{sizeRe}},\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}),\ 1,\ fp);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00260}00260\ \ \ err\ +=\ fread(\&\mbox{\hyperlink{classLookupTableBin_a667480536aba14eb253df98229d1d3b8}{sizeIm}},\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}),\ 1,\ fp);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00261}00261\ }
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00262}00262\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i(0);\ i\ <\ \mbox{\hyperlink{classLookupTableBin_a17897e0346bc3357bc7b16433da6229b}{sizeRe}};\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00263}00263\ \ \ \ \ std::vector<dcmplx>\ buffer,\ buffer1;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00264}00264\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j(0);\ j\ <\ \mbox{\hyperlink{classLookupTableBin_a667480536aba14eb253df98229d1d3b8}{sizeIm}};\ ++j)\ \{}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00265}00265\ \ \ \ \ \ \ err\ +=\ fread(\&temp1,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}),\ 1,\ fp);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00266}00266\ \ \ \ \ \ \ err\ +=\ fread(\&temp2,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}),\ 1,\ fp);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00267}00267\ \ \ \ \ \ \ z\ =\ temp1\ +\ \mbox{\hyperlink{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c}{I}}\ *\ temp2;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00268}00268\ \ \ \ \ \ \ buffer1.push\_back(z);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00269}00269\ \ \ \ \ \ \ err\ +=\ fread(\&temp1,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}),\ 1,\ fp);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00270}00270\ \ \ \ \ \ \ err\ +=\ fread(\&temp2,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}),\ 1,\ fp);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00271}00271\ \ \ \ \ \ \ z\ =\ temp1\ +\ \mbox{\hyperlink{globals_8h_a99376a3ce1c70138e335660fd1a0ed2c}{I}}\ *\ temp2;}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00272}00272\ \ \ \ \ \ \ buffer.push\_back(z);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00273}00273\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00274}00274\ \ \ \ \ \mbox{\hyperlink{classLookupTableBin_a3911b3d3cc5ae9176b084b2d173f7ccd}{fun}}.push\_back(buffer);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00275}00275\ \ \ \ \ \mbox{\hyperlink{classLookupTableBin_aaa0009e75e7ed5f97b1e062bb7c7b0d9}{arg}}.push\_back(buffer1);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00276}00276\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00277}00277\ \ \ \mbox{\hyperlink{classLookupTableBin_ace7419412cd9a99ebc21e39f77e6dbfc}{maxRe}}\ =\ -\/\mbox{\hyperlink{Domain_8cpp_aafa3e4fa6318b2f8740f4dbd50c367e5}{real}}(\mbox{\hyperlink{classLookupTableBin_aaa0009e75e7ed5f97b1e062bb7c7b0d9}{arg}}[0][0]);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00278}00278\ \ \ \mbox{\hyperlink{classLookupTableBin_a215c8a5987d6fe6227903e45767c2a20}{maxIm}}\ =\ -\/imag(\mbox{\hyperlink{classLookupTableBin_aaa0009e75e7ed5f97b1e062bb7c7b0d9}{arg}}[0][0]);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00279}00279\ \ \ \mbox{\hyperlink{classLookupTableBin_ac90e3df8c8dd9483ed0dfba6deb9c1c3}{incRe}}\ =\ \mbox{\hyperlink{Domain_8cpp_aafa3e4fa6318b2f8740f4dbd50c367e5}{real}}(\mbox{\hyperlink{classLookupTableBin_aaa0009e75e7ed5f97b1e062bb7c7b0d9}{arg}}[1][0]\ -\/\ \mbox{\hyperlink{classLookupTableBin_aaa0009e75e7ed5f97b1e062bb7c7b0d9}{arg}}[0][0]);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00280}00280\ \ \ \mbox{\hyperlink{classLookupTableBin_a037dcf58c2330664bf67dbd5de5e28e2}{incIm}}\ =\ imag(\mbox{\hyperlink{classLookupTableBin_aaa0009e75e7ed5f97b1e062bb7c7b0d9}{arg}}[0][1]\ -\/\ \mbox{\hyperlink{classLookupTableBin_aaa0009e75e7ed5f97b1e062bb7c7b0d9}{arg}}[0][0]);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00281}00281\ \ \ fclose(fp);}
+\DoxyCodeLine{\Hypertarget{mathFunctions_8cpp_source_l00282}00282\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,41 @@
+\doxysection{Incident\+Field.\+h File Reference}
+\hypertarget{IncidentField_8h}{}\label{IncidentField_8h}\index{IncidentField.h@{IncidentField.h}}
+
+
+Abstract interface for incident electromagnetic excitations.  
+
+
+{\ttfamily \#include "{}RWGFun.\+h"{}}\newline
+{\ttfamily \#include "{}globals.\+h"{}}\newline
+{\ttfamily \#include "{}Layered\+Media\+Utils.\+h"{}}\newline
+{\ttfamily \#include "{}Green\+F.\+h"{}}\newline
+Include dependency graph for Incident\+Field.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{IncidentField_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{IncidentField_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classIncidentField}{Incident\+Field}}
+\begin{DoxyCompactList}\small\item\em Abstract base for incident fields (excitations) used in SIE. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract interface for incident electromagnetic excitations. 
+
+This header declares the {\ttfamily \doxylink{classIncidentField}{Incident\+Field}} base class, which defines the common interface for all excitations used by the SIE formulation (i.\+e. plane wave, dipole, \doxylink{classGaussian}{Gaussian} beam). Implementations provide pointwise field evaluation (E and H), layer-\/aware evaluation helpers, and RWG-\/based excitation integrals used to assemble right-\/hand sides.
+
+The class also exposes a static switch, {\ttfamily Enable\+Accurate}, that enables a more accurate (and potentially more expensive) numerical path for the excitation integrals, intended for validation or difficult near-\/field cases. 
+
+Definition in file \mbox{\hyperlink{IncidentField_8h_source}{Incident\+Field.\+h}}.
+

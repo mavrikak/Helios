@@ -1,0 +1,25 @@
+<map id="GaussQuad::IntegrateD" name="GaussQuad::IntegrateD">
+<area shape="rect" id="Node000001" title="Two‑triangle integral for the D operator (Eq." alt="" coords="5,110,178,137"/>
+<area shape="rect" id="Node000002" href="$classTriangle.html#a1d3d08deeb999f339d2e821a877521ba" title="Surface area of the triangle." alt="" coords="422,58,532,85"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,107,159,73,191,56,225,43,275,36,325,36,373,42,416,51,415,56,373,47,325,41,275,41,226,49,193,61,161,77,112,111"/>
+<area shape="rect" id="Node000003" href="$classTriangle.html#ab78508a340ec5d345adf114b43563dbf" title="Centroid of the triangle." alt="" coords="416,6,539,33"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="104,107,153,62,187,39,225,21,269,10,315,5,400,6,400,11,315,10,270,15,227,26,190,43,157,66,108,111"/>
+<area shape="rect" id="Node000004" href="$classRWGFun.html#a7540ce2f84c6b42a29c2808504c47d42" title="Evaluate the RWG vector shape function at a point on the triangle." alt="" coords="406,174,548,201"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="142,135,226,155,311,169,391,178,390,183,310,174,225,161,141,140"/>
+<area shape="rect" id="Node000005" href="$classGaussQuad.html#afecf86c6fbc2362c30d56fb10454621e" title="I1: integral of scalar kernel times RWG prefactor over the test triangle." alt="" coords="226,110,341,137"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="178,121,210,121,210,126,178,126"/>
+<area shape="rect" id="Node000006" href="$classRWGFun.html#a7cd7779305937d48196453e53d0d4df8" title="Return L_n / A_n (missing factor 1/2 by convention)." alt="" coords="389,250,565,277"/>
+<area shape="poly" id="edge14_Node000001_Node000006" title=" " alt="" coords="126,135,227,177,416,242,414,247,225,182,124,140"/>
+<area shape="rect" id="Node000007" href="$classRWGFun.html#a6d9c854fc60bc02cb51ffb60cf388ccc" title="Get the pointer to the owner Triangle." alt="" coords="400,110,554,137"/>
+<area shape="poly" id="edge15_Node000001_Node000007" title=" " alt="" coords="156,135,226,146,283,150,341,146,397,138,397,143,341,151,283,155,225,151,155,141"/>
+<area shape="rect" id="Node000008" href="$classGaussQuad.html#a017bdf3c80a430f4c381310bd7b680ed" title="I2: vector form with the RWG basis evaluated at the centroid." alt="" coords="226,58,341,85"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="145,106,214,87,216,92,146,111"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="337,106,407,87,409,92,339,111"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="319,107,339,95,353,82,362,69,372,56,388,44,400,37,403,42,390,48,376,60,367,72,357,85,343,99,322,111"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="301,136,341,171,391,211,437,240,434,244,387,215,337,175,298,140"/>
+<area shape="poly" id="edge8_Node000005_Node000007" title=" " alt="" coords="342,121,385,121,385,126,342,126"/>
+<area shape="poly" id="edge10_Node000008_Node000002" title=" " alt="" coords="342,69,406,69,406,74,342,74"/>
+<area shape="poly" id="edge11_Node000008_Node000003" title=" " alt="" coords="337,54,407,35,409,40,339,59"/>
+<area shape="poly" id="edge12_Node000008_Node000004" title=" " alt="" coords="322,84,343,96,357,109,367,122,376,134,391,147,422,165,420,169,387,151,372,138,363,125,354,113,339,100,319,88"/>
+<area shape="poly" id="edge13_Node000008_Node000007" title=" " alt="" coords="339,83,409,102,407,108,337,88"/>
+</map>

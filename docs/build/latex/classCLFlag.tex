@@ -1,0 +1,194 @@
+\doxysection{CLFlag Class Reference}
+\hypertarget{classCLFlag}{}\label{classCLFlag}\index{CLFlag@{CLFlag}}
+
+
+Boolean flag option with no argument.  
+
+
+
+
+{\ttfamily \#include $<$CLParser.\+h$>$}
+
+
+
+Inheritance diagram for CLFlag\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=158pt]{classCLFlag__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CLFlag\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=158pt]{classCLFlag__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCLFlag_abf908121289adb95e2775fa130ea15a1}{CLFlag}} (std\+::string opt, bool \texorpdfstring{$\ast$}{*}targ)
+\begin{DoxyCompactList}\small\item\em Construct a flag option bound to a {\ttfamily bool}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCLFlag_a5bc94e73d6b20d467223406a2633a159}{CLFlag}} (const char \texorpdfstring{$\ast$}{*}opt, bool \texorpdfstring{$\ast$}{*}targ)
+\begin{DoxyCompactList}\small\item\em Construct a flag option bound to a {\ttfamily bool}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classCLFlag_a41858f8d43111e63aac1d578d03432eb}{\texorpdfstring{$\sim$}{\string~}\+CLFlag}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classCLFlag_a6b13d3697a743ce2106e8cc874c9ee29}{Parse}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Parse the option and set the target bool to true if present. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classCLParser}{CLParser}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCLParser_ae3702d514303a9f957e3381d71c4d6df}{CLParser}} (std\+::string opt)
+\begin{DoxyCompactList}\small\item\em Construct with an option token. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCLParser_ad84575776050c4cc5492815ef8eb5dd5}{CLParser}} (const char \texorpdfstring{$\ast$}{*}opt)
+\begin{DoxyCompactList}\small\item\em Construct with an option token. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classCLParser_a988eff2b562e1df1bc63e7a221a1e4dc}{\texorpdfstring{$\sim$}{\string~}\+CLParser}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCLFlag_a06f234f4287e787c49c24c08d3ded6a3}{target}}
+\begin{DoxyCompactList}\small\item\em Pointer to user bool to be set true if present. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classCLParser}{CLParser}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classCLParser_a2d671ec2fea71aaf31ead23092d05d41}{option}}
+\begin{DoxyCompactList}\small\item\em Option keyword to match against argv\mbox{[}\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Boolean flag option with no argument. 
+
+Example\+: "{}-\/-\/help"{} sets the bound bool to true. 
+
+Definition at line \mbox{\hyperlink{CLParser_8h_source_l00176}{176}} of file \mbox{\hyperlink{CLParser_8h_source}{CLParser.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCLFlag_abf908121289adb95e2775fa130ea15a1}\index{CLFlag@{CLFlag}!CLFlag@{CLFlag}}
+\index{CLFlag@{CLFlag}!CLFlag@{CLFlag}}
+\doxysubsubsection{\texorpdfstring{CLFlag()}{CLFlag()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classCLFlag_abf908121289adb95e2775fa130ea15a1} 
+CLFlag\+::\+CLFlag (\begin{DoxyParamCaption}\item[{std\+::string}]{opt}{, }\item[{bool \texorpdfstring{$\ast$}{*}}]{targ}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a flag option bound to a {\ttfamily bool}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em opt} & Option keyword. \\
+\hline
+{\em targ} & Pointer to target bool. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{CLParser_8h_source_l00187}{187}} of file \mbox{\hyperlink{CLParser_8h_source}{CLParser.\+h}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{classCLFlag_abf908121289adb95e2775fa130ea15a1_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classCLFlag_a5bc94e73d6b20d467223406a2633a159}\index{CLFlag@{CLFlag}!CLFlag@{CLFlag}}
+\index{CLFlag@{CLFlag}!CLFlag@{CLFlag}}
+\doxysubsubsection{\texorpdfstring{CLFlag()}{CLFlag()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classCLFlag_a5bc94e73d6b20d467223406a2633a159} 
+CLFlag\+::\+CLFlag (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{opt}{, }\item[{bool \texorpdfstring{$\ast$}{*}}]{targ}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a flag option bound to a {\ttfamily bool}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em opt} & Option keyword. \\
+\hline
+{\em targ} & Pointer to target bool. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{CLParser_8h_source_l00194}{194}} of file \mbox{\hyperlink{CLParser_8h_source}{CLParser.\+h}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{classCLFlag_a5bc94e73d6b20d467223406a2633a159_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classCLFlag_a41858f8d43111e63aac1d578d03432eb}\index{CLFlag@{CLFlag}!````~CLFlag@{\texorpdfstring{$\sim$}{\string~}CLFlag}}
+\index{````~CLFlag@{\texorpdfstring{$\sim$}{\string~}CLFlag}!CLFlag@{CLFlag}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CLFlag()}{\string~CLFlag()}}
+{\footnotesize\ttfamily \label{classCLFlag_a41858f8d43111e63aac1d578d03432eb} 
+virtual CLFlag\+::\texorpdfstring{$\sim$}{\string~}\+CLFlag (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+Definition at line \mbox{\hyperlink{CLParser_8h_source_l00197}{197}} of file \mbox{\hyperlink{CLParser_8h_source}{CLParser.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCLFlag_a6b13d3697a743ce2106e8cc874c9ee29}\index{CLFlag@{CLFlag}!Parse@{Parse}}
+\index{Parse@{Parse}!CLFlag@{CLFlag}}
+\doxysubsubsection{\texorpdfstring{Parse()}{Parse()}}
+{\footnotesize\ttfamily \label{classCLFlag_a6b13d3697a743ce2106e8cc874c9ee29} 
+int CLFlag\+::\+Parse (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{argv}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Parse the option and set the target bool to true if present. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Argument count. \\
+\hline
+{\em argv} & Argument vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if found and set, 0 if not present. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCLParser_a966387c58560ab2006b6158b62ea75ce}{CLParser}}.
+
+
+
+Definition at line \mbox{\hyperlink{CLParser_8h_source_l00205}{205}} of file \mbox{\hyperlink{CLParser_8h_source}{CLParser.\+h}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classCLFlag_a06f234f4287e787c49c24c08d3ded6a3}\index{CLFlag@{CLFlag}!target@{target}}
+\index{target@{target}!CLFlag@{CLFlag}}
+\doxysubsubsection{\texorpdfstring{target}{target}}
+{\footnotesize\ttfamily \label{classCLFlag_a06f234f4287e787c49c24c08d3ded6a3} 
+bool\texorpdfstring{$\ast$}{*} CLFlag\+::target\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Pointer to user bool to be set true if present. 
+
+
+
+Definition at line \mbox{\hyperlink{CLParser_8h_source_l00178}{178}} of file \mbox{\hyperlink{CLParser_8h_source}{CLParser.\+h}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{CLParser_8h}{CLParser.\+h}}\end{DoxyCompactItemize}

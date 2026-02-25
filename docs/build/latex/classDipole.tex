@@ -1,0 +1,649 @@
+\doxysection{Dipole Class Reference}
+\hypertarget{classDipole}{}\label{classDipole}\index{Dipole@{Dipole}}
+
+
+Point electric dipole excitation.  
+
+
+
+
+{\ttfamily \#include $<$Dipole.\+h$>$}
+
+
+
+Inheritance diagram for Dipole\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classDipole__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Dipole\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classDipole__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDipole_a0649c906cc011322eb38c42d86543f29}{Dipole}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} location, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} polarization, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} vacuum\+Wavelength, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classDipole_a057019005d78f7fd73fd2f01b27246e1}{mu\+Medium}}, \mbox{\hyperlink{classGreenF}{GreenF}} \texorpdfstring{$\ast$}{*}f\+Hom)
+\begin{DoxyCompactList}\small\item\em Construct a dipole in a homogeneous background. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDipole_a56537bec7348da0eb9e1ed858d6594a1}{Dipole}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} location, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} polarization, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} vacuum\+Wavelength, \mbox{\hyperlink{classGreenF}{GreenF}} \texorpdfstring{$\ast$}{*}f\+Hom, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classDipole_a057019005d78f7fd73fd2f01b27246e1}{mu\+Medium}}, std\+::vector$<$ \mbox{\hyperlink{structGrid}{Grid}} $>$ tab\+Grids, \mbox{\hyperlink{classGreenF}{GreenF}} \texorpdfstring{$\ast$}{*}f\+Layered, \mbox{\hyperlink{classLayeredMediaUtils}{Layered\+Media\+Utils}} \texorpdfstring{$\ast$}{*}utils)
+\begin{DoxyCompactList}\small\item\em Construct a dipole prepared for layered‑media calculations. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classDipole_ab4873557b39cc8d504446c35392ab2a0}{EvaluateE}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} position)
+\begin{DoxyCompactList}\small\item\em Evaluate the incident electric field $\mathbf E^{inc}(\mathbf r)$ in a homogeneous background. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classDipole_a4d85fde503ac7167f832503d5256c5e9}{EvaluateH}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} position)
+\begin{DoxyCompactList}\small\item\em Evaluate the incident magnetic field $\mathbf H^{inc}(\mathbf r)$ in a homogeneous background. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ \mbox{\hyperlink{classDipole_a5ffb98d7b929694cd41ec4e3a9593864}{Evaluate\+Layered\+EandH}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} position)
+\begin{DoxyCompactList}\small\item\em Evaluate $(\mathbf E^{inc}, \mathbf H^{inc})$ in a stratified background. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classDipole_a212daff5bb4e371b91e138e128722edd}{IntegrateE}} (\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}f)
+\begin{DoxyCompactList}\small\item\em Integrate the electric‑field kernel against an RWG basis function (homogeneous). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classDipole_a1dd3ce01913b5cff62ea44cc9590e49d}{IntegrateH}} (\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}f)
+\begin{DoxyCompactList}\small\item\em Integrate the magnetic‑field kernel against an RWG basis function (homogeneous). \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{classDipole_ad6b98d59b3e4e25f5715c0d55f7802a4}{Integrate\+Layered\+EandH}} (\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}f)
+\begin{DoxyCompactList}\small\item\em Layered‑media counterparts of \doxylink{classDipole_a212daff5bb4e371b91e138e128722edd}{IntegrateE} and \doxylink{classDipole_a1dd3ce01913b5cff62ea44cc9590e49d}{IntegrateH}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classDipole_a6dfe13a5697de45442ea2366a77753be}{Polarization}} ()
+\begin{DoxyCompactList}\small\item\em Get dipole polarization. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classDipole_af0be5b4af0cd662c8684b01255b92433}{Location}} ()
+\begin{DoxyCompactList}\small\item\em Get dipole position. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDipole_a056558ea28c9ae3bea6e49e409f75c9b}{Is\+Plane\+Wave}} ()
+\begin{DoxyCompactList}\small\item\em True if this excitation is a \doxylink{classPlaneWave}{Plane\+Wave}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDipole_a5cbd149068ebf7d40f1776285124c390}{Is\+Dipole}} ()
+\begin{DoxyCompactList}\small\item\em True if this excitation is a \doxylink{classDipole}{Dipole}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDipole_a40f2ba72f8dccd762a8c4084a58a12df}{Is\+Gaussian}} ()
+\begin{DoxyCompactList}\small\item\em True if this excitation is a \doxylink{classGaussian}{Gaussian} beam. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classDipole_a2e30bf49055a001b5d8c3e695f103e3d}{set\+Grn\+Fun\+Layered}} (\mbox{\hyperlink{classGreenF}{GreenF}} \texorpdfstring{$\ast$}{*}f\+Grn\+Fields, std\+::vector$<$ \mbox{\hyperlink{structGrid}{Grid}} $>$ tab\+Grids)
+\begin{DoxyCompactList}\small\item\em Provide the layered‑media Green\textquotesingle{}s function for post‑processing fields. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classIncidentField}{Incident\+Field}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classIncidentField_a79ee067f9cdb57c3ec8a82c937541dc5}{\texorpdfstring{$\sim$}{\string~}\+Incident\+Field}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor to allow proper cleanup through base pointer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classDipole_aba20b25654611d13c1c19c864c81f5bc}{p}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classDipole}{Dipole} polarization vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classDipole_a11919a062b4040f8009cb06311605148}{r0}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classDipole}{Dipole} source location. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classDipole_ac2a421dd9a02e0a3a763cee52f4df5f7}{omega}}
+\begin{DoxyCompactList}\small\item\em Angular frequency. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGreenF}{GreenF}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classDipole_a94da534906aac15e1abc6e80d3b83e98}{grn\+Fun}}
+\begin{DoxyCompactList}\small\item\em Pointer to homogeneous background Green\textquotesingle{}s function provider. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classDipole_a057019005d78f7fd73fd2f01b27246e1}{mu\+Medium}}
+\begin{DoxyCompactList}\small\item\em Relative magnetic permeability of the background medium. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structGrid}{Grid}} $>$ \mbox{\hyperlink{classDipole_af3eb8faa0e08d236f47cf623c2d52f2c}{tabulation\+Grids}}
+\begin{DoxyCompactList}\small\item\em Grids for matrix fill‑in (assembly time) \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structGrid}{Grid}} $>$ \mbox{\hyperlink{classDipole_a2c16bd3d938248ed055857c348ea77c6}{tabulation\+Grids\+Fields}}
+\begin{DoxyCompactList}\small\item\em Grids for post‑processing field evaluation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGreenF}{GreenF}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classDipole_ac4fe58389c6851319547c866c205940c}{grn\+Fun\+Layered}}
+\begin{DoxyCompactList}\small\item\em Layered Green\textquotesingle{}s function (assembly) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGreenF}{GreenF}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classDipole_abd0ff6142ade5410fb2653de867f1a53}{grn\+Fun\+Layered\+Fields}}
+\begin{DoxyCompactList}\small\item\em Layered Green\textquotesingle{}s function (field evaluation) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLayeredMediaUtils}{Layered\+Media\+Utils}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classDipole_a838c697f42b297a69e6417400fbf944d}{layered\+Utils}}
+\begin{DoxyCompactList}\small\item\em Utility with layer indices, k\+\_\+z, Fresnel, etc. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classIncidentField}{Incident\+Field}}}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classIncidentField_aa8e0e6dc5e0acf432cc06a76f5d33baf}{Enable\+Accurate}} ()
+\begin{DoxyCompactList}\small\item\em Enable high-\/accuracy integration for excitations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{classIncidentField}{Incident\+Field}}}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classIncidentField_af45c81c859bda7b0a43818eb8fcf5887}{Needs\+Accurate}} = false
+\begin{DoxyCompactList}\small\item\em Global toggle\+: request accurate/expensive integration path. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Point electric dipole excitation. 
+
+The dipole is defined by its complex polarization vector $\mathbf p$ and source position $\mathbf r_0$.
+
+In a homogeneous background, fields are obtained from the dyadic free‑space Green\textquotesingle{}s functions. In a stratified background, reflected/transmitted contributions are added using tabulated layered‑media Green\textquotesingle{}s dyadics. 
+
+Definition at line \mbox{\hyperlink{Dipole_8h_source_l00034}{34}} of file \mbox{\hyperlink{Dipole_8h_source}{Dipole.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classDipole_a0649c906cc011322eb38c42d86543f29}\index{Dipole@{Dipole}!Dipole@{Dipole}}
+\index{Dipole@{Dipole}!Dipole@{Dipole}}
+\doxysubsubsection{\texorpdfstring{Dipole()}{Dipole()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classDipole_a0649c906cc011322eb38c42d86543f29} 
+Dipole\+::\+Dipole (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{location}{, }\item[{\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}}]{polarization}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{vacuum\+Wavelength}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{mu\+Medium}{, }\item[{\mbox{\hyperlink{classGreenF}{GreenF}} \texorpdfstring{$\ast$}{*}}]{f\+Hom}{}\end{DoxyParamCaption})}
+
+
+
+Construct a dipole in a homogeneous background. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & \doxylink{classDipole}{Dipole} position $\mathbf r_0$. \\
+\hline
+{\em polarization} & Complex polarization vector $\mathbf p$. \\
+\hline
+{\em vacuum\+Wavelength} & Free‑space wavelength $\lambda_0$. \\
+\hline
+{\em mu\+Medium} & Relative permeability of the background. \\
+\hline
+{\em f\+Hom} & Homogeneous Green function provider used for E/H and integrals.\\
+\hline
+\end{DoxyParams}
+The angular frequency is set to $\omega = 2\pi c/\lambda_0$. 
+
+Definition at line \mbox{\hyperlink{Dipole_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{Dipole_8cpp_source}{Dipole.\+cpp}}.
+
+\Hypertarget{classDipole_a56537bec7348da0eb9e1ed858d6594a1}\index{Dipole@{Dipole}!Dipole@{Dipole}}
+\index{Dipole@{Dipole}!Dipole@{Dipole}}
+\doxysubsubsection{\texorpdfstring{Dipole()}{Dipole()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classDipole_a56537bec7348da0eb9e1ed858d6594a1} 
+Dipole\+::\+Dipole (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{location}{, }\item[{\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}}]{polarization}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{vacuum\+Wavelength}{, }\item[{\mbox{\hyperlink{classGreenF}{GreenF}} \texorpdfstring{$\ast$}{*}}]{f\+Hom}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{mu\+Medium}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{structGrid}{Grid}} $>$}]{tab\+Grids}{, }\item[{\mbox{\hyperlink{classGreenF}{GreenF}} \texorpdfstring{$\ast$}{*}}]{f\+Layered}{, }\item[{\mbox{\hyperlink{classLayeredMediaUtils}{Layered\+Media\+Utils}} \texorpdfstring{$\ast$}{*}}]{utils}{}\end{DoxyParamCaption})}
+
+
+
+Construct a dipole prepared for layered‑media calculations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & \doxylink{classDipole}{Dipole} position $\mathbf r_0$. \\
+\hline
+{\em polarization} & Complex polarization vector $\mathbf p$. \\
+\hline
+{\em vacuum\+Wavelength} & Free‑space wavelength $\lambda_0$. \\
+\hline
+{\em f\+Hom} & Homogeneous Green function. \\
+\hline
+{\em mu\+Medium} & Relative permeability of the local layer. \\
+\hline
+{\em tab\+Grids} & Precomputed tabulation grids for layered kernels. \\
+\hline
+{\em f\+Layered} & Layered Green function for assembly. \\
+\hline
+{\em utils} & Layered‑media utilities (layer indices, k\+\_\+z, Fresnel coeffs, etc.). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Dipole_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{Dipole_8cpp_source}{Dipole.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classDipole_ab4873557b39cc8d504446c35392ab2a0}\index{Dipole@{Dipole}!EvaluateE@{EvaluateE}}
+\index{EvaluateE@{EvaluateE}!Dipole@{Dipole}}
+\doxysubsubsection{\texorpdfstring{EvaluateE()}{EvaluateE()}}
+{\footnotesize\ttfamily \label{classDipole_ab4873557b39cc8d504446c35392ab2a0} 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} Dipole\+::\+EvaluateE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{position}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Evaluate the incident electric field $\mathbf E^{inc}(\mathbf r)$ in a homogeneous background. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Observation point $\mathbf r$. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex 3‑vector of the electric field. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIncidentField_a2c6e363fff67c453f9ab2b550bb6bb20}{Incident\+Field}}.
+
+
+
+Definition at line \mbox{\hyperlink{Dipole_8cpp_source_l00035}{35}} of file \mbox{\hyperlink{Dipole_8cpp_source}{Dipole.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDipole_ab4873557b39cc8d504446c35392ab2a0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDipole_a4d85fde503ac7167f832503d5256c5e9}\index{Dipole@{Dipole}!EvaluateH@{EvaluateH}}
+\index{EvaluateH@{EvaluateH}!Dipole@{Dipole}}
+\doxysubsubsection{\texorpdfstring{EvaluateH()}{EvaluateH()}}
+{\footnotesize\ttfamily \label{classDipole_a4d85fde503ac7167f832503d5256c5e9} 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} Dipole\+::\+EvaluateH (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{position}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Evaluate the incident magnetic field $\mathbf H^{inc}(\mathbf r)$ in a homogeneous background. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Observation point $\mathbf r$. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex 3‑vector of the magnetic field. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIncidentField_a7f960fdcdeaf381ad12a49c190f180ff}{Incident\+Field}}.
+
+
+
+Definition at line \mbox{\hyperlink{Dipole_8cpp_source_l00039}{39}} of file \mbox{\hyperlink{Dipole_8cpp_source}{Dipole.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDipole_a4d85fde503ac7167f832503d5256c5e9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDipole_a5ffb98d7b929694cd41ec4e3a9593864}\index{Dipole@{Dipole}!EvaluateLayeredEandH@{EvaluateLayeredEandH}}
+\index{EvaluateLayeredEandH@{EvaluateLayeredEandH}!Dipole@{Dipole}}
+\doxysubsubsection{\texorpdfstring{EvaluateLayeredEandH()}{EvaluateLayeredEandH()}}
+{\footnotesize\ttfamily \label{classDipole_a5ffb98d7b929694cd41ec4e3a9593864} 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ Dipole\+::\+Evaluate\+Layered\+EandH (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{position}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Evaluate $(\mathbf E^{inc}, \mathbf H^{inc})$ in a stratified background. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Observation point $\mathbf r$. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Two‑element vector $\{ \mathbf{E}, \mathbf{H} \}$ with complex 3‑vectors. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if layered Green\textquotesingle{}s function for field evaluation was not set. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyNote}{Note}
+If the observation and source points are in the same layer, the homogeneous contribution is added automatically; layered contributions are added on top. 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{classIncidentField_a2fbb18ff29205e11b3c0bff676b15a7e}{Incident\+Field}}.
+
+
+
+Definition at line \mbox{\hyperlink{Dipole_8cpp_source_l00047}{47}} of file \mbox{\hyperlink{Dipole_8cpp_source}{Dipole.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDipole_a5ffb98d7b929694cd41ec4e3a9593864_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDipole_a212daff5bb4e371b91e138e128722edd}\index{Dipole@{Dipole}!IntegrateE@{IntegrateE}}
+\index{IntegrateE@{IntegrateE}!Dipole@{Dipole}}
+\doxysubsubsection{\texorpdfstring{IntegrateE()}{IntegrateE()}}
+{\footnotesize\ttfamily \label{classDipole_a212daff5bb4e371b91e138e128722edd} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Dipole\+::\+IntegrateE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{f}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Integrate the electric‑field kernel against an RWG basis function (homogeneous). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & RWG test function pointer (the triangle on which it lives defines the support). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Scalar complex contribution to the RHS of the final system. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIncidentField_a277e316a752da5fcb0a0c17088c62ba9}{Incident\+Field}}.
+
+
+
+Definition at line \mbox{\hyperlink{Dipole_8cpp_source_l00083}{83}} of file \mbox{\hyperlink{Dipole_8cpp_source}{Dipole.\+cpp}}.
+
+\Hypertarget{classDipole_a1dd3ce01913b5cff62ea44cc9590e49d}\index{Dipole@{Dipole}!IntegrateH@{IntegrateH}}
+\index{IntegrateH@{IntegrateH}!Dipole@{Dipole}}
+\doxysubsubsection{\texorpdfstring{IntegrateH()}{IntegrateH()}}
+{\footnotesize\ttfamily \label{classDipole_a1dd3ce01913b5cff62ea44cc9590e49d} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Dipole\+::\+IntegrateH (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{f}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Integrate the magnetic‑field kernel against an RWG basis function (homogeneous). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & RWG test function pointer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Scalar complex contribution to the RHS of the final system. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIncidentField_af220ad23b231a3d6d7da35c5799c25cc}{Incident\+Field}}.
+
+
+
+Definition at line \mbox{\hyperlink{Dipole_8cpp_source_l00087}{87}} of file \mbox{\hyperlink{Dipole_8cpp_source}{Dipole.\+cpp}}.
+
+\Hypertarget{classDipole_ad6b98d59b3e4e25f5715c0d55f7802a4}\index{Dipole@{Dipole}!IntegrateLayeredEandH@{IntegrateLayeredEandH}}
+\index{IntegrateLayeredEandH@{IntegrateLayeredEandH}!Dipole@{Dipole}}
+\doxysubsubsection{\texorpdfstring{IntegrateLayeredEandH()}{IntegrateLayeredEandH()}}
+{\footnotesize\ttfamily \label{classDipole_ad6b98d59b3e4e25f5715c0d55f7802a4} 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ Dipole\+::\+Integrate\+Layered\+EandH (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{f}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Layered‑media counterparts of \doxylink{classDipole_a212daff5bb4e371b91e138e128722edd}{IntegrateE} and \doxylink{classDipole_a1dd3ce01913b5cff62ea44cc9590e49d}{IntegrateH}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & RWG test function pointer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Two complex scalars $\{E^{inc}, H^{inc}\}$ combining direct and layered parts. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIncidentField_a7183dd5a80a0b88580fc0969cc25bc25}{Incident\+Field}}.
+
+
+
+Definition at line \mbox{\hyperlink{Dipole_8cpp_source_l00092}{92}} of file \mbox{\hyperlink{Dipole_8cpp_source}{Dipole.\+cpp}}.
+
+\Hypertarget{classDipole_a5cbd149068ebf7d40f1776285124c390}\index{Dipole@{Dipole}!IsDipole@{IsDipole}}
+\index{IsDipole@{IsDipole}!Dipole@{Dipole}}
+\doxysubsubsection{\texorpdfstring{IsDipole()}{IsDipole()}}
+{\footnotesize\ttfamily \label{classDipole_a5cbd149068ebf7d40f1776285124c390} 
+bool Dipole\+::\+Is\+Dipole (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+True if this excitation is a \doxylink{classDipole}{Dipole}. 
+
+\begin{DoxyReturn}{Returns}
+True if \doxylink{classDipole}{Dipole} illumination exists. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIncidentField_ab6e619e10e894f1df66bd1966bb40b21}{Incident\+Field}}.
+
+
+
+Definition at line \mbox{\hyperlink{Dipole_8h_source_l00154}{154}} of file \mbox{\hyperlink{Dipole_8h_source}{Dipole.\+h}}.
+
+\Hypertarget{classDipole_a40f2ba72f8dccd762a8c4084a58a12df}\index{Dipole@{Dipole}!IsGaussian@{IsGaussian}}
+\index{IsGaussian@{IsGaussian}!Dipole@{Dipole}}
+\doxysubsubsection{\texorpdfstring{IsGaussian()}{IsGaussian()}}
+{\footnotesize\ttfamily \label{classDipole_a40f2ba72f8dccd762a8c4084a58a12df} 
+bool Dipole\+::\+Is\+Gaussian (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+True if this excitation is a \doxylink{classGaussian}{Gaussian} beam. 
+
+\begin{DoxyReturn}{Returns}
+True if \doxylink{classGaussian}{Gaussian} illumination exists. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIncidentField_a16663eb644835d5a7a5979360e5fcbb7}{Incident\+Field}}.
+
+
+
+Definition at line \mbox{\hyperlink{Dipole_8h_source_l00155}{155}} of file \mbox{\hyperlink{Dipole_8h_source}{Dipole.\+h}}.
+
+\Hypertarget{classDipole_a056558ea28c9ae3bea6e49e409f75c9b}\index{Dipole@{Dipole}!IsPlaneWave@{IsPlaneWave}}
+\index{IsPlaneWave@{IsPlaneWave}!Dipole@{Dipole}}
+\doxysubsubsection{\texorpdfstring{IsPlaneWave()}{IsPlaneWave()}}
+{\footnotesize\ttfamily \label{classDipole_a056558ea28c9ae3bea6e49e409f75c9b} 
+bool Dipole\+::\+Is\+Plane\+Wave (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+True if this excitation is a \doxylink{classPlaneWave}{Plane\+Wave}. 
+
+\begin{DoxyReturn}{Returns}
+True if \doxylink{classPlaneWave}{Plane\+Wave} illumination exists. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIncidentField_a55dd80cfe4e8c55ae5dfe44c916b2055}{Incident\+Field}}.
+
+
+
+Definition at line \mbox{\hyperlink{Dipole_8h_source_l00153}{153}} of file \mbox{\hyperlink{Dipole_8h_source}{Dipole.\+h}}.
+
+\Hypertarget{classDipole_af0be5b4af0cd662c8684b01255b92433}\index{Dipole@{Dipole}!Location@{Location}}
+\index{Location@{Location}!Dipole@{Dipole}}
+\doxysubsubsection{\texorpdfstring{Location()}{Location()}}
+{\footnotesize\ttfamily \label{classDipole_af0be5b4af0cd662c8684b01255b92433} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} Dipole\+::\+Location (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get dipole position. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classDipole}{Dipole} location real vector. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Dipole_8cpp_source_l00105}{105}} of file \mbox{\hyperlink{Dipole_8cpp_source}{Dipole.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDipole_af0be5b4af0cd662c8684b01255b92433_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDipole_a6dfe13a5697de45442ea2366a77753be}\index{Dipole@{Dipole}!Polarization@{Polarization}}
+\index{Polarization@{Polarization}!Dipole@{Dipole}}
+\doxysubsubsection{\texorpdfstring{Polarization()}{Polarization()}}
+{\footnotesize\ttfamily \label{classDipole_a6dfe13a5697de45442ea2366a77753be} 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} Dipole\+::\+Polarization (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get dipole polarization. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classDipole}{Dipole} polarization complex vector. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Dipole_8cpp_source_l00107}{107}} of file \mbox{\hyperlink{Dipole_8cpp_source}{Dipole.\+cpp}}.
+
+\Hypertarget{classDipole_a2e30bf49055a001b5d8c3e695f103e3d}\index{Dipole@{Dipole}!setGrnFunLayered@{setGrnFunLayered}}
+\index{setGrnFunLayered@{setGrnFunLayered}!Dipole@{Dipole}}
+\doxysubsubsection{\texorpdfstring{setGrnFunLayered()}{setGrnFunLayered()}}
+{\footnotesize\ttfamily \label{classDipole_a2e30bf49055a001b5d8c3e695f103e3d} 
+void Dipole\+::set\+Grn\+Fun\+Layered (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGreenF}{GreenF}} \texorpdfstring{$\ast$}{*}}]{f\+Grn\+Fields}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{structGrid}{Grid}} $>$}]{tab\+Grids}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Provide the layered‑media Green\textquotesingle{}s function for post‑processing fields. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f\+Grn\+Fields} & \doxylink{classGreenF}{GreenF} instance used to evaluate layered dyadics at points. \\
+\hline
+{\em tab\+Grids} & Grids used by {\ttfamily f\+Grn\+Fields} for interpolation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This does not modify the assembly‑time (\doxylink{classDipole_ac4fe58389c6851319547c866c205940c}{grn\+Fun\+Layered}) object. 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{classIncidentField_a03028097aa5da8ba73cd92af43c78cd9}{Incident\+Field}}.
+
+
+
+Definition at line \mbox{\hyperlink{Dipole_8cpp_source_l00110}{110}} of file \mbox{\hyperlink{Dipole_8cpp_source}{Dipole.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDipole_a2e30bf49055a001b5d8c3e695f103e3d_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classDipole_a94da534906aac15e1abc6e80d3b83e98}\index{Dipole@{Dipole}!grnFun@{grnFun}}
+\index{grnFun@{grnFun}!Dipole@{Dipole}}
+\doxysubsubsection{\texorpdfstring{grnFun}{grnFun}}
+{\footnotesize\ttfamily \label{classDipole_a94da534906aac15e1abc6e80d3b83e98} 
+\mbox{\hyperlink{classGreenF}{GreenF}}\texorpdfstring{$\ast$}{*} Dipole\+::grn\+Fun\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pointer to homogeneous background Green\textquotesingle{}s function provider. 
+
+
+
+Definition at line \mbox{\hyperlink{Dipole_8h_source_l00042}{42}} of file \mbox{\hyperlink{Dipole_8h_source}{Dipole.\+h}}.
+
+\Hypertarget{classDipole_ac4fe58389c6851319547c866c205940c}\index{Dipole@{Dipole}!grnFunLayered@{grnFunLayered}}
+\index{grnFunLayered@{grnFunLayered}!Dipole@{Dipole}}
+\doxysubsubsection{\texorpdfstring{grnFunLayered}{grnFunLayered}}
+{\footnotesize\ttfamily \label{classDipole_ac4fe58389c6851319547c866c205940c} 
+\mbox{\hyperlink{classGreenF}{GreenF}}\texorpdfstring{$\ast$}{*} Dipole\+::grn\+Fun\+Layered\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Layered Green\textquotesingle{}s function (assembly) 
+
+
+
+Definition at line \mbox{\hyperlink{Dipole_8h_source_l00050}{50}} of file \mbox{\hyperlink{Dipole_8h_source}{Dipole.\+h}}.
+
+\Hypertarget{classDipole_abd0ff6142ade5410fb2653de867f1a53}\index{Dipole@{Dipole}!grnFunLayeredFields@{grnFunLayeredFields}}
+\index{grnFunLayeredFields@{grnFunLayeredFields}!Dipole@{Dipole}}
+\doxysubsubsection{\texorpdfstring{grnFunLayeredFields}{grnFunLayeredFields}}
+{\footnotesize\ttfamily \label{classDipole_abd0ff6142ade5410fb2653de867f1a53} 
+\mbox{\hyperlink{classGreenF}{GreenF}}\texorpdfstring{$\ast$}{*} Dipole\+::grn\+Fun\+Layered\+Fields\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Layered Green\textquotesingle{}s function (field evaluation) 
+
+
+
+Definition at line \mbox{\hyperlink{Dipole_8h_source_l00051}{51}} of file \mbox{\hyperlink{Dipole_8h_source}{Dipole.\+h}}.
+
+\Hypertarget{classDipole_a838c697f42b297a69e6417400fbf944d}\index{Dipole@{Dipole}!layeredUtils@{layeredUtils}}
+\index{layeredUtils@{layeredUtils}!Dipole@{Dipole}}
+\doxysubsubsection{\texorpdfstring{layeredUtils}{layeredUtils}}
+{\footnotesize\ttfamily \label{classDipole_a838c697f42b297a69e6417400fbf944d} 
+\mbox{\hyperlink{classLayeredMediaUtils}{Layered\+Media\+Utils}}\texorpdfstring{$\ast$}{*} Dipole\+::layered\+Utils\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Utility with layer indices, k\+\_\+z, Fresnel, etc. 
+
+
+
+Definition at line \mbox{\hyperlink{Dipole_8h_source_l00052}{52}} of file \mbox{\hyperlink{Dipole_8h_source}{Dipole.\+h}}.
+
+\Hypertarget{classDipole_a057019005d78f7fd73fd2f01b27246e1}\index{Dipole@{Dipole}!muMedium@{muMedium}}
+\index{muMedium@{muMedium}!Dipole@{Dipole}}
+\doxysubsubsection{\texorpdfstring{muMedium}{muMedium}}
+{\footnotesize\ttfamily \label{classDipole_a057019005d78f7fd73fd2f01b27246e1} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Dipole\+::mu\+Medium\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Relative magnetic permeability of the background medium. 
+
+
+
+Definition at line \mbox{\hyperlink{Dipole_8h_source_l00043}{43}} of file \mbox{\hyperlink{Dipole_8h_source}{Dipole.\+h}}.
+
+\Hypertarget{classDipole_ac2a421dd9a02e0a3a763cee52f4df5f7}\index{Dipole@{Dipole}!omega@{omega}}
+\index{omega@{omega}!Dipole@{Dipole}}
+\doxysubsubsection{\texorpdfstring{omega}{omega}}
+{\footnotesize\ttfamily \label{classDipole_ac2a421dd9a02e0a3a763cee52f4df5f7} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Dipole\+::omega\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Angular frequency. 
+
+
+
+Definition at line \mbox{\hyperlink{Dipole_8h_source_l00039}{39}} of file \mbox{\hyperlink{Dipole_8h_source}{Dipole.\+h}}.
+
+\Hypertarget{classDipole_aba20b25654611d13c1c19c864c81f5bc}\index{Dipole@{Dipole}!p@{p}}
+\index{p@{p}!Dipole@{Dipole}}
+\doxysubsubsection{\texorpdfstring{p}{p}}
+{\footnotesize\ttfamily \label{classDipole_aba20b25654611d13c1c19c864c81f5bc} 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} Dipole\+::p\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{classDipole}{Dipole} polarization vector. 
+
+
+
+Definition at line \mbox{\hyperlink{Dipole_8h_source_l00037}{37}} of file \mbox{\hyperlink{Dipole_8h_source}{Dipole.\+h}}.
+
+\Hypertarget{classDipole_a11919a062b4040f8009cb06311605148}\index{Dipole@{Dipole}!r0@{r0}}
+\index{r0@{r0}!Dipole@{Dipole}}
+\doxysubsubsection{\texorpdfstring{r0}{r0}}
+{\footnotesize\ttfamily \label{classDipole_a11919a062b4040f8009cb06311605148} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} Dipole\+::r0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{classDipole}{Dipole} source location. 
+
+
+
+Definition at line \mbox{\hyperlink{Dipole_8h_source_l00038}{38}} of file \mbox{\hyperlink{Dipole_8h_source}{Dipole.\+h}}.
+
+\Hypertarget{classDipole_af3eb8faa0e08d236f47cf623c2d52f2c}\index{Dipole@{Dipole}!tabulationGrids@{tabulationGrids}}
+\index{tabulationGrids@{tabulationGrids}!Dipole@{Dipole}}
+\doxysubsubsection{\texorpdfstring{tabulationGrids}{tabulationGrids}}
+{\footnotesize\ttfamily \label{classDipole_af3eb8faa0e08d236f47cf623c2d52f2c} 
+std\+::vector$<$\mbox{\hyperlink{structGrid}{Grid}}$>$ Dipole\+::tabulation\+Grids\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Grids for matrix fill‑in (assembly time) 
+
+
+
+Definition at line \mbox{\hyperlink{Dipole_8h_source_l00046}{46}} of file \mbox{\hyperlink{Dipole_8h_source}{Dipole.\+h}}.
+
+\Hypertarget{classDipole_a2c16bd3d938248ed055857c348ea77c6}\index{Dipole@{Dipole}!tabulationGridsFields@{tabulationGridsFields}}
+\index{tabulationGridsFields@{tabulationGridsFields}!Dipole@{Dipole}}
+\doxysubsubsection{\texorpdfstring{tabulationGridsFields}{tabulationGridsFields}}
+{\footnotesize\ttfamily \label{classDipole_a2c16bd3d938248ed055857c348ea77c6} 
+std\+::vector$<$\mbox{\hyperlink{structGrid}{Grid}}$>$ Dipole\+::tabulation\+Grids\+Fields\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Grids for post‑processing field evaluation. 
+
+
+
+Definition at line \mbox{\hyperlink{Dipole_8h_source_l00047}{47}} of file \mbox{\hyperlink{Dipole_8h_source}{Dipole.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Dipole_8h}{Dipole.\+h}}\item 
+\mbox{\hyperlink{Dipole_8cpp}{Dipole.\+cpp}}\end{DoxyCompactItemize}

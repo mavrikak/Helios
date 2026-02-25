@@ -1,0 +1,5 @@
+<map id="DomainHom3D::DomainHom3D" name="DomainHom3D::DomainHom3D">
+<area shape="rect" id="Node000001" title="Construct a homogeneous domain and immediately create its Green&#39;s function." alt="" coords="325,5,554,33"/>
+<area shape="rect" id="Node000002" href="$classDomainHom3DPer.html#a973f16aa5d1165725d3d0bdab331781f" title="Construct a periodic homogeneous domain and select a periodic Green&#39;s function." alt="" coords="5,5,277,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="309,22,277,22,277,16,309,16"/>
+</map>

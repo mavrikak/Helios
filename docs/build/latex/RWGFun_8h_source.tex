@@ -1,0 +1,50 @@
+\doxysection{RWGFun.\+h}
+\hypertarget{RWGFun_8h_source}{}\label{RWGFun_8h_source}\index{RWGFun.h@{RWGFun.h}}
+\mbox{\hyperlink{RWGFun_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00008}00008\ \textcolor{comment}{//\ Only\ include\ this\ once\ during\ compiling}}
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00009}00009\ \textcolor{preprocessor}{\#ifndef\ RWGFUN\_H}}
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00010}00010\ \textcolor{preprocessor}{\#define\ RWGFUN\_H}}
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{SurfaceMesh_8h}{SurfaceMesh.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Triangle_8h}{Triangle.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{globals_8h}{globals.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00030}\mbox{\hyperlink{classRWGFun}{00030}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRWGFun_af8d988b7a0c653432dbe1d7c2415028a}{RWGFun}}\ \{}
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00031}00031\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00032}\mbox{\hyperlink{classRWGFun_a150b46dd79148e9e5b9ae766c96515fb}{00032}}\ \ \ \mbox{\hyperlink{classTriangle}{Triangle}}*\ \mbox{\hyperlink{classRWGFun_a150b46dd79148e9e5b9ae766c96515fb}{triangle}};\ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00033}\mbox{\hyperlink{classRWGFun_afe368ec58b3b5218f69c8f9ab684a657}{00033}}\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}*\ \mbox{\hyperlink{classRWGFun_afe368ec58b3b5218f69c8f9ab684a657}{freeVertex}};\ \ \ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00034}\mbox{\hyperlink{classRWGFun_a3fb0aebadb4e76fe864c8631f360e07e}{00034}}\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classRWGFun_a3fb0aebadb4e76fe864c8631f360e07e}{edgeIndex}};\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00035}\mbox{\hyperlink{classRWGFun_adc441faebb01f2ca0d2c0fb393108302}{00035}}\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classRWGFun_adc441faebb01f2ca0d2c0fb393108302}{inverted}};\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00036}\mbox{\hyperlink{classRWGFun_ad1de069b036d36445390a677c7af3f4a}{00036}}\ \ \ \mbox{\hyperlink{classSurfaceMesh}{SurfaceMesh}}*\ \mbox{\hyperlink{classRWGFun_ad1de069b036d36445390a677c7af3f4a}{mesh}};\ \ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00037}\mbox{\hyperlink{classRWGFun_af58dc7a2d730a0198b5a8b4de4398921}{00037}}\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classRWGFun_af58dc7a2d730a0198b5a8b4de4398921}{side}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00039}00039\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00052}00052\ \ \ \mbox{\hyperlink{classRWGFun_af8d988b7a0c653432dbe1d7c2415028a}{RWGFun}}(\mbox{\hyperlink{classSurfaceMesh}{SurfaceMesh}}\ *inMesh,\ \mbox{\hyperlink{classTriangle}{Triangle}}\ *inTri,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ *inFreeVertex,\ \textcolor{keywordtype}{int}\ inSide);}
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00064}00064\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ \mbox{\hyperlink{classRWGFun_a7540ce2f84c6b42a29c2808504c47d42}{Evaluate}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r);}
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00065}00065\ \ \ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00070}00070\ \ \ \mbox{\hyperlink{classTriangle}{Triangle}}\ *\mbox{\hyperlink{classRWGFun_a6d9c854fc60bc02cb51ffb60cf388ccc}{TrianglePtr}}();}
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00071}00071\ \ \ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00076}00076\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ \mbox{\hyperlink{classRWGFun_a44b3739f9b872e917c6101928a2888a3}{FreeVertex}}();}
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00077}00077\ \ \ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00082}00082\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ *\mbox{\hyperlink{classRWGFun_a4b60d75c2f221271c3915f20374c580f}{FreeVertexPtr}}();}
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00083}00083\ \ \ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00088}00088\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classRWGFun_a70f64de5567b30165248fc93296016d9}{Inverted}}();}
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00089}00089\ \ \ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00097}00097\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classRWGFun_a7cd7779305937d48196453e53d0d4df8}{RWGPreFactor}}();}
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00098}00098\ \ \ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00103}00103\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classRWGFun_a828b9e623aca85f198dd9060c23c590f}{EdgeIndex}}();}
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00104}00104\ \ \ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00109}00109\ \ \ \mbox{\hyperlink{structedge}{edge}}\ \mbox{\hyperlink{classRWGFun_a86f9f0fedb0c62866a3f8f822de2f897}{Edge}}();}
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00115}00115\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classRWGFun_a896dcb81d76b6fc18eba2f27f80f378e}{Side}}();}
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00116}00116\ \};}
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00118}00118\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{RWGFun_8h_source_l00119}00119\ }
+
+\end{DoxyCode}

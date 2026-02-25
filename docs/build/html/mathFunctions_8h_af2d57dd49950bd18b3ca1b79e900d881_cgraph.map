@@ -1,0 +1,8 @@
+<map id="InterpTrilinear" name="InterpTrilinear">
+<area shape="rect" id="Node000001" title="Perform trilinear interpolation inside a cube." alt="" coords="5,31,117,58"/>
+<area shape="rect" id="Node000002" href="$mathFunctions_8h.html#ab134c0b32844bf75bb6540646a280007" title="Perform bilinear interpolation on a rectangular surface." alt="" coords="165,5,274,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,33,149,28,150,33,118,38"/>
+<area shape="rect" id="Node000003" href="$mathFunctions_8h.html#a6a44a67d00b12380d2bf85996378a609" title="Perform linear interpolation between two samples." alt="" coords="322,31,421,58"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="117,42,307,42,307,47,117,47"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="275,26,307,31,306,36,274,31"/>
+</map>

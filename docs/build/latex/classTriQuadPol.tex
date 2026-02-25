@@ -1,0 +1,617 @@
+\doxysection{Tri\+Quad\+Pol Class Reference}
+\hypertarget{classTriQuadPol}{}\label{classTriQuadPol}\index{TriQuadPol@{TriQuadPol}}
+
+
+Polar $(\rho, \theta)$ quadrature generator on a triangular facet.  
+
+
+
+
+{\ttfamily \#include $<$Tri\+Quad\+Pol.\+h$>$}
+
+
+
+Collaboration diagram for Tri\+Quad\+Pol\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classTriQuadPol__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTriQuadPol_a4f5e17f2daa1107f7ad126c30a32958c}{Tri\+Quad\+Pol}} (\mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*}in\+Tp, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} in\+Pos, int \mbox{\hyperlink{classTriQuadPol_a338801418b047e0327ded7118ba2106c}{n\+Quadrature}}, double(\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTriQuadPol_a7ea0ba45c1bba75d2a985f1720c36a99}{x\+Quadrature}})\mbox{[}2\mbox{]}, double \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTriQuadPol_a3c18df1bb2cc09ba59e8fb3ede3aad10}{w\+Quadrature}})
+\begin{DoxyCompactList}\small\item\em Construct and immediately adapt the polar quadrature. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTriQuadPol_abb4388c4a651d097c0c93376c45010e3}{adapt\+Polar}} ()
+\begin{DoxyCompactList}\small\item\em Build angular sectors and radial bounds, then assemble nodes/weights. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTriQuadPol_aea4deef1068d5095c5c6afbb741be8d7}{transform\+In\+Plane}} ()
+\begin{DoxyCompactList}\small\item\em Build an orthonormal basis on the triangle plane and project (vertices, point). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTriQuadPol_a7573c6d68c4bfe8898024684eda5e12e}{same\+Sign}} (double a, double b, double c)
+\begin{DoxyCompactList}\small\item\em Return true if a, b, c all have the same sign (non-\/strict). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTriQuadPol_ad2163791262ee9d63337474eb7bbe8d7}{point\+In\+Triangle}} (const \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \&P, const \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \&A, const \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \&B, const \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \&C)
+\begin{DoxyCompactList}\small\item\em 2D triangle membership test (local plane coordinates). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classTriQuadPol_ad0a8c886e263961bc2935f21ef14dcf7}{clean}} (double x, double eps=1e-\/10)
+\begin{DoxyCompactList}\small\item\em Zero out tiny values for numeric stability. \end{DoxyCompactList}\item 
+std\+::pair$<$ double, double $>$ \mbox{\hyperlink{classTriQuadPol_a143954247825794d0dc5c0d0e3d98365}{line\+In\+Polar}} (double theta1, double rho1, double theta2, double rho2)
+\begin{DoxyCompactList}\small\item\em Straight-\/line segment between two vertices written in polar form about pos\+In\+Plane. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTriQuadPol_aa0a0a7af46125d5359ae00fca0621de2}{adapt\+In}} (double theta0, double theta\+Start, double theta\+End, double t\+Line, double d\+Line, std\+::vector$<$ double $>$ \&int\+Thetas, std\+::vector$<$ double $>$ \&int\+Weights, std\+::vector$<$ double $>$ \&min\+Radius, std\+::vector$<$ double $>$ \&max\+Radius)
+\begin{DoxyCompactList}\small\item\em Build angular bins and radial bounds when the point is inside the triangle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTriQuadPol_a3f18d2c370480a52cb1364f9dd95ed06}{adapt\+Out}} (double theta0, double theta\+Start, double theta\+End, double t\+Line\+First, double d\+Line\+First, double t\+Line\+Second, double d\+Line\+Second, std\+::vector$<$ double $>$ \&int\+Thetas, std\+::vector$<$ double $>$ \&int\+Weights, std\+::vector$<$ double $>$ \&min\+Radius, std\+::vector$<$ double $>$ \&max\+Radius)
+\begin{DoxyCompactList}\small\item\em Build angular bins/radial bounds when the point is outside the triangle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTriQuadPol_a70845b7e565aa1befcffd099f850215b}{assemble\+From\+Polar}} (const std\+::vector$<$ double $>$ \&in\+Thetas, const std\+::vector$<$ double $>$ \&in\+Weights, const std\+::vector$<$ double $>$ \&in\+Min\+Radii, const std\+::vector$<$ double $>$ \&in\+Max\+Radii)
+\begin{DoxyCompactList}\small\item\em Expand $\theta$-\/bins into ( $\theta, r$) Gauss products and convert to barycentric nodes. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} $>$ \mbox{\hyperlink{classTriQuadPol_a937d9b0718e7914525a47db7954a1ef4}{get\+Quad\+Points}} ()
+\begin{DoxyCompactList}\small\item\em Quadrature nodes (barycentric triples). \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classTriQuadPol_a23097391f76d79ed0e0a3584400d4497}{get\+Quad\+Weights}} ()
+\begin{DoxyCompactList}\small\item\em Quadrature weights (include all Jacobian factors and r). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTriQuadPol_a00670e48ec20755b8fe3a467adb9a19f}{Tp}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classTriangle}{Triangle} being integrated over. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classTriQuadPol_a53271f2a13494d5716be47be74ff482a}{pos}}
+\begin{DoxyCompactList}\small\item\em 3D observation point \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} $>$ \mbox{\hyperlink{classTriQuadPol_ac9915973986ae9f6fc72fe0bb7f375e4}{verts\+In\+Plane}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classTriangle}{Triangle} vertices in the local 2D plane. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classTriQuadPol_a6f1041382f54d1fe3b124639b8881aa9}{pos\+In\+Plane}}
+\begin{DoxyCompactList}\small\item\em Observation point in the local 2D plane. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classTriQuadPol_a338801418b047e0327ded7118ba2106c}{n\+Quadrature}}
+\begin{DoxyCompactList}\small\item\em Size of the 1D Gauss rule. \end{DoxyCompactList}\item 
+double(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTriQuadPol_a7ea0ba45c1bba75d2a985f1720c36a99}{x\+Quadrature}} )\mbox{[}2\mbox{]}
+\begin{DoxyCompactList}\small\item\em 1D Gauss nodes (use \mbox{[}i\mbox{]}\mbox{[}0\mbox{]}); \mbox{[}i\mbox{]}\mbox{[}1\mbox{]} kept for compatibility \end{DoxyCompactList}\item 
+double \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTriQuadPol_a3c18df1bb2cc09ba59e8fb3ede3aad10}{w\+Quadrature}}
+\begin{DoxyCompactList}\small\item\em 1D Gauss weights \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} $>$ \mbox{\hyperlink{classTriQuadPol_a3b4071b7c9c552c377effdfbcf077034}{quad\+Points}}
+\begin{DoxyCompactList}\small\item\em Output barycentric nodes $ (\lambda_1, \lambda_2, \lambda_3) $. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classTriQuadPol_a1f229c4863ade798d530d6ee12d51ba5}{quad\+Weights}}
+\begin{DoxyCompactList}\small\item\em Output weights (include Jacobians) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Polar $(\rho, \theta)$ quadrature generator on a triangular facet. 
+
+Workflow\+:
+\begin{DoxyItemize}
+\item Construct with a triangle, an observation point, and a 1D Gauss rule (nodes/weights) of size {\ttfamily n\+Quadrature} for both $\rho$ and $\theta$ expansions.
+\item The constructor calls \doxylink{classTriQuadPol_abb4388c4a651d097c0c93376c45010e3}{adapt\+Polar()} which\+:
+\begin{DoxyItemize}
+\item Projects geometry to the triangle plane (\doxylink{classTriQuadPol_aea4deef1068d5095c5c6afbb741be8d7}{transform\+In\+Plane()}).
+\item Determines angular sectors and their radial bounds (\doxylink{classTriQuadPol_aa0a0a7af46125d5359ae00fca0621de2}{adapt\+In()} if the point lies inside the facet\textquotesingle{}s projection, else \doxylink{classTriQuadPol_a3f18d2c370480a52cb1364f9dd95ed06}{adapt\+Out()}).
+\item Assembles barycentric quadrature points/weights (\doxylink{classTriQuadPol_a70845b7e565aa1befcffd099f850215b}{assemble\+From\+Polar()}).
+\end{DoxyItemize}
+\item Retrieve integration nodes/weights via \doxylink{classTriQuadPol_a937d9b0718e7914525a47db7954a1ef4}{get\+Quad\+Points()}/\doxylink{classTriQuadPol_a23097391f76d79ed0e0a3584400d4497}{get\+Quad\+Weights()}. 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{TriQuadPol_8h_source_l00036}{36}} of file \mbox{\hyperlink{TriQuadPol_8h_source}{Tri\+Quad\+Pol.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classTriQuadPol_a4f5e17f2daa1107f7ad126c30a32958c}\index{TriQuadPol@{TriQuadPol}!TriQuadPol@{TriQuadPol}}
+\index{TriQuadPol@{TriQuadPol}!TriQuadPol@{TriQuadPol}}
+\doxysubsubsection{\texorpdfstring{TriQuadPol()}{TriQuadPol()}}
+{\footnotesize\ttfamily \label{classTriQuadPol_a4f5e17f2daa1107f7ad126c30a32958c} 
+Tri\+Quad\+Pol\+::\+Tri\+Quad\+Pol (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*}}]{in\+Tp}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{in\+Pos}{, }\item[{int}]{n\+Quadrature}{, }\item[{double(\texorpdfstring{$\ast$}{*})}]{x\+Quadrature}{\mbox{[}2\mbox{]}, }\item[{double \texorpdfstring{$\ast$}{*}}]{w\+Quadrature}{}\end{DoxyParamCaption})}
+
+
+
+Construct and immediately adapt the polar quadrature. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in\+Tp} & \doxylink{classTriangle}{Triangle} pointer. \\
+\hline
+{\em in\+Pos} & Observation point in 3D. \\
+\hline
+{\em n\+Quadrature} & Number of nodes for the 1D Gauss rule ( $\rho$ and $\theta$). \\
+\hline
+{\em x\+Quadrature} & Array of Gauss nodes in \mbox{[}0,1\mbox{]} (size n\+Quadrature x 2; uses \mbox{[}i\mbox{]}\mbox{[}0\mbox{]}). \\
+\hline
+{\em w\+Quadrature} & Array of corresponding Gauss weights (size n\+Quadrature).\\
+\hline
+\end{DoxyParams}
+Stores the inputs and calls \doxylink{classTriQuadPol_abb4388c4a651d097c0c93376c45010e3}{adapt\+Polar()} to generate nodes/weights. 
+
+Definition at line \mbox{\hyperlink{TriQuadPol_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{TriQuadPol_8cpp_source}{Tri\+Quad\+Pol.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriQuadPol_a4f5e17f2daa1107f7ad126c30a32958c_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTriQuadPol_aa0a0a7af46125d5359ae00fca0621de2}\index{TriQuadPol@{TriQuadPol}!adaptIn@{adaptIn}}
+\index{adaptIn@{adaptIn}!TriQuadPol@{TriQuadPol}}
+\doxysubsubsection{\texorpdfstring{adaptIn()}{adaptIn()}}
+{\footnotesize\ttfamily \label{classTriQuadPol_aa0a0a7af46125d5359ae00fca0621de2} 
+void Tri\+Quad\+Pol\+::adapt\+In (\begin{DoxyParamCaption}\item[{double}]{theta0}{, }\item[{double}]{theta\+Start}{, }\item[{double}]{theta\+End}{, }\item[{double}]{t\+Line}{, }\item[{double}]{d\+Line}{, }\item[{std\+::vector$<$ double $>$ \&}]{int\+Thetas}{, }\item[{std\+::vector$<$ double $>$ \&}]{int\+Weights}{, }\item[{std\+::vector$<$ double $>$ \&}]{min\+Radius}{, }\item[{std\+::vector$<$ double $>$ \&}]{max\+Radius}{}\end{DoxyParamCaption})}
+
+
+
+Build angular bins and radial bounds when the point is inside the triangle. 
+
+Uses a single boundary line per angular sector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em theta0} & Global rotation added to all output angles. \\
+\hline
+{\em theta\+Start,theta\+End} & Sector angular limits. \\
+\hline
+{\em t\+Line,d\+Line} & Line parameters from \doxylink{classTriQuadPol_a143954247825794d0dc5c0d0e3d98365}{line\+In\+Polar()} $\{\theta_0, d_0\}$. \\
+\hline
+{\em int\+Thetas,int\+Weights} & Output Gauss nodes/weights in $\theta$. \\
+\hline
+{\em min\+Radius,max\+Radius} & Output inner/outer radii for each $\theta$ bin.\\
+\hline
+\end{DoxyParams}
+Build a θ-\/bin and radial bound for the inside case (single edge).
+
+Fills {\ttfamily int\+Thetas/int\+Weights} with Gauss nodes/weights on \mbox{[}θ\+\_\+start, θ\+\_\+end\mbox{]}, and sets r\+\_\+max(θ) = d0 / cos(θ − θ0), r\+\_\+min = 0. 
+
+Definition at line \mbox{\hyperlink{TriQuadPol_8cpp_source_l00185}{185}} of file \mbox{\hyperlink{TriQuadPol_8cpp_source}{Tri\+Quad\+Pol.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriQuadPol_aa0a0a7af46125d5359ae00fca0621de2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classTriQuadPol_a3f18d2c370480a52cb1364f9dd95ed06}\index{TriQuadPol@{TriQuadPol}!adaptOut@{adaptOut}}
+\index{adaptOut@{adaptOut}!TriQuadPol@{TriQuadPol}}
+\doxysubsubsection{\texorpdfstring{adaptOut()}{adaptOut()}}
+{\footnotesize\ttfamily \label{classTriQuadPol_a3f18d2c370480a52cb1364f9dd95ed06} 
+void Tri\+Quad\+Pol\+::adapt\+Out (\begin{DoxyParamCaption}\item[{double}]{theta0}{, }\item[{double}]{theta\+Start}{, }\item[{double}]{theta\+End}{, }\item[{double}]{t\+Line\+First}{, }\item[{double}]{d\+Line\+First}{, }\item[{double}]{t\+Line\+Second}{, }\item[{double}]{d\+Line\+Second}{, }\item[{std\+::vector$<$ double $>$ \&}]{int\+Thetas}{, }\item[{std\+::vector$<$ double $>$ \&}]{int\+Weights}{, }\item[{std\+::vector$<$ double $>$ \&}]{min\+Radius}{, }\item[{std\+::vector$<$ double $>$ \&}]{max\+Radius}{}\end{DoxyParamCaption})}
+
+
+
+Build angular bins/radial bounds when the point is outside the triangle. 
+
+Uses two boundary lines per angular sector (enter/exit).
+
+
+\begin{DoxyParams}{Parameters}
+{\em theta0} & Global rotation added to all output angles. \\
+\hline
+{\em theta\+Start,theta\+End} & Sector angular limits. \\
+\hline
+{\em t\+Line\+First,d\+Line\+First} & First line parameters $\{\theta_0, d_0\}$. \\
+\hline
+{\em t\+Line\+Second,d\+Line\+Second} & Second line parameters $\{\theta_0, d_0\}$. \\
+\hline
+{\em int\+Thetas,int\+Weights} & Output Gauss nodes/weights in $\theta$. \\
+\hline
+{\em min\+Radius,max\+Radius} & Output inner/outer radii for each $\theta$ bin.\\
+\hline
+\end{DoxyParams}
+Build a θ-\/bin and two radial bounds for the outside case (two edges).
+
+Sets r\+\_\+min/max(θ) from two edge lines; swaps if min \texorpdfstring{$>$}{>} max numerically. 
+
+Definition at line \mbox{\hyperlink{TriQuadPol_8cpp_source_l00212}{212}} of file \mbox{\hyperlink{TriQuadPol_8cpp_source}{Tri\+Quad\+Pol.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriQuadPol_a3f18d2c370480a52cb1364f9dd95ed06_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classTriQuadPol_abb4388c4a651d097c0c93376c45010e3}\index{TriQuadPol@{TriQuadPol}!adaptPolar@{adaptPolar}}
+\index{adaptPolar@{adaptPolar}!TriQuadPol@{TriQuadPol}}
+\doxysubsubsection{\texorpdfstring{adaptPolar()}{adaptPolar()}}
+{\footnotesize\ttfamily \label{classTriQuadPol_abb4388c4a651d097c0c93376c45010e3} 
+void Tri\+Quad\+Pol\+::adapt\+Polar (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Build angular sectors and radial bounds, then assemble nodes/weights. 
+
+Calls, in order\+: \doxylink{classTriQuadPol_aea4deef1068d5095c5c6afbb741be8d7}{transform\+In\+Plane()} -\/\texorpdfstring{$>$}{>} \doxylink{classTriQuadPol_aa0a0a7af46125d5359ae00fca0621de2}{adapt\+In()}/\doxylink{classTriQuadPol_a3f18d2c370480a52cb1364f9dd95ed06}{adapt\+Out()} -\/\texorpdfstring{$>$}{>} \doxylink{classTriQuadPol_a70845b7e565aa1befcffd099f850215b}{assemble\+From\+Polar()}. Safe to call multiple times (clears previous results).
+
+Main driver\+: project to plane, split angular sectors, and assemble nodes/weights.
+
+Clears previous results, then\+: 1) \doxylink{classTriQuadPol_aea4deef1068d5095c5c6afbb741be8d7}{transform\+In\+Plane()} 2) Decide inside/outside and compute sector data via \doxylink{classTriQuadPol_aa0a0a7af46125d5359ae00fca0621de2}{adapt\+In()}/adapt\+Out() 3) \doxylink{classTriQuadPol_a70845b7e565aa1befcffd099f850215b}{assemble\+From\+Polar()} 
+
+Definition at line \mbox{\hyperlink{TriQuadPol_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{TriQuadPol_8cpp_source}{Tri\+Quad\+Pol.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriQuadPol_abb4388c4a651d097c0c93376c45010e3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriQuadPol_abb4388c4a651d097c0c93376c45010e3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classTriQuadPol_a70845b7e565aa1befcffd099f850215b}\index{TriQuadPol@{TriQuadPol}!assembleFromPolar@{assembleFromPolar}}
+\index{assembleFromPolar@{assembleFromPolar}!TriQuadPol@{TriQuadPol}}
+\doxysubsubsection{\texorpdfstring{assembleFromPolar()}{assembleFromPolar()}}
+{\footnotesize\ttfamily \label{classTriQuadPol_a70845b7e565aa1befcffd099f850215b} 
+void Tri\+Quad\+Pol\+::assemble\+From\+Polar (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ double $>$ \&}]{in\+Thetas}{, }\item[{const std\+::vector$<$ double $>$ \&}]{in\+Weights}{, }\item[{const std\+::vector$<$ double $>$ \&}]{in\+Min\+Radii}{, }\item[{const std\+::vector$<$ double $>$ \&}]{in\+Max\+Radii}{}\end{DoxyParamCaption})}
+
+
+
+Expand $\theta$-\/bins into ( $\theta, r$) Gauss products and convert to barycentric nodes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in\+Thetas} & Vector of $\theta$ nodes (bin centers). \\
+\hline
+{\em in\+Weights} & Vector of $\theta$ weights. \\
+\hline
+{\em in\+Min\+Radii} & Vector of $r_{min}$ per $\theta$ node. \\
+\hline
+{\em in\+Max\+Radii} & Vector of $r_{max}$ per $\theta$ node.\\
+\hline
+\end{DoxyParams}
+Expand (θ,r) Gauss products and convert to barycentric coordinates.
+
+Each θ-\/bin is expanded by n\+Quadrature radial nodes. The Jacobian factor r and the radial span (r\+\_\+max -\/ r\+\_\+min) are included in the weights. 
+
+Definition at line \mbox{\hyperlink{TriQuadPol_8cpp_source_l00240}{240}} of file \mbox{\hyperlink{TriQuadPol_8cpp_source}{Tri\+Quad\+Pol.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriQuadPol_a70845b7e565aa1befcffd099f850215b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classTriQuadPol_ad0a8c886e263961bc2935f21ef14dcf7}\index{TriQuadPol@{TriQuadPol}!clean@{clean}}
+\index{clean@{clean}!TriQuadPol@{TriQuadPol}}
+\doxysubsubsection{\texorpdfstring{clean()}{clean()}}
+{\footnotesize\ttfamily \label{classTriQuadPol_ad0a8c886e263961bc2935f21ef14dcf7} 
+double Tri\+Quad\+Pol\+::clean (\begin{DoxyParamCaption}\item[{double}]{x}{, }\item[{double}]{eps}{ = {\ttfamily 1e-\/10}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Zero out tiny values for numeric stability. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Value to clean. \\
+\hline
+{\em eps} & Threshold. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zero if \texorpdfstring{$\vert$}{|}x\texorpdfstring{$\vert$}{|} \texorpdfstring{$<$}{<} eps, else x. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{TriQuadPol_8h_source_l00110}{110}} of file \mbox{\hyperlink{TriQuadPol_8h_source}{Tri\+Quad\+Pol.\+h}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriQuadPol_ad0a8c886e263961bc2935f21ef14dcf7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classTriQuadPol_a937d9b0718e7914525a47db7954a1ef4}\index{TriQuadPol@{TriQuadPol}!getQuadPoints@{getQuadPoints}}
+\index{getQuadPoints@{getQuadPoints}!TriQuadPol@{TriQuadPol}}
+\doxysubsubsection{\texorpdfstring{getQuadPoints()}{getQuadPoints()}}
+{\footnotesize\ttfamily \label{classTriQuadPol_a937d9b0718e7914525a47db7954a1ef4} 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} $>$ Tri\+Quad\+Pol\+::get\+Quad\+Points (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Quadrature nodes (barycentric triples). 
+
+\begin{DoxyReturn}{Returns}
+Vector of barycentric triples. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{TriQuadPol_8h_source_l00174}{174}} of file \mbox{\hyperlink{TriQuadPol_8h_source}{Tri\+Quad\+Pol.\+h}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriQuadPol_a937d9b0718e7914525a47db7954a1ef4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classTriQuadPol_a23097391f76d79ed0e0a3584400d4497}\index{TriQuadPol@{TriQuadPol}!getQuadWeights@{getQuadWeights}}
+\index{getQuadWeights@{getQuadWeights}!TriQuadPol@{TriQuadPol}}
+\doxysubsubsection{\texorpdfstring{getQuadWeights()}{getQuadWeights()}}
+{\footnotesize\ttfamily \label{classTriQuadPol_a23097391f76d79ed0e0a3584400d4497} 
+std\+::vector$<$ double $>$ Tri\+Quad\+Pol\+::get\+Quad\+Weights (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Quadrature weights (include all Jacobian factors and r). 
+
+\begin{DoxyReturn}{Returns}
+Vector of weights. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{TriQuadPol_8h_source_l00180}{180}} of file \mbox{\hyperlink{TriQuadPol_8h_source}{Tri\+Quad\+Pol.\+h}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriQuadPol_a23097391f76d79ed0e0a3584400d4497_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classTriQuadPol_a143954247825794d0dc5c0d0e3d98365}\index{TriQuadPol@{TriQuadPol}!lineInPolar@{lineInPolar}}
+\index{lineInPolar@{lineInPolar}!TriQuadPol@{TriQuadPol}}
+\doxysubsubsection{\texorpdfstring{lineInPolar()}{lineInPolar()}}
+{\footnotesize\ttfamily \label{classTriQuadPol_a143954247825794d0dc5c0d0e3d98365} 
+std\+::pair$<$ double, double $>$ Tri\+Quad\+Pol\+::line\+In\+Polar (\begin{DoxyParamCaption}\item[{double}]{theta1}{, }\item[{double}]{rho1}{, }\item[{double}]{theta2}{, }\item[{double}]{rho2}{}\end{DoxyParamCaption})}
+
+
+
+Straight-\/line segment between two vertices written in polar form about pos\+In\+Plane. 
+
+For a line through $(\theta_1,\rho_1)$ and $(\theta_2,\rho_2)$ in polar coords around pos\+In\+Plane, returns $(\theta_0,\rho_0)$ such that $ r(\theta) = d_0 / cos(\theta − \theta_0)$ on that segment.
+
+
+\begin{DoxyParams}{Parameters}
+{\em theta1,rho1} & Endpoint 1 in polar coords. \\
+\hline
+{\em theta2,rho2} & Endpoint 2 in polar coords. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pair $\{\theta_0, d_0\}$.
+\end{DoxyReturn}
+Return line parameters (θ0,d0) for the edge between two vertices in polar coordinates.
+
+To avoid degeneracy when θ1 == θ2, a tiny perturbation is applied. 
+
+Definition at line \mbox{\hyperlink{TriQuadPol_8cpp_source_l00167}{167}} of file \mbox{\hyperlink{TriQuadPol_8cpp_source}{Tri\+Quad\+Pol.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriQuadPol_a143954247825794d0dc5c0d0e3d98365_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classTriQuadPol_ad2163791262ee9d63337474eb7bbe8d7}\index{TriQuadPol@{TriQuadPol}!pointInTriangle@{pointInTriangle}}
+\index{pointInTriangle@{pointInTriangle}!TriQuadPol@{TriQuadPol}}
+\doxysubsubsection{\texorpdfstring{pointInTriangle()}{pointInTriangle()}}
+{\footnotesize\ttfamily \label{classTriQuadPol_ad2163791262ee9d63337474eb7bbe8d7} 
+bool Tri\+Quad\+Pol\+::point\+In\+Triangle (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \&}]{P}{, }\item[{const \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \&}]{A}{, }\item[{const \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \&}]{B}{, }\item[{const \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \&}]{C}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+2D triangle membership test (local plane coordinates). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em P} & Point to test. \\
+\hline
+{\em A,B,C} & \doxylink{classTriangle}{Triangle} vertices. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if P lies in triangle ABC (edge-\/inclusive). 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{TriQuadPol_8h_source_l00092}{92}} of file \mbox{\hyperlink{TriQuadPol_8h_source}{Tri\+Quad\+Pol.\+h}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriQuadPol_ad2163791262ee9d63337474eb7bbe8d7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriQuadPol_ad2163791262ee9d63337474eb7bbe8d7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classTriQuadPol_a7573c6d68c4bfe8898024684eda5e12e}\index{TriQuadPol@{TriQuadPol}!sameSign@{sameSign}}
+\index{sameSign@{sameSign}!TriQuadPol@{TriQuadPol}}
+\doxysubsubsection{\texorpdfstring{sameSign()}{sameSign()}}
+{\footnotesize\ttfamily \label{classTriQuadPol_a7573c6d68c4bfe8898024684eda5e12e} 
+bool Tri\+Quad\+Pol\+::same\+Sign (\begin{DoxyParamCaption}\item[{double}]{a}{, }\item[{double}]{b}{, }\item[{double}]{c}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return true if a, b, c all have the same sign (non-\/strict). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a,b,c} & Values to compare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if all have the same sign. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{TriQuadPol_8h_source_l00081}{81}} of file \mbox{\hyperlink{TriQuadPol_8h_source}{Tri\+Quad\+Pol.\+h}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriQuadPol_a7573c6d68c4bfe8898024684eda5e12e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classTriQuadPol_aea4deef1068d5095c5c6afbb741be8d7}\index{TriQuadPol@{TriQuadPol}!transformInPlane@{transformInPlane}}
+\index{transformInPlane@{transformInPlane}!TriQuadPol@{TriQuadPol}}
+\doxysubsubsection{\texorpdfstring{transformInPlane()}{transformInPlane()}}
+{\footnotesize\ttfamily \label{classTriQuadPol_aea4deef1068d5095c5c6afbb741be8d7} 
+void Tri\+Quad\+Pol\+::transform\+In\+Plane (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Build an orthonormal basis on the triangle plane and project (vertices, point). 
+
+Sets {\ttfamily verts\+In\+Plane} and {\ttfamily pos\+In\+Plane} in a local (e1,e2) frame with vertex 0 at (0,0).
+
+Builds an orthonormal basis (e1 along edge 0-\/\texorpdfstring{$>$}{>}1, e2 = e3 x e1, e3 normal), then expresses vertices and the observation point in that basis. 
+
+Definition at line \mbox{\hyperlink{TriQuadPol_8cpp_source_l00139}{139}} of file \mbox{\hyperlink{TriQuadPol_8cpp_source}{Tri\+Quad\+Pol.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriQuadPol_aea4deef1068d5095c5c6afbb741be8d7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTriQuadPol_aea4deef1068d5095c5c6afbb741be8d7_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classTriQuadPol_a338801418b047e0327ded7118ba2106c}\index{TriQuadPol@{TriQuadPol}!nQuadrature@{nQuadrature}}
+\index{nQuadrature@{nQuadrature}!TriQuadPol@{TriQuadPol}}
+\doxysubsubsection{\texorpdfstring{nQuadrature}{nQuadrature}}
+{\footnotesize\ttfamily \label{classTriQuadPol_a338801418b047e0327ded7118ba2106c} 
+int Tri\+Quad\+Pol\+::n\+Quadrature\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Size of the 1D Gauss rule. 
+
+
+
+Definition at line \mbox{\hyperlink{TriQuadPol_8h_source_l00042}{42}} of file \mbox{\hyperlink{TriQuadPol_8h_source}{Tri\+Quad\+Pol.\+h}}.
+
+\Hypertarget{classTriQuadPol_a53271f2a13494d5716be47be74ff482a}\index{TriQuadPol@{TriQuadPol}!pos@{pos}}
+\index{pos@{pos}!TriQuadPol@{TriQuadPol}}
+\doxysubsubsection{\texorpdfstring{pos}{pos}}
+{\footnotesize\ttfamily \label{classTriQuadPol_a53271f2a13494d5716be47be74ff482a} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} Tri\+Quad\+Pol\+::pos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+3D observation point 
+
+
+
+Definition at line \mbox{\hyperlink{TriQuadPol_8h_source_l00039}{39}} of file \mbox{\hyperlink{TriQuadPol_8h_source}{Tri\+Quad\+Pol.\+h}}.
+
+\Hypertarget{classTriQuadPol_a6f1041382f54d1fe3b124639b8881aa9}\index{TriQuadPol@{TriQuadPol}!posInPlane@{posInPlane}}
+\index{posInPlane@{posInPlane}!TriQuadPol@{TriQuadPol}}
+\doxysubsubsection{\texorpdfstring{posInPlane}{posInPlane}}
+{\footnotesize\ttfamily \label{classTriQuadPol_a6f1041382f54d1fe3b124639b8881aa9} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} Tri\+Quad\+Pol\+::pos\+In\+Plane\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Observation point in the local 2D plane. 
+
+
+
+Definition at line \mbox{\hyperlink{TriQuadPol_8h_source_l00041}{41}} of file \mbox{\hyperlink{TriQuadPol_8h_source}{Tri\+Quad\+Pol.\+h}}.
+
+\Hypertarget{classTriQuadPol_a3b4071b7c9c552c377effdfbcf077034}\index{TriQuadPol@{TriQuadPol}!quadPoints@{quadPoints}}
+\index{quadPoints@{quadPoints}!TriQuadPol@{TriQuadPol}}
+\doxysubsubsection{\texorpdfstring{quadPoints}{quadPoints}}
+{\footnotesize\ttfamily \label{classTriQuadPol_a3b4071b7c9c552c377effdfbcf077034} 
+std\+::vector$<$\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}$>$ Tri\+Quad\+Pol\+::quad\+Points\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Output barycentric nodes $ (\lambda_1, \lambda_2, \lambda_3) $. 
+
+
+
+Definition at line \mbox{\hyperlink{TriQuadPol_8h_source_l00045}{45}} of file \mbox{\hyperlink{TriQuadPol_8h_source}{Tri\+Quad\+Pol.\+h}}.
+
+\Hypertarget{classTriQuadPol_a1f229c4863ade798d530d6ee12d51ba5}\index{TriQuadPol@{TriQuadPol}!quadWeights@{quadWeights}}
+\index{quadWeights@{quadWeights}!TriQuadPol@{TriQuadPol}}
+\doxysubsubsection{\texorpdfstring{quadWeights}{quadWeights}}
+{\footnotesize\ttfamily \label{classTriQuadPol_a1f229c4863ade798d530d6ee12d51ba5} 
+std\+::vector$<$double$>$ Tri\+Quad\+Pol\+::quad\+Weights\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Output weights (include Jacobians) 
+
+
+
+Definition at line \mbox{\hyperlink{TriQuadPol_8h_source_l00046}{46}} of file \mbox{\hyperlink{TriQuadPol_8h_source}{Tri\+Quad\+Pol.\+h}}.
+
+\Hypertarget{classTriQuadPol_a00670e48ec20755b8fe3a467adb9a19f}\index{TriQuadPol@{TriQuadPol}!Tp@{Tp}}
+\index{Tp@{Tp}!TriQuadPol@{TriQuadPol}}
+\doxysubsubsection{\texorpdfstring{Tp}{Tp}}
+{\footnotesize\ttfamily \label{classTriQuadPol_a00670e48ec20755b8fe3a467adb9a19f} 
+\mbox{\hyperlink{classTriangle}{Triangle}}\texorpdfstring{$\ast$}{*} Tri\+Quad\+Pol\+::\+Tp\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{classTriangle}{Triangle} being integrated over. 
+
+
+
+Definition at line \mbox{\hyperlink{TriQuadPol_8h_source_l00038}{38}} of file \mbox{\hyperlink{TriQuadPol_8h_source}{Tri\+Quad\+Pol.\+h}}.
+
+\Hypertarget{classTriQuadPol_ac9915973986ae9f6fc72fe0bb7f375e4}\index{TriQuadPol@{TriQuadPol}!vertsInPlane@{vertsInPlane}}
+\index{vertsInPlane@{vertsInPlane}!TriQuadPol@{TriQuadPol}}
+\doxysubsubsection{\texorpdfstring{vertsInPlane}{vertsInPlane}}
+{\footnotesize\ttfamily \label{classTriQuadPol_ac9915973986ae9f6fc72fe0bb7f375e4} 
+std\+::vector$<$\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}$>$ Tri\+Quad\+Pol\+::verts\+In\+Plane\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{classTriangle}{Triangle} vertices in the local 2D plane. 
+
+
+
+Definition at line \mbox{\hyperlink{TriQuadPol_8h_source_l00040}{40}} of file \mbox{\hyperlink{TriQuadPol_8h_source}{Tri\+Quad\+Pol.\+h}}.
+
+\Hypertarget{classTriQuadPol_a3c18df1bb2cc09ba59e8fb3ede3aad10}\index{TriQuadPol@{TriQuadPol}!wQuadrature@{wQuadrature}}
+\index{wQuadrature@{wQuadrature}!TriQuadPol@{TriQuadPol}}
+\doxysubsubsection{\texorpdfstring{wQuadrature}{wQuadrature}}
+{\footnotesize\ttfamily \label{classTriQuadPol_a3c18df1bb2cc09ba59e8fb3ede3aad10} 
+double\texorpdfstring{$\ast$}{*} Tri\+Quad\+Pol\+::w\+Quadrature\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+1D Gauss weights 
+
+
+
+Definition at line \mbox{\hyperlink{TriQuadPol_8h_source_l00044}{44}} of file \mbox{\hyperlink{TriQuadPol_8h_source}{Tri\+Quad\+Pol.\+h}}.
+
+\Hypertarget{classTriQuadPol_a7ea0ba45c1bba75d2a985f1720c36a99}\index{TriQuadPol@{TriQuadPol}!xQuadrature@{xQuadrature}}
+\index{xQuadrature@{xQuadrature}!TriQuadPol@{TriQuadPol}}
+\doxysubsubsection{\texorpdfstring{xQuadrature}{xQuadrature}}
+{\footnotesize\ttfamily \label{classTriQuadPol_a7ea0ba45c1bba75d2a985f1720c36a99} 
+double(\texorpdfstring{$\ast$}{*} Tri\+Quad\+Pol\+::x\+Quadrature)\mbox{[}2\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+1D Gauss nodes (use \mbox{[}i\mbox{]}\mbox{[}0\mbox{]}); \mbox{[}i\mbox{]}\mbox{[}1\mbox{]} kept for compatibility 
+
+
+
+Definition at line \mbox{\hyperlink{TriQuadPol_8h_source_l00043}{43}} of file \mbox{\hyperlink{TriQuadPol_8h_source}{Tri\+Quad\+Pol.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{TriQuadPol_8h}{Tri\+Quad\+Pol.\+h}}\item 
+\mbox{\hyperlink{TriQuadPol_8cpp}{Tri\+Quad\+Pol.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,17 @@
+<map id="LayeredMediaUtils::totalTransferMatrix" name="LayeredMediaUtils::totalTransferMatrix">
+<area shape="rect" id="Node000001" title="Computes the total transfer matrix for the entire layered structure." alt="" coords="5,75,157,119"/>
+<area shape="rect" id="Node000002" href="$classLayeredMediaUtils.html#a00598e0f83472fd9128419b9dddc7e09" title="Computes the interface transfer matrix for TE or TM waves." alt="" coords="205,5,378,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="150,72,206,53,208,58,152,77"/>
+<area shape="rect" id="Node000006" href="$classLayeredMediaUtils.html#ad48ebb179e3349bad58b015022cbff46" title="Performs matrix multiplication for 2D complex matrices." alt="" coords="216,75,367,119"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="157,94,200,94,200,100,157,100"/>
+<area shape="rect" id="Node000007" href="$classLayeredMediaUtils.html#ac9168dd49348197009d483b94ff715a4" title="Computes the propagation matrix for a given layer." alt="" coords="426,105,577,150"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="151,117,205,129,311,136,410,133,411,139,311,141,204,134,150,122"/>
+<area shape="rect" id="Node000003" href="$classLayeredMediaUtils.html#a212943a3dd5bdeaaa5c92ed21fad87a9" title="Computes Fresnel reflection and transmission coefficients at an interface." alt="" coords="426,21,577,66"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="379,32,410,34,410,39,378,37"/>
+<area shape="rect" id="Node000004" href="$LayeredMediaUtils_8cpp.html#a50405603197731a46c864b0f39744ed0" title="Computes the square root of a complex number with proper handling of negative imaginary parts." alt="" coords="625,79,729,107"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="578,62,611,72,610,77,577,68"/>
+<area shape="rect" id="Node000005" href="$Domain_8cpp.html#aafa3e4fa6318b2f8740f4dbd50c367e5" title="Extract the real part of each component of a complex 3&#45;vector." alt="" coords="777,79,823,107"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="729,90,761,90,761,96,729,96"/>
+<area shape="poly" id="edge5_Node000005_Node000005" title=" " alt="" coords="778,80,774,70,777,61,786,55,800,53,815,55,823,61,820,66,813,60,800,58,788,60,781,64,779,70,783,78"/>
+<area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="577,110,609,104,610,109,578,115"/>
+</map>

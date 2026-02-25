@@ -1,0 +1,2 @@
+third_party/erfc.bin filter=lfs diff=lfs merge=lfs -text
+third_party/erfc.dat filter=lfs diff=lfs merge=lfs -text

@@ -1,0 +1,13 @@
+<map id="GreenFLayered3D::SameTriDKG" name="GreenFLayered3D::SameTriDKG">
+<area shape="rect" id="Node000001" title="Same as SameTriDK and additionally accumulates gradients." alt="" coords="5,109,233,137"/>
+<area shape="rect" id="Node000002" href="$classTriangle.html#a1d3d08deeb999f339d2e821a877521ba" title="Surface area of the triangle." alt="" coords="336,5,446,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,106,205,75,280,43,320,31,321,36,282,48,207,80,147,111"/>
+<area shape="rect" id="Node000003" href="$classRWGFun.html#a7540ce2f84c6b42a29c2808504c47d42" title="Evaluate the RWG vector shape function at a point on the triangle." alt="" coords="320,57,462,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="195,106,304,85,305,90,196,111"/>
+<area shape="rect" id="Node000004" href="$classGreenFLayered3D.html#a2bf451bc4d5bfb63f282cacceea29e9e" title="Computes all the aforementioned (homogeneous) with respect to rp." alt="" coords="281,109,501,137"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="233,120,265,120,265,126,233,126"/>
+<area shape="rect" id="Node000005" href="$classTriangle.html#a0752d2c9488c7c44b851b8f75abcaa79" title="Node position (by value) for local index 0..2." alt="" coords="334,161,448,189"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="196,135,319,159,318,164,195,140"/>
+<area shape="rect" id="Node000006" href="$classRWGFun.html#a7cd7779305937d48196453e53d0d4df8" title="Return L_n / A_n (missing factor 1/2 by convention)." alt="" coords="303,213,479,241"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="147,135,207,166,282,198,307,206,305,211,280,203,205,171,144,140"/>
+</map>

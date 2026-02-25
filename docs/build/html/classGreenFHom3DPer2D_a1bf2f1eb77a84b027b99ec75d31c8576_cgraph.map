@@ -1,0 +1,12 @@
+<map id="GreenFHom3DPer2D::EwaldSpatial" name="GreenFHom3DPer2D::EwaldSpatial">
+<area shape="rect" id="Node000001" title="Spatial (real&#45;space images) part of Ewald sum." alt="" coords="5,44,254,72"/>
+<area shape="rect" id="Node000002" href="$classGreenF.html#abf00726011a4eca4109bc43125218d30" title="Evaluate erfc via the 2D lookup table if available." alt="" coords="302,44,418,72"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="254,55,286,55,286,60,254,60"/>
+<area shape="rect" id="Node000003" href="$mathFunctions_8cpp.html#a7916c6b62310fe9cf38ec2a2890aaad4" title="Complementary error function for complex arguments." alt="" coords="466,5,519,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="409,41,450,29,452,34,410,46"/>
+<area shape="rect" id="Node000005" href="$Domain_8cpp.html#aafa3e4fa6318b2f8740f4dbd50c367e5" title="Extract the real part of each component of a complex 3&#45;vector." alt="" coords="470,81,516,109"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="412,70,455,82,454,87,411,75"/>
+<area shape="rect" id="Node000004" href="$mathFunctions_8cpp.html#abc57cde75234d7e165a9ebcdb45f2c29" title="Error function for complex arguments." alt="" coords="567,5,614,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="520,16,552,16,552,22,520,22"/>
+<area shape="poly" id="edge5_Node000005_Node000005" title=" " alt="" coords="474,82,472,72,474,63,481,57,493,55,505,57,512,64,508,67,502,62,493,60,483,62,478,66,477,72,479,80"/>
+</map>

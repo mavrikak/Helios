@@ -1,0 +1,12 @@
+<map id="SingSub" name="SingSub">
+<area shape="rect" id="Node000001" title="Analytic helpers for singularity subtraction on a single triangle." alt="" coords="58,1646,227,2120"/>
+<area shape="rect" id="Node000002" href="$classRWGFun.html" title="RWG basis function tied to a mesh triangle." alt="" coords="158,1240,287,1581"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="196,1581,188,1630,183,1629,191,1580"/>
+<area shape="rect" id="Node000003" href="$classTriangle.html" title="Triangular surface element with cached geometry and utilities." alt="" coords="5,701,199,1175"/>
+<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="105,1175,109,1373,117,1581,120,1629,115,1629,112,1581,103,1373,100,1175"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="165,1174,178,1223,172,1225,160,1176"/>
+<area shape="rect" id="Node000004" href="$classSurfaceMesh.html" title="Lightweight surface mesh container with file I/O and BC helpers." alt="" coords="224,701,394,1175"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="268,1176,259,1225,254,1224,263,1175"/>
+<area shape="rect" id="Node000005" href="$classJobParser.html" title="Streaming, stack&#45;based reader for simple tag&#45;delimited job files." alt="" coords="260,5,358,636"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="312,636,312,684,306,684,306,636"/>
+</map>

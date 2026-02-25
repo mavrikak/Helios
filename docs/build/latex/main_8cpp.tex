@@ -1,0 +1,88 @@
+\doxysection{main.\+cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{main.cpp@{main.cpp}}
+
+
+This is the main file for the HELIOS program.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include "{}CLParser.\+h"{}}\newline
+{\ttfamily \#include "{}Green\+F.\+h"{}}\newline
+{\ttfamily \#include "{}Job\+Parser.\+h"{}}\newline
+{\ttfamily \#include "{}SIEForm\+PMCHW.\+h"{}}\newline
+{\ttfamily \#include "{}Sim\+Job.\+h"{}}\newline
+{\ttfamily \#include "{}Surface\+Mesh.\+h"{}}\newline
+Include dependency graph for main.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Main driver routine for the HELIOS SIE simulation program. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is the main file for the HELIOS program. 
+
+Provides the entry point to the SIE (Surface Integral Equation) solver. Handles command-\/line argument parsing, dispatches jobs, and manages post-\/processing routines. 
+
+Definition in file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97} 
+int main (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{argv}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+Main driver routine for the HELIOS SIE simulation program. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Argument count. \\
+\hline
+{\em argv} & Argument vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success.
+\end{DoxyReturn}
+Parses command line arguments, determines job type, and runs the requested simulation or mesh conversion. Provides help text when requested.
+
+Supported command line switches\+: -\/j FILE \+: Specify job file (default\+: input.\+job) -\/op PREFIX\+: Output prefix for result files -\/l \mbox{[}0,1,2\mbox{]}\+: Solver type (0=direct, 1=cgsqr, 2=LU \mbox{[}default\mbox{]}) -\/t FILE \+: Look-\/up table for error functions (optional) -\/a \+: Enable high-\/accuracy integration for matrix/vector elements -\/etm N \+: Number of evaluation terms in periodic simulation (default 1) -\/th N \+: Number of threads (0=all cores, default=1) --help \+: Print usage message \texorpdfstring{$<$}{<} Input job filename
+
+\texorpdfstring{$<$}{<} Prefix for output files
+
+\texorpdfstring{$<$}{<} Help flag
+
+\texorpdfstring{$<$}{<} Flag for high-\/accuracy evaluation
+
+\texorpdfstring{$<$}{<} Solver type (default LU=2)
+
+\texorpdfstring{$<$}{<} Number of evaluation terms (periodic)
+
+\texorpdfstring{$<$}{<} Optional look-\/up table file
+
+\texorpdfstring{$<$}{<} Number of threads
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00039}{39}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}

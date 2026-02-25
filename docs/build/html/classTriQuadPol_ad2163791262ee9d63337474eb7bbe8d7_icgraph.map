@@ -1,0 +1,7 @@
+<map id="TriQuadPol::pointInTriangle" name="TriQuadPol::pointInTriangle">
+<area shape="rect" id="Node000001" title="2D triangle membership test (local plane coordinates)." alt="" coords="437,5,631,33"/>
+<area shape="rect" id="Node000002" href="$classTriQuadPol.html#abb4388c4a651d097c0c93376c45010e3" title="Build angular sectors and radial bounds, then assemble nodes/weights." alt="" coords="221,5,389,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="422,22,390,22,390,16,422,16"/>
+<area shape="rect" id="Node000003" href="$classTriQuadPol.html#a4f5e17f2daa1107f7ad126c30a32958c" title="Construct and immediately adapt the polar quadrature." alt="" coords="5,5,173,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="205,22,173,22,173,16,205,16"/>
+</map>

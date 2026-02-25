@@ -1,0 +1,7 @@
+<map id="Gaussian" name="Gaussian">
+<area shape="rect" id="Node000001" title="Paraxial Gaussian beam illumination (homogeneous medium)." alt="" coords="108,388,298,885"/>
+<area shape="rect" id="Node000002" href="$classIncidentField.html" title="Abstract base for incident fields (excitations) used in SIE." alt="" coords="5,5,195,323"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,337,152,388,146,389,135,338"/>
+<area shape="rect" id="Node000003" href="$classGaussQuad.html" title=" " alt="" coords="220,16,394,312"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="277,312,264,372,259,371,272,311"/>
+</map>

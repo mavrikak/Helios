@@ -1,0 +1,22 @@
+<map id="DomainLayered3D" name="DomainLayered3D">
+<area shape="rect" id="Node000001" title="3D stratified (layered) medium domain." alt="" coords="538,2291,728,2810"/>
+<area shape="rect" id="Node000002" href="$classDomain.html" title="Abstract base class for domains." alt="" coords="267,1774,469,2226"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="477,2222,541,2353,536,2356,473,2225"/>
+<area shape="rect" id="Node000003" href="$classBsp3D.html" title="Minimal 3D BSP tree for triangle meshes." alt="" coords="44,1084,160,1692"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="163,1578,194,1664,229,1749,261,1814,256,1817,224,1751,189,1666,158,1580"/>
+<area shape="poly" id="edge5_Node000003_Node000003" title=" " alt="" coords="162,1324,172,1331,180,1344,185,1363,187,1388,184,1419,176,1440,171,1438,179,1418,182,1388,180,1364,175,1346,168,1335,159,1328"/>
+<area shape="rect" id="Node000004" href="$structbspPolygon.html" title="Polygon wrapper carried through BSP splitting." alt="" coords="60,734,145,829"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="105,829,105,1067,100,1067,100,829"/>
+<area shape="rect" id="Node000005" href="$classTriangle.html" title="Triangular surface element with cached geometry and utilities." alt="" coords="5,5,199,480"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="105,480,105,718,100,718,100,480"/>
+<area shape="rect" id="Node000006" href="$classGreenF.html" title="Abstract base for Green&#39;s function kernels." alt="" coords="409,545,579,1019"/>
+<area shape="poly" id="edge10_Node000001_Node000006" title=" " alt="" coords="582,979,598,1031,610,1084,624,1183,634,1312,644,1627,646,1968,642,2275,637,2274,640,1968,639,1627,629,1312,619,1184,605,1084,593,1032,577,980"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="412,900,362,988,341,1036,325,1085,306,1170,294,1257,289,1346,288,1434,298,1605,319,1757,313,1758,293,1605,283,1434,283,1346,289,1257,301,1169,319,1083,336,1034,357,985,407,897"/>
+<area shape="rect" id="Node000008" href="$classSIEForm.html" title="Abstract base class for SIE formulations." alt="" coords="393,1285,595,1491"/>
+<area shape="poly" id="edge9_Node000008_Node000006" title=" " alt="" coords="497,1019,497,1268,492,1268,492,1019"/>
+<area shape="rect" id="Node000007" href="$classLookupTableBin.html" title="Represents a 2D lookup table for complex functions (binary format)." alt="" coords="425,117,563,368"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="497,368,497,528,492,528,492,368"/>
+<area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="476,1492,420,1759,415,1758,471,1491"/>
+<area shape="rect" id="Node000009" href="$classLayeredMediaUtils.html" title="Utility class for calculations related to layered media." alt="" coords="670,1797,860,2204"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="719,2204,702,2276,697,2274,714,2203"/>
+</map>

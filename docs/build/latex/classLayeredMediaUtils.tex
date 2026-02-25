@@ -1,0 +1,847 @@
+\doxysection{Layered\+Media\+Utils Class Reference}
+\hypertarget{classLayeredMediaUtils}{}\label{classLayeredMediaUtils}\index{LayeredMediaUtils@{LayeredMediaUtils}}
+
+
+Utility class for calculations related to layered media.  
+
+
+
+
+{\ttfamily \#include $<$Layered\+Media\+Utils.\+h$>$}
+
+
+
+Collaboration diagram for Layered\+Media\+Utils\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classLayeredMediaUtils__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLayeredMediaUtils_ab8e302cf64bf49c94765e9c610cf12c5}{Layered\+Media\+Utils}} (const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&in\+LayeredK, const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&in\+Epsilon\+Medium, const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&in\+Mu\+Medium, const std\+::vector$<$ double $>$ \&in\+ZVals\+Interfaces, const std\+::vector$<$ double $>$ \&in\+Thickness, int in\+Mid\+Layer\+Index=0)
+\begin{DoxyCompactList}\small\item\em Constructor initializing layered media parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLayeredMediaUtils_af0233a63c264a4cb07b92e461154c0a1}{\texorpdfstring{$\sim$}{\string~}\+Layered\+Media\+Utils}} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classLayeredMediaUtils_a4b40e9fd70634bc3066c31e34a002df4}{Get\+Layer\+Index}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} pos) const
+\begin{DoxyCompactList}\small\item\em Returns the layer index for a given spatial position. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{classLayeredMediaUtils_a212943a3dd5bdeaaa5c92ed21fad87a9}{Fresnel\+Coeff}} (int layer\+IndexI, int layer\+IndexJ, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} krho, const std\+::string \&waves) const
+\begin{DoxyCompactList}\small\item\em Computes Fresnel reflection and transmission coefficients at an interface. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ \mbox{\hyperlink{classLayeredMediaUtils_a00598e0f83472fd9128419b9dddc7e09}{Interface\+Transfer\+Matrix}} (int layer\+IndexI, int layer\+IndexJ, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} krho, const std\+::string \&waves) const
+\begin{DoxyCompactList}\small\item\em Computes the interface transfer matrix for TE or TM waves. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ \mbox{\hyperlink{classLayeredMediaUtils_ac9168dd49348197009d483b94ff715a4}{propagation\+Matrix}} (int layer\+Index, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} krho) const
+\begin{DoxyCompactList}\small\item\em Computes the propagation matrix for a given layer. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ \mbox{\hyperlink{classLayeredMediaUtils_a796d55e02d56c610cae065557bc64c10}{total\+Transfer\+Matrix}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} krho, const std\+::string \&waves) const
+\begin{DoxyCompactList}\small\item\em Computes the total transfer matrix for the entire layered structure. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{classLayeredMediaUtils_a55529dbdb069b59a6252ab2e446186a0}{total\+Fresnel\+Coeffs}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} krho, const std\+::string \&waves, const std\+::string \&direction) const
+\begin{DoxyCompactList}\small\item\em Computes reflection and transmission coefficients for the entire layered structure. \end{DoxyCompactList}\item 
+blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 2 $>$ \mbox{\hyperlink{classLayeredMediaUtils_a6d538561bc5345114e83f7939247866f}{Secondary}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} krho, int observation\+Layer, int source\+Layer, const std\+::string \&waves)
+\begin{DoxyCompactList}\small\item\em Computes secondary wave coefficients for a given observation and source layer. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{classLayeredMediaUtils_ab1660d136377d8e6d7878973475146a8}{Fields}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} krho, std\+::vector$<$ double $>$ observation\+PointsZ, double source\+PointZ, const std\+::string \&waves)
+\begin{DoxyCompactList}\small\item\em Computes electromagnetic fields at observation points given a source position. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ \mbox{\hyperlink{classLayeredMediaUtils_ad48ebb179e3349bad58b015022cbff46}{matrix\+Multiply2D}} (const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ \&x, const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ \&y) const
+\begin{DoxyCompactList}\small\item\em Performs matrix multiplication for 2D complex matrices. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ $>$ \mbox{\hyperlink{classLayeredMediaUtils_a3ee62bdcd0ba1763e162df2c175cd022}{matrix\+Multiply3D}} (const std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ $>$ \&x, const std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ $>$ \&y) const
+\begin{DoxyCompactList}\small\item\em Performs matrix multiplication for 3D complex matrices. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLayeredMediaUtils_a72265396a660e7e7d93c56a0b35d11d0}{matrix\+Multiplication}} (const std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ $>$ \&x, const std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ $>$ \&y) const
+\begin{DoxyCompactList}\small\item\em Performs matrix multiplication for 2D/3D complex matrices. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structlayeredCoords}{layered\+Coords}} \mbox{\hyperlink{classLayeredMediaUtils_a7ad630fd87bdac720ff90a4e2b3da69d}{cartesian\+To\+Layered\+QS}} (const \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \&r1, const \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \&r2, const std\+::string \&type) const
+\begin{DoxyCompactList}\small\item\em Transforms Cartesian coordinates to stratified medium coordinates for the calculation of the quasistatic contribution of Green\textquotesingle{}s functions. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structlayeredCoords}{layered\+Coords}} \mbox{\hyperlink{classLayeredMediaUtils_ac2f15da8deb39f15a765f998aba880b7}{cartesian\+To\+Layered\+Tab}} (const \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \&r1, const \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \&r2, const std\+::string \&type) const
+\begin{DoxyCompactList}\small\item\em Transforms Cartesian coordinates to stratified medium coordinates for the smooth Green\textquotesingle{}s functions in the tabulation. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\int \mbox{\hyperlink{classLayeredMediaUtils_a5c5a234325997ca6d00f8a91e383dbe2}{sgn}} (T val)
+\begin{DoxyCompactList}\small\item\em Computes the sign function for a given value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classLayeredMediaUtils_af860240d86e33dfda18b0e50cab1d5d7}{getkL}} (int index)
+\begin{DoxyCompactList}\small\item\em Getter of k\+\_\+L. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classLayeredMediaUtils_ac7e0e1fdfc421bcb7a20741b140780b4}{get\+ZVal\+Interface}} (int index)
+\begin{DoxyCompactList}\small\item\em Getter of z\+Val\+Interface. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classLayeredMediaUtils_aa3998f8656c14486f9bfff1a464d5f4b}{get\+Eps}} (int index)
+\begin{DoxyCompactList}\small\item\em Getter of epsilon. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classLayeredMediaUtils_a703e52508bd5ec96295f708b8fcee2d9}{get\+Mu}} (int index)
+\begin{DoxyCompactList}\small\item\em Getter of mu. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} $>$ \mbox{\hyperlink{classLayeredMediaUtils_a58d55127ef14a69fed7bec672e78cab9}{read\+Positions\+From\+File}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Reads a set of 3D positions from a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{classLayeredMediaUtils_a03d746d29be9c90b6866078b35090888}{k\+\_\+L}}
+\begin{DoxyCompactList}\small\item\em Wavenumbers for layers. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{classLayeredMediaUtils_aac35250533c1bf922827b5a91220fb32}{epsilon}}
+\begin{DoxyCompactList}\small\item\em Permittivity values for layers. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{classLayeredMediaUtils_a737efea63d0c23873f1460e7d76a198a}{mu}}
+\begin{DoxyCompactList}\small\item\em Permeability values for layers. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classLayeredMediaUtils_a98057e700d2180e8ee96e85a2d1cf494}{z\+Vals\+Interfaces}}
+\begin{DoxyCompactList}\small\item\em Z-\/coordinates of layer interfaces. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classLayeredMediaUtils_a691003fc879a0ec3698073d514c1d311}{thickness}}
+\begin{DoxyCompactList}\small\item\em Thickness of each layer. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classLayeredMediaUtils_aed6542366b844c7af1ee158ac2f1daaf}{mid\+Layer\+Index}}
+\begin{DoxyCompactList}\small\item\em Layer index of the mesh middle point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Utility class for calculations related to layered media. 
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00535}{535}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classLayeredMediaUtils_ab8e302cf64bf49c94765e9c610cf12c5}\index{LayeredMediaUtils@{LayeredMediaUtils}!LayeredMediaUtils@{LayeredMediaUtils}}
+\index{LayeredMediaUtils@{LayeredMediaUtils}!LayeredMediaUtils@{LayeredMediaUtils}}
+\doxysubsubsection{\texorpdfstring{LayeredMediaUtils()}{LayeredMediaUtils()}}
+{\footnotesize\ttfamily \label{classLayeredMediaUtils_ab8e302cf64bf49c94765e9c610cf12c5} 
+Layered\+Media\+Utils\+::\+Layered\+Media\+Utils (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&}]{in\+LayeredK}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&}]{in\+Epsilon\+Medium}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&}]{in\+Mu\+Medium}{, }\item[{const std\+::vector$<$ double $>$ \&}]{in\+ZVals\+Interfaces}{, }\item[{const std\+::vector$<$ double $>$ \&}]{in\+Thickness}{, }\item[{int}]{in\+Mid\+Layer\+Index}{ = {\ttfamily 0}}\end{DoxyParamCaption})}
+
+
+
+Constructor initializing layered media parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in\+LayeredK} & Vector of wavenumbers for each layer. \\
+\hline
+{\em in\+Epsilon\+Medium} & Vector of relative permittivity values for each layer. \\
+\hline
+{\em in\+Mu\+Medium} & Vector of relative permeability values for each layer. \\
+\hline
+{\em in\+ZVals\+Interfaces} & Vector of Z-\/coordinates defining the layer interfaces. \\
+\hline
+{\em in\+Thickness} & Vector of thickness values for each layer. \\
+\hline
+{\em in\+Mid\+Layer\+Index} & Layer index of the middle point in the mesh.\\
+\hline
+\end{DoxyParams}
+This constructor initializes the wavenumbers, permittivity, permeability, interface positions, and layer thicknesses for a layered medium. 
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8cpp_source_l00037}{37}} of file \mbox{\hyperlink{LayeredMediaUtils_8cpp_source}{Layered\+Media\+Utils.\+cpp}}.
+
+\Hypertarget{classLayeredMediaUtils_af0233a63c264a4cb07b92e461154c0a1}\index{LayeredMediaUtils@{LayeredMediaUtils}!````~LayeredMediaUtils@{\texorpdfstring{$\sim$}{\string~}LayeredMediaUtils}}
+\index{````~LayeredMediaUtils@{\texorpdfstring{$\sim$}{\string~}LayeredMediaUtils}!LayeredMediaUtils@{LayeredMediaUtils}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}LayeredMediaUtils()}{\string~LayeredMediaUtils()}}
+{\footnotesize\ttfamily \label{classLayeredMediaUtils_af0233a63c264a4cb07b92e461154c0a1} 
+Layered\+Media\+Utils\+::\texorpdfstring{$\sim$}{\string~}\+Layered\+Media\+Utils (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classLayeredMediaUtils_a7ad630fd87bdac720ff90a4e2b3da69d}\index{LayeredMediaUtils@{LayeredMediaUtils}!cartesianToLayeredQS@{cartesianToLayeredQS}}
+\index{cartesianToLayeredQS@{cartesianToLayeredQS}!LayeredMediaUtils@{LayeredMediaUtils}}
+\doxysubsubsection{\texorpdfstring{cartesianToLayeredQS()}{cartesianToLayeredQS()}}
+{\footnotesize\ttfamily \label{classLayeredMediaUtils_a7ad630fd87bdac720ff90a4e2b3da69d} 
+\mbox{\hyperlink{structlayeredCoords}{layered\+Coords}} Layered\+Media\+Utils\+::cartesian\+To\+Layered\+QS (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \&}]{r1}{, }\item[{const \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \&}]{r2}{, }\item[{const std\+::string \&}]{type}{}\end{DoxyParamCaption}) const}
+
+
+
+Transforms Cartesian coordinates to stratified medium coordinates for the calculation of the quasistatic contribution of Green\textquotesingle{}s functions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r1} & Observation point in Cartesian coordinates (x, y, z). \\
+\hline
+{\em r2} & Source point in Cartesian coordinates (x, y, z). \\
+\hline
+{\em type} & Type of interaction\+: "{}intra\+TB"{} (intra-\/layer for top/bottom layer), "{}intra\+In"{} (intra-\/layer for interior layer), or "{}inter"{} (inter-\/layer). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{structlayeredCoords}{layered\+Coords} struct containing the converted coordinates.
+\end{DoxyReturn}
+Converts Cartesian coordinates to layered medium coordinates for different interaction types regarding the calculation of the quasistatic part of Green\textquotesingle{}s function. 
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8cpp_source_l00684}{684}} of file \mbox{\hyperlink{LayeredMediaUtils_8cpp_source}{Layered\+Media\+Utils.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLayeredMediaUtils_a7ad630fd87bdac720ff90a4e2b3da69d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classLayeredMediaUtils_ac2f15da8deb39f15a765f998aba880b7}\index{LayeredMediaUtils@{LayeredMediaUtils}!cartesianToLayeredTab@{cartesianToLayeredTab}}
+\index{cartesianToLayeredTab@{cartesianToLayeredTab}!LayeredMediaUtils@{LayeredMediaUtils}}
+\doxysubsubsection{\texorpdfstring{cartesianToLayeredTab()}{cartesianToLayeredTab()}}
+{\footnotesize\ttfamily \label{classLayeredMediaUtils_ac2f15da8deb39f15a765f998aba880b7} 
+\mbox{\hyperlink{structlayeredCoords}{layered\+Coords}} Layered\+Media\+Utils\+::cartesian\+To\+Layered\+Tab (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \&}]{r1}{, }\item[{const \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \&}]{r2}{, }\item[{const std\+::string \&}]{type}{}\end{DoxyParamCaption}) const}
+
+
+
+Transforms Cartesian coordinates to stratified medium coordinates for the smooth Green\textquotesingle{}s functions in the tabulation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r1} & Observation point in Cartesian coordinates (x, y, z). \\
+\hline
+{\em r2} & Source point in Cartesian coordinates (x, y, z). \\
+\hline
+{\em type} & Type of interaction\+: "{}intra\+TB"{} (intra-\/layer for top/bottom layer), "{}intra\+In"{} (intra-\/layer for interior layer), or "{}inter"{} (inter-\/layer). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{structlayeredCoords}{layered\+Coords} struct containing the converted coordinates.
+\end{DoxyReturn}
+Converts Cartesian coordinates to layered medium coordinates for different interaction types regarding the calculation of the smooth part of Green\textquotesingle{}s function. 
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8cpp_source_l00740}{740}} of file \mbox{\hyperlink{LayeredMediaUtils_8cpp_source}{Layered\+Media\+Utils.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLayeredMediaUtils_ac2f15da8deb39f15a765f998aba880b7_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classLayeredMediaUtils_ab1660d136377d8e6d7878973475146a8}\index{LayeredMediaUtils@{LayeredMediaUtils}!Fields@{Fields}}
+\index{Fields@{Fields}!LayeredMediaUtils@{LayeredMediaUtils}}
+\doxysubsubsection{\texorpdfstring{Fields()}{Fields()}}
+{\footnotesize\ttfamily \label{classLayeredMediaUtils_ab1660d136377d8e6d7878973475146a8} 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ Layered\+Media\+Utils\+::\+Fields (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{krho}{, }\item[{std\+::vector$<$ double $>$}]{observation\+PointsZ}{, }\item[{double}]{source\+PointZ}{, }\item[{const std\+::string \&}]{waves}{}\end{DoxyParamCaption})}
+
+
+
+Computes electromagnetic fields at observation points given a source position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em krho} & Transverse wavenumber. \\
+\hline
+{\em observation\+PointsZ} & Vector of Z-\/coordinates for observation points. \\
+\hline
+{\em source\+PointZ} & Z-\/coordinate of the source point. \\
+\hline
+{\em waves} & Type of wave polarization ("{}\+TE"{} or "{}\+TM"{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of complex values representing the computed field values.
+\end{DoxyReturn}
+This function calculates the field values at specified observation points in a layered medium, given a source position, transverse wavenumber, and wave polarization (TE or TM). 
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8cpp_source_l00490}{490}} of file \mbox{\hyperlink{LayeredMediaUtils_8cpp_source}{Layered\+Media\+Utils.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLayeredMediaUtils_ab1660d136377d8e6d7878973475146a8_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classLayeredMediaUtils_a212943a3dd5bdeaaa5c92ed21fad87a9}\index{LayeredMediaUtils@{LayeredMediaUtils}!FresnelCoeff@{FresnelCoeff}}
+\index{FresnelCoeff@{FresnelCoeff}!LayeredMediaUtils@{LayeredMediaUtils}}
+\doxysubsubsection{\texorpdfstring{FresnelCoeff()}{FresnelCoeff()}}
+{\footnotesize\ttfamily \label{classLayeredMediaUtils_a212943a3dd5bdeaaa5c92ed21fad87a9} 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ Layered\+Media\+Utils\+::\+Fresnel\+Coeff (\begin{DoxyParamCaption}\item[{int}]{layer\+IndexI}{, }\item[{int}]{layer\+IndexJ}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{krho}{, }\item[{const std\+::string \&}]{waves}{}\end{DoxyParamCaption}) const}
+
+
+
+Computes Fresnel reflection and transmission coefficients at an interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em layer\+IndexI} & Index of the first layer. \\
+\hline
+{\em layer\+IndexJ} & Index of the second layer. \\
+\hline
+{\em krho} & Transverse wavenumber. \\
+\hline
+{\em waves} & Type of wave polarization ("{}\+TE"{} or "{}\+TM"{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of complex values representing the Fresnel coefficients.
+\end{DoxyReturn}
+This function retrieves the Fresnel coefficients for the interface between two given layers, considering the specified transverse wavenumber and wave polarization (TE or TM). 
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8cpp_source_l00093}{93}} of file \mbox{\hyperlink{LayeredMediaUtils_8cpp_source}{Layered\+Media\+Utils.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLayeredMediaUtils_a212943a3dd5bdeaaa5c92ed21fad87a9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLayeredMediaUtils_a212943a3dd5bdeaaa5c92ed21fad87a9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classLayeredMediaUtils_aa3998f8656c14486f9bfff1a464d5f4b}\index{LayeredMediaUtils@{LayeredMediaUtils}!getEps@{getEps}}
+\index{getEps@{getEps}!LayeredMediaUtils@{LayeredMediaUtils}}
+\doxysubsubsection{\texorpdfstring{getEps()}{getEps()}}
+{\footnotesize\ttfamily \label{classLayeredMediaUtils_aa3998f8656c14486f9bfff1a464d5f4b} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Layered\+Media\+Utils\+::get\+Eps (\begin{DoxyParamCaption}\item[{int}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter of epsilon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the epsilon value to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The epsilon value at the specified index. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00732}{732}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+\Hypertarget{classLayeredMediaUtils_af860240d86e33dfda18b0e50cab1d5d7}\index{LayeredMediaUtils@{LayeredMediaUtils}!getkL@{getkL}}
+\index{getkL@{getkL}!LayeredMediaUtils@{LayeredMediaUtils}}
+\doxysubsubsection{\texorpdfstring{getkL()}{getkL()}}
+{\footnotesize\ttfamily \label{classLayeredMediaUtils_af860240d86e33dfda18b0e50cab1d5d7} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Layered\+Media\+Utils\+::getkL (\begin{DoxyParamCaption}\item[{int}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter of k\+\_\+L. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the k\+\_\+L value to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The k\+\_\+L value at the specified index. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00711}{711}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+\Hypertarget{classLayeredMediaUtils_a4b40e9fd70634bc3066c31e34a002df4}\index{LayeredMediaUtils@{LayeredMediaUtils}!GetLayerIndex@{GetLayerIndex}}
+\index{GetLayerIndex@{GetLayerIndex}!LayeredMediaUtils@{LayeredMediaUtils}}
+\doxysubsubsection{\texorpdfstring{GetLayerIndex()}{GetLayerIndex()}}
+{\footnotesize\ttfamily \label{classLayeredMediaUtils_a4b40e9fd70634bc3066c31e34a002df4} 
+int Layered\+Media\+Utils\+::\+Get\+Layer\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{pos}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the layer index for a given spatial position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The spatial position as an rvec (3D vector). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The layer index (0 to N-\/1), where N is the number of layers.
+\end{DoxyReturn}
+This function identifies the index of the layer in which a given point resides based on its z-\/coordinate relative to the predefined interface positions. 
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8cpp_source_l00054}{54}} of file \mbox{\hyperlink{LayeredMediaUtils_8cpp_source}{Layered\+Media\+Utils.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLayeredMediaUtils_a4b40e9fd70634bc3066c31e34a002df4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classLayeredMediaUtils_a703e52508bd5ec96295f708b8fcee2d9}\index{LayeredMediaUtils@{LayeredMediaUtils}!getMu@{getMu}}
+\index{getMu@{getMu}!LayeredMediaUtils@{LayeredMediaUtils}}
+\doxysubsubsection{\texorpdfstring{getMu()}{getMu()}}
+{\footnotesize\ttfamily \label{classLayeredMediaUtils_a703e52508bd5ec96295f708b8fcee2d9} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Layered\+Media\+Utils\+::get\+Mu (\begin{DoxyParamCaption}\item[{int}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter of mu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the mu value to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The mu value at the specified index. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00744}{744}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+\Hypertarget{classLayeredMediaUtils_ac7e0e1fdfc421bcb7a20741b140780b4}\index{LayeredMediaUtils@{LayeredMediaUtils}!getZValInterface@{getZValInterface}}
+\index{getZValInterface@{getZValInterface}!LayeredMediaUtils@{LayeredMediaUtils}}
+\doxysubsubsection{\texorpdfstring{getZValInterface()}{getZValInterface()}}
+{\footnotesize\ttfamily \label{classLayeredMediaUtils_ac7e0e1fdfc421bcb7a20741b140780b4} 
+double Layered\+Media\+Utils\+::get\+ZVal\+Interface (\begin{DoxyParamCaption}\item[{int}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter of z\+Val\+Interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the z\+Val\+Interface value to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The z\+Val\+Interface value at the specified index. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00720}{720}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+\Hypertarget{classLayeredMediaUtils_a00598e0f83472fd9128419b9dddc7e09}\index{LayeredMediaUtils@{LayeredMediaUtils}!InterfaceTransferMatrix@{InterfaceTransferMatrix}}
+\index{InterfaceTransferMatrix@{InterfaceTransferMatrix}!LayeredMediaUtils@{LayeredMediaUtils}}
+\doxysubsubsection{\texorpdfstring{InterfaceTransferMatrix()}{InterfaceTransferMatrix()}}
+{\footnotesize\ttfamily \label{classLayeredMediaUtils_a00598e0f83472fd9128419b9dddc7e09} 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ Layered\+Media\+Utils\+::\+Interface\+Transfer\+Matrix (\begin{DoxyParamCaption}\item[{int}]{layer\+IndexI}{, }\item[{int}]{layer\+IndexJ}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{krho}{, }\item[{const std\+::string \&}]{waves}{}\end{DoxyParamCaption}) const}
+
+
+
+Computes the interface transfer matrix for TE or TM waves. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em layer\+IndexI} & Index of the first layer. \\
+\hline
+{\em layer\+IndexJ} & Index of the second layer. \\
+\hline
+{\em krho} & Transverse wavenumber. \\
+\hline
+{\em waves} & Type of wave polarization ("{}\+TE"{} or "{}\+TM"{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A 2D vector of complex values representing the interface transfer matrix.
+\end{DoxyReturn}
+This function retrieves the transfer matrix that describes wave propagation across the interface between two specified layers, considering the given transverse wavenumber and wave polarization (TE or TM). 
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8cpp_source_l00145}{145}} of file \mbox{\hyperlink{LayeredMediaUtils_8cpp_source}{Layered\+Media\+Utils.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLayeredMediaUtils_a00598e0f83472fd9128419b9dddc7e09_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLayeredMediaUtils_a00598e0f83472fd9128419b9dddc7e09_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classLayeredMediaUtils_a72265396a660e7e7d93c56a0b35d11d0}\index{LayeredMediaUtils@{LayeredMediaUtils}!matrixMultiplication@{matrixMultiplication}}
+\index{matrixMultiplication@{matrixMultiplication}!LayeredMediaUtils@{LayeredMediaUtils}}
+\doxysubsubsection{\texorpdfstring{matrixMultiplication()}{matrixMultiplication()}}
+{\footnotesize\ttfamily \label{classLayeredMediaUtils_a72265396a660e7e7d93c56a0b35d11d0} 
+void Layered\+Media\+Utils\+::matrix\+Multiplication (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ $>$ \&}]{x}{, }\item[{const std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ $>$ \&}]{y}{}\end{DoxyParamCaption}) const}
+
+
+
+Performs matrix multiplication for 2D/3D complex matrices. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The first matrix (2D or 3D). \\
+\hline
+{\em y} & The second matrix (2D or 3D).\\
+\hline
+\end{DoxyParams}
+This function determines whether the input matrices are 2D or 3D and calls the appropriate multiplication function ({\ttfamily matrix\+Multiply2D} or {\ttfamily matrix\+Multiply3D}). The results are printed to the console. 
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8cpp_source_l00647}{647}} of file \mbox{\hyperlink{LayeredMediaUtils_8cpp_source}{Layered\+Media\+Utils.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{classLayeredMediaUtils_a72265396a660e7e7d93c56a0b35d11d0_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classLayeredMediaUtils_ad48ebb179e3349bad58b015022cbff46}\index{LayeredMediaUtils@{LayeredMediaUtils}!matrixMultiply2D@{matrixMultiply2D}}
+\index{matrixMultiply2D@{matrixMultiply2D}!LayeredMediaUtils@{LayeredMediaUtils}}
+\doxysubsubsection{\texorpdfstring{matrixMultiply2D()}{matrixMultiply2D()}}
+{\footnotesize\ttfamily \label{classLayeredMediaUtils_ad48ebb179e3349bad58b015022cbff46} 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ Layered\+Media\+Utils\+::matrix\+Multiply2D (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ \&}]{x}{, }\item[{const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ \&}]{y}{}\end{DoxyParamCaption}) const}
+
+
+
+Performs matrix multiplication for 2D complex matrices. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The first matrix (left operand). \\
+\hline
+{\em y} & The second matrix (right operand). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The resulting matrix after multiplication. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the dimensions of the matrices are incompatible.\\
+\hline
+\end{DoxyExceptions}
+This function multiplies two 2D complex matrices and returns the resulting matrix. It ensures that the input matrices have compatible dimensions for multiplication. 
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8cpp_source_l00598}{598}} of file \mbox{\hyperlink{LayeredMediaUtils_8cpp_source}{Layered\+Media\+Utils.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLayeredMediaUtils_ad48ebb179e3349bad58b015022cbff46_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classLayeredMediaUtils_a3ee62bdcd0ba1763e162df2c175cd022}\index{LayeredMediaUtils@{LayeredMediaUtils}!matrixMultiply3D@{matrixMultiply3D}}
+\index{matrixMultiply3D@{matrixMultiply3D}!LayeredMediaUtils@{LayeredMediaUtils}}
+\doxysubsubsection{\texorpdfstring{matrixMultiply3D()}{matrixMultiply3D()}}
+{\footnotesize\ttfamily \label{classLayeredMediaUtils_a3ee62bdcd0ba1763e162df2c175cd022} 
+std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ $>$ Layered\+Media\+Utils\+::matrix\+Multiply3D (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ $>$ \&}]{x}{, }\item[{const std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ $>$ \&}]{y}{}\end{DoxyParamCaption}) const}
+
+
+
+Performs matrix multiplication for 3D complex matrices. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The first 3D matrix (left operand). \\
+\hline
+{\em y} & The second 3D matrix (right operand). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The resulting 3D matrix after element-\/wise multiplication.
+\end{DoxyReturn}
+This function multiplies corresponding elements of two 3D complex matrices, assuming a 2x2 structure across multiple depth slices. 
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8cpp_source_l00625}{625}} of file \mbox{\hyperlink{LayeredMediaUtils_8cpp_source}{Layered\+Media\+Utils.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{classLayeredMediaUtils_a3ee62bdcd0ba1763e162df2c175cd022_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classLayeredMediaUtils_ac9168dd49348197009d483b94ff715a4}\index{LayeredMediaUtils@{LayeredMediaUtils}!propagationMatrix@{propagationMatrix}}
+\index{propagationMatrix@{propagationMatrix}!LayeredMediaUtils@{LayeredMediaUtils}}
+\doxysubsubsection{\texorpdfstring{propagationMatrix()}{propagationMatrix()}}
+{\footnotesize\ttfamily \label{classLayeredMediaUtils_ac9168dd49348197009d483b94ff715a4} 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ Layered\+Media\+Utils\+::propagation\+Matrix (\begin{DoxyParamCaption}\item[{int}]{layer\+Index}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{krho}{}\end{DoxyParamCaption}) const}
+
+
+
+Computes the propagation matrix for a given layer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em layer\+Index} & Index of the layer for which the propagation matrix is computed. \\
+\hline
+{\em krho} & Transverse wavenumber. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A 2x2 matrix representing the propagation matrix of the layer. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & if the layer index is invalid.\\
+\hline
+\end{DoxyExceptions}
+This function calculates the propagation matrix for a specified layer index, given a transverse wavenumber. The propagation matrix describes the phase evolution of waves as they propagate through the layer. 
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8cpp_source_l00182}{182}} of file \mbox{\hyperlink{LayeredMediaUtils_8cpp_source}{Layered\+Media\+Utils.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLayeredMediaUtils_ac9168dd49348197009d483b94ff715a4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLayeredMediaUtils_ac9168dd49348197009d483b94ff715a4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classLayeredMediaUtils_a58d55127ef14a69fed7bec672e78cab9}\index{LayeredMediaUtils@{LayeredMediaUtils}!readPositionsFromFile@{readPositionsFromFile}}
+\index{readPositionsFromFile@{readPositionsFromFile}!LayeredMediaUtils@{LayeredMediaUtils}}
+\doxysubsubsection{\texorpdfstring{readPositionsFromFile()}{readPositionsFromFile()}}
+{\footnotesize\ttfamily \label{classLayeredMediaUtils_a58d55127ef14a69fed7bec672e78cab9} 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} $>$ Layered\+Media\+Utils\+::read\+Positions\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reads a set of 3D positions from a file. 
+
+This function reads a file containing 3D coordinates (x, y, z) line by line and returns a vector of rvec objects representing these positions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the file containing position data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of rvec objects containing the parsed positions. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the file cannot be opened. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00761}{761}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+\Hypertarget{classLayeredMediaUtils_a6d538561bc5345114e83f7939247866f}\index{LayeredMediaUtils@{LayeredMediaUtils}!Secondary@{Secondary}}
+\index{Secondary@{Secondary}!LayeredMediaUtils@{LayeredMediaUtils}}
+\doxysubsubsection{\texorpdfstring{Secondary()}{Secondary()}}
+{\footnotesize\ttfamily \label{classLayeredMediaUtils_a6d538561bc5345114e83f7939247866f} 
+blitz\+::\+Array$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, 2 $>$ Layered\+Media\+Utils\+::\+Secondary (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{krho}{, }\item[{int}]{observation\+Layer}{, }\item[{int}]{source\+Layer}{, }\item[{const std\+::string \&}]{waves}{}\end{DoxyParamCaption})}
+
+
+
+Computes secondary wave coefficients for a given observation and source layer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em krho} & Transverse wavenumber. \\
+\hline
+{\em observation\+Layer} & Index of the observation layer. \\
+\hline
+{\em source\+Layer} & Index of the source layer. \\
+\hline
+{\em waves} & Type of wave polarization ("{}\+TE"{} or "{}\+TM"{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A 2D Blitz array of complex values representing the secondary wave coefficients.
+\end{DoxyReturn}
+This function calculates the secondary field contributions in a layered medium due to a source located in a specific layer, using the transverse wavenumber and the selected wave polarization (TE or TM). 
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8cpp_source_l00313}{313}} of file \mbox{\hyperlink{LayeredMediaUtils_8cpp_source}{Layered\+Media\+Utils.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLayeredMediaUtils_a6d538561bc5345114e83f7939247866f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{classLayeredMediaUtils_a6d538561bc5345114e83f7939247866f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classLayeredMediaUtils_a5c5a234325997ca6d00f8a91e383dbe2}\index{LayeredMediaUtils@{LayeredMediaUtils}!sgn@{sgn}}
+\index{sgn@{sgn}!LayeredMediaUtils@{LayeredMediaUtils}}
+\doxysubsubsection{\texorpdfstring{sgn()}{sgn()}}
+{\footnotesize\ttfamily \label{classLayeredMediaUtils_a5c5a234325997ca6d00f8a91e383dbe2} 
+template$<$typename T$>$ \\
+int Layered\+Media\+Utils\+::sgn (\begin{DoxyParamCaption}\item[{T}]{val}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Computes the sign function for a given value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & The value to compute the sign for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if val \texorpdfstring{$>$}{>} 0, -\/1 if val \texorpdfstring{$<$}{<} 0, and 0 if val == 0. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00702}{702}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+\Hypertarget{classLayeredMediaUtils_a55529dbdb069b59a6252ab2e446186a0}\index{LayeredMediaUtils@{LayeredMediaUtils}!totalFresnelCoeffs@{totalFresnelCoeffs}}
+\index{totalFresnelCoeffs@{totalFresnelCoeffs}!LayeredMediaUtils@{LayeredMediaUtils}}
+\doxysubsubsection{\texorpdfstring{totalFresnelCoeffs()}{totalFresnelCoeffs()}}
+{\footnotesize\ttfamily \label{classLayeredMediaUtils_a55529dbdb069b59a6252ab2e446186a0} 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ Layered\+Media\+Utils\+::total\+Fresnel\+Coeffs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{krho}{, }\item[{const std\+::string \&}]{waves}{, }\item[{const std\+::string \&}]{direction}{}\end{DoxyParamCaption}) const}
+
+
+
+Computes reflection and transmission coefficients for the entire layered structure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em krho} & Transverse wavenumber. \\
+\hline
+{\em waves} & Type of wave polarization ("{}\+TE"{} or "{}\+TM"{}). \\
+\hline
+{\em direction} & Direction of wave propagation ("{}up"{} or "{}down"{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector containing the total Fresnel reflection and transmission coefficients. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if an invalid wave type or direction is provided.\\
+\hline
+\end{DoxyExceptions}
+This function calculates the overall Fresnel reflection and transmission coefficients by using the total transfer matrix of the multilayered medium, based on the given transverse wavenumber and wave polarization. 
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8cpp_source_l00238}{238}} of file \mbox{\hyperlink{LayeredMediaUtils_8cpp_source}{Layered\+Media\+Utils.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLayeredMediaUtils_a55529dbdb069b59a6252ab2e446186a0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{classLayeredMediaUtils_a55529dbdb069b59a6252ab2e446186a0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classLayeredMediaUtils_a796d55e02d56c610cae065557bc64c10}\index{LayeredMediaUtils@{LayeredMediaUtils}!totalTransferMatrix@{totalTransferMatrix}}
+\index{totalTransferMatrix@{totalTransferMatrix}!LayeredMediaUtils@{LayeredMediaUtils}}
+\doxysubsubsection{\texorpdfstring{totalTransferMatrix()}{totalTransferMatrix()}}
+{\footnotesize\ttfamily \label{classLayeredMediaUtils_a796d55e02d56c610cae065557bc64c10} 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ Layered\+Media\+Utils\+::total\+Transfer\+Matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{krho}{, }\item[{const std\+::string \&}]{waves}{}\end{DoxyParamCaption}) const}
+
+
+
+Computes the total transfer matrix for the entire layered structure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em krho} & Transverse wavenumber. \\
+\hline
+{\em waves} & Type of wave polarization ("{}\+TE"{} or "{}\+TM"{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A 2x2 matrix representing the total transfer matrix of the layered medium. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if an invalid wave type is provided.\\
+\hline
+\end{DoxyExceptions}
+This function calculates the cumulative transfer matrix by iteratively multiplying the propagation matrices and interface transfer matrices for all layers in the structure. 
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8cpp_source_l00215}{215}} of file \mbox{\hyperlink{LayeredMediaUtils_8cpp_source}{Layered\+Media\+Utils.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLayeredMediaUtils_a796d55e02d56c610cae065557bc64c10_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{classLayeredMediaUtils_a796d55e02d56c610cae065557bc64c10_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classLayeredMediaUtils_aac35250533c1bf922827b5a91220fb32}\index{LayeredMediaUtils@{LayeredMediaUtils}!epsilon@{epsilon}}
+\index{epsilon@{epsilon}!LayeredMediaUtils@{LayeredMediaUtils}}
+\doxysubsubsection{\texorpdfstring{epsilon}{epsilon}}
+{\footnotesize\ttfamily \label{classLayeredMediaUtils_aac35250533c1bf922827b5a91220fb32} 
+std\+::vector$<$\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}$>$ Layered\+Media\+Utils\+::epsilon\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Permittivity values for layers. 
+
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00538}{538}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+\Hypertarget{classLayeredMediaUtils_a03d746d29be9c90b6866078b35090888}\index{LayeredMediaUtils@{LayeredMediaUtils}!k\_L@{k\_L}}
+\index{k\_L@{k\_L}!LayeredMediaUtils@{LayeredMediaUtils}}
+\doxysubsubsection{\texorpdfstring{k\_L}{k\_L}}
+{\footnotesize\ttfamily \label{classLayeredMediaUtils_a03d746d29be9c90b6866078b35090888} 
+std\+::vector$<$\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}$>$ Layered\+Media\+Utils\+::k\+\_\+L\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Wavenumbers for layers. 
+
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00537}{537}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+\Hypertarget{classLayeredMediaUtils_aed6542366b844c7af1ee158ac2f1daaf}\index{LayeredMediaUtils@{LayeredMediaUtils}!midLayerIndex@{midLayerIndex}}
+\index{midLayerIndex@{midLayerIndex}!LayeredMediaUtils@{LayeredMediaUtils}}
+\doxysubsubsection{\texorpdfstring{midLayerIndex}{midLayerIndex}}
+{\footnotesize\ttfamily \label{classLayeredMediaUtils_aed6542366b844c7af1ee158ac2f1daaf} 
+int Layered\+Media\+Utils\+::mid\+Layer\+Index\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Layer index of the mesh middle point. 
+
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00542}{542}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+\Hypertarget{classLayeredMediaUtils_a737efea63d0c23873f1460e7d76a198a}\index{LayeredMediaUtils@{LayeredMediaUtils}!mu@{mu}}
+\index{mu@{mu}!LayeredMediaUtils@{LayeredMediaUtils}}
+\doxysubsubsection{\texorpdfstring{mu}{mu}}
+{\footnotesize\ttfamily \label{classLayeredMediaUtils_a737efea63d0c23873f1460e7d76a198a} 
+std\+::vector$<$\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}$>$ Layered\+Media\+Utils\+::mu\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Permeability values for layers. 
+
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00539}{539}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+\Hypertarget{classLayeredMediaUtils_a691003fc879a0ec3698073d514c1d311}\index{LayeredMediaUtils@{LayeredMediaUtils}!thickness@{thickness}}
+\index{thickness@{thickness}!LayeredMediaUtils@{LayeredMediaUtils}}
+\doxysubsubsection{\texorpdfstring{thickness}{thickness}}
+{\footnotesize\ttfamily \label{classLayeredMediaUtils_a691003fc879a0ec3698073d514c1d311} 
+std\+::vector$<$double$>$ Layered\+Media\+Utils\+::thickness\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Thickness of each layer. 
+
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00541}{541}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+\Hypertarget{classLayeredMediaUtils_a98057e700d2180e8ee96e85a2d1cf494}\index{LayeredMediaUtils@{LayeredMediaUtils}!zValsInterfaces@{zValsInterfaces}}
+\index{zValsInterfaces@{zValsInterfaces}!LayeredMediaUtils@{LayeredMediaUtils}}
+\doxysubsubsection{\texorpdfstring{zValsInterfaces}{zValsInterfaces}}
+{\footnotesize\ttfamily \label{classLayeredMediaUtils_a98057e700d2180e8ee96e85a2d1cf494} 
+std\+::vector$<$double$>$ Layered\+Media\+Utils\+::z\+Vals\+Interfaces\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Z-\/coordinates of layer interfaces. 
+
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8h_source_l00540}{540}} of file \mbox{\hyperlink{LayeredMediaUtils_8h_source}{Layered\+Media\+Utils.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{LayeredMediaUtils_8h}{Layered\+Media\+Utils.\+h}}\item 
+\mbox{\hyperlink{LayeredMediaUtils_8cpp}{Layered\+Media\+Utils.\+cpp}}\end{DoxyCompactItemize}

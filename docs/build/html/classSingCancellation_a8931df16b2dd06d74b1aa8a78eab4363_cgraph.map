@@ -1,0 +1,21 @@
+<map id="SingCancellation::SingCancellation" name="SingCancellation::SingCancellation">
+<area shape="rect" id="Node000001" title="Construct and immediately generate the paired quadrature for a triangle pair." alt="" coords="5,98,253,126"/>
+<area shape="rect" id="Node000002" href="$classSingCancellation.html#aa72d2a4d4365846ffcbee49b07a4baa7" title="Build paired quadrature for triangles sharing a common edge." alt="" coords="301,98,528,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="253,109,285,109,285,114,253,114"/>
+<area shape="rect" id="Node000006" href="$classSingCancellation.html#a7d4e2fb258f1a7a5923c823800863983" title="Build paired quadrature for identical triangles (common facet)." alt="" coords="317,149,512,194"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="199,124,302,145,301,151,198,129"/>
+<area shape="rect" id="Node000007" href="$classSingCancellation.html#ac1258c9e1d2e1981e9ceb22477312cfd" title="Build paired quadrature for triangles sharing a single vertex." alt="" coords="317,29,512,74"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="198,95,301,73,302,78,199,100"/>
+<area shape="rect" id="Node000003" href="$classSingCancellation.html#af51fe5685bf1d5a85afd61a50eb375fe" title="Permutation of barycentric components induced by vertex/edge alignment." alt="" coords="576,32,815,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="483,95,527,84,575,69,607,61,608,67,577,74,529,89,484,100"/>
+<area shape="rect" id="Node000004" href="$classSingCancellation.html#a671bbe3bcc58c21a3fa62e605fd36be8" title="Write a single matrix column (chosen component) as a MATLAB style vector." alt="" coords="588,153,804,198"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="480,123,529,134,582,147,581,152,527,140,479,129"/>
+<area shape="rect" id="Node000005" href="$classSingCancellation.html#a099933b83efb63d62f2b5d1c26b6b7e8" title="Write a real vector as a MATLAB style column vector." alt="" coords="588,84,804,129"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="529,107,572,106,572,111,529,112"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="512,170,572,171,572,177,512,176"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="512,146,581,130,582,135,513,152"/>
+<area shape="poly" id="edge10_Node000007_Node000003" title=" " alt="" coords="512,47,561,46,561,52,512,52"/>
+<area shape="poly" id="edge11_Node000007_Node000004" title=" " alt="" coords="507,72,530,84,545,98,554,112,563,126,578,139,586,144,584,148,574,143,559,129,550,115,541,102,526,89,505,77"/>
+<area shape="poly" id="edge12_Node000007_Node000005" title=" " alt="" coords="513,68,573,80,572,85,512,73"/>
+<area shape="poly" id="edge9_Node000007_Node000007" title=" " alt="" coords="361,29,360,19,369,10,387,5,414,3,444,5,462,11,460,16,443,10,414,8,388,10,371,15,365,21,366,28"/>
+</map>

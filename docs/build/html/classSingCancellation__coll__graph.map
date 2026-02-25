@@ -1,0 +1,5 @@
+<map id="SingCancellation" name="SingCancellation">
+<area shape="rect" id="Node000001" title="Builds synchronized quadrature nodes/weights for a pair of touching triangles." alt="" coords="6,562,198,969"/>
+<area shape="rect" id="Node000002" href="$classTriangle.html" title="Triangular surface element with cached geometry and utilities." alt="" coords="5,5,199,480"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,480,105,545,100,545,100,480"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="realVecHom" name="realVecHom">
+<area shape="rect" id="Node000001" title="Extract the real part of each component of a complex 3&#45;vector." alt="" coords="5,29,106,57"/>
+<area shape="rect" id="Node000002" href="$Domain_8cpp.html#aafa3e4fa6318b2f8740f4dbd50c367e5" title="Extract the real part of each component of a complex 3&#45;vector." alt="" coords="154,29,200,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,40,138,40,138,46,106,46"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="155,30,151,20,154,11,163,5,177,3,192,5,200,11,196,16,189,10,177,8,165,10,158,14,157,20,160,28"/>
+</map>

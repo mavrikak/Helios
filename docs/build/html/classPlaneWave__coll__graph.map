@@ -1,0 +1,9 @@
+<map id="PlaneWave" name="PlaneWave">
+<area shape="rect" id="Node000001" title="Models a plane wave as an incident field in homogeneous or layered media." alt="" coords="217,478,407,930"/>
+<area shape="rect" id="Node000002" href="$classIncidentField.html" title="Abstract base for incident fields (excitations) used in SIE." alt="" coords="5,50,195,368"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="177,380,220,481,215,483,172,383"/>
+<area shape="rect" id="Node000003" href="$classGaussQuad.html" title=" " alt="" coords="219,61,406,357"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="315,357,315,460,310,460,310,357"/>
+<area shape="rect" id="Node000004" href="$classLayeredMediaUtils.html" title="Utility class for calculations related to layered media." alt="" coords="430,5,619,413"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="440,414,416,467,412,465,435,412"/>
+</map>

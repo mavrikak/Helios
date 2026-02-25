@@ -1,0 +1,448 @@
+\doxysection{Gauss\+Quad\texorpdfstring{$<$}{<} Type \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classGaussQuad}{}\label{classGaussQuad}\index{GaussQuad$<$ Type $>$@{GaussQuad$<$ Type $>$}}
+
+
+Gaussian-\/quadrature helpers for Green\textquotesingle{}s functions and incident fields.  
+
+
+
+
+{\ttfamily \#include $<$Gauss\+Quad.\+h$>$}
+
+
+
+Collaboration diagram for Gauss\+Quad\texorpdfstring{$<$}{<} Type \texorpdfstring{$>$}{>}\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{classGaussQuad__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGaussQuad_a446b0b21a34640c901189c53ec4081b3}{I1}} (Type \texorpdfstring{$\ast$}{*}gF, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(Type\+::\texorpdfstring{$\ast$}{*})(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp), \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}fp)
+\begin{DoxyCompactList}\small\item\em I1 with on‑the‑fly kernel evaluation at (r,rp) using {\ttfamily gF}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classGaussQuad_ae59aff5fbf12ed60f4bb65820fdcae91}{I2}} (Type \texorpdfstring{$\ast$}{*}gF, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(Type\+::\texorpdfstring{$\ast$}{*})(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp), \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}fp)
+\begin{DoxyCompactList}\small\item\em I2 with on‑the‑fly scalar kernel evaluation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classGaussQuad_a0fb8ea7e979899e9f7e872faed11d6bd}{I4}} (Type \texorpdfstring{$\ast$}{*}gF, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}(Type\+::\texorpdfstring{$\ast$}{*})(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp), \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}fp)
+\begin{DoxyCompactList}\small\item\em I4 with on‑the‑fly vector kernel evaluation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classGaussQuad_a7b4dd3082686af22451b5f405073d33e}{I5}} (Type \texorpdfstring{$\ast$}{*}gF, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}(Type\+::\texorpdfstring{$\ast$}{*})(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp), \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}fp)
+\begin{DoxyCompactList}\small\item\em I5 variant\+: vector kernel weighted by RWG prefactor (centroid). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGaussQuad_ab01b06d5cd9d9d15b01d0c9078b8dc5e}{IntegrateD}} (Type \texorpdfstring{$\ast$}{*}gF, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(Type\+::\texorpdfstring{$\ast$}{*})(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp), \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}f, \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}fp)
+\begin{DoxyCompactList}\small\item\em Two‑triangle integral for the {\bfseries{D}} operator (Eq. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGaussQuad_ab896c6e8141cd1e678d4f630fe0fd186}{IntegrateK}} (Type \texorpdfstring{$\ast$}{*}gF, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}(Type\+::\texorpdfstring{$\ast$}{*})(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp), \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}f, \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}fp)
+\begin{DoxyCompactList}\small\item\em Two‑triangle integral for the {\bfseries{K}} operator (Eq. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGaussQuad_ae1cb48d95d2fad8c46a0a4d44b1216d9}{Integrate}} (Type \texorpdfstring{$\ast$}{*}gF, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}(Type\+::\texorpdfstring{$\ast$}{*})(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r), \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}f)
+\begin{DoxyCompactList}\small\item\em Integrate on triangle E\+\_\+inc using centroid evaluation. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{classGaussQuad_ac053945db0c37c26ac30f3e468550b6e}{Integrate}} (Type \texorpdfstring{$\ast$}{*}gF, std\+::vector$<$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$(Type\+::\texorpdfstring{$\ast$}{*}Evaluation\+Function)(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r), \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}f, bool Needs\+Accurate)
+\begin{DoxyCompactList}\small\item\em Integrate on triangle $ \{ \mathbf{E}^{inc}, \mathbf{H}^{inc} \} $ with Dunavant quadrature. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGaussQuad_afecf86c6fbc2362c30d56fb10454621e}{I1}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} grrp, \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}fp)
+\begin{DoxyCompactList}\small\item\em I1\+: integral of scalar kernel times RWG prefactor over the test triangle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classGaussQuad_a017bdf3c80a430f4c381310bd7b680ed}{I2}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} grrp, \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}fp)
+\begin{DoxyCompactList}\small\item\em I2\+: vector form with the RWG basis evaluated at the centroid. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classGaussQuad_aa2f7019adfbd7b78e6f91e5554b526b7}{I4}} (\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} grrp, \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}fp)
+\begin{DoxyCompactList}\small\item\em I4\+: vector kernel crossed with RWG at the centroid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class Type$>$\newline
+class Gauss\+Quad$<$ Type $>$}
+Gaussian-\/quadrature helpers for Green\textquotesingle{}s functions and incident fields. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Type} & either a Green\textquotesingle{}s function provider or an incident‑field class exposing the member functions described in the file header.\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyNote}{Note}
+The implementation uses {\bfseries{centroid evaluation}} (first order) for the inner integrals {\ttfamily I1}, {\ttfamily I2}, {\ttfamily I4}, {\ttfamily I5}, which is consistent with the low‑order RWG discretization and the JOSA B Vol 26 No 4 2009 first‑order formulas referenced in the code comments below. 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{GaussQuad_8h_source_l00048}{48}} of file \mbox{\hyperlink{GaussQuad_8h_source}{Gauss\+Quad.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classGaussQuad_afecf86c6fbc2362c30d56fb10454621e}\index{GaussQuad$<$ Type $>$@{GaussQuad$<$ Type $>$}!I1@{I1}}
+\index{I1@{I1}!GaussQuad$<$ Type $>$@{GaussQuad$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{I1()}{I1()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classGaussQuad_afecf86c6fbc2362c30d56fb10454621e} 
+template$<$class Type$>$ \\
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGaussQuad}{Gauss\+Quad}}$<$ Type $>$\+::\+I1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{grrp}{, }\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{fp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+I1\+: integral of scalar kernel times RWG prefactor over the test triangle. 
+
+
+
+Definition at line \mbox{\hyperlink{GaussQuad_8h_source_l00272}{272}} of file \mbox{\hyperlink{GaussQuad_8h_source}{Gauss\+Quad.\+h}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{classGaussQuad_afecf86c6fbc2362c30d56fb10454621e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{classGaussQuad_afecf86c6fbc2362c30d56fb10454621e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGaussQuad_a446b0b21a34640c901189c53ec4081b3}\index{GaussQuad$<$ Type $>$@{GaussQuad$<$ Type $>$}!I1@{I1}}
+\index{I1@{I1}!GaussQuad$<$ Type $>$@{GaussQuad$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{I1()}{I1()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classGaussQuad_a446b0b21a34640c901189c53ec4081b3} 
+template$<$class Type$>$ \\
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGaussQuad}{Gauss\+Quad}}$<$ Type $>$\+::\+I1 (\begin{DoxyParamCaption}\item[{Type \texorpdfstring{$\ast$}{*}}]{gF}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(Type\+::\texorpdfstring{$\ast$}{*}}]{Evaluation\+Function~}{)(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp), }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{fp}{}\end{DoxyParamCaption})}
+
+
+
+I1 with on‑the‑fly kernel evaluation at (r,rp) using {\ttfamily gF}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gF} & Green\textquotesingle{}s function object. \\
+\hline
+{\em Evaluation\+Function} & Pointer to scalar kernel member of {\ttfamily gF}. \\
+\hline
+{\em r} & Observation point (usually centroid of the test triangle). \\
+\hline
+{\em fp} & Source RWG living on the source triangle. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex scalar integral value. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GaussQuad_8h_source_l00158}{158}} of file \mbox{\hyperlink{GaussQuad_8h_source}{Gauss\+Quad.\+h}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{classGaussQuad_a446b0b21a34640c901189c53ec4081b3_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGaussQuad_a017bdf3c80a430f4c381310bd7b680ed}\index{GaussQuad$<$ Type $>$@{GaussQuad$<$ Type $>$}!I2@{I2}}
+\index{I2@{I2}!GaussQuad$<$ Type $>$@{GaussQuad$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{I2()}{I2()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classGaussQuad_a017bdf3c80a430f4c381310bd7b680ed} 
+template$<$class Type$>$ \\
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classGaussQuad}{Gauss\+Quad}}$<$ Type $>$\+::\+I2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{grrp}{, }\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{fp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+I2\+: vector form with the RWG basis evaluated at the centroid. 
+
+
+
+Definition at line \mbox{\hyperlink{GaussQuad_8h_source_l00279}{279}} of file \mbox{\hyperlink{GaussQuad_8h_source}{Gauss\+Quad.\+h}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{classGaussQuad_a017bdf3c80a430f4c381310bd7b680ed_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{classGaussQuad_a017bdf3c80a430f4c381310bd7b680ed_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGaussQuad_ae59aff5fbf12ed60f4bb65820fdcae91}\index{GaussQuad$<$ Type $>$@{GaussQuad$<$ Type $>$}!I2@{I2}}
+\index{I2@{I2}!GaussQuad$<$ Type $>$@{GaussQuad$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{I2()}{I2()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classGaussQuad_ae59aff5fbf12ed60f4bb65820fdcae91} 
+template$<$class Type$>$ \\
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classGaussQuad}{Gauss\+Quad}}$<$ Type $>$\+::\+I2 (\begin{DoxyParamCaption}\item[{Type \texorpdfstring{$\ast$}{*}}]{gF}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(Type\+::\texorpdfstring{$\ast$}{*}}]{Evaluation\+Function~}{)(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp), }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{fp}{}\end{DoxyParamCaption})}
+
+
+
+I2 with on‑the‑fly scalar kernel evaluation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gF} & Green\textquotesingle{}s function object. \\
+\hline
+{\em Evaluation\+Function} & Pointer to scalar kernel member of {\ttfamily gF}. \\
+\hline
+{\em r} & Observation point (usually centroid of the test triangle). \\
+\hline
+{\em fp} & Source RWG living on the source triangle. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex vector integral value. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GaussQuad_8h_source_l00168}{168}} of file \mbox{\hyperlink{GaussQuad_8h_source}{Gauss\+Quad.\+h}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{classGaussQuad_ae59aff5fbf12ed60f4bb65820fdcae91_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGaussQuad_aa2f7019adfbd7b78e6f91e5554b526b7}\index{GaussQuad$<$ Type $>$@{GaussQuad$<$ Type $>$}!I4@{I4}}
+\index{I4@{I4}!GaussQuad$<$ Type $>$@{GaussQuad$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{I4()}{I4()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classGaussQuad_aa2f7019adfbd7b78e6f91e5554b526b7} 
+template$<$class Type$>$ \\
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classGaussQuad}{Gauss\+Quad}}$<$ Type $>$\+::\+I4 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}}]{grrp}{, }\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{fp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+I4\+: vector kernel crossed with RWG at the centroid. 
+
+
+
+Definition at line \mbox{\hyperlink{GaussQuad_8h_source_l00286}{286}} of file \mbox{\hyperlink{GaussQuad_8h_source}{Gauss\+Quad.\+h}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{classGaussQuad_aa2f7019adfbd7b78e6f91e5554b526b7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{classGaussQuad_aa2f7019adfbd7b78e6f91e5554b526b7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGaussQuad_a0fb8ea7e979899e9f7e872faed11d6bd}\index{GaussQuad$<$ Type $>$@{GaussQuad$<$ Type $>$}!I4@{I4}}
+\index{I4@{I4}!GaussQuad$<$ Type $>$@{GaussQuad$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{I4()}{I4()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classGaussQuad_a0fb8ea7e979899e9f7e872faed11d6bd} 
+template$<$class Type$>$ \\
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classGaussQuad}{Gauss\+Quad}}$<$ Type $>$\+::\+I4 (\begin{DoxyParamCaption}\item[{Type \texorpdfstring{$\ast$}{*}}]{gF}{, }\item[{\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}(Type\+::\texorpdfstring{$\ast$}{*}}]{Evaluation\+Function~}{)(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp), }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{fp}{}\end{DoxyParamCaption})}
+
+
+
+I4 with on‑the‑fly vector kernel evaluation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gF} & Green\textquotesingle{}s function object. \\
+\hline
+{\em Evaluation\+Function} & Pointer to scalar kernel member of {\ttfamily gF}. \\
+\hline
+{\em r} & Observation point (usually centroid of the test triangle). \\
+\hline
+{\em fp} & Source RWG living on the source triangle. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex vector integral value. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GaussQuad_8h_source_l00179}{179}} of file \mbox{\hyperlink{GaussQuad_8h_source}{Gauss\+Quad.\+h}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{classGaussQuad_a0fb8ea7e979899e9f7e872faed11d6bd_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGaussQuad_a7b4dd3082686af22451b5f405073d33e}\index{GaussQuad$<$ Type $>$@{GaussQuad$<$ Type $>$}!I5@{I5}}
+\index{I5@{I5}!GaussQuad$<$ Type $>$@{GaussQuad$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{I5()}{I5()}}
+{\footnotesize\ttfamily \label{classGaussQuad_a7b4dd3082686af22451b5f405073d33e} 
+template$<$class Type$>$ \\
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classGaussQuad}{Gauss\+Quad}}$<$ Type $>$\+::\+I5 (\begin{DoxyParamCaption}\item[{Type \texorpdfstring{$\ast$}{*}}]{gF}{, }\item[{\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}(Type\+::\texorpdfstring{$\ast$}{*}}]{Evaluation\+Function~}{)(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp), }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{fp}{}\end{DoxyParamCaption})}
+
+
+
+I5 variant\+: vector kernel weighted by RWG prefactor (centroid). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gF} & Green\textquotesingle{}s function object. \\
+\hline
+{\em Evaluation\+Function} & Pointer to scalar kernel member of {\ttfamily gF}. \\
+\hline
+{\em r} & Observation point (usually centroid of the test triangle). \\
+\hline
+{\em fp} & Source RWG living on the source triangle. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex vector integral value. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GaussQuad_8h_source_l00190}{190}} of file \mbox{\hyperlink{GaussQuad_8h_source}{Gauss\+Quad.\+h}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{classGaussQuad_a7b4dd3082686af22451b5f405073d33e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGaussQuad_ae1cb48d95d2fad8c46a0a4d44b1216d9}\index{GaussQuad$<$ Type $>$@{GaussQuad$<$ Type $>$}!Integrate@{Integrate}}
+\index{Integrate@{Integrate}!GaussQuad$<$ Type $>$@{GaussQuad$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{Integrate()}{Integrate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classGaussQuad_ae1cb48d95d2fad8c46a0a4d44b1216d9} 
+template$<$class Type$>$ \\
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGaussQuad}{Gauss\+Quad}}$<$ Type $>$\+::\+Integrate (\begin{DoxyParamCaption}\item[{Type \texorpdfstring{$\ast$}{*}}]{gF}{, }\item[{\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}(Type\+::\texorpdfstring{$\ast$}{*}}]{Evaluation\+Function~}{)(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r), }\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{f}{}\end{DoxyParamCaption})}
+
+
+
+Integrate on triangle E\+\_\+inc using centroid evaluation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gF} & Incident field provider. \\
+\hline
+{\em Evaluation\+Function} & Pointer to {\ttfamily cvec Type\+:\+:(rvec)}. \\
+\hline
+{\em f} & Test RWG function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex scalar value. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GaussQuad_8h_source_l00227}{227}} of file \mbox{\hyperlink{GaussQuad_8h_source}{Gauss\+Quad.\+h}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGaussQuad_ae1cb48d95d2fad8c46a0a4d44b1216d9_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGaussQuad_ac053945db0c37c26ac30f3e468550b6e}\index{GaussQuad$<$ Type $>$@{GaussQuad$<$ Type $>$}!Integrate@{Integrate}}
+\index{Integrate@{Integrate}!GaussQuad$<$ Type $>$@{GaussQuad$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{Integrate()}{Integrate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classGaussQuad_ac053945db0c37c26ac30f3e468550b6e} 
+template$<$class Type$>$ \\
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{classGaussQuad}{Gauss\+Quad}}$<$ Type $>$\+::\+Integrate (\begin{DoxyParamCaption}\item[{Type \texorpdfstring{$\ast$}{*}}]{gF}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$(Type\+::\texorpdfstring{$\ast$}{*}}]{Evaluation\+Function~}{)(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r), }\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{f}{, }\item[{bool}]{Needs\+Accurate}{}\end{DoxyParamCaption})}
+
+
+
+Integrate on triangle $ \{ \mathbf{E}^{inc}, \mathbf{H}^{inc} \} $ with Dunavant quadrature. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gF} & Incident field provider. \\
+\hline
+{\em Evaluation\+Function} & Pointer to {\ttfamily std\+::vector\texorpdfstring{$<$}{<}cvec\texorpdfstring{$>$}{>} Type\+:\+:(rvec)} that returns {\ttfamily \{E,H\}}. \\
+\hline
+{\em f} & Test RWG function. \\
+\hline
+{\em Needs\+Accurate} & When true, use a higher‑order Dunavant rule (N5); otherwise N1. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector $ \{\iint \mathbf{f} \cdot \mathbf{E}^{inc} dS, \iint \mathbf{f} \cdot \mathbf{H}^{inc} dS \} $ in this order. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GaussQuad_8h_source_l00242}{242}} of file \mbox{\hyperlink{GaussQuad_8h_source}{Gauss\+Quad.\+h}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGaussQuad_ac053945db0c37c26ac30f3e468550b6e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGaussQuad_ab01b06d5cd9d9d15b01d0c9078b8dc5e}\index{GaussQuad$<$ Type $>$@{GaussQuad$<$ Type $>$}!IntegrateD@{IntegrateD}}
+\index{IntegrateD@{IntegrateD}!GaussQuad$<$ Type $>$@{GaussQuad$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{IntegrateD()}{IntegrateD()}}
+{\footnotesize\ttfamily \label{classGaussQuad_ab01b06d5cd9d9d15b01d0c9078b8dc5e} 
+template$<$class Type$>$ \\
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGaussQuad}{Gauss\+Quad}}$<$ Type $>$\+::\+IntegrateD (\begin{DoxyParamCaption}\item[{Type \texorpdfstring{$\ast$}{*}}]{gF}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}(Type\+::\texorpdfstring{$\ast$}{*}}]{Evaluation\+Function~}{)(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp), }\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{f}{, }\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{fp}{}\end{DoxyParamCaption})}
+
+
+
+Two‑triangle integral for the {\bfseries{D}} operator (Eq. 
+
+(27), JOSA B 26(4), 2009). 
+\begin{DoxyParams}{Parameters}
+{\em gF} & Green\textquotesingle{}s function object. \\
+\hline
+{\em Evaluation\+Function} & Pointer to scalar kernel member of {\ttfamily gF}. \\
+\hline
+{\em f} & Observation RWG living on the observation triangle. \\
+\hline
+{\em fp} & Source RWG living on the source triangle. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex scalar value.
+\end{DoxyReturn}
+Uses first‑order centroid approximations of inner integrals and the wavenumber $ k $ provided by {\ttfamily Type\+::\+Wave\+Vec()}. 
+
+Definition at line \mbox{\hyperlink{GaussQuad_8h_source_l00201}{201}} of file \mbox{\hyperlink{GaussQuad_8h_source}{Gauss\+Quad.\+h}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGaussQuad_ab01b06d5cd9d9d15b01d0c9078b8dc5e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGaussQuad_ab896c6e8141cd1e678d4f630fe0fd186}\index{GaussQuad$<$ Type $>$@{GaussQuad$<$ Type $>$}!IntegrateK@{IntegrateK}}
+\index{IntegrateK@{IntegrateK}!GaussQuad$<$ Type $>$@{GaussQuad$<$ Type $>$}}
+\doxysubsubsection{\texorpdfstring{IntegrateK()}{IntegrateK()}}
+{\footnotesize\ttfamily \label{classGaussQuad_ab896c6e8141cd1e678d4f630fe0fd186} 
+template$<$class Type$>$ \\
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGaussQuad}{Gauss\+Quad}}$<$ Type $>$\+::\+IntegrateK (\begin{DoxyParamCaption}\item[{Type \texorpdfstring{$\ast$}{*}}]{gF}{, }\item[{\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}(Type\+::\texorpdfstring{$\ast$}{*}}]{Evaluation\+Function~}{)(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp), }\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{f}{, }\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{fp}{}\end{DoxyParamCaption})}
+
+
+
+Two‑triangle integral for the {\bfseries{K}} operator (Eq. 
+
+(29), JOSA B 26(4), 2009). 
+\begin{DoxyParams}{Parameters}
+{\em gF} & Green\textquotesingle{}s function object. \\
+\hline
+{\em Evaluation\+Function} & Pointer to scalar kernel member of {\ttfamily gF}. \\
+\hline
+{\em f} & Observation RWG living on the observation triangle. \\
+\hline
+{\em fp} & Source RWG living on the source triangle. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex scalar value.
+\end{DoxyReturn}
+Uses first‑order centroid approximations of inner integrals and the wavenumber $ k $ provided by {\ttfamily Type\+::\+Wave\+Vec()}. 
+
+Definition at line \mbox{\hyperlink{GaussQuad_8h_source_l00215}{215}} of file \mbox{\hyperlink{GaussQuad_8h_source}{Gauss\+Quad.\+h}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGaussQuad_ab896c6e8141cd1e678d4f630fe0fd186_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{GaussQuad_8h}{Gauss\+Quad.\+h}}\end{DoxyCompactItemize}

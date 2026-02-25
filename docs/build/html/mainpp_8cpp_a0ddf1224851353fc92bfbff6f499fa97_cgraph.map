@@ -1,0 +1,116 @@
+<map id="main" name="main">
+<area shape="rect" id="Node000001" title="Main driver for post&#45;processing in the HELIOS SIE program." alt="" coords="5,311,60,338"/>
+<area shape="rect" id="Node000002" href="$classGreenF.html#a0471f415be8e4d0f2fc7268e66ff38f5" title="Set number of periodic evaluation terms (for periodic GFs)." alt="" coords="150,128,294,156"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="34,310,41,280,54,241,76,201,106,166,133,151,136,156,109,171,80,204,59,243,46,281,39,311"/>
+<area shape="rect" id="Node000003" href="$classSIEFormPMCHW.html#a9d91e407f50e49fd90dd1bc25db22532" title="Configure how many threads to use for parallel assembly." alt="" coords="108,180,336,208"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="38,309,63,264,82,239,106,218,116,212,119,217,109,223,86,243,67,267,42,312"/>
+<area shape="rect" id="Node000004" href="$classSimJob.html#a4ea29b8acaa7e36fbc9478c2ed9df0c6" title="Set thread count used internally by SimJob." alt="" coords="137,232,306,260"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="49,308,75,288,107,270,127,262,129,267,109,275,78,293,52,312"/>
+<area shape="rect" id="Node000005" href="$classDomain.html#a43fee8ac7865b98f0b2342102c9f676c" title="Enable globally more accurate (and usually slower) evaluation." alt="" coords="131,284,312,312"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="60,318,115,310,116,315,61,323"/>
+<area shape="rect" id="Node000006" href="$classGreenF.html#ada52587b39995134c895324efbaf5919" title="Request high‑accuracy evaluation paths (global)." alt="" coords="134,336,310,364"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="61,325,119,333,118,339,60,331"/>
+<area shape="rect" id="Node000007" href="$classIncidentField.html#aa8e0e6dc5e0acf432cc06a76f5d33baf" title="Enable high&#45;accuracy integration for excitations." alt="" coords="115,388,328,416"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="53,337,78,356,109,373,129,381,127,386,107,378,75,360,49,341"/>
+<area shape="rect" id="Node000008" href="$classSimJob.html#a20b37e2e0aa2502a3ec465a5705b1774" title="Evaluate fields on a set of points read from a file." alt="" coords="155,440,288,468"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="42,338,67,382,86,405,109,425,141,440,139,445,106,429,83,409,63,385,38,340"/>
+<area shape="rect" id="Node000055" href="$classSimJob.html#a76044195996b2e4b7d30654549e9af9b" title="Load binary lookup table used by periodic Green&#39;s function acceleration." alt="" coords="124,492,320,520"/>
+<area shape="poly" id="edge64_Node000001_Node000055" title=" " alt="" coords="39,338,46,367,59,405,80,444,109,477,116,482,113,487,106,481,76,447,55,407,41,369,34,339"/>
+<area shape="rect" id="Node000009" href="$classSimJob.html#a07cd9c621e5cc832dff656272529a8bb" title="Absorption cross&#45;section." alt="" coords="406,29,567,57"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="288,449,313,440,334,425,350,405,361,385,371,345,370,305,362,264,354,223,351,180,358,136,368,114,382,91,398,74,418,62,421,66,402,78,386,94,372,116,363,138,356,181,359,222,367,263,375,304,376,345,366,387,354,408,338,429,316,445,290,454"/>
+<area shape="rect" id="Node000011" href="$SimJob_8cpp.html#a4e11941feabcc94ac6a1f50dc8d90394" title="Close and deallocate a set of open output files." alt="" coords="434,104,540,132"/>
+<area shape="poly" id="edge10_Node000008_Node000011" title=" " alt="" coords="288,449,313,440,334,425,357,391,366,357,364,322,358,287,351,251,350,215,358,179,382,143,398,130,417,122,419,126,401,134,386,146,363,181,355,216,357,250,363,286,369,321,371,357,362,393,338,429,316,445,290,454"/>
+<area shape="rect" id="Node000012" href="$classDomain.html#a3740efee36b6693e4fda2bc916552efd" title="Delete and clear all incident sources." alt="" coords="384,156,589,184"/>
+<area shape="poly" id="edge11_Node000008_Node000012" title=" " alt="" coords="288,448,313,440,334,425,354,398,362,370,362,341,358,313,354,283,354,254,362,224,382,195,386,191,389,195,386,198,367,226,359,254,359,283,363,312,367,341,367,371,358,400,338,429,315,445,289,454"/>
+<area shape="rect" id="Node000013" href="$SimJob_8cpp.html#a6c07f30d5cdc5dc98cdc21ce445933cb" title="Compute the element&#45;wise complex conjugate of a 3&#45;vector." alt="" coords="450,208,523,236"/>
+<area shape="poly" id="edge12_Node000008_Node000013" title=" " alt="" coords="288,448,313,440,334,425,350,404,358,383,359,361,358,338,358,292,365,269,382,247,406,231,434,222,435,227,409,235,386,250,370,272,363,293,363,338,364,361,363,384,355,407,338,429,315,444,290,453"/>
+<area shape="rect" id="Node000015" href="$classSimJob.html#ab3887eb9e217b1d6424ff85aec4b1793" title="Find which domain contains a point." alt="" coords="894,468,1089,496"/>
+<area shape="poly" id="edge15_Node000008_Node000015" title=" " alt="" coords="289,447,534,439,689,441,846,451,915,462,914,467,845,456,689,447,534,445,289,452"/>
+<area shape="rect" id="Node000016" href="$classSimJob.html#a6db37fa49c08fa49ae7888c32c8f382d" title="Allocate and zero a new solution vector x, and append to solVectors." alt="" coords="406,635,567,662"/>
+<area shape="poly" id="edge16_Node000008_Node000016" title=" " alt="" coords="290,455,315,464,338,479,352,496,360,514,363,551,366,586,372,603,386,620,394,627,391,631,382,624,368,606,360,588,358,551,355,516,348,499,334,482,313,469,288,460"/>
+<area shape="rect" id="Node000017" href="$classSimJob.html#a6d465e65b1b6b9cf7cf9446369885786" title="Extinction cross&#45;section." alt="" coords="408,687,565,714"/>
+<area shape="poly" id="edge17_Node000008_Node000017" title=" " alt="" coords="290,455,315,463,338,479,356,503,364,528,365,552,363,577,361,601,362,625,369,649,386,672,397,681,393,685,382,676,364,651,357,626,355,601,358,577,360,552,359,529,351,505,334,482,313,468,288,460"/>
+<area shape="rect" id="Node000019" href="$classSimJob.html#aa492cf9e3639f2dfa91e36364a76729a" title="Thread worker to evaluate fields over posvec in parallel." alt="" coords="396,364,577,392"/>
+<area shape="poly" id="edge19_Node000008_Node000019" title=" " alt="" coords="288,437,335,425,383,407,423,394,425,399,385,412,337,430,290,442"/>
+<area shape="rect" id="Node000030" href="$classDomain.html#a8bd77bbd144186387e71441866606e05" title="Check whether any incident field is a dipole." alt="" coords="410,739,563,766"/>
+<area shape="poly" id="edge32_Node000008_Node000030" title=" " alt="" coords="290,454,315,463,338,479,359,510,368,541,368,572,363,603,358,634,358,664,366,694,386,724,399,734,395,738,382,728,361,696,353,665,353,633,358,602,362,572,363,542,355,512,334,482,313,468,288,459"/>
+<area shape="rect" id="Node000031" href="$classSimJob.html#a83d402c189aeefdce43afbd3cb66f709" title="Parse a full &#160;block from the already&#45;open JobParser." alt="" coords="406,583,567,610"/>
+<area shape="poly" id="edge33_Node000008_Node000031" title=" " alt="" coords="290,462,337,478,374,499,408,523,463,570,459,574,405,527,371,503,335,483,288,467"/>
+<area shape="rect" id="Node000047" href="$classSimJob.html#a5845b99ec65d0662225efd5482a4ccd1" title="Load a previously saved solution vector into solVectors.back()." alt="" coords="396,919,577,946"/>
+<area shape="poly" id="edge48_Node000008_Node000047" title=" " alt="" coords="290,453,316,462,338,479,356,502,369,525,382,569,381,613,374,657,366,701,361,747,366,796,374,821,386,847,414,882,448,908,444,912,410,886,382,850,369,823,361,797,356,747,360,701,369,656,376,612,376,570,364,527,352,505,334,482,313,467,288,458"/>
+<area shape="rect" id="Node000048" href="$group__driver.html#ga3859b179ce92396b3d9187e4437d8826" title="Read a value of type T from a text stream, skipping lines beginning with &#39;#&#39;." alt="" coords="674,1037,809,1065"/>
+<area shape="poly" id="edge59_Node000008_Node000048" title=" " alt="" coords="290,454,316,463,338,479,364,516,374,552,374,588,369,624,363,661,361,698,367,736,386,776,409,804,433,822,458,834,484,843,538,862,565,879,591,905,602,922,609,938,614,968,620,996,627,1009,639,1022,661,1036,658,1041,636,1027,622,1012,615,998,608,969,604,939,598,924,587,909,561,884,535,867,482,848,456,839,430,827,405,808,382,779,362,738,356,698,358,660,364,624,369,588,369,553,359,518,334,482,313,467,288,459"/>
+<area shape="rect" id="Node000049" href="$classSimJob.html#adba2c6ff445d17b3d75443f94a7de5eb" title="Parse one &#160;(incident specification + label)." alt="" coords="384,465,589,493"/>
+<area shape="poly" id="edge50_Node000008_Node000049" title=" " alt="" coords="289,458,369,465,368,471,289,463"/>
+<area shape="rect" id="Node000050" href="$classSimJob.html#a201222576f4e7d4dba3372d1f0615765" title="Net time&#45;averaged power crossing the domain&#39;s surface." alt="" coords="430,260,544,288"/>
+<area shape="poly" id="edge55_Node000008_Node000050" title=" " alt="" coords="288,447,313,439,334,425,347,411,354,396,358,364,361,331,369,314,382,298,413,281,416,285,386,303,373,317,367,332,363,364,359,397,351,413,338,429,315,443,290,452"/>
+<area shape="rect" id="Node000052" href="$SimJob_8cpp.html#afd2614e8171c7074caa9db28bfd14092" title="Extract the real part of each component of a complex 3&#45;vector." alt="" coords="450,312,523,340"/>
+<area shape="poly" id="edge60_Node000008_Node000052" title=" " alt="" coords="288,445,312,437,334,425,350,408,358,389,365,369,382,350,408,337,434,329,436,334,410,342,386,355,370,372,363,391,355,411,338,429,314,442,290,450"/>
+<area shape="rect" id="Node000053" href="$classSimJob.html#a0ddeadc300108c36a5fd446397ce63a3" title="Scattering cross&#45;section." alt="" coords="408,1076,565,1104"/>
+<area shape="poly" id="edge62_Node000008_Node000053" title=" " alt="" coords="290,453,316,462,338,479,350,497,359,519,370,575,374,641,374,712,372,853,376,912,387,957,402,988,421,1016,461,1063,457,1067,417,1020,397,990,381,959,371,913,367,853,369,712,369,641,365,575,354,521,345,499,334,482,313,467,288,458"/>
+<area shape="rect" id="Node000010" href="$classDomain.html#ab2bafcb18de17fbe57d244ffad6d9061" title="Absorption cross section." alt="" coords="658,5,825,33"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="567,33,643,26,643,31,568,38"/>
+<area shape="rect" id="Node000014" href="$Domain_8cpp.html#abbd88d15240455cf734121fcd73b3a03" title="Compute the element&#45;wise complex conjugate of a 3&#45;vector." alt="" coords="967,68,1016,96"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="523,217,557,210,588,193,598,181,605,169,610,143,615,117,623,104,636,93,675,73,717,60,761,53,805,50,888,57,952,69,951,74,887,62,805,56,762,58,719,65,677,78,639,97,627,108,620,119,615,144,610,171,603,184,591,197,558,215,524,222"/>
+<area shape="poly" id="edge14_Node000014_Node000014" title=" " alt="" coords="965,77,946,67,942,60,944,53,959,44,991,41,1019,44,1036,50,1041,60,1032,71,1028,67,1035,59,1032,54,1018,49,991,47,961,50,948,56,947,59,950,63,968,73"/>
+<area shape="rect" id="Node000018" href="$classDomain.html#a1a077dfc89bc49abc4db5404ae271ef8" title="Extinction cross section." alt="" coords="660,985,823,1013"/>
+<area shape="poly" id="edge18_Node000017_Node000018" title=" " alt="" coords="567,709,591,725,613,757,621,788,621,819,616,850,611,881,611,911,619,941,639,971,648,979,645,983,635,974,614,943,606,912,606,880,611,849,615,819,616,789,608,759,587,729,564,713"/>
+<area shape="rect" id="Node000020" href="$classSimJob.html#a24f10b7bb14c9181341d07a783e00214" title="Return both , &#160;incident and secondary pairs at pos." alt="" coords="668,260,815,288"/>
+<area shape="poly" id="edge20_Node000019_Node000020" title=" " alt="" coords="561,361,588,349,602,337,611,324,620,311,636,298,652,290,654,295,639,303,624,315,616,327,606,341,591,353,564,366"/>
+<area shape="rect" id="Node000026" href="$classSimJob.html#a746e46ef2aa6843c2f4da96e472c75a3" title="Incident and secondary &#160;at pos (domain auto&#45;detected)." alt="" coords="685,312,798,340"/>
+<area shape="poly" id="edge24_Node000019_Node000026" title=" " alt="" coords="558,361,669,338,670,343,559,366"/>
+<area shape="rect" id="Node000028" href="$classSimJob.html#ae9e4bc91d7636bf3e7fd151c870cd01f" title="Incident and secondary &#160;at pos (domain auto&#45;detected)." alt="" coords="684,364,799,392"/>
+<area shape="poly" id="edge28_Node000019_Node000028" title=" " alt="" coords="578,375,668,375,668,380,578,380"/>
+<area shape="rect" id="Node000021" href="$classDomain.html#afe5c1f862e335ab05031b1d6b0b87c42" title="Total incident electric field at a point from all incident sources." alt="" coords="922,260,1060,288"/>
+<area shape="poly" id="edge21_Node000020_Node000021" title=" " alt="" coords="816,271,906,271,906,276,816,276"/>
+<area shape="rect" id="Node000022" href="$classDomain.html#a832a36e6ba8ae02be3dd493bd2577d4a" title="Total incident magnetic field at a point from all incident sources." alt="" coords="921,364,1062,392"/>
+<area shape="poly" id="edge22_Node000020_Node000022" title=" " alt="" coords="817,285,847,298,863,311,872,324,881,337,895,349,908,356,906,360,892,353,877,341,868,327,859,315,844,303,815,290"/>
+<area shape="rect" id="Node000023" href="$classDomain.html#a1d339cb7979c5b2d03d069fc09b40696" title="Secondary fields &#160;at a point." alt="" coords="903,208,1080,236"/>
+<area shape="poly" id="edge23_Node000020_Node000023" title=" " alt="" coords="811,257,906,237,907,242,812,262"/>
+<area shape="poly" id="edge25_Node000026_Node000015" title=" " alt="" coords="800,329,825,337,847,350,859,363,867,377,872,403,878,429,884,441,895,453,902,458,898,462,892,457,880,444,873,431,867,404,862,378,855,366,844,355,822,342,798,334"/>
+<area shape="poly" id="edge26_Node000026_Node000021" title=" " alt="" coords="798,312,906,289,908,294,799,317"/>
+<area shape="rect" id="Node000027" href="$classDomain.html#ae1e6975d3ddc5fe177020d447673fdf7" title="Secondary (scattered) electric field at a point from the solution vector." alt="" coords="920,312,1062,340"/>
+<area shape="poly" id="edge27_Node000026_Node000027" title=" " alt="" coords="798,323,904,323,904,328,798,328"/>
+<area shape="poly" id="edge29_Node000028_Node000015" title=" " alt="" coords="801,388,847,408,862,419,872,431,881,442,895,453,908,459,906,464,892,457,877,446,868,434,858,423,844,412,799,393"/>
+<area shape="poly" id="edge30_Node000028_Node000022" title=" " alt="" coords="800,375,906,375,906,380,800,380"/>
+<area shape="rect" id="Node000029" href="$classDomain.html#a507d3690b3a17a9f01beb83a2d6b026e" title="Secondary (scattered) magnetic field at a point from the solution vector." alt="" coords="919,416,1064,444"/>
+<area shape="poly" id="edge31_Node000028_Node000029" title=" " alt="" coords="800,387,907,410,906,415,799,392"/>
+<area shape="rect" id="Node000032" href="$classSimJob.html#ae16a5d8bdcf14121a812acd22b3c573a" title="Parse and load dipole excitation from ." alt="" coords="668,569,815,597"/>
+<area shape="poly" id="edge34_Node000031_Node000032" title=" " alt="" coords="568,590,652,585,652,590,568,595"/>
+<area shape="rect" id="Node000035" href="$classSimJob.html#a9a630e54dbd3c59d8d0c5872fe082478" title="Parse and load homogeneous domain definition from ." alt="" coords="663,673,820,701"/>
+<area shape="poly" id="edge36_Node000031_Node000035" title=" " alt="" coords="559,608,591,621,605,630,615,640,625,649,639,658,656,666,654,670,636,663,621,653,611,644,602,634,588,626,557,613"/>
+<area shape="rect" id="Node000036" href="$classSimJob.html#a4aed0b2fa9b728b0fcb8834d6cd9c3fd" title="Parse and load layered&#45;media domain from ." alt="" coords="637,725,846,753"/>
+<area shape="poly" id="edge37_Node000031_Node000036" title=" " alt="" coords="569,608,591,621,609,644,616,667,622,689,639,711,646,715,643,720,636,714,617,692,611,669,604,646,588,625,567,613"/>
+<area shape="rect" id="Node000037" href="$classSimJob.html#a9d261a88162a72dc73b70f0f71d69164" title="Parse and load periodic domain definition from ." alt="" coords="653,777,830,805"/>
+<area shape="poly" id="edge38_Node000031_Node000037" title=" " alt="" coords="569,607,591,621,606,639,613,657,616,694,619,729,626,746,639,763,644,767,641,771,635,766,621,749,614,730,611,694,608,659,601,642,588,625,566,611"/>
+<area shape="rect" id="Node000039" href="$classSimJob.html#a762457879a5f323daff8a2802ee937bd" title="Parse and load Gaussian&#45;beam excitation from ." alt="" coords="659,208,824,236"/>
+<area shape="poly" id="edge39_Node000031_Node000039" title=" " alt="" coords="509,580,550,548,570,527,587,503,602,467,607,434,602,371,600,340,602,309,613,278,635,247,644,239,648,243,639,250,617,281,607,311,605,340,608,370,612,434,607,469,592,506,574,530,554,552,513,584"/>
+<area shape="rect" id="Node000041" href="$classSimJob.html#a6d48eb7a13a50bdc8f9dc965165ed873" title="Parse and load simulation label from &#160;section." alt="" coords="671,517,812,545"/>
+<area shape="poly" id="edge42_Node000031_Node000041" title=" " alt="" coords="543,579,669,547,670,552,545,585"/>
+<area shape="rect" id="Node000042" href="$classSimJob.html#a7bb5eda7b7e62f899d8bf72ba8f33742" title="Parse and load mesh data from &#160;(non&#45;periodic case)." alt="" coords="671,829,812,857"/>
+<area shape="poly" id="edge43_Node000031_Node000042" title=" " alt="" coords="569,606,591,621,609,646,617,671,618,696,616,720,614,744,615,768,622,792,639,815,659,828,656,833,635,818,618,794,610,769,609,744,611,720,613,695,612,672,604,648,587,625,566,611"/>
+<area shape="rect" id="Node000043" href="$classSimJob.html#ac940b4b962fac361f3746deef6eb2e19" title="Parse and load periodic mesh from &#160;(applies symmetry operations)." alt="" coords="661,881,822,909"/>
+<area shape="poly" id="edge44_Node000031_Node000043" title=" " alt="" coords="569,606,591,621,613,653,621,684,621,715,616,746,611,777,611,807,619,837,639,867,649,875,646,879,635,870,614,839,606,808,606,776,611,745,615,715,616,685,608,655,587,625,566,610"/>
+<area shape="rect" id="Node000044" href="$classSimJob.html#a99c23586a8ba7184a750c694da6d9628" title="Parse and load periodicity parameters from ." alt="" coords="654,933,829,961"/>
+<area shape="poly" id="edge45_Node000031_Node000044" title=" " alt="" coords="569,605,591,621,616,659,625,697,623,735,616,772,609,809,607,846,616,882,639,919,643,923,640,927,635,922,611,884,602,846,604,809,611,771,618,734,619,698,611,661,587,625,566,610"/>
+<area shape="rect" id="Node000045" href="$classSimJob.html#a9b33589923ea7f4e5b671e55ecf2b320" title="Parse and load plane&#45;wave excitation from ." alt="" coords="653,465,830,493"/>
+<area shape="poly" id="edge46_Node000031_Node000045" title=" " alt="" coords="506,580,563,542,636,503,658,495,660,500,638,508,565,547,509,584"/>
+<area shape="rect" id="Node000046" href="$classSimJob.html#a21c36c1d2aa7937ca484527515e35263" title="Parse and load wavelength from ." alt="" coords="650,621,833,649"/>
+<area shape="poly" id="edge47_Node000031_Node000046" title=" " alt="" coords="568,606,636,616,635,622,567,611"/>
+<area shape="poly" id="edge35_Node000032_Node000015" title=" " alt="" coords="807,566,845,554,902,528,952,501,955,506,904,533,847,559,809,571"/>
+<area shape="rect" id="Node000040" href="$Domain_8cpp.html#aafa3e4fa6318b2f8740f4dbd50c367e5" title="Extract the real part of each component of a complex 3&#45;vector." alt="" coords="968,156,1014,184"/>
+<area shape="poly" id="edge40_Node000039_Node000040" title=" " alt="" coords="811,205,952,175,953,180,812,210"/>
+<area shape="poly" id="edge41_Node000040_Node000040" title=" " alt="" coords="966,166,946,155,942,148,943,141,959,133,991,129,1020,132,1037,138,1040,149,1031,159,1027,155,1035,148,1033,142,1019,137,991,135,961,138,948,144,947,147,950,151,969,161"/>
+<area shape="poly" id="edge49_Node000047_Node000048" title=" " alt="" coords="509,945,565,983,638,1022,660,1030,658,1035,636,1027,563,988,506,949"/>
+<area shape="poly" id="edge51_Node000049_Node000032" title=" " alt="" coords="513,491,569,522,638,554,662,562,660,567,636,559,567,527,510,496"/>
+<area shape="poly" id="edge52_Node000049_Node000039" title=" " alt="" coords="514,463,552,437,587,402,599,381,604,361,607,322,611,285,620,266,635,247,644,240,647,244,639,250,624,268,616,286,612,323,610,362,604,383,591,405,556,441,517,467"/>
+<area shape="poly" id="edge53_Node000049_Node000041" title=" " alt="" coords="559,491,657,511,655,516,558,496"/>
+<area shape="poly" id="edge54_Node000049_Node000045" title=" " alt="" coords="590,476,638,476,638,482,590,482"/>
+<area shape="rect" id="Node000051" href="$classDomain.html#a3087596044d4c345f84faaad1291946d" title="Power crossing the domain boundary computed from the RWG solution." alt="" coords="681,107,802,134"/>
+<area shape="poly" id="edge56_Node000050_Node000051" title=" " alt="" coords="543,265,567,258,588,245,598,234,605,223,611,199,617,175,636,151,666,133,668,138,639,154,622,177,616,201,610,225,603,237,591,249,569,262,545,270"/>
+<area shape="poly" id="edge57_Node000051_Node000014" title=" " alt="" coords="802,109,951,85,952,90,802,114"/>
+<area shape="poly" id="edge58_Node000051_Node000040" title=" " alt="" coords="803,130,954,160,953,165,802,135"/>
+<area shape="poly" id="edge61_Node000052_Node000040" title=" " alt="" coords="523,321,557,314,588,297,599,285,605,273,610,246,615,219,623,206,636,194,675,173,717,158,761,150,805,146,888,149,953,159,952,164,888,154,805,151,762,155,718,163,677,178,639,199,627,209,620,221,615,247,610,274,603,288,591,301,559,319,524,326"/>
+<area shape="rect" id="Node000054" href="$classDomain.html#ae3d63e9f403a667aafad7575076e9975" title="Scattering cross section." alt="" coords="660,1089,823,1117"/>
+<area shape="poly" id="edge63_Node000053_Node000054" title=" " alt="" coords="566,1091,645,1095,645,1101,565,1097"/>
+</map>

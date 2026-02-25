@@ -1,0 +1,19 @@
+<map id="SurfaceMesh::FindEdgeFB" name="SurfaceMesh::FindEdgeFB">
+<area shape="rect" id="Node000001" title="Find the index of an existing edge between two nodes (direct match)." alt="" coords="1181,57,1370,85"/>
+<area shape="rect" id="Node000002" href="$classSurfaceMesh.html#ad8c7eef9fac668b92caf8b4418dcb4ff" title="Insert edge (n1,n2) if not already present (directly or via BC image)." alt="" coords="921,57,1133,85"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1165,74,1134,74,1134,68,1165,68"/>
+<area shape="rect" id="Node000003" href="$classSurfaceMesh.html#ad8ac4a9fe716d917b92e245d091ab553" title="Read mesh from the custom &quot;.mesh&quot; text format." alt="" coords="632,5,867,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="933,56,827,36,828,31,934,51"/>
+<area shape="rect" id="Node000007" href="$classSurfaceMesh.html#ab392f262cacf93c286ef49cbe95f2a66" title="Read mesh from a COMSOL &quot;.mphtxt&quot; file." alt="" coords="626,57,873,85"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="905,74,873,74,873,68,905,68"/>
+<area shape="rect" id="Node000008" href="$classSurfaceMesh.html#ae7486b3dfa647ae8ee6063bd6297f5ff" title="Read mesh from a Gmsh &quot;.msh&quot; file (v2 text)." alt="" coords="636,109,863,137"/>
+<area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="934,91,828,111,827,106,933,86"/>
+<area shape="rect" id="Node000004" href="$classSurfaceMesh.html#aa64ebb4992ea98778f79c272568c68d2" title="Load a mesh from file by extension." alt="" coords="378,57,578,85"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="659,39,555,59,554,54,658,34"/>
+<area shape="rect" id="Node000005" href="$classSurfaceMesh.html#aa8811e2b8b03caa6028d5d154a69ea71" title="Convert/modify a mesh according to a conversion job file." alt="" coords="108,57,330,85"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="362,74,331,74,331,68,362,68"/>
+<area shape="rect" id="Node000006" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Main driver routine for the HELIOS SIE simulation program." alt="" coords="5,57,60,85"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="92,74,60,74,60,68,92,68"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="611,74,579,74,579,68,611,68"/>
+<area shape="poly" id="edge9_Node000008_Node000004" title=" " alt="" coords="658,108,554,88,555,83,659,103"/>
+</map>

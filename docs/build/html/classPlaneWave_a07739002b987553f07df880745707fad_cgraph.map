@@ -1,0 +1,19 @@
+<map id="PlaneWave::PlaneWave" name="PlaneWave::PlaneWave">
+<area shape="rect" id="Node000001" title="Construct a plane wave in a layered medium." alt="" coords="5,108,179,136"/>
+<area shape="rect" id="Node000002" href="$classPlaneWave.html#ade82a6ff2d60f8df4553d51837525a1c" title="Evaluate the electric and magnetic fields at a given position in layered media." alt="" coords="458,100,668,144"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="179,119,443,119,443,124,179,124"/>
+<area shape="rect" id="Node000008" href="$classPlaneWave.html#a1f1fd1b5140ab23b3ec7899e6962e60f" title="Write E and H field values at sample points to CSV files." alt="" coords="227,133,410,161"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="179,129,211,133,211,138,179,134"/>
+<area shape="rect" id="Node000003" href="$classPlaneWave.html#a66641ca1cfa189357ce861df408c1d67" title="Computes the square root of a complex number with proper handling of negative imaginary parts." alt="" coords="716,29,900,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="628,96,716,67,741,59,743,64,717,72,630,101"/>
+<area shape="rect" id="Node000005" href="$classPlaneWave.html#a21e80621788fddf887cf27b7c6f9bdf7" title="Evaluate the electric field at a given position (homogeneous)." alt="" coords="725,81,891,109"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="669,108,709,103,710,109,669,113"/>
+<area shape="rect" id="Node000006" href="$classPlaneWave.html#a25c1de1e9cee6a241765539a4b22f103" title="Evaluate the magnetic field at a given position (homogeneous)." alt="" coords="724,133,892,161"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="669,130,709,134,708,140,669,135"/>
+<area shape="rect" id="Node000007" href="$classPlaneWave.html#aa6b2d336c79c07cf23471fe99642d933" title="Convert rvec to cvec (real vector to complex vector)." alt="" coords="724,185,892,213"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="632,142,717,170,743,178,741,183,716,175,631,147"/>
+<area shape="rect" id="Node000004" href="$Domain_8cpp.html#aafa3e4fa6318b2f8740f4dbd50c367e5" title="Extract the real part of each component of a complex 3&#45;vector." alt="" coords="948,29,994,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="900,40,932,40,932,46,900,46"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="945,33,938,22,940,12,952,5,971,3,994,6,1003,16,999,19,991,11,971,8,953,10,945,15,943,21,949,30"/>
+<area shape="poly" id="edge9_Node000008_Node000002" title=" " alt="" coords="410,135,442,132,443,137,411,140"/>
+</map>

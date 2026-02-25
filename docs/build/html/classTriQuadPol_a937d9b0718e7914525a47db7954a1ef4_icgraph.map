@@ -1,0 +1,9 @@
+<map id="TriQuadPol::getQuadPoints" name="TriQuadPol::getQuadPoints">
+<area shape="rect" id="Node000001" title="Quadrature nodes (barycentric triples)." alt="" coords="259,83,452,111"/>
+<area shape="rect" id="Node000002" href="$classGreenFLayered3D.html#afbdbfdc8fc40fc885f6377d5be242d36" title="term at an observation point." alt="" coords="5,5,211,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="288,81,190,53,191,48,289,76"/>
+<area shape="rect" id="Node000003" href="$classGreenFLayered3D.html#a439eddb43f46fb52f6c84898ea12aa40" title="term at an observation point." alt="" coords="5,75,211,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="243,100,211,100,211,94,243,94"/>
+<area shape="rect" id="Node000004" href="$classGreenFLayered3D.html#af46d152fbc30bdc418ff16e5e7a334c6" title="Point–triangle delta/kappa contributions for RHS assembly." alt="" coords="9,144,207,189"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="289,118,191,146,190,141,288,113"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Ep" name="Ep">
+<area shape="rect" id="Node000001" title="Exponential integral of &#160;order." alt="" coords="5,29,44,57"/>
+<area shape="poly" id="edge3_Node000001_Node000001" title=" " alt="" coords="8,29,7,12,14,5,25,3,36,5,42,12,38,15,33,10,25,8,17,10,12,14,13,29"/>
+<area shape="rect" id="Node000002" href="$mathFunctions_8cpp.html#a08aa713aa80e71c4c0e2c81ff7d1df50" title="Exponential integral function E1/Ei(x)." alt="" coords="92,29,130,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="44,40,76,40,76,46,44,46"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="94,29,94,12,100,5,111,3,122,5,128,12,124,15,119,10,111,8,103,10,99,14,100,29"/>
+</map>

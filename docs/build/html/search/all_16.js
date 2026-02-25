@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['w_0',['w',['../classSingCancellation.html#a993ac3119615aa4c55ee7a07eff1211d',1,'SingCancellation']]],
+  ['w0_1',['w0',['../classGaussian.html#ae3dbd384e89f118dd1eaf222f892c5a5',1,'Gaussian']]],
+  ['w1_2',['w1',['../namespacedunavant.html#aec3459816716d1a6ebed2975dd954f84',1,'dunavant::w1'],['../namespacegausslegendre.html#aec08211173e0a957fead62379d2ca493',1,'gausslegendre::w1']]],
+  ['w17_3',['w17',['../namespacedunavant.html#afd3e81f1730c90be401a09bdff55e99d',1,'dunavant::w17'],['../namespacegausslegendre.html#a3b01b696bf14d90839d420422c6689ce',1,'gausslegendre::w17']]],
+  ['w3_4',['w3',['../namespacegausslegendre.html#ab8d2b4053bb3f2edacd16c62c657dcfb',1,'gausslegendre']]],
+  ['w4_5',['w4',['../namespacegausslegendre.html#a851455eadbdef132d18a540238319688',1,'gausslegendre']]],
+  ['w5_6',['w5',['../namespacedunavant.html#a9a7dd7b1990b8b02231ac6ad5b62062a',1,'dunavant']]],
+  ['w8_7',['w8',['../namespacegausslegendre.html#a8f3164eb46c8fd8401517d3ff1aaa1e1',1,'gausslegendre']]],
+  ['waist_8',['Waist',['../classGaussian.html#a25de64854de917ae29473a55cf09c0be',1,'Gaussian']]],
+  ['wavelength_9',['wavelength',['../classGreenF.html#a551f07ab3b294c7b200eb578026bfa02',1,'GreenF']]],
+  ['wavevec_10',['WaveVec',['../classGreenF.html#a00b8e60822da0d787d66c4554c59189d',1,'GreenF']]],
+  ['wavevector_11',['Wavevector',['../classPlaneWave.html#aef5b0a933a9727948336bcdb707d8399',1,'PlaneWave']]],
+  ['work_12',['Limitations and future work',['../index.html#autotoc_md11',1,'']]],
+  ['workflow_13',['Typical workflow',['../index.html#autotoc_md6',1,'']]],
+  ['wquadrature_14',['wQuadrature',['../classSingCancellation.html#a99802f89c3a53fad46c61d31b85eec3c',1,'SingCancellation::wQuadrature'],['../classTriQuadPol.html#a3c18df1bb2cc09ba59e8fb3ede3aad10',1,'TriQuadPol::wQuadrature']]],
+  ['write3dmatrixtofile_15',['write3DMatrixToFile',['../classSommerfeldIntegrator.html#ae6b066494d7f0e8d6dfd9c8e282f9e5a',1,'SommerfeldIntegrator']]],
+  ['writeehdata_16',['writeEHData',['../classPlaneWave.html#a1f1fd1b5140ab23b3ec7899e6962e60f',1,'PlaneWave']]],
+  ['writefields_17',['writeFields',['../classDomainLayered3D.html#a90a6c55e3461b8ef69bde6571ad6e7bc',1,'DomainLayered3D']]],
+  ['writegridstofile_18',['writeGridsToFile',['../classGreenFLayered3D.html#a3d7d1fd5119cd94113055a44cea0c132',1,'GreenFLayered3D']]],
+  ['writematlabmatrixtotxt_19',['writeMatlabMatrixToTxt',['../classSingCancellation.html#a671bbe3bcc58c21a3fa62e605fd36be8',1,'SingCancellation']]],
+  ['writematlabvectortotxt_20',['writeMatlabVectorToTxt',['../classSingCancellation.html#a099933b83efb63d62f2b5d1c26b6b7e8',1,'SingCancellation']]],
+  ['writematrixtofile_21',['writeMatrixToFile',['../classSommerfeldIntegrator.html#aab7ff3d330e81d60b341e937b4dbe2d4',1,'SommerfeldIntegrator']]],
+  ['writenode_22',['WriteNode',['../Bsp3D_8cpp.html#af2cf06308ca594c5d2b4b0319e815cc7',1,'Bsp3D.cpp']]],
+  ['writevectortofile_23',['WriteVectorToFile',['../classSimJob.html#ac98a015c25c8e733475caf3c44317d0c',1,'SimJob']]],
+  ['writevectortofile_24',['writeVectorToFile',['../classGreenFLayered3D.html#a74a468a93bf93bd4acd39989502a10fd',1,'GreenFLayered3D::writeVectorToFile(const std::vector&lt; double &gt; &amp;x, const std::vector&lt; double &gt; &amp;y, const std::vector&lt; dcmplx &gt; &amp;inVec, const std::string &amp;filename)'],['../classGreenFLayered3D.html#a5a5a7a977776b2970afd629c67a4cd7b',1,'GreenFLayered3D::writeVectorToFile(const std::vector&lt; rvec &gt; &amp;rho, const std::vector&lt; double &gt; &amp;inVec, const std::string &amp;filename)'],['../classGreenFLayered3D.html#afbbeb440a2dcc7d185d9ae5ca5a46a87',1,'GreenFLayered3D::writeVectorToFile(const std::vector&lt; double &gt; &amp;x, const std::vector&lt; double &gt; &amp;y, const std::vector&lt; double &gt; &amp;z, const std::vector&lt; dcmplx &gt; &amp;inVec, const std::string &amp;filename)']]]
+];

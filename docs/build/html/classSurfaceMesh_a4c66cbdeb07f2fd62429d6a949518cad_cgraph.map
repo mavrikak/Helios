@@ -1,0 +1,5 @@
+<map id="SurfaceMesh::SaveToMeshFile" name="SurfaceMesh::SaveToMeshFile">
+<area shape="rect" id="Node000001" title="Write current mesh to the custom &quot;.mesh&quot; format." alt="" coords="5,5,223,33"/>
+<area shape="rect" id="Node000002" href="$classSurfaceMesh.html#adac4bd062647ba2d6a9662ae3683abc2" title="Return index of a node pointer within the owned node array." alt="" coords="271,5,477,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="223,16,255,16,255,22,223,22"/>
+</map>

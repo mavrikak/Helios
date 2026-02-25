@@ -1,0 +1,17 @@
+<map id="Triangle::Triangle" name="Triangle::Triangle">
+<area shape="rect" id="Node000001" title="Construct from 3 node pointers and bordering domains." alt="" coords="545,140,676,168"/>
+<area shape="rect" id="Node000002" href="$classTriangle.html#a6a5a3532e273e1fbb69b26eea2f509c0" title="Count common nodes with triangle T (0..3)." alt="" coords="306,57,480,85"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="570,135,496,100,458,88,459,83,498,95,572,130"/>
+<area shape="rect" id="Node000006" href="$classTriangle.html#a110eb211c31cc4fa6a936d8d4c201306" title="Count common nodes with T after translating T by vector t." alt="" coords="306,109,480,137"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="529,145,480,138,481,133,530,140"/>
+<area shape="rect" id="Node000007" href="$classTriangle.html#aab413203fc04781220ce7cf8224105bd" title="Find common edge local indices with T." alt="" coords="294,161,492,206"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="530,167,493,172,492,167,529,162"/>
+<area shape="rect" id="Node000008" href="$classTriangle.html#aa137190a0a6fd9adadee37a8228313d6" title="Find common vertex local indices with T." alt="" coords="289,230,497,275"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="576,178,498,220,469,232,467,227,496,215,573,174"/>
+<area shape="rect" id="Node000003" href="$classGreenFHom3D.html#a419cbe00b5a2aed70ac546904a8a8d6f" title="Compute &#160;and &#160;for all RWG pairs on two triangles." alt="" coords="25,5,221,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="302,56,198,36,199,31,303,51"/>
+<area shape="rect" id="Node000004" href="$classGreenFHom3DPer2D.html#a1dc9dd84c93ee10b2fb4b1866103d957" title="Compute &#160;and &#160;for all RWG pairs on two triangles." alt="" coords="5,57,241,85"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="290,74,241,74,241,68,290,68"/>
+<area shape="rect" id="Node000005" href="$classGreenFLayered3D.html#a6c88af86169f8d148c3e9f4da77a77d0" title="Triangle–triangle D/K blocks assembly for all RWG pairs on two triangles." alt="" coords="14,109,232,137"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="303,91,199,111,198,106,302,86"/>
+</map>

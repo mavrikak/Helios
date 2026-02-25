@@ -1,0 +1,5 @@
+<map id="Domain::SecFieldH" name="Domain::SecFieldH">
+<area shape="rect" id="Node000001" title="Secondary (scattered) magnetic field at a point from the solution vector." alt="" coords="5,5,150,33"/>
+<area shape="rect" id="Node000002" href="$classDomain.html#a928ea926ed97bac309194301a8b509c3" title="Relative permittivity at a spatial location." alt="" coords="198,5,325,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="150,16,182,16,182,22,150,22"/>
+</map>

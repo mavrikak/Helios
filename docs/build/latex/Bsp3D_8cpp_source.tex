@@ -1,0 +1,225 @@
+\doxysection{Bsp3\+D.\+cpp}
+\hypertarget{Bsp3D_8cpp_source}{}\label{Bsp3D_8cpp_source}\index{Bsp3D.cpp@{Bsp3D.cpp}}
+\mbox{\hyperlink{Bsp3D_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Bsp3D_8h}{Bsp3D.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00016}\mbox{\hyperlink{Bsp3D_8cpp_a049413f2fd5f55fb3b1f16c7a3954cf3}{00016}}\ \textcolor{preprocessor}{\#define\ BSPTHRESH\ 1e-\/6}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00019}00019\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00020}00020\ \textcolor{comment}{//\ Construction\ \&\ destruction}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00021}00021\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00023}\mbox{\hyperlink{classBsp3D_a6780d5d9e7994fb46159aae82c98a229}{00023}}\ \mbox{\hyperlink{classBsp3D_a6780d5d9e7994fb46159aae82c98a229}{Bsp3D::Bsp3D}}()\ :\ \mbox{\hyperlink{classBsp3D_abfc29dcea0045ca9de2d4ff9ada2a121}{bud}}(false)\ \{\ \mbox{\hyperlink{classBsp3D_aacc13a8baf09e5af41c9c33ac5a84ffd}{elements}}.clear();\ \}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00025}\mbox{\hyperlink{classBsp3D_a2f7d0703d6bbc914be1c5791282414f5}{00025}}\ \mbox{\hyperlink{classBsp3D_a2f7d0703d6bbc914be1c5791282414f5}{Bsp3D::\string~Bsp3D}}()\ \{\ \textcolor{keyword}{delete}\ \mbox{\hyperlink{classBsp3D_a25ca9375075fa644c755f14fde3b7ae3}{bspInside}};\ \textcolor{keyword}{delete}\ \mbox{\hyperlink{classBsp3D_ad6ad0dfa6b94d52a7b18c0cd7a5511cf}{bspOutside}};\ \}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00027}00027\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00028}00028\ \textcolor{comment}{//\ Build\ operations}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00029}00029\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00031}00031\ \textcolor{comment}{//\ Choose\ the\ last\ pushed\ element\ as\ splitter\ and\ remove\ it\ from\ the\ queue.}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00032}\mbox{\hyperlink{classBsp3D_aa47770da171d55386ff3274412b58739}{00032}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBsp3D_aa47770da171d55386ff3274412b58739}{Bsp3D::SetSplitter}}()\ \{}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00033}00033\ \ \ \mbox{\hyperlink{classBsp3D_ac9a2bca5c6e38d8833c68314a75c24ed}{splitter}}\ =\ \mbox{\hyperlink{classBsp3D_aacc13a8baf09e5af41c9c33ac5a84ffd}{elements}}.back();}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00034}00034\ \ \ \mbox{\hyperlink{classBsp3D_aacc13a8baf09e5af41c9c33ac5a84ffd}{elements}}.pop\_back();}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00035}00035\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00036}00036\ \}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00038}00038\ \textcolor{comment}{//\ Wrap\ a\ triangle\ into\ a\ working\ polygon\ (copy\ the\ 3\ vertices).}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00039}\mbox{\hyperlink{classBsp3D_af9a47ebf1f5e7e871fe73572c8b0678c}{00039}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBsp3D_af9a47ebf1f5e7e871fe73572c8b0678c}{Bsp3D::AddElement}}(\mbox{\hyperlink{classTriangle}{Triangle}}\ *inElement,\ \textcolor{keywordtype}{int}\ inSide)\ \{}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00040}00040\ \ \ \mbox{\hyperlink{structbspPolygon}{bspPolygon}}\ *poly\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structbspPolygon}{bspPolygon}};}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00041}00041\ \ \ poly-\/>\mbox{\hyperlink{structbspPolygon_ab60b6f1844092d928472944666981730}{origin}}\ =\ inElement;}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00042}00042\ \ \ poly-\/>\mbox{\hyperlink{structbspPolygon_a223ccf04463cdd41f4026d0476ecdc71}{side}}\ =\ inSide;}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00043}00043\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i(0);\ i\ <\ 3;\ i++)\ poly-\/>\mbox{\hyperlink{structbspPolygon_a43bc3463de7c73d6e541aee79880ce6a}{nodes}}.push\_back(inElement-\/>\mbox{\hyperlink{classTriangle_a0752d2c9488c7c44b851b8f75abcaa79}{Node}}(i));}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00044}00044\ \ \ \mbox{\hyperlink{classBsp3D_aacc13a8baf09e5af41c9c33ac5a84ffd}{elements}}.push\_back(poly);}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00045}00045\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00046}00046\ \}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00048}00048\ \textcolor{comment}{//\ Add\ polygon\ to\ list}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00049}\mbox{\hyperlink{classBsp3D_a6f44d752a425714f45e67e33a3de2f4d}{00049}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBsp3D_af9a47ebf1f5e7e871fe73572c8b0678c}{Bsp3D::AddElement}}(\mbox{\hyperlink{structbspPolygon}{bspPolygon}}\ *poly)\ \{}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00050}00050\ \ \ \mbox{\hyperlink{classBsp3D_aacc13a8baf09e5af41c9c33ac5a84ffd}{elements}}.push\_back(poly);}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00051}00051\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00052}00052\ \}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00054}00054\ \textcolor{comment}{//\ Set\ this\ branch\ to\ a\ bud\ (leaf):\ branch\ with\ no\ elements}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00055}\mbox{\hyperlink{classBsp3D_ad91ed3b4eb5eaa1b63385e1aa7189039}{00055}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBsp3D_ad91ed3b4eb5eaa1b63385e1aa7189039}{Bsp3D::SetBud}}()\ \{}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00056}00056\ \ \ \mbox{\hyperlink{classBsp3D_abfc29dcea0045ca9de2d4ff9ada2a121}{bud}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00057}00057\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00058}00058\ \}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00060}00060\ \textcolor{comment}{//\ Query\ if\ this\ branch\ is\ a\ bud}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00061}\mbox{\hyperlink{classBsp3D_ac7d0527a8f17ee2dc2d5e735b7f2a78c}{00061}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBsp3D_ac7d0527a8f17ee2dc2d5e735b7f2a78c}{Bsp3D::IsBud}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classBsp3D_abfc29dcea0045ca9de2d4ff9ada2a121}{bud}};\ \}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00063}00063\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00064}00064\ \textcolor{comment}{//\ Geometry:\ plane\ classification}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00065}00065\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00067}00067\ \textcolor{comment}{//\ Test\ if\ a\ point\ is\ outside,\ inside\ or\ in\ plane\ with\ this\ branch's\ splitter}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00068}\mbox{\hyperlink{classBsp3D_aeef40776817ce8cec917de1fb2e84f7a}{00068}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classBsp3D_aeef40776817ce8cec917de1fb2e84f7a}{Bsp3D::LocTest}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ test)\ \{}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00069}00069\ \ \ \textcolor{keywordtype}{double}\ dist\ =\ \mbox{\hyperlink{classBsp3D_ab86d60e3ac1a432328b7b3115ba76d1b}{LocDist}}(test);}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00070}00070\ \ \ \textcolor{keywordflow}{if}\ (dist\ >\ \mbox{\hyperlink{Bsp3D_8cpp_a049413f2fd5f55fb3b1f16c7a3954cf3}{BSPTHRESH}})}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00071}00071\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;\ \ \ \textcolor{comment}{//\ Outside}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00072}00072\ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (dist\ <\ -\/\mbox{\hyperlink{Bsp3D_8cpp_a049413f2fd5f55fb3b1f16c7a3954cf3}{BSPTHRESH}})}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00073}00073\ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;\ \ \textcolor{comment}{//\ Inside}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00074}00074\ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00075}00075\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;\ \ \ \textcolor{comment}{//\ In\ plane}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00076}00076\ \}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00078}00078\ \textcolor{comment}{//\ Distance\ to\ splitter\ plane}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00079}\mbox{\hyperlink{classBsp3D_ab86d60e3ac1a432328b7b3115ba76d1b}{00079}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classBsp3D_ab86d60e3ac1a432328b7b3115ba76d1b}{Bsp3D::LocDist}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ test)\ \{}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00080}00080\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ ref\ =\ \mbox{\hyperlink{classBsp3D_ac9a2bca5c6e38d8833c68314a75c24ed}{splitter}}-\/>origin-\/>Center();}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00081}00081\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ normal\ =\ \mbox{\hyperlink{classBsp3D_ac9a2bca5c6e38d8833c68314a75c24ed}{splitter}}-\/>origin-\/>FBNormalVector(1\ -\/\ \mbox{\hyperlink{classBsp3D_ac9a2bca5c6e38d8833c68314a75c24ed}{splitter}}-\/>side);}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00082}00082\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ diff(test\ -\/\ ref);}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00083}00083\ \ \ \textcolor{keywordtype}{double}\ proj(dot(diff,\ normal));}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00084}00084\ \ \ \textcolor{keywordflow}{return}\ proj;}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00085}00085\ \}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00087}00087\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00088}00088\ \textcolor{comment}{//\ Core:\ split\ \&\ dispatch}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00089}00089\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00091}00091\ \textcolor{comment}{/*\ Assign\ poly\ to\ proper\ branch,\ split\ if\ necessary.}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00092}00092\ \textcolor{comment}{\ *\ Returns\ true\ if\ poly\ has\ been\ split\ into\ new\ polygons\ and\ can\ be\ deleted}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00093}00093\ \textcolor{comment}{\ *\ Returns\ false\ if\ poly\ remains\ needed}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00094}00094\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00095}\mbox{\hyperlink{classBsp3D_a53fed4500360085faceb956c49913117}{00095}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBsp3D_a53fed4500360085faceb956c49913117}{Bsp3D::SplitPoly}}(\mbox{\hyperlink{structbspPolygon}{bspPolygon}}\ *poly)\ \{}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00096}00096\ \ \ \textcolor{keywordtype}{bool}\ inside(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00097}00097\ \ \ \textcolor{keywordtype}{bool}\ outside(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00098}00098\ \ \ std::vector<int>\ location;}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00099}00099\ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{globals_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\ i(0);\ i\ <\ poly-\/>\mbox{\hyperlink{structbspPolygon_a43bc3463de7c73d6e541aee79880ce6a}{nodes}}.size();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00100}00100\ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{classBsp3D_aeef40776817ce8cec917de1fb2e84f7a}{LocTest}}(poly-\/>\mbox{\hyperlink{structbspPolygon_a43bc3463de7c73d6e541aee79880ce6a}{nodes}}.at(i)))\ \{}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00101}00101\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ -\/1:\ \ \textcolor{comment}{//\ point\ is\ inside}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ inside\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ location.push\_back(-\/1);}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00105}00105\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:\ \ \ \textcolor{comment}{//\ point\ is\ outside}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ outside\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ location.push\_back(1);}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00109}00109\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0:\ \ \ \textcolor{comment}{//\ point\ is\ in\ plane}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ location.push\_back(0);}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00111}00111\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00112}00112\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00114}00114\ \ \ \textcolor{comment}{//\ poly\ intersects\ splitter:\ split\ into\ two\ polygons}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00115}00115\ \ \ \textcolor{keywordflow}{if}\ (inside\ \&\&\ outside)\ \{}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00116}00116\ \ \ \ \ \textcolor{comment}{//\ Determine\ intersection\ location\ and\ add\ nodes}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00117}00117\ \ \ \ \ \textcolor{keywordflow}{if}\ (location.front()\ *\ location.back()\ ==\ -\/1)\ \{}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00118}00118\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ dFirst\ =\ \mbox{\hyperlink{classBsp3D_ab86d60e3ac1a432328b7b3115ba76d1b}{LocDist}}(poly-\/>\mbox{\hyperlink{structbspPolygon_a43bc3463de7c73d6e541aee79880ce6a}{nodes}}.front());}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00119}00119\ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ dLast\ =\ \mbox{\hyperlink{classBsp3D_ab86d60e3ac1a432328b7b3115ba76d1b}{LocDist}}(poly-\/>\mbox{\hyperlink{structbspPolygon_a43bc3463de7c73d6e541aee79880ce6a}{nodes}}.back());}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00120}00120\ \ \ \ \ \ \ dFirst\ =\ dLast\ /\ (dFirst\ -\/\ dLast);}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00121}00121\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dFirst\ <\ 0)\ dFirst\ =\ -\/dFirst;}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00122}00122\ \ \ \ \ \ \ dLast\ =\ 1.\ -\/\ dFirst;}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00123}00123\ \ \ \ \ \ \ poly-\/>\mbox{\hyperlink{structbspPolygon_a43bc3463de7c73d6e541aee79880ce6a}{nodes}}.push\_back(dFirst\ *\ poly-\/>\mbox{\hyperlink{structbspPolygon_a43bc3463de7c73d6e541aee79880ce6a}{nodes}}.front()\ +}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dLast\ *\ poly-\/>\mbox{\hyperlink{structbspPolygon_a43bc3463de7c73d6e541aee79880ce6a}{nodes}}.back());}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00125}00125\ \ \ \ \ \ \ location.push\_back(0);}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00126}00126\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00127}00127\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{globals_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\ i(0);\ i\ <\ location.size()\ -\/\ 1;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00128}00128\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (location.at(i)\ *\ location.at(i\ +\ 1)\ ==\ -\/1)\ \{}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ std::vector<rvec>::iterator\ nodeIter\ =\ poly-\/>\mbox{\hyperlink{structbspPolygon_a43bc3463de7c73d6e541aee79880ce6a}{nodes}}.begin();}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ std::vector<int>::iterator\ locIter\ =\ location.begin();}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{globals_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\ j(0);\ j\ <\ i\ +\ 1;\ j++)\ \{}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ nodeIter++;}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ locIter++;}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ dFirst\ =\ \mbox{\hyperlink{classBsp3D_ab86d60e3ac1a432328b7b3115ba76d1b}{LocDist}}(poly-\/>\mbox{\hyperlink{structbspPolygon_a43bc3463de7c73d6e541aee79880ce6a}{nodes}}.at(i));}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ dLast\ =\ \mbox{\hyperlink{classBsp3D_ab86d60e3ac1a432328b7b3115ba76d1b}{LocDist}}(poly-\/>\mbox{\hyperlink{structbspPolygon_a43bc3463de7c73d6e541aee79880ce6a}{nodes}}.at(i\ +\ 1));}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ dFirst\ =\ dLast\ /\ (dFirst\ -\/\ dLast);}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dFirst\ <\ 0)\ dFirst\ =\ -\/dFirst;}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ dLast\ =\ 1.\ -\/\ dFirst;}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ poly-\/>\mbox{\hyperlink{structbspPolygon_a43bc3463de7c73d6e541aee79880ce6a}{nodes}}.insert(nodeIter,\ 1,\ dFirst\ *\ poly-\/>\mbox{\hyperlink{structbspPolygon_a43bc3463de7c73d6e541aee79880ce6a}{nodes}}.at(i)\ +}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dLast\ *\ poly-\/>\mbox{\hyperlink{structbspPolygon_a43bc3463de7c73d6e541aee79880ce6a}{nodes}}.at(i\ +\ 1));}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ location.insert(locIter,\ 1,\ 0);}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00143}00143\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00144}00144\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00145}00145\ \ \ \ \ \textcolor{comment}{//\ Create\ new\ polygons}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00146}00146\ \ \ \ \ \mbox{\hyperlink{structbspPolygon}{bspPolygon}}\ *polyIn\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structbspPolygon}{bspPolygon}};}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00147}00147\ \ \ \ \ \mbox{\hyperlink{structbspPolygon}{bspPolygon}}\ *polyOut\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structbspPolygon}{bspPolygon}};}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00148}00148\ \ \ \ \ polyIn-\/>\mbox{\hyperlink{structbspPolygon_ab60b6f1844092d928472944666981730}{origin}}\ =\ poly-\/>\mbox{\hyperlink{structbspPolygon_ab60b6f1844092d928472944666981730}{origin}};}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00149}00149\ \ \ \ \ polyIn-\/>\mbox{\hyperlink{structbspPolygon_a223ccf04463cdd41f4026d0476ecdc71}{side}}\ =\ poly-\/>\mbox{\hyperlink{structbspPolygon_a223ccf04463cdd41f4026d0476ecdc71}{side}};}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00150}00150\ \ \ \ \ polyOut-\/>\mbox{\hyperlink{structbspPolygon_ab60b6f1844092d928472944666981730}{origin}}\ =\ poly-\/>\mbox{\hyperlink{structbspPolygon_ab60b6f1844092d928472944666981730}{origin}};}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00151}00151\ \ \ \ \ polyOut-\/>\mbox{\hyperlink{structbspPolygon_a223ccf04463cdd41f4026d0476ecdc71}{side}}\ =\ poly-\/>\mbox{\hyperlink{structbspPolygon_a223ccf04463cdd41f4026d0476ecdc71}{side}};}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00152}00152\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{globals_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\ i(0);\ i\ <\ location.size();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00153}00153\ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (location.at(i))\ \{}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ -\/1:}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ polyIn-\/>\mbox{\hyperlink{structbspPolygon_a43bc3463de7c73d6e541aee79880ce6a}{nodes}}.push\_back(poly-\/>\mbox{\hyperlink{structbspPolygon_a43bc3463de7c73d6e541aee79880ce6a}{nodes}}.at(i));}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ polyOut-\/>\mbox{\hyperlink{structbspPolygon_a43bc3463de7c73d6e541aee79880ce6a}{nodes}}.push\_back(poly-\/>\mbox{\hyperlink{structbspPolygon_a43bc3463de7c73d6e541aee79880ce6a}{nodes}}.at(i));}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0:}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ polyIn-\/>\mbox{\hyperlink{structbspPolygon_a43bc3463de7c73d6e541aee79880ce6a}{nodes}}.push\_back(poly-\/>\mbox{\hyperlink{structbspPolygon_a43bc3463de7c73d6e541aee79880ce6a}{nodes}}.at(i));}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ polyOut-\/>\mbox{\hyperlink{structbspPolygon_a43bc3463de7c73d6e541aee79880ce6a}{nodes}}.push\_back(poly-\/>\mbox{\hyperlink{structbspPolygon_a43bc3463de7c73d6e541aee79880ce6a}{nodes}}.at(i));}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00163}00163\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00164}00164\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00165}00165\ \ \ \ \ \mbox{\hyperlink{classBsp3D_a25ca9375075fa644c755f14fde3b7ae3}{bspInside}}-\/>AddElement(polyIn);}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00166}00166\ \ \ \ \ \mbox{\hyperlink{classBsp3D_ad6ad0dfa6b94d52a7b18c0cd7a5511cf}{bspOutside}}-\/>AddElement(polyOut);}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00167}00167\ \ \ \ \ \textcolor{comment}{//\ poly\ is\ no\ longer\ needed,\ can\ be\ deleted\ (true)}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00168}00168\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00169}00169\ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (inside)}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00170}00170\ \ \ \ \ \mbox{\hyperlink{classBsp3D_a25ca9375075fa644c755f14fde3b7ae3}{bspInside}}-\/>AddElement(poly);}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00171}00171\ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (outside)}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00172}00172\ \ \ \ \ \mbox{\hyperlink{classBsp3D_ad6ad0dfa6b94d52a7b18c0cd7a5511cf}{bspOutside}}-\/>AddElement(poly);}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00173}00173\ \ \ \textcolor{comment}{//\ poly\ still\ needed,\ do\ not\ delete!}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00174}00174\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00175}00175\ \}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00176}00176\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00177}00177\ \textcolor{comment}{//\ Perform\ branching:\ assign\ all\ elements\ to\ outside\ or\ inside\ subbranches\ (or\ both)}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00178}\mbox{\hyperlink{classBsp3D_a214442602cb9f9276144dbe828ed793d}{00178}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBsp3D_a214442602cb9f9276144dbe828ed793d}{Bsp3D::Branch}}()\ \{}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00179}00179\ \ \ \mbox{\hyperlink{classBsp3D_a25ca9375075fa644c755f14fde3b7ae3}{bspInside}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBsp3D_a6780d5d9e7994fb46159aae82c98a229}{Bsp3D}};}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00180}00180\ \ \ \mbox{\hyperlink{classBsp3D_ad6ad0dfa6b94d52a7b18c0cd7a5511cf}{bspOutside}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBsp3D_a6780d5d9e7994fb46159aae82c98a229}{Bsp3D}};}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00182}00182\ \ \ \textcolor{keywordflow}{for}\ (std::vector<bspPolygon\ *>::iterator\ elem\ =\ \mbox{\hyperlink{classBsp3D_aacc13a8baf09e5af41c9c33ac5a84ffd}{elements}}.begin();}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ elem\ !=\ \mbox{\hyperlink{classBsp3D_aacc13a8baf09e5af41c9c33ac5a84ffd}{elements}}.end();\ elem++)\ \{}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00184}00184\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classBsp3D_a53fed4500360085faceb956c49913117}{SplitPoly}}(*elem))\ \ \textcolor{comment}{//\ true\ if\ poly\ has\ been\ cloned}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00185}00185\ \ \ \ \ \ \ \textcolor{keyword}{delete}\ *elem;}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00186}00186\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00187}00187\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00188}00188\ \ \ \textcolor{keywordflow}{if}\ ((\textcolor{keywordtype}{int})(\mbox{\hyperlink{classBsp3D_a25ca9375075fa644c755f14fde3b7ae3}{bspInside}}-\/>elements.size())\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00189}00189\ \ \ \ \ \mbox{\hyperlink{classBsp3D_a25ca9375075fa644c755f14fde3b7ae3}{bspInside}}-\/>SetBud();}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00190}00190\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00191}00191\ \ \ \ \ \mbox{\hyperlink{classBsp3D_a25ca9375075fa644c755f14fde3b7ae3}{bspInside}}-\/>SetSplitter();}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00192}00192\ \ \ \ \ \mbox{\hyperlink{classBsp3D_a25ca9375075fa644c755f14fde3b7ae3}{bspInside}}-\/>Branch();}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00193}00193\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00194}00194\ \ \ \textcolor{comment}{//\ ...\ and\ the\ same\ for\ the\ outside\ branch}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00195}00195\ \ \ \textcolor{keywordflow}{if}\ ((\textcolor{keywordtype}{int})(\mbox{\hyperlink{classBsp3D_ad6ad0dfa6b94d52a7b18c0cd7a5511cf}{bspOutside}}-\/>elements.size())\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00196}00196\ \ \ \ \ \mbox{\hyperlink{classBsp3D_ad6ad0dfa6b94d52a7b18c0cd7a5511cf}{bspOutside}}-\/>SetBud();}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00197}00197\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00198}00198\ \ \ \ \ \mbox{\hyperlink{classBsp3D_ad6ad0dfa6b94d52a7b18c0cd7a5511cf}{bspOutside}}-\/>SetSplitter();}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00199}00199\ \ \ \ \ \mbox{\hyperlink{classBsp3D_ad6ad0dfa6b94d52a7b18c0cd7a5511cf}{bspOutside}}-\/>Branch();}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00200}00200\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00201}00201\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00202}00202\ \}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00203}00203\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00204}00204\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00205}00205\ \textcolor{comment}{//\ Queries}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00206}00206\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00207}00207\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00214}\mbox{\hyperlink{Bsp3D_8cpp_af2cf06308ca594c5d2b4b0319e815cc7}{00214}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{Bsp3D_8cpp_af2cf06308ca594c5d2b4b0319e815cc7}{WriteNode}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ in)\ \{}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00215}00215\ \ \ std::cout\ <<\ in(0)\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ in(1)\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ in(2)\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00216}00216\ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00217}00217\ \}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00218}00218\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00219}00219\ \textcolor{comment}{//\ Test\ if\ point\ is\ inside\ or\ outside\ of\ branch}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00220}\mbox{\hyperlink{classBsp3D_a7f8ee74b1c8aff83c5a1cebf21356b54}{00220}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classBsp3D_a7f8ee74b1c8aff83c5a1cebf21356b54}{Bsp3D::TestPoint}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ point)\ \{}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00221}00221\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classBsp3D_aeef40776817ce8cec917de1fb2e84f7a}{LocTest}}(point)\ ==\ 1)\ \{\ \ \textcolor{comment}{//\ outside}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00222}00222\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classBsp3D_ad6ad0dfa6b94d52a7b18c0cd7a5511cf}{bspOutside}}-\/>IsBud())\ \{}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00223}00223\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00224}00224\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00225}00225\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classBsp3D_ad6ad0dfa6b94d52a7b18c0cd7a5511cf}{bspOutside}}-\/>TestPoint(point);}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00226}00226\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00227}00227\ \ \ \}\ \textcolor{keywordflow}{else}\ \{\ \ \textcolor{comment}{//\ LocTest(point)\ <=\ 0\ -\/>\ inside\ (by\ convention)}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00228}00228\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classBsp3D_a25ca9375075fa644c755f14fde3b7ae3}{bspInside}}-\/>IsBud())\ \{}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00229}00229\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00230}00230\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00231}00231\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classBsp3D_a25ca9375075fa644c755f14fde3b7ae3}{bspInside}}-\/>TestPoint(point);}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00232}00232\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00233}00233\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00234}00234\ \}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8cpp_source_l00235}00235\ }
+
+\end{DoxyCode}

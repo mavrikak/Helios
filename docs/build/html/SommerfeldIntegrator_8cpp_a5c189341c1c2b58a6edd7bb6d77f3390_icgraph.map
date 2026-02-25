@@ -1,0 +1,5 @@
+<map id="getColumnAtRowDepth" name="getColumnAtRowDepth">
+<area shape="rect" id="Node000001" title="Extract one row (across all columns) at a specific depth in a 3D matrix." alt="" coords="219,14,392,42"/>
+<area shape="rect" id="Node000002" href="$classSommerfeldIntegrator.html#a2537d36d62ecdecc297e19c8127f827a" title="Computes inter&#45;layer coefficients for Green&#39;s function interpolation." alt="" coords="5,5,171,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="203,30,171,30,171,25,203,25"/>
+</map>

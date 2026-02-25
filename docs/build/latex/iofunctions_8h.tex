@@ -1,0 +1,55 @@
+\doxysection{iofunctions.\+h File Reference}
+\hypertarget{iofunctions_8h}{}\label{iofunctions_8h}\index{iofunctions.h@{iofunctions.h}}
+
+
+Small helper templates for reading whitespace-\/separated values from text files while skipping line comments.  
+
+
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for iofunctions.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{iofunctions_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{iofunctions_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T$>$ }\\int \mbox{\hyperlink{group__driver_ga3859b179ce92396b3d9187e4437d8826}{Read\+Commented}} (std\+::ifstream \texorpdfstring{$\ast$}{*}in\+Stream, T \texorpdfstring{$\ast$}{*}target)
+\begin{DoxyCompactList}\small\item\em Read a value of type {\ttfamily T} from a text stream, skipping lines beginning with \textquotesingle{}\#\textquotesingle{}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T$>$ }\\int \mbox{\hyperlink{group__driver_ga3842e19dc8aa8af24b8d124aaed5b296}{Read\+CommentedG}} (std\+::ifstream \texorpdfstring{$\ast$}{*}in\+Stream, T \texorpdfstring{$\ast$}{*}target)
+\begin{DoxyCompactList}\small\item\em Read a value of type {\ttfamily T} from a text stream, skipping lines beginning with \textquotesingle{}\$\textquotesingle{}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T$>$ }\\int \mbox{\hyperlink{group__driver_ga3b2ef62f0ee5a558bf60dfa50d961d7a}{Read\+And\+Print}} (std\+::ifstream \texorpdfstring{$\ast$}{*}in\+Stream)
+\begin{DoxyCompactList}\small\item\em Debug helper\+: read a value of type {\ttfamily T} and print it to std\+::cout. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Small helper templates for reading whitespace-\/separated values from text files while skipping line comments. 
+
+Provides three simple, header-\/only utilities\+:
+\begin{DoxyItemize}
+\item Read\+Commented\+: reads a token into a typed variable, skipping lines that start with \textquotesingle{}\#\textquotesingle{}.
+\item Read\+CommentedG\+: same as above but treats \textquotesingle{}\$\textquotesingle{} as the comment introducer.
+\item Read\+And\+Print\+: convenience for debugging; reads one value and prints it.
+\end{DoxyItemize}
+
+Each reader consumes input tokens separated by whitespace. If the first non-\/ whitespace character of the next token is the comment character, the rest of that line is skipped. Multiple values per line are supported as long as they are separated by whitespace and appear before any comment token.
+
+\begin{DoxyNote}{Note}
+These functions expect a valid, open std\+::ifstream. They do not alter stream formatting flags. 
+\end{DoxyNote}
+
+
+Definition in file \mbox{\hyperlink{iofunctions_8h_source}{iofunctions.\+h}}.
+

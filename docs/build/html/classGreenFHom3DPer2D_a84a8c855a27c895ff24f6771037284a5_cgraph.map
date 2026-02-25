@@ -1,0 +1,70 @@
+<map id="GreenFHom3DPer2D::SameTriDeltaKappa" name="GreenFHom3DPer2D::SameTriDeltaKappa">
+<area shape="rect" id="Node000001" title="Compute &#160;for all RWGs on a source triangle." alt="" coords="5,412,222,456"/>
+<area shape="rect" id="Node000002" href="$classTriangle.html#a1d3d08deeb999f339d2e821a877521ba" title="Surface area of the triangle." alt="" coords="340,5,450,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="114,411,124,339,149,240,169,186,195,134,228,85,268,44,294,28,324,19,325,25,297,33,271,48,232,89,200,137,174,188,154,241,130,340,119,412"/>
+<area shape="rect" id="Node000003" href="$classTriangle.html#ab78508a340ec5d345adf114b43563dbf" title="Centroid of the triangle." alt="" coords="333,57,456,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="116,411,129,348,156,262,176,216,201,172,232,131,268,96,291,82,317,74,318,79,293,87,271,100,236,134,206,175,181,219,161,264,134,349,121,412"/>
+<area shape="rect" id="Node000004" href="$classSingSub.html#a9d74100325023b4d1c156bd97ae240b3" title="Update only the RWG/triangle; keep the same observation point r." alt="" coords="288,109,502,137"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="118,410,134,356,164,285,184,247,208,210,236,177,268,148,276,142,279,147,271,152,240,180,212,213,188,250,168,287,139,358,123,412"/>
+<area shape="rect" id="Node000005" href="$classRWGFun.html#a7540ce2f84c6b42a29c2808504c47d42" title="Evaluate the RWG vector shape function at a point on the triangle." alt="" coords="324,161,466,189"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="121,410,140,364,171,307,214,248,240,221,268,198,308,181,310,186,271,203,243,225,218,251,176,309,145,367,126,412"/>
+<area shape="rect" id="Node000006" href="$classGreenFHom3DPer2D.html#ab49a15bcfe7b44d2338c9182f003d385" title="Evaluate &#160;(smoothed) for a translation in one call." alt="" coords="272,282,518,327"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="145,409,201,372,269,337,285,330,287,335,271,342,204,377,147,413"/>
+<area shape="rect" id="Node000014" href="$classGreenFHom3DPer2D.html#aea4d858bd544ba5e9a8de1197b572b4e" title="Evaluate &#160;for a translation in one call." alt="" coords="272,213,518,258"/>
+<area shape="poly" id="edge16_Node000001_Node000014" title=" " alt="" coords="128,409,184,339,224,301,268,268,278,262,281,267,271,272,227,305,188,343,132,413"/>
+<area shape="rect" id="Node000016" href="$classGreenFHom3DPer2D.html#a6e7bfc8640c70e6dfaa9f8e14cb916ea" title="Constructor for a non&#45;magnetic medium (2D periodic)." alt="" coords="270,352,520,396"/>
+<area shape="poly" id="edge20_Node000001_Node000016" title=" " alt="" coords="221,408,272,397,273,403,222,414"/>
+<area shape="rect" id="Node000024" href="$classSingSub.html#aed0bb257cd3c94dccd5b6cc0ecdd1c5e" title="K2(q) vector term." alt="" coords="346,420,444,448"/>
+<area shape="poly" id="edge29_Node000001_Node000024" title=" " alt="" coords="222,431,330,431,330,436,222,436"/>
+<area shape="rect" id="Node000025" href="$classSingSub.html#a3e9e0b5a61df98d8f8138544c7df3da0" title="K3(q) vector term." alt="" coords="650,493,749,521"/>
+<area shape="poly" id="edge30_Node000001_Node000025" title=" " alt="" coords="150,454,205,485,237,498,270,509,369,524,468,527,560,522,635,514,635,520,560,528,468,532,368,529,269,514,235,503,203,489,147,459"/>
+<area shape="rect" id="Node000026" href="$classSingSub.html#ab61a21e3498d2d6a4c0796254cf126ed" title="K4(q) vector term." alt="" coords="346,472,444,500"/>
+<area shape="poly" id="edge31_Node000001_Node000026" title=" " alt="" coords="223,451,331,471,330,477,222,456"/>
+<area shape="rect" id="Node000027" href="$classTriangle.html#a0752d2c9488c7c44b851b8f75abcaa79" title="Node position (by value) for local index 0..2." alt="" coords="338,573,452,601"/>
+<area shape="poly" id="edge33_Node000001_Node000027" title=" " alt="" coords="139,455,196,504,232,530,271,553,324,572,322,577,269,558,229,535,193,508,136,459"/>
+<area shape="rect" id="Node000028" href="$classTriangle.html#a6e7daa074db3d147b33763bfd2a6e83b" title="Perimeter (sum of edge lengths)." alt="" coords="323,625,467,653"/>
+<area shape="poly" id="edge34_Node000001_Node000028" title=" " alt="" coords="130,455,153,490,185,533,225,575,271,610,309,626,307,631,268,615,221,579,180,536,148,493,126,458"/>
+<area shape="rect" id="Node000029" href="$classGreenFHom3DPer2D.html#a098b4d59dde268718483b4ac9906e446" title="Map a displacement to the primitive cell." alt="" coords="271,677,519,705"/>
+<area shape="poly" id="edge35_Node000001_Node000029" title=" " alt="" coords="126,456,145,500,176,557,218,615,243,640,271,662,281,668,278,673,268,667,240,644,214,618,172,560,141,503,121,458"/>
+<area shape="rect" id="Node000030" href="$classRWGFun.html#a7cd7779305937d48196453e53d0d4df8" title="Return L_n / A_n (missing factor 1/2 by convention)." alt="" coords="307,729,483,757"/>
+<area shape="poly" id="edge36_Node000001_Node000030" title=" " alt="" coords="123,456,140,510,169,581,189,618,212,653,240,686,271,714,294,727,291,732,268,719,236,690,208,657,184,620,164,583,135,512,118,458"/>
+<area shape="rect" id="Node000031" href="$classSingSub.html#a20337fe20529d26c1775c8ba6d47cad0" title="Preferred initialization that fills all cached arrays (ILar/ISar)." alt="" coords="302,781,488,809"/>
+<area shape="poly" id="edge37_Node000001_Node000031" title=" " alt="" coords="121,456,134,519,162,604,181,648,206,692,236,732,271,766,289,778,287,782,268,771,232,736,202,695,177,651,157,606,129,520,116,457"/>
+<area shape="rect" id="Node000007" href="$classGreenFHom3DPer2D.html#af034587a03115087737a86ed71b664f4" title="Spatial part returning ." alt="" coords="586,216,814,260"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="500,279,579,261,580,267,501,284"/>
+<area shape="rect" id="Node000012" href="$classGreenFHom3DPer2D.html#a025f6ce600bdd42ae02716905c75ba66" title="Spectral part returning ." alt="" coords="586,285,814,330"/>
+<area shape="poly" id="edge12_Node000006_Node000012" title=" " alt="" coords="518,303,570,303,570,309,518,308"/>
+<area shape="rect" id="Node000008" href="$classGreenF.html#abf00726011a4eca4109bc43125218d30" title="Evaluate erfc via the 2D lookup table if available." alt="" coords="937,224,1054,252"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="814,235,922,235,922,240,814,240"/>
+<area shape="rect" id="Node000009" href="$mathFunctions_8cpp.html#a7916c6b62310fe9cf38ec2a2890aaad4" title="Complementary error function for complex arguments." alt="" coords="1194,192,1248,220"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="1054,227,1179,209,1179,214,1055,232"/>
+<area shape="rect" id="Node000011" href="$Domain_8cpp.html#aafa3e4fa6318b2f8740f4dbd50c367e5" title="Extract the real part of each component of a complex 3&#45;vector." alt="" coords="1431,268,1478,296"/>
+<area shape="poly" id="edge10_Node000008_Node000011" title=" " alt="" coords="1054,241,1416,276,1416,281,1054,246"/>
+<area shape="rect" id="Node000010" href="$mathFunctions_8cpp.html#abc57cde75234d7e165a9ebcdb45f2c29" title="Error function for complex arguments." alt="" coords="1334,192,1380,220"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="1248,203,1318,203,1318,208,1248,208"/>
+<area shape="poly" id="edge11_Node000011_Node000011" title=" " alt="" coords="1436,268,1434,259,1436,250,1443,244,1455,241,1467,244,1473,250,1470,254,1464,249,1454,247,1445,248,1440,253,1439,259,1441,267"/>
+<area shape="poly" id="edge15_Node000012_Node000008" title=" " alt="" coords="798,282,921,252,923,257,799,287"/>
+<area shape="rect" id="Node000013" href="$group__greenFunction.html#gac0a52dce23be7dacdf97c68653b6c137" title="Complex square root with a branch cut along the negative real axis." alt="" coords="1330,293,1383,321"/>
+<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="814,304,1315,304,1315,310,814,310"/>
+<area shape="poly" id="edge14_Node000013_Node000011" title=" " alt="" coords="1383,298,1415,289,1417,294,1384,303"/>
+<area shape="poly" id="edge19_Node000014_Node000012" title=" " alt="" coords="493,256,588,278,587,283,492,261"/>
+<area shape="rect" id="Node000015" href="$classGreenFHom3DPer2D.html#ad219414131e33eb361fe2240be9612a0" title="Spatial part returning both normal and gradient." alt="" coords="586,146,814,191"/>
+<area shape="poly" id="edge17_Node000014_Node000015" title=" " alt="" coords="500,210,579,192,580,197,501,215"/>
+<area shape="poly" id="edge18_Node000015_Node000008" title=" " alt="" coords="799,189,923,218,921,223,798,194"/>
+<area shape="rect" id="Node000017" href="$classGreenFHom3DPer.html#a414d2e05ac1b3d089e2a5556e6e16a93" title="Homogeneous, non‑magnetic constructor with Bloch vector." alt="" coords="568,357,831,385"/>
+<area shape="poly" id="edge21_Node000016_Node000017" title=" " alt="" coords="520,370,553,370,553,375,520,375"/>
+<area shape="rect" id="Node000020" href="$classGreenFHom3DPer2D.html#a3160d2ff20a3ec478d2fb6e9b72cf79d" title="Common initialization: set lookup flags, build reciprocal lattice, project k, choose Ewald parameter." alt="" coords="607,441,792,469"/>
+<area shape="poly" id="edge25_Node000016_Node000020" title=" " alt="" coords="482,394,631,434,629,439,481,399"/>
+<area shape="rect" id="Node000018" href="$classGreenFHom3D.html#ac928f16e6e79c75c002d9a721a8858d8" title="Default constructor (initializes with zeroed wavenumber and no lookup table)." alt="" coords="885,344,1106,372"/>
+<area shape="poly" id="edge22_Node000017_Node000018" title=" " alt="" coords="832,363,869,361,869,366,832,368"/>
+<area shape="rect" id="Node000019" href="$classGreenF.html#a332ac24f39288170f77c18f37fde2c82" title="Constructor for a homogeneous, non&#45;magnetic medium." alt="" coords="1160,344,1282,372"/>
+<area shape="poly" id="edge23_Node000018_Node000019" title=" " alt="" coords="1106,355,1144,355,1144,360,1106,360"/>
+<area shape="poly" id="edge24_Node000019_Node000013" title=" " alt="" coords="1259,341,1315,320,1317,325,1261,346"/>
+<area shape="rect" id="Node000021" href="$classGreenFHom3DPer.html#a8b1a5f0f63af1baf32caeebbf9b33170" title="Set the number of periodic evaluation terms to accumulate." alt="" coords="888,396,1103,440"/>
+<area shape="poly" id="edge26_Node000020_Node000021" title=" " alt="" coords="793,441,872,431,873,436,793,446"/>
+<area shape="rect" id="Node000022" href="$classGreenFHom3DPer2D.html#a07235ce91a1e9b3410f5fad888d0e44c" title="Build reciprocal lattice vectors." alt="" coords="879,464,1112,492"/>
+<area shape="poly" id="edge27_Node000020_Node000022" title=" " alt="" coords="793,460,864,465,863,470,793,465"/>
+<area shape="rect" id="Node000023" href="$classGreenFHom3DPer2D.html#a9352fdb0ead2b5956f3e951122f73e18" title="Project the Bloch vector onto the lattice plane." alt="" coords="888,516,1103,544"/>
+<area shape="poly" id="edge28_Node000020_Node000023" title=" " alt="" coords="786,467,832,479,880,501,909,509,907,514,878,506,830,484,784,472"/>
+<area shape="poly" id="edge32_Node000026_Node000025" title=" " alt="" coords="445,487,635,500,635,505,444,492"/>
+</map>

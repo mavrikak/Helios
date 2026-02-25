@@ -1,0 +1,113 @@
+\doxysection{Domain\+Hom3\+D.\+cpp File Reference}
+\hypertarget{DomainHom3D_8cpp}{}\label{DomainHom3D_8cpp}\index{DomainHom3D.cpp@{DomainHom3D.cpp}}
+
+
+Implementation of the homogeneous 3D domain.  
+
+
+{\ttfamily \#include "{}Domain\+Hom3\+D.\+h"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include "{}Dipole.\+h"{}}\newline
+{\ttfamily \#include "{}Incident\+Field.\+h"{}}\newline
+{\ttfamily \#include "{}Plane\+Wave.\+h"{}}\newline
+{\ttfamily \#include "{}SIEForm\+PMCHW.\+h"{}}\newline
+{\ttfamily \#include "{}iofunctions.\+h"{}}\newline
+{\ttfamily \#include "{}Gaussian.\+h"{}}\newline
+Include dependency graph for Domain\+Hom3\+D.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{DomainHom3D_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{DomainHom3D_8cpp_acf27d554499921efb016e1a01ac8b94e}{conj\+Vec\+Hom}} (\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} in)
+\begin{DoxyCompactList}\small\item\em Compute the element-\/wise complex conjugate of a 3-\/vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{DomainHom3D_8cpp_a40914d7aec9b5a14a562be6061d9324b}{real\+Vec\+Hom}} (\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} in)
+\begin{DoxyCompactList}\small\item\em Extract the real part of each component of a complex 3-\/vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of the homogeneous 3D domain. 
+
+
+
+Definition in file \mbox{\hyperlink{DomainHom3D_8cpp_source}{Domain\+Hom3\+D.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{DomainHom3D_8cpp_acf27d554499921efb016e1a01ac8b94e}\index{DomainHom3D.cpp@{DomainHom3D.cpp}!conjVecHom@{conjVecHom}}
+\index{conjVecHom@{conjVecHom}!DomainHom3D.cpp@{DomainHom3D.cpp}}
+\doxysubsubsection{\texorpdfstring{conjVecHom()}{conjVecHom()}}
+{\footnotesize\ttfamily \label{DomainHom3D_8cpp_acf27d554499921efb016e1a01ac8b94e} 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} conj\+Vec\+Hom (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}}]{in}{}\end{DoxyParamCaption})}
+
+
+
+Compute the element-\/wise complex conjugate of a 3-\/vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & Input complex vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex vector containing conjugated components of {\ttfamily in}. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{DomainHom3D_8cpp_source_l00058}{58}} of file \mbox{\hyperlink{DomainHom3D_8cpp_source}{Domain\+Hom3\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{DomainHom3D_8cpp_acf27d554499921efb016e1a01ac8b94e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{DomainHom3D_8cpp_acf27d554499921efb016e1a01ac8b94e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{DomainHom3D_8cpp_a40914d7aec9b5a14a562be6061d9324b}\index{DomainHom3D.cpp@{DomainHom3D.cpp}!realVecHom@{realVecHom}}
+\index{realVecHom@{realVecHom}!DomainHom3D.cpp@{DomainHom3D.cpp}}
+\doxysubsubsection{\texorpdfstring{realVecHom()}{realVecHom()}}
+{\footnotesize\ttfamily \label{DomainHom3D_8cpp_a40914d7aec9b5a14a562be6061d9324b} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} real\+Vec\+Hom (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}}]{in}{}\end{DoxyParamCaption})}
+
+
+
+Extract the real part of each component of a complex 3-\/vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & Input complex vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Real vector with the real parts of {\ttfamily in}. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{DomainHom3D_8cpp_source_l00065}{65}} of file \mbox{\hyperlink{DomainHom3D_8cpp_source}{Domain\+Hom3\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{DomainHom3D_8cpp_a40914d7aec9b5a14a562be6061d9324b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{DomainHom3D_8cpp_a40914d7aec9b5a14a562be6061d9324b_icgraph}
+\end{center}
+\end{figure}

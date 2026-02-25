@@ -1,0 +1,8 @@
+<map id="IntegrandIntra::flatten" name="IntegrandIntra::flatten">
+<area shape="rect" id="Node000001" title="Function to create a flattened structure." alt="" coords="432,14,595,42"/>
+<area shape="rect" id="Node000002" href="$classSommerfeldIntegrator.html#a3f148b96c090e06e67fb00aea41e7f94" title="Computes intra&#45;layer coefficients for Green&#39;s function interpolation." alt="" coords="5,5,171,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="416,26,384,25,219,25,171,26,171,21,219,20,384,20,416,21"/>
+<area shape="rect" id="Node000003" href="$classSommerfeldIntegrator.html#a2c805013bb6091b2010bba9a1e256a4d" title="Computes the intra&#45;layer integration function." alt="" coords="219,35,384,79"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="417,44,385,48,384,43,416,38"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="203,46,171,42,172,36,204,41"/>
+</map>

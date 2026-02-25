@@ -1,0 +1,7 @@
+<map id="Dipole::EvaluateLayeredEandH" name="Dipole::EvaluateLayeredEandH">
+<area shape="rect" id="Node000001" title="Evaluate &#160;in a stratified background." alt="" coords="5,32,228,60"/>
+<area shape="rect" id="Node000002" href="$classDipole.html#ab4873557b39cc8d504446c35392ab2a0" title="Evaluate the incident electric field &#160;in a homogeneous background." alt="" coords="277,5,413,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="228,30,261,26,262,32,228,35"/>
+<area shape="rect" id="Node000003" href="$classDipole.html#a4d85fde503ac7167f832503d5256c5e9" title="Evaluate the incident magnetic field &#160;in a homogeneous background." alt="" coords="276,57,414,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="228,56,260,59,260,64,228,61"/>
+</map>

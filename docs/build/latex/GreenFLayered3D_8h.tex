@@ -1,0 +1,57 @@
+\doxysection{Green\+FLayered3\+D.\+h File Reference}
+\hypertarget{GreenFLayered3D_8h}{}\label{GreenFLayered3D_8h}\index{GreenFLayered3D.h@{GreenFLayered3D.h}}
+
+
+Layered‑medium 3D Green\textquotesingle{}s function (scalar/gradient/dyadic) + RWG integrals.  
+
+
+{\ttfamily \#include $<$blitz/array.\+h$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$tuple$>$}\newline
+{\ttfamily \#include "{}Gauss\+Quad.\+h"{}}\newline
+{\ttfamily \#include "{}Green\+F.\+h"{}}\newline
+{\ttfamily \#include "{}globals.\+h"{}}\newline
+{\ttfamily \#include "{}Sommerfeld\+Integrator.\+h"{}}\newline
+{\ttfamily \#include "{}Sing\+Cancellation.\+h"{}}\newline
+{\ttfamily \#include "{}Tri\+Quad\+Pol.\+h"{}}\newline
+Include dependency graph for Green\+FLayered3\+D.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{GreenFLayered3D_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{GreenFLayered3D_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classGreenFLayered3D}{Green\+FLayered3D}}
+\begin{DoxyCompactList}\small\item\em Layered background Green\textquotesingle{}s function with tabulation and D/\+K/delta/kappa integrals. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Layered‑medium 3D Green\textquotesingle{}s function (scalar/gradient/dyadic) + RWG integrals. 
+
+This header declares a comprehensive Green\textquotesingle{}s function engine for {\bfseries{stratified media}} (stack of planar layers with piecewise‑constants $\epsilon_{r,i},\mu_{r,i}$). It supports\+:
+
+
+\begin{DoxyItemize}
+\item Pointwise kernels\+: scalar $G\!,\;\nabla\textnormal{\textquotesingle}G\!,\;\overline{\overline G}$ with near‑singular {\bfseries{smoothed}} variants for robust area integration.
+\item Assembly helpers\+: two‑triangle (D/K) and point–triangle (delta/kappa) integrals with singularity cancellation and optional {\bfseries{edge line integrals}} on interfaces.
+\item {\bfseries{Tabulation + interpolation}} of Sommerfeld integrals on structured grids, with per‑interaction coefficient sets (intra‑layer, inter‑layer) to accelerate reuse.
+\end{DoxyItemize}\hypertarget{GreenFLayered3D_8h_autotoc_md12}{}\doxysubsubsection{\texorpdfstring{Design notes}{Design notes}}\label{GreenFLayered3D_8h_autotoc_md12}
+
+\begin{DoxyItemize}
+\item A {\bfseries{\doxylink{classSommerfeldIntegrator}{Sommerfeld\+Integrator}}} is owned per interaction group; it evaluates smooth parts of layered Green\textquotesingle{}s terms in cylindrical spectral coordinates. Quasi‑static (QS) pieces are handled analytically (cancel singularities), while the radiative remainder is tabulated.
+\item The {\ttfamily coeff\+Intra\texorpdfstring{$\ast$}{*}}/{\ttfamily coeff\+Inter} vectors hold precomputed interpolation weights to map (r,z) to the tabulation grid(s); {\ttfamily intra\texorpdfstring{$\ast$}{*}\+Index}/{\ttfamily inter\+Indeces} bind triangles/layers to the right coefficient set.
+\item {\ttfamily enable\+Line\+Integrals} toggles analytic edge terms used when triangles share an interface. 
+\end{DoxyItemize}
+
+Definition in file \mbox{\hyperlink{GreenFLayered3D_8h_source}{Green\+FLayered3\+D.\+h}}.
+

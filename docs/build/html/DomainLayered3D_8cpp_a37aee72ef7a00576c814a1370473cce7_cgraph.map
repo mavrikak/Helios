@@ -1,0 +1,6 @@
+<map id="conjVecL" name="conjVecL">
+<area shape="rect" id="Node000001" title="Compute the element&#45;wise complex conjugate of a 3&#45;vector." alt="" coords="5,29,84,57"/>
+<area shape="rect" id="Node000002" href="$Domain_8cpp.html#abbd88d15240455cf734121fcd73b3a03" title="Compute the element&#45;wise complex conjugate of a 3&#45;vector." alt="" coords="132,29,180,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="84,40,116,40,116,46,84,46"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="135,30,132,20,135,11,143,5,156,3,169,5,177,12,173,16,167,10,156,8,145,10,139,14,138,20,140,28"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="IntegrandInter::flatten" name="IntegrandInter::flatten">
+<area shape="rect" id="Node000001" title="Function to create a flattened structure." alt="" coords="5,5,169,33"/>
+<area shape="rect" id="Node000002" href="$structIntegrandInter.html#a2ea9f2fbbfb494f9b9debd5f7f4f362b" title="Extract selected elements from a 3D array into a compact 3D structure." alt="" coords="217,5,421,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,16,201,16,201,22,169,22"/>
+<area shape="rect" id="Node000003" href="$structIntegrandInter.html#adb71cb8507ba98a63b290ec0acd8d628" title="Bounds&#45;checked access to a 3D array element." alt="" coords="469,5,647,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="422,16,453,16,453,22,422,22"/>
+</map>

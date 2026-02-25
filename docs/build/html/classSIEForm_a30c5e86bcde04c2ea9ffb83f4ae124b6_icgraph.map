@@ -1,0 +1,7 @@
+<map id="SIEForm::SIEForm" name="SIEForm::SIEForm">
+<area shape="rect" id="Node000001" title="Construct the SIE formulation context." alt="" coords="292,32,427,60"/>
+<area shape="rect" id="Node000002" href="$classSIEFormPMCHW.html#a2d13661bd0a92a339d703ebf5c93bd2b" title="Construct PMCHWT for a homogeneous medium." alt="" coords="5,5,244,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="276,39,244,35,244,30,277,34"/>
+<area shape="rect" id="Node000003" href="$classSIEFormPMCHW.html#ae2ae42499fdc0816fc7bef695f6ec488" title="Construct PMCHWT for a layered medium." alt="" coords="5,57,244,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="277,57,244,61,244,56,276,52"/>
+</map>

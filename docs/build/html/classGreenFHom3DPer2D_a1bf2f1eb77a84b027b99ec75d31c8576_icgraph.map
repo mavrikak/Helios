@@ -1,0 +1,9 @@
+<map id="GreenFHom3DPer2D::EwaldSpatial" name="GreenFHom3DPer2D::EwaldSpatial">
+<area shape="rect" id="Node000001" title="Spatial (real&#45;space images) part of Ewald sum." alt="" coords="544,44,792,72"/>
+<area shape="rect" id="Node000002" href="$classGreenFHom3DPer2D.html#a268d4706bd313c8eadb38e26b15184f0" title="Scalar &#160;for a specific lattice translation." alt="" coords="275,5,496,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="528,46,496,42,497,37,529,41"/>
+<area shape="rect" id="Node000003" href="$classGreenFHom3DPer2D.html#a359a21bc178e1c0d21125f8af5ae4fcb" title="Ewald&#45;summed scalar kernel (2D periodic)." alt="" coords="284,74,487,102"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="529,75,488,80,487,74,528,70"/>
+<area shape="rect" id="Node000004" href="$classGreenFHom3DPer2D.html#a4fcccf5350453546ac226492ff19bcd0" title="Scalar Bloch&#45;periodic Green&#39;s function ." alt="" coords="5,74,227,102"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="268,90,227,90,227,85,268,85"/>
+</map>

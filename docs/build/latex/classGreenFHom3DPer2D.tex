@@ -1,0 +1,1784 @@
+\doxysection{Green\+FHom3\+DPer2D Class Reference}
+\hypertarget{classGreenFHom3DPer2D}{}\label{classGreenFHom3DPer2D}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+
+
+2D‑periodic homogeneous 3D Green\textquotesingle{}s function with Ewald acceleration.  
+
+
+
+
+{\ttfamily \#include $<$Green\+FHom3\+DPer2\+D.\+h$>$}
+
+
+
+Inheritance diagram for Green\+FHom3\+DPer2D\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classGreenFHom3DPer2D__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Green\+FHom3\+DPer2D\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classGreenFHom3DPer2D__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGreenFHom3DPer2D_a6e7bfc8640c70e6dfaa9f8e14cb916ea}{Green\+FHom3\+DPer2D}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenF_a551f07ab3b294c7b200eb578026bfa02}{wavelength}}, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} epsilon\+Medium, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} wavevector, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} lattice\+Vector, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} lattice\+Vector2)
+\begin{DoxyCompactList}\small\item\em Constructor for a non-\/magnetic medium (2D periodic). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGreenFHom3DPer2D_ad3b0693d618bd75c472df152d72760e7}{Green\+FHom3\+DPer2D}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenF_a551f07ab3b294c7b200eb578026bfa02}{wavelength}}, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} epsilon\+Medium, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} mu\+Medium, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} wavevector, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} lattice\+Vector, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} lattice\+Vector2)
+\begin{DoxyCompactList}\small\item\em Constructor for a magnetic medium (2D periodic). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGreenFHom3DPer2D_a4049a59ae5bbd1406d1da47e6de62af8}{Above\+Threshold\+Translate}} (\mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*}T, \mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*}Tp, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classGreenF_af4be67948114ed6bd9f273a3193c23e6}{t}})
+\begin{DoxyCompactList}\small\item\em Far/near heuristic for translated triangle pairs. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenFHom3DPer2D_a4fcccf5350453546ac226492ff19bcd0}{Evaluate}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp)
+\begin{DoxyCompactList}\small\item\em Scalar Bloch-\/periodic Green\textquotesingle{}s function $ G(\mathbf r,\mathbf r\textnormal{\textquotesingle})$. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenFHom3DPer2D_a268d4706bd313c8eadb38e26b15184f0}{Evaluate\+Translate}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classGreenF_af4be67948114ed6bd9f273a3193c23e6}{t}})
+\begin{DoxyCompactList}\small\item\em Scalar $ G $ for a specific lattice translation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenFHom3DPer2D_a6ab5b9db19bf30afa1828652d428d4a8}{Smoothed}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp)
+\begin{DoxyCompactList}\small\item\em Smoothed scalar kernel $ G_s(\mathbf r,\mathbf r^{\prime})$. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenFHom3DPer2D_ab327d41ca91c33e57a154eae221b4016}{Smoothed\+Translate}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classGreenF_af4be67948114ed6bd9f273a3193c23e6}{t}})
+\begin{DoxyCompactList}\small\item\em Smoothed scalar kernel $ G_s $ for a specific translation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classGreenFHom3DPer2D_adff724f327912641a20c99fa4c9bb464}{Gradient}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp)
+\begin{DoxyCompactList}\small\item\em Source-\/gradient $\nabla^{\prime} G(\mathbf r,\mathbf r^{\prime})$. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classGreenFHom3DPer2D_abfe000753f5712d72cef880cd4a64b3a}{Gradient\+Translate}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classGreenF_af4be67948114ed6bd9f273a3193c23e6}{t}})
+\begin{DoxyCompactList}\small\item\em Source-\/gradient for a specific translation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classGreenFHom3DPer2D_accc5e668a1b137a5279747db2ef0d560}{Gradient\+Smoothed}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp)
+\begin{DoxyCompactList}\small\item\em Smoothed source-\/gradient $\nabla^{\prime} G_s$. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classGreenFHom3DPer2D_a410f5349268917cf86215e766118032c}{Gradient\+Smoothed\+Translate}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classGreenF_af4be67948114ed6bd9f273a3193c23e6}{t}})
+\begin{DoxyCompactList}\small\item\em Smoothed source-\/gradient for a specific translation. \end{DoxyCompactList}\item 
+std\+::pair$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ \mbox{\hyperlink{classGreenFHom3DPer2D_aea4d858bd544ba5e9a8de1197b572b4e}{Evaluateand\+Gradient\+Translate}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classGreenF_af4be67948114ed6bd9f273a3193c23e6}{t}})
+\begin{DoxyCompactList}\small\item\em Evaluate $\{G,\ \nabla^{\prime} G\}$ for a translation in one call. \end{DoxyCompactList}\item 
+std\+::pair$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ \mbox{\hyperlink{classGreenFHom3DPer2D_ab49a15bcfe7b44d2338c9182f003d385}{Evaluateand\+Gradient\+Smoothed\+Translate}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classGreenF_af4be67948114ed6bd9f273a3193c23e6}{t}})
+\begin{DoxyCompactList}\small\item\em Evaluate $\{G_s,\ \nabla^{\prime} G_s\}$ (smoothed) for a translation in one call. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenFHom3DPer2D_acbad1cb2e954df963942f7eed8074fdc}{IntegrateD}} (\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}f, \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}fp)
+\begin{DoxyCompactList}\small\item\em D-\/operator matrix element $\langle \mathbf{f}(\mathbf{r}),\,\overline{\overline G},\,\mathbf{f}(\mathbf{r}^{\prime})\rangle$. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenFHom3DPer2D_af1e82e68e80b134fce966b8894834dc7}{IntegrateK}} (\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}f, \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}fp)
+\begin{DoxyCompactList}\small\item\em K-\/operator matrix element $\langle \mathbf{f}(\mathbf{r}),\,\nabla \times \overline{\overline G},\,\mathbf{f}(\mathbf{r}^{\prime})\rangle$. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classGreenFHom3DPer2D_a233c2185952220bd16acae2142f05cc1}{Integrate\+Delta}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}fp)
+\begin{DoxyCompactList}\small\item\em $\boldsymbol \delta$ term at an observation point. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classGreenFHom3DPer2D_aadb534ef4509422e6f3e78a0e3999758}{Integrate\+Kappa}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}fp)
+\begin{DoxyCompactList}\small\item\em $\boldsymbol \kappa$ term at an observation point. \end{DoxyCompactList}\item 
+std\+::pair$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{classGreenFHom3DPer2D_a416e1d9764a9ee201f9dc82f334361fe}{PairD}} (\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}f, \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}fp)
+\begin{DoxyCompactList}\small\item\em Pair of D elements with swapped triangle roles. \end{DoxyCompactList}\item 
+std\+::pair$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{classGreenFHom3DPer2D_ab28bca332af5d24334833af9793aa454}{PairK}} (\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}f, \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}fp)
+\begin{DoxyCompactList}\small\item\em Pair of K elements with swapped triangle roles. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGreenFHom3DPer2D_a1dc9dd84c93ee10b2fb4b1866103d957}{Same\+Tri\+DK}} (const std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*} $>$ \&fvec, const std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*} $>$ \&fpvec, std\+::vector$<$ std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ $>$ \&DK)
+\begin{DoxyCompactList}\small\item\em Compute $\mathbf D$ and $\mathbf K$ for all RWG pairs on two triangles. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGreenFHom3DPer2D_a84a8c855a27c895ff24f6771037284a5}{Same\+Tri\+Delta\+Kappa}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, const std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*} $>$ \&fpvec, std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ $>$ \&Delta\+Kappa)
+\begin{DoxyCompactList}\small\item\em Compute $(\boldsymbol \delta,\boldsymbol \kappa)$ for all RWGs on a source triangle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classGreenFHom3DPer}{Green\+FHom3\+DPer}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGreenFHom3DPer_a414d2e05ac1b3d089e2a5556e6e16a93}{Green\+FHom3\+DPer}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenF_a551f07ab3b294c7b200eb578026bfa02}{wavelength}}, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} epsilon\+Medium, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} wavevector)
+\begin{DoxyCompactList}\small\item\em Homogeneous, non‑magnetic constructor with Bloch vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGreenFHom3DPer_aa37478b09d78cff44338edc1b4be41ac}{Green\+FHom3\+DPer}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenF_a551f07ab3b294c7b200eb578026bfa02}{wavelength}}, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} epsilon\+Medium, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} mu\+Medium, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} wavevector)
+\begin{DoxyCompactList}\small\item\em Homogeneous, magnetic constructor with Bloch vector. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classGreenFHom3DPer_a30bf1182b63716f68cfa3e441c0b128c}{\texorpdfstring{$\sim$}{\string~}\+Green\+FHom3\+DPer}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGreenFHom3DPer_a8b1a5f0f63af1baf32caeebbf9b33170}{Evaluation\+Terms}} (int n)
+\begin{DoxyCompactList}\small\item\em Set the number of periodic evaluation terms to accumulate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classGreenFHom3D}{Green\+FHom3D}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classGreenFHom3D_a139d04e746cd17d5b738a972dc5128ad}{Above\+Threshold}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp)
+\begin{DoxyCompactList}\small\item\em Heuristic test based on $ k |\mathbf{r} − \mathbf{r}^{\prime}| $. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGreenFHom3D_a2cd095383b467cb6ca12819e2cd5dc61}{Above\+Threshold}} (\mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*}T, \mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*}Tp)
+\begin{DoxyCompactList}\small\item\em Heuristic test for two triangles using center distance vs. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGreenFHom3D_ac928f16e6e79c75c002d9a721a8858d8}{Green\+FHom3D}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor (initializes with zeroed wavenumber and no lookup table). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGreenFHom3D_a59f5ce23b99f97eaa6dedf90284ed6e3}{Green\+FHom3D}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenF_a551f07ab3b294c7b200eb578026bfa02}{wavelength}}, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} epsilon\+Medium)
+\begin{DoxyCompactList}\small\item\em Construct for a homogeneous, non-\/magnetic medium. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGreenFHom3D_a2947b2c6b81ce78024413a994702dad7}{Green\+FHom3D}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenF_a551f07ab3b294c7b200eb578026bfa02}{wavelength}}, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} epsilon\+Medium, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} mu\+Medium)
+\begin{DoxyCompactList}\small\item\em Construct for a homogeneous, magnetic medium. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classGreenFHom3D_a1d2099a8853c43408f2f95632d707b14}{\texorpdfstring{$\sim$}{\string~}\+Green\+FHom3D}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globals_8h_ac062d767acbc2b8149a4039dc4a1a18f}{cdyad}} \mbox{\hyperlink{classGreenFHom3D_a0d4d8b30c9627e2a87edf329ecb5b2ab}{Evaluate\+Dyadic}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp)
+\begin{DoxyCompactList}\small\item\em Dyadic Green\textquotesingle{}s function $\overline{\overline G}(\mathbf r,\mathbf r^{\prime})$. \end{DoxyCompactList}\item 
+virtual std\+::tuple$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}, \mbox{\hyperlink{globals_8h_ac062d767acbc2b8149a4039dc4a1a18f}{cdyad}} $>$ \mbox{\hyperlink{classGreenFHom3D_ac989f2a060436c41a08da43af35b5ab1}{Evaluate\+All}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp)
+\begin{DoxyCompactList}\small\item\em Evaluate $(G,\ \nabla^{\prime}G,\ \overline{\overline G})$ together. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenFHom3D_a701791540c59726195148449d4adda07}{half\+Smoothed}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp)
+\begin{DoxyCompactList}\small\item\em Half-\/smoothed scalar kernel for coincident triangles. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGreenFHom3D_aee15ec1616a294e10b554f1afbb97845}{Same\+Tri\+DKG}} (const std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*} $>$ \&fvec, const std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*} $>$ \&fpvec, std\+::vector$<$ std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ $>$ \&DK, std\+::vector$<$ std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ $>$ $>$ \&DKG)
+\begin{DoxyCompactList}\small\item\em Same as \doxylink{classGreenFHom3D_a419cbe00b5a2aed70ac546904a8a8d6f}{Same\+Tri\+DK} plus gradients (if provided by the GF). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classGreenF}{GreenF}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGreenF_a332ac24f39288170f77c18f37fde2c82}{GreenF}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenF_a551f07ab3b294c7b200eb578026bfa02}{wavelength}}, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} epsilon\+Medium)
+\begin{DoxyCompactList}\small\item\em Constructor for a homogeneous, non-\/magnetic medium. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGreenF_a8f4bd71bf23024ff5859ea791b8a17df}{GreenF}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenF_a551f07ab3b294c7b200eb578026bfa02}{wavelength}}, const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&epsilon\+Medium)
+\begin{DoxyCompactList}\small\item\em Constructor for a layered, non-\/magnetic medium. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGreenF_a37b267f203bf4d571d7510e0a92bdd4f}{GreenF}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenF_a551f07ab3b294c7b200eb578026bfa02}{wavelength}}, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} epsilon\+Medium, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} mu\+Medium)
+\begin{DoxyCompactList}\small\item\em Constructor for a homogeneous, magnetic medium. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGreenF_a90c26315201fbb2b80a7ce30b0d369cf}{GreenF}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenF_a551f07ab3b294c7b200eb578026bfa02}{wavelength}}, const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&epsilon\+Medium, const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&mu\+Medium)
+\begin{DoxyCompactList}\small\item\em Constructor for a layered, magnetic medium. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classGreenF_ad60758ba43be153d6521e2f2e108334a}{\texorpdfstring{$\sim$}{\string~}\+GreenF}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenF_a00b8e60822da0d787d66c4554c59189d}{Wave\+Vec}} ()
+\begin{DoxyCompactList}\small\item\em Return homogeneous wavevector $ k_B $ (if defined). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenF_abf00726011a4eca4109bc43125218d30}{Ev\+Erfc}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} z)
+\begin{DoxyCompactList}\small\item\em Evaluate {\ttfamily erfc} via the 2D lookup table if available. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGreenF_ae0c99d3bdbee9b75342be3e0664ba598}{Init\+Lookup\+Table}} (\mbox{\hyperlink{classLookupTableBin}{Lookup\+Table\+Bin}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classGreenF_af4be67948114ed6bd9f273a3193c23e6}{t}})
+\begin{DoxyCompactList}\small\item\em Initialize the {\ttfamily erfc} lookup table pointer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenF_a64c00505ed1ff4270d5c9ebcb76cc154}{Get\+Layer\+Wavenumber}} (size\+\_\+t index) const
+\begin{DoxyCompactList}\small\item\em Get layer wavenumber by index. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{classGreenF_a9b07899d8fa4d69ed69025bf785c64a4}{Get\+Layers\+Wavenumbers}} () const
+\begin{DoxyCompactList}\small\item\em Get all layer wavenumbers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classGreenFHom3DPer2D_a098b4d59dde268718483b4ac9906e446}{Primitive\+Cell}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \&target)
+\begin{DoxyCompactList}\small\item\em Map a displacement to the primitive cell. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGreenFHom3DPer2D_a07235ce91a1e9b3410f5fad888d0e44c}{Reciprocal}} ()
+\begin{DoxyCompactList}\small\item\em Build reciprocal lattice vectors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGreenFHom3DPer2D_a9352fdb0ead2b5956f3e951122f73e18}{To\+Plane}} ()
+\begin{DoxyCompactList}\small\item\em Project the Bloch vector onto the lattice plane. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenFHom3DPer2D_a359a21bc178e1c0d21125f8af5ae4fcb}{Ewald}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r)
+\begin{DoxyCompactList}\small\item\em Ewald-\/summed scalar kernel (2D periodic). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenFHom3DPer2D_aa6a46238cd2d01600780fd176a36971d}{Ewald\+Smoothed}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r)
+\begin{DoxyCompactList}\small\item\em Ewald-\/summed smoothed scalar kernel. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classGreenFHom3DPer2D_afdc08576760ed0ae9a61dc378a7faac3}{Gradient\+Ewald}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r)
+\begin{DoxyCompactList}\small\item\em Ewald-\/summed source-\/gradient. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classGreenFHom3DPer2D_a86d2cbdfe3ecb724651159902fabcdad}{Gradient\+Ewald\+Smoothed}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r)
+\begin{DoxyCompactList}\small\item\em Ewald-\/summed smoothed source-\/gradient. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenFHom3DPer2D_a1bf2f1eb77a84b027b99ec75d31c8576}{Ewald\+Spatial}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r)
+\begin{DoxyCompactList}\small\item\em Spatial (real-\/space images) part of Ewald sum. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classGreenFHom3DPer2D_a9e049d83cd897078023b76fb89558d31}{Gradient\+Ewald\+Spatial}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r)
+\begin{DoxyCompactList}\small\item\em Spatial part of the source-\/gradient. \end{DoxyCompactList}\item 
+std\+::pair$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ \mbox{\hyperlink{classGreenFHom3DPer2D_ad219414131e33eb361fe2240be9612a0}{Ewald\+And\+Gradient\+Spatial}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r)
+\begin{DoxyCompactList}\small\item\em Spatial part returning both normal and gradient. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenFHom3DPer2D_accc01158b08720b45256b17ed3536d8b}{Ewald\+Spatial\+Smoothed}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r)
+\begin{DoxyCompactList}\small\item\em Spatial part for the smoothed scalar kernel $ G_s $. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classGreenFHom3DPer2D_a11d147713f81b9b9684aa9d39514a2c6}{Gradient\+Ewald\+Spatial\+Smoothed}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r)
+\begin{DoxyCompactList}\small\item\em Spatial part of the smoothed source-\/gradient $\nabla^{\prime}G_s$. \end{DoxyCompactList}\item 
+std\+::pair$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ \mbox{\hyperlink{classGreenFHom3DPer2D_af034587a03115087737a86ed71b664f4}{Ewald\+And\+Gradient\+Spatial\+Smoothed}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r)
+\begin{DoxyCompactList}\small\item\em Spatial part returning $\{G_s,\ \nabla^{\prime} G_s\}$. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenFHom3DPer2D_aad98b9953626259eda54006eecbcf04e}{Ewald\+Spectral}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r)
+\begin{DoxyCompactList}\small\item\em Spectral (reciprocal-\/lattice) part of Ewald sum for $ G $. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classGreenFHom3DPer2D_a1ab7bcf35b15f67bb9824040c34c8bbc}{Gradient\+Ewald\+Spectral}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r)
+\begin{DoxyCompactList}\small\item\em Spectral part of the source-\/gradient $\nabla^{\prime} G$. \end{DoxyCompactList}\item 
+std\+::pair$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ \mbox{\hyperlink{classGreenFHom3DPer2D_a025f6ce600bdd42ae02716905c75ba66}{Ewald\+And\+Gradient\+Spectral}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r)
+\begin{DoxyCompactList}\small\item\em Spectral part returning $\{G,\ \nabla^{\prime}G\}$. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classGreenFHom3DPer}{Green\+FHom3\+DPer}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGreenFHom3DPer_af451f0bfd43404b11e5ea97c9ee84c9d}{Assign}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} testvector, std\+::pair$<$ bool, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} $>$ \&result)
+\begin{DoxyCompactList}\small\item\em Helper used by near/far tests to assign the nearest image vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classGreenFHom3DPer2D_ab85e5d3537408ae72ae707acb50f3616}{a1}}
+\begin{DoxyCompactList}\small\item\em First lattice vector (periodic direction). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classGreenFHom3DPer2D_ac27790f3ca7b7f6b7105f4b3d4cf9845}{a1a1}}
+\begin{DoxyCompactList}\small\item\em a1·a1. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classGreenFHom3DPer2D_a8b2015bb181e7a254b6ee4a839d04f78}{norma1}}
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$\vert$}{|}a1\texorpdfstring{$\vert$}{|}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classGreenFHom3DPer2D_a715463ee9d21b6d3185ba70ff5218756}{b1}}
+\begin{DoxyCompactList}\small\item\em First reciprocal lattice vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classGreenFHom3DPer2D_adbb4c4a1d8ae383d3a0301a9b0e7c5c1}{a2}}
+\begin{DoxyCompactList}\small\item\em Second lattice vector (periodic direction). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classGreenFHom3DPer2D_ae489c757dbcf3f9acb675120117c9793}{a2a2}}
+\begin{DoxyCompactList}\small\item\em a2·a2. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classGreenFHom3DPer2D_a07d9b33394c2d593545294f3b28441f5}{norma2}}
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$\vert$}{|}a2\texorpdfstring{$\vert$}{|}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classGreenFHom3DPer2D_aff826b77a042a1c90d5a1656dd4b3cbb}{a1a2}}
+\begin{DoxyCompactList}\small\item\em a1·a2. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classGreenFHom3DPer2D_a671b61e102c3c556e44e839076c98655}{cross\+Factor}}
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$\vert$}{|}a1xa2\texorpdfstring{$\vert$}{|}\texorpdfstring{$^\wedge$}{\string^}2 = a1a1\texorpdfstring{$\ast$}{*}a2a2 − (a1·a2)\texorpdfstring{$^\wedge$}{\string^}2 (used repeatedly). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classGreenFHom3DPer2D_a75daa299cb2336bd589181c777e73852}{b2}}
+\begin{DoxyCompactList}\small\item\em Second reciprocal lattice vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classGreenFHom3DPer2D_acd04f7deee728dedfc0b39cb1291cefc}{perp}}
+\begin{DoxyCompactList}\small\item\em Unit vector normal to the lattice plane. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classGreenFHom3DPer}{Green\+FHom3\+DPer}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classGreenFHom3DPer_a2fe8eb00a6fb3e3a3cfb5eb3ac1088f9}{k}}
+\begin{DoxyCompactList}\small\item\em Bloch vector. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classGreenFHom3DPer_abbdc3e2fbc849aee7686b02eb714c826}{V}}
+\begin{DoxyCompactList}\small\item\em Unit‑cell volume. \end{DoxyCompactList}\item 
+std\+::pair$<$ bool, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} $>$ \mbox{\hyperlink{classGreenFHom3DPer_a271637f58225ba8f338b875380a532c6}{above\+Threshold}}
+\begin{DoxyCompactList}\small\item\em Cached result of a near/far test. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGreenFHom3DPer_a9b7cff56f8284219d88234348791d1cc}{evaluation\+Terms}}
+\begin{DoxyCompactList}\small\item\em Number of periodic terms to evaluate. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classGreenFHom3DPer_ac1845f687481c50fe84d0f29603c4a1d}{e}}
+\begin{DoxyCompactList}\small\item\em Ewald splitting parameter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classGreenF}{GreenF}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenF_a551f07ab3b294c7b200eb578026bfa02}{wavelength}}
+\begin{DoxyCompactList}\small\item\em Wavelength in medium. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\+\_\+B}}
+\begin{DoxyCompactList}\small\item\em Homogeneous wavenumber (if applicable). \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{classGreenF_a8712c50916bb76ad1edd14ea8b27b1a0}{k\+\_\+L}}
+\begin{DoxyCompactList}\small\item\em Per‑layer wavenumbers for layered problems. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLookupTableBin}{Lookup\+Table\+Bin}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classGreenF_af4be67948114ed6bd9f273a3193c23e6}{t}}
+\begin{DoxyCompactList}\small\item\em Pointer to error‑function lookup table (owned elsewhere). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGreenF_aa8b9f7c53607d829dacd82b657f65515}{there\+Is\+No\+Lookup\+Table}}
+\begin{DoxyCompactList}\small\item\em If true, fall back to direct \doxylink{mathFunctions_8h_a7916c6b62310fe9cf38ec2a2890aaad4}{cerfc()} evaluation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGreenFHom3DPer2D_a3160d2ff20a3ec478d2fb6e9b72cf79d}{Init}} ()
+\begin{DoxyCompactList}\small\item\em Common initialization\+: set lookup flags, build reciprocal lattice, project k, choose Ewald parameter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGaussQuad}{Gauss\+Quad}}$<$ \mbox{\hyperlink{classGreenFHom3DPer2D}{Green\+FHom3\+DPer2D}} $>$ \mbox{\hyperlink{classGreenFHom3DPer2D_a867c7a893f50bf032cdc1378b50a05d3}{gauss}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classGaussian}{Gaussian} quadrature for numerical integration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classGreenF}{GreenF}}}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classGreenF_ada52587b39995134c895324efbaf5919}{Enable\+Accurate}} ()
+\begin{DoxyCompactList}\small\item\em Request high‑accuracy evaluation paths (global). \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classGreenF_ae8ee4d28ca884aab65018979e3d443ac}{Requires\+Accurate}} ()
+\begin{DoxyCompactList}\small\item\em Query whether high-\/accuracy evaluation is requested. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classGreenF_a0471f415be8e4d0f2fc7268e66ff38f5}{Assign\+Etm}} (int n)
+\begin{DoxyCompactList}\small\item\em Set number of periodic evaluation terms (for periodic GFs). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{classGreenF}{GreenF}}}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classGreenF_afb8bbc3614d84fa516766d49d71f5071}{Needs\+Accurate}} = false
+\begin{DoxyCompactList}\small\item\em Request high‑accuracy integration where available. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{classGreenF_aa2f846b8735322f9e33660c443eb3910}{Etm}} = 1
+\begin{DoxyCompactList}\small\item\em Number of periodic evaluation terms (for periodic GFs). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+2D‑periodic homogeneous 3D Green\textquotesingle{}s function with Ewald acceleration. 
+
+Key responsibilities\+:
+\begin{DoxyItemize}
+\item Manage lattice/reciprocal vectors and Bloch vector projection into the periodic plane ({\ttfamily To\+Plane}).
+\item Perform Ewald‑split evaluations of the scalar kernel {\ttfamily G} and its source‑gradient {\ttfamily grad\textquotesingle{}G} (both smoothed and unsmoothed variants).
+\item Provide RWG‑weighted integrals for RHS/post processing (delta, kappa) and same‑triangle batched assembly helpers. 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8h_source_l00034}{34}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8h_source}{Green\+FHom3\+DPer2\+D.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classGreenFHom3DPer2D_a6e7bfc8640c70e6dfaa9f8e14cb916ea}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{GreenFHom3DPer2D()}{GreenFHom3DPer2D()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_a6e7bfc8640c70e6dfaa9f8e14cb916ea} 
+Green\+FHom3\+DPer2\+D\+::\+Green\+FHom3\+DPer2D (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{wavelength}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{epsilon\+Medium}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{wavevector}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{lattice\+Vector}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{lattice\+Vector2}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for a non-\/magnetic medium (2D periodic). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wavelength} & Vacuum wavelength $\lambda_0$. \\
+\hline
+{\em epsilon\+Medium} & Relative permittivity $\varepsilon_r$. \\
+\hline
+{\em wavevector} & Bloch vector $\mathbf k_B$. \\
+\hline
+{\em lattice\+Vector} & First lattice vector $\mathbf a_1$. \\
+\hline
+{\em lattice\+Vector2} & Second lattice vector $\mathbf a_2$. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source}{Green\+FHom3\+DPer2\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_a6e7bfc8640c70e6dfaa9f8e14cb916ea_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_a6e7bfc8640c70e6dfaa9f8e14cb916ea_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3DPer2D_ad3b0693d618bd75c472df152d72760e7}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{GreenFHom3DPer2D()}{GreenFHom3DPer2D()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_ad3b0693d618bd75c472df152d72760e7} 
+Green\+FHom3\+DPer2\+D\+::\+Green\+FHom3\+DPer2D (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{wavelength}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{epsilon\+Medium}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{mu\+Medium}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{wavevector}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{lattice\+Vector}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{lattice\+Vector2}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for a magnetic medium (2D periodic). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wavelength} & Vacuum wavelength $\lambda_0$. \\
+\hline
+{\em epsilon\+Medium} & Relative permittivity $\varepsilon_r$. \\
+\hline
+{\em mu\+Medium} & Relative permeability $\mu_r$. \\
+\hline
+{\em wavevector} & Bloch vector $\mathbf k_B$. \\
+\hline
+{\em lattice\+Vector} & First lattice vector $\mathbf a_1$. \\
+\hline
+{\em lattice\+Vector2} & Second lattice vector $\mathbf a_2$. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source_l00032}{32}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source}{Green\+FHom3\+DPer2\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_ad3b0693d618bd75c472df152d72760e7_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classGreenFHom3DPer2D_a4049a59ae5bbd1406d1da47e6de62af8}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!AboveThresholdTranslate@{AboveThresholdTranslate}}
+\index{AboveThresholdTranslate@{AboveThresholdTranslate}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{AboveThresholdTranslate()}{AboveThresholdTranslate()}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_a4049a59ae5bbd1406d1da47e6de62af8} 
+bool Green\+FHom3\+DPer2\+D\+::\+Above\+Threshold\+Translate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*}}]{T}{, }\item[{\mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*}}]{Tp}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{t}{}\end{DoxyParamCaption})}
+
+
+
+Far/near heuristic for translated triangle pairs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & Observation triangle. \\
+\hline
+{\em Tp} & Source triangle. \\
+\hline
+{\em t} & Lattice translation applied to the source. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if sufficiently separated; false if near. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source_l00120}{120}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source}{Green\+FHom3\+DPer2\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_a4049a59ae5bbd1406d1da47e6de62af8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_a4049a59ae5bbd1406d1da47e6de62af8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3DPer2D_a4fcccf5350453546ac226492ff19bcd0}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{Evaluate()}{Evaluate()}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_a4fcccf5350453546ac226492ff19bcd0} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Green\+FHom3\+DPer2\+D\+::\+Evaluate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{rp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Scalar Bloch-\/periodic Green\textquotesingle{}s function $ G(\mathbf r,\mathbf r\textnormal{\textquotesingle})$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation point. \\
+\hline
+{\em rp} & Source point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex scalar $ G $.
+\end{DoxyReturn}
+Applies primitive‑cell mapping to the in‑plane displacement and sums spatial \& spectral Ewald contributions. 
+
+Reimplemented from \mbox{\hyperlink{classGreenFHom3D_a049e83f08bff1b6c003a35f478973609}{Green\+FHom3D}}.
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source_l00484}{484}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source}{Green\+FHom3\+DPer2\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_a4fcccf5350453546ac226492ff19bcd0_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3DPer2D_ab49a15bcfe7b44d2338c9182f003d385}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!EvaluateandGradientSmoothedTranslate@{EvaluateandGradientSmoothedTranslate}}
+\index{EvaluateandGradientSmoothedTranslate@{EvaluateandGradientSmoothedTranslate}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{EvaluateandGradientSmoothedTranslate()}{EvaluateandGradientSmoothedTranslate()}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_ab49a15bcfe7b44d2338c9182f003d385} 
+std\+::pair$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ Green\+FHom3\+DPer2\+D\+::\+Evaluateand\+Gradient\+Smoothed\+Translate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{rp}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{t}{}\end{DoxyParamCaption})}
+
+
+
+Evaluate $\{G_s,\ \nabla^{\prime} G_s\}$ (smoothed) for a translation in one call. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation point. \\
+\hline
+{\em rp} & Source point. \\
+\hline
+{\em t} & Lattice translation applied to the source. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pair $(G_s,\ \nabla^{\prime} G_s)$. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source_l00566}{566}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source}{Green\+FHom3\+DPer2\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_ab49a15bcfe7b44d2338c9182f003d385_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_ab49a15bcfe7b44d2338c9182f003d385_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3DPer2D_aea4d858bd544ba5e9a8de1197b572b4e}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!EvaluateandGradientTranslate@{EvaluateandGradientTranslate}}
+\index{EvaluateandGradientTranslate@{EvaluateandGradientTranslate}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{EvaluateandGradientTranslate()}{EvaluateandGradientTranslate()}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_aea4d858bd544ba5e9a8de1197b572b4e} 
+std\+::pair$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ Green\+FHom3\+DPer2\+D\+::\+Evaluateand\+Gradient\+Translate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{rp}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{t}{}\end{DoxyParamCaption})}
+
+
+
+Evaluate $\{G,\ \nabla^{\prime} G\}$ for a translation in one call. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation point. \\
+\hline
+{\em rp} & Source point. \\
+\hline
+{\em t} & Lattice translation applied to the source. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pair $(G,\ \nabla^{\prime} G)$. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source_l00554}{554}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source}{Green\+FHom3\+DPer2\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_aea4d858bd544ba5e9a8de1197b572b4e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_aea4d858bd544ba5e9a8de1197b572b4e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3DPer2D_a268d4706bd313c8eadb38e26b15184f0}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!EvaluateTranslate@{EvaluateTranslate}}
+\index{EvaluateTranslate@{EvaluateTranslate}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{EvaluateTranslate()}{EvaluateTranslate()}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_a268d4706bd313c8eadb38e26b15184f0} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Green\+FHom3\+DPer2\+D\+::\+Evaluate\+Translate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{rp}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{t}{}\end{DoxyParamCaption})}
+
+
+
+Scalar $ G $ for a specific lattice translation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation point. \\
+\hline
+{\em rp} & Source point. \\
+\hline
+{\em t} & Lattice translation applied to the source (no primitive-\/cell mapping). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex scalar $ G $. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source_l00487}{487}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source}{Green\+FHom3\+DPer2\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_a268d4706bd313c8eadb38e26b15184f0_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3DPer2D_a359a21bc178e1c0d21125f8af5ae4fcb}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!Ewald@{Ewald}}
+\index{Ewald@{Ewald}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{Ewald()}{Ewald()}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_a359a21bc178e1c0d21125f8af5ae4fcb} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Green\+FHom3\+DPer2\+D\+::\+Ewald (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Ewald-\/summed scalar kernel (2D periodic). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Displacement vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex scalar. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source_l00493}{493}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source}{Green\+FHom3\+DPer2\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_a359a21bc178e1c0d21125f8af5ae4fcb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_a359a21bc178e1c0d21125f8af5ae4fcb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3DPer2D_ad219414131e33eb361fe2240be9612a0}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!EwaldAndGradientSpatial@{EwaldAndGradientSpatial}}
+\index{EwaldAndGradientSpatial@{EwaldAndGradientSpatial}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{EwaldAndGradientSpatial()}{EwaldAndGradientSpatial()}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_ad219414131e33eb361fe2240be9612a0} 
+std\+::pair$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ Green\+FHom3\+DPer2\+D\+::\+Ewald\+And\+Gradient\+Spatial (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Spatial part returning both normal and gradient. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Displacement vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pair $(G,\ \nabla^{\prime}G)$ (spatial contribution only). 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source_l00173}{173}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source}{Green\+FHom3\+DPer2\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_ad219414131e33eb361fe2240be9612a0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_ad219414131e33eb361fe2240be9612a0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3DPer2D_af034587a03115087737a86ed71b664f4}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!EwaldAndGradientSpatialSmoothed@{EwaldAndGradientSpatialSmoothed}}
+\index{EwaldAndGradientSpatialSmoothed@{EwaldAndGradientSpatialSmoothed}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{EwaldAndGradientSpatialSmoothed()}{EwaldAndGradientSpatialSmoothed()}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_af034587a03115087737a86ed71b664f4} 
+std\+::pair$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ Green\+FHom3\+DPer2\+D\+::\+Ewald\+And\+Gradient\+Spatial\+Smoothed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Spatial part returning $\{G_s,\ \nabla^{\prime} G_s\}$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Displacement vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pair $(G_s,\ \nabla^{\prime} G_s)$ (spatial contribution only). 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source_l00271}{271}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source}{Green\+FHom3\+DPer2\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_af034587a03115087737a86ed71b664f4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_af034587a03115087737a86ed71b664f4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3DPer2D_a025f6ce600bdd42ae02716905c75ba66}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!EwaldAndGradientSpectral@{EwaldAndGradientSpectral}}
+\index{EwaldAndGradientSpectral@{EwaldAndGradientSpectral}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{EwaldAndGradientSpectral()}{EwaldAndGradientSpectral()}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_a025f6ce600bdd42ae02716905c75ba66} 
+std\+::pair$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ Green\+FHom3\+DPer2\+D\+::\+Ewald\+And\+Gradient\+Spectral (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Spectral part returning $\{G,\ \nabla^{\prime}G\}$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Displacement vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pair $(G,\ \nabla^{\prime}G)$ (spectral contribution only). 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source_l00416}{416}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source}{Green\+FHom3\+DPer2\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_a025f6ce600bdd42ae02716905c75ba66_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_a025f6ce600bdd42ae02716905c75ba66_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3DPer2D_aa6a46238cd2d01600780fd176a36971d}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!EwaldSmoothed@{EwaldSmoothed}}
+\index{EwaldSmoothed@{EwaldSmoothed}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{EwaldSmoothed()}{EwaldSmoothed()}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_aa6a46238cd2d01600780fd176a36971d} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Green\+FHom3\+DPer2\+D\+::\+Ewald\+Smoothed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Ewald-\/summed smoothed scalar kernel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Displacement vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex scalar (used near singularity). 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source_l00510}{510}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source}{Green\+FHom3\+DPer2\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_aa6a46238cd2d01600780fd176a36971d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_aa6a46238cd2d01600780fd176a36971d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3DPer2D_a1bf2f1eb77a84b027b99ec75d31c8576}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!EwaldSpatial@{EwaldSpatial}}
+\index{EwaldSpatial@{EwaldSpatial}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{EwaldSpatial()}{EwaldSpatial()}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_a1bf2f1eb77a84b027b99ec75d31c8576} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Green\+FHom3\+DPer2\+D\+::\+Ewald\+Spatial (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Spatial (real-\/space images) part of Ewald sum. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Displacement vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex scalar spatial contribution. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source_l00132}{132}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source}{Green\+FHom3\+DPer2\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_a1bf2f1eb77a84b027b99ec75d31c8576_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_a1bf2f1eb77a84b027b99ec75d31c8576_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3DPer2D_accc01158b08720b45256b17ed3536d8b}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!EwaldSpatialSmoothed@{EwaldSpatialSmoothed}}
+\index{EwaldSpatialSmoothed@{EwaldSpatialSmoothed}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{EwaldSpatialSmoothed()}{EwaldSpatialSmoothed()}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_accc01158b08720b45256b17ed3536d8b} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Green\+FHom3\+DPer2\+D\+::\+Ewald\+Spatial\+Smoothed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Spatial part for the smoothed scalar kernel $ G_s $. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Displacement vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex scalar spatial contribution (smoothed). 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source_l00198}{198}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source}{Green\+FHom3\+DPer2\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_accc01158b08720b45256b17ed3536d8b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_accc01158b08720b45256b17ed3536d8b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3DPer2D_aad98b9953626259eda54006eecbcf04e}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!EwaldSpectral@{EwaldSpectral}}
+\index{EwaldSpectral@{EwaldSpectral}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{EwaldSpectral()}{EwaldSpectral()}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_aad98b9953626259eda54006eecbcf04e} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Green\+FHom3\+DPer2\+D\+::\+Ewald\+Spectral (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Spectral (reciprocal-\/lattice) part of Ewald sum for $ G $. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Displacement vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex scalar spectral contribution. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source_l00322}{322}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source}{Green\+FHom3\+DPer2\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_aad98b9953626259eda54006eecbcf04e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_aad98b9953626259eda54006eecbcf04e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3DPer2D_adff724f327912641a20c99fa4c9bb464}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!Gradient@{Gradient}}
+\index{Gradient@{Gradient}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{Gradient()}{Gradient()}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_adff724f327912641a20c99fa4c9bb464} 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} Green\+FHom3\+DPer2\+D\+::\+Gradient (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{rp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Source-\/gradient $\nabla^{\prime} G(\mathbf r,\mathbf r^{\prime})$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation point. \\
+\hline
+{\em rp} & Source point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex 3-\/vector gradient. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classGreenFHom3D_a30fa3b981731ca85587da62ed511f547}{Green\+FHom3D}}.
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source_l00516}{516}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source}{Green\+FHom3\+DPer2\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_adff724f327912641a20c99fa4c9bb464_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3DPer2D_afdc08576760ed0ae9a61dc378a7faac3}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!GradientEwald@{GradientEwald}}
+\index{GradientEwald@{GradientEwald}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{GradientEwald()}{GradientEwald()}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_afdc08576760ed0ae9a61dc378a7faac3} 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} Green\+FHom3\+DPer2\+D\+::\+Gradient\+Ewald (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Ewald-\/summed source-\/gradient. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Displacement vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex 3-\/vector gradient. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source_l00528}{528}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source}{Green\+FHom3\+DPer2\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_afdc08576760ed0ae9a61dc378a7faac3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_afdc08576760ed0ae9a61dc378a7faac3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3DPer2D_a86d2cbdfe3ecb724651159902fabcdad}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!GradientEwaldSmoothed@{GradientEwaldSmoothed}}
+\index{GradientEwaldSmoothed@{GradientEwaldSmoothed}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{GradientEwaldSmoothed()}{GradientEwaldSmoothed()}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_a86d2cbdfe3ecb724651159902fabcdad} 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} Green\+FHom3\+DPer2\+D\+::\+Gradient\+Ewald\+Smoothed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Ewald-\/summed smoothed source-\/gradient. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Displacement vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex 3-\/vector gradient of the smoothed kernel. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source_l00547}{547}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source}{Green\+FHom3\+DPer2\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_a86d2cbdfe3ecb724651159902fabcdad_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_a86d2cbdfe3ecb724651159902fabcdad_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3DPer2D_a9e049d83cd897078023b76fb89558d31}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!GradientEwaldSpatial@{GradientEwaldSpatial}}
+\index{GradientEwaldSpatial@{GradientEwaldSpatial}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{GradientEwaldSpatial()}{GradientEwaldSpatial()}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_a9e049d83cd897078023b76fb89558d31} 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} Green\+FHom3\+DPer2\+D\+::\+Gradient\+Ewald\+Spatial (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Spatial part of the source-\/gradient. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Displacement vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex 3-\/vector spatial contribution. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source_l00150}{150}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source}{Green\+FHom3\+DPer2\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_a9e049d83cd897078023b76fb89558d31_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_a9e049d83cd897078023b76fb89558d31_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3DPer2D_a11d147713f81b9b9684aa9d39514a2c6}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!GradientEwaldSpatialSmoothed@{GradientEwaldSpatialSmoothed}}
+\index{GradientEwaldSpatialSmoothed@{GradientEwaldSpatialSmoothed}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{GradientEwaldSpatialSmoothed()}{GradientEwaldSpatialSmoothed()}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_a11d147713f81b9b9684aa9d39514a2c6} 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} Green\+FHom3\+DPer2\+D\+::\+Gradient\+Ewald\+Spatial\+Smoothed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Spatial part of the smoothed source-\/gradient $\nabla^{\prime}G_s$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Displacement vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex 3-\/vector spatial contribution (smoothed). 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source_l00229}{229}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source}{Green\+FHom3\+DPer2\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_a11d147713f81b9b9684aa9d39514a2c6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_a11d147713f81b9b9684aa9d39514a2c6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3DPer2D_a1ab7bcf35b15f67bb9824040c34c8bbc}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!GradientEwaldSpectral@{GradientEwaldSpectral}}
+\index{GradientEwaldSpectral@{GradientEwaldSpectral}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{GradientEwaldSpectral()}{GradientEwaldSpectral()}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_a1ab7bcf35b15f67bb9824040c34c8bbc} 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} Green\+FHom3\+DPer2\+D\+::\+Gradient\+Ewald\+Spectral (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Spectral part of the source-\/gradient $\nabla^{\prime} G$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Displacement vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex 3-\/vector spectral contribution. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source_l00358}{358}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source}{Green\+FHom3\+DPer2\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_a1ab7bcf35b15f67bb9824040c34c8bbc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_a1ab7bcf35b15f67bb9824040c34c8bbc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3DPer2D_accc5e668a1b137a5279747db2ef0d560}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!GradientSmoothed@{GradientSmoothed}}
+\index{GradientSmoothed@{GradientSmoothed}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{GradientSmoothed()}{GradientSmoothed()}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_accc5e668a1b137a5279747db2ef0d560} 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} Green\+FHom3\+DPer2\+D\+::\+Gradient\+Smoothed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{rp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Smoothed source-\/gradient $\nabla^{\prime} G_s$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation point. \\
+\hline
+{\em rp} & Source point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex 3-\/vector gradient (smoothed). 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classGreenFHom3D_a39ccf7f27bff59110fb0d667bb74146f}{Green\+FHom3D}}.
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source_l00535}{535}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source}{Green\+FHom3\+DPer2\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_accc5e668a1b137a5279747db2ef0d560_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3DPer2D_a410f5349268917cf86215e766118032c}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!GradientSmoothedTranslate@{GradientSmoothedTranslate}}
+\index{GradientSmoothedTranslate@{GradientSmoothedTranslate}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{GradientSmoothedTranslate()}{GradientSmoothedTranslate()}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_a410f5349268917cf86215e766118032c} 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} Green\+FHom3\+DPer2\+D\+::\+Gradient\+Smoothed\+Translate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{rp}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{t}{}\end{DoxyParamCaption})}
+
+
+
+Smoothed source-\/gradient for a specific translation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation point. \\
+\hline
+{\em rp} & Source point. \\
+\hline
+{\em t} & Lattice translation applied to the source. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex 3-\/vector gradient (smoothed). 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source_l00540}{540}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source}{Green\+FHom3\+DPer2\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_a410f5349268917cf86215e766118032c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_a410f5349268917cf86215e766118032c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3DPer2D_abfe000753f5712d72cef880cd4a64b3a}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!GradientTranslate@{GradientTranslate}}
+\index{GradientTranslate@{GradientTranslate}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{GradientTranslate()}{GradientTranslate()}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_abfe000753f5712d72cef880cd4a64b3a} 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} Green\+FHom3\+DPer2\+D\+::\+Gradient\+Translate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{rp}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{t}{}\end{DoxyParamCaption})}
+
+
+
+Source-\/gradient for a specific translation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation point. \\
+\hline
+{\em rp} & Source point. \\
+\hline
+{\em t} & Lattice translation applied to the source. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex 3-\/vector gradient. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source_l00521}{521}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source}{Green\+FHom3\+DPer2\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_abfe000753f5712d72cef880cd4a64b3a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_abfe000753f5712d72cef880cd4a64b3a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3DPer2D_a3160d2ff20a3ec478d2fb6e9b72cf79d}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!Init@{Init}}
+\index{Init@{Init}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_a3160d2ff20a3ec478d2fb6e9b72cf79d} 
+void Green\+FHom3\+DPer2\+D\+::\+Init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Common initialization\+: set lookup flags, build reciprocal lattice, project k, choose Ewald parameter. 
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source_l00042}{42}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source}{Green\+FHom3\+DPer2\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_a3160d2ff20a3ec478d2fb6e9b72cf79d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_a3160d2ff20a3ec478d2fb6e9b72cf79d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3DPer2D_acbad1cb2e954df963942f7eed8074fdc}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!IntegrateD@{IntegrateD}}
+\index{IntegrateD@{IntegrateD}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{IntegrateD()}{IntegrateD()}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_acbad1cb2e954df963942f7eed8074fdc} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Green\+FHom3\+DPer2\+D\+::\+IntegrateD (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{f}{, }\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{fp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+D-\/operator matrix element $\langle \mathbf{f}(\mathbf{r}),\,\overline{\overline G},\,\mathbf{f}(\mathbf{r}^{\prime})\rangle$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Testing RWG function (on observation triangle). \\
+\hline
+{\em fp} & Basis RWG function (on source triangle). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex scalar entry of $\mathbf D$. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Not used for periodic homogeneous case; exits. 
+\end{DoxyNote}
+
+
+Reimplemented from \mbox{\hyperlink{classGreenFHom3D_adf7e68e58e5b082db653607d531217b8}{Green\+FHom3D}}.
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source_l00580}{580}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source}{Green\+FHom3\+DPer2\+D.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_acbad1cb2e954df963942f7eed8074fdc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3DPer2D_a233c2185952220bd16acae2142f05cc1}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!IntegrateDelta@{IntegrateDelta}}
+\index{IntegrateDelta@{IntegrateDelta}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{IntegrateDelta()}{IntegrateDelta()}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_a233c2185952220bd16acae2142f05cc1} 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} Green\+FHom3\+DPer2\+D\+::\+Integrate\+Delta (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{fp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+$\boldsymbol \delta$ term at an observation point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation point $\mathbf r$. \\
+\hline
+{\em fp} & Source RWG function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex 3-\/vector contribution $\boldsymbol \delta(\mathbf r)$.
+\end{DoxyReturn}
+Uses Evaluate/\+Smoothed and Gradient/\+Gradient\+Smoothed according to the near/far heuristic, and applies analytic singularity subtraction. 
+
+Reimplemented from \mbox{\hyperlink{classGreenFHom3D_aca136b03c44ad1da34acf91eb5a5e390}{Green\+FHom3D}}.
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source_l00589}{589}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source}{Green\+FHom3\+DPer2\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_a233c2185952220bd16acae2142f05cc1_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3DPer2D_af1e82e68e80b134fce966b8894834dc7}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!IntegrateK@{IntegrateK}}
+\index{IntegrateK@{IntegrateK}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{IntegrateK()}{IntegrateK()}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_af1e82e68e80b134fce966b8894834dc7} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Green\+FHom3\+DPer2\+D\+::\+IntegrateK (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{f}{, }\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{fp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+K-\/operator matrix element $\langle \mathbf{f}(\mathbf{r}),\,\nabla \times \overline{\overline G},\,\mathbf{f}(\mathbf{r}^{\prime})\rangle$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Testing RWG function (on observation triangle). \\
+\hline
+{\em fp} & Basis RWG function (on source triangle). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex scalar entry of $\mathbf K$. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Not used for periodic homogeneous case; exits. 
+\end{DoxyNote}
+
+
+Reimplemented from \mbox{\hyperlink{classGreenFHom3D_a7cd319e7c9d680103117b7babce53438}{Green\+FHom3D}}.
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source_l00583}{583}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source}{Green\+FHom3\+DPer2\+D.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_af1e82e68e80b134fce966b8894834dc7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3DPer2D_aadb534ef4509422e6f3e78a0e3999758}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!IntegrateKappa@{IntegrateKappa}}
+\index{IntegrateKappa@{IntegrateKappa}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{IntegrateKappa()}{IntegrateKappa()}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_aadb534ef4509422e6f3e78a0e3999758} 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} Green\+FHom3\+DPer2\+D\+::\+Integrate\+Kappa (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{fp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+$\boldsymbol \kappa$ term at an observation point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation point $\mathbf r$. \\
+\hline
+{\em fp} & Source RWG function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex 3-\/vector contribution $\boldsymbol \kappa(\mathbf r)$. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classGreenFHom3D_a9cece8a4056d65455cfcc94c8c61decd}{Green\+FHom3D}}.
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source_l00648}{648}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source}{Green\+FHom3\+DPer2\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_aadb534ef4509422e6f3e78a0e3999758_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3DPer2D_a416e1d9764a9ee201f9dc82f334361fe}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!PairD@{PairD}}
+\index{PairD@{PairD}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{PairD()}{PairD()}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_a416e1d9764a9ee201f9dc82f334361fe} 
+std\+::pair$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ Green\+FHom3\+DPer2\+D\+::\+PairD (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{f}{, }\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{fp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Pair of D elements with swapped triangle roles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Testing RWG function. \\
+\hline
+{\em fp} & Source RWG function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$( D(f,fp),\, D(fp,f) )$. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classGreenFHom3D_a1c0cf62c5d538dec5349f90a5a33028d}{Green\+FHom3D}}.
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source_l00699}{699}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source}{Green\+FHom3\+DPer2\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_a416e1d9764a9ee201f9dc82f334361fe_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3DPer2D_ab28bca332af5d24334833af9793aa454}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!PairK@{PairK}}
+\index{PairK@{PairK}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{PairK()}{PairK()}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_ab28bca332af5d24334833af9793aa454} 
+std\+::pair$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ Green\+FHom3\+DPer2\+D\+::\+PairK (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{f}{, }\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{fp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Pair of K elements with swapped triangle roles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Testing RWG function. \\
+\hline
+{\em fp} & Source RWG function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$( K(f,fp),\, K(fp,f) )$. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classGreenFHom3D_ad7549b4b2063b7a3658845fd0aab82bc}{Green\+FHom3D}}.
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source_l00707}{707}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source}{Green\+FHom3\+DPer2\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_ab28bca332af5d24334833af9793aa454_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3DPer2D_a098b4d59dde268718483b4ac9906e446}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!PrimitiveCell@{PrimitiveCell}}
+\index{PrimitiveCell@{PrimitiveCell}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{PrimitiveCell()}{PrimitiveCell()}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_a098b4d59dde268718483b4ac9906e446} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} Green\+FHom3\+DPer2\+D\+::\+Primitive\+Cell (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \&}]{target}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Map a displacement to the primitive cell. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & Displacement vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The lattice translation $\mathbf t$ that was applied to {\ttfamily target}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classGreenFHom3DPer_a26fcaf4d1832220380f705ac60cbef86}{Green\+FHom3\+DPer}}.
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source_l00083}{83}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source}{Green\+FHom3\+DPer2\+D.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_a098b4d59dde268718483b4ac9906e446_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3DPer2D_a07235ce91a1e9b3410f5fad888d0e44c}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!Reciprocal@{Reciprocal}}
+\index{Reciprocal@{Reciprocal}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{Reciprocal()}{Reciprocal()}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_a07235ce91a1e9b3410f5fad888d0e44c} 
+void Green\+FHom3\+DPer2\+D\+::\+Reciprocal (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Build reciprocal lattice vectors. 
+
+Computes {\ttfamily b1} and {\ttfamily b2} and updates cached geometric factors. 
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source_l00074}{74}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source}{Green\+FHom3\+DPer2\+D.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_a07235ce91a1e9b3410f5fad888d0e44c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3DPer2D_a84a8c855a27c895ff24f6771037284a5}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!SameTriDeltaKappa@{SameTriDeltaKappa}}
+\index{SameTriDeltaKappa@{SameTriDeltaKappa}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{SameTriDeltaKappa()}{SameTriDeltaKappa()}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_a84a8c855a27c895ff24f6771037284a5} 
+void Green\+FHom3\+DPer2\+D\+::\+Same\+Tri\+Delta\+Kappa (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*} $>$ \&}]{fpvec}{, }\item[{std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ $>$ \&}]{Delta\+Kappa}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Compute $(\boldsymbol \delta,\boldsymbol \kappa)$ for all RWGs on a source triangle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation point. \\
+\hline
+{\em fpvec} & RWGs living on the source triangle. \\
+\hline
+{\em Delta\+Kappa} & Output vector of pairs $(\boldsymbol \delta,\boldsymbol \kappa)$. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classGreenFHom3D_a48e8471aabb445e0e50a01c005ff3b98}{Green\+FHom3D}}.
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source_l00890}{890}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source}{Green\+FHom3\+DPer2\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_a84a8c855a27c895ff24f6771037284a5_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3DPer2D_a1dc9dd84c93ee10b2fb4b1866103d957}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!SameTriDK@{SameTriDK}}
+\index{SameTriDK@{SameTriDK}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{SameTriDK()}{SameTriDK()}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_a1dc9dd84c93ee10b2fb4b1866103d957} 
+void Green\+FHom3\+DPer2\+D\+::\+Same\+Tri\+DK (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*} $>$ \&}]{fvec}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*} $>$ \&}]{fpvec}{, }\item[{std\+::vector$<$ std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ $>$ \&}]{DK}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Compute $\mathbf D$ and $\mathbf K$ for all RWG pairs on two triangles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fvec} & RWGs living on the observation triangle. \\
+\hline
+{\em fpvec} & RWGs living on the source triangle. \\
+\hline
+{\em DK} & Output matrix of pairs $(D,K)$ indexed by {\ttfamily }\mbox{[}i\mbox{]}\mbox{[}j\mbox{]}. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classGreenFHom3D_a419cbe00b5a2aed70ac546904a8a8d6f}{Green\+FHom3D}}.
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source_l00716}{716}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source}{Green\+FHom3\+DPer2\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_a1dc9dd84c93ee10b2fb4b1866103d957_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3DPer2D_a6ab5b9db19bf30afa1828652d428d4a8}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!Smoothed@{Smoothed}}
+\index{Smoothed@{Smoothed}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{Smoothed()}{Smoothed()}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_a6ab5b9db19bf30afa1828652d428d4a8} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Green\+FHom3\+DPer2\+D\+::\+Smoothed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{rp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Smoothed scalar kernel $ G_s(\mathbf r,\mathbf r^{\prime})$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation point. \\
+\hline
+{\em rp} & Source point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex scalar $ G_s $ (used for near/coincident geometry). 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classGreenFHom3D_adff9d901394dd07c05a111b607c89075}{Green\+FHom3D}}.
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source_l00499}{499}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source}{Green\+FHom3\+DPer2\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_a6ab5b9db19bf30afa1828652d428d4a8_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3DPer2D_ab327d41ca91c33e57a154eae221b4016}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!SmoothedTranslate@{SmoothedTranslate}}
+\index{SmoothedTranslate@{SmoothedTranslate}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{SmoothedTranslate()}{SmoothedTranslate()}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_ab327d41ca91c33e57a154eae221b4016} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Green\+FHom3\+DPer2\+D\+::\+Smoothed\+Translate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{rp}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{t}{}\end{DoxyParamCaption})}
+
+
+
+Smoothed scalar kernel $ G_s $ for a specific translation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation point. \\
+\hline
+{\em rp} & Source point. \\
+\hline
+{\em t} & Lattice translation applied to the source. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex scalar $ G_s $. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source_l00504}{504}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source}{Green\+FHom3\+DPer2\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_ab327d41ca91c33e57a154eae221b4016_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3DPer2D_a9352fdb0ead2b5956f3e951122f73e18}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!ToPlane@{ToPlane}}
+\index{ToPlane@{ToPlane}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{ToPlane()}{ToPlane()}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_a9352fdb0ead2b5956f3e951122f73e18} 
+void Green\+FHom3\+DPer2\+D\+::\+To\+Plane (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Project the Bloch vector onto the lattice plane. 
+
+Removes the component normal to the plane spanned by {\ttfamily a1} and {\ttfamily a2}. 
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source_l00065}{65}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8cpp_source}{Green\+FHom3\+DPer2\+D.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3DPer2D_a9352fdb0ead2b5956f3e951122f73e18_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classGreenFHom3DPer2D_ab85e5d3537408ae72ae707acb50f3616}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!a1@{a1}}
+\index{a1@{a1}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{a1}{a1}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_ab85e5d3537408ae72ae707acb50f3616} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} Green\+FHom3\+DPer2\+D\+::a1\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+First lattice vector (periodic direction). 
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8h_source_l00053}{53}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8h_source}{Green\+FHom3\+DPer2\+D.\+h}}.
+
+\Hypertarget{classGreenFHom3DPer2D_ac27790f3ca7b7f6b7105f4b3d4cf9845}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!a1a1@{a1a1}}
+\index{a1a1@{a1a1}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{a1a1}{a1a1}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_ac27790f3ca7b7f6b7105f4b3d4cf9845} 
+double Green\+FHom3\+DPer2\+D\+::a1a1\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+a1·a1. 
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8h_source_l00054}{54}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8h_source}{Green\+FHom3\+DPer2\+D.\+h}}.
+
+\Hypertarget{classGreenFHom3DPer2D_aff826b77a042a1c90d5a1656dd4b3cbb}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!a1a2@{a1a2}}
+\index{a1a2@{a1a2}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{a1a2}{a1a2}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_aff826b77a042a1c90d5a1656dd4b3cbb} 
+double Green\+FHom3\+DPer2\+D\+::a1a2\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+a1·a2. 
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8h_source_l00061}{61}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8h_source}{Green\+FHom3\+DPer2\+D.\+h}}.
+
+\Hypertarget{classGreenFHom3DPer2D_adbb4c4a1d8ae383d3a0301a9b0e7c5c1}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!a2@{a2}}
+\index{a2@{a2}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{a2}{a2}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_adbb4c4a1d8ae383d3a0301a9b0e7c5c1} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} Green\+FHom3\+DPer2\+D\+::a2\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Second lattice vector (periodic direction). 
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8h_source_l00058}{58}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8h_source}{Green\+FHom3\+DPer2\+D.\+h}}.
+
+\Hypertarget{classGreenFHom3DPer2D_ae489c757dbcf3f9acb675120117c9793}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!a2a2@{a2a2}}
+\index{a2a2@{a2a2}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{a2a2}{a2a2}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_ae489c757dbcf3f9acb675120117c9793} 
+double Green\+FHom3\+DPer2\+D\+::a2a2\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+a2·a2. 
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8h_source_l00059}{59}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8h_source}{Green\+FHom3\+DPer2\+D.\+h}}.
+
+\Hypertarget{classGreenFHom3DPer2D_a715463ee9d21b6d3185ba70ff5218756}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!b1@{b1}}
+\index{b1@{b1}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{b1}{b1}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_a715463ee9d21b6d3185ba70ff5218756} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} Green\+FHom3\+DPer2\+D\+::b1\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+First reciprocal lattice vector. 
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8h_source_l00056}{56}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8h_source}{Green\+FHom3\+DPer2\+D.\+h}}.
+
+\Hypertarget{classGreenFHom3DPer2D_a75daa299cb2336bd589181c777e73852}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!b2@{b2}}
+\index{b2@{b2}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{b2}{b2}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_a75daa299cb2336bd589181c777e73852} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} Green\+FHom3\+DPer2\+D\+::b2\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Second reciprocal lattice vector. 
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8h_source_l00063}{63}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8h_source}{Green\+FHom3\+DPer2\+D.\+h}}.
+
+\Hypertarget{classGreenFHom3DPer2D_a671b61e102c3c556e44e839076c98655}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!crossFactor@{crossFactor}}
+\index{crossFactor@{crossFactor}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{crossFactor}{crossFactor}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_a671b61e102c3c556e44e839076c98655} 
+double Green\+FHom3\+DPer2\+D\+::cross\+Factor\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\texorpdfstring{$\vert$}{|}a1xa2\texorpdfstring{$\vert$}{|}\texorpdfstring{$^\wedge$}{\string^}2 = a1a1\texorpdfstring{$\ast$}{*}a2a2 − (a1·a2)\texorpdfstring{$^\wedge$}{\string^}2 (used repeatedly). 
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8h_source_l00062}{62}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8h_source}{Green\+FHom3\+DPer2\+D.\+h}}.
+
+\Hypertarget{classGreenFHom3DPer2D_a867c7a893f50bf032cdc1378b50a05d3}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!gauss@{gauss}}
+\index{gauss@{gauss}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{gauss}{gauss}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_a867c7a893f50bf032cdc1378b50a05d3} 
+\mbox{\hyperlink{classGaussQuad}{Gauss\+Quad}}$<$\mbox{\hyperlink{classGreenFHom3DPer2D}{Green\+FHom3\+DPer2D}}$>$ Green\+FHom3\+DPer2\+D\+::gauss\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{classGaussian}{Gaussian} quadrature for numerical integration. 
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8h_source_l00039}{39}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8h_source}{Green\+FHom3\+DPer2\+D.\+h}}.
+
+\Hypertarget{classGreenFHom3DPer2D_a8b2015bb181e7a254b6ee4a839d04f78}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!norma1@{norma1}}
+\index{norma1@{norma1}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{norma1}{norma1}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_a8b2015bb181e7a254b6ee4a839d04f78} 
+double Green\+FHom3\+DPer2\+D\+::norma1\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\texorpdfstring{$\vert$}{|}a1\texorpdfstring{$\vert$}{|}. 
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8h_source_l00055}{55}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8h_source}{Green\+FHom3\+DPer2\+D.\+h}}.
+
+\Hypertarget{classGreenFHom3DPer2D_a07d9b33394c2d593545294f3b28441f5}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!norma2@{norma2}}
+\index{norma2@{norma2}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{norma2}{norma2}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_a07d9b33394c2d593545294f3b28441f5} 
+double Green\+FHom3\+DPer2\+D\+::norma2\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\texorpdfstring{$\vert$}{|}a2\texorpdfstring{$\vert$}{|}. 
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8h_source_l00060}{60}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8h_source}{Green\+FHom3\+DPer2\+D.\+h}}.
+
+\Hypertarget{classGreenFHom3DPer2D_acd04f7deee728dedfc0b39cb1291cefc}\index{GreenFHom3DPer2D@{GreenFHom3DPer2D}!perp@{perp}}
+\index{perp@{perp}!GreenFHom3DPer2D@{GreenFHom3DPer2D}}
+\doxysubsubsection{\texorpdfstring{perp}{perp}}
+{\footnotesize\ttfamily \label{classGreenFHom3DPer2D_acd04f7deee728dedfc0b39cb1291cefc} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} Green\+FHom3\+DPer2\+D\+::perp\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Unit vector normal to the lattice plane. 
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3DPer2D_8h_source_l00064}{64}} of file \mbox{\hyperlink{GreenFHom3DPer2D_8h_source}{Green\+FHom3\+DPer2\+D.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{GreenFHom3DPer2D_8h}{Green\+FHom3\+DPer2\+D.\+h}}\item 
+\mbox{\hyperlink{GreenFHom3DPer2D_8cpp}{Green\+FHom3\+DPer2\+D.\+cpp}}\end{DoxyCompactItemize}

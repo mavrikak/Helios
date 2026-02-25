@@ -1,0 +1,7 @@
+<map id="Triangle::AssignNodes" name="Triangle::AssignNodes">
+<area shape="rect" id="Node000001" title="Replace the three node pointers and recompute cached geometry." alt="" coords="5,5,170,33"/>
+<area shape="rect" id="Node000002" href="$classTriangle.html#ae13d69e28fb7a81ab8257fe0af84ceaa" title="Compute/cached geometry (normal, area, perimeter, center, I1/I2s/I2d)." alt="" coords="218,5,455,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,16,202,16,202,22,170,22"/>
+<area shape="rect" id="Node000003" href="$classTriangle.html#a0752d2c9488c7c44b851b8f75abcaa79" title="Node position (by value) for local index 0..2." alt="" coords="503,5,617,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="455,16,488,16,488,22,455,22"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="readPositionsFromFile" name="readPositionsFromFile">
+<area shape="rect" id="Node000001" title="Reads a set of 3D positions from a file." alt="" coords="261,65,426,93"/>
+<area shape="rect" id="Node000002" href="$classDomainLayered3D.html#acd442aab27d1f56d8211a164f85f341a" title="Self&#45;test: grid generation (prints to console)." alt="" coords="5,5,213,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="274,63,212,47,169,36,170,31,213,42,275,58"/>
+<area shape="rect" id="Node000003" href="$classDomainLayered3D.html#a9ca4f1cf49de04c5df6a664e656dbf85" title="Self&#45;test: tabulation range computation (prints to console)." alt="" coords="21,57,197,102"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="245,82,197,82,197,76,245,76"/>
+<area shape="rect" id="Node000004" href="$classDomainLayered3D.html#adf153d4382b02cff7ced37500e7f624f" title="Self&#45;test: slicing of points with respect to interfaces (prints to console)." alt="" coords="21,126,197,171"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="280,100,188,128,186,123,279,95"/>
+</map>

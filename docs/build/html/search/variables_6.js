@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['g_5fcurrenti_0',['g_currentI',['../SommerfeldIntegrator_8cpp.html#ac3aaa12258a1bd5bdb6ef2424d0a7a61',1,'SommerfeldIntegrator.cpp']]],
+  ['g_5fcurrentj_1',['g_currentJ',['../SommerfeldIntegrator_8cpp.html#ae39f3bb417d74901d9a941eaeb2c14ab',1,'SommerfeldIntegrator.cpp']]],
+  ['g_5fcurrentk_2',['g_currentK',['../SommerfeldIntegrator_8cpp.html#aaf912c1071a387a0c4ec316a52ffa556',1,'SommerfeldIntegrator.cpp']]],
+  ['g_5fcurrentmember_3',['g_currentMember',['../SommerfeldIntegrator_8cpp.html#a19df1dfb234e12835f59cf3240c7707e',1,'SommerfeldIntegrator.cpp']]],
+  ['g_5fcurrentmemberinter_4',['g_currentMemberInter',['../SommerfeldIntegrator_8cpp.html#af0f33c7b4ab252451ade86c6f1335680',1,'SommerfeldIntegrator.cpp']]],
+  ['g_5fdata2d_5',['g_Data2D',['../SommerfeldIntegrator_8cpp.html#a67ca490552eee69b71a641dbae4002cb',1,'SommerfeldIntegrator.cpp']]],
+  ['g_5fdata3d_6',['g_Data3D',['../SommerfeldIntegrator_8cpp.html#a7002f015345bd47e92c0d4389275f218',1,'SommerfeldIntegrator.cpp']]],
+  ['g_5finteg_7',['g_integ',['../SommerfeldIntegrator_8cpp.html#a62d7a7e41f0325654a52c94bc18547f7',1,'SommerfeldIntegrator.cpp']]],
+  ['g_5fintzerokrho_8',['g_intZeroKrho',['../SommerfeldIntegrator_8cpp.html#aeb0cd7e224b34adc8d09ae14abd5ec49',1,'SommerfeldIntegrator.cpp']]],
+  ['g_5fintzerokrhointer_9',['g_intZeroKrhoInter',['../SommerfeldIntegrator_8cpp.html#a260479523ffc9d400daf8834fd1a61f9',1,'SommerfeldIntegrator.cpp']]],
+  ['g_5fk_5fmax_10',['g_k_max',['../SommerfeldIntegrator_8cpp.html#aceadefd0b3b6507a8d1a0f3c6040786a',1,'SommerfeldIntegrator.cpp']]],
+  ['g_5fmemo_11',['g_memo',['../SommerfeldIntegrator_8cpp.html#a826ca4d604d2be5d5e310c0b290cf08e',1,'SommerfeldIntegrator.cpp']]],
+  ['g_5fmemointer_12',['g_memoInter',['../SommerfeldIntegrator_8cpp.html#a3206fa9af3c45d1e56c0e3f043085137',1,'SommerfeldIntegrator.cpp']]],
+  ['g_5fop_13',['g_op',['../SommerfeldIntegrator_8cpp.html#a026826808e7b88bb19719d48863a22b4',1,'SommerfeldIntegrator.cpp']]],
+  ['g_5fpath_14',['g_path',['../SommerfeldIntegrator_8cpp.html#a4bb5357aab7375b674096bfe900eeb1a',1,'SommerfeldIntegrator.cpp']]],
+  ['g_5frq_5fte_15',['g_rq_te',['../SommerfeldIntegrator_8cpp.html#afa9fed6bf487c9bc4340770d4d42ab7a',1,'SommerfeldIntegrator.cpp']]],
+  ['g_5frq_5ftm_16',['g_rq_tm',['../SommerfeldIntegrator_8cpp.html#ab4542d027134733024bf70e1cf0f7614',1,'SommerfeldIntegrator.cpp']]],
+  ['g_5fstatus_17',['g_status',['../SommerfeldIntegrator_8cpp.html#adbd6a2ee6a1d23093fba1f18441bccfb',1,'SommerfeldIntegrator.cpp']]],
+  ['g_5ftq_5fte_18',['g_tq_te',['../SommerfeldIntegrator_8cpp.html#a15ee78aa763bd16c34cfdb8753e7fbcf',1,'SommerfeldIntegrator.cpp']]],
+  ['g_5ftq_5ftm_19',['g_tq_tm',['../SommerfeldIntegrator_8cpp.html#a4aeac0a1c1dd92d445490eb6f52bc010',1,'SommerfeldIntegrator.cpp']]],
+  ['gauss_20',['gauss',['../classGaussian.html#a02f414f3ba03fac5477122c9668432eb',1,'Gaussian::gauss'],['../classGreenFHom3D.html#ae0461a379c7344394246eb64b1b3cf56',1,'GreenFHom3D::gauss'],['../classGreenFHom3DPer2D.html#a867c7a893f50bf032cdc1378b50a05d3',1,'GreenFHom3DPer2D::gauss'],['../classGreenFLayered3D.html#acc41cdee2feb55e72db1a5d4881df5cb',1,'GreenFLayered3D::gauss'],['../classPlaneWave.html#a62efc0919cff4aba04757a1a6f814c57',1,'PlaneWave::gauss']]],
+  ['grnfun_21',['grnFun',['../classDipole.html#a94da534906aac15e1abc6e80d3b83e98',1,'Dipole::grnFun'],['../classDomain.html#a0735c67cde08e0a22bfd9e592f7933d3',1,'Domain::grnFun'],['../classSIEForm.html#af0daa3e52b4bd7fdedf1d532a40031ad',1,'SIEForm::grnFun']]],
+  ['grnfunlayered_22',['grnFunLayered',['../classDipole.html#ac4fe58389c6851319547c866c205940c',1,'Dipole::grnFunLayered'],['../classDomainLayered3D.html#ac443e7dada304ef35ed380febd70113a',1,'DomainLayered3D::grnFunLayered'],['../classSIEFormPMCHW.html#aa50f0ed0ba3fd971157b05002c6a2214',1,'SIEFormPMCHW::grnFunLayered']]],
+  ['grnfunlayeredfields_23',['grnFunLayeredFields',['../classDipole.html#abd0ff6142ade5410fb2653de867f1a53',1,'Dipole::grnFunLayeredFields'],['../classDomainLayered3D.html#a100f0e1e0ea0d8b3c389647f2755716c',1,'DomainLayered3D::grnFunLayeredFields']]]
+];

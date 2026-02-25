@@ -1,0 +1,12 @@
+<map id="Bsp3D::LocDist" name="Bsp3D::LocDist">
+<area shape="rect" id="Node000001" title="Signed distance from a point to the splitter plane." alt="" coords="515,31,635,58"/>
+<area shape="rect" id="Node000002" href="$classBsp3D.html#aeef40776817ce8cec917de1fb2e84f7a" title="Classify a point relative to the splitter plane." alt="" coords="348,56,467,84"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="500,59,468,63,467,58,499,53"/>
+<area shape="rect" id="Node000003" href="$classBsp3D.html#a53fed4500360085faceb956c49913117" title="Clip a polygon against the splitter, dispatching fragments to children." alt="" coords="171,5,299,33"/>
+<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="500,42,299,27,300,21,500,36"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="343,54,284,36,285,31,344,49"/>
+<area shape="rect" id="Node000005" href="$classBsp3D.html#a7f8ee74b1c8aff83c5a1cebf21356b54" title="Recursive point&#45;location query through the BSP tree." alt="" coords="170,57,300,85"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="333,73,301,73,301,68,332,68"/>
+<area shape="rect" id="Node000004" href="$classBsp3D.html#a214442602cb9f9276144dbe828ed793d" title="Recursively branch on the current splitter and distribute elements." alt="" coords="5,5,122,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="155,22,122,22,122,16,155,16"/>
+</map>

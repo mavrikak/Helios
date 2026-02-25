@@ -1,0 +1,11 @@
+<map id="SimJob::EField" name="SimJob::EField">
+<area shape="rect" id="Node000001" title="Incident and secondary &#160;at pos (domain auto&#45;detected)." alt="" coords="5,57,119,85"/>
+<area shape="rect" id="Node000002" href="$classSimJob.html#ab3887eb9e217b1d6424ff85aec4b1793" title="Find which domain contains a point." alt="" coords="167,5,362,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,54,192,35,193,40,120,59"/>
+<area shape="rect" id="Node000003" href="$classDomain.html#afe5c1f862e335ab05031b1d6b0b87c42" title="Total incident electric field at a point from all incident sources." alt="" coords="195,57,334,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="119,68,179,68,179,74,119,74"/>
+<area shape="rect" id="Node000004" href="$classDomain.html#ae1e6975d3ddc5fe177020d447673fdf7" title="Secondary (scattered) electric field at a point from the solution vector." alt="" coords="193,109,336,137"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="120,83,193,102,192,107,118,88"/>
+<area shape="rect" id="Node000005" href="$classDomain.html#a22745c7dfa178d41cfa4fb0b5b120595" title="Relative permeability at a spatial location." alt="" coords="410,109,510,137"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="336,120,394,120,394,126,336,126"/>
+</map>

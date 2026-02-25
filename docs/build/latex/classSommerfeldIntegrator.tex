@@ -1,0 +1,986 @@
+\doxysection{Sommerfeld\+Integrator Class Reference}
+\hypertarget{classSommerfeldIntegrator}{}\label{classSommerfeldIntegrator}\index{SommerfeldIntegrator@{SommerfeldIntegrator}}
+
+
+Numerical engine for Sommerfeld integrals in stratified media.  
+
+
+
+
+{\ttfamily \#include $<$Sommerfeld\+Integrator.\+h$>$}
+
+
+
+Collaboration diagram for Sommerfeld\+Integrator\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classSommerfeldIntegrator__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSommerfeldIntegrator_adb166d863ce44245854490c2fe7eb2d4}{Sommerfeld\+Integrator}} (const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{classSommerfeldIntegrator_a64266a1893b6cbb32e73c4849820265b}{k\+\_\+L}}, int in\+Material\+Index, const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&in\+Epsilon\+Medium, const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&in\+Mu\+Medium, const std\+::vector$<$ double $>$ \&in\+ZVals\+Interfaces, const std\+::vector$<$ double $>$ \&in\+Thickness, double in\+Semi\+Real=4.\+0, double in\+Semi\+Imag=0.\+05, double in\+Ratio=1.\+0, double in\+Cutoff=0.\+1)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classSommerfeldIntegrator}{Sommerfeld\+Integrator} object for layered media calculations. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSommerfeldIntegrator_ae06922bddd9c1a20dd25b120907153f8}{Sommerfeld\+Integrator}} (const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{classSommerfeldIntegrator_a64266a1893b6cbb32e73c4849820265b}{k\+\_\+L}}, int in\+Material\+Index, int in\+Source\+Index, const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&in\+Epsilon\+Medium, const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&in\+Mu\+Medium, const std\+::vector$<$ double $>$ \&in\+ZVals\+Interfaces, const std\+::vector$<$ double $>$ \&in\+Thickness, double in\+Semi\+Real=4.\+0, double in\+Semi\+Imag=0.\+05, double in\+Ratio=0.\+8, double in\+Cutoff=0.\+1)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classSommerfeldIntegrator}{Sommerfeld\+Integrator} object for layered media calculations. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSommerfeldIntegrator_a68bb87eee4ea09dedcafc00e41bf6ccd}{\texorpdfstring{$\sim$}{\string~}\+Sommerfeld\+Integrator}} ()
+\begin{DoxyCompactList}\small\item\em Destructor\+: releases \doxylink{classLayeredMediaUtils}{Layered\+Media\+Utils}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structData2D}{Data2D}} \mbox{\hyperlink{classSommerfeldIntegrator_abc3fad85f82353d54bba4336caf1af38}{select\+Data2D}} (const std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \&r, const std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \&z1, const std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \&z2, const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Selects and processes 2D data based on the given input parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structData3D}{Data3D}} \mbox{\hyperlink{classSommerfeldIntegrator_a22d5ef6859dfee2cb33c026abeafa091}{select\+Data3D}} (const std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$ \&r, const std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$ \&z1, const std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$ \&z2, const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Selects and processes 3D data based on the given input parameters. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$ \mbox{\hyperlink{classSommerfeldIntegrator_ac555c6dc86d0b7fb03ea49df9668daf8}{inter\+Dist}} (std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$ z, int index, double direction)
+\begin{DoxyCompactList}\small\item\em Computes distances from interfaces for inter-\/layer secondary wave calculations. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ $>$ $>$ \mbox{\hyperlink{classSommerfeldIntegrator_a81c32ffee2aefc0eecbbbd7235c80e70}{Secondary}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} krho, std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$ r, std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$ z1, std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$ z2, const std\+::string \&waves)
+\begin{DoxyCompactList}\small\item\em Computes secondary wave contributions in a layered medium. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structIntegrandIntra}{Integrand\+Intra}} \mbox{\hyperlink{classSommerfeldIntegrator_a0e528bbac3a3c169464f71e1c1196711}{Intra\+Integrand}} (const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&rq\+\_\+te, const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&rq\+\_\+tm, const \mbox{\hyperlink{structData2D}{Data2D}} \&in\+Data2D, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} kr, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} kz, const std\+::string \&mode, const std\+::string \&op="{}"{})
+\begin{DoxyCompactList}\small\item\em Computes the intra-\/layer Green\textquotesingle{}s function integrand. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structIntegrandInter}{Integrand\+Inter}} \mbox{\hyperlink{classSommerfeldIntegrator_a9467786ef80af13f1b6f4317fb6ae80a}{Inter\+Integrand}} (const \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \&tq\+\_\+te, const \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \&tq\+\_\+tm, const \mbox{\hyperlink{structData3D}{Data3D}} \&in\+Data3D, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} kr, const std\+::string \&mode)
+\begin{DoxyCompactList}\small\item\em Computes the inter-\/layer Green\textquotesingle{}s function integrand. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structIntegrandIntra}{Integrand\+Intra}} \mbox{\hyperlink{classSommerfeldIntegrator_a2c805013bb6091b2010bba9a1e256a4d}{integration\+FIntra}} (const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&rq\+\_\+te, const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&rq\+\_\+tm, const \mbox{\hyperlink{structData2D}{Data2D}} \&in\+Data, double x, double k\+\_\+max, const \mbox{\hyperlink{structIntegrandIntra}{Integrand\+Intra}} \&int\+Zero\+Krho, const std\+::string \&path, const std\+::string \&op="{}"{})
+\begin{DoxyCompactList}\small\item\em Computes the intra-\/layer integration function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structIntegrandInter}{Integrand\+Inter}} \mbox{\hyperlink{classSommerfeldIntegrator_a5479217de11e54b823a970c39580fa64}{integration\+FInter}} (const \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \&tq\+\_\+te, const \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \&tq\+\_\+tm, const \mbox{\hyperlink{structData3D}{Data3D}} \&in\+Data, double x, double k\+\_\+max, const \mbox{\hyperlink{structIntegrandInter}{Integrand\+Inter}} \&int\+Zero\+Krho, const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Computes the inter-\/layer integration function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structCoeffsIntra}{Coeffs\+Intra}} \mbox{\hyperlink{classSommerfeldIntegrator_a3f148b96c090e06e67fb00aea41e7f94}{Evaluate}} (const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&rq\+\_\+te, const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&rq\+\_\+tm, const std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \&r, const std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \&z, bool singular, const std\+::string \&op="{}"{})
+\begin{DoxyCompactList}\small\item\em Computes intra-\/layer coefficients for Green\textquotesingle{}s function interpolation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structCoeffsInter}{Coeffs\+Inter}} \mbox{\hyperlink{classSommerfeldIntegrator_a2537d36d62ecdecc297e19c8127f827a}{Evaluate}} (const \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \&tq\+\_\+te, const \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \&tq\+\_\+tm, const std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$ \&r, const std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$ \&z1, const std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$ \&z2, bool singular, const std\+::string \&op="{}"{})
+\begin{DoxyCompactList}\small\item\em Computes inter-\/layer coefficients for Green\textquotesingle{}s function interpolation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSommerfeldIntegrator_aab7ff3d330e81d60b341e937b4dbe2d4}{write\+Matrix\+To\+File}} (const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ \&matrix, const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Dump a 2D complex matrix to text (i j Re Im) for debugging. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSommerfeldIntegrator_ae6b066494d7f0e8d6dfd9c8e282f9e5a}{write3\+DMatrix\+To\+File}} (const std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ $>$ \&matrix, const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Dump a 3D complex matrix to text (i j k Re Im) for debugging. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{classSommerfeldIntegrator_afe0d60f6663b012e9004922feac799ee}{Fresnel\+Coeff}} (int layer\+IndexI, int layer\+IndexJ, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} krho, const std\+::string \&waves) const
+\begin{DoxyCompactList}\small\item\em Computes the Fresnel reflection and transmission coefficients between two layers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{classSommerfeldIntegrator_a64266a1893b6cbb32e73c4849820265b}{k\+\_\+L}}
+\begin{DoxyCompactList}\small\item\em Wavevector of the layered medium. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSommerfeldIntegrator_a66ed53fa61fb05a945421f959599b983}{material\+Index}}
+\begin{DoxyCompactList}\small\item\em Observation layer index (and source for intra-\/layer) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSommerfeldIntegrator_abfddd71b30488fd49ba9bf99ddd06de7}{source\+Index}}
+\begin{DoxyCompactList}\small\item\em Source layer index. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{classSommerfeldIntegrator_a976e97661509a2824da88527735feb31}{epsilon}}
+\begin{DoxyCompactList}\small\item\em Permittivity of the layered medium. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{classSommerfeldIntegrator_a46bacb9bf923a73d1e1fe7fa388d1570}{mu}}
+\begin{DoxyCompactList}\small\item\em Permeability of the layered medium. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classSommerfeldIntegrator_aacb5653a0a811c901dad261e65df1f5c}{z\+Vals\+Interfaces}}
+\begin{DoxyCompactList}\small\item\em Interface z-\/values. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classSommerfeldIntegrator_a633ed9005b28625926216052e3da9fe2}{thickness}}
+\begin{DoxyCompactList}\small\item\em Layer thicknesses. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classSommerfeldIntegrator_a91cb94cb37cad13f2a6718cfad3f33c5}{semi\+Real}}
+\begin{DoxyCompactList}\small\item\em Scaling factor for real axis of semiellipse. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classSommerfeldIntegrator_a6c8a0e8bccc622a7b702866cc7e34013}{semi\+Imag}}
+\begin{DoxyCompactList}\small\item\em Scaling factor for imaginary axis of semiellipse. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classSommerfeldIntegrator_af9f62990284e52a4c800323ba8d6e05b}{ratio}}
+\begin{DoxyCompactList}\small\item\em z\+:r ratio \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, double $>$ \mbox{\hyperlink{classSommerfeldIntegrator_aebb4ff74350e1265490aee95f3e26e97}{options}}
+\begin{DoxyCompactList}\small\item\em Options for ODE integration. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classSommerfeldIntegrator_a70ef4ca7478c32de4212e4e1262bdfc3}{cutoff}}
+\begin{DoxyCompactList}\small\item\em Cutoff parameter. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLayeredMediaUtils}{Layered\+Media\+Utils}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSommerfeldIntegrator_abad8dea1189a3b78a591981e517ed574}{layered\+Utils}}
+\begin{DoxyCompactList}\small\item\em Layered media utility functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Numerical engine for Sommerfeld integrals in stratified media. 
+
+Construct with material stacks and numerical knobs (semi-\/ellipse radii, ratio, cutoff), then use \doxylink{classSommerfeldIntegrator_a3f148b96c090e06e67fb00aea41e7f94}{Evaluate()} to get intra-\//inter-\/layer Green coefficients packed for interpolation. 
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8h_source_l00036}{36}} of file \mbox{\hyperlink{SommerfeldIntegrator_8h_source}{Sommerfeld\+Integrator.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classSommerfeldIntegrator_adb166d863ce44245854490c2fe7eb2d4}\index{SommerfeldIntegrator@{SommerfeldIntegrator}!SommerfeldIntegrator@{SommerfeldIntegrator}}
+\index{SommerfeldIntegrator@{SommerfeldIntegrator}!SommerfeldIntegrator@{SommerfeldIntegrator}}
+\doxysubsubsection{\texorpdfstring{SommerfeldIntegrator()}{SommerfeldIntegrator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classSommerfeldIntegrator_adb166d863ce44245854490c2fe7eb2d4} 
+Sommerfeld\+Integrator\+::\+Sommerfeld\+Integrator (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$}]{k\+\_\+L}{, }\item[{int}]{in\+Material\+Index}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&}]{in\+Epsilon\+Medium}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&}]{in\+Mu\+Medium}{, }\item[{const std\+::vector$<$ double $>$ \&}]{in\+ZVals\+Interfaces}{, }\item[{const std\+::vector$<$ double $>$ \&}]{in\+Thickness}{, }\item[{double}]{in\+Semi\+Real}{ = {\ttfamily 4.0}, }\item[{double}]{in\+Semi\+Imag}{ = {\ttfamily 0.05}, }\item[{double}]{in\+Ratio}{ = {\ttfamily 1.0}, }\item[{double}]{in\+Cutoff}{ = {\ttfamily 0.1}}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classSommerfeldIntegrator}{Sommerfeld\+Integrator} object for layered media calculations. 
+
+This constructor initializes the Sommerfeld integrator with the given parameters, which define the properties of the layered medium and numerical settings for integration.
+
+
+\begin{DoxyParams}{Parameters}
+{\em k\+\_\+L} & A vector of complex wave numbers for the layered medium. \\
+\hline
+{\em in\+Material\+Index} & An integer indicating the observation/source intra-\/layer index for calculations. \\
+\hline
+{\em in\+Epsilon\+Medium} & A vector of complex permittivity values for the medium layers. \\
+\hline
+{\em in\+Mu\+Medium} & A vector of complex permeability values for the medium layers. \\
+\hline
+{\em in\+ZVals\+Interfaces} & A vector of interface positions along the z-\/axis. \\
+\hline
+{\em in\+Thickness} & A vector of layer thicknesses. \\
+\hline
+{\em in\+Semi\+Real} & Scaling factor for real axis of semiellipse. \\
+\hline
+{\em in\+Semi\+Imag} & Scaling factor for imaginary axis of semiellipse. \\
+\hline
+{\em in\+Ratio} & A double defining the integration ratio parameter. \\
+\hline
+{\em in\+Cutoff} & A double specifying the cutoff value for the integration. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l00511}{511}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+\Hypertarget{classSommerfeldIntegrator_ae06922bddd9c1a20dd25b120907153f8}\index{SommerfeldIntegrator@{SommerfeldIntegrator}!SommerfeldIntegrator@{SommerfeldIntegrator}}
+\index{SommerfeldIntegrator@{SommerfeldIntegrator}!SommerfeldIntegrator@{SommerfeldIntegrator}}
+\doxysubsubsection{\texorpdfstring{SommerfeldIntegrator()}{SommerfeldIntegrator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classSommerfeldIntegrator_ae06922bddd9c1a20dd25b120907153f8} 
+Sommerfeld\+Integrator\+::\+Sommerfeld\+Integrator (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$}]{k\+\_\+L}{, }\item[{int}]{in\+Material\+Index}{, }\item[{int}]{in\+Source\+Index}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&}]{in\+Epsilon\+Medium}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&}]{in\+Mu\+Medium}{, }\item[{const std\+::vector$<$ double $>$ \&}]{in\+ZVals\+Interfaces}{, }\item[{const std\+::vector$<$ double $>$ \&}]{in\+Thickness}{, }\item[{double}]{in\+Semi\+Real}{ = {\ttfamily 4.0}, }\item[{double}]{in\+Semi\+Imag}{ = {\ttfamily 0.05}, }\item[{double}]{in\+Ratio}{ = {\ttfamily 0.8}, }\item[{double}]{in\+Cutoff}{ = {\ttfamily 0.1}}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classSommerfeldIntegrator}{Sommerfeld\+Integrator} object for layered media calculations. 
+
+This constructor initializes the Sommerfeld integrator with the given parameters, which define the properties of the layered medium and numerical settings for integration.
+
+
+\begin{DoxyParams}{Parameters}
+{\em k\+\_\+L} & A vector of complex wave numbers for the layered medium. \\
+\hline
+{\em in\+Material\+Index} & An integer indicating the observation layer index for calculations. \\
+\hline
+{\em in\+Source\+Index} & An integer indicating the source layer index for calculations. \\
+\hline
+{\em in\+Epsilon\+Medium} & A vector of complex permittivity values for the medium layers. \\
+\hline
+{\em in\+Mu\+Medium} & A vector of complex permeability values for the medium layers. \\
+\hline
+{\em in\+ZVals\+Interfaces} & A vector of interface positions along the z-\/axis. \\
+\hline
+{\em in\+Thickness} & A vector of layer thicknesses. \\
+\hline
+{\em in\+Semi\+Real} & Scaling factor for real axis of semiellipse. \\
+\hline
+{\em in\+Semi\+Imag} & Scaling factor for imaginary axis of semiellipse. \\
+\hline
+{\em in\+Ratio} & A double defining the integration ratio parameter. \\
+\hline
+{\em in\+Cutoff} & A double specifying the cutoff value for the integration. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l00524}{524}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+\Hypertarget{classSommerfeldIntegrator_a68bb87eee4ea09dedcafc00e41bf6ccd}\index{SommerfeldIntegrator@{SommerfeldIntegrator}!````~SommerfeldIntegrator@{\texorpdfstring{$\sim$}{\string~}SommerfeldIntegrator}}
+\index{````~SommerfeldIntegrator@{\texorpdfstring{$\sim$}{\string~}SommerfeldIntegrator}!SommerfeldIntegrator@{SommerfeldIntegrator}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}SommerfeldIntegrator()}{\string~SommerfeldIntegrator()}}
+{\footnotesize\ttfamily \label{classSommerfeldIntegrator_a68bb87eee4ea09dedcafc00e41bf6ccd} 
+Sommerfeld\+Integrator\+::\texorpdfstring{$\sim$}{\string~}\+Sommerfeld\+Integrator (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destructor\+: releases \doxylink{classLayeredMediaUtils}{Layered\+Media\+Utils}. 
+
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l00539}{539}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSommerfeldIntegrator_a2537d36d62ecdecc297e19c8127f827a}\index{SommerfeldIntegrator@{SommerfeldIntegrator}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!SommerfeldIntegrator@{SommerfeldIntegrator}}
+\doxysubsubsection{\texorpdfstring{Evaluate()}{Evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classSommerfeldIntegrator_a2537d36d62ecdecc297e19c8127f827a} 
+\mbox{\hyperlink{structCoeffsInter}{Coeffs\+Inter}} Sommerfeld\+Integrator\+::\+Evaluate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \&}]{tq\+\_\+te}{, }\item[{const \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \&}]{tq\+\_\+tm}{, }\item[{const std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$ \&}]{r}{, }\item[{const std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$ \&}]{z1}{, }\item[{const std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$ \&}]{z2}{, }\item[{bool}]{singular}{, }\item[{const std\+::string \&}]{op}{ = {\ttfamily "{}"{}}}\end{DoxyParamCaption})}
+
+
+
+Computes inter-\/layer coefficients for Green\textquotesingle{}s function interpolation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tq\+\_\+te} & Quasistatic TE transmission coefficient. \\
+\hline
+{\em tq\+\_\+tm} & Quasistatic TM transmission coefficient. \\
+\hline
+{\em r} & A 3D vector representing radial coordinate values. \\
+\hline
+{\em z1} & A 3D vector representing axial coordinate values for the first layer. \\
+\hline
+{\em z2} & A 3D vector representing axial coordinate values for the second layer. \\
+\hline
+{\em singular} & A boolean indicating whether singularity subtraction is required (always true). \\
+\hline
+{\em op} & A string specifying additional operations (always empty).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{structCoeffsInter}{Coeffs\+Inter} structure containing Green\textquotesingle{}s functions interpolation coefficients.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if an invalid singular value is provided. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l01663}{1663}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSommerfeldIntegrator_a2537d36d62ecdecc297e19c8127f827a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSommerfeldIntegrator_a3f148b96c090e06e67fb00aea41e7f94}\index{SommerfeldIntegrator@{SommerfeldIntegrator}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!SommerfeldIntegrator@{SommerfeldIntegrator}}
+\doxysubsubsection{\texorpdfstring{Evaluate()}{Evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classSommerfeldIntegrator_a3f148b96c090e06e67fb00aea41e7f94} 
+\mbox{\hyperlink{structCoeffsIntra}{Coeffs\+Intra}} Sommerfeld\+Integrator\+::\+Evaluate (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&}]{rq\+\_\+te}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&}]{rq\+\_\+tm}{, }\item[{const std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \&}]{r}{, }\item[{const std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \&}]{z}{, }\item[{bool}]{singular}{, }\item[{const std\+::string \&}]{op}{ = {\ttfamily "{}"{}}}\end{DoxyParamCaption})}
+
+
+
+Computes intra-\/layer coefficients for Green\textquotesingle{}s function interpolation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rq\+\_\+te} & Quasistatic TE reflection coefficients. \\
+\hline
+{\em rq\+\_\+tm} & Quasistatic TM reflection coefficients. \\
+\hline
+{\em r} & A 2D vector representing radial coordinate values. \\
+\hline
+{\em z} & A 2D vector representing axial coordinate values. \\
+\hline
+{\em singular} & A boolean indicating whether singularity subtraction is required (always true). \\
+\hline
+{\em op} & A string specifying additional operations (\textquotesingle{}plus\textquotesingle{}, \textquotesingle{}minus\textquotesingle{}, or empty for default behavior).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{structCoeffsIntra}{Coeffs\+Intra} structure containing Green\textquotesingle{}s functions interpolation coefficients.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if an invalid singular value is provided. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l01445}{1445}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSommerfeldIntegrator_a3f148b96c090e06e67fb00aea41e7f94_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSommerfeldIntegrator_afe0d60f6663b012e9004922feac799ee}\index{SommerfeldIntegrator@{SommerfeldIntegrator}!FresnelCoeff@{FresnelCoeff}}
+\index{FresnelCoeff@{FresnelCoeff}!SommerfeldIntegrator@{SommerfeldIntegrator}}
+\doxysubsubsection{\texorpdfstring{FresnelCoeff()}{FresnelCoeff()}}
+{\footnotesize\ttfamily \label{classSommerfeldIntegrator_afe0d60f6663b012e9004922feac799ee} 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ Sommerfeld\+Integrator\+::\+Fresnel\+Coeff (\begin{DoxyParamCaption}\item[{int}]{layer\+IndexI}{, }\item[{int}]{layer\+IndexJ}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{krho}{, }\item[{const std\+::string \&}]{waves}{}\end{DoxyParamCaption}) const}
+
+
+
+Computes the Fresnel reflection and transmission coefficients between two layers. 
+
+This function calculates the Fresnel reflection and transmission coefficients for TE (transverse electric) or TM (transverse magnetic) waves at the interface between two material layers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em layer\+IndexI} & Index of the first layer. \\
+\hline
+{\em layer\+IndexJ} & Index of the second layer. \\
+\hline
+{\em krho} & The transverse wave vector component. \\
+\hline
+{\em waves} & A string specifying the wave type (\textquotesingle{}TE\textquotesingle{} or \textquotesingle{}TM\textquotesingle{}).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector containing\+:
+\begin{DoxyItemize}
+\item The Fresnel reflection coefficient.
+\item The Fresnel transmission coefficient.
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & if the layer indices are invalid. \\
+\hline
+{\em std\+::invalid\+\_\+argument} & if the wave type is not \textquotesingle{}TE\textquotesingle{} or \textquotesingle{}TM\textquotesingle{}. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l01940}{1940}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSommerfeldIntegrator_afe0d60f6663b012e9004922feac799ee_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSommerfeldIntegrator_a5479217de11e54b823a970c39580fa64}\index{SommerfeldIntegrator@{SommerfeldIntegrator}!integrationFInter@{integrationFInter}}
+\index{integrationFInter@{integrationFInter}!SommerfeldIntegrator@{SommerfeldIntegrator}}
+\doxysubsubsection{\texorpdfstring{integrationFInter()}{integrationFInter()}}
+{\footnotesize\ttfamily \label{classSommerfeldIntegrator_a5479217de11e54b823a970c39580fa64} 
+\mbox{\hyperlink{structIntegrandInter}{Integrand\+Inter}} Sommerfeld\+Integrator\+::integration\+FInter (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \&}]{tq\+\_\+te}{, }\item[{const \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \&}]{tq\+\_\+tm}{, }\item[{const \mbox{\hyperlink{structData3D}{Data3D}} \&}]{in\+Data}{, }\item[{double}]{x}{, }\item[{double}]{k\+\_\+max}{, }\item[{const \mbox{\hyperlink{structIntegrandInter}{Integrand\+Inter}} \&}]{int\+Zero\+Krho}{, }\item[{const std\+::string \&}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Computes the inter-\/layer integration function. 
+
+This function evaluates the integral of the inter-\/layer Green\textquotesingle{}s function over a specified path. The integration can be performed along a semi-\/ellipse, real infinity, or imaginary infinity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tq\+\_\+te} & Quasistatic TE transmission coefficient. \\
+\hline
+{\em tq\+\_\+tm} & Quasistatic TM transmission coefficient. \\
+\hline
+{\em in\+Data} & A \doxylink{structData3D}{Data3D} structure containing spatial coordinate information. \\
+\hline
+{\em x} & Double representing the integration parameter. \\
+\hline
+{\em k\+\_\+max} & Parameter for integration path specification. \\
+\hline
+{\em int\+Zero\+Krho} & An \doxylink{structIntegrandInter}{Integrand\+Inter} structure containing precomputed singularity corrections. \\
+\hline
+{\em path} & A string specifying the integration path (\textquotesingle{}semi\textquotesingle{}, \textquotesingle{}real\textquotesingle{}, or \textquotesingle{}imag\textquotesingle{}).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An \doxylink{structIntegrandInter}{Integrand\+Inter} structure containing the integrated Green function elements.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if an invalid path type is specified. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l01279}{1279}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSommerfeldIntegrator_a5479217de11e54b823a970c39580fa64_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSommerfeldIntegrator_a5479217de11e54b823a970c39580fa64_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSommerfeldIntegrator_a2c805013bb6091b2010bba9a1e256a4d}\index{SommerfeldIntegrator@{SommerfeldIntegrator}!integrationFIntra@{integrationFIntra}}
+\index{integrationFIntra@{integrationFIntra}!SommerfeldIntegrator@{SommerfeldIntegrator}}
+\doxysubsubsection{\texorpdfstring{integrationFIntra()}{integrationFIntra()}}
+{\footnotesize\ttfamily \label{classSommerfeldIntegrator_a2c805013bb6091b2010bba9a1e256a4d} 
+\mbox{\hyperlink{structIntegrandIntra}{Integrand\+Intra}} Sommerfeld\+Integrator\+::integration\+FIntra (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&}]{rq\+\_\+te}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&}]{rq\+\_\+tm}{, }\item[{const \mbox{\hyperlink{structData2D}{Data2D}} \&}]{in\+Data}{, }\item[{double}]{x}{, }\item[{double}]{k\+\_\+max}{, }\item[{const \mbox{\hyperlink{structIntegrandIntra}{Integrand\+Intra}} \&}]{int\+Zero\+Krho}{, }\item[{const std\+::string \&}]{path}{, }\item[{const std\+::string \&}]{op}{ = {\ttfamily "{}"{}}}\end{DoxyParamCaption})}
+
+
+
+Computes the intra-\/layer integration function. 
+
+This function evaluates the integral of the intra-\/layer Green\textquotesingle{}s function over a specified path. The integration can be performed along a semi-\/ellipse, real infinity, or imaginary infinity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rq\+\_\+te} & Quasistatic TE reflection coefficients. \\
+\hline
+{\em rq\+\_\+tm} & Quasistatic TM reflection coefficients. \\
+\hline
+{\em in\+Data} & A \doxylink{structData2D}{Data2D} structure containing spatial coordinate information. \\
+\hline
+{\em x} & Double representing the integration parameter. \\
+\hline
+{\em k\+\_\+max} & Parameter for integration path specification. \\
+\hline
+{\em int\+Zero\+Krho} & An \doxylink{structIntegrandIntra}{Integrand\+Intra} structure containing precomputed singularity corrections. \\
+\hline
+{\em path} & A string specifying the integration path (\textquotesingle{}semi\textquotesingle{}, \textquotesingle{}real\textquotesingle{}, or \textquotesingle{}imag\textquotesingle{}). \\
+\hline
+{\em op} & A string specifying additional operations (\textquotesingle{}plus\textquotesingle{}, \textquotesingle{}minus\textquotesingle{}, or empty for default behavior).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An \doxylink{structIntegrandIntra}{Integrand\+Intra} structure containing the integrated Green function elements.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if an invalid path type is specified. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l01185}{1185}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSommerfeldIntegrator_a2c805013bb6091b2010bba9a1e256a4d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSommerfeldIntegrator_a2c805013bb6091b2010bba9a1e256a4d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSommerfeldIntegrator_ac555c6dc86d0b7fb03ea49df9668daf8}\index{SommerfeldIntegrator@{SommerfeldIntegrator}!interDist@{interDist}}
+\index{interDist@{interDist}!SommerfeldIntegrator@{SommerfeldIntegrator}}
+\doxysubsubsection{\texorpdfstring{interDist()}{interDist()}}
+{\footnotesize\ttfamily \label{classSommerfeldIntegrator_ac555c6dc86d0b7fb03ea49df9668daf8} 
+std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$ Sommerfeld\+Integrator\+::inter\+Dist (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$}]{z}{, }\item[{int}]{index}{, }\item[{double}]{direction}{}\end{DoxyParamCaption})}
+
+
+
+Computes distances from interfaces for inter-\/layer secondary wave calculations. 
+
+This function calculates the distances of given points from an interface of a layer, adjusting the calculations based on the specified index and direction.
+
+
+\begin{DoxyParams}{Parameters}
+{\em z} & A 3D vector representing the z-\/coordinates of points. \\
+\hline
+{\em index} & The index of the layer of interest. \\
+\hline
+{\em direction} & A double indicating the direction of propagation.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A 3D vector containing the computed distances from the interface. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l00688}{688}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSommerfeldIntegrator_ac555c6dc86d0b7fb03ea49df9668daf8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSommerfeldIntegrator_a9467786ef80af13f1b6f4317fb6ae80a}\index{SommerfeldIntegrator@{SommerfeldIntegrator}!InterIntegrand@{InterIntegrand}}
+\index{InterIntegrand@{InterIntegrand}!SommerfeldIntegrator@{SommerfeldIntegrator}}
+\doxysubsubsection{\texorpdfstring{InterIntegrand()}{InterIntegrand()}}
+{\footnotesize\ttfamily \label{classSommerfeldIntegrator_a9467786ef80af13f1b6f4317fb6ae80a} 
+\mbox{\hyperlink{structIntegrandInter}{Integrand\+Inter}} Sommerfeld\+Integrator\+::\+Inter\+Integrand (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \&}]{tq\+\_\+te}{, }\item[{const \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \&}]{tq\+\_\+tm}{, }\item[{const \mbox{\hyperlink{structData3D}{Data3D}} \&}]{in\+Data3D}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{kr}{, }\item[{const std\+::string \&}]{mode}{}\end{DoxyParamCaption})}
+
+
+
+Computes the inter-\/layer Green\textquotesingle{}s function integrand. 
+
+This function evaluates the inter-\/layer integrand for a given wavenumber, using radial and axial coordinates. It computes Green function elements, derivatives, and surface integrals based on mode selection and operations.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tq\+\_\+te} & Quasistatic TE transmission coefficient. \\
+\hline
+{\em tq\+\_\+tm} & Quasistatic TM transmission coefficient. \\
+\hline
+{\em in\+Data3D} & \doxylink{structData3D}{Data3D} structure containing spatial coordinate information. \\
+\hline
+{\em kr} & Complex radial wavenumber. \\
+\hline
+{\em mode} & String specifying the mode of operation (\textquotesingle{}bessel\textquotesingle{} or \textquotesingle{}hankel\textquotesingle{}).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An \doxylink{structIntegrandInter}{Integrand\+Inter} structure containing computed Green function elements and derivatives.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if input data dimensions mismatch or invalid mode/op is provided.\\
+\hline
+\end{DoxyExceptions}
+Integrand for Green function evaluation, Chew (6.\+15, 6.\+16)\+: Chew, W.\+C., Tong, M.\+S., Hu, B. (2009). Dyadic Green\textquotesingle{}s Function for Layered Media and Integral Equations. In\+: Integral Equation Methods for Electromagnetic and Elastic Waves. Synthesis Lectures on Computational Electromagnetics. Springer, Cham. \href{https://doi.org/10.1007/978-3-031-01707-0_6}{\texttt{ https\+://doi.\+org/10.\+1007/978-\/3-\/031-\/01707-\/0\+\_\+6}}. 
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l01031}{1031}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSommerfeldIntegrator_a9467786ef80af13f1b6f4317fb6ae80a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSommerfeldIntegrator_a9467786ef80af13f1b6f4317fb6ae80a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSommerfeldIntegrator_a0e528bbac3a3c169464f71e1c1196711}\index{SommerfeldIntegrator@{SommerfeldIntegrator}!IntraIntegrand@{IntraIntegrand}}
+\index{IntraIntegrand@{IntraIntegrand}!SommerfeldIntegrator@{SommerfeldIntegrator}}
+\doxysubsubsection{\texorpdfstring{IntraIntegrand()}{IntraIntegrand()}}
+{\footnotesize\ttfamily \label{classSommerfeldIntegrator_a0e528bbac3a3c169464f71e1c1196711} 
+\mbox{\hyperlink{structIntegrandIntra}{Integrand\+Intra}} Sommerfeld\+Integrator\+::\+Intra\+Integrand (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&}]{rq\+\_\+te}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&}]{rq\+\_\+tm}{, }\item[{const \mbox{\hyperlink{structData2D}{Data2D}} \&}]{in\+Data2D}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{kr}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{kz}{, }\item[{const std\+::string \&}]{mode}{, }\item[{const std\+::string \&}]{op}{ = {\ttfamily "{}"{}}}\end{DoxyParamCaption})}
+
+
+
+Computes the intra-\/layer Green\textquotesingle{}s function integrand. 
+
+This function evaluates the intra-\/layer integrand for a given wavenumber, using radial and axial coordinates. It computes Green function elements, derivatives, and surface integrals based on mode selection and operations.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rq\+\_\+te} & Quasistatic TE reflection coefficients. \\
+\hline
+{\em rq\+\_\+tm} & Quasistatic TM reflection coefficients. \\
+\hline
+{\em in\+Data2D} & \doxylink{structData2D}{Data2D} structure containing spatial coordinate information. \\
+\hline
+{\em kr} & Complex radial wavenumber. \\
+\hline
+{\em kz} & Complex axial wavenumber. \\
+\hline
+{\em mode} & String specifying the mode of operation (\textquotesingle{}bessel\textquotesingle{} or \textquotesingle{}hankel\textquotesingle{}). \\
+\hline
+{\em op} & String specifying additional operations (\textquotesingle{}plus\textquotesingle{}, \textquotesingle{}minus\textquotesingle{}, or empty for default behavior).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An \doxylink{structIntegrandIntra}{Integrand\+Intra} structure containing computed Green function elements and derivatives.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if input data dimensions mismatch or invalid mode/op is provided.\\
+\hline
+\end{DoxyExceptions}
+Integrand for Green function evaluation, Chew (6.\+15, 6.\+16)\+: Chew, W.\+C., Tong, M.\+S., Hu, B. (2009). Dyadic Green\textquotesingle{}s Function for Layered Media and Integral Equations. In\+: Integral Equation Methods for Electromagnetic and Elastic Waves. Synthesis Lectures on Computational Electromagnetics. Springer, Cham. \href{https://doi.org/10.1007/978-3-031-01707-0_6}{\texttt{ https\+://doi.\+org/10.\+1007/978-\/3-\/031-\/01707-\/0\+\_\+6}}. 
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l00797}{797}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSommerfeldIntegrator_a0e528bbac3a3c169464f71e1c1196711_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSommerfeldIntegrator_a0e528bbac3a3c169464f71e1c1196711_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSommerfeldIntegrator_a81c32ffee2aefc0eecbbbd7235c80e70}\index{SommerfeldIntegrator@{SommerfeldIntegrator}!Secondary@{Secondary}}
+\index{Secondary@{Secondary}!SommerfeldIntegrator@{SommerfeldIntegrator}}
+\doxysubsubsection{\texorpdfstring{Secondary()}{Secondary()}}
+{\footnotesize\ttfamily \label{classSommerfeldIntegrator_a81c32ffee2aefc0eecbbbd7235c80e70} 
+std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ $>$ $>$ Sommerfeld\+Integrator\+::\+Secondary (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{krho}{, }\item[{std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$}]{r}{, }\item[{std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$}]{z1}{, }\item[{std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$}]{z2}{, }\item[{const std\+::string \&}]{waves}{}\end{DoxyParamCaption})}
+
+
+
+Computes secondary wave contributions in a layered medium. 
+
+This function calculates secondary wave fields based on given wavenumber, radial and axial coordinates, and the type of waves involved.
+
+
+\begin{DoxyParams}{Parameters}
+{\em krho} & A complex wavenumber in the radial direction. \\
+\hline
+{\em r} & A 3D vector containing the radial coordinate values. \\
+\hline
+{\em z1} & A 3D vector containing the first axial coordinate values. \\
+\hline
+{\em z2} & A 3D vector containing the second axial coordinate values. \\
+\hline
+{\em waves} & A string specifying the type of waves considered (e.\+g., TE, TM).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A 4D vector containing\+:
+\begin{DoxyItemize}
+\item f\+: The computed field values.
+\item f\+Z1\+: The first Z1-\/derivative of the field.
+\item f\+Z2\+: The first Z2-\/derivative of the field.
+\item f\+ZZ\+: The mixed Z1-\/\+Z2-\/derivative of the field. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l00720}{720}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSommerfeldIntegrator_a81c32ffee2aefc0eecbbbd7235c80e70_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSommerfeldIntegrator_a81c32ffee2aefc0eecbbbd7235c80e70_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSommerfeldIntegrator_abc3fad85f82353d54bba4336caf1af38}\index{SommerfeldIntegrator@{SommerfeldIntegrator}!selectData2D@{selectData2D}}
+\index{selectData2D@{selectData2D}!SommerfeldIntegrator@{SommerfeldIntegrator}}
+\doxysubsubsection{\texorpdfstring{selectData2D()}{selectData2D()}}
+{\footnotesize\ttfamily \label{classSommerfeldIntegrator_abc3fad85f82353d54bba4336caf1af38} 
+\mbox{\hyperlink{structData2D}{Data2D}} Sommerfeld\+Integrator\+::select\+Data2D (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \&}]{r}{, }\item[{const std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \&}]{z1}{, }\item[{const std\+::vector$<$ std\+::vector$<$ double $>$ $>$ \&}]{z2}{, }\item[{const std\+::string \&}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Selects and processes 2D data based on the given input parameters. 
+
+This function categorizes and stores 2D data depending on the provided path mode (\textquotesingle{}semi\textquotesingle{}, \textquotesingle{}real\textquotesingle{}, or \textquotesingle{}imag\textquotesingle{}). It organizes radial and axial coordinates into matrix or vector formats as needed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & A 2D vector containing the radial coordinate values. \\
+\hline
+{\em z1} & A 2D vector containing the first axial coordinate values. \\
+\hline
+{\em z2} & A 2D vector containing the second axial coordinate values (optional). \\
+\hline
+{\em path} & A string specifying the mode of data selection (\textquotesingle{}semi\textquotesingle{}, \textquotesingle{}real\textquotesingle{}, or \textquotesingle{}imag\textquotesingle{}).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{structData2D}{Data2D} structure containing processed coordinate values and indexing information.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if an invalid path is specified.\\
+\hline
+\end{DoxyExceptions}
+Pack 2D r/z data depending on path.
+\begin{DoxyItemize}
+\item "{}semi"{}\+: keep matrices; dense traversal by linear index.
+\item "{}real"{}\+: select (r,z) with z \texorpdfstring{$>$}{>}= ratio\texorpdfstring{$\ast$}{*}r (or z1+z2 \texorpdfstring{$>$}{>}= ratio\texorpdfstring{$\ast$}{*}r if provided).
+\item "{}imag"{}\+: select (r,z) with z \texorpdfstring{$<$}{<} ratio\texorpdfstring{$\ast$}{*}r (or z1+z2 \texorpdfstring{$<$}{<} ratio\texorpdfstring{$\ast$}{*}r if provided). 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l00553}{553}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSommerfeldIntegrator_abc3fad85f82353d54bba4336caf1af38_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSommerfeldIntegrator_a22d5ef6859dfee2cb33c026abeafa091}\index{SommerfeldIntegrator@{SommerfeldIntegrator}!selectData3D@{selectData3D}}
+\index{selectData3D@{selectData3D}!SommerfeldIntegrator@{SommerfeldIntegrator}}
+\doxysubsubsection{\texorpdfstring{selectData3D()}{selectData3D()}}
+{\footnotesize\ttfamily \label{classSommerfeldIntegrator_a22d5ef6859dfee2cb33c026abeafa091} 
+\mbox{\hyperlink{structData3D}{Data3D}} Sommerfeld\+Integrator\+::select\+Data3D (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$ \&}]{r}{, }\item[{const std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$ \&}]{z1}{, }\item[{const std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ double $>$ $>$ $>$ \&}]{z2}{, }\item[{const std\+::string \&}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Selects and processes 3D data based on the given input parameters. 
+
+This function categorizes and stores 3D data depending on the provided path mode (\textquotesingle{}semi\textquotesingle{}, \textquotesingle{}real\textquotesingle{}, or \textquotesingle{}imag\textquotesingle{}). It organizes radial and axial coordinates into matrix or vector formats as needed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & A 3D vector containing the radial coordinate values. \\
+\hline
+{\em z1} & A 3D vector containing the first axial coordinate values. \\
+\hline
+{\em z2} & A 3D vector containing the second axial coordinate values. \\
+\hline
+{\em path} & A string specifying the mode of data selection (\textquotesingle{}semi\textquotesingle{}, \textquotesingle{}real\textquotesingle{}, or \textquotesingle{}imag\textquotesingle{}).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{structData3D}{Data3D} structure containing processed coordinate values and indexing information.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if an invalid path is specified.\\
+\hline
+\end{DoxyExceptions}
+Pack 3D r/z1/z2 data depending on path (semi/real/imag). The real/imag split uses \texorpdfstring{$\vert$}{|}z1 -\/ z2\texorpdfstring{$\vert$}{|} vs ratio\texorpdfstring{$\ast$}{*}r. 
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l00623}{623}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSommerfeldIntegrator_a22d5ef6859dfee2cb33c026abeafa091_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSommerfeldIntegrator_ae6b066494d7f0e8d6dfd9c8e282f9e5a}\index{SommerfeldIntegrator@{SommerfeldIntegrator}!write3DMatrixToFile@{write3DMatrixToFile}}
+\index{write3DMatrixToFile@{write3DMatrixToFile}!SommerfeldIntegrator@{SommerfeldIntegrator}}
+\doxysubsubsection{\texorpdfstring{write3DMatrixToFile()}{write3DMatrixToFile()}}
+{\footnotesize\ttfamily \label{classSommerfeldIntegrator_ae6b066494d7f0e8d6dfd9c8e282f9e5a} 
+void Sommerfeld\+Integrator\+::write3\+DMatrix\+To\+File (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ $>$ \&}]{matrix}{, }\item[{const std\+::string \&}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Dump a 3D complex matrix to text (i j k Re Im) for debugging. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & The 3D matrix to dump. \\
+\hline
+{\em filename} & The name of the file to write to. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l02005}{2005}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{classSommerfeldIntegrator_ae6b066494d7f0e8d6dfd9c8e282f9e5a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSommerfeldIntegrator_ae6b066494d7f0e8d6dfd9c8e282f9e5a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSommerfeldIntegrator_aab7ff3d330e81d60b341e937b4dbe2d4}\index{SommerfeldIntegrator@{SommerfeldIntegrator}!writeMatrixToFile@{writeMatrixToFile}}
+\index{writeMatrixToFile@{writeMatrixToFile}!SommerfeldIntegrator@{SommerfeldIntegrator}}
+\doxysubsubsection{\texorpdfstring{writeMatrixToFile()}{writeMatrixToFile()}}
+{\footnotesize\ttfamily \label{classSommerfeldIntegrator_aab7ff3d330e81d60b341e937b4dbe2d4} 
+void Sommerfeld\+Integrator\+::write\+Matrix\+To\+File (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ \&}]{matrix}{, }\item[{const std\+::string \&}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Dump a 2D complex matrix to text (i j Re Im) for debugging. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & The 2D matrix to dump. \\
+\hline
+{\em filename} & The name of the file to write to. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source_l01988}{1988}} of file \mbox{\hyperlink{SommerfeldIntegrator_8cpp_source}{Sommerfeld\+Integrator.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{classSommerfeldIntegrator_aab7ff3d330e81d60b341e937b4dbe2d4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSommerfeldIntegrator_aab7ff3d330e81d60b341e937b4dbe2d4_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classSommerfeldIntegrator_a70ef4ca7478c32de4212e4e1262bdfc3}\index{SommerfeldIntegrator@{SommerfeldIntegrator}!cutoff@{cutoff}}
+\index{cutoff@{cutoff}!SommerfeldIntegrator@{SommerfeldIntegrator}}
+\doxysubsubsection{\texorpdfstring{cutoff}{cutoff}}
+{\footnotesize\ttfamily \label{classSommerfeldIntegrator_a70ef4ca7478c32de4212e4e1262bdfc3} 
+double Sommerfeld\+Integrator\+::cutoff\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Cutoff parameter. 
+
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8h_source_l00052}{52}} of file \mbox{\hyperlink{SommerfeldIntegrator_8h_source}{Sommerfeld\+Integrator.\+h}}.
+
+\Hypertarget{classSommerfeldIntegrator_a976e97661509a2824da88527735feb31}\index{SommerfeldIntegrator@{SommerfeldIntegrator}!epsilon@{epsilon}}
+\index{epsilon@{epsilon}!SommerfeldIntegrator@{SommerfeldIntegrator}}
+\doxysubsubsection{\texorpdfstring{epsilon}{epsilon}}
+{\footnotesize\ttfamily \label{classSommerfeldIntegrator_a976e97661509a2824da88527735feb31} 
+std\+::vector$<$\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}$>$ Sommerfeld\+Integrator\+::epsilon\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Permittivity of the layered medium. 
+
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8h_source_l00042}{42}} of file \mbox{\hyperlink{SommerfeldIntegrator_8h_source}{Sommerfeld\+Integrator.\+h}}.
+
+\Hypertarget{classSommerfeldIntegrator_a64266a1893b6cbb32e73c4849820265b}\index{SommerfeldIntegrator@{SommerfeldIntegrator}!k\_L@{k\_L}}
+\index{k\_L@{k\_L}!SommerfeldIntegrator@{SommerfeldIntegrator}}
+\doxysubsubsection{\texorpdfstring{k\_L}{k\_L}}
+{\footnotesize\ttfamily \label{classSommerfeldIntegrator_a64266a1893b6cbb32e73c4849820265b} 
+std\+::vector$<$\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}$>$ Sommerfeld\+Integrator\+::k\+\_\+L\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Wavevector of the layered medium. 
+
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8h_source_l00039}{39}} of file \mbox{\hyperlink{SommerfeldIntegrator_8h_source}{Sommerfeld\+Integrator.\+h}}.
+
+\Hypertarget{classSommerfeldIntegrator_abad8dea1189a3b78a591981e517ed574}\index{SommerfeldIntegrator@{SommerfeldIntegrator}!layeredUtils@{layeredUtils}}
+\index{layeredUtils@{layeredUtils}!SommerfeldIntegrator@{SommerfeldIntegrator}}
+\doxysubsubsection{\texorpdfstring{layeredUtils}{layeredUtils}}
+{\footnotesize\ttfamily \label{classSommerfeldIntegrator_abad8dea1189a3b78a591981e517ed574} 
+\mbox{\hyperlink{classLayeredMediaUtils}{Layered\+Media\+Utils}}\texorpdfstring{$\ast$}{*} Sommerfeld\+Integrator\+::layered\+Utils\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Layered media utility functions. 
+
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8h_source_l00055}{55}} of file \mbox{\hyperlink{SommerfeldIntegrator_8h_source}{Sommerfeld\+Integrator.\+h}}.
+
+\Hypertarget{classSommerfeldIntegrator_a66ed53fa61fb05a945421f959599b983}\index{SommerfeldIntegrator@{SommerfeldIntegrator}!materialIndex@{materialIndex}}
+\index{materialIndex@{materialIndex}!SommerfeldIntegrator@{SommerfeldIntegrator}}
+\doxysubsubsection{\texorpdfstring{materialIndex}{materialIndex}}
+{\footnotesize\ttfamily \label{classSommerfeldIntegrator_a66ed53fa61fb05a945421f959599b983} 
+int Sommerfeld\+Integrator\+::material\+Index\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Observation layer index (and source for intra-\/layer) 
+
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8h_source_l00040}{40}} of file \mbox{\hyperlink{SommerfeldIntegrator_8h_source}{Sommerfeld\+Integrator.\+h}}.
+
+\Hypertarget{classSommerfeldIntegrator_a46bacb9bf923a73d1e1fe7fa388d1570}\index{SommerfeldIntegrator@{SommerfeldIntegrator}!mu@{mu}}
+\index{mu@{mu}!SommerfeldIntegrator@{SommerfeldIntegrator}}
+\doxysubsubsection{\texorpdfstring{mu}{mu}}
+{\footnotesize\ttfamily \label{classSommerfeldIntegrator_a46bacb9bf923a73d1e1fe7fa388d1570} 
+std\+::vector$<$\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}$>$ Sommerfeld\+Integrator\+::mu\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Permeability of the layered medium. 
+
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8h_source_l00043}{43}} of file \mbox{\hyperlink{SommerfeldIntegrator_8h_source}{Sommerfeld\+Integrator.\+h}}.
+
+\Hypertarget{classSommerfeldIntegrator_aebb4ff74350e1265490aee95f3e26e97}\index{SommerfeldIntegrator@{SommerfeldIntegrator}!options@{options}}
+\index{options@{options}!SommerfeldIntegrator@{SommerfeldIntegrator}}
+\doxysubsubsection{\texorpdfstring{options}{options}}
+{\footnotesize\ttfamily \label{classSommerfeldIntegrator_aebb4ff74350e1265490aee95f3e26e97} 
+std\+::map$<$std\+::string, double$>$ Sommerfeld\+Integrator\+::options\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Options for ODE integration. 
+
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8h_source_l00051}{51}} of file \mbox{\hyperlink{SommerfeldIntegrator_8h_source}{Sommerfeld\+Integrator.\+h}}.
+
+\Hypertarget{classSommerfeldIntegrator_af9f62990284e52a4c800323ba8d6e05b}\index{SommerfeldIntegrator@{SommerfeldIntegrator}!ratio@{ratio}}
+\index{ratio@{ratio}!SommerfeldIntegrator@{SommerfeldIntegrator}}
+\doxysubsubsection{\texorpdfstring{ratio}{ratio}}
+{\footnotesize\ttfamily \label{classSommerfeldIntegrator_af9f62990284e52a4c800323ba8d6e05b} 
+double Sommerfeld\+Integrator\+::ratio\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+z\+:r ratio 
+
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8h_source_l00050}{50}} of file \mbox{\hyperlink{SommerfeldIntegrator_8h_source}{Sommerfeld\+Integrator.\+h}}.
+
+\Hypertarget{classSommerfeldIntegrator_a6c8a0e8bccc622a7b702866cc7e34013}\index{SommerfeldIntegrator@{SommerfeldIntegrator}!semiImag@{semiImag}}
+\index{semiImag@{semiImag}!SommerfeldIntegrator@{SommerfeldIntegrator}}
+\doxysubsubsection{\texorpdfstring{semiImag}{semiImag}}
+{\footnotesize\ttfamily \label{classSommerfeldIntegrator_a6c8a0e8bccc622a7b702866cc7e34013} 
+double Sommerfeld\+Integrator\+::semi\+Imag\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Scaling factor for imaginary axis of semiellipse. 
+
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8h_source_l00049}{49}} of file \mbox{\hyperlink{SommerfeldIntegrator_8h_source}{Sommerfeld\+Integrator.\+h}}.
+
+\Hypertarget{classSommerfeldIntegrator_a91cb94cb37cad13f2a6718cfad3f33c5}\index{SommerfeldIntegrator@{SommerfeldIntegrator}!semiReal@{semiReal}}
+\index{semiReal@{semiReal}!SommerfeldIntegrator@{SommerfeldIntegrator}}
+\doxysubsubsection{\texorpdfstring{semiReal}{semiReal}}
+{\footnotesize\ttfamily \label{classSommerfeldIntegrator_a91cb94cb37cad13f2a6718cfad3f33c5} 
+double Sommerfeld\+Integrator\+::semi\+Real\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Scaling factor for real axis of semiellipse. 
+
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8h_source_l00048}{48}} of file \mbox{\hyperlink{SommerfeldIntegrator_8h_source}{Sommerfeld\+Integrator.\+h}}.
+
+\Hypertarget{classSommerfeldIntegrator_abfddd71b30488fd49ba9bf99ddd06de7}\index{SommerfeldIntegrator@{SommerfeldIntegrator}!sourceIndex@{sourceIndex}}
+\index{sourceIndex@{sourceIndex}!SommerfeldIntegrator@{SommerfeldIntegrator}}
+\doxysubsubsection{\texorpdfstring{sourceIndex}{sourceIndex}}
+{\footnotesize\ttfamily \label{classSommerfeldIntegrator_abfddd71b30488fd49ba9bf99ddd06de7} 
+int Sommerfeld\+Integrator\+::source\+Index\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Source layer index. 
+
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8h_source_l00041}{41}} of file \mbox{\hyperlink{SommerfeldIntegrator_8h_source}{Sommerfeld\+Integrator.\+h}}.
+
+\Hypertarget{classSommerfeldIntegrator_a633ed9005b28625926216052e3da9fe2}\index{SommerfeldIntegrator@{SommerfeldIntegrator}!thickness@{thickness}}
+\index{thickness@{thickness}!SommerfeldIntegrator@{SommerfeldIntegrator}}
+\doxysubsubsection{\texorpdfstring{thickness}{thickness}}
+{\footnotesize\ttfamily \label{classSommerfeldIntegrator_a633ed9005b28625926216052e3da9fe2} 
+std\+::vector$<$double$>$ Sommerfeld\+Integrator\+::thickness\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Layer thicknesses. 
+
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8h_source_l00045}{45}} of file \mbox{\hyperlink{SommerfeldIntegrator_8h_source}{Sommerfeld\+Integrator.\+h}}.
+
+\Hypertarget{classSommerfeldIntegrator_aacb5653a0a811c901dad261e65df1f5c}\index{SommerfeldIntegrator@{SommerfeldIntegrator}!zValsInterfaces@{zValsInterfaces}}
+\index{zValsInterfaces@{zValsInterfaces}!SommerfeldIntegrator@{SommerfeldIntegrator}}
+\doxysubsubsection{\texorpdfstring{zValsInterfaces}{zValsInterfaces}}
+{\footnotesize\ttfamily \label{classSommerfeldIntegrator_aacb5653a0a811c901dad261e65df1f5c} 
+std\+::vector$<$double$>$ Sommerfeld\+Integrator\+::z\+Vals\+Interfaces\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Interface z-\/values. 
+
+
+
+Definition at line \mbox{\hyperlink{SommerfeldIntegrator_8h_source_l00044}{44}} of file \mbox{\hyperlink{SommerfeldIntegrator_8h_source}{Sommerfeld\+Integrator.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{SommerfeldIntegrator_8h}{Sommerfeld\+Integrator.\+h}}\item 
+\mbox{\hyperlink{SommerfeldIntegrator_8cpp}{Sommerfeld\+Integrator.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,88 @@
+\doxysection{bsp\+Polygon Struct Reference}
+\hypertarget{structbspPolygon}{}\label{structbspPolygon}\index{bspPolygon@{bspPolygon}}
+
+
+Polygon wrapper carried through BSP splitting.  
+
+
+
+
+{\ttfamily \#include $<$Bsp3\+D.\+h$>$}
+
+
+
+Collaboration diagram for bsp\+Polygon\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{structbspPolygon__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structbspPolygon_ab60b6f1844092d928472944666981730}{origin}}
+\begin{DoxyCompactList}\small\item\em Source triangle. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} $>$ \mbox{\hyperlink{structbspPolygon_a43bc3463de7c73d6e541aee79880ce6a}{nodes}}
+\begin{DoxyCompactList}\small\item\em Current polygon vertices. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{structbspPolygon_a223ccf04463cdd41f4026d0476ecdc71}{side}}
+\begin{DoxyCompactList}\small\item\em Orientation side (0 or 1). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Polygon wrapper carried through BSP splitting. 
+
+Each {\ttfamily \doxylink{structbspPolygon}{bsp\+Polygon}} is initialized from a mesh triangle but stores its own working list of nodes (rvec vertices) so that it can be split when the polygon straddles a splitter plane. The field {\ttfamily side} indicates which face orientation (0 or 1) defines the "{}outside"{} half‑space. 
+
+Definition at line \mbox{\hyperlink{Bsp3D_8h_source_l00027}{27}} of file \mbox{\hyperlink{Bsp3D_8h_source}{Bsp3\+D.\+h}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structbspPolygon_a43bc3463de7c73d6e541aee79880ce6a}\index{bspPolygon@{bspPolygon}!nodes@{nodes}}
+\index{nodes@{nodes}!bspPolygon@{bspPolygon}}
+\doxysubsubsection{\texorpdfstring{nodes}{nodes}}
+{\footnotesize\ttfamily \label{structbspPolygon_a43bc3463de7c73d6e541aee79880ce6a} 
+std\+::vector$<$\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}$>$ bsp\+Polygon\+::nodes}
+
+
+
+Current polygon vertices. 
+
+
+
+Definition at line \mbox{\hyperlink{Bsp3D_8h_source_l00029}{29}} of file \mbox{\hyperlink{Bsp3D_8h_source}{Bsp3\+D.\+h}}.
+
+\Hypertarget{structbspPolygon_ab60b6f1844092d928472944666981730}\index{bspPolygon@{bspPolygon}!origin@{origin}}
+\index{origin@{origin}!bspPolygon@{bspPolygon}}
+\doxysubsubsection{\texorpdfstring{origin}{origin}}
+{\footnotesize\ttfamily \label{structbspPolygon_ab60b6f1844092d928472944666981730} 
+\mbox{\hyperlink{classTriangle}{Triangle}}\texorpdfstring{$\ast$}{*} bsp\+Polygon\+::origin}
+
+
+
+Source triangle. 
+
+
+
+Definition at line \mbox{\hyperlink{Bsp3D_8h_source_l00028}{28}} of file \mbox{\hyperlink{Bsp3D_8h_source}{Bsp3\+D.\+h}}.
+
+\Hypertarget{structbspPolygon_a223ccf04463cdd41f4026d0476ecdc71}\index{bspPolygon@{bspPolygon}!side@{side}}
+\index{side@{side}!bspPolygon@{bspPolygon}}
+\doxysubsubsection{\texorpdfstring{side}{side}}
+{\footnotesize\ttfamily \label{structbspPolygon_a223ccf04463cdd41f4026d0476ecdc71} 
+int bsp\+Polygon\+::side}
+
+
+
+Orientation side (0 or 1). 
+
+
+
+Definition at line \mbox{\hyperlink{Bsp3D_8h_source_l00030}{30}} of file \mbox{\hyperlink{Bsp3D_8h_source}{Bsp3\+D.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Bsp3D_8h}{Bsp3\+D.\+h}}\end{DoxyCompactItemize}

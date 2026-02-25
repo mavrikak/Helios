@@ -1,0 +1,134 @@
+\doxysection{Layered\+Media\+Utils.\+cpp File Reference}
+\hypertarget{LayeredMediaUtils_8cpp}{}\label{LayeredMediaUtils_8cpp}\index{LayeredMediaUtils.cpp@{LayeredMediaUtils.cpp}}
+
+
+Implementation for the \doxylink{classLayeredMediaUtils}{Layered\+Media\+Utils} class.  
+
+
+{\ttfamily \#include "{}Layered\+Media\+Utils.\+h"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$numeric$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+set$>$}\newline
+Include dependency graph for Layered\+Media\+Utils.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LayeredMediaUtils_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{LayeredMediaUtils_8cpp_a50405603197731a46c864b0f39744ed0}{complex\+Sqrt}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} arg)
+\begin{DoxyCompactList}\small\item\em Computes the square root of a complex number with proper handling of negative imaginary parts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{LayeredMediaUtils_8cpp_ad123e1ae452426e2c00e3189488dedac}{zgetrf\+\_\+}} (int \texorpdfstring{$\ast$}{*}dim1, int \texorpdfstring{$\ast$}{*}dim2, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \texorpdfstring{$\ast$}{*}a, int \texorpdfstring{$\ast$}{*}lda, int \texorpdfstring{$\ast$}{*}ipiv, int \texorpdfstring{$\ast$}{*}info)
+\begin{DoxyCompactList}\small\item\em Computes the LU factorization of a general M-\/by-\/N matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{LayeredMediaUtils_8cpp_a0d498505ce3081c778d322cdd12e60a4}{zgetrs\+\_\+}} (char \texorpdfstring{$\ast$}{*}TRANS, int \texorpdfstring{$\ast$}{*}N, int \texorpdfstring{$\ast$}{*}NRHS, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \texorpdfstring{$\ast$}{*}A, int \texorpdfstring{$\ast$}{*}LDA, int \texorpdfstring{$\ast$}{*}IPIV, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \texorpdfstring{$\ast$}{*}B, int \texorpdfstring{$\ast$}{*}LDB, int \texorpdfstring{$\ast$}{*}INFO)
+\begin{DoxyCompactList}\small\item\em Solves a system of linear equations using the LU factorization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation for the \doxylink{classLayeredMediaUtils}{Layered\+Media\+Utils} class. 
+
+
+
+Definition in file \mbox{\hyperlink{LayeredMediaUtils_8cpp_source}{Layered\+Media\+Utils.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{LayeredMediaUtils_8cpp_a50405603197731a46c864b0f39744ed0}\index{LayeredMediaUtils.cpp@{LayeredMediaUtils.cpp}!complexSqrt@{complexSqrt}}
+\index{complexSqrt@{complexSqrt}!LayeredMediaUtils.cpp@{LayeredMediaUtils.cpp}}
+\doxysubsubsection{\texorpdfstring{complexSqrt()}{complexSqrt()}}
+{\footnotesize\ttfamily \label{LayeredMediaUtils_8cpp_a50405603197731a46c864b0f39744ed0} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} complex\+Sqrt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{arg}{}\end{DoxyParamCaption})}
+
+
+
+Computes the square root of a complex number with proper handling of negative imaginary parts. 
+
+This function ensures correct computation of the square root for cases where the imaginary part is negative or zero to maintain consistency in branch cuts.
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & The input complex number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The square root of the input complex number. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{LayeredMediaUtils_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{LayeredMediaUtils_8cpp_source}{Layered\+Media\+Utils.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{LayeredMediaUtils_8cpp_a50405603197731a46c864b0f39744ed0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LayeredMediaUtils_8cpp_a50405603197731a46c864b0f39744ed0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{LayeredMediaUtils_8cpp_ad123e1ae452426e2c00e3189488dedac}\index{LayeredMediaUtils.cpp@{LayeredMediaUtils.cpp}!zgetrf\_@{zgetrf\_}}
+\index{zgetrf\_@{zgetrf\_}!LayeredMediaUtils.cpp@{LayeredMediaUtils.cpp}}
+\doxysubsubsection{\texorpdfstring{zgetrf\_()}{zgetrf\_()}}
+{\footnotesize\ttfamily \label{LayeredMediaUtils_8cpp_ad123e1ae452426e2c00e3189488dedac} 
+void zgetrf\+\_\+ (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{dim1}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{dim2}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{lda}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{ipiv}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{info}{}\end{DoxyParamCaption})}
+
+
+
+Computes the LU factorization of a general M-\/by-\/N matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dim1} & Number of rows of the matrix (for {\ttfamily zgetrf\+\_\+}). \\
+\hline
+{\em dim2} & Number of columns of the matrix (for {\ttfamily zgetrf\+\_\+}). \\
+\hline
+{\em a} & Pointer to the matrix to be factored or solved. \\
+\hline
+{\em lda} & Leading dimension of the matrix. \\
+\hline
+{\em ipiv} & Pointer to the pivot indices. \\
+\hline
+{\em info} & Output status (0 if successful). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{LayeredMediaUtils_8cpp_a0d498505ce3081c778d322cdd12e60a4}\index{LayeredMediaUtils.cpp@{LayeredMediaUtils.cpp}!zgetrs\_@{zgetrs\_}}
+\index{zgetrs\_@{zgetrs\_}!LayeredMediaUtils.cpp@{LayeredMediaUtils.cpp}}
+\doxysubsubsection{\texorpdfstring{zgetrs\_()}{zgetrs\_()}}
+{\footnotesize\ttfamily \label{LayeredMediaUtils_8cpp_a0d498505ce3081c778d322cdd12e60a4} 
+void zgetrs\+\_\+ (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{TRANS}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{N}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{NRHS}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \texorpdfstring{$\ast$}{*}}]{A}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{LDA}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{IPIV}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \texorpdfstring{$\ast$}{*}}]{B}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{LDB}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{INFO}{}\end{DoxyParamCaption})}
+
+
+
+Solves a system of linear equations using the LU factorization. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em TRANS} & Specifies the form of the system of equations (\textquotesingle{}N\textquotesingle{} for no transpose, etc.). \\
+\hline
+{\em N} & Order of the coefficient matrix. \\
+\hline
+{\em NRHS} & Number of right-\/hand sides. \\
+\hline
+{\em A} & Pointer to the LU-\/factored coefficient matrix. \\
+\hline
+{\em LDA} & Leading dimension of A. \\
+\hline
+{\em IPIV} & Pointer to the pivot indices from {\ttfamily zgetrf\+\_\+}. \\
+\hline
+{\em B} & Pointer to the right-\/hand side vector(s). \\
+\hline
+{\em LDB} & Leading dimension of B. \\
+\hline
+{\em INFO} & Output status (0 if successful). \\
+\hline
+\end{DoxyParams}

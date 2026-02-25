@@ -1,0 +1,81 @@
+\doxysection{Bsp3\+D.\+cpp File Reference}
+\hypertarget{Bsp3D_8cpp}{}\label{Bsp3D_8cpp}\index{Bsp3D.cpp@{Bsp3D.cpp}}
+
+
+Implementation of a minimal 3D BSP tree for triangle meshes.  
+
+
+{\ttfamily \#include "{}Bsp3\+D.\+h"{}}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+Include dependency graph for Bsp3\+D.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Bsp3D_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{Bsp3D_8cpp_a049413f2fd5f55fb3b1f16c7a3954cf3}{BSPTHRESH}}~1e-\/6
+\begin{DoxyCompactList}\small\item\em Distance tolerance for classifying points against a splitter plane. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{Bsp3D_8cpp_af2cf06308ca594c5d2b4b0319e815cc7}{Write\+Node}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} in)
+\begin{DoxyCompactList}\small\item\em Write a node\textquotesingle{}s coordinates to standard output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of a minimal 3D BSP tree for triangle meshes. 
+
+Implementation notes\+:
+\begin{DoxyItemize}
+\item The splitting plane tolerance is controlled by {\ttfamily BSPTHRESH}.
+\item Memory ownership\+: triangles referenced by {\ttfamily \doxylink{structbspPolygon_ab60b6f1844092d928472944666981730}{bsp\+Polygon\+::origin}} are owned elsewhere; this module only allocates/deallocates {\ttfamily \doxylink{structbspPolygon}{bsp\+Polygon}} wrappers created during splitting. 
+\end{DoxyItemize}
+
+Definition in file \mbox{\hyperlink{Bsp3D_8cpp_source}{Bsp3\+D.\+cpp}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{Bsp3D_8cpp_a049413f2fd5f55fb3b1f16c7a3954cf3}\index{Bsp3D.cpp@{Bsp3D.cpp}!BSPTHRESH@{BSPTHRESH}}
+\index{BSPTHRESH@{BSPTHRESH}!Bsp3D.cpp@{Bsp3D.cpp}}
+\doxysubsubsection{\texorpdfstring{BSPTHRESH}{BSPTHRESH}}
+{\footnotesize\ttfamily \label{Bsp3D_8cpp_a049413f2fd5f55fb3b1f16c7a3954cf3} 
+\#define BSPTHRESH~1e-\/6}
+
+
+
+Distance tolerance for classifying points against a splitter plane. 
+
+
+
+Definition at line \mbox{\hyperlink{Bsp3D_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{Bsp3D_8cpp_source}{Bsp3\+D.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{Bsp3D_8cpp_af2cf06308ca594c5d2b4b0319e815cc7}\index{Bsp3D.cpp@{Bsp3D.cpp}!WriteNode@{WriteNode}}
+\index{WriteNode@{WriteNode}!Bsp3D.cpp@{Bsp3D.cpp}}
+\doxysubsubsection{\texorpdfstring{WriteNode()}{WriteNode()}}
+{\footnotesize\ttfamily \label{Bsp3D_8cpp_af2cf06308ca594c5d2b4b0319e815cc7} 
+bool Write\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{in}{}\end{DoxyParamCaption})}
+
+
+
+Write a node\textquotesingle{}s coordinates to standard output. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & Input vector containing the node coordinates (x, y, z). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Always returns false (0).
+\end{DoxyReturn}
+Prints the three components of {\ttfamily in} separated by spaces. 
+
+Definition at line \mbox{\hyperlink{Bsp3D_8cpp_source_l00214}{214}} of file \mbox{\hyperlink{Bsp3D_8cpp_source}{Bsp3\+D.\+cpp}}.
+

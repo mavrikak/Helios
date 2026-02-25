@@ -1,0 +1,83 @@
+\doxysubsection{Green\textquotesingle{}s Functions}
+\hypertarget{group__greenFunction}{}\label{group__greenFunction}\index{Green\textquotesingle{}s Functions@{Green\textquotesingle{}s Functions}}
+Collaboration diagram for Green\textquotesingle{}s Functions\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{group__greenFunction}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classGreenF}{GreenF}}
+\begin{DoxyCompactList}\small\item\em Abstract base for Green\textquotesingle{}s function kernels. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classGreenFHom3D}{Green\+FHom3D}}
+\begin{DoxyCompactList}\small\item\em Free‑space (homogeneous) Green\textquotesingle{}s function provider. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classGreenFHom3DPer}{Green\+FHom3\+DPer}}
+\begin{DoxyCompactList}\small\item\em Base class for homogeneous 3D Green\textquotesingle{}s functions with lattice periodicity. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classGreenFHom3DPer2D}{Green\+FHom3\+DPer2D}}
+\begin{DoxyCompactList}\small\item\em 2D‑periodic homogeneous 3D Green\textquotesingle{}s function with Ewald acceleration. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classGreenFLayered3D}{Green\+FLayered3D}}
+\begin{DoxyCompactList}\small\item\em Layered background Green\textquotesingle{}s function with tabulation and D/\+K/delta/kappa integrals. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classLookupTable}{Lookup\+Table}}
+\begin{DoxyCompactList}\small\item\em Represents a 2D lookup table for complex functions (text format). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classLookupTableBin}{Lookup\+Table\+Bin}}
+\begin{DoxyCompactList}\small\item\em Represents a 2D lookup table for complex functions (binary format). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classSymmetryOperation}{Symmetry\+Operation}}
+\begin{DoxyCompactList}\small\item\em Abstract base class for spatial symmetry operations. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTranslation}{Translation}}
+\begin{DoxyCompactList}\small\item\em Concrete translation symmetry operation. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classSommerfeldIntegrator}{Sommerfeld\+Integrator}}
+\begin{DoxyCompactList}\small\item\em Numerical engine for Sommerfeld integrals in stratified media. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{group__greenFunction_gac0a52dce23be7dacdf97c68653b6c137}{csqrt}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} arg)
+\begin{DoxyCompactList}\small\item\em Complex square root with a branch cut along the negative real axis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Homogeneous and layered Green’s back-\/ends and Sommerfeld integration. 
+
+\doxysubsubsection{Function Documentation}
+\Hypertarget{group__greenFunction_gac0a52dce23be7dacdf97c68653b6c137}\index{Green\textquotesingle{}s Functions@{Green\textquotesingle{}s Functions}!csqrt@{csqrt}}
+\index{csqrt@{csqrt}!Green\textquotesingle{}s Functions@{Green\textquotesingle{}s Functions}}
+\doxysubsubsubsection{\texorpdfstring{csqrt()}{csqrt()}}
+{\footnotesize\ttfamily \label{group__greenFunction_gac0a52dce23be7dacdf97c68653b6c137} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} csqrt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{arg}{}\end{DoxyParamCaption})}
+
+
+
+Complex square root with a branch cut along the negative real axis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & Argument of square root. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of square root operation.
+\end{DoxyReturn}
+Ensures continuity for purely real negative inputs by nudging the imaginary part to zero before calling std\+::sqrt.
+
+Complex square root with a branch cut along the negative real axis.
+
+If the input is purely real, force the imaginary part to zero to be explicit about the branch and then delegate to std\+::sqrt(). 
+
+Definition at line \mbox{\hyperlink{GreenF_8cpp_source_l00047}{47}} of file \mbox{\hyperlink{GreenF_8cpp_source}{Green\+F.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{group__greenFunction_gac0a52dce23be7dacdf97c68653b6c137_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__greenFunction_gac0a52dce23be7dacdf97c68653b6c137_icgraph}
+\end{center}
+\end{figure}

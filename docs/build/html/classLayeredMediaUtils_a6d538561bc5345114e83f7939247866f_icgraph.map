@@ -1,0 +1,5 @@
+<map id="LayeredMediaUtils::Secondary" name="LayeredMediaUtils::Secondary">
+<area shape="rect" id="Node000001" title="Computes secondary wave coefficients for a given observation and source layer." alt="" coords="205,5,356,50"/>
+<area shape="rect" id="Node000002" href="$classLayeredMediaUtils.html#ab1660d136377d8e6d7878973475146a8" title="Computes electromagnetic fields at observation points given a source position." alt="" coords="5,5,157,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="189,30,157,30,157,25,189,25"/>
+</map>

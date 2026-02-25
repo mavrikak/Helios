@@ -1,0 +1,5 @@
+<map id="IntegrandIntra::subtractVector" name="IntegrandIntra::subtractVector">
+<area shape="rect" id="Node000001" title="Helper function to subtract two 2D vectors element&#45;wise." alt="" coords="235,5,409,50"/>
+<area shape="rect" id="Node000002" href="$structIntegrandIntra.html#ab3708e0e57f4045baffd0f62f498c079" title="Overloaded subtraction operator." alt="" coords="5,14,187,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="219,30,187,30,187,25,219,25"/>
+</map>

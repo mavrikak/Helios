@@ -1,0 +1,49 @@
+\doxysection{Sommerfeld\+Integrator.\+h File Reference}
+\hypertarget{SommerfeldIntegrator_8h}{}\label{SommerfeldIntegrator_8h}\index{SommerfeldIntegrator.h@{SommerfeldIntegrator.h}}
+
+
+Declaration of the \doxylink{classSommerfeldIntegrator}{Sommerfeld\+Integrator} class, which evaluates Sommerfeld-\/type integrals for layered media Green\textquotesingle{}s functions.  
+
+
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include "{}Domain\+Hom3\+D.\+h"{}}\newline
+{\ttfamily \#include "{}Surface\+Mesh.\+h"{}}\newline
+{\ttfamily \#include "{}Layered\+Media\+Utils.\+h"{}}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+Include dependency graph for Sommerfeld\+Integrator.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{SommerfeldIntegrator_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{SommerfeldIntegrator_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classSommerfeldIntegrator}{Sommerfeld\+Integrator}}
+\begin{DoxyCompactList}\small\item\em Numerical engine for Sommerfeld integrals in stratified media. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declaration of the \doxylink{classSommerfeldIntegrator}{Sommerfeld\+Integrator} class, which evaluates Sommerfeld-\/type integrals for layered media Green\textquotesingle{}s functions. 
+
+The class provides\+:
+\begin{DoxyItemize}
+\item Path selection and data packing for semi-\/ellipse, real-\/inf, and imag-\/inf contours.
+\item Intra-\//inter-\/layer integrand assembly (TE/\+TM, field/derivative/surface terms).
+\item Numerical integration with singularity subtraction (Chew, W.\+C., Tong, M.\+S., Hu, B. (2009), Chapter 6).
+\item Interpolation helpers to compact results for later evaluation.
+\end{DoxyItemize}
+
+Types like \doxylink{structData2D}{Data2D}/\doxylink{structData3D}{Data3D}, \doxylink{structIntegrandIntra}{Integrand\+Intra}/\doxylink{structIntegrandInter}{Integrand\+Inter}, and \doxylink{structCoeffsIntra}{Coeffs\+Intra}/\doxylink{structCoeffsInter}{Coeffs\+Inter} are defined in headers included transitively (e.\+g., \doxylink{LayeredMediaUtils_8h}{Layered\+Media\+Utils.\+h}). 
+
+Definition in file \mbox{\hyperlink{SommerfeldIntegrator_8h_source}{Sommerfeld\+Integrator.\+h}}.
+

@@ -1,0 +1,7 @@
+<map id="DomainLayered3D::InitGrnFun" name="DomainLayered3D::InitGrnFun">
+<area shape="rect" id="Node000001" title="Initialize per‑layer homogeneous Green&#39;s functions and the layered Green&#39;s function." alt="" coords="325,32,542,60"/>
+<area shape="rect" id="Node000002" href="$classDomainLayered3D.html#ad0d867ee7289e485c4bc01077fbdb59a" title="Constructs a 3D layered domain with given material properties and geometry." alt="" coords="5,5,277,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="309,37,277,34,278,29,309,32"/>
+<area shape="rect" id="Node000003" href="$classDomainLayered3D.html#a35b7f667fbf74add0773fd4d1a3d0146" title="Construct without creating Green&#39;s functions (owner/aggregate path)." alt="" coords="5,57,277,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="309,59,278,62,277,57,309,54"/>
+</map>

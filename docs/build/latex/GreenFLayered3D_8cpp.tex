@@ -1,0 +1,397 @@
+\doxysection{Green\+FLayered3\+D.\+cpp File Reference}
+\hypertarget{GreenFLayered3D_8cpp}{}\label{GreenFLayered3D_8cpp}\index{GreenFLayered3D.cpp@{GreenFLayered3D.cpp}}
+
+
+Implementation of the 3D Green\textquotesingle{}s Function class in a layered background.  
+
+
+{\ttfamily \#include "{}Green\+FLayered3\+D.\+h"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$tuple$>$}\newline
+{\ttfamily \#include "{}quadrature.\+h"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+Include dependency graph for Green\+FLayered3\+D.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{GreenFLayered3D_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{GreenFLayered3D_8cpp_ad07a682bd1050aaa17b6cf63131f4069}{intra\+Tuple}}
+\begin{DoxyCompactList}\small\item\em Tuple holding intra-\/layer coefficient data and metadata. \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{GreenFLayered3D_8cpp_a42f55a8da4b7628b11e795aed2c00d19}{inter\+Tuple}}
+\begin{DoxyCompactList}\small\item\em Tuple holding inter-\/layer coefficient data and metadata. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{GreenFLayered3D_8cpp_a890762cbd3eef7bfc5f9643fc3c61387}{operator+}} (std\+::map$<$ std\+::string, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ lhs, std\+::map$<$ std\+::string, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ const \&rhs)
+\begin{DoxyCompactList}\small\item\em Element-\/wise addition of two string–complex maps. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{GreenFLayered3D_8cpp_a0405895089ab9d326d93b83bc1ca0c61}{operator-\/}} (std\+::map$<$ std\+::string, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ lhs, std\+::map$<$ std\+::string, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ const \&rhs)
+\begin{DoxyCompactList}\small\item\em Element-\/wise subtraction of two string–complex maps. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{GreenFLayered3D_8cpp_a38d7216388a8293dd4a203a3cb8fe75f}{operator/}} (std\+::map$<$ std\+::string, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ lhs, double rhs)
+\begin{DoxyCompactList}\small\item\em Scalar division of all values in a string–complex map. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ac062d767acbc2b8149a4039dc4a1a18f}{cdyad}} \mbox{\hyperlink{GreenFLayered3D_8cpp_af70e64942498ae51d2c2f9c57b43560c}{dyadic}} (const \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \&a, const \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \&b)
+\begin{DoxyCompactList}\small\item\em Creates a dyadic product of two 3D vectors. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ac062d767acbc2b8149a4039dc4a1a18f}{cdyad}} \mbox{\hyperlink{GreenFLayered3D_8cpp_ada57d57674c0b17b830f10579db01b30}{vec\+Cross\+Dyad}} (const \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \&v, const \mbox{\hyperlink{globals_8h_ac062d767acbc2b8149a4039dc4a1a18f}{cdyad}} \&D, bool row\+Wise=true)
+\begin{DoxyCompactList}\small\item\em Computes the cross product of a vector with each row or column of a dyad. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{GreenFLayered3D_8cpp_a8aa29777c4e70a4d7c032b4c6fb0387d}{rgrd2\+\_\+eval\+\_\+c}} (int mx, int my, const double \texorpdfstring{$\ast$}{*}x, const double \texorpdfstring{$\ast$}{*}y, const double \texorpdfstring{$\ast$}{*}f\+\_\+colmajor, int m, int n, const double \texorpdfstring{$\ast$}{*}xq, const double \texorpdfstring{$\ast$}{*}yq, int method, double \texorpdfstring{$\ast$}{*}fq\+\_\+out, int \texorpdfstring{$\ast$}{*}ier)
+\begin{DoxyCompactList}\small\item\em External REGRIDPACK routine for evaluating a 2D interpolation function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{GreenFLayered3D_8cpp_a4ed7a5ed9f037ca61716cecc33bb3a52}{intra\+Map}} ()
+\begin{DoxyCompactList}\small\item\em Initialize the selector map for intra-\/layer coefficients. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{GreenFLayered3D_8cpp_a00cc14542110c9977f8a47cf96cbfe60}{inter\+Map}} ()
+\begin{DoxyCompactList}\small\item\em Initialize the selector map for inter-\/layer coefficients. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{GreenFLayered3D_8cpp_a91da5052808123dca1302a3c0f653d9a}{generate\+Uniform\+Points}} (double min\+Val, double max\+Val, int num\+Points)
+\begin{DoxyCompactList}\small\item\em Generate uniformly spaced sample points in a 1D interval. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, std\+::function$<$ \mbox{\hyperlink{GreenFLayered3D_8cpp_ad07a682bd1050aaa17b6cf63131f4069}{intra\+Tuple}} \&(\mbox{\hyperlink{structCoeffsIntra}{Coeffs\+Intra}} \&)$>$ $>$ \mbox{\hyperlink{GreenFLayered3D_8cpp_a8c41f0376ae1c509fef835c5ebe9e830}{coeff\+Selector\+Intra}}
+\begin{DoxyCompactList}\small\item\em Selector map from intra-\/layer interaction key to tuple accessor. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, std\+::function$<$ \mbox{\hyperlink{GreenFLayered3D_8cpp_a42f55a8da4b7628b11e795aed2c00d19}{inter\+Tuple}} \&(\mbox{\hyperlink{structCoeffsInter}{Coeffs\+Inter}} \&)$>$ $>$ \mbox{\hyperlink{GreenFLayered3D_8cpp_a31701455408ae80296adc6c892ca0041}{coeff\+Selector\+Inter}}
+\begin{DoxyCompactList}\small\item\em Selector map from inter-\/layer interaction key to tuple accessor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of the 3D Green\textquotesingle{}s Function class in a layered background. 
+
+
+
+Definition in file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{GreenFLayered3D_8cpp_a42f55a8da4b7628b11e795aed2c00d19}\index{GreenFLayered3D.cpp@{GreenFLayered3D.cpp}!interTuple@{interTuple}}
+\index{interTuple@{interTuple}!GreenFLayered3D.cpp@{GreenFLayered3D.cpp}}
+\doxysubsubsection{\texorpdfstring{interTuple}{interTuple}}
+{\footnotesize\ttfamily \label{GreenFLayered3D_8cpp_a42f55a8da4b7628b11e795aed2c00d19} 
+using \mbox{\hyperlink{GreenFLayered3D_8cpp_a42f55a8da4b7628b11e795aed2c00d19}{inter\+Tuple}}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ std::tuple<std::vector<double>,\ std::vector<double>,\ std::vector<double>,\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<dcmplx>>}
+
+\end{DoxyCode}
+
+
+Tuple holding inter-\/layer coefficient data and metadata. 
+
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l00145}{145}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+\Hypertarget{GreenFLayered3D_8cpp_ad07a682bd1050aaa17b6cf63131f4069}\index{GreenFLayered3D.cpp@{GreenFLayered3D.cpp}!intraTuple@{intraTuple}}
+\index{intraTuple@{intraTuple}!GreenFLayered3D.cpp@{GreenFLayered3D.cpp}}
+\doxysubsubsection{\texorpdfstring{intraTuple}{intraTuple}}
+{\footnotesize\ttfamily \label{GreenFLayered3D_8cpp_ad07a682bd1050aaa17b6cf63131f4069} 
+using \mbox{\hyperlink{GreenFLayered3D_8cpp_ad07a682bd1050aaa17b6cf63131f4069}{intra\+Tuple}}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ std::tuple<std::vector<dcmplx>,\ std::vector<int>,\ std::vector<int>,\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<double>,\ std::vector<double>>}
+
+\end{DoxyCode}
+
+
+Tuple holding intra-\/layer coefficient data and metadata. 
+
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l00138}{138}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{GreenFLayered3D_8cpp_af70e64942498ae51d2c2f9c57b43560c}\index{GreenFLayered3D.cpp@{GreenFLayered3D.cpp}!dyadic@{dyadic}}
+\index{dyadic@{dyadic}!GreenFLayered3D.cpp@{GreenFLayered3D.cpp}}
+\doxysubsubsection{\texorpdfstring{dyadic()}{dyadic()}}
+{\footnotesize\ttfamily \label{GreenFLayered3D_8cpp_af70e64942498ae51d2c2f9c57b43560c} 
+\mbox{\hyperlink{globals_8h_ac062d767acbc2b8149a4039dc4a1a18f}{cdyad}} dyadic (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \&}]{a}{, }\item[{const \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \&}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Creates a dyadic product of two 3D vectors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & First vector. \\
+\hline
+{\em b} & Second vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Dyadic product as a cdyad (3x3 matrix). 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l00073}{73}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{GreenFLayered3D_8cpp_af70e64942498ae51d2c2f9c57b43560c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{GreenFLayered3D_8cpp_a91da5052808123dca1302a3c0f653d9a}\index{GreenFLayered3D.cpp@{GreenFLayered3D.cpp}!generateUniformPoints@{generateUniformPoints}}
+\index{generateUniformPoints@{generateUniformPoints}!GreenFLayered3D.cpp@{GreenFLayered3D.cpp}}
+\doxysubsubsection{\texorpdfstring{generateUniformPoints()}{generateUniformPoints()}}
+{\footnotesize\ttfamily \label{GreenFLayered3D_8cpp_a91da5052808123dca1302a3c0f653d9a} 
+std\+::vector$<$ double $>$ generate\+Uniform\+Points (\begin{DoxyParamCaption}\item[{double}]{min\+Val}{, }\item[{double}]{max\+Val}{, }\item[{int}]{num\+Points}{}\end{DoxyParamCaption})}
+
+
+
+Generate uniformly spaced sample points in a 1D interval. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min\+Val} & Lower bound of the interval. \\
+\hline
+{\em max\+Val} & Upper bound of the interval. \\
+\hline
+{\em num\+Points} & Number of points to generate (\texorpdfstring{$>$}{>}=2 for valid spacing). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of uniformly spaced values from {\ttfamily min\+Val} to {\ttfamily max\+Val} (inclusive).
+\end{DoxyReturn}
+Computes evenly spaced samples using a fixed step size ( (max\+Val -\/ min\+Val) / (num\+Points -\/ 1) ). 
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l03101}{3101}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{GreenFLayered3D_8cpp_a91da5052808123dca1302a3c0f653d9a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{GreenFLayered3D_8cpp_a00cc14542110c9977f8a47cf96cbfe60}\index{GreenFLayered3D.cpp@{GreenFLayered3D.cpp}!interMap@{interMap}}
+\index{interMap@{interMap}!GreenFLayered3D.cpp@{GreenFLayered3D.cpp}}
+\doxysubsubsection{\texorpdfstring{interMap()}{interMap()}}
+{\footnotesize\ttfamily \label{GreenFLayered3D_8cpp_a00cc14542110c9977f8a47cf96cbfe60} 
+void inter\+Map (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initialize the selector map for inter-\/layer coefficients. 
+
+Populates {\ttfamily coeff\+Selector\+Inter} with accessors keyed by terms\+: "{}te"{}, "{}tm"{}, "{}tez1"{}, "{}tez2"{}, "{}tmz1"{}, "{}tmz2"{}, "{}tezz"{}, "{}tmzz"{}, "{}tes"{}, "{}tms"{}, "{}ter"{}, "{}tmr"{}, "{}terz1"{}, "{}terz2"{}, "{}tmrz1"{}, "{}tmrz2"{}. Each accessor returns a reference to the corresponding {\ttfamily \doxylink{GreenFLayered3D_8cpp_a42f55a8da4b7628b11e795aed2c00d19}{inter\+Tuple}} stored inside a {\ttfamily \doxylink{structCoeffsInter}{Coeffs\+Inter}}. 
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l00195}{195}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{GreenFLayered3D_8cpp_a00cc14542110c9977f8a47cf96cbfe60_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{GreenFLayered3D_8cpp_a4ed7a5ed9f037ca61716cecc33bb3a52}\index{GreenFLayered3D.cpp@{GreenFLayered3D.cpp}!intraMap@{intraMap}}
+\index{intraMap@{intraMap}!GreenFLayered3D.cpp@{GreenFLayered3D.cpp}}
+\doxysubsubsection{\texorpdfstring{intraMap()}{intraMap()}}
+{\footnotesize\ttfamily \label{GreenFLayered3D_8cpp_a4ed7a5ed9f037ca61716cecc33bb3a52} 
+void intra\+Map (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initialize the selector map for intra-\/layer coefficients. 
+
+Populates {\ttfamily coeff\+Selector\+Intra} with accessors keyed by terms\+: "{}te"{}, "{}tm"{}, "{}tez"{}, "{}tmz"{}, "{}tezz"{}, "{}tmzz"{}, "{}tes"{}, "{}tms"{}, "{}ter"{}, "{}tmr"{}, "{}terz"{}, "{}tmrz"{}. Each accessor returns a reference to the corresponding {\ttfamily \doxylink{GreenFLayered3D_8cpp_ad07a682bd1050aaa17b6cf63131f4069}{intra\+Tuple}} stored inside a {\ttfamily \doxylink{structCoeffsIntra}{Coeffs\+Intra}} instance. 
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l00172}{172}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{GreenFLayered3D_8cpp_a4ed7a5ed9f037ca61716cecc33bb3a52_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{GreenFLayered3D_8cpp_a890762cbd3eef7bfc5f9643fc3c61387}\index{GreenFLayered3D.cpp@{GreenFLayered3D.cpp}!operator+@{operator+}}
+\index{operator+@{operator+}!GreenFLayered3D.cpp@{GreenFLayered3D.cpp}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \label{GreenFLayered3D_8cpp_a890762cbd3eef7bfc5f9643fc3c61387} 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ operator+ (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$}]{lhs}{, }\item[{std\+::map$<$ std\+::string, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ const \&}]{rhs}{}\end{DoxyParamCaption})}
+
+
+
+Element-\/wise addition of two string–complex maps. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lhs} & Left-\/hand operand (copied before modification). \\
+\hline
+{\em rhs} & Right-\/hand operand. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A map containing the sum of corresponding entries.
+\end{DoxyReturn}
+Missing keys in either map are treated as zero-\/valued. 
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+\Hypertarget{GreenFLayered3D_8cpp_a0405895089ab9d326d93b83bc1ca0c61}\index{GreenFLayered3D.cpp@{GreenFLayered3D.cpp}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!GreenFLayered3D.cpp@{GreenFLayered3D.cpp}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \label{GreenFLayered3D_8cpp_a0405895089ab9d326d93b83bc1ca0c61} 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ operator-\/ (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$}]{lhs}{, }\item[{std\+::map$<$ std\+::string, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ const \&}]{rhs}{}\end{DoxyParamCaption})}
+
+
+
+Element-\/wise subtraction of two string–complex maps. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lhs} & Left-\/hand operand (copied before modification). \\
+\hline
+{\em rhs} & Right-\/hand operand. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A map containing the difference of corresponding entries.
+\end{DoxyReturn}
+Missing keys in either map are treated as zero-\/valued. 
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l00040}{40}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+\Hypertarget{GreenFLayered3D_8cpp_a38d7216388a8293dd4a203a3cb8fe75f}\index{GreenFLayered3D.cpp@{GreenFLayered3D.cpp}!operator/@{operator/}}
+\index{operator/@{operator/}!GreenFLayered3D.cpp@{GreenFLayered3D.cpp}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}}
+{\footnotesize\ttfamily \label{GreenFLayered3D_8cpp_a38d7216388a8293dd4a203a3cb8fe75f} 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ operator/ (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$}]{lhs}{, }\item[{double}]{rhs}{}\end{DoxyParamCaption})}
+
+
+
+Scalar division of all values in a string–complex map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lhs} & Input map (copied before division). \\
+\hline
+{\em rhs} & Scalar divisor. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A map whose values are divided by {\ttfamily rhs}.
+\end{DoxyReturn}
+Performs complex-\/by-\/real division for each element. 
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l00060}{60}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+\Hypertarget{GreenFLayered3D_8cpp_a8aa29777c4e70a4d7c032b4c6fb0387d}\index{GreenFLayered3D.cpp@{GreenFLayered3D.cpp}!rgrd2\_eval\_c@{rgrd2\_eval\_c}}
+\index{rgrd2\_eval\_c@{rgrd2\_eval\_c}!GreenFLayered3D.cpp@{GreenFLayered3D.cpp}}
+\doxysubsubsection{\texorpdfstring{rgrd2\_eval\_c()}{rgrd2\_eval\_c()}}
+{\footnotesize\ttfamily \label{GreenFLayered3D_8cpp_a8aa29777c4e70a4d7c032b4c6fb0387d} 
+void rgrd2\+\_\+eval\+\_\+c (\begin{DoxyParamCaption}\item[{int}]{mx}{, }\item[{int}]{my}{, }\item[{const double \texorpdfstring{$\ast$}{*}}]{x}{, }\item[{const double \texorpdfstring{$\ast$}{*}}]{y}{, }\item[{const double \texorpdfstring{$\ast$}{*}}]{f\+\_\+colmajor}{, }\item[{int}]{m}{, }\item[{int}]{n}{, }\item[{const double \texorpdfstring{$\ast$}{*}}]{xq}{, }\item[{const double \texorpdfstring{$\ast$}{*}}]{yq}{, }\item[{int}]{method}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{fq\+\_\+out}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{ier}{}\end{DoxyParamCaption})}
+
+
+
+External REGRIDPACK routine for evaluating a 2D interpolation function. 
+
+Performs 2D interpolation of tabulated data {\ttfamily f\+\_\+colmajor} over a grid defined by {\ttfamily x} and {\ttfamily y}, at query points ( {\ttfamily xq}, {\ttfamily yq} ).
+
+
+\begin{DoxyParams}{Parameters}
+{\em mx} & Number of points along the x-\/direction of the input grid. \\
+\hline
+{\em my} & Number of points along the y-\/direction of the input grid. \\
+\hline
+{\em x} & Pointer to x-\/coordinates of the input grid (size mx). \\
+\hline
+{\em y} & Pointer to y-\/coordinates of the input grid (size my). \\
+\hline
+{\em f\+\_\+colmajor} & Pointer to input function values in column-\/major order (size mx\texorpdfstring{$\ast$}{*}my). \\
+\hline
+{\em m} & Number of query points along x. \\
+\hline
+{\em n} & Number of query points along y. \\
+\hline
+{\em xq} & Pointer to query x-\/coordinates (size m). \\
+\hline
+{\em yq} & Pointer to query y-\/coordinates (size n). \\
+\hline
+{\em method} & Interpolation method selector (e.\+g., 0 = bilinear, 1 = bicubic). \\
+\hline
+{\em fq\+\_\+out} & Output array of interpolated values (size m\texorpdfstring{$\ast$}{*}n). \\
+\hline
+{\em ier} & Output error flag (0 if successful). \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{GreenFLayered3D_8cpp_a8aa29777c4e70a4d7c032b4c6fb0387d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{GreenFLayered3D_8cpp_ada57d57674c0b17b830f10579db01b30}\index{GreenFLayered3D.cpp@{GreenFLayered3D.cpp}!vecCrossDyad@{vecCrossDyad}}
+\index{vecCrossDyad@{vecCrossDyad}!GreenFLayered3D.cpp@{GreenFLayered3D.cpp}}
+\doxysubsubsection{\texorpdfstring{vecCrossDyad()}{vecCrossDyad()}}
+{\footnotesize\ttfamily \label{GreenFLayered3D_8cpp_ada57d57674c0b17b830f10579db01b30} 
+\mbox{\hyperlink{globals_8h_ac062d767acbc2b8149a4039dc4a1a18f}{cdyad}} vec\+Cross\+Dyad (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \&}]{v}{, }\item[{const \mbox{\hyperlink{globals_8h_ac062d767acbc2b8149a4039dc4a1a18f}{cdyad}} \&}]{D}{, }\item[{bool}]{row\+Wise}{ = {\ttfamily true}}\end{DoxyParamCaption})}
+
+
+
+Computes the cross product of a vector with each row or column of a dyad. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & Vector to be crossed. \\
+\hline
+{\em D} & Dyad (3x3 matrix). \\
+\hline
+{\em row\+Wise} & If true, apply row-\/wise; if false, column-\/wise. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Resulting cdyad with cross products applied accordingly. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l00088}{88}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{GreenFLayered3D_8cpp_ada57d57674c0b17b830f10579db01b30_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{GreenFLayered3D_8cpp_a31701455408ae80296adc6c892ca0041}\index{GreenFLayered3D.cpp@{GreenFLayered3D.cpp}!coeffSelectorInter@{coeffSelectorInter}}
+\index{coeffSelectorInter@{coeffSelectorInter}!GreenFLayered3D.cpp@{GreenFLayered3D.cpp}}
+\doxysubsubsection{\texorpdfstring{coeffSelectorInter}{coeffSelectorInter}}
+{\footnotesize\ttfamily \label{GreenFLayered3D_8cpp_a31701455408ae80296adc6c892ca0041} 
+std\+::map$<$std\+::string, std\+::function$<$\mbox{\hyperlink{GreenFLayered3D_8cpp_a42f55a8da4b7628b11e795aed2c00d19}{inter\+Tuple}}\&(\mbox{\hyperlink{structCoeffsInter}{Coeffs\+Inter}}\&)$>$ $>$ coeff\+Selector\+Inter}
+
+
+
+Selector map from inter-\/layer interaction key to tuple accessor. 
+
+Maps strings like "{}te"{}, "{}tm"{}, "{}tez1"{}, "{}tmz2"{}, ... to a lambda returning the matching {\ttfamily \doxylink{GreenFLayered3D_8cpp_a42f55a8da4b7628b11e795aed2c00d19}{inter\+Tuple}} inside a {\ttfamily \doxylink{structCoeffsInter}{Coeffs\+Inter}} object. 
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l00162}{162}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+
+\Hypertarget{GreenFLayered3D_8cpp_a8c41f0376ae1c509fef835c5ebe9e830}\index{GreenFLayered3D.cpp@{GreenFLayered3D.cpp}!coeffSelectorIntra@{coeffSelectorIntra}}
+\index{coeffSelectorIntra@{coeffSelectorIntra}!GreenFLayered3D.cpp@{GreenFLayered3D.cpp}}
+\doxysubsubsection{\texorpdfstring{coeffSelectorIntra}{coeffSelectorIntra}}
+{\footnotesize\ttfamily \label{GreenFLayered3D_8cpp_a8c41f0376ae1c509fef835c5ebe9e830} 
+std\+::map$<$std\+::string, std\+::function$<$\mbox{\hyperlink{GreenFLayered3D_8cpp_ad07a682bd1050aaa17b6cf63131f4069}{intra\+Tuple}}\&(\mbox{\hyperlink{structCoeffsIntra}{Coeffs\+Intra}}\&)$>$ $>$ coeff\+Selector\+Intra}
+
+
+
+Selector map from intra-\/layer interaction key to tuple accessor. 
+
+Maps strings like "{}te"{}, "{}tm"{}, "{}tez"{}, ... to a lambda returning the matching {\ttfamily \doxylink{GreenFLayered3D_8cpp_ad07a682bd1050aaa17b6cf63131f4069}{intra\+Tuple}} inside a {\ttfamily \doxylink{structCoeffsIntra}{Coeffs\+Intra}} object. 
+
+Definition at line \mbox{\hyperlink{GreenFLayered3D_8cpp_source_l00154}{154}} of file \mbox{\hyperlink{GreenFLayered3D_8cpp_source}{Green\+FLayered3\+D.\+cpp}}.
+

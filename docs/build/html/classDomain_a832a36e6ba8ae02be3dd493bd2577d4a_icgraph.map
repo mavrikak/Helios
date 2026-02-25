@@ -1,0 +1,22 @@
+<map id="Domain::IncFieldH" name="Domain::IncFieldH">
+<area shape="rect" id="Node000001" title="Total incident magnetic field at a point from all incident sources." alt="" coords="782,136,922,164"/>
+<area shape="rect" id="Node000002" href="$classDomainHom3D.html#ad19635c8b33f69ebf6cb3cd8788f7f23" title="Absorption cross section via surface quadrature." alt="" coords="518,5,734,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="827,126,785,86,760,65,732,48,703,36,705,31,735,43,763,61,789,82,831,122"/>
+<area shape="rect" id="Node000003" href="$classSimJob.html#a24f10b7bb14c9181341d07a783e00214" title="Return both , &#160;incident and secondary pairs at pos." alt="" coords="552,57,700,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="807,131,733,100,692,88,693,83,735,95,809,126"/>
+<area shape="rect" id="Node000007" href="$classDomainHom3D.html#aa6a76dafe56204c15b80e491e6a2b21d" title="Extinction cross section via surface quadrature." alt="" coords="520,109,732,137"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="766,142,732,138,733,133,766,137"/>
+<area shape="rect" id="Node000008" href="$classSimJob.html#ae9e4bc91d7636bf3e7fd151c870cd01f" title="Incident and secondary &#160;at pos (domain auto&#45;detected)." alt="" coords="568,161,684,189"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="767,162,685,171,684,166,766,157"/>
+<area shape="rect" id="Node000009" href="$classSimJob.html#ab9314ccd802a5a430e96e97439fc2459" title="Incident and secondary &#160;at pos with known containing domain." alt="" coords="568,213,684,241"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="809,173,735,203,685,217,683,212,733,198,807,168"/>
+<area shape="rect" id="Node000010" href="$classDomainHom3D.html#af51c0166dbce1642b143f7bf910b7c12" title="Scattering cross section via surface quadrature." alt="" coords="520,265,732,293"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="830,177,789,217,763,238,735,255,704,267,702,262,732,250,760,233,785,213,826,173"/>
+<area shape="rect" id="Node000004" href="$classSimJob.html#aa492cf9e3639f2dfa91e36364a76729a" title="Thread worker to evaluate fields over posvec in parallel." alt="" coords="289,109,470,137"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="542,91,449,111,448,106,541,86"/>
+<area shape="rect" id="Node000005" href="$classSimJob.html#a20b37e2e0aa2502a3ec465a5705b1774" title="Evaluate fields on a set of points read from a file." alt="" coords="108,109,241,137"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="274,126,242,126,242,120,274,120"/>
+<area shape="rect" id="Node000006" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Main driver routine for the HELIOS SIE simulation program." alt="" coords="5,109,60,137"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="92,126,60,126,60,120,92,120"/>
+<area shape="poly" id="edge8_Node000008_Node000004" title=" " alt="" coords="553,163,448,140,449,135,554,157"/>
+</map>

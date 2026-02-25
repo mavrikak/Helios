@@ -1,0 +1,19 @@
+<map id="DomainLayered3D::newGrnFunLayered" name="DomainLayered3D::newGrnFunLayered">
+<area shape="rect" id="Node000001" title="Initialize the layered Green&#39;s function used for field evaluation." alt="" coords="5,109,229,154"/>
+<area shape="rect" id="Node000002" href="$classDomainLayered3D.html#a5379311442fe1bbc7808308726ee510d" title="Computes the grid points for tabulation." alt="" coords="277,14,511,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="157,107,212,78,276,52,303,43,305,48,278,57,215,83,159,111"/>
+<area shape="rect" id="Node000005" href="$classDomain.html#a6f7b0190794a8ee0a026b0dcf2159aef" title="Test whether a spatial point lies inside the domain." alt="" coords="329,66,459,94"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="229,108,313,92,314,97,230,113"/>
+<area shape="rect" id="Node000006" href="$classDipole.html#af0be5b4af0cd662c8684b01255b92433" title="Get dipole position." alt="" coords="331,118,457,146"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="229,129,315,129,315,134,229,134"/>
+<area shape="rect" id="Node000007" href="$classDipole.html#a2e30bf49055a001b5d8c3e695f103e3d" title="Provide the layered‑media Green&#39;s function for post‑processing fields." alt="" coords="299,170,488,198"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="230,150,302,164,301,169,229,155"/>
+<area shape="rect" id="Node000008" href="$classDomainLayered3D.html#a76fc8705ab75f3e6599693f9544821e9" title="Computes the slicing of points with respect to interfaces." alt="" coords="304,222,484,250"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="159,152,215,180,278,206,305,215,303,220,276,212,212,185,157,157"/>
+<area shape="rect" id="Node000003" href="$classDomainLayered3D.html#af0fc42edd76b3e69a326990cefcbcd37" title="Calculates the tabulation range for a group of points." alt="" coords="559,5,768,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="512,25,543,25,543,30,512,30"/>
+<area shape="rect" id="Node000004" href="$DomainLayered3D_8cpp.html#a83b3a83c01e3d7a487d4ae2ec65695f5" title="Adjusts the Z&#45;coordinate range with a margin while ensuring boundaries." alt="" coords="816,14,928,42"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="768,25,801,25,801,30,768,30"/>
+<area shape="rect" id="Node000009" href="$classDomainLayered3D.html#ae8e9daf2ca4d1ed649a1e0fe83880160" title="Returns the layer index corresponding to a spatial position." alt="" coords="559,213,768,258"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="485,233,544,233,544,238,485,238"/>
+</map>

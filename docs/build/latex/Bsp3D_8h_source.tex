@@ -1,0 +1,63 @@
+\doxysection{Bsp3\+D.\+h}
+\hypertarget{Bsp3D_8h_source}{}\label{Bsp3D_8h_source}\index{Bsp3D.h@{Bsp3D.h}}
+\mbox{\hyperlink{Bsp3D_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00010}00010\ \textcolor{preprocessor}{\#ifndef\ BSP\_H}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00011}00011\ \textcolor{preprocessor}{\#define\ BSP\_H}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <cstdio>}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Triangle_8h}{Triangle.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{globals_8h}{globals.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00027}\mbox{\hyperlink{structbspPolygon}{00027}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structbspPolygon}{bspPolygon}}\ \{}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00028}\mbox{\hyperlink{structbspPolygon_ab60b6f1844092d928472944666981730}{00028}}\ \ \ \mbox{\hyperlink{classTriangle}{Triangle}}\ *\mbox{\hyperlink{structbspPolygon_ab60b6f1844092d928472944666981730}{origin}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00029}\mbox{\hyperlink{structbspPolygon_a43bc3463de7c73d6e541aee79880ce6a}{00029}}\ \ \ std::vector<rvec>\ \mbox{\hyperlink{structbspPolygon_a43bc3463de7c73d6e541aee79880ce6a}{nodes}};\ \ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00030}\mbox{\hyperlink{structbspPolygon_a223ccf04463cdd41f4026d0476ecdc71}{00030}}\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structbspPolygon_a223ccf04463cdd41f4026d0476ecdc71}{side}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00031}00031\ \};}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00044}\mbox{\hyperlink{classBsp3D}{00044}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBsp3D_a6780d5d9e7994fb46159aae82c98a229}{Bsp3D}}\ \{}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00045}00045\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00046}\mbox{\hyperlink{classBsp3D_ac9a2bca5c6e38d8833c68314a75c24ed}{00046}}\ \ \ \mbox{\hyperlink{structbspPolygon}{bspPolygon}}\ *\mbox{\hyperlink{classBsp3D_ac9a2bca5c6e38d8833c68314a75c24ed}{splitter}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00047}\mbox{\hyperlink{classBsp3D_abfc29dcea0045ca9de2d4ff9ada2a121}{00047}}\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBsp3D_abfc29dcea0045ca9de2d4ff9ada2a121}{bud}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00048}\mbox{\hyperlink{classBsp3D_a25ca9375075fa644c755f14fde3b7ae3}{00048}}\ \ \ \mbox{\hyperlink{classBsp3D_a6780d5d9e7994fb46159aae82c98a229}{Bsp3D}}\ *\mbox{\hyperlink{classBsp3D_a25ca9375075fa644c755f14fde3b7ae3}{bspInside}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00049}\mbox{\hyperlink{classBsp3D_ad6ad0dfa6b94d52a7b18c0cd7a5511cf}{00049}}\ \ \ \mbox{\hyperlink{classBsp3D_a6780d5d9e7994fb46159aae82c98a229}{Bsp3D}}\ *\mbox{\hyperlink{classBsp3D_ad6ad0dfa6b94d52a7b18c0cd7a5511cf}{bspOutside}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00050}\mbox{\hyperlink{classBsp3D_aacc13a8baf09e5af41c9c33ac5a84ffd}{00050}}\ \ \ std::vector<bspPolygon\ *>\ \mbox{\hyperlink{classBsp3D_aacc13a8baf09e5af41c9c33ac5a84ffd}{elements}};\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00052}00052\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00055}00055\ \ \ \mbox{\hyperlink{classBsp3D_a6780d5d9e7994fb46159aae82c98a229}{Bsp3D}}();\ \ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00056}00056\ \ \ \mbox{\hyperlink{classBsp3D_a2f7d0703d6bbc914be1c5791282414f5}{\string~Bsp3D}}();\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00068}00068\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBsp3D_aa47770da171d55386ff3274412b58739}{SetSplitter}}();}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00076}00076\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBsp3D_af9a47ebf1f5e7e871fe73572c8b0678c}{AddElement}}(\mbox{\hyperlink{classTriangle}{Triangle}}\ *inElement,\ \textcolor{keywordtype}{int}\ inSide);}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00083}00083\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBsp3D_af9a47ebf1f5e7e871fe73572c8b0678c}{AddElement}}(\mbox{\hyperlink{structbspPolygon}{bspPolygon}}\ *poly);}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00093}00093\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBsp3D_a214442602cb9f9276144dbe828ed793d}{Branch}}();}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00103}00103\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBsp3D_ad91ed3b4eb5eaa1b63385e1aa7189039}{SetBud}}();}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00109}00109\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBsp3D_ac7d0527a8f17ee2dc2d5e735b7f2a78c}{IsBud}}();}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00121}00121\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classBsp3D_aeef40776817ce8cec917de1fb2e84f7a}{LocTest}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ test);}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00131}00131\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classBsp3D_ab86d60e3ac1a432328b7b3115ba76d1b}{LocDist}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ test);}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00147}00147\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classBsp3D_a53fed4500360085faceb956c49913117}{SplitPoly}}(\mbox{\hyperlink{structbspPolygon}{bspPolygon}}\ *poly);}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00156}00156\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classBsp3D_a7f8ee74b1c8aff83c5a1cebf21356b54}{TestPoint}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ point);}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00158}00158\ \};}
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00159}00159\ }
+\DoxyCodeLine{\Hypertarget{Bsp3D_8h_source_l00160}00160\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

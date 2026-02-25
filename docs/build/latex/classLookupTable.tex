@@ -1,0 +1,219 @@
+\doxysection{Lookup\+Table Class Reference}
+\hypertarget{classLookupTable}{}\label{classLookupTable}\index{LookupTable@{LookupTable}}
+
+
+Represents a 2D lookup table for complex functions (text format).  
+
+
+
+
+{\ttfamily \#include $<$math\+Functions.\+h$>$}
+
+
+
+Collaboration diagram for Lookup\+Table\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=168pt]{classLookupTable__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLookupTable_aad2ce33f88d3b9d1594fa43639afd04b}{Lookup\+Table}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLookupTable_ae6e7b00a09e1e8150e013df55820cbb0}{Lookup\+Table}} (std\+::string file\+Name)
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classLookupTable}{Lookup\+Table} from a text file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ \mbox{\hyperlink{classLookupTable_a16122241ad91c9d12e064818c7f14431}{arg}}
+\begin{DoxyCompactList}\small\item\em Argument grid (Re,Im) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ \mbox{\hyperlink{classLookupTable_ab96a1f939d8f1a7e37dc4d6811bb8a61}{fun}}
+\begin{DoxyCompactList}\small\item\em Function values. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classLookupTable_a0e16d61af82fd44504de9960825907fc}{size\+Re}}
+\begin{DoxyCompactList}\small\item\em Number of samples in real direction. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classLookupTable_abb858d416dff348b9f247aefd350bf9e}{size\+Im}}
+\begin{DoxyCompactList}\small\item\em Number of samples in imaginary direction. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classLookupTable_a8cbd9aa7e94d9de1700f11d69609f7a8}{max\+Re}}
+\begin{DoxyCompactList}\small\item\em Maximum ranges for real/imag axes. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classLookupTable_a39f15ca38af6eaa9defcbc4eab24cd0f}{max\+Im}}
+\begin{DoxyCompactList}\small\item\em Maximum ranges for real/imag axes. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classLookupTable_a68e4429b3dfa69fa9feb43345ae35235}{inc\+Re}}
+\begin{DoxyCompactList}\small\item\em Sampling increments. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classLookupTable_aa6a2f49d4f7ff001bf2d7bf5cad653c6}{inc\+Im}}
+\begin{DoxyCompactList}\small\item\em Sampling increments. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a 2D lookup table for complex functions (text format). 
+
+Stores grid of sampled argument (arg) and function values (fun). 
+
+Definition at line \mbox{\hyperlink{mathFunctions_8h_source_l00028}{28}} of file \mbox{\hyperlink{mathFunctions_8h_source}{math\+Functions.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classLookupTable_aad2ce33f88d3b9d1594fa43639afd04b}\index{LookupTable@{LookupTable}!LookupTable@{LookupTable}}
+\index{LookupTable@{LookupTable}!LookupTable@{LookupTable}}
+\doxysubsubsection{\texorpdfstring{LookupTable()}{LookupTable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classLookupTable_aad2ce33f88d3b9d1594fa43639afd04b} 
+Lookup\+Table\+::\+Lookup\+Table (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Initializes table parameters to zero. 
+
+Definition at line \mbox{\hyperlink{mathFunctions_8cpp_source_l00167}{167}} of file \mbox{\hyperlink{mathFunctions_8cpp_source}{math\+Functions.\+cpp}}.
+
+\Hypertarget{classLookupTable_ae6e7b00a09e1e8150e013df55820cbb0}\index{LookupTable@{LookupTable}!LookupTable@{LookupTable}}
+\index{LookupTable@{LookupTable}!LookupTable@{LookupTable}}
+\doxysubsubsection{\texorpdfstring{LookupTable()}{LookupTable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classLookupTable_ae6e7b00a09e1e8150e013df55820cbb0} 
+Lookup\+Table\+::\+Lookup\+Table (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Construct a \doxylink{classLookupTable}{Lookup\+Table} from a text file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & Path to the lookup table text file.\\
+\hline
+\end{DoxyParams}
+Reads sampled argument and function values into memory. 
+
+Definition at line \mbox{\hyperlink{mathFunctions_8cpp_source_l00171}{171}} of file \mbox{\hyperlink{mathFunctions_8cpp_source}{math\+Functions.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLookupTable_ae6e7b00a09e1e8150e013df55820cbb0_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classLookupTable_a16122241ad91c9d12e064818c7f14431}\index{LookupTable@{LookupTable}!arg@{arg}}
+\index{arg@{arg}!LookupTable@{LookupTable}}
+\doxysubsubsection{\texorpdfstring{arg}{arg}}
+{\footnotesize\ttfamily \label{classLookupTable_a16122241ad91c9d12e064818c7f14431} 
+std\+::vector$<$std\+::vector$<$\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}$>$ $>$ Lookup\+Table\+::arg}
+
+
+
+Argument grid (Re,Im) 
+
+
+
+Definition at line \mbox{\hyperlink{mathFunctions_8h_source_l00030}{30}} of file \mbox{\hyperlink{mathFunctions_8h_source}{math\+Functions.\+h}}.
+
+\Hypertarget{classLookupTable_ab96a1f939d8f1a7e37dc4d6811bb8a61}\index{LookupTable@{LookupTable}!fun@{fun}}
+\index{fun@{fun}!LookupTable@{LookupTable}}
+\doxysubsubsection{\texorpdfstring{fun}{fun}}
+{\footnotesize\ttfamily \label{classLookupTable_ab96a1f939d8f1a7e37dc4d6811bb8a61} 
+std\+::vector$<$std\+::vector$<$\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}$>$ $>$ Lookup\+Table\+::fun}
+
+
+
+Function values. 
+
+
+
+Definition at line \mbox{\hyperlink{mathFunctions_8h_source_l00031}{31}} of file \mbox{\hyperlink{mathFunctions_8h_source}{math\+Functions.\+h}}.
+
+\Hypertarget{classLookupTable_aa6a2f49d4f7ff001bf2d7bf5cad653c6}\index{LookupTable@{LookupTable}!incIm@{incIm}}
+\index{incIm@{incIm}!LookupTable@{LookupTable}}
+\doxysubsubsection{\texorpdfstring{incIm}{incIm}}
+{\footnotesize\ttfamily \label{classLookupTable_aa6a2f49d4f7ff001bf2d7bf5cad653c6} 
+double Lookup\+Table\+::inc\+Im}
+
+
+
+Sampling increments. 
+
+
+
+Definition at line \mbox{\hyperlink{mathFunctions_8h_source_l00037}{37}} of file \mbox{\hyperlink{mathFunctions_8h_source}{math\+Functions.\+h}}.
+
+\Hypertarget{classLookupTable_a68e4429b3dfa69fa9feb43345ae35235}\index{LookupTable@{LookupTable}!incRe@{incRe}}
+\index{incRe@{incRe}!LookupTable@{LookupTable}}
+\doxysubsubsection{\texorpdfstring{incRe}{incRe}}
+{\footnotesize\ttfamily \label{classLookupTable_a68e4429b3dfa69fa9feb43345ae35235} 
+double Lookup\+Table\+::inc\+Re}
+
+
+
+Sampling increments. 
+
+
+
+Definition at line \mbox{\hyperlink{mathFunctions_8h_source_l00036}{36}} of file \mbox{\hyperlink{mathFunctions_8h_source}{math\+Functions.\+h}}.
+
+\Hypertarget{classLookupTable_a39f15ca38af6eaa9defcbc4eab24cd0f}\index{LookupTable@{LookupTable}!maxIm@{maxIm}}
+\index{maxIm@{maxIm}!LookupTable@{LookupTable}}
+\doxysubsubsection{\texorpdfstring{maxIm}{maxIm}}
+{\footnotesize\ttfamily \label{classLookupTable_a39f15ca38af6eaa9defcbc4eab24cd0f} 
+double Lookup\+Table\+::max\+Im}
+
+
+
+Maximum ranges for real/imag axes. 
+
+
+
+Definition at line \mbox{\hyperlink{mathFunctions_8h_source_l00035}{35}} of file \mbox{\hyperlink{mathFunctions_8h_source}{math\+Functions.\+h}}.
+
+\Hypertarget{classLookupTable_a8cbd9aa7e94d9de1700f11d69609f7a8}\index{LookupTable@{LookupTable}!maxRe@{maxRe}}
+\index{maxRe@{maxRe}!LookupTable@{LookupTable}}
+\doxysubsubsection{\texorpdfstring{maxRe}{maxRe}}
+{\footnotesize\ttfamily \label{classLookupTable_a8cbd9aa7e94d9de1700f11d69609f7a8} 
+double Lookup\+Table\+::max\+Re}
+
+
+
+Maximum ranges for real/imag axes. 
+
+
+
+Definition at line \mbox{\hyperlink{mathFunctions_8h_source_l00034}{34}} of file \mbox{\hyperlink{mathFunctions_8h_source}{math\+Functions.\+h}}.
+
+\Hypertarget{classLookupTable_abb858d416dff348b9f247aefd350bf9e}\index{LookupTable@{LookupTable}!sizeIm@{sizeIm}}
+\index{sizeIm@{sizeIm}!LookupTable@{LookupTable}}
+\doxysubsubsection{\texorpdfstring{sizeIm}{sizeIm}}
+{\footnotesize\ttfamily \label{classLookupTable_abb858d416dff348b9f247aefd350bf9e} 
+int Lookup\+Table\+::size\+Im}
+
+
+
+Number of samples in imaginary direction. 
+
+
+
+Definition at line \mbox{\hyperlink{mathFunctions_8h_source_l00033}{33}} of file \mbox{\hyperlink{mathFunctions_8h_source}{math\+Functions.\+h}}.
+
+\Hypertarget{classLookupTable_a0e16d61af82fd44504de9960825907fc}\index{LookupTable@{LookupTable}!sizeRe@{sizeRe}}
+\index{sizeRe@{sizeRe}!LookupTable@{LookupTable}}
+\doxysubsubsection{\texorpdfstring{sizeRe}{sizeRe}}
+{\footnotesize\ttfamily \label{classLookupTable_a0e16d61af82fd44504de9960825907fc} 
+int Lookup\+Table\+::size\+Re}
+
+
+
+Number of samples in real direction. 
+
+
+
+Definition at line \mbox{\hyperlink{mathFunctions_8h_source_l00032}{32}} of file \mbox{\hyperlink{mathFunctions_8h_source}{math\+Functions.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{mathFunctions_8h}{math\+Functions.\+h}}\item 
+\mbox{\hyperlink{mathFunctions_8cpp}{math\+Functions.\+cpp}}\end{DoxyCompactItemize}

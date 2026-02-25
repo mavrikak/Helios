@@ -1,0 +1,16 @@
+<map id="GreenFHom3DPer2D::EwaldAndGradientSpectral" name="GreenFHom3DPer2D::EwaldAndGradientSpectral">
+<area shape="rect" id="Node000001" title="Spectral part returning ." alt="" coords="582,71,810,115"/>
+<area shape="rect" id="Node000002" href="$classGreenFHom3DPer2D.html#ab49a15bcfe7b44d2338c9182f003d385" title="Evaluate &#160;(smoothed) for a translation in one call." alt="" coords="289,36,534,81"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="566,80,534,76,535,71,567,75"/>
+<area shape="rect" id="Node000006" href="$classGreenFHom3DPer2D.html#aea4d858bd544ba5e9a8de1197b572b4e" title="Evaluate &#160;for a translation in one call." alt="" coords="289,105,534,150"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="567,111,535,115,534,110,566,106"/>
+<area shape="rect" id="Node000003" href="$classGreenFHom3DPer2D.html#a233c2185952220bd16acae2142f05cc1" title="term at an observation point." alt="" coords="11,5,235,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="273,46,235,42,235,37,273,41"/>
+<area shape="rect" id="Node000004" href="$classGreenFHom3DPer2D.html#a84a8c855a27c895ff24f6771037284a5" title="Compute &#160;for all RWGs on a source triangle." alt="" coords="15,75,231,119"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="273,80,232,85,231,80,273,74"/>
+<area shape="rect" id="Node000005" href="$classGreenFHom3DPer2D.html#a1dc9dd84c93ee10b2fb4b1866103d957" title="Compute &#160;and &#160;for all RWG pairs on two triangles." alt="" coords="5,143,241,171"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="303,89,290,95,276,105,267,114,257,124,242,134,213,145,211,140,239,129,253,120,263,111,273,101,287,91,301,84"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="303,102,287,95,263,80,239,65,210,53,212,48,242,60,266,75,290,91,305,97"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="273,116,231,111,232,106,273,110"/>
+<area shape="poly" id="edge8_Node000006_Node000005" title=" " alt="" coords="273,144,241,148,241,142,273,139"/>
+</map>

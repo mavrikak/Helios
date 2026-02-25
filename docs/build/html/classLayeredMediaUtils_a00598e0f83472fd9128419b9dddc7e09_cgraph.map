@@ -1,0 +1,10 @@
+<map id="LayeredMediaUtils::InterfaceTransferMatrix" name="LayeredMediaUtils::InterfaceTransferMatrix">
+<area shape="rect" id="Node000001" title="Computes the interface transfer matrix for TE or TM waves." alt="" coords="5,21,179,66"/>
+<area shape="rect" id="Node000002" href="$classLayeredMediaUtils.html#a212943a3dd5bdeaaa5c92ed21fad87a9" title="Computes Fresnel reflection and transmission coefficients at an interface." alt="" coords="227,21,378,66"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="179,40,211,40,211,46,179,46"/>
+<area shape="rect" id="Node000003" href="$LayeredMediaUtils_8cpp.html#a50405603197731a46c864b0f39744ed0" title="Computes the square root of a complex number with proper handling of negative imaginary parts." alt="" coords="426,29,529,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="378,40,410,40,410,46,378,46"/>
+<area shape="rect" id="Node000004" href="$Domain_8cpp.html#aafa3e4fa6318b2f8740f4dbd50c367e5" title="Extract the real part of each component of a complex 3&#45;vector." alt="" coords="577,29,624,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="530,40,562,40,562,46,530,46"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="578,30,575,20,578,11,586,5,601,3,615,5,624,11,620,16,613,10,600,8,588,10,582,14,580,20,583,28"/>
+</map>

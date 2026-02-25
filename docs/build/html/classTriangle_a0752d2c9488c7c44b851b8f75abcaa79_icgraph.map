@@ -1,0 +1,82 @@
+<map id="Triangle::Node" name="Triangle::Node">
+<area shape="rect" id="Node000001" title="Node position (by value) for local index 0..2." alt="" coords="1095,896,1209,924"/>
+<area shape="rect" id="Node000002" href="$classGreenFLayered3D.html#a1e2aea0bdd06e2c0082b6ae0787a018b" title="Checks whether the given point&#45;triangle pair exceeds a predefined distance threshold." alt="" coords="795,5,1047,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1146,880,1135,698,1114,433,1100,300,1083,183,1065,95,1055,65,1045,48,1030,35,1033,31,1049,44,1060,63,1070,93,1088,182,1105,299,1119,432,1140,698,1152,880"/>
+<area shape="rect" id="Node000003" href="$classGreenFLayered3D.html#a41dad600791549400d82f6c44238f373" title="Checks whether the given triangles exceed a predefined threshold." alt="" coords="795,57,1047,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="1148,880,1148,719,1145,606,1137,484,1125,363,1106,252,1080,161,1063,126,1045,100,1030,87,1033,83,1049,96,1068,123,1085,159,1111,250,1130,362,1143,483,1150,606,1153,719,1154,880"/>
+<area shape="rect" id="Node000004" href="$classDomainHom3D.html#ad19635c8b33f69ebf6cb3cd8788f7f23" title="Absorption cross section via surface quadrature." alt="" coords="813,109,1029,137"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="1148,881,1146,729,1134,509,1122,396,1103,293,1078,208,1062,176,1045,152,1028,138,1031,134,1049,148,1067,173,1083,206,1108,292,1127,395,1140,509,1152,729,1153,881"/>
+<area shape="rect" id="Node000005" href="$classDomainLayered3D.html#a4e5fb098bcc6edc2f594da23e0b64fb3" title="Absorption cross section." alt="" coords="803,161,1039,189"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="1148,880,1145,738,1131,534,1118,429,1100,334,1076,256,1061,226,1045,204,1030,192,1033,187,1049,200,1066,223,1081,254,1105,333,1123,428,1136,533,1150,737,1153,880"/>
+<area shape="rect" id="Node000006" href="$classBsp3D.html#af9a47ebf1f5e7e871fe73572c8b0678c" title="Add a triangle as a new polygon element." alt="" coords="846,213,996,241"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="1147,881,1142,749,1126,562,1113,467,1096,380,1073,309,1059,282,1045,261,1022,244,995,234,997,229,1025,240,1049,257,1064,279,1078,307,1101,379,1119,466,1132,562,1147,748,1153,881"/>
+<area shape="rect" id="Node000007" href="$classTriangle.html#ae13d69e28fb7a81ab8257fe0af84ceaa" title="Compute/cached geometry (normal, area, perimeter, center, I1/I2s/I2d)." alt="" coords="802,469,1040,497"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="1146,880,1139,817,1123,732,1110,687,1093,641,1071,598,1045,558,1027,539,1005,523,961,500,964,495,1008,519,1030,535,1049,555,1076,595,1097,639,1115,685,1128,731,1145,816,1152,880"/>
+<area shape="rect" id="Node000013" href="$classGreenFHom3D.html#a419cbe00b5a2aed70ac546904a8a8d6f" title="Compute &#160;and &#160;for all RWG pairs on two triangles." alt="" coords="25,277,221,305"/>
+<area shape="poly" id="edge36_Node000001_Node000013" title=" " alt="" coords="1146,880,1138,768,1120,613,1107,535,1090,464,1069,406,1045,368,1020,348,987,331,947,317,900,305,793,288,672,279,547,276,425,277,222,286,221,281,425,272,547,270,673,273,793,283,901,300,948,311,989,326,1023,343,1049,364,1074,404,1095,463,1112,534,1125,612,1143,767,1152,880"/>
+<area shape="rect" id="Node000014" href="$classGreenFHom3DPer2D.html#a1dc9dd84c93ee10b2fb4b1866103d957" title="Compute &#160;and &#160;for all RWG pairs on two triangles." alt="" coords="5,353,241,381"/>
+<area shape="poly" id="edge37_Node000001_Node000014" title=" " alt="" coords="1145,881,1133,786,1112,660,1083,539,1065,492,1045,459,1003,417,961,382,920,355,879,335,838,321,796,313,754,309,710,308,618,317,519,331,410,347,289,356,241,359,241,354,288,351,409,341,518,326,618,311,710,303,754,303,797,307,839,316,881,330,923,351,964,378,1006,413,1049,456,1069,489,1088,537,1117,659,1138,785,1150,880"/>
+<area shape="rect" id="Node000015" href="$classGreenFLayered3D.html#a6c88af86169f8d148c3e9f4da77a77d0" title="Triangle–triangle D/K blocks assembly for all RWG pairs on two triangles." alt="" coords="14,508,232,536"/>
+<area shape="poly" id="edge38_Node000001_Node000015" title=" " alt="" coords="1145,881,1137,832,1119,772,1106,742,1090,713,1069,687,1045,665,1016,649,981,636,893,621,790,615,677,615,457,619,362,616,288,604,247,590,208,573,145,538,148,534,210,568,249,585,289,599,363,611,457,614,677,609,790,609,894,615,982,631,1018,644,1048,661,1073,683,1094,710,1111,740,1124,771,1142,831,1150,880"/>
+<area shape="rect" id="Node000016" href="$classTriangle.html#a110eb211c31cc4fa6a936d8d4c201306" title="Count common nodes with T after translating T by vector t." alt="" coords="306,563,480,590"/>
+<area shape="poly" id="edge22_Node000001_Node000016" title=" " alt="" coords="1148,881,1143,821,1128,746,1115,707,1097,670,1074,637,1045,609,1016,599,963,591,809,581,633,578,480,578,480,573,633,572,809,575,963,585,1017,594,1048,605,1078,634,1102,668,1120,705,1133,744,1148,820,1153,880"/>
+<area shape="rect" id="Node000019" href="$classTriangle.html#aad716a04591b5c9af864d6c2a89d3a65" title="Test whether a point lies on (or very near) the triangle." alt="" coords="837,713,1005,741"/>
+<area shape="poly" id="edge18_Node000001_Node000019" title=" " alt="" coords="1137,883,1123,852,1103,818,1077,784,1045,756,1026,746,1005,738,1006,733,1028,741,1048,752,1081,780,1107,815,1128,850,1142,880"/>
+<area shape="rect" id="Node000020" href="$classGreenFLayered3D.html#af46d152fbc30bdc418ff16e5e7a334c6" title="Point–triangle delta/kappa contributions for RHS assembly." alt="" coords="547,685,745,730"/>
+<area shape="poly" id="edge35_Node000001_Node000020" title=" " alt="" coords="1143,882,1133,840,1114,790,1086,742,1067,721,1045,704,1007,685,965,673,922,666,878,664,794,672,721,687,720,682,793,666,878,659,923,661,966,667,1009,680,1048,700,1071,717,1090,738,1119,788,1138,838,1149,881"/>
+<area shape="rect" id="Node000021" href="$classDomainHom3D.html#aa6a76dafe56204c15b80e491e6a2b21d" title="Extinction cross section via surface quadrature." alt="" coords="815,765,1027,793"/>
+<area shape="poly" id="edge20_Node000001_Node000021" title=" " alt="" coords="1129,885,1093,845,1070,825,1045,808,1016,796,1018,791,1048,803,1074,820,1097,841,1133,882"/>
+<area shape="rect" id="Node000022" href="$classDomainLayered3D.html#a847bdddcbf4257a73cfcd2766c882f8b" title="Extinction cross section." alt="" coords="805,817,1037,845"/>
+<area shape="poly" id="edge21_Node000001_Node000022" title=" " alt="" coords="1112,891,1046,860,1003,848,1005,843,1048,855,1114,886"/>
+<area shape="rect" id="Node000023" href="$classGaussQuad.html#ae1cb48d95d2fad8c46a0a4d44b1216d9" title="Integrate on triangle E_inc using centroid evaluation." alt="" coords="840,869,1002,897"/>
+<area shape="poly" id="edge23_Node000001_Node000023" title=" " alt="" coords="1079,904,1002,895,1003,890,1079,899"/>
+<area shape="rect" id="Node000024" href="$classGaussQuad.html#ac053945db0c37c26ac30f3e468550b6e" title="Integrate on triangle &#160;with Dunavant quadrature." alt="" coords="840,921,1002,949"/>
+<area shape="poly" id="edge24_Node000001_Node000024" title=" " alt="" coords="1079,920,1003,929,1002,924,1079,915"/>
+<area shape="rect" id="Node000025" href="$classGreenFHom3D.html#aca136b03c44ad1da34acf91eb5a5e390" title="term at an observation point." alt="" coords="811,973,1031,1001"/>
+<area shape="poly" id="edge25_Node000001_Node000025" title=" " alt="" coords="1113,934,1048,963,1004,975,1003,970,1046,958,1111,929"/>
+<area shape="rect" id="Node000026" href="$classGreenFHom3DPer2D.html#a233c2185952220bd16acae2142f05cc1" title="term at an observation point." alt="" coords="809,1025,1033,1070"/>
+<area shape="poly" id="edge26_Node000001_Node000026" title=" " alt="" coords="1133,938,1096,977,1048,1015,1023,1027,1021,1022,1045,1010,1093,974,1129,934"/>
+<area shape="rect" id="Node000027" href="$classGreenFLayered3D.html#afbdbfdc8fc40fc885f6377d5be242d36" title="term at an observation point." alt="" coords="818,1094,1024,1139"/>
+<area shape="poly" id="edge27_Node000001_Node000027" title=" " alt="" coords="1144,939,1130,972,1109,1012,1082,1051,1048,1084,1025,1098,1023,1093,1045,1080,1078,1047,1105,1009,1125,970,1139,937"/>
+<area shape="rect" id="Node000028" href="$classGreenFHom3D.html#a9cece8a4056d65455cfcc94c8c61decd" title="term at an observation point." alt="" coords="808,1163,1034,1190"/>
+<area shape="poly" id="edge28_Node000001_Node000028" title=" " alt="" coords="1149,940,1140,987,1121,1045,1092,1104,1072,1130,1048,1153,1031,1164,1028,1160,1045,1149,1068,1127,1087,1101,1116,1043,1134,986,1144,939"/>
+<area shape="rect" id="Node000029" href="$classGreenFHom3DPer2D.html#aadb534ef4509422e6f3e78a0e3999758" title="term at an observation point." alt="" coords="809,1214,1033,1259"/>
+<area shape="poly" id="edge29_Node000001_Node000029" title=" " alt="" coords="1151,939,1144,995,1127,1066,1114,1104,1097,1140,1075,1174,1048,1204,1033,1216,1029,1211,1045,1200,1071,1171,1092,1137,1109,1101,1122,1065,1139,994,1146,939"/>
+<area shape="rect" id="Node000030" href="$classGreenFLayered3D.html#a439eddb43f46fb52f6c84898ea12aa40" title="term at an observation point." alt="" coords="818,1284,1024,1328"/>
+<area shape="poly" id="edge30_Node000001_Node000030" title=" " alt="" coords="1154,939,1150,1007,1136,1096,1123,1144,1105,1191,1080,1235,1048,1273,1026,1289,1023,1285,1045,1269,1076,1232,1100,1189,1118,1142,1131,1095,1145,1006,1148,939"/>
+<area shape="rect" id="Node000031" href="$classDomain.html#aab504e2e699c789b209cf0e288b8a389" title="Debug: print all edges and the RWGs that live on them." alt="" coords="838,1352,1004,1380"/>
+<area shape="poly" id="edge31_Node000001_Node000031" title=" " alt="" coords="1150,940,1139,1032,1118,1152,1104,1213,1088,1267,1070,1312,1049,1342,1028,1357,1005,1365,1003,1360,1026,1352,1045,1339,1065,1309,1083,1265,1099,1211,1113,1151,1133,1031,1145,939"/>
+<area shape="rect" id="Node000032" href="$classDomain.html#a3eaedce45621dee107b082aca51d80ea" title="Debug: print triangle centroids and RWG evaluations at centroids." alt="" coords="810,1404,1032,1432"/>
+<area shape="poly" id="edge32_Node000001_Node000032" title=" " alt="" coords="1151,939,1141,1041,1121,1177,1108,1245,1091,1307,1072,1358,1049,1393,1032,1406,1029,1401,1045,1389,1067,1356,1086,1306,1103,1244,1116,1176,1136,1040,1146,939"/>
+<area shape="rect" id="Node000033" href="$classGreenFHom3D.html#a48e8471aabb445e0e50a01c005ff3b98" title="Compute &#160;for all RWGs on a source triangle." alt="" coords="815,1456,1027,1500"/>
+<area shape="poly" id="edge33_Node000001_Node000033" title=" " alt="" coords="1151,940,1142,1050,1124,1201,1110,1278,1093,1348,1073,1405,1049,1445,1029,1461,1026,1456,1045,1441,1068,1403,1088,1346,1105,1277,1119,1201,1137,1050,1146,939"/>
+<area shape="rect" id="Node000034" href="$classGreenFHom3DPer2D.html#a84a8c855a27c895ff24f6771037284a5" title="Compute &#160;for all RWGs on a source triangle." alt="" coords="813,1525,1029,1570"/>
+<area shape="poly" id="edge34_Node000001_Node000034" title=" " alt="" coords="1152,939,1145,1063,1128,1235,1115,1322,1098,1403,1076,1469,1063,1494,1049,1514,1031,1529,1028,1525,1045,1511,1058,1492,1071,1467,1092,1401,1110,1321,1123,1234,1140,1062,1147,939"/>
+<area shape="rect" id="Node000035" href="$classGreenFHom3D.html#aee15ec1616a294e10b554f1afbb97845" title="Same as SameTriDK plus gradients (if provided by the GF)." alt="" coords="818,1593,1024,1621"/>
+<area shape="poly" id="edge39_Node000001_Node000035" title=" " alt="" coords="1153,939,1149,1075,1134,1269,1121,1368,1103,1459,1079,1533,1065,1562,1049,1584,1026,1600,1023,1596,1045,1580,1060,1559,1074,1531,1098,1457,1116,1367,1129,1268,1143,1075,1148,939"/>
+<area shape="rect" id="Node000036" href="$classGreenFLayered3D.html#a52cce9be0f67bd1b5aa9b2cdb01e4164" title="Same as SameTriDK and additionally accumulates gradients." alt="" coords="807,1645,1035,1673"/>
+<area shape="poly" id="edge40_Node000001_Node000036" title=" " alt="" coords="1153,940,1150,1085,1137,1294,1124,1401,1106,1499,1081,1579,1066,1611,1049,1634,1033,1647,1030,1643,1045,1631,1061,1608,1076,1577,1101,1498,1119,1400,1132,1293,1145,1085,1148,939"/>
+<area shape="rect" id="Node000037" href="$classDomainHom3D.html#af51c0166dbce1642b143f7bf910b7c12" title="Scattering cross section via surface quadrature." alt="" coords="815,1697,1027,1725"/>
+<area shape="poly" id="edge41_Node000001_Node000037" title=" " alt="" coords="1154,939,1152,1094,1140,1318,1128,1434,1109,1540,1083,1627,1067,1661,1049,1686,1028,1702,1025,1697,1045,1683,1062,1658,1078,1625,1104,1538,1122,1433,1135,1318,1147,1094,1148,939"/>
+<area shape="rect" id="Node000038" href="$classDomainLayered3D.html#a267135f0a2f5bfff12f7ac3b25429176" title="Scattering cross section." alt="" coords="805,1749,1037,1777"/>
+<area shape="poly" id="edge42_Node000001_Node000038" title=" " alt="" coords="1152,939,1140,1114,1118,1367,1104,1495,1087,1606,1069,1691,1059,1720,1049,1738,1033,1751,1030,1747,1045,1735,1054,1718,1064,1690,1082,1606,1098,1494,1113,1367,1134,1113,1146,938"/>
+<area shape="rect" id="Node000008" href="$classTriangle.html#a6d275a4d9441732ebcd00c514ff4bb2f" title="Replace the three node pointers and recompute cached geometry." alt="" coords="564,417,728,445"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="828,468,723,448,724,443,829,463"/>
+<area shape="rect" id="Node000009" href="$classTriangle.html#aa59e8d6a6ca3db504228bff7913812bb" title="Set front/back domain indices; recomputes cached geometry." alt="" coords="545,469,747,497"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="787,486,748,486,748,480,787,480"/>
+<area shape="rect" id="Node000010" href="$classTriangle.html#afaab90bcc5fa1fcf60db1e924b8cc856" title="Construct from 3 node pointers; domains can be set later." alt="" coords="580,521,712,549"/>
+<area shape="poly" id="edge9_Node000007_Node000010" title=" " alt="" coords="829,503,713,525,712,520,828,498"/>
+<area shape="rect" id="Node000011" href="$classTriangle.html#a2eae6a9b0378e4b5ba4616a6b6af86fe" title="Construct from 3 node pointers and bordering domains." alt="" coords="580,365,712,393"/>
+<area shape="poly" id="edge10_Node000007_Node000011" title=" " alt="" coords="877,465,816,436,746,408,707,396,708,391,748,403,818,431,879,460"/>
+<area shape="rect" id="Node000012" href="$classTriangle.html#a6a5a3532e273e1fbb69b26eea2f509c0" title="Count common nodes with triangle T (0..3)." alt="" coords="306,365,480,393"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="565,382,480,382,480,376,565,376"/>
+<area shape="poly" id="edge15_Node000011_Node000016" title=" " alt="" coords="567,394,547,408,534,424,527,440,523,474,520,509,513,527,499,545,469,564,466,560,495,541,508,525,515,508,518,474,521,439,529,421,543,404,564,390"/>
+<area shape="rect" id="Node000017" href="$classTriangle.html#aab413203fc04781220ce7cf8224105bd" title="Find common edge local indices with T." alt="" coords="294,486,492,531"/>
+<area shape="poly" id="edge16_Node000011_Node000017" title=" " alt="" coords="567,397,547,408,531,424,523,441,515,458,499,476,479,488,476,483,495,472,511,455,518,438,527,421,543,404,565,392"/>
+<area shape="rect" id="Node000018" href="$classTriangle.html#aa137190a0a6fd9adadee37a8228313d6" title="Find common vertex local indices with T." alt="" coords="289,417,497,462"/>
+<area shape="poly" id="edge17_Node000011_Node000018" title=" " alt="" coords="571,400,491,419,489,414,569,394"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="333,363,167,308,169,303,335,358"/>
+<area shape="poly" id="edge13_Node000012_Node000014" title=" " alt="" coords="290,377,241,375,241,370,290,372"/>
+<area shape="poly" id="edge14_Node000012_Node000015" title=" " alt="" coords="305,401,290,407,245,431,204,459,142,510,138,506,200,455,243,427,288,402,303,396"/>
+<area shape="poly" id="edge19_Node000019_Node000020" title=" " alt="" coords="821,723,746,717,746,712,822,717"/>
+</map>

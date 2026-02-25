@@ -1,0 +1,7 @@
+<map id="DomainLayered3D::computeGrid" name="DomainLayered3D::computeGrid">
+<area shape="rect" id="Node000001" title="Computes the grid points for tabulation." alt="" coords="5,14,240,42"/>
+<area shape="rect" id="Node000002" href="$classDomainLayered3D.html#af0fc42edd76b3e69a326990cefcbcd37" title="Calculates the tabulation range for a group of points." alt="" coords="288,5,497,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="240,25,272,25,272,30,240,30"/>
+<area shape="rect" id="Node000003" href="$DomainLayered3D_8cpp.html#a83b3a83c01e3d7a487d4ae2ec65695f5" title="Adjusts the Z&#45;coordinate range with a margin while ensuring boundaries." alt="" coords="545,14,656,42"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="497,25,529,25,529,30,497,30"/>
+</map>

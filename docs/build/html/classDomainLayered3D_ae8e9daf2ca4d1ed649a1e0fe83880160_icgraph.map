@@ -1,0 +1,42 @@
+<map id="DomainLayered3D::GetLayerIndex" name="DomainLayered3D::GetLayerIndex">
+<area shape="rect" id="Node000001" title="Returns the layer index corresponding to a spatial position." alt="" coords="570,489,779,534"/>
+<area shape="rect" id="Node000002" href="$classDomainLayered3D.html#a281513a4cb865b8c688dd920a6789955" title="Relative permittivity at a spatial location." alt="" coords="325,474,522,502"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="554,503,522,500,523,494,555,498"/>
+<area shape="rect" id="Node000007" href="$classDomainLayered3D.html#a2572d0a6f9105bf4f90c42970f76f8a0" title="Secondary fields &#160;at a point." alt="" coords="39,521,243,566"/>
+<area shape="poly" id="edge16_Node000001_Node000007" title=" " alt="" coords="555,521,244,540,243,535,554,516"/>
+<area shape="rect" id="Node000008" href="$classDomainLayered3D.html#ae0399e203da7a532c55264015d172e99" title="Secondary (scattered) magnetic field at a point from the solution vector." alt="" coords="34,642,248,670"/>
+<area shape="poly" id="edge17_Node000001_Node000008" title=" " alt="" coords="616,543,523,581,455,600,401,611,277,632,216,644,215,639,276,626,400,605,454,595,521,576,614,538"/>
+<area shape="rect" id="Node000009" href="$classDomainLayered3D.html#a295274a8176b2d6f9fc07c7aea9fd89c" title="Relative permeability at a spatial location." alt="" coords="338,422,508,450"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="590,487,521,465,479,453,480,448,523,460,592,481"/>
+<area shape="rect" id="Node000010" href="$classDomainLayered3D.html#a110d03c8733184e065d4e41ba22b113f" title="Secondary (scattered) electric field at a point from the solution vector." alt="" coords="35,590,247,618"/>
+<area shape="poly" id="edge15_Node000001_Node000010" title=" " alt="" coords="555,535,522,541,228,592,227,587,522,536,554,530"/>
+<area shape="rect" id="Node000011" href="$classDomainLayered3D.html#a76fc8705ab75f3e6599693f9544821e9" title="Computes the slicing of points with respect to interfaces." alt="" coords="333,194,514,222"/>
+<area shape="poly" id="edge18_Node000001_Node000011" title=" " alt="" coords="643,479,434,224,439,220,647,475"/>
+<area shape="rect" id="Node000003" href="$classDomainLayered3D.html#a4e5fb098bcc6edc2f594da23e0b64fb3" title="Absorption cross section." alt="" coords="23,366,259,394"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="335,470,323,463,307,449,299,435,290,421,275,409,248,397,250,392,278,404,294,418,303,432,312,446,326,459,338,465"/>
+<area shape="rect" id="Node000004" href="$classDomainLayered3D.html#a6551ae7ca5dac2a5dda2d78b15d78ecc" title="Add a Dipole excitation in the layered medium." alt="" coords="32,314,250,342"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="329,468,323,463,311,450,304,435,298,408,293,381,287,368,275,356,249,342,252,337,278,352,291,365,298,379,304,407,309,434,315,447,326,459,332,464"/>
+<area shape="rect" id="Node000005" href="$classDomainLayered3D.html#a847bdddcbf4257a73cfcd2766c882f8b" title="Extinction cross section." alt="" coords="25,418,257,446"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="335,473,276,461,215,449,216,444,277,456,337,468"/>
+<area shape="rect" id="Node000006" href="$classDomainLayered3D.html#a267135f0a2f5bfff12f7ac3b25429176" title="Scattering cross section." alt="" coords="25,470,257,498"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="309,489,257,488,257,483,309,483"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="335,508,244,526,243,521,334,503"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="405,516,352,575,317,606,278,631,248,644,246,639,275,627,314,602,349,571,401,512"/>
+<area shape="poly" id="edge9_Node000009_Node000003" title=" " alt="" coords="335,421,276,409,215,397,216,392,277,404,337,416"/>
+<area shape="poly" id="edge10_Node000009_Node000004" title=" " alt="" coords="387,415,336,385,276,357,234,345,236,340,278,352,338,380,390,411"/>
+<area shape="poly" id="edge11_Node000009_Node000005" title=" " alt="" coords="323,437,257,436,257,431,323,432"/>
+<area shape="poly" id="edge12_Node000009_Node000006" title=" " alt="" coords="323,455,227,472,226,467,323,450"/>
+<area shape="poly" id="edge14_Node000009_Node000007" title=" " alt="" coords="339,458,326,465,312,476,303,487,293,500,278,511,245,526,243,521,275,507,290,496,299,484,308,472,323,460,337,453"/>
+<area shape="poly" id="edge13_Node000009_Node000010" title=" " alt="" coords="332,460,327,464,315,478,308,492,304,521,299,551,292,566,278,580,249,597,246,592,275,576,287,563,294,550,299,521,303,490,310,475,323,460,329,455"/>
+<area shape="poly" id="edge19_Node000011_Node000004" title=" " alt="" coords="394,234,342,271,278,305,244,316,242,311,276,300,339,266,391,229"/>
+<area shape="rect" id="Node000012" href="$classDomainLayered3D.html#ad0d867ee7289e485c4bc01077fbdb59a" title="Constructs a 3D layered domain with given material properties and geometry." alt="" coords="5,74,277,102"/>
+<area shape="poly" id="edge20_Node000011_Node000012" title=" " alt="" coords="391,186,339,149,276,115,242,105,244,100,278,111,342,144,394,182"/>
+<area shape="rect" id="Node000013" href="$classDomainLayered3D.html#ab55a37fee77313a2f5e2bd4c2be927f0" title="Initialize the layered Green&#39;s function used for field evaluation." alt="" coords="29,125,253,170"/>
+<area shape="poly" id="edge21_Node000011_Node000013" title=" " alt="" coords="339,193,249,173,250,168,340,187"/>
+<area shape="rect" id="Node000014" href="$classDomainLayered3D.html#acd442aab27d1f56d8211a164f85f341a" title="Self&#45;test: grid generation (prints to console)." alt="" coords="37,194,245,222"/>
+<area shape="poly" id="edge22_Node000011_Node000014" title=" " alt="" coords="317,210,245,210,245,205,317,205"/>
+<area shape="rect" id="Node000015" href="$classDomainLayered3D.html#a9ca4f1cf49de04c5df6a664e656dbf85" title="Self&#45;test: tabulation range computation (prints to console)." alt="" coords="53,245,229,290"/>
+<area shape="poly" id="edge23_Node000011_Node000015" title=" " alt="" coords="341,228,230,252,229,246,340,223"/>
+<area shape="rect" id="Node000016" href="$classDomainLayered3D.html#adf153d4382b02cff7ced37500e7f624f" title="Self&#45;test: slicing of points with respect to interfaces (prints to console)." alt="" coords="53,5,229,50"/>
+<area shape="poly" id="edge24_Node000011_Node000016" title=" " alt="" coords="401,183,348,123,314,91,275,65,228,45,230,40,278,60,317,87,352,119,405,179"/>
+</map>

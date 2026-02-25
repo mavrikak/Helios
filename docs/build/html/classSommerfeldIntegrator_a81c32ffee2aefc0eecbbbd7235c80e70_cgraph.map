@@ -1,0 +1,5 @@
+<map id="SommerfeldIntegrator::Secondary" name="SommerfeldIntegrator::Secondary">
+<area shape="rect" id="Node000001" title="Computes secondary wave contributions in a layered medium." alt="" coords="5,5,171,50"/>
+<area shape="rect" id="Node000002" href="$classSommerfeldIntegrator.html#ac555c6dc86d0b7fb03ea49df9668daf8" title="Computes distances from interfaces for inter&#45;layer secondary wave calculations." alt="" coords="219,5,384,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,25,203,25,203,30,171,30"/>
+</map>

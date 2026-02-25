@@ -1,0 +1,71 @@
+\doxysection{maintable.\+cpp File Reference}
+\hypertarget{maintable_8cpp}{}\label{maintable_8cpp}\index{maintable.cpp@{maintable.cpp}}
+
+
+Command-\/line utility to generate, read, and write periodic error-\/function lookup tables used in the SIE solver.  
+
+
+{\ttfamily \#include $<$blitz/array.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include "{}CLParser.\+h"{}}\newline
+{\ttfamily \#include "{}math\+Functions.\+h"{}}\newline
+Include dependency graph for maintable.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{maintable_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{maintable_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Main driver for periodic error-\/function lookup table management. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Command-\/line utility to generate, read, and write periodic error-\/function lookup tables used in the SIE solver. 
+
+Supports both text and binary formats for tables. Uses \doxylink{mathFunctions_8h}{math\+Functions.\+h} (\doxylink{classLookupTable}{Lookup\+Table} classes and Erfc\+Lookup\+Table generators). 
+
+Definition in file \mbox{\hyperlink{maintable_8cpp_source}{maintable.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{maintable_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\index{maintable.cpp@{maintable.cpp}!main@{main}}
+\index{main@{main}!maintable.cpp@{maintable.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{maintable_8cpp_a0ddf1224851353fc92bfbff6f499fa97} 
+int main (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{argv}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+Main driver for periodic error-\/function lookup table management. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Argument count. \\
+\hline
+{\em argv} & Argument vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success.
+\end{DoxyReturn}
+Supports the following modes (mutually exclusive)\+: --help \+: Print usage message -\/r FILE \+: Read an existing text lookup table -\/w FILE \+: Write a new text lookup table (user prompted for bounds) -\/rb FILE \+: Read an existing binary lookup table -\/wb FILE \+: Write a new binary lookup table (user prompted for bounds)
+
+Text and binary formats store sampled values of the error function over a 2D grid in the complex plane (Re, Im). 
+
+Definition at line \mbox{\hyperlink{maintable_8cpp_source_l00033}{33}} of file \mbox{\hyperlink{maintable_8cpp_source}{maintable.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{maintable_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,71 @@
+\doxysection{mainpp.\+cpp File Reference}
+\hypertarget{mainpp_8cpp}{}\label{mainpp_8cpp}\index{mainpp.cpp@{mainpp.cpp}}
+
+
+This is the main file for the HELIOS program, specifically the post-\/processing portion.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include "{}CLParser.\+h"{}}\newline
+{\ttfamily \#include "{}SIEForm\+PMCHW.\+h"{}}\newline
+{\ttfamily \#include "{}Sim\+Job.\+h"{}}\newline
+Include dependency graph for mainpp.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mainpp_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{mainpp_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Main driver for post-\/processing in the HELIOS SIE program. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is the main file for the HELIOS program, specifically the post-\/processing portion. 
+
+Handles field evaluation after a solution has been computed. Allows specification of which quantities to output. 
+
+Definition in file \mbox{\hyperlink{mainpp_8cpp_source}{mainpp.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{mainpp_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\index{mainpp.cpp@{mainpp.cpp}!main@{main}}
+\index{main@{main}!mainpp.cpp@{mainpp.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{mainpp_8cpp_a0ddf1224851353fc92bfbff6f499fa97} 
+int main (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{argv}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+Main driver for post-\/processing in the HELIOS SIE program. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Argument count. \\
+\hline
+{\em argv} & Argument vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success.
+\end{DoxyReturn}
+This executable evaluates electromagnetic fields after a simulation job has been completed, using the stored solution and specified observation points. Users can select which field components to compute and output. Also, it evaluates other quantities such as power and cross sections.
+
+Command line switches\+: -\/j FILE \+: Job file (default input.\+job) -\/s FILE \+: Solution file (default output.\+sol) -\/p FILE \+: Positions file (default points.\+pos) -\/op PREFIX\+: Output prefix for result files -\/t FILE \+: Look-\/up table file (optional) -\/a \+: Enable high-\/accuracy integration -\/etm N \+: Evaluation terms for periodic sim (default 1) -\/th N \+: Number of threads (default 1, 0=all cores) -\/f\+E/-\/fH \+: Compute electric/magnetic fields -\/f\+D/-\/fB \+: Compute displacement/flux density fields -\/fP \+: Compute Poynting vector -\/f\+Pw \+: Compute power crossing domain boundaries --help \+: Print usage 
+
+Definition at line \mbox{\hyperlink{mainpp_8cpp_source_l00043}{43}} of file \mbox{\hyperlink{mainpp_8cpp_source}{mainpp.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mainpp_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}

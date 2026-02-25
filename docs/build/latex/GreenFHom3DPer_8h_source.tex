@@ -1,0 +1,54 @@
+\doxysection{Green\+FHom3\+DPer.\+h}
+\hypertarget{GreenFHom3DPer_8h_source}{}\label{GreenFHom3DPer_8h_source}\index{GreenFHom3DPer.h@{GreenFHom3DPer.h}}
+\mbox{\hyperlink{GreenFHom3DPer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00021}00021\ \textcolor{preprocessor}{\#ifndef\ GREENFHOM3DPER\_H}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00022}00022\ \textcolor{preprocessor}{\#define\ GREENFHOM3DPER\_H}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00024}00024\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00025}00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{GreenFHom3D_8h}{GreenFHom3D.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00026}00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{globals_8h}{globals.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00027}00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mathFunctions_8h}{mathFunctions.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00038}\mbox{\hyperlink{classGreenFHom3DPer}{00038}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classGreenFHom3DPer_a414d2e05ac1b3d089e2a5556e6e16a93}{GreenFHom3DPer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classGreenFHom3D_ac928f16e6e79c75c002d9a721a8858d8}{GreenFHom3D}}\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00039}00039\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00040}00040\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00041}00041\ \ \ \textcolor{comment}{//\ Periodic\ state}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00042}00042\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00043}\mbox{\hyperlink{classGreenFHom3DPer_a2fe8eb00a6fb3e3a3cfb5eb3ac1088f9}{00043}}\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ \mbox{\hyperlink{classGreenFHom3DPer_a2fe8eb00a6fb3e3a3cfb5eb3ac1088f9}{k}};\ \ \ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00044}\mbox{\hyperlink{classGreenFHom3DPer_abbdc3e2fbc849aee7686b02eb714c826}{00044}}\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classGreenFHom3DPer_abbdc3e2fbc849aee7686b02eb714c826}{V}};\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00046}00046\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00047}00047\ \ \ \textcolor{comment}{//\ Convergence\ /\ thresholding\ controls}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00048}00048\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00049}\mbox{\hyperlink{classGreenFHom3DPer_a271637f58225ba8f338b875380a532c6}{00049}}\ \ \ std::pair<bool,\ rvec>\ \mbox{\hyperlink{classGreenFHom3DPer_a271637f58225ba8f338b875380a532c6}{aboveThreshold}};\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00050}\mbox{\hyperlink{classGreenFHom3DPer_a9b7cff56f8284219d88234348791d1cc}{00050}}\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGreenFHom3DPer_a9b7cff56f8284219d88234348791d1cc}{evaluationTerms}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00051}\mbox{\hyperlink{classGreenFHom3DPer_ac1845f687481c50fe84d0f29603c4a1d}{00051}}\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classGreenFHom3DPer_ac1845f687481c50fe84d0f29603c4a1d}{e}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00058}\mbox{\hyperlink{classGreenFHom3DPer_a26fcaf4d1832220380f705ac60cbef86}{00058}}\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ \mbox{\hyperlink{classGreenFHom3DPer_a26fcaf4d1832220380f705ac60cbef86}{PrimitiveCell}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\&\ target)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00059}00059\ \ \ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00069}00069\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGreenFHom3DPer_af451f0bfd43404b11e5ea97c9ee84c9d}{Assign}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rp,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ testvector,\ std::pair<bool,\ rvec>\&\ result);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00071}00071\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00072}00072\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00073}00073\ \ \ \textcolor{comment}{//\ Construction\ \&\ lifetime}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00074}00074\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00081}00081\ \ \ \mbox{\hyperlink{classGreenFHom3DPer_a414d2e05ac1b3d089e2a5556e6e16a93}{GreenFHom3DPer}}(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classGreenF_a551f07ab3b294c7b200eb578026bfa02}{wavelength}},\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ epsilonMedium,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ wavevector);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00090}00090\ \ \ \mbox{\hyperlink{classGreenFHom3DPer_a414d2e05ac1b3d089e2a5556e6e16a93}{GreenFHom3DPer}}(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classGreenF_a551f07ab3b294c7b200eb578026bfa02}{wavelength}},\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ epsilonMedium,\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ muMedium,}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ wavevector);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00094}00094\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classGreenFHom3DPer_a30bf1182b63716f68cfa3e441c0b128c}{\string~GreenFHom3DPer}}();}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00095}00095\ \ \ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00096}00096\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00097}00097\ \ \ \textcolor{comment}{//\ Controls}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00098}00098\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00104}00104\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGreenFHom3DPer_a8b1a5f0f63af1baf32caeebbf9b33170}{EvaluationTerms}}(\textcolor{keywordtype}{int}\ n);}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00105}00105\ \};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8h_source_l00107}00107\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

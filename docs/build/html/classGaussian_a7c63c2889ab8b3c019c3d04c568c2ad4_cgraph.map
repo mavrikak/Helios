@@ -1,0 +1,7 @@
+<map id="Gaussian::IntegrateE" name="Gaussian::IntegrateE">
+<area shape="rect" id="Node000001" title="RWG projection of the incident electric field." alt="" coords="5,32,162,60"/>
+<area shape="rect" id="Node000002" href="$classGaussian.html#a0cccdedf53f0840888d57144566442b4" title="Evaluate the incident electric field ." alt="" coords="210,5,364,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,33,194,29,194,34,162,38"/>
+<area shape="rect" id="Node000003" href="$classGaussian.html#a3621600be0f1a452bc426f15041d4ed4" title="Construct a Gaussian beam in a homogeneous medium." alt="" coords="212,57,362,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="162,53,197,57,196,63,162,58"/>
+</map>

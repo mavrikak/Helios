@@ -1,0 +1,406 @@
+\doxysection{RWGFun Class Reference}
+\hypertarget{classRWGFun}{}\label{classRWGFun}\index{RWGFun@{RWGFun}}
+
+
+RWG basis function tied to a mesh triangle.  
+
+
+
+
+{\ttfamily \#include $<$RWGFun.\+h$>$}
+
+
+
+Collaboration diagram for RWGFun\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classRWGFun__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRWGFun_af8d988b7a0c653432dbe1d7c2415028a}{RWGFun}} (\mbox{\hyperlink{classSurfaceMesh}{Surface\+Mesh}} \texorpdfstring{$\ast$}{*}in\+Mesh, \mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*}in\+Tri, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}in\+Free\+Vertex, int in\+Side)
+\begin{DoxyCompactList}\small\item\em Construct an RWG basis function tied to one triangle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classRWGFun_a7540ce2f84c6b42a29c2808504c47d42}{Evaluate}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r)
+\begin{DoxyCompactList}\small\item\em Evaluate the RWG vector shape function at a point on the triangle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classRWGFun_a6d9c854fc60bc02cb51ffb60cf388ccc}{Triangle\+Ptr}} ()
+\begin{DoxyCompactList}\small\item\em Get the pointer to the owner \doxylink{classTriangle}{Triangle}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classRWGFun_a44b3739f9b872e917c6101928a2888a3}{Free\+Vertex}} ()
+\begin{DoxyCompactList}\small\item\em Get the free vertex position (by value). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classRWGFun_a4b60d75c2f221271c3915f20374c580f}{Free\+Vertex\+Ptr}} ()
+\begin{DoxyCompactList}\small\item\em Get the pointer to the free vertex. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRWGFun_a70f64de5567b30165248fc93296016d9}{Inverted}} ()
+\begin{DoxyCompactList}\small\item\em True if the RWG is inverted w.\+r.\+t. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classRWGFun_a7cd7779305937d48196453e53d0d4df8}{RWGPre\+Factor}} ()
+\begin{DoxyCompactList}\small\item\em Return $\pm$L\+\_\+n / A\+\_\+n (missing factor 1/2 by convention). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classRWGFun_a828b9e623aca85f198dd9060c23c590f}{Edge\+Index}} ()
+\begin{DoxyCompactList}\small\item\em Index of the opposite edge in the mesh. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structedge}{edge}} \mbox{\hyperlink{classRWGFun_a86f9f0fedb0c62866a3f8f822de2f897}{Edge}} ()
+\begin{DoxyCompactList}\small\item\em Return the opposite edge structure from the mesh. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classRWGFun_a896dcb81d76b6fc18eba2f27f80f378e}{Side}} ()
+\begin{DoxyCompactList}\small\item\em Stored side (FRONT or BACK) used at construction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classRWGFun_a150b46dd79148e9e5b9ae766c96515fb}{triangle}}
+\begin{DoxyCompactList}\small\item\em Owning triangle for this half-\/\+RWG. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classRWGFun_afe368ec58b3b5218f69c8f9ab684a657}{free\+Vertex}}
+\begin{DoxyCompactList}\small\item\em Pointer to the free vertex of the RWG on this triangle. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classRWGFun_a3fb0aebadb4e76fe864c8631f360e07e}{edge\+Index}}
+\begin{DoxyCompactList}\small\item\em Index of the opposite edge in the mesh (across from free\+Vertex) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRWGFun_adc441faebb01f2ca0d2c0fb393108302}{inverted}}
+\begin{DoxyCompactList}\small\item\em True if function points towards free vertex (depends on side/orientation) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSurfaceMesh}{Surface\+Mesh}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classRWGFun_ad1de069b036d36445390a677c7af3f4a}{mesh}}
+\begin{DoxyCompactList}\small\item\em Mesh that contains the triangle and its edge. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classRWGFun_af58dc7a2d730a0198b5a8b4de4398921}{side}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classTriangle}{Triangle} side used at construction (FRONT or BACK) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+RWG basis function tied to a mesh triangle. 
+
+Given a triangle and one of its vertices designated as the "{}free"{} vertex, the RWG function is (up to scale) linear along the triangle and proportional to (r − r\+\_\+free) (or the negative thereof) depending on orientation.
+
+This class offers\+:
+\begin{DoxyItemize}
+\item Construction from mesh, triangle, free vertex and side (FRONT/\+BACK).
+\item Pointwise evaluation of the vector shape function on the triangle.
+\item Accessors for triangle/edge bookkeeping and sign/orientation. 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{RWGFun_8h_source_l00030}{30}} of file \mbox{\hyperlink{RWGFun_8h_source}{RWGFun.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classRWGFun_af8d988b7a0c653432dbe1d7c2415028a}\index{RWGFun@{RWGFun}!RWGFun@{RWGFun}}
+\index{RWGFun@{RWGFun}!RWGFun@{RWGFun}}
+\doxysubsubsection{\texorpdfstring{RWGFun()}{RWGFun()}}
+{\footnotesize\ttfamily \label{classRWGFun_af8d988b7a0c653432dbe1d7c2415028a} 
+RWGFun\+::\+RWGFun (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSurfaceMesh}{Surface\+Mesh}} \texorpdfstring{$\ast$}{*}}]{in\+Mesh}{, }\item[{\mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*}}]{in\+Tri}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}}]{in\+Free\+Vertex}{, }\item[{int}]{in\+Side}{}\end{DoxyParamCaption})}
+
+
+
+Construct an RWG basis function tied to one triangle. 
+
+Determines the opposite edge from {\ttfamily in\+Free\+Vertex}, resolves boundary conditions (periodic/symmetry) via \doxylink{classSurfaceMesh}{Surface\+Mesh} helpers if needed, and sets the orientation (inverted) based on {\ttfamily in\+Side} and geometry.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in\+Mesh} & Owning mesh. \\
+\hline
+{\em in\+Tri} & Pointer to the triangle supporting this half-\/\+RWG. \\
+\hline
+{\em in\+Free\+Vertex} & Pointer to the free vertex of the RWG on {\ttfamily in\+Tri}. \\
+\hline
+{\em in\+Side} & FRONT or BACK (affects sign/orientation).\\
+\hline
+\end{DoxyParams}
+Locates the edge opposite to {\ttfamily in\+Free\+Vertex}, handles boundary-\/condition edges (periodic/symmetry) by mapping and augmenting the mesh as needed, and determines the sign (inverted) based on the requested {\ttfamily in\+Side} and the geometric orientation between edge/normal/free-\/vertex. 
+
+Definition at line \mbox{\hyperlink{RWGFun_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{RWGFun_8cpp_source}{RWGFun.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{classRWGFun_af8d988b7a0c653432dbe1d7c2415028a_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classRWGFun_a86f9f0fedb0c62866a3f8f822de2f897}\index{RWGFun@{RWGFun}!Edge@{Edge}}
+\index{Edge@{Edge}!RWGFun@{RWGFun}}
+\doxysubsubsection{\texorpdfstring{Edge()}{Edge()}}
+{\footnotesize\ttfamily \label{classRWGFun_a86f9f0fedb0c62866a3f8f822de2f897} 
+\mbox{\hyperlink{structedge}{edge}} RWGFun\+::\+Edge (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Return the opposite edge structure from the mesh. 
+
+\begin{DoxyReturn}{Returns}
+Opposite edge structure from the mesh. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{RWGFun_8cpp_source_l00121}{121}} of file \mbox{\hyperlink{RWGFun_8cpp_source}{RWGFun.\+cpp}}.
+
+\Hypertarget{classRWGFun_a828b9e623aca85f198dd9060c23c590f}\index{RWGFun@{RWGFun}!EdgeIndex@{EdgeIndex}}
+\index{EdgeIndex@{EdgeIndex}!RWGFun@{RWGFun}}
+\doxysubsubsection{\texorpdfstring{EdgeIndex()}{EdgeIndex()}}
+{\footnotesize\ttfamily \label{classRWGFun_a828b9e623aca85f198dd9060c23c590f} 
+int RWGFun\+::\+Edge\+Index (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Index of the opposite edge in the mesh. 
+
+\begin{DoxyReturn}{Returns}
+Index of the opposite edge in the mesh. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{RWGFun_8cpp_source_l00118}{118}} of file \mbox{\hyperlink{RWGFun_8cpp_source}{RWGFun.\+cpp}}.
+
+\Hypertarget{classRWGFun_a7540ce2f84c6b42a29c2808504c47d42}\index{RWGFun@{RWGFun}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!RWGFun@{RWGFun}}
+\doxysubsubsection{\texorpdfstring{Evaluate()}{Evaluate()}}
+{\footnotesize\ttfamily \label{classRWGFun_a7540ce2f84c6b42a29c2808504c47d42} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} RWGFun\+::\+Evaluate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{}\end{DoxyParamCaption})}
+
+
+
+Evaluate the RWG vector shape function at a point on the triangle. 
+
+Returns $\pm$(r − r\+\_\+free) \texorpdfstring{$\ast$}{*} L\+\_\+edge / (2 \texorpdfstring{$\ast$}{*} A\+\_\+triangle), where the sign depends on orientation (inverted flag). The caller must ensure {\ttfamily r} lies on the triangle; no membership check is performed here.
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Point of evaluation (in the triangle\textquotesingle{}s plane). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+RWG vector value at {\ttfamily r}.
+\end{DoxyReturn}
+Evaluate the RWG vector function at point {\ttfamily r} on the triangle.
+
+Uses the standard half-\/\+RWG formula\+: f(r) = $\pm$ (r − r\+\_\+free) \texorpdfstring{$\ast$}{*} (L\+\_\+edge) / (2 A\+\_\+tri), where the sign is controlled by \doxylink{classRWGFun_a70f64de5567b30165248fc93296016d9}{Inverted()}. 
+
+Definition at line \mbox{\hyperlink{RWGFun_8cpp_source_l00085}{85}} of file \mbox{\hyperlink{RWGFun_8cpp_source}{RWGFun.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classRWGFun_a7540ce2f84c6b42a29c2808504c47d42_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classRWGFun_a44b3739f9b872e917c6101928a2888a3}\index{RWGFun@{RWGFun}!FreeVertex@{FreeVertex}}
+\index{FreeVertex@{FreeVertex}!RWGFun@{RWGFun}}
+\doxysubsubsection{\texorpdfstring{FreeVertex()}{FreeVertex()}}
+{\footnotesize\ttfamily \label{classRWGFun_a44b3739f9b872e917c6101928a2888a3} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} RWGFun\+::\+Free\+Vertex (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the free vertex position (by value). 
+
+\begin{DoxyReturn}{Returns}
+Free vertex position. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{RWGFun_8cpp_source_l00098}{98}} of file \mbox{\hyperlink{RWGFun_8cpp_source}{RWGFun.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRWGFun_a44b3739f9b872e917c6101928a2888a3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classRWGFun_a4b60d75c2f221271c3915f20374c580f}\index{RWGFun@{RWGFun}!FreeVertexPtr@{FreeVertexPtr}}
+\index{FreeVertexPtr@{FreeVertexPtr}!RWGFun@{RWGFun}}
+\doxysubsubsection{\texorpdfstring{FreeVertexPtr()}{FreeVertexPtr()}}
+{\footnotesize\ttfamily \label{classRWGFun_a4b60d75c2f221271c3915f20374c580f} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*} RWGFun\+::\+Free\+Vertex\+Ptr (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the pointer to the free vertex. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the free vertex. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{RWGFun_8cpp_source_l00101}{101}} of file \mbox{\hyperlink{RWGFun_8cpp_source}{RWGFun.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRWGFun_a4b60d75c2f221271c3915f20374c580f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classRWGFun_a70f64de5567b30165248fc93296016d9}\index{RWGFun@{RWGFun}!Inverted@{Inverted}}
+\index{Inverted@{Inverted}!RWGFun@{RWGFun}}
+\doxysubsubsection{\texorpdfstring{Inverted()}{Inverted()}}
+{\footnotesize\ttfamily \label{classRWGFun_a70f64de5567b30165248fc93296016d9} 
+bool RWGFun\+::\+Inverted (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+True if the RWG is inverted w.\+r.\+t. 
+
+the triangle\textquotesingle{}s FRONT side. \begin{DoxyReturn}{Returns}
+True if inverted. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{RWGFun_8cpp_source_l00104}{104}} of file \mbox{\hyperlink{RWGFun_8cpp_source}{RWGFun.\+cpp}}.
+
+\Hypertarget{classRWGFun_a7cd7779305937d48196453e53d0d4df8}\index{RWGFun@{RWGFun}!RWGPreFactor@{RWGPreFactor}}
+\index{RWGPreFactor@{RWGPreFactor}!RWGFun@{RWGFun}}
+\doxysubsubsection{\texorpdfstring{RWGPreFactor()}{RWGPreFactor()}}
+{\footnotesize\ttfamily \label{classRWGFun_a7cd7779305937d48196453e53d0d4df8} 
+double RWGFun\+::\+RWGPre\+Factor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Return $\pm$L\+\_\+n / A\+\_\+n (missing factor 1/2 by convention). 
+
+\begin{DoxyReturn}{Returns}
+RWG pre-\/factor.
+\end{DoxyReturn}
+This equals the surface divergence of the RWG function on the triangle. Sign depends on \doxylink{classRWGFun_a70f64de5567b30165248fc93296016d9}{Inverted()}.
+
+Return $\pm$L\+\_\+n / A\+\_\+n (missing factor 1/2), equal to surface divergence. Sign reflects \doxylink{classRWGFun_a70f64de5567b30165248fc93296016d9}{Inverted()}. 
+
+Definition at line \mbox{\hyperlink{RWGFun_8cpp_source_l00110}{110}} of file \mbox{\hyperlink{RWGFun_8cpp_source}{RWGFun.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRWGFun_a7cd7779305937d48196453e53d0d4df8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classRWGFun_a896dcb81d76b6fc18eba2f27f80f378e}\index{RWGFun@{RWGFun}!Side@{Side}}
+\index{Side@{Side}!RWGFun@{RWGFun}}
+\doxysubsubsection{\texorpdfstring{Side()}{Side()}}
+{\footnotesize\ttfamily \label{classRWGFun_a896dcb81d76b6fc18eba2f27f80f378e} 
+int RWGFun\+::\+Side (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Stored side (FRONT or BACK) used at construction. 
+
+\begin{DoxyReturn}{Returns}
+Stored side. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{RWGFun_8cpp_source_l00124}{124}} of file \mbox{\hyperlink{RWGFun_8cpp_source}{RWGFun.\+cpp}}.
+
+\Hypertarget{classRWGFun_a6d9c854fc60bc02cb51ffb60cf388ccc}\index{RWGFun@{RWGFun}!TrianglePtr@{TrianglePtr}}
+\index{TrianglePtr@{TrianglePtr}!RWGFun@{RWGFun}}
+\doxysubsubsection{\texorpdfstring{TrianglePtr()}{TrianglePtr()}}
+{\footnotesize\ttfamily \label{classRWGFun_a6d9c854fc60bc02cb51ffb60cf388ccc} 
+\mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*} RWGFun\+::\+Triangle\+Ptr (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the pointer to the owner \doxylink{classTriangle}{Triangle}. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the owner \doxylink{classTriangle}{Triangle}. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{RWGFun_8cpp_source_l00095}{95}} of file \mbox{\hyperlink{RWGFun_8cpp_source}{RWGFun.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRWGFun_a6d9c854fc60bc02cb51ffb60cf388ccc_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classRWGFun_a3fb0aebadb4e76fe864c8631f360e07e}\index{RWGFun@{RWGFun}!edgeIndex@{edgeIndex}}
+\index{edgeIndex@{edgeIndex}!RWGFun@{RWGFun}}
+\doxysubsubsection{\texorpdfstring{edgeIndex}{edgeIndex}}
+{\footnotesize\ttfamily \label{classRWGFun_a3fb0aebadb4e76fe864c8631f360e07e} 
+int RWGFun\+::edge\+Index\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Index of the opposite edge in the mesh (across from free\+Vertex) 
+
+
+
+Definition at line \mbox{\hyperlink{RWGFun_8h_source_l00034}{34}} of file \mbox{\hyperlink{RWGFun_8h_source}{RWGFun.\+h}}.
+
+\Hypertarget{classRWGFun_afe368ec58b3b5218f69c8f9ab684a657}\index{RWGFun@{RWGFun}!freeVertex@{freeVertex}}
+\index{freeVertex@{freeVertex}!RWGFun@{RWGFun}}
+\doxysubsubsection{\texorpdfstring{freeVertex}{freeVertex}}
+{\footnotesize\ttfamily \label{classRWGFun_afe368ec58b3b5218f69c8f9ab684a657} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\texorpdfstring{$\ast$}{*} RWGFun\+::free\+Vertex\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pointer to the free vertex of the RWG on this triangle. 
+
+
+
+Definition at line \mbox{\hyperlink{RWGFun_8h_source_l00033}{33}} of file \mbox{\hyperlink{RWGFun_8h_source}{RWGFun.\+h}}.
+
+\Hypertarget{classRWGFun_adc441faebb01f2ca0d2c0fb393108302}\index{RWGFun@{RWGFun}!inverted@{inverted}}
+\index{inverted@{inverted}!RWGFun@{RWGFun}}
+\doxysubsubsection{\texorpdfstring{inverted}{inverted}}
+{\footnotesize\ttfamily \label{classRWGFun_adc441faebb01f2ca0d2c0fb393108302} 
+bool RWGFun\+::inverted\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+True if function points towards free vertex (depends on side/orientation) 
+
+
+
+Definition at line \mbox{\hyperlink{RWGFun_8h_source_l00035}{35}} of file \mbox{\hyperlink{RWGFun_8h_source}{RWGFun.\+h}}.
+
+\Hypertarget{classRWGFun_ad1de069b036d36445390a677c7af3f4a}\index{RWGFun@{RWGFun}!mesh@{mesh}}
+\index{mesh@{mesh}!RWGFun@{RWGFun}}
+\doxysubsubsection{\texorpdfstring{mesh}{mesh}}
+{\footnotesize\ttfamily \label{classRWGFun_ad1de069b036d36445390a677c7af3f4a} 
+\mbox{\hyperlink{classSurfaceMesh}{Surface\+Mesh}}\texorpdfstring{$\ast$}{*} RWGFun\+::mesh\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Mesh that contains the triangle and its edge. 
+
+
+
+Definition at line \mbox{\hyperlink{RWGFun_8h_source_l00036}{36}} of file \mbox{\hyperlink{RWGFun_8h_source}{RWGFun.\+h}}.
+
+\Hypertarget{classRWGFun_af58dc7a2d730a0198b5a8b4de4398921}\index{RWGFun@{RWGFun}!side@{side}}
+\index{side@{side}!RWGFun@{RWGFun}}
+\doxysubsubsection{\texorpdfstring{side}{side}}
+{\footnotesize\ttfamily \label{classRWGFun_af58dc7a2d730a0198b5a8b4de4398921} 
+int RWGFun\+::side\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{classTriangle}{Triangle} side used at construction (FRONT or BACK) 
+
+
+
+Definition at line \mbox{\hyperlink{RWGFun_8h_source_l00037}{37}} of file \mbox{\hyperlink{RWGFun_8h_source}{RWGFun.\+h}}.
+
+\Hypertarget{classRWGFun_a150b46dd79148e9e5b9ae766c96515fb}\index{RWGFun@{RWGFun}!triangle@{triangle}}
+\index{triangle@{triangle}!RWGFun@{RWGFun}}
+\doxysubsubsection{\texorpdfstring{triangle}{triangle}}
+{\footnotesize\ttfamily \label{classRWGFun_a150b46dd79148e9e5b9ae766c96515fb} 
+\mbox{\hyperlink{classTriangle}{Triangle}}\texorpdfstring{$\ast$}{*} RWGFun\+::triangle\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Owning triangle for this half-\/\+RWG. 
+
+
+
+Definition at line \mbox{\hyperlink{RWGFun_8h_source_l00032}{32}} of file \mbox{\hyperlink{RWGFun_8h_source}{RWGFun.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{RWGFun_8h}{RWGFun.\+h}}\item 
+\mbox{\hyperlink{RWGFun_8cpp}{RWGFun.\+cpp}}\end{DoxyCompactItemize}

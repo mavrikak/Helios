@@ -1,0 +1,972 @@
+\doxysection{Surface\+Mesh Class Reference}
+\hypertarget{classSurfaceMesh}{}\label{classSurfaceMesh}\index{SurfaceMesh@{SurfaceMesh}}
+
+
+Lightweight surface mesh container with file I/O and BC helpers.  
+
+
+
+
+{\ttfamily \#include $<$Surface\+Mesh.\+h$>$}
+
+
+
+Collaboration diagram for Surface\+Mesh\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classSurfaceMesh__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSurfaceMesh_a020395181bf96068e3a0b287f3f75968}{Surface\+Mesh}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classSurfaceMesh_afeecfa02bec99871507cfdb0f1efb7a2}{\texorpdfstring{$\sim$}{\string~}\+Surface\+Mesh}} ()
+\begin{DoxyCompactList}\small\item\em Destructor\+: frees BC ops and supplementary nodes/triangles. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSurfaceMesh_aa64ebb4992ea98778f79c272568c68d2}{Load\+From\+File}} (std\+::string file\+Name)
+\begin{DoxyCompactList}\small\item\em Load a mesh from file by extension. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSurfaceMesh_ad8ac4a9fe716d917b92e245d091ab553}{Load\+From\+Mesh\+File}} (std\+::string file\+Name)
+\begin{DoxyCompactList}\small\item\em Read mesh from the custom "{}.\+mesh"{} text format. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSurfaceMesh_ab392f262cacf93c286ef49cbe95f2a66}{Load\+From\+Mphtxt\+File}} (std\+::string file\+Name)
+\begin{DoxyCompactList}\small\item\em Read mesh from a COMSOL "{}.\+mphtxt"{} file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSurfaceMesh_ae7486b3dfa647ae8ee6063bd6297f5ff}{Load\+From\+Msh\+File}} (std\+::string file\+Name)
+\begin{DoxyCompactList}\small\item\em Read mesh from a Gmsh "{}.\+msh"{} file (v2 text). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSurfaceMesh_a4c66cbdeb07f2fd62429d6a949518cad}{Save\+To\+Mesh\+File}} (std\+::string file\+Name)
+\begin{DoxyCompactList}\small\item\em Write current mesh to the custom "{}.\+mesh"{} format. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSurfaceMesh_afc3c75aee77b7cfce33e4e907bae9ce0}{Max\+Domain\+Index}} ()
+\begin{DoxyCompactList}\small\item\em Highest domain index present in the mesh. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSurfaceMesh_a45445ddd5776f8236dc72058cc1c7b18}{Find\+Edge\+FB}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}n1, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}n2)
+\begin{DoxyCompactList}\small\item\em Find the index of an existing edge between two nodes (direct match). \end{DoxyCompactList}\item 
+std\+::pair$<$ int, \mbox{\hyperlink{classSymmetryOperation}{Symmetry\+Operation}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classSurfaceMesh_a7c57c7085e749775a96cb25a5424834e}{Find\+Edge\+BC}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}n1, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}n2)
+\begin{DoxyCompactList}\small\item\em Find the index of an edge mapped between n1,n2 via a stored symmetry op. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classSurfaceMesh_a6312507138a88db61642b2bf2d32eca7}{Edge\+Length}} (int edge\+Index)
+\begin{DoxyCompactList}\small\item\em Return length of an edge by index. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classSurfaceMesh_ac96dea3c4e733c9e6f5456aaa20e6401}{Edge\+Vector}} (int edge\+Index)
+\begin{DoxyCompactList}\small\item\em Return oriented vector (node2 -\/ node1) for edge index. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structedge}{edge}} \mbox{\hyperlink{classSurfaceMesh_afc87f70592dcc52c400c29d531d15ec8}{Edge}} (int edge\+Index)
+\begin{DoxyCompactList}\small\item\em Return a copy of the edge record (node pointers + length). \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classSurfaceMesh_a7681019f61e9c1542c893c177117dac4}{Bordering\+Triangles}} (int d\+Index)
+\begin{DoxyCompactList}\small\item\em Triangles bordering a given domain (FRONT or BACK). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSurfaceMesh_aff6d5c69ce476f61d264b8fbc28e8b23}{Edge\+Count}} ()
+\begin{DoxyCompactList}\small\item\em Total number of stored unique edges. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSurfaceMesh_a7b9932db85ea0b19578ec45eb09c3859}{New\+Translation}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}})
+\begin{DoxyCompactList}\small\item\em Register a new periodic translation (adds a symmetry operation). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSurfaceMesh_af229438e36396cad9e4ca5dc11729b8d}{Add\+Node}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}})
+\begin{DoxyCompactList}\small\item\em Add a supplementary node (for boundary-\/condition images). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSurfaceMesh_a7fddafcb2b9095d1e73bd3ecd05bb5e1}{Add\+Triangle}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}n1, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}n2, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}n3, int front\+Index, int back\+Index)
+\begin{DoxyCompactList}\small\item\em Add a supplementary triangle (for boundary-\/condition images). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSurfaceMesh_a93bf9a464b92ad98d48d2b79aa521c94}{Last\+Node}} ()
+\begin{DoxyCompactList}\small\item\em Pointer to the last supplementary node added. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSurfaceMesh_a8fccca31ad4a27d0308fdbf5f4e9a997}{Last\+Triangle}} ()
+\begin{DoxyCompactList}\small\item\em Pointer to the last supplementary triangle added. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSurfaceMesh_aa8811e2b8b03caa6028d5d154a69ea71}{Convert\+Mesh\+File}} (std\+::string input\+Mesh\+File)
+\begin{DoxyCompactList}\small\item\em Convert/modify a mesh according to a conversion job file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSurfaceMesh_a365f60555e50472cef70095f3ac9027e}{Remove\+Plane}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} normal, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} point)
+\begin{DoxyCompactList}\small\item\em Remove all triangles on or below a plane (strict \texorpdfstring{$>$}{>} 1e-\/10 kept). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSurfaceMesh_ab8758aecb743f6df45e760074e2592fb}{Switch\+Index}} (int n1, int n2)
+\begin{DoxyCompactList}\small\item\em Replace all occurrences of domain ID n1 with n2 in triangles. \end{DoxyCompactList}\item 
+std\+::pair$<$ double, double $>$ \mbox{\hyperlink{classSurfaceMesh_a4a88f03484758605cc254297149c7d29}{z\+Min\+Max}} ()
+\begin{DoxyCompactList}\small\item\em Minimum and maximum z among all nodes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classSurfaceMesh_ad8c7eef9fac668b92caf8b4418dcb4ff}{Add\+Edge\+Tested}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}n1, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}n2)
+\begin{DoxyCompactList}\small\item\em Insert edge (n1,n2) if not already present (directly or via BC image). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSurfaceMesh_adac4bd062647ba2d6a9662ae3683abc2}{Get\+Node\+Index}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}in)
+\begin{DoxyCompactList}\small\item\em Return index of a node pointer within the owned node array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classJobParser}{Job\+Parser}} \mbox{\hyperlink{classSurfaceMesh_a01fd83efaeb12a789f9b1448111bdf6f}{job\+Parser}}
+\begin{DoxyCompactList}\small\item\em Internal parser for conversion/aux I/O. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} $>$ \mbox{\hyperlink{classSurfaceMesh_ad15834c114ffa57483ed928b75634c63}{nodes}}
+\begin{DoxyCompactList}\small\item\em Mesh nodes (owned) \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classTriangle}{Triangle}} $>$ \mbox{\hyperlink{classSurfaceMesh_a9b3bdc4a40179af090240e48b2408e73}{triangles}}
+\begin{DoxyCompactList}\small\item\em Mesh triangles (owned) \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structedge}{edge}} $>$ \mbox{\hyperlink{classSurfaceMesh_a051d7723b78f98ca83aafb35a3a4ea35}{edges}}
+\begin{DoxyCompactList}\small\item\em Unique edges discovered from triangles. \end{DoxyCompactList}\item 
+std\+::set$<$ int $>$ \mbox{\hyperlink{classSurfaceMesh_a3b21d09b955a30cb106a7490f1431cef}{domain\+Indeces}}
+\begin{DoxyCompactList}\small\item\em All domain IDs appearing on any triangle. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classSurfaceMesh_a1de6a9eb8ebab94507f2f213661ad6cc}{sup\+Nodes}}
+\begin{DoxyCompactList}\small\item\em Supplementary nodes for boundary conditions. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classSurfaceMesh_a3f69f0b0f14a90b0bdc8c957b9c79fc1}{sup\+Triangles}}
+\begin{DoxyCompactList}\small\item\em Supplementary triangles for boundary conditions. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classSymmetryOperation}{Symmetry\+Operation}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classSurfaceMesh_a0deb1c8dd8e053b664a12aa61ec13838}{bcs}}
+\begin{DoxyCompactList}\small\item\em Boundary conditions (symmetry operations) used to detect periodic edges. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Lightweight surface mesh container with file I/O and BC helpers. 
+
+Responsibilities\+:
+\begin{DoxyItemize}
+\item Store nodes, triangles, and unique edges (each geometric edge appears once).
+\item Read meshes from several formats (.mesh, .mphtxt, .msh) and write .mesh.
+\item Provide edge queries (index/length/vector) and triangle lists per domain.
+\item Handle periodic boundary conditions via stored symmetry operations. 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{SurfaceMesh_8h_source_l00044}{44}} of file \mbox{\hyperlink{SurfaceMesh_8h_source}{Surface\+Mesh.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classSurfaceMesh_a020395181bf96068e3a0b287f3f75968}\index{SurfaceMesh@{SurfaceMesh}!SurfaceMesh@{SurfaceMesh}}
+\index{SurfaceMesh@{SurfaceMesh}!SurfaceMesh@{SurfaceMesh}}
+\doxysubsubsection{\texorpdfstring{SurfaceMesh()}{SurfaceMesh()}}
+{\footnotesize\ttfamily \label{classSurfaceMesh_a020395181bf96068e3a0b287f3f75968} 
+Surface\+Mesh\+::\+Surface\+Mesh (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+
+
+Definition at line \mbox{\hyperlink{SurfaceMesh_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{SurfaceMesh_8cpp_source}{Surface\+Mesh.\+cpp}}.
+
+\Hypertarget{classSurfaceMesh_afeecfa02bec99871507cfdb0f1efb7a2}\index{SurfaceMesh@{SurfaceMesh}!````~SurfaceMesh@{\texorpdfstring{$\sim$}{\string~}SurfaceMesh}}
+\index{````~SurfaceMesh@{\texorpdfstring{$\sim$}{\string~}SurfaceMesh}!SurfaceMesh@{SurfaceMesh}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}SurfaceMesh()}{\string~SurfaceMesh()}}
+{\footnotesize\ttfamily \label{classSurfaceMesh_afeecfa02bec99871507cfdb0f1efb7a2} 
+Surface\+Mesh\+::\texorpdfstring{$\sim$}{\string~}\+Surface\+Mesh (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor\+: frees BC ops and supplementary nodes/triangles. 
+
+Destructor\+: free symmetry ops and supplementary mesh entities.
+
+Frees\+:
+\begin{DoxyItemize}
+\item all Symmetry\+Operation\texorpdfstring{$\ast$}{*} stored in {\ttfamily bcs} 
+\item supplementary nodes added via \doxylink{classSurfaceMesh_af229438e36396cad9e4ca5dc11729b8d}{Add\+Node()}
+\item supplementary triangles added via \doxylink{classSurfaceMesh_a7fddafcb2b9095d1e73bd3ecd05bb5e1}{Add\+Triangle()} 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{SurfaceMesh_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{SurfaceMesh_8cpp_source}{Surface\+Mesh.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSurfaceMesh_ad8c7eef9fac668b92caf8b4418dcb4ff}\index{SurfaceMesh@{SurfaceMesh}!AddEdgeTested@{AddEdgeTested}}
+\index{AddEdgeTested@{AddEdgeTested}!SurfaceMesh@{SurfaceMesh}}
+\doxysubsubsection{\texorpdfstring{AddEdgeTested()}{AddEdgeTested()}}
+{\footnotesize\ttfamily \label{classSurfaceMesh_ad8c7eef9fac668b92caf8b4418dcb4ff} 
+int Surface\+Mesh\+::\+Add\+Edge\+Tested (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}}]{n1}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}}]{n2}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Insert edge (n1,n2) if not already present (directly or via BC image). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n1} & First endpoint pointer. \\
+\hline
+{\em n2} & Second endpoint pointer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if a new edge is inserted; 0 if it already existed. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SurfaceMesh_8cpp_source_l00490}{490}} of file \mbox{\hyperlink{SurfaceMesh_8cpp_source}{Surface\+Mesh.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSurfaceMesh_ad8c7eef9fac668b92caf8b4418dcb4ff_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSurfaceMesh_ad8c7eef9fac668b92caf8b4418dcb4ff_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSurfaceMesh_af229438e36396cad9e4ca5dc11729b8d}\index{SurfaceMesh@{SurfaceMesh}!AddNode@{AddNode}}
+\index{AddNode@{AddNode}!SurfaceMesh@{SurfaceMesh}}
+\doxysubsubsection{\texorpdfstring{AddNode()}{AddNode()}}
+{\footnotesize\ttfamily \label{classSurfaceMesh_af229438e36396cad9e4ca5dc11729b8d} 
+int Surface\+Mesh\+::\+Add\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{node}{}\end{DoxyParamCaption})}
+
+
+
+Add a supplementary node (for boundary-\/condition images). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & Node position to store. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SurfaceMesh_8cpp_source_l00510}{510}} of file \mbox{\hyperlink{SurfaceMesh_8cpp_source}{Surface\+Mesh.\+cpp}}.
+
+\Hypertarget{classSurfaceMesh_a7fddafcb2b9095d1e73bd3ecd05bb5e1}\index{SurfaceMesh@{SurfaceMesh}!AddTriangle@{AddTriangle}}
+\index{AddTriangle@{AddTriangle}!SurfaceMesh@{SurfaceMesh}}
+\doxysubsubsection{\texorpdfstring{AddTriangle()}{AddTriangle()}}
+{\footnotesize\ttfamily \label{classSurfaceMesh_a7fddafcb2b9095d1e73bd3ecd05bb5e1} 
+int Surface\+Mesh\+::\+Add\+Triangle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}}]{n1}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}}]{n2}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}}]{n3}{, }\item[{int}]{front\+Index}{, }\item[{int}]{back\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Add a supplementary triangle (for boundary-\/condition images). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n1,n2,n3} & Node pointers. \\
+\hline
+{\em front\+Index,back\+Index} & Bordering domain IDs. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SurfaceMesh_8cpp_source_l00519}{519}} of file \mbox{\hyperlink{SurfaceMesh_8cpp_source}{Surface\+Mesh.\+cpp}}.
+
+\Hypertarget{classSurfaceMesh_a7681019f61e9c1542c893c177117dac4}\index{SurfaceMesh@{SurfaceMesh}!BorderingTriangles@{BorderingTriangles}}
+\index{BorderingTriangles@{BorderingTriangles}!SurfaceMesh@{SurfaceMesh}}
+\doxysubsubsection{\texorpdfstring{BorderingTriangles()}{BorderingTriangles()}}
+{\footnotesize\ttfamily \label{classSurfaceMesh_a7681019f61e9c1542c893c177117dac4} 
+std\+::vector$<$ \mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*} $>$ Surface\+Mesh\+::\+Bordering\+Triangles (\begin{DoxyParamCaption}\item[{int}]{d\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Triangles bordering a given domain (FRONT or BACK). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d\+Index} & \doxylink{classDomain}{Domain} ID. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+List of pointers to triangles touching {\ttfamily d\+Index}. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SurfaceMesh_8cpp_source_l00476}{476}} of file \mbox{\hyperlink{SurfaceMesh_8cpp_source}{Surface\+Mesh.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSurfaceMesh_a7681019f61e9c1542c893c177117dac4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSurfaceMesh_aa8811e2b8b03caa6028d5d154a69ea71}\index{SurfaceMesh@{SurfaceMesh}!ConvertMeshFile@{ConvertMeshFile}}
+\index{ConvertMeshFile@{ConvertMeshFile}!SurfaceMesh@{SurfaceMesh}}
+\doxysubsubsection{\texorpdfstring{ConvertMeshFile()}{ConvertMeshFile()}}
+{\footnotesize\ttfamily \label{classSurfaceMesh_aa8811e2b8b03caa6028d5d154a69ea71} 
+int Surface\+Mesh\+::\+Convert\+Mesh\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{input\+Mesh\+File}{}\end{DoxyParamCaption})}
+
+
+
+Convert/modify a mesh according to a conversion job file. 
+
+Recognized blocks\+:
+\begin{DoxyItemize}
+\item $<mesh>$file $</mesh>$ \+: load a mesh
+\item $<index>$n1 n2 $</index>$ \+: Switch\+Index(n1,n2)
+\item $<plane>...</plane>$ \+: Remove\+Plane(normal, point)
+\item $<out>$base $</out>$ \+: Save\+To\+Mesh\+File(base + "{}.\+mesh"{})
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Mesh\+File} & Path to conversion job file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success.
+\end{DoxyReturn}
+Convert/modify a mesh according to a conversion job file.
+
+Recognized directives\+:
+\begin{DoxyItemize}
+\item $<mesh>$file $</mesh>$ \+: Load\+From\+File(file)
+\item $<index>$n1 n2 $</index>$ \+: Switch\+Index(n1, n2)
+\item $<plane>$... $</plane>$ \+: Remove\+Plane(normal, point)
+\item $<out>$base $</out>$ \+: Save\+To\+Mesh\+File(base + "{}.\+mesh"{}) 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{SurfaceMesh_8cpp_source_l00538}{538}} of file \mbox{\hyperlink{SurfaceMesh_8cpp_source}{Surface\+Mesh.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSurfaceMesh_aa8811e2b8b03caa6028d5d154a69ea71_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{classSurfaceMesh_aa8811e2b8b03caa6028d5d154a69ea71_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSurfaceMesh_afc87f70592dcc52c400c29d531d15ec8}\index{SurfaceMesh@{SurfaceMesh}!Edge@{Edge}}
+\index{Edge@{Edge}!SurfaceMesh@{SurfaceMesh}}
+\doxysubsubsection{\texorpdfstring{Edge()}{Edge()}}
+{\footnotesize\ttfamily \label{classSurfaceMesh_afc87f70592dcc52c400c29d531d15ec8} 
+\mbox{\hyperlink{structedge}{edge}} Surface\+Mesh\+::\+Edge (\begin{DoxyParamCaption}\item[{int}]{edge\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Return a copy of the edge record (node pointers + length). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em edge\+Index} & Edge index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+edge struct. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SurfaceMesh_8cpp_source_l00468}{468}} of file \mbox{\hyperlink{SurfaceMesh_8cpp_source}{Surface\+Mesh.\+cpp}}.
+
+\Hypertarget{classSurfaceMesh_aff6d5c69ce476f61d264b8fbc28e8b23}\index{SurfaceMesh@{SurfaceMesh}!EdgeCount@{EdgeCount}}
+\index{EdgeCount@{EdgeCount}!SurfaceMesh@{SurfaceMesh}}
+\doxysubsubsection{\texorpdfstring{EdgeCount()}{EdgeCount()}}
+{\footnotesize\ttfamily \label{classSurfaceMesh_aff6d5c69ce476f61d264b8fbc28e8b23} 
+int Surface\+Mesh\+::\+Edge\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Total number of stored unique edges. 
+
+\begin{DoxyReturn}{Returns}
+Number of edges. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SurfaceMesh_8cpp_source_l00487}{487}} of file \mbox{\hyperlink{SurfaceMesh_8cpp_source}{Surface\+Mesh.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSurfaceMesh_aff6d5c69ce476f61d264b8fbc28e8b23_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSurfaceMesh_a6312507138a88db61642b2bf2d32eca7}\index{SurfaceMesh@{SurfaceMesh}!EdgeLength@{EdgeLength}}
+\index{EdgeLength@{EdgeLength}!SurfaceMesh@{SurfaceMesh}}
+\doxysubsubsection{\texorpdfstring{EdgeLength()}{EdgeLength()}}
+{\footnotesize\ttfamily \label{classSurfaceMesh_a6312507138a88db61642b2bf2d32eca7} 
+double Surface\+Mesh\+::\+Edge\+Length (\begin{DoxyParamCaption}\item[{int}]{edge\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Return length of an edge by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em edge\+Index} & Edge index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Edge length. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SurfaceMesh_8cpp_source_l00463}{463}} of file \mbox{\hyperlink{SurfaceMesh_8cpp_source}{Surface\+Mesh.\+cpp}}.
+
+\Hypertarget{classSurfaceMesh_ac96dea3c4e733c9e6f5456aaa20e6401}\index{SurfaceMesh@{SurfaceMesh}!EdgeVector@{EdgeVector}}
+\index{EdgeVector@{EdgeVector}!SurfaceMesh@{SurfaceMesh}}
+\doxysubsubsection{\texorpdfstring{EdgeVector()}{EdgeVector()}}
+{\footnotesize\ttfamily \label{classSurfaceMesh_ac96dea3c4e733c9e6f5456aaa20e6401} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} Surface\+Mesh\+::\+Edge\+Vector (\begin{DoxyParamCaption}\item[{int}]{edge\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Return oriented vector (node2 -\/ node1) for edge index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em edge\+Index} & Edge index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Edge vector. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SurfaceMesh_8cpp_source_l00471}{471}} of file \mbox{\hyperlink{SurfaceMesh_8cpp_source}{Surface\+Mesh.\+cpp}}.
+
+\Hypertarget{classSurfaceMesh_a7c57c7085e749775a96cb25a5424834e}\index{SurfaceMesh@{SurfaceMesh}!FindEdgeBC@{FindEdgeBC}}
+\index{FindEdgeBC@{FindEdgeBC}!SurfaceMesh@{SurfaceMesh}}
+\doxysubsubsection{\texorpdfstring{FindEdgeBC()}{FindEdgeBC()}}
+{\footnotesize\ttfamily \label{classSurfaceMesh_a7c57c7085e749775a96cb25a5424834e} 
+std\+::pair$<$ int, \mbox{\hyperlink{classSymmetryOperation}{Symmetry\+Operation}} \texorpdfstring{$\ast$}{*} $>$ Surface\+Mesh\+::\+Find\+Edge\+BC (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}}]{n1}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}}]{n2}{}\end{DoxyParamCaption})}
+
+
+
+Find the index of an edge mapped between n1,n2 via a stored symmetry op. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n1} & First endpoint pointer. \\
+\hline
+{\em n2} & Second endpoint pointer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{edge\+Index, symmetry\+Op\texorpdfstring{$\ast$}{*}\} if found; \{-\/1, nullptr\} otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SurfaceMesh_8cpp_source_l00401}{401}} of file \mbox{\hyperlink{SurfaceMesh_8cpp_source}{Surface\+Mesh.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSurfaceMesh_a7c57c7085e749775a96cb25a5424834e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSurfaceMesh_a45445ddd5776f8236dc72058cc1c7b18}\index{SurfaceMesh@{SurfaceMesh}!FindEdgeFB@{FindEdgeFB}}
+\index{FindEdgeFB@{FindEdgeFB}!SurfaceMesh@{SurfaceMesh}}
+\doxysubsubsection{\texorpdfstring{FindEdgeFB()}{FindEdgeFB()}}
+{\footnotesize\ttfamily \label{classSurfaceMesh_a45445ddd5776f8236dc72058cc1c7b18} 
+int Surface\+Mesh\+::\+Find\+Edge\+FB (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}}]{n1}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}}]{n2}{}\end{DoxyParamCaption})}
+
+
+
+Find the index of an existing edge between two nodes (direct match). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n1} & First endpoint pointer. \\
+\hline
+{\em n2} & Second endpoint pointer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Edge index, or -\/1 if not found. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SurfaceMesh_8cpp_source_l00388}{388}} of file \mbox{\hyperlink{SurfaceMesh_8cpp_source}{Surface\+Mesh.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSurfaceMesh_a45445ddd5776f8236dc72058cc1c7b18_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSurfaceMesh_adac4bd062647ba2d6a9662ae3683abc2}\index{SurfaceMesh@{SurfaceMesh}!GetNodeIndex@{GetNodeIndex}}
+\index{GetNodeIndex@{GetNodeIndex}!SurfaceMesh@{SurfaceMesh}}
+\doxysubsubsection{\texorpdfstring{GetNodeIndex()}{GetNodeIndex()}}
+{\footnotesize\ttfamily \label{classSurfaceMesh_adac4bd062647ba2d6a9662ae3683abc2} 
+int Surface\+Mesh\+::\+Get\+Node\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*}}]{in}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Return index of a node pointer within the owned node array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & Pointer to a node inside {\ttfamily nodes}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zero-\/based index, or -\/1 if not found. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SurfaceMesh_8cpp_source_l00455}{455}} of file \mbox{\hyperlink{SurfaceMesh_8cpp_source}{Surface\+Mesh.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSurfaceMesh_adac4bd062647ba2d6a9662ae3683abc2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSurfaceMesh_a93bf9a464b92ad98d48d2b79aa521c94}\index{SurfaceMesh@{SurfaceMesh}!LastNode@{LastNode}}
+\index{LastNode@{LastNode}!SurfaceMesh@{SurfaceMesh}}
+\doxysubsubsection{\texorpdfstring{LastNode()}{LastNode()}}
+{\footnotesize\ttfamily \label{classSurfaceMesh_a93bf9a464b92ad98d48d2b79aa521c94} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \texorpdfstring{$\ast$}{*} Surface\+Mesh\+::\+Last\+Node (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Pointer to the last supplementary node added. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to last node. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SurfaceMesh_8cpp_source_l00516}{516}} of file \mbox{\hyperlink{SurfaceMesh_8cpp_source}{Surface\+Mesh.\+cpp}}.
+
+\Hypertarget{classSurfaceMesh_a8fccca31ad4a27d0308fdbf5f4e9a997}\index{SurfaceMesh@{SurfaceMesh}!LastTriangle@{LastTriangle}}
+\index{LastTriangle@{LastTriangle}!SurfaceMesh@{SurfaceMesh}}
+\doxysubsubsection{\texorpdfstring{LastTriangle()}{LastTriangle()}}
+{\footnotesize\ttfamily \label{classSurfaceMesh_a8fccca31ad4a27d0308fdbf5f4e9a997} 
+\mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*} Surface\+Mesh\+::\+Last\+Triangle (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Pointer to the last supplementary triangle added. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to last triangle. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SurfaceMesh_8cpp_source_l00525}{525}} of file \mbox{\hyperlink{SurfaceMesh_8cpp_source}{Surface\+Mesh.\+cpp}}.
+
+\Hypertarget{classSurfaceMesh_aa64ebb4992ea98778f79c272568c68d2}\index{SurfaceMesh@{SurfaceMesh}!LoadFromFile@{LoadFromFile}}
+\index{LoadFromFile@{LoadFromFile}!SurfaceMesh@{SurfaceMesh}}
+\doxysubsubsection{\texorpdfstring{LoadFromFile()}{LoadFromFile()}}
+{\footnotesize\ttfamily \label{classSurfaceMesh_aa64ebb4992ea98778f79c272568c68d2} 
+int Surface\+Mesh\+::\+Load\+From\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Load a mesh from file by extension. 
+
+Dispatches to\+:
+\begin{DoxyItemize}
+\item \doxylink{classSurfaceMesh_ab392f262cacf93c286ef49cbe95f2a66}{Load\+From\+Mphtxt\+File()} for "{}.\+mphtxt"{}
+\item \doxylink{classSurfaceMesh_ae7486b3dfa647ae8ee6063bd6297f5ff}{Load\+From\+Msh\+File()} for "{}.\+msh"{}
+\item \doxylink{classSurfaceMesh_ad8ac4a9fe716d917b92e245d091ab553}{Load\+From\+Mesh\+File()} otherwise (custom .mesh)
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & Path to input mesh file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success; non-\/zero on error. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SurfaceMesh_8cpp_source_l00037}{37}} of file \mbox{\hyperlink{SurfaceMesh_8cpp_source}{Surface\+Mesh.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSurfaceMesh_aa64ebb4992ea98778f79c272568c68d2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSurfaceMesh_aa64ebb4992ea98778f79c272568c68d2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSurfaceMesh_ad8ac4a9fe716d917b92e245d091ab553}\index{SurfaceMesh@{SurfaceMesh}!LoadFromMeshFile@{LoadFromMeshFile}}
+\index{LoadFromMeshFile@{LoadFromMeshFile}!SurfaceMesh@{SurfaceMesh}}
+\doxysubsubsection{\texorpdfstring{LoadFromMeshFile()}{LoadFromMeshFile()}}
+{\footnotesize\ttfamily \label{classSurfaceMesh_ad8ac4a9fe716d917b92e245d091ab553} 
+int Surface\+Mesh\+::\+Load\+From\+Mesh\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Read mesh from the custom "{}.\+mesh"{} text format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & Path to .mesh file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success; non-\/zero on error.
+\end{DoxyReturn}
+Read custom "{}.\+mesh"{} format\+: nodes, then triangles (+ domains), detect edges.
+
+Expected layout\+: $<Nnodes>$ x y z (repeated Nnodes times) $<Ntris>$ n1 n2 n3 d1 d2 (1-\/based node indices, two bordering domains) 
+
+Definition at line \mbox{\hyperlink{SurfaceMesh_8cpp_source_l00059}{59}} of file \mbox{\hyperlink{SurfaceMesh_8cpp_source}{Surface\+Mesh.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSurfaceMesh_ad8ac4a9fe716d917b92e245d091ab553_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSurfaceMesh_ad8ac4a9fe716d917b92e245d091ab553_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSurfaceMesh_ab392f262cacf93c286ef49cbe95f2a66}\index{SurfaceMesh@{SurfaceMesh}!LoadFromMphtxtFile@{LoadFromMphtxtFile}}
+\index{LoadFromMphtxtFile@{LoadFromMphtxtFile}!SurfaceMesh@{SurfaceMesh}}
+\doxysubsubsection{\texorpdfstring{LoadFromMphtxtFile()}{LoadFromMphtxtFile()}}
+{\footnotesize\ttfamily \label{classSurfaceMesh_ab392f262cacf93c286ef49cbe95f2a66} 
+int Surface\+Mesh\+::\+Load\+From\+Mphtxt\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Read mesh from a COMSOL "{}.\+mphtxt"{} file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & Path to .mphtxt file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success; non-\/zero on error.
+\end{DoxyReturn}
+Read mesh from a COMSOL 4.\+2 "{}.\+mphtxt"{} file and border-\/domain block.
+
+Reads the node block, then the triangle connectivity (node indices), then the bordering domain pairs (d1,d2). Edges are detected uniquely. 
+
+Definition at line \mbox{\hyperlink{SurfaceMesh_8cpp_source_l00129}{129}} of file \mbox{\hyperlink{SurfaceMesh_8cpp_source}{Surface\+Mesh.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSurfaceMesh_ab392f262cacf93c286ef49cbe95f2a66_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSurfaceMesh_ab392f262cacf93c286ef49cbe95f2a66_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSurfaceMesh_ae7486b3dfa647ae8ee6063bd6297f5ff}\index{SurfaceMesh@{SurfaceMesh}!LoadFromMshFile@{LoadFromMshFile}}
+\index{LoadFromMshFile@{LoadFromMshFile}!SurfaceMesh@{SurfaceMesh}}
+\doxysubsubsection{\texorpdfstring{LoadFromMshFile()}{LoadFromMshFile()}}
+{\footnotesize\ttfamily \label{classSurfaceMesh_ae7486b3dfa647ae8ee6063bd6297f5ff} 
+int Surface\+Mesh\+::\+Load\+From\+Msh\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Read mesh from a Gmsh "{}.\+msh"{} file (v2 text). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & Path to .msh file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success; non-\/zero on error.
+\end{DoxyReturn}
+Read mesh from a Gmsh "{}.\+msh"{} file and an auxiliary conversion job.
+
+Uses \doxylink{classJobParser}{Job\+Parser} to optionally map element IDs to (dom1,dom2) pairs via a $<boundary>$ block inside the currently open job file (external to the .msh). 
+
+Definition at line \mbox{\hyperlink{SurfaceMesh_8cpp_source_l00270}{270}} of file \mbox{\hyperlink{SurfaceMesh_8cpp_source}{Surface\+Mesh.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSurfaceMesh_ae7486b3dfa647ae8ee6063bd6297f5ff_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSurfaceMesh_ae7486b3dfa647ae8ee6063bd6297f5ff_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSurfaceMesh_afc3c75aee77b7cfce33e4e907bae9ce0}\index{SurfaceMesh@{SurfaceMesh}!MaxDomainIndex@{MaxDomainIndex}}
+\index{MaxDomainIndex@{MaxDomainIndex}!SurfaceMesh@{SurfaceMesh}}
+\doxysubsubsection{\texorpdfstring{MaxDomainIndex()}{MaxDomainIndex()}}
+{\footnotesize\ttfamily \label{classSurfaceMesh_afc3c75aee77b7cfce33e4e907bae9ce0} 
+int Surface\+Mesh\+::\+Max\+Domain\+Index (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Highest domain index present in the mesh. 
+
+\begin{DoxyReturn}{Returns}
+Max element of {\ttfamily domain\+Indeces}. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SurfaceMesh_8cpp_source_l00385}{385}} of file \mbox{\hyperlink{SurfaceMesh_8cpp_source}{Surface\+Mesh.\+cpp}}.
+
+\Hypertarget{classSurfaceMesh_a7b9932db85ea0b19578ec45eb09c3859}\index{SurfaceMesh@{SurfaceMesh}!NewTranslation@{NewTranslation}}
+\index{NewTranslation@{NewTranslation}!SurfaceMesh@{SurfaceMesh}}
+\doxysubsubsection{\texorpdfstring{NewTranslation()}{NewTranslation()}}
+{\footnotesize\ttfamily \label{classSurfaceMesh_a7b9932db85ea0b19578ec45eb09c3859} 
+int Surface\+Mesh\+::\+New\+Translation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{translation\+Vector}{}\end{DoxyParamCaption})}
+
+
+
+Register a new periodic translation (adds a symmetry operation). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em translation\+Vector} & \doxylink{classTranslation}{Translation} vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SurfaceMesh_8cpp_source_l00504}{504}} of file \mbox{\hyperlink{SurfaceMesh_8cpp_source}{Surface\+Mesh.\+cpp}}.
+
+\Hypertarget{classSurfaceMesh_a365f60555e50472cef70095f3ac9027e}\index{SurfaceMesh@{SurfaceMesh}!RemovePlane@{RemovePlane}}
+\index{RemovePlane@{RemovePlane}!SurfaceMesh@{SurfaceMesh}}
+\doxysubsubsection{\texorpdfstring{RemovePlane()}{RemovePlane()}}
+{\footnotesize\ttfamily \label{classSurfaceMesh_a365f60555e50472cef70095f3ac9027e} 
+int Surface\+Mesh\+::\+Remove\+Plane (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{normal}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{point}{}\end{DoxyParamCaption})}
+
+
+
+Remove all triangles on or below a plane (strict \texorpdfstring{$>$}{>} 1e-\/10 kept). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em normal} & Plane normal. \\
+\hline
+{\em point} & A point on the plane. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SurfaceMesh_8cpp_source_l00588}{588}} of file \mbox{\hyperlink{SurfaceMesh_8cpp_source}{Surface\+Mesh.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSurfaceMesh_a365f60555e50472cef70095f3ac9027e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSurfaceMesh_a4c66cbdeb07f2fd62429d6a949518cad}\index{SurfaceMesh@{SurfaceMesh}!SaveToMeshFile@{SaveToMeshFile}}
+\index{SaveToMeshFile@{SaveToMeshFile}!SurfaceMesh@{SurfaceMesh}}
+\doxysubsubsection{\texorpdfstring{SaveToMeshFile()}{SaveToMeshFile()}}
+{\footnotesize\ttfamily \label{classSurfaceMesh_a4c66cbdeb07f2fd62429d6a949518cad} 
+int Surface\+Mesh\+::\+Save\+To\+Mesh\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Write current mesh to the custom "{}.\+mesh"{} format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & Output base name (extension not added automatically). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success; non-\/zero on error. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SurfaceMesh_8cpp_source_l00424}{424}} of file \mbox{\hyperlink{SurfaceMesh_8cpp_source}{Surface\+Mesh.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSurfaceMesh_a4c66cbdeb07f2fd62429d6a949518cad_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSurfaceMesh_a4c66cbdeb07f2fd62429d6a949518cad_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSurfaceMesh_ab8758aecb743f6df45e760074e2592fb}\index{SurfaceMesh@{SurfaceMesh}!SwitchIndex@{SwitchIndex}}
+\index{SwitchIndex@{SwitchIndex}!SurfaceMesh@{SurfaceMesh}}
+\doxysubsubsection{\texorpdfstring{SwitchIndex()}{SwitchIndex()}}
+{\footnotesize\ttfamily \label{classSurfaceMesh_ab8758aecb743f6df45e760074e2592fb} 
+int Surface\+Mesh\+::\+Switch\+Index (\begin{DoxyParamCaption}\item[{int}]{n1}{, }\item[{int}]{n2}{}\end{DoxyParamCaption})}
+
+
+
+Replace all occurrences of domain ID n1 with n2 in triangles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n1} & Old domain ID. \\
+\hline
+{\em n2} & New domain ID. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SurfaceMesh_8cpp_source_l00599}{599}} of file \mbox{\hyperlink{SurfaceMesh_8cpp_source}{Surface\+Mesh.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSurfaceMesh_ab8758aecb743f6df45e760074e2592fb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSurfaceMesh_a4a88f03484758605cc254297149c7d29}\index{SurfaceMesh@{SurfaceMesh}!zMinMax@{zMinMax}}
+\index{zMinMax@{zMinMax}!SurfaceMesh@{SurfaceMesh}}
+\doxysubsubsection{\texorpdfstring{zMinMax()}{zMinMax()}}
+{\footnotesize\ttfamily \label{classSurfaceMesh_a4a88f03484758605cc254297149c7d29} 
+std\+::pair$<$ double, double $>$ Surface\+Mesh\+::z\+Min\+Max (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Minimum and maximum z among all nodes. 
+
+\begin{DoxyReturn}{Returns}
+\{zmin, zmax\}; throws if mesh is empty. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SurfaceMesh_8cpp_source_l00609}{609}} of file \mbox{\hyperlink{SurfaceMesh_8cpp_source}{Surface\+Mesh.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSurfaceMesh_a4a88f03484758605cc254297149c7d29_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classSurfaceMesh_a0deb1c8dd8e053b664a12aa61ec13838}\index{SurfaceMesh@{SurfaceMesh}!bcs@{bcs}}
+\index{bcs@{bcs}!SurfaceMesh@{SurfaceMesh}}
+\doxysubsubsection{\texorpdfstring{bcs}{bcs}}
+{\footnotesize\ttfamily \label{classSurfaceMesh_a0deb1c8dd8e053b664a12aa61ec13838} 
+std\+::vector$<$\mbox{\hyperlink{classSymmetryOperation}{Symmetry\+Operation}}\texorpdfstring{$\ast$}{*}$>$ Surface\+Mesh\+::bcs\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Boundary conditions (symmetry operations) used to detect periodic edges. 
+
+
+
+Definition at line \mbox{\hyperlink{SurfaceMesh_8h_source_l00070}{70}} of file \mbox{\hyperlink{SurfaceMesh_8h_source}{Surface\+Mesh.\+h}}.
+
+\Hypertarget{classSurfaceMesh_a3b21d09b955a30cb106a7490f1431cef}\index{SurfaceMesh@{SurfaceMesh}!domainIndeces@{domainIndeces}}
+\index{domainIndeces@{domainIndeces}!SurfaceMesh@{SurfaceMesh}}
+\doxysubsubsection{\texorpdfstring{domainIndeces}{domainIndeces}}
+{\footnotesize\ttfamily \label{classSurfaceMesh_a3b21d09b955a30cb106a7490f1431cef} 
+std\+::set$<$int$>$ Surface\+Mesh\+::domain\+Indeces\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+All domain IDs appearing on any triangle. 
+
+
+
+Definition at line \mbox{\hyperlink{SurfaceMesh_8h_source_l00050}{50}} of file \mbox{\hyperlink{SurfaceMesh_8h_source}{Surface\+Mesh.\+h}}.
+
+\Hypertarget{classSurfaceMesh_a051d7723b78f98ca83aafb35a3a4ea35}\index{SurfaceMesh@{SurfaceMesh}!edges@{edges}}
+\index{edges@{edges}!SurfaceMesh@{SurfaceMesh}}
+\doxysubsubsection{\texorpdfstring{edges}{edges}}
+{\footnotesize\ttfamily \label{classSurfaceMesh_a051d7723b78f98ca83aafb35a3a4ea35} 
+std\+::vector$<$\mbox{\hyperlink{structedge}{edge}}$>$ Surface\+Mesh\+::edges\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Unique edges discovered from triangles. 
+
+
+
+Definition at line \mbox{\hyperlink{SurfaceMesh_8h_source_l00049}{49}} of file \mbox{\hyperlink{SurfaceMesh_8h_source}{Surface\+Mesh.\+h}}.
+
+\Hypertarget{classSurfaceMesh_a01fd83efaeb12a789f9b1448111bdf6f}\index{SurfaceMesh@{SurfaceMesh}!jobParser@{jobParser}}
+\index{jobParser@{jobParser}!SurfaceMesh@{SurfaceMesh}}
+\doxysubsubsection{\texorpdfstring{jobParser}{jobParser}}
+{\footnotesize\ttfamily \label{classSurfaceMesh_a01fd83efaeb12a789f9b1448111bdf6f} 
+\mbox{\hyperlink{classJobParser}{Job\+Parser}} Surface\+Mesh\+::job\+Parser\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Internal parser for conversion/aux I/O. 
+
+
+
+Definition at line \mbox{\hyperlink{SurfaceMesh_8h_source_l00046}{46}} of file \mbox{\hyperlink{SurfaceMesh_8h_source}{Surface\+Mesh.\+h}}.
+
+\Hypertarget{classSurfaceMesh_ad15834c114ffa57483ed928b75634c63}\index{SurfaceMesh@{SurfaceMesh}!nodes@{nodes}}
+\index{nodes@{nodes}!SurfaceMesh@{SurfaceMesh}}
+\doxysubsubsection{\texorpdfstring{nodes}{nodes}}
+{\footnotesize\ttfamily \label{classSurfaceMesh_ad15834c114ffa57483ed928b75634c63} 
+std\+::vector$<$\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}$>$ Surface\+Mesh\+::nodes\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Mesh nodes (owned) 
+
+
+
+Definition at line \mbox{\hyperlink{SurfaceMesh_8h_source_l00047}{47}} of file \mbox{\hyperlink{SurfaceMesh_8h_source}{Surface\+Mesh.\+h}}.
+
+\Hypertarget{classSurfaceMesh_a1de6a9eb8ebab94507f2f213661ad6cc}\index{SurfaceMesh@{SurfaceMesh}!supNodes@{supNodes}}
+\index{supNodes@{supNodes}!SurfaceMesh@{SurfaceMesh}}
+\doxysubsubsection{\texorpdfstring{supNodes}{supNodes}}
+{\footnotesize\ttfamily \label{classSurfaceMesh_a1de6a9eb8ebab94507f2f213661ad6cc} 
+std\+::vector$<$\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\texorpdfstring{$\ast$}{*}$>$ Surface\+Mesh\+::sup\+Nodes\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Supplementary nodes for boundary conditions. 
+
+
+
+Definition at line \mbox{\hyperlink{SurfaceMesh_8h_source_l00051}{51}} of file \mbox{\hyperlink{SurfaceMesh_8h_source}{Surface\+Mesh.\+h}}.
+
+\Hypertarget{classSurfaceMesh_a3f69f0b0f14a90b0bdc8c957b9c79fc1}\index{SurfaceMesh@{SurfaceMesh}!supTriangles@{supTriangles}}
+\index{supTriangles@{supTriangles}!SurfaceMesh@{SurfaceMesh}}
+\doxysubsubsection{\texorpdfstring{supTriangles}{supTriangles}}
+{\footnotesize\ttfamily \label{classSurfaceMesh_a3f69f0b0f14a90b0bdc8c957b9c79fc1} 
+std\+::vector$<$\mbox{\hyperlink{classTriangle}{Triangle}}\texorpdfstring{$\ast$}{*}$>$ Surface\+Mesh\+::sup\+Triangles\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Supplementary triangles for boundary conditions. 
+
+
+
+Definition at line \mbox{\hyperlink{SurfaceMesh_8h_source_l00052}{52}} of file \mbox{\hyperlink{SurfaceMesh_8h_source}{Surface\+Mesh.\+h}}.
+
+\Hypertarget{classSurfaceMesh_a9b3bdc4a40179af090240e48b2408e73}\index{SurfaceMesh@{SurfaceMesh}!triangles@{triangles}}
+\index{triangles@{triangles}!SurfaceMesh@{SurfaceMesh}}
+\doxysubsubsection{\texorpdfstring{triangles}{triangles}}
+{\footnotesize\ttfamily \label{classSurfaceMesh_a9b3bdc4a40179af090240e48b2408e73} 
+std\+::vector$<$\mbox{\hyperlink{classTriangle}{Triangle}}$>$ Surface\+Mesh\+::triangles\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Mesh triangles (owned) 
+
+
+
+Definition at line \mbox{\hyperlink{SurfaceMesh_8h_source_l00048}{48}} of file \mbox{\hyperlink{SurfaceMesh_8h_source}{Surface\+Mesh.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{SurfaceMesh_8h}{Surface\+Mesh.\+h}}\item 
+\mbox{\hyperlink{SurfaceMesh_8cpp}{Surface\+Mesh.\+cpp}}\end{DoxyCompactItemize}

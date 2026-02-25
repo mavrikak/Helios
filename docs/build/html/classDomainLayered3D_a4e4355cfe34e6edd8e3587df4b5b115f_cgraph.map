@@ -1,0 +1,5 @@
+<map id="DomainLayered3D::ClearIncidentFields" name="DomainLayered3D::ClearIncidentFields">
+<area shape="rect" id="Node000001" title="Clears all incident fields and resets the cached layered Green&#39;s function for field evaluation." alt="" coords="5,5,242,50"/>
+<area shape="rect" id="Node000002" href="$classDomain.html#a3740efee36b6693e4fda2bc916552efd" title="Delete and clear all incident sources." alt="" coords="290,14,494,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="242,25,274,25,274,30,242,30"/>
+</map>

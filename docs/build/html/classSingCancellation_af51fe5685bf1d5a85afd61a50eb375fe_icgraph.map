@@ -1,0 +1,11 @@
+<map id="SingCancellation::getPermutation" name="SingCancellation::getPermutation">
+<area shape="rect" id="Node000001" title="Permutation of barycentric components induced by vertex/edge alignment." alt="" coords="576,48,815,76"/>
+<area shape="rect" id="Node000002" href="$classSingCancellation.html#aa72d2a4d4365846ffcbee49b07a4baa7" title="Build paired quadrature for triangles sharing a common edge." alt="" coords="301,5,528,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="585,48,510,36,510,31,586,42"/>
+<area shape="rect" id="Node000004" href="$classSingCancellation.html#ac1258c9e1d2e1981e9ceb22477312cfd" title="Build paired quadrature for triangles sharing a single vertex." alt="" coords="317,81,512,126"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="582,81,513,91,512,86,582,76"/>
+<area shape="rect" id="Node000003" href="$classSingCancellation.html#a8931df16b2dd06d74b1aa8a78eab4363" title="Construct and immediately generate the paired quadrature for a triangle pair." alt="" coords="5,48,253,76"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="303,39,226,50,226,45,302,33"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="301,89,229,79,230,74,302,84"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="460,68,443,62,414,59,388,61,371,66,365,72,366,80,361,81,360,71,369,62,387,56,414,54,444,57,462,63"/>
+</map>

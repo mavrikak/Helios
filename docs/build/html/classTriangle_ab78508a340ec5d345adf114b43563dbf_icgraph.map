@@ -1,0 +1,63 @@
+<map id="Triangle::Center" name="Triangle::Center">
+<area shape="rect" id="Node000001" title="Centroid of the triangle." alt="" coords="606,717,729,745"/>
+<area shape="rect" id="Node000002" href="$classGreenFHom3D.html#a2cd095383b467cb6ca12819e2cd5dc61" title="Heuristic test for two triangles using center distance vs." alt="" coords="308,5,538,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="663,702,659,563,643,366,630,265,611,173,587,98,572,69,556,48,537,34,541,29,560,44,577,66,592,96,616,172,635,264,648,365,664,563,669,702"/>
+<area shape="rect" id="Node000003" href="$classGreenFLayered3D.html#a1e2aea0bdd06e2c0082b6ae0787a018b" title="Checks whether the given point&#45;triangle pair exceeds a predefined distance threshold." alt="" coords="298,57,549,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="663,702,657,572,640,391,626,298,608,214,585,145,571,119,556,100,540,87,544,83,560,96,575,116,589,143,613,213,631,297,645,390,662,572,668,701"/>
+<area shape="rect" id="Node000004" href="$classGreenFLayered3D.html#a41dad600791549400d82f6c44238f373" title="Checks whether the given triangles exceed a predefined threshold." alt="" coords="298,109,549,137"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="662,702,655,582,637,416,623,331,605,254,583,192,570,168,556,150,543,140,546,136,560,147,574,165,588,190,610,253,628,330,642,415,660,582,668,702"/>
+<area shape="rect" id="Node000005" href="$classGreenFHom3DPer2D.html#a4049a59ae5bbd1406d1da47e6de62af8" title="Far/near heuristic for translated triangle pairs." alt="" coords="289,161,558,206"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="661,702,650,597,630,454,615,382,598,316,579,263,556,226,533,208,536,204,560,223,583,260,603,315,621,381,635,453,656,596,667,702"/>
+<area shape="rect" id="Node000006" href="$classGreenFHom3DPer2D.html#a1dc9dd84c93ee10b2fb4b1866103d957" title="Compute &#160;and &#160;for all RWG pairs on two triangles." alt="" coords="5,200,241,228"/>
+<area shape="poly" id="edge30_Node000001_Node000006" title=" " alt="" coords="661,703,650,604,630,474,615,408,598,349,579,302,556,271,542,263,515,256,436,243,241,224,241,219,436,238,516,251,544,258,560,266,583,299,603,347,621,407,635,473,655,604,666,702"/>
+<area shape="rect" id="Node000007" href="$classDomainLayered3D.html#a4e5fb098bcc6edc2f594da23e0b64fb3" title="Absorption cross section." alt="" coords="305,280,542,308"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="660,702,647,614,625,500,594,392,576,350,556,322,539,310,542,306,560,319,581,347,599,390,630,499,652,614,665,702"/>
+<area shape="rect" id="Node000008" href="$classDomainLayered3D.html#a847bdddcbf4257a73cfcd2766c882f8b" title="Extinction cross section." alt="" coords="307,332,540,360"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="664,702,661,634,646,545,633,498,614,453,588,411,556,374,539,362,542,358,560,371,593,408,618,450,638,496,651,544,666,633,670,702"/>
+<area shape="rect" id="Node000009" href="$classGaussQuad.html#afecf86c6fbc2362c30d56fb10454621e" title="I1: integral of scalar kernel times RWG prefactor over the test triangle." alt="" coords="366,384,481,412"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="662,702,655,645,637,571,624,533,606,496,584,462,556,432,540,420,521,412,481,402,482,397,523,406,542,415,560,428,588,458,611,493,629,531,643,570,660,644,667,701"/>
+<area shape="rect" id="Node000010" href="$classGaussQuad.html#ab01b06d5cd9d9d15b01d0c9078b8dc5e" title="Two‑triangle integral for the D operator (Eq." alt="" coords="37,435,209,462"/>
+<area shape="poly" id="edge18_Node000001_Node000010" title=" " alt="" coords="661,702,653,651,635,588,621,556,604,526,582,499,557,476,531,464,496,455,405,445,303,443,210,446,209,440,303,438,405,440,497,450,533,459,559,472,586,495,608,523,626,554,640,587,658,650,666,701"/>
+<area shape="rect" id="Node000011" href="$classGaussQuad.html#a446b0b21a34640c901189c53ec4081b3" title="I1 with on‑the‑fly kernel evaluation at (r,rp) using gF." alt="" coords="366,485,481,513"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="657,703,645,663,624,615,595,567,577,546,557,528,520,510,481,502,482,497,522,505,559,524,581,542,599,564,629,613,650,661,662,702"/>
+<area shape="rect" id="Node000012" href="$classGaussQuad.html#a017bdf3c80a430f4c381310bd7b680ed" title="I2: vector form with the RWG basis evaluated at the centroid." alt="" coords="366,537,481,565"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="652,704,616,640,589,607,557,580,520,564,481,556,482,551,521,559,559,576,593,604,620,637,657,702"/>
+<area shape="rect" id="Node000013" href="$classGaussQuad.html#ae59aff5fbf12ed60f4bb65820fdcae91" title="I2 with on‑the‑fly scalar kernel evaluation." alt="" coords="366,589,481,617"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="644,707,606,667,582,648,557,632,519,618,481,610,482,605,521,613,559,627,585,644,610,663,648,703"/>
+<area shape="rect" id="Node000014" href="$classGaussQuad.html#aa2f7019adfbd7b78e6f91e5554b526b7" title="I4: vector kernel crossed with RWG at the centroid." alt="" coords="366,641,481,669"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="620,713,557,690,481,669,482,664,559,685,622,708"/>
+<area shape="rect" id="Node000015" href="$classGaussQuad.html#ab896c6e8141cd1e678d4f630fe0fd186" title="Two‑triangle integral for the K operator (Eq." alt="" coords="37,667,209,694"/>
+<area shape="poly" id="edge22_Node000001_Node000015" title=" " alt="" coords="591,727,209,691,209,686,591,721"/>
+<area shape="rect" id="Node000016" href="$classGaussQuad.html#a0fb8ea7e979899e9f7e872faed11d6bd" title="I4 with on‑the‑fly vector kernel evaluation." alt="" coords="366,743,481,770"/>
+<area shape="poly" id="edge16_Node000001_Node000016" title=" " alt="" coords="590,742,482,753,481,748,590,736"/>
+<area shape="rect" id="Node000017" href="$classGaussQuad.html#a7b4dd3082686af22451b5f405073d33e" title="I5 variant: vector kernel weighted by RWG prefactor (centroid)." alt="" coords="366,795,481,822"/>
+<area shape="poly" id="edge17_Node000001_Node000017" title=" " alt="" coords="628,755,559,784,482,803,481,798,557,779,626,750"/>
+<area shape="rect" id="Node000018" href="$classGreenFHom3D.html#aca136b03c44ad1da34acf91eb5a5e390" title="term at an observation point." alt="" coords="314,847,533,874"/>
+<area shape="poly" id="edge19_Node000001_Node000018" title=" " alt="" coords="649,759,610,799,586,819,559,836,529,849,527,844,557,831,583,815,607,795,645,755"/>
+<area shape="rect" id="Node000019" href="$classGreenFHom3DPer2D.html#a233c2185952220bd16acae2142f05cc1" title="term at an observation point." alt="" coords="312,898,535,943"/>
+<area shape="poly" id="edge20_Node000001_Node000019" title=" " alt="" coords="657,760,620,825,592,859,560,888,537,901,534,896,556,884,588,855,615,822,652,758"/>
+<area shape="rect" id="Node000020" href="$classGreenFLayered3D.html#afbdbfdc8fc40fc885f6377d5be242d36" title="term at an observation point." alt="" coords="321,968,526,1012"/>
+<area shape="poly" id="edge21_Node000001_Node000020" title=" " alt="" coords="663,761,651,804,631,858,601,911,582,936,560,957,528,976,525,971,556,953,578,932,597,908,626,855,646,803,658,759"/>
+<area shape="rect" id="Node000021" href="$classGreenFHom3D.html#a9cece8a4056d65455cfcc94c8c61decd" title="term at an observation point." alt="" coords="311,1036,536,1064"/>
+<area shape="poly" id="edge23_Node000001_Node000021" title=" " alt="" coords="667,761,660,818,642,890,629,928,611,964,588,998,560,1027,538,1040,535,1036,556,1022,584,994,606,961,624,925,637,888,655,817,662,760"/>
+<area shape="rect" id="Node000022" href="$classGreenFHom3DPer2D.html#aadb534ef4509422e6f3e78a0e3999758" title="term at an observation point." alt="" coords="312,1088,535,1132"/>
+<area shape="poly" id="edge24_Node000001_Node000022" title=" " alt="" coords="669,761,664,826,648,911,634,956,615,1000,591,1041,560,1077,537,1093,534,1089,556,1073,587,1038,611,998,629,954,643,910,658,825,663,760"/>
+<area shape="rect" id="Node000023" href="$classGreenFLayered3D.html#a439eddb43f46fb52f6c84898ea12aa40" title="term at an observation point." alt="" coords="321,1157,526,1202"/>
+<area shape="poly" id="edge25_Node000001_Node000023" title=" " alt="" coords="665,761,652,849,629,964,599,1074,580,1117,560,1146,528,1167,525,1163,556,1143,576,1114,593,1072,624,963,646,848,660,760"/>
+<area shape="rect" id="Node000024" href="$classGreenFHom3D.html#a48e8471aabb445e0e50a01c005ff3b98" title="Compute &#160;for all RWGs on a source triangle." alt="" coords="317,1226,530,1271"/>
+<area shape="poly" id="edge26_Node000001_Node000024" title=" " alt="" coords="666,761,655,862,634,998,620,1067,603,1129,583,1180,560,1216,531,1236,528,1231,556,1212,578,1178,598,1127,615,1065,629,997,650,861,661,760"/>
+<area shape="rect" id="Node000025" href="$classGreenFHom3DPer2D.html#a84a8c855a27c895ff24f6771037284a5" title="Compute &#160;for all RWGs on a source triangle." alt="" coords="315,1296,532,1340"/>
+<area shape="poly" id="edge27_Node000001_Node000025" title=" " alt="" coords="667,761,658,875,639,1032,624,1112,607,1184,586,1244,560,1285,534,1304,530,1300,556,1281,581,1242,602,1183,619,1110,633,1031,653,874,662,760"/>
+<area shape="rect" id="Node000026" href="$classGreenFLayered3D.html#af46d152fbc30bdc418ff16e5e7a334c6" title="Point–triangle delta/kappa contributions for RHS assembly." alt="" coords="324,1365,522,1410"/>
+<area shape="poly" id="edge28_Node000001_Node000026" title=" " alt="" coords="668,761,661,888,643,1065,629,1156,611,1239,588,1307,575,1334,560,1354,543,1368,524,1378,522,1373,540,1364,556,1351,570,1331,583,1305,606,1238,624,1155,638,1065,655,887,663,760"/>
+<area shape="rect" id="Node000027" href="$classGreenFHom3D.html#a419cbe00b5a2aed70ac546904a8a8d6f" title="Compute &#160;and &#160;for all RWG pairs on two triangles." alt="" coords="325,1433,522,1461"/>
+<area shape="poly" id="edge29_Node000001_Node000027" title=" " alt="" coords="669,761,664,901,649,1100,635,1202,617,1295,592,1372,577,1401,560,1424,543,1437,523,1446,521,1441,540,1432,556,1420,572,1398,587,1370,611,1294,630,1201,644,1100,659,901,663,761"/>
+<area shape="rect" id="Node000028" href="$classGreenFLayered3D.html#a6c88af86169f8d148c3e9f4da77a77d0" title="Triangle–triangle D/K blocks assembly for all RWG pairs on two triangles." alt="" coords="315,1485,532,1513"/>
+<area shape="poly" id="edge31_Node000001_Node000028" title=" " alt="" coords="669,761,666,910,652,1124,639,1234,619,1335,594,1418,578,1450,560,1474,534,1493,531,1488,556,1471,573,1447,589,1416,614,1334,633,1233,647,1124,661,909,664,760"/>
+<area shape="rect" id="Node000029" href="$classDomainLayered3D.html#a267135f0a2f5bfff12f7ac3b25429176" title="Scattering cross section." alt="" coords="307,1537,540,1565"/>
+<area shape="poly" id="edge32_Node000001_Node000029" title=" " alt="" coords="669,760,668,919,655,1149,642,1268,623,1376,596,1465,579,1500,560,1526,541,1541,538,1537,556,1523,574,1497,591,1463,617,1375,637,1267,650,1148,662,918,664,760"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="273,201,241,204,241,199,273,196"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="351,413,209,437,209,431,350,407"/>
+<area shape="poly" id="edge12_Node000012_Node000010" title=" " alt="" coords="350,543,288,527,211,496,149,465,152,460,213,491,289,522,351,537"/>
+<area shape="poly" id="edge15_Node000014_Node000015" title=" " alt="" coords="350,664,209,676,209,671,350,659"/>
+</map>

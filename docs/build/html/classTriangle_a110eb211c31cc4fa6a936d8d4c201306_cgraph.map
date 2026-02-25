@@ -1,0 +1,10 @@
+<map id="Triangle::FindAdjacency" name="Triangle::FindAdjacency">
+<area shape="rect" id="Node000001" title="Count common nodes with T after translating T by vector t." alt="" coords="5,5,180,33"/>
+<area shape="rect" id="Node000002" href="$classTriangle.html#a0752d2c9488c7c44b851b8f75abcaa79" title="Node position (by value) for local index 0..2." alt="" coords="692,5,807,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,16,677,16,677,22,180,22"/>
+<area shape="rect" id="Node000003" href="$classTriangle.html#a2eae6a9b0378e4b5ba4616a6b6af86fe" title="Construct from 3 node pointers and bordering domains." alt="" coords="228,31,359,58"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="181,28,213,32,212,37,180,33"/>
+<area shape="rect" id="Node000004" href="$classTriangle.html#ae13d69e28fb7a81ab8257fe0af84ceaa" title="Compute/cached geometry (normal, area, perimeter, center, I1/I2s/I2d)." alt="" coords="407,31,644,58"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="359,42,391,42,391,47,359,47"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="644,28,677,25,677,30,645,34"/>
+</map>

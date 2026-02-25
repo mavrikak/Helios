@@ -1,0 +1,7 @@
+<map id="SurfaceMesh::RemovePlane" name="SurfaceMesh::RemovePlane">
+<area shape="rect" id="Node000001" title="Remove all triangles on or below a plane (strict &gt; 1e&#45;10 kept)." alt="" coords="378,5,581,33"/>
+<area shape="rect" id="Node000002" href="$classSurfaceMesh.html#aa8811e2b8b03caa6028d5d154a69ea71" title="Convert/modify a mesh according to a conversion job file." alt="" coords="108,5,330,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="362,22,330,22,330,16,362,16"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Main driver routine for the HELIOS SIE simulation program." alt="" coords="5,5,60,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="92,22,60,22,60,16,92,16"/>
+</map>

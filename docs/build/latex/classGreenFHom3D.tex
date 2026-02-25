@@ -1,0 +1,935 @@
+\doxysection{Green\+FHom3D Class Reference}
+\hypertarget{classGreenFHom3D}{}\label{classGreenFHom3D}\index{GreenFHom3D@{GreenFHom3D}}
+
+
+Free‑space (homogeneous) Green\textquotesingle{}s function provider.  
+
+
+
+
+{\ttfamily \#include $<$Green\+FHom3\+D.\+h$>$}
+
+
+
+Inheritance diagram for Green\+FHom3D\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classGreenFHom3D__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Green\+FHom3D\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classGreenFHom3D__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classGreenFHom3D_a139d04e746cd17d5b738a972dc5128ad}{Above\+Threshold}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp)
+\begin{DoxyCompactList}\small\item\em Heuristic test based on $ k |\mathbf{r} − \mathbf{r}^{\prime}| $. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGreenFHom3D_a2cd095383b467cb6ca12819e2cd5dc61}{Above\+Threshold}} (\mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*}T, \mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*}Tp)
+\begin{DoxyCompactList}\small\item\em Heuristic test for two triangles using center distance vs. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGreenFHom3D_ac928f16e6e79c75c002d9a721a8858d8}{Green\+FHom3D}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor (initializes with zeroed wavenumber and no lookup table). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGreenFHom3D_a59f5ce23b99f97eaa6dedf90284ed6e3}{Green\+FHom3D}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenF_a551f07ab3b294c7b200eb578026bfa02}{wavelength}}, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} epsilon\+Medium)
+\begin{DoxyCompactList}\small\item\em Construct for a homogeneous, non-\/magnetic medium. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGreenFHom3D_a2947b2c6b81ce78024413a994702dad7}{Green\+FHom3D}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenF_a551f07ab3b294c7b200eb578026bfa02}{wavelength}}, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} epsilon\+Medium, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} mu\+Medium)
+\begin{DoxyCompactList}\small\item\em Construct for a homogeneous, magnetic medium. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classGreenFHom3D_a1d2099a8853c43408f2f95632d707b14}{\texorpdfstring{$\sim$}{\string~}\+Green\+FHom3D}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenFHom3D_a049e83f08bff1b6c003a35f478973609}{Evaluate}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp)
+\begin{DoxyCompactList}\small\item\em Scalar Green\textquotesingle{}s function $ G(\mathbf r,\mathbf r^{\prime}) $. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globals_8h_ac062d767acbc2b8149a4039dc4a1a18f}{cdyad}} \mbox{\hyperlink{classGreenFHom3D_a0d4d8b30c9627e2a87edf329ecb5b2ab}{Evaluate\+Dyadic}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp)
+\begin{DoxyCompactList}\small\item\em Dyadic Green\textquotesingle{}s function $\overline{\overline G}(\mathbf r,\mathbf r^{\prime})$. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classGreenFHom3D_a30fa3b981731ca85587da62ed511f547}{Gradient}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp)
+\begin{DoxyCompactList}\small\item\em Gradient w.\+r.\+t. \end{DoxyCompactList}\item 
+virtual std\+::tuple$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}, \mbox{\hyperlink{globals_8h_ac062d767acbc2b8149a4039dc4a1a18f}{cdyad}} $>$ \mbox{\hyperlink{classGreenFHom3D_ac989f2a060436c41a08da43af35b5ab1}{Evaluate\+All}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp)
+\begin{DoxyCompactList}\small\item\em Evaluate $(G,\ \nabla^{\prime}G,\ \overline{\overline G})$ together. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenFHom3D_adff9d901394dd07c05a111b607c89075}{Smoothed}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp)
+\begin{DoxyCompactList}\small\item\em Smoothed scalar kernel used under singularity subtraction. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenFHom3D_a701791540c59726195148449d4adda07}{half\+Smoothed}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp)
+\begin{DoxyCompactList}\small\item\em Half-\/smoothed scalar kernel for coincident triangles. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classGreenFHom3D_a39ccf7f27bff59110fb0d667bb74146f}{Gradient\+Smoothed}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} rp)
+\begin{DoxyCompactList}\small\item\em Smoothed gradient kernel. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenFHom3D_adf7e68e58e5b082db653607d531217b8}{IntegrateD}} (\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}f, \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}fp)
+\begin{DoxyCompactList}\small\item\em D-\/operator matrix element $\langle \mathbf{f}(\mathbf{r}),\,\overline{\overline G},\,\mathbf{f}(\mathbf{r}^{\prime})\rangle$. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenFHom3D_a7cd319e7c9d680103117b7babce53438}{IntegrateK}} (\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}f, \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}fp)
+\begin{DoxyCompactList}\small\item\em K-\/operator matrix element $\langle \mathbf{f}(\mathbf{r}),\,\nabla \times \overline{\overline G},\,\mathbf{f}(\mathbf{r}^{\prime})\rangle$. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classGreenFHom3D_aca136b03c44ad1da34acf91eb5a5e390}{Integrate\+Delta}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}fp)
+\begin{DoxyCompactList}\small\item\em $\boldsymbol \delta$ term at an observation point. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classGreenFHom3D_a9cece8a4056d65455cfcc94c8c61decd}{Integrate\+Kappa}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}fp)
+\begin{DoxyCompactList}\small\item\em $\boldsymbol \kappa$ term at an observation point. \end{DoxyCompactList}\item 
+virtual std\+::pair$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{classGreenFHom3D_a1c0cf62c5d538dec5349f90a5a33028d}{PairD}} (\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}f, \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}fp)
+\begin{DoxyCompactList}\small\item\em Pair of D elements with swapped triangle roles. \end{DoxyCompactList}\item 
+virtual std\+::pair$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{classGreenFHom3D_ad7549b4b2063b7a3658845fd0aab82bc}{PairK}} (\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}f, \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}fp)
+\begin{DoxyCompactList}\small\item\em Pair of K elements with swapped triangle roles. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGreenFHom3D_a419cbe00b5a2aed70ac546904a8a8d6f}{Same\+Tri\+DK}} (const std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*} $>$ \&fvec, const std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*} $>$ \&fpvec, std\+::vector$<$ std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ $>$ \&DK)
+\begin{DoxyCompactList}\small\item\em Compute $\mathbf D$ and $\mathbf K$ for all RWG pairs on two triangles. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGreenFHom3D_aee15ec1616a294e10b554f1afbb97845}{Same\+Tri\+DKG}} (const std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*} $>$ \&fvec, const std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*} $>$ \&fpvec, std\+::vector$<$ std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ $>$ \&DK, std\+::vector$<$ std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ $>$ $>$ \&DKG)
+\begin{DoxyCompactList}\small\item\em Same as \doxylink{classGreenFHom3D_a419cbe00b5a2aed70ac546904a8a8d6f}{Same\+Tri\+DK} plus gradients (if provided by the GF). \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGreenFHom3D_a48e8471aabb445e0e50a01c005ff3b98}{Same\+Tri\+Delta\+Kappa}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r, const std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*} $>$ \&fpvec, std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ $>$ \&Delta\+Kappa)
+\begin{DoxyCompactList}\small\item\em Compute $(\boldsymbol \delta,\boldsymbol \kappa)$ for all RWGs on a source triangle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classGreenF}{GreenF}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGreenF_a332ac24f39288170f77c18f37fde2c82}{GreenF}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenF_a551f07ab3b294c7b200eb578026bfa02}{wavelength}}, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} epsilon\+Medium)
+\begin{DoxyCompactList}\small\item\em Constructor for a homogeneous, non-\/magnetic medium. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGreenF_a8f4bd71bf23024ff5859ea791b8a17df}{GreenF}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenF_a551f07ab3b294c7b200eb578026bfa02}{wavelength}}, const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&epsilon\+Medium)
+\begin{DoxyCompactList}\small\item\em Constructor for a layered, non-\/magnetic medium. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGreenF_a37b267f203bf4d571d7510e0a92bdd4f}{GreenF}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenF_a551f07ab3b294c7b200eb578026bfa02}{wavelength}}, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} epsilon\+Medium, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} mu\+Medium)
+\begin{DoxyCompactList}\small\item\em Constructor for a homogeneous, magnetic medium. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGreenF_a90c26315201fbb2b80a7ce30b0d369cf}{GreenF}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenF_a551f07ab3b294c7b200eb578026bfa02}{wavelength}}, const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&epsilon\+Medium, const std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \&mu\+Medium)
+\begin{DoxyCompactList}\small\item\em Constructor for a layered, magnetic medium. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classGreenF_ad60758ba43be153d6521e2f2e108334a}{\texorpdfstring{$\sim$}{\string~}\+GreenF}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenF_a00b8e60822da0d787d66c4554c59189d}{Wave\+Vec}} ()
+\begin{DoxyCompactList}\small\item\em Return homogeneous wavevector $ k_B $ (if defined). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenF_abf00726011a4eca4109bc43125218d30}{Ev\+Erfc}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} z)
+\begin{DoxyCompactList}\small\item\em Evaluate {\ttfamily erfc} via the 2D lookup table if available. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGreenF_ae0c99d3bdbee9b75342be3e0664ba598}{Init\+Lookup\+Table}} (\mbox{\hyperlink{classLookupTableBin}{Lookup\+Table\+Bin}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classGreenF_af4be67948114ed6bd9f273a3193c23e6}{t}})
+\begin{DoxyCompactList}\small\item\em Initialize the {\ttfamily erfc} lookup table pointer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenF_a64c00505ed1ff4270d5c9ebcb76cc154}{Get\+Layer\+Wavenumber}} (size\+\_\+t index) const
+\begin{DoxyCompactList}\small\item\em Get layer wavenumber by index. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{classGreenF_a9b07899d8fa4d69ed69025bf785c64a4}{Get\+Layers\+Wavenumbers}} () const
+\begin{DoxyCompactList}\small\item\em Get all layer wavenumbers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGaussQuad}{Gauss\+Quad}}$<$ \mbox{\hyperlink{classGreenFHom3D}{Green\+FHom3D}} $>$ \mbox{\hyperlink{classGreenFHom3D_ae0461a379c7344394246eb64b1b3cf56}{gauss}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classGaussian}{Gaussian} quadrature helper. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classGreenF}{GreenF}}}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classGreenF_ada52587b39995134c895324efbaf5919}{Enable\+Accurate}} ()
+\begin{DoxyCompactList}\small\item\em Request high‑accuracy evaluation paths (global). \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classGreenF_ae8ee4d28ca884aab65018979e3d443ac}{Requires\+Accurate}} ()
+\begin{DoxyCompactList}\small\item\em Query whether high-\/accuracy evaluation is requested. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classGreenF_a0471f415be8e4d0f2fc7268e66ff38f5}{Assign\+Etm}} (int n)
+\begin{DoxyCompactList}\small\item\em Set number of periodic evaluation terms (for periodic GFs). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classGreenF}{GreenF}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenF_a551f07ab3b294c7b200eb578026bfa02}{wavelength}}
+\begin{DoxyCompactList}\small\item\em Wavelength in medium. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGreenF_a941af2e63626df517dec771424887840}{k\+\_\+B}}
+\begin{DoxyCompactList}\small\item\em Homogeneous wavenumber (if applicable). \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{classGreenF_a8712c50916bb76ad1edd14ea8b27b1a0}{k\+\_\+L}}
+\begin{DoxyCompactList}\small\item\em Per‑layer wavenumbers for layered problems. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLookupTableBin}{Lookup\+Table\+Bin}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classGreenF_af4be67948114ed6bd9f273a3193c23e6}{t}}
+\begin{DoxyCompactList}\small\item\em Pointer to error‑function lookup table (owned elsewhere). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGreenF_aa8b9f7c53607d829dacd82b657f65515}{there\+Is\+No\+Lookup\+Table}}
+\begin{DoxyCompactList}\small\item\em If true, fall back to direct \doxylink{mathFunctions_8h_a7916c6b62310fe9cf38ec2a2890aaad4}{cerfc()} evaluation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{classGreenF}{GreenF}}}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classGreenF_afb8bbc3614d84fa516766d49d71f5071}{Needs\+Accurate}} = false
+\begin{DoxyCompactList}\small\item\em Request high‑accuracy integration where available. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{classGreenF_aa2f846b8735322f9e33660c443eb3910}{Etm}} = 1
+\begin{DoxyCompactList}\small\item\em Number of periodic evaluation terms (for periodic GFs). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Free‑space (homogeneous) Green\textquotesingle{}s function provider. 
+
+Implements\+:
+\begin{DoxyItemize}
+\item Scalar Green\textquotesingle{}s function $G(r,r\textnormal{\textquotesingle}) = e^{ik|r-r\textnormal{\textquotesingle}|}/(4\pi|r-r\textnormal{\textquotesingle}|)$.
+\item Gradient $\nabla^{\prime} G$ and full {\bfseries{dyadic}} Green\textquotesingle{}s function.
+\item Smoothed kernels used for singularity subtraction when triangles are close or coincident.
+\item Batched assembly helpers over groups of RWG functions living on the same triangles to reduce repeated kernel evaluations. 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{GreenFHom3D_8h_source_l00035}{35}} of file \mbox{\hyperlink{GreenFHom3D_8h_source}{Green\+FHom3\+D.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classGreenFHom3D_ac928f16e6e79c75c002d9a721a8858d8}\index{GreenFHom3D@{GreenFHom3D}!GreenFHom3D@{GreenFHom3D}}
+\index{GreenFHom3D@{GreenFHom3D}!GreenFHom3D@{GreenFHom3D}}
+\doxysubsubsection{\texorpdfstring{GreenFHom3D()}{GreenFHom3D()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classGreenFHom3D_ac928f16e6e79c75c002d9a721a8858d8} 
+Green\+FHom3\+D\+::\+Green\+FHom3D (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor (initializes with zeroed wavenumber and no lookup table). 
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3D_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{GreenFHom3D_8cpp_source}{Green\+FHom3\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3D_ac928f16e6e79c75c002d9a721a8858d8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3D_ac928f16e6e79c75c002d9a721a8858d8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3D_a59f5ce23b99f97eaa6dedf90284ed6e3}\index{GreenFHom3D@{GreenFHom3D}!GreenFHom3D@{GreenFHom3D}}
+\index{GreenFHom3D@{GreenFHom3D}!GreenFHom3D@{GreenFHom3D}}
+\doxysubsubsection{\texorpdfstring{GreenFHom3D()}{GreenFHom3D()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classGreenFHom3D_a59f5ce23b99f97eaa6dedf90284ed6e3} 
+Green\+FHom3\+D\+::\+Green\+FHom3D (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{wavelength}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{epsilon\+Medium}{}\end{DoxyParamCaption})}
+
+
+
+Construct for a homogeneous, non-\/magnetic medium. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wavelength} & Wavelength in the medium. \\
+\hline
+{\em epsilon\+Medium} & Relative permittivity $\varepsilon_r$. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3D_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{GreenFHom3D_8cpp_source}{Green\+FHom3\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3D_a59f5ce23b99f97eaa6dedf90284ed6e3_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3D_a2947b2c6b81ce78024413a994702dad7}\index{GreenFHom3D@{GreenFHom3D}!GreenFHom3D@{GreenFHom3D}}
+\index{GreenFHom3D@{GreenFHom3D}!GreenFHom3D@{GreenFHom3D}}
+\doxysubsubsection{\texorpdfstring{GreenFHom3D()}{GreenFHom3D()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classGreenFHom3D_a2947b2c6b81ce78024413a994702dad7} 
+Green\+FHom3\+D\+::\+Green\+FHom3D (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{wavelength}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{epsilon\+Medium}{, }\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{mu\+Medium}{}\end{DoxyParamCaption})}
+
+
+
+Construct for a homogeneous, magnetic medium. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wavelength} & Wavelength in the medium. \\
+\hline
+{\em epsilon\+Medium} & Relative permittivity $\varepsilon_r$. \\
+\hline
+{\em mu\+Medium} & Relative permeability $\mu_r$. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3D_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{GreenFHom3D_8cpp_source}{Green\+FHom3\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3D_a2947b2c6b81ce78024413a994702dad7_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3D_a1d2099a8853c43408f2f95632d707b14}\index{GreenFHom3D@{GreenFHom3D}!````~GreenFHom3D@{\texorpdfstring{$\sim$}{\string~}GreenFHom3D}}
+\index{````~GreenFHom3D@{\texorpdfstring{$\sim$}{\string~}GreenFHom3D}!GreenFHom3D@{GreenFHom3D}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}GreenFHom3D()}{\string~GreenFHom3D()}}
+{\footnotesize\ttfamily \label{classGreenFHom3D_a1d2099a8853c43408f2f95632d707b14} 
+virtual Green\+FHom3\+D\+::\texorpdfstring{$\sim$}{\string~}\+Green\+FHom3D (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Virtual destructor. 
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3D_8h_source_l00078}{78}} of file \mbox{\hyperlink{GreenFHom3D_8h_source}{Green\+FHom3\+D.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classGreenFHom3D_a139d04e746cd17d5b738a972dc5128ad}\index{GreenFHom3D@{GreenFHom3D}!AboveThreshold@{AboveThreshold}}
+\index{AboveThreshold@{AboveThreshold}!GreenFHom3D@{GreenFHom3D}}
+\doxysubsubsection{\texorpdfstring{AboveThreshold()}{AboveThreshold()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classGreenFHom3D_a139d04e746cd17d5b738a972dc5128ad} 
+bool Green\+FHom3\+D\+::\+Above\+Threshold (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{rp}{}\end{DoxyParamCaption})}
+
+
+
+Heuristic test based on $ k |\mathbf{r} − \mathbf{r}^{\prime}| $. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation point. \\
+\hline
+{\em rp} & Source point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the separation is above the threshold; false otherwise.
+\end{DoxyReturn}
+Above $\sqrt{0.4}$ we are safely away from the $1/|r-r\textnormal{\textquotesingle}|$ singular behavior, so the plain kernel is accurate enough without special care. 
+
+Definition at line \mbox{\hyperlink{GreenFHom3D_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{GreenFHom3D_8cpp_source}{Green\+FHom3\+D.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3D_a139d04e746cd17d5b738a972dc5128ad_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3D_a2cd095383b467cb6ca12819e2cd5dc61}\index{GreenFHom3D@{GreenFHom3D}!AboveThreshold@{AboveThreshold}}
+\index{AboveThreshold@{AboveThreshold}!GreenFHom3D@{GreenFHom3D}}
+\doxysubsubsection{\texorpdfstring{AboveThreshold()}{AboveThreshold()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classGreenFHom3D_a2cd095383b467cb6ca12819e2cd5dc61} 
+bool Green\+FHom3\+D\+::\+Above\+Threshold (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*}}]{T}{, }\item[{\mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*}}]{Tp}{}\end{DoxyParamCaption})}
+
+
+
+Heuristic test for two triangles using center distance vs. 
+
+perimeters. 
+\begin{DoxyParams}{Parameters}
+{\em T} & Observation triangle. \\
+\hline
+{\em Tp} & Source triangle. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if triangles are sufficiently separated; false if near/coincident.
+\end{DoxyReturn}
+The distance between triangle centroids is compared to the average size (perimeter/2). If the separation is larger than this size measure, simple quadrature is sufficient. 
+
+Definition at line \mbox{\hyperlink{GreenFHom3D_8cpp_source_l00036}{36}} of file \mbox{\hyperlink{GreenFHom3D_8cpp_source}{Green\+FHom3\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3D_a2cd095383b467cb6ca12819e2cd5dc61_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3D_a049e83f08bff1b6c003a35f478973609}\index{GreenFHom3D@{GreenFHom3D}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!GreenFHom3D@{GreenFHom3D}}
+\doxysubsubsection{\texorpdfstring{Evaluate()}{Evaluate()}}
+{\footnotesize\ttfamily \label{classGreenFHom3D_a049e83f08bff1b6c003a35f478973609} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Green\+FHom3\+D\+::\+Evaluate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{rp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Scalar Green\textquotesingle{}s function $ G(\mathbf r,\mathbf r^{\prime}) $. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation point $\mathbf r$. \\
+\hline
+{\em rp} & Source point $\mathbf r^{\prime}$. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex scalar $ G(\mathbf r,\mathbf r^{\prime})$. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classGreenF_ace035fbe9855e3f05caac9229e1f6b2a}{GreenF}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classGreenFHom3DPer2D_a4fcccf5350453546ac226492ff19bcd0}{Green\+FHom3\+DPer2D}}.
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3D_8cpp_source_l00046}{46}} of file \mbox{\hyperlink{GreenFHom3D_8cpp_source}{Green\+FHom3\+D.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3D_a049e83f08bff1b6c003a35f478973609_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3D_ac989f2a060436c41a08da43af35b5ab1}\index{GreenFHom3D@{GreenFHom3D}!EvaluateAll@{EvaluateAll}}
+\index{EvaluateAll@{EvaluateAll}!GreenFHom3D@{GreenFHom3D}}
+\doxysubsubsection{\texorpdfstring{EvaluateAll()}{EvaluateAll()}}
+{\footnotesize\ttfamily \label{classGreenFHom3D_ac989f2a060436c41a08da43af35b5ab1} 
+std\+::tuple$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}, \mbox{\hyperlink{globals_8h_ac062d767acbc2b8149a4039dc4a1a18f}{cdyad}} $>$ Green\+FHom3\+D\+::\+Evaluate\+All (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{rp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Evaluate $(G,\ \nabla^{\prime}G,\ \overline{\overline G})$ together. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation point. \\
+\hline
+{\em rp} & Source point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Tuple $(G,\ \nabla^{\prime}G,\ \overline{\overline G})$.
+\end{DoxyReturn}
+Useful to fill blocks that need G, gradG and dyadG consistently at the same point. 
+
+Definition at line \mbox{\hyperlink{GreenFHom3D_8cpp_source_l00112}{112}} of file \mbox{\hyperlink{GreenFHom3D_8cpp_source}{Green\+FHom3\+D.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3D_ac989f2a060436c41a08da43af35b5ab1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3D_a0d4d8b30c9627e2a87edf329ecb5b2ab}\index{GreenFHom3D@{GreenFHom3D}!EvaluateDyadic@{EvaluateDyadic}}
+\index{EvaluateDyadic@{EvaluateDyadic}!GreenFHom3D@{GreenFHom3D}}
+\doxysubsubsection{\texorpdfstring{EvaluateDyadic()}{EvaluateDyadic()}}
+{\footnotesize\ttfamily \label{classGreenFHom3D_a0d4d8b30c9627e2a87edf329ecb5b2ab} 
+\mbox{\hyperlink{globals_8h_ac062d767acbc2b8149a4039dc4a1a18f}{cdyad}} Green\+FHom3\+D\+::\+Evaluate\+Dyadic (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{rp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Dyadic Green\textquotesingle{}s function $\overline{\overline G}(\mathbf r,\mathbf r^{\prime})$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation point $\mathbf r$. \\
+\hline
+{\em rp} & Source point $\mathbf r^{\prime}$. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex $ 3 \times 3 $ dyad. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classGreenF_a2541c9c8ed53e70c2ddd0f3603eca40d}{GreenF}}.
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3D_8cpp_source_l00053}{53}} of file \mbox{\hyperlink{GreenFHom3D_8cpp_source}{Green\+FHom3\+D.\+cpp}}.
+
+\Hypertarget{classGreenFHom3D_a30fa3b981731ca85587da62ed511f547}\index{GreenFHom3D@{GreenFHom3D}!Gradient@{Gradient}}
+\index{Gradient@{Gradient}!GreenFHom3D@{GreenFHom3D}}
+\doxysubsubsection{\texorpdfstring{Gradient()}{Gradient()}}
+{\footnotesize\ttfamily \label{classGreenFHom3D_a30fa3b981731ca85587da62ed511f547} 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} Green\+FHom3\+D\+::\+Gradient (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{rp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gradient w.\+r.\+t. 
+
+the source point $\nabla^{\prime}G(\mathbf r,\mathbf r^{\prime})$. 
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation point $\mathbf r$. \\
+\hline
+{\em rp} & Source point $\mathbf r^{\prime}$. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex 3-\/vector $\nabla^{\prime} G(\mathbf r,\mathbf r^{\prime})$.
+\end{DoxyReturn}
+Returns $\nabla^{\prime} G(r,r\textnormal{\textquotesingle})$. 
+
+Implements \mbox{\hyperlink{classGreenF_a6edf9744ddc9670915e319901c8ec9fd}{GreenF}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classGreenFHom3DPer2D_adff724f327912641a20c99fa4c9bb464}{Green\+FHom3\+DPer2D}}.
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3D_8cpp_source_l00101}{101}} of file \mbox{\hyperlink{GreenFHom3D_8cpp_source}{Green\+FHom3\+D.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3D_a30fa3b981731ca85587da62ed511f547_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3D_a39ccf7f27bff59110fb0d667bb74146f}\index{GreenFHom3D@{GreenFHom3D}!GradientSmoothed@{GradientSmoothed}}
+\index{GradientSmoothed@{GradientSmoothed}!GreenFHom3D@{GreenFHom3D}}
+\doxysubsubsection{\texorpdfstring{GradientSmoothed()}{GradientSmoothed()}}
+{\footnotesize\ttfamily \label{classGreenFHom3D_a39ccf7f27bff59110fb0d667bb74146f} 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} Green\+FHom3\+D\+::\+Gradient\+Smoothed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{rp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Smoothed gradient kernel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation point. \\
+\hline
+{\em rp} & Source point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex 3-\/vector smoothed gradient. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classGreenFHom3DPer2D_accc5e668a1b137a5279747db2ef0d560}{Green\+FHom3\+DPer2D}}.
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3D_8cpp_source_l00134}{134}} of file \mbox{\hyperlink{GreenFHom3D_8cpp_source}{Green\+FHom3\+D.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3D_a39ccf7f27bff59110fb0d667bb74146f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3D_a701791540c59726195148449d4adda07}\index{GreenFHom3D@{GreenFHom3D}!halfSmoothed@{halfSmoothed}}
+\index{halfSmoothed@{halfSmoothed}!GreenFHom3D@{GreenFHom3D}}
+\doxysubsubsection{\texorpdfstring{halfSmoothed()}{halfSmoothed()}}
+{\footnotesize\ttfamily \label{classGreenFHom3D_a701791540c59726195148449d4adda07} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Green\+FHom3\+D\+::half\+Smoothed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{rp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Half-\/smoothed scalar kernel for coincident triangles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation point. \\
+\hline
+{\em rp} & Source point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex scalar half-\/smoothed kernel.
+\end{DoxyReturn}
+Keeps only the $G(r,r\textnormal{\textquotesingle}) - 1/(4\pi|r-r\textnormal{\textquotesingle}|)$ part. Used when triangles coincide (tristatus==3) to improve numerical stability without over-\/correcting the local behavior. 
+
+Definition at line \mbox{\hyperlink{GreenFHom3D_8cpp_source_l00089}{89}} of file \mbox{\hyperlink{GreenFHom3D_8cpp_source}{Green\+FHom3\+D.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3D_a701791540c59726195148449d4adda07_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3D_adf7e68e58e5b082db653607d531217b8}\index{GreenFHom3D@{GreenFHom3D}!IntegrateD@{IntegrateD}}
+\index{IntegrateD@{IntegrateD}!GreenFHom3D@{GreenFHom3D}}
+\doxysubsubsection{\texorpdfstring{IntegrateD()}{IntegrateD()}}
+{\footnotesize\ttfamily \label{classGreenFHom3D_adf7e68e58e5b082db653607d531217b8} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Green\+FHom3\+D\+::\+IntegrateD (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{f}{, }\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{fp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+D-\/operator matrix element $\langle \mathbf{f}(\mathbf{r}),\,\overline{\overline G},\,\mathbf{f}(\mathbf{r}^{\prime})\rangle$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Testing RWG function (on observation triangle). \\
+\hline
+{\em fp} & Basis RWG function (on source triangle). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex scalar entry of $\mathbf D$. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Not used here (exits). 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{classGreenF_a6c12dde27af5c29efc4aa30dd0274f8d}{GreenF}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classGreenFHom3DPer2D_acbad1cb2e954df963942f7eed8074fdc}{Green\+FHom3\+DPer2D}}.
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3D_8cpp_source_l00149}{149}} of file \mbox{\hyperlink{GreenFHom3D_8cpp_source}{Green\+FHom3\+D.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3D_adf7e68e58e5b082db653607d531217b8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3D_aca136b03c44ad1da34acf91eb5a5e390}\index{GreenFHom3D@{GreenFHom3D}!IntegrateDelta@{IntegrateDelta}}
+\index{IntegrateDelta@{IntegrateDelta}!GreenFHom3D@{GreenFHom3D}}
+\doxysubsubsection{\texorpdfstring{IntegrateDelta()}{IntegrateDelta()}}
+{\footnotesize\ttfamily \label{classGreenFHom3D_aca136b03c44ad1da34acf91eb5a5e390} 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} Green\+FHom3\+D\+::\+Integrate\+Delta (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{fp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+$\boldsymbol \delta$ term at an observation point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation point $\mathbf r$. \\
+\hline
+{\em fp} & Source RWG function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex 3-\/vector contribution $\boldsymbol \delta(\mathbf r)$.
+\end{DoxyReturn}
+Computes $\int_{T\textnormal{\textquotesingle}} [ f_{p}(r\textnormal{\textquotesingle}) \; G(r,r\textnormal{\textquotesingle}) - \frac{\nabla\textnormal{\textquotesingle} G(r,r\textnormal{\textquotesingle})}{k^2}\,\mathrm{div} f_p ] \; dS\textnormal{\textquotesingle} $, choosing quadrature and (smoothed vs exact) kernels based on distance heuristics. When near-\/singular, applies analytical singularity subtraction via {\ttfamily \doxylink{classSingSub}{Sing\+Sub}}. 
+
+Implements \mbox{\hyperlink{classGreenF_abea72f8596b233344eb6c6ab35e49b41}{GreenF}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classGreenFHom3DPer2D_a233c2185952220bd16acae2142f05cc1}{Green\+FHom3\+DPer2D}}.
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3D_8cpp_source_l00157}{157}} of file \mbox{\hyperlink{GreenFHom3D_8cpp_source}{Green\+FHom3\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3D_aca136b03c44ad1da34acf91eb5a5e390_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3D_a7cd319e7c9d680103117b7babce53438}\index{GreenFHom3D@{GreenFHom3D}!IntegrateK@{IntegrateK}}
+\index{IntegrateK@{IntegrateK}!GreenFHom3D@{GreenFHom3D}}
+\doxysubsubsection{\texorpdfstring{IntegrateK()}{IntegrateK()}}
+{\footnotesize\ttfamily \label{classGreenFHom3D_a7cd319e7c9d680103117b7babce53438} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Green\+FHom3\+D\+::\+IntegrateK (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{f}{, }\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{fp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+K-\/operator matrix element $\langle \mathbf{f}(\mathbf{r}),\,\nabla \times \overline{\overline G},\,\mathbf{f}(\mathbf{r}^{\prime})\rangle$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Testing RWG function (on observation triangle). \\
+\hline
+{\em fp} & Basis RWG function (on source triangle). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex scalar entry of $\mathbf K$. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Not used here (exits). 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{classGreenF_ab23558e114b6c84cb38d380fdb0d47b8}{GreenF}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classGreenFHom3DPer2D_af1e82e68e80b134fce966b8894834dc7}{Green\+FHom3\+DPer2D}}.
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3D_8cpp_source_l00150}{150}} of file \mbox{\hyperlink{GreenFHom3D_8cpp_source}{Green\+FHom3\+D.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3D_a7cd319e7c9d680103117b7babce53438_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3D_a9cece8a4056d65455cfcc94c8c61decd}\index{GreenFHom3D@{GreenFHom3D}!IntegrateKappa@{IntegrateKappa}}
+\index{IntegrateKappa@{IntegrateKappa}!GreenFHom3D@{GreenFHom3D}}
+\doxysubsubsection{\texorpdfstring{IntegrateKappa()}{IntegrateKappa()}}
+{\footnotesize\ttfamily \label{classGreenFHom3D_a9cece8a4056d65455cfcc94c8c61decd} 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} Green\+FHom3\+D\+::\+Integrate\+Kappa (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{fp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+$\boldsymbol \kappa$ term at an observation point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation point $\mathbf r$. \\
+\hline
+{\em fp} & Source RWG function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex 3-\/vector contribution $\boldsymbol \kappa(\mathbf r)$.
+\end{DoxyReturn}
+Computes $\int_{T\textnormal{\textquotesingle}} f_p(r\textnormal{\textquotesingle}) \times \nabla\textnormal{\textquotesingle} G(r,r\textnormal{\textquotesingle})\, dS\textnormal{\textquotesingle}$ with the same strategy for quadrature / smoothing as in \doxylink{classGreenFHom3D_aca136b03c44ad1da34acf91eb5a5e390}{Integrate\+Delta}, and uses the corresponding K4 analytic terms for singularity subtraction. 
+
+Implements \mbox{\hyperlink{classGreenF_a0875ef994ae942ef623a49a5c6fc0f4d}{GreenF}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classGreenFHom3DPer2D_aadb534ef4509422e6f3e78a0e3999758}{Green\+FHom3\+DPer2D}}.
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3D_8cpp_source_l00215}{215}} of file \mbox{\hyperlink{GreenFHom3D_8cpp_source}{Green\+FHom3\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3D_a9cece8a4056d65455cfcc94c8c61decd_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3D_a1c0cf62c5d538dec5349f90a5a33028d}\index{GreenFHom3D@{GreenFHom3D}!PairD@{PairD}}
+\index{PairD@{PairD}!GreenFHom3D@{GreenFHom3D}}
+\doxysubsubsection{\texorpdfstring{PairD()}{PairD()}}
+{\footnotesize\ttfamily \label{classGreenFHom3D_a1c0cf62c5d538dec5349f90a5a33028d} 
+std\+::pair$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ Green\+FHom3\+D\+::\+PairD (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{f}{, }\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{fp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Pair of D elements with swapped triangle roles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Testing RWG function. \\
+\hline
+{\em fp} & Basis RWG function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$( D(f,fp),\, D(fp,f) )$. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classGreenF_a99e706146fbd3da5b24ef605ed03deec}{GreenF}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classGreenFHom3DPer2D_a416e1d9764a9ee201f9dc82f334361fe}{Green\+FHom3\+DPer2D}}.
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3D_8cpp_source_l00268}{268}} of file \mbox{\hyperlink{GreenFHom3D_8cpp_source}{Green\+FHom3\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3D_a1c0cf62c5d538dec5349f90a5a33028d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3D_ad7549b4b2063b7a3658845fd0aab82bc}\index{GreenFHom3D@{GreenFHom3D}!PairK@{PairK}}
+\index{PairK@{PairK}!GreenFHom3D@{GreenFHom3D}}
+\doxysubsubsection{\texorpdfstring{PairK()}{PairK()}}
+{\footnotesize\ttfamily \label{classGreenFHom3D_ad7549b4b2063b7a3658845fd0aab82bc} 
+std\+::pair$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ Green\+FHom3\+D\+::\+PairK (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{f}{, }\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{fp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Pair of K elements with swapped triangle roles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Testing RWG function. \\
+\hline
+{\em fp} & Basis RWG function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$( K(f,fp),\, K(fp,f) )$. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classGreenF_a5bf93d82e80aef7c1d399fef001e7eaf}{GreenF}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classGreenFHom3DPer2D_ab28bca332af5d24334833af9793aa454}{Green\+FHom3\+DPer2D}}.
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3D_8cpp_source_l00277}{277}} of file \mbox{\hyperlink{GreenFHom3D_8cpp_source}{Green\+FHom3\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3D_ad7549b4b2063b7a3658845fd0aab82bc_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3D_a48e8471aabb445e0e50a01c005ff3b98}\index{GreenFHom3D@{GreenFHom3D}!SameTriDeltaKappa@{SameTriDeltaKappa}}
+\index{SameTriDeltaKappa@{SameTriDeltaKappa}!GreenFHom3D@{GreenFHom3D}}
+\doxysubsubsection{\texorpdfstring{SameTriDeltaKappa()}{SameTriDeltaKappa()}}
+{\footnotesize\ttfamily \label{classGreenFHom3D_a48e8471aabb445e0e50a01c005ff3b98} 
+void Green\+FHom3\+D\+::\+Same\+Tri\+Delta\+Kappa (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*} $>$ \&}]{fpvec}{, }\item[{std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ $>$ \&}]{Delta\+Kappa}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Compute $(\boldsymbol \delta,\boldsymbol \kappa)$ for all RWGs on a source triangle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation point. \\
+\hline
+{\em fpvec} & RWGs living on the source triangle. \\
+\hline
+{\em Delta\+Kappa} & Output vector of pairs $(\boldsymbol \delta,\boldsymbol \kappa)$. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classGreenF_ae0dabe2240b6e9d7ff628fc70971d3d1}{GreenF}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classGreenFHom3DPer2D_a84a8c855a27c895ff24f6771037284a5}{Green\+FHom3\+DPer2D}}.
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3D_8cpp_source_l00546}{546}} of file \mbox{\hyperlink{GreenFHom3D_8cpp_source}{Green\+FHom3\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3D_a48e8471aabb445e0e50a01c005ff3b98_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3D_a419cbe00b5a2aed70ac546904a8a8d6f}\index{GreenFHom3D@{GreenFHom3D}!SameTriDK@{SameTriDK}}
+\index{SameTriDK@{SameTriDK}!GreenFHom3D@{GreenFHom3D}}
+\doxysubsubsection{\texorpdfstring{SameTriDK()}{SameTriDK()}}
+{\footnotesize\ttfamily \label{classGreenFHom3D_a419cbe00b5a2aed70ac546904a8a8d6f} 
+void Green\+FHom3\+D\+::\+Same\+Tri\+DK (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*} $>$ \&}]{fvec}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*} $>$ \&}]{fpvec}{, }\item[{std\+::vector$<$ std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ $>$ \&}]{DK}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Compute $\mathbf D$ and $\mathbf K$ for all RWG pairs on two triangles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fvec} & RWGs living on the observation triangle. \\
+\hline
+{\em fpvec} & RWGs living on the source triangle. \\
+\hline
+{\em DK} & Output matrix of pairs $(D,K)$ indexed by {\ttfamily }\mbox{[}i\mbox{]}\mbox{[}j\mbox{]}.\\
+\hline
+\end{DoxyParams}
+Adapts quadrature and analytic corrections depending on triangle adjacency\+: coincident, edge‑adjacent, vertex‑adjacent, or disjoint.
+
+This routine reuses geometry, quadrature points and kernel evaluations to fill many matrix entries at once\+: {\ttfamily fvec} lives on triangle T, {\ttfamily fpvec} on triangle T\textquotesingle{}. The logic mirrors the single-\/pair routines but amortizes the cost across pairs. 
+
+Implements \mbox{\hyperlink{classGreenF_a7968a039dbd8e597bf21973f72714ef8}{GreenF}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classGreenFHom3DPer2D_a1dc9dd84c93ee10b2fb4b1866103d957}{Green\+FHom3\+DPer2D}}.
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3D_8cpp_source_l00293}{293}} of file \mbox{\hyperlink{GreenFHom3D_8cpp_source}{Green\+FHom3\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3D_a419cbe00b5a2aed70ac546904a8a8d6f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3D_aee15ec1616a294e10b554f1afbb97845}\index{GreenFHom3D@{GreenFHom3D}!SameTriDKG@{SameTriDKG}}
+\index{SameTriDKG@{SameTriDKG}!GreenFHom3D@{GreenFHom3D}}
+\doxysubsubsection{\texorpdfstring{SameTriDKG()}{SameTriDKG()}}
+{\footnotesize\ttfamily \label{classGreenFHom3D_aee15ec1616a294e10b554f1afbb97845} 
+void Green\+FHom3\+D\+::\+Same\+Tri\+DKG (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*} $>$ \&}]{fvec}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*} $>$ \&}]{fpvec}{, }\item[{std\+::vector$<$ std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}, \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ $>$ $>$ \&}]{DK}{, }\item[{std\+::vector$<$ std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ $>$ $>$ \&}]{DKG}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Same as \doxylink{classGreenFHom3D_a419cbe00b5a2aed70ac546904a8a8d6f}{Same\+Tri\+DK} plus gradients (if provided by the GF). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fvec} & RWGs on the observation triangle. \\
+\hline
+{\em fpvec} & RWGs on the source triangle. \\
+\hline
+{\em DK} & Output matrix of $(D,K)$ pairs. \\
+\hline
+{\em DKG} & Output matrix of gradient pairs per entry. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Intended for different domains (no singularity subtraction here).
+\end{DoxyNote}
+DKG\mbox{[}k\mbox{]}\mbox{[}l\mbox{]}.first accumulates nabla\+G-\/weighted D-\/like terms; DKG\mbox{[}k\mbox{]}\mbox{[}l\mbox{]}.second holds a 3-\/vector with row-\/wise contributions using the second-\/derivative dyad. 
+
+Implements \mbox{\hyperlink{classGreenF_a2fb24564bc2011138ffcc29d0ae7fbb3}{GreenF}}.
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3D_8cpp_source_l00474}{474}} of file \mbox{\hyperlink{GreenFHom3D_8cpp_source}{Green\+FHom3\+D.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3D_aee15ec1616a294e10b554f1afbb97845_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGreenFHom3D_adff9d901394dd07c05a111b607c89075}\index{GreenFHom3D@{GreenFHom3D}!Smoothed@{Smoothed}}
+\index{Smoothed@{Smoothed}!GreenFHom3D@{GreenFHom3D}}
+\doxysubsubsection{\texorpdfstring{Smoothed()}{Smoothed()}}
+{\footnotesize\ttfamily \label{classGreenFHom3D_adff9d901394dd07c05a111b607c89075} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Green\+FHom3\+D\+::\+Smoothed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{rp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Smoothed scalar kernel used under singularity subtraction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation point. \\
+\hline
+{\em rp} & Source point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex scalar smoothed kernel.
+\end{DoxyReturn}
+For small $|r-r\textnormal{\textquotesingle}|$, we add/subtract a local expansion to tame the $1/|r-r\textnormal{\textquotesingle}|$ singularity during area integrations. This returns $G(r,r\textnormal{\textquotesingle}) - 1/(4\pi|r-r\textnormal{\textquotesingle}|) + k^2 |r-r\textnormal{\textquotesingle}| / (8\pi)$ which is bounded at coalescence and integrates well over triangles. 
+
+Reimplemented in \mbox{\hyperlink{classGreenFHom3DPer2D_a6ab5b9db19bf30afa1828652d428d4a8}{Green\+FHom3\+DPer2D}}.
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3D_8cpp_source_l00073}{73}} of file \mbox{\hyperlink{GreenFHom3D_8cpp_source}{Green\+FHom3\+D.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGreenFHom3D_adff9d901394dd07c05a111b607c89075_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classGreenFHom3D_ae0461a379c7344394246eb64b1b3cf56}\index{GreenFHom3D@{GreenFHom3D}!gauss@{gauss}}
+\index{gauss@{gauss}!GreenFHom3D@{GreenFHom3D}}
+\doxysubsubsection{\texorpdfstring{gauss}{gauss}}
+{\footnotesize\ttfamily \label{classGreenFHom3D_ae0461a379c7344394246eb64b1b3cf56} 
+\mbox{\hyperlink{classGaussQuad}{Gauss\+Quad}}$<$\mbox{\hyperlink{classGreenFHom3D}{Green\+FHom3D}}$>$ Green\+FHom3\+D\+::gauss\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{classGaussian}{Gaussian} quadrature helper. 
+
+
+
+Definition at line \mbox{\hyperlink{GreenFHom3D_8h_source_l00038}{38}} of file \mbox{\hyperlink{GreenFHom3D_8h_source}{Green\+FHom3\+D.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{GreenFHom3D_8h}{Green\+FHom3\+D.\+h}}\item 
+\mbox{\hyperlink{GreenFHom3D_8cpp}{Green\+FHom3\+D.\+cpp}}\end{DoxyCompactItemize}

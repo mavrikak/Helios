@@ -1,0 +1,7 @@
+<map id="GreenFLayered3D::evalGreenQSInter" name="GreenFLayered3D::evalGreenQSInter">
+<area shape="rect" id="Node000001" title="Evaluate quasi&#45;static (QS) contributions for inter&#45;layer interactions." alt="" coords="5,40,219,85"/>
+<area shape="rect" id="Node000002" href="$classGreenFLayered3D.html#a41c1370112d040a3dc4c44a5853022ed" title="Fresnel reflection/transmission at interface (delegates to utils)." alt="" coords="273,5,466,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="219,45,257,40,258,45,219,51"/>
+<area shape="rect" id="Node000003" href="$classGreenFLayered3D.html#a1fb4fa93c84d77750cac364641945725" title="Return layer index of a 3D point." alt="" coords="267,75,472,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="219,74,252,78,251,84,219,79"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="GaussQuad::I4" name="GaussQuad::I4">
+<area shape="rect" id="Node000001" title="I4 with on‑the‑fly vector kernel evaluation." alt="" coords="5,84,121,112"/>
+<area shape="rect" id="Node000002" href="$classTriangle.html#a1d3d08deeb999f339d2e821a877521ba" title="Surface area of the triangle." alt="" coords="190,5,300,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="90,81,168,43,185,36,187,41,170,48,92,86"/>
+<area shape="rect" id="Node000003" href="$classTriangle.html#ab78508a340ec5d345adf114b43563dbf" title="Centroid of the triangle." alt="" coords="184,57,307,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="121,87,168,80,169,85,122,92"/>
+<area shape="rect" id="Node000004" href="$classRWGFun.html#a7540ce2f84c6b42a29c2808504c47d42" title="Evaluate the RWG vector shape function at a point on the triangle." alt="" coords="175,109,316,137"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="122,103,160,109,159,114,121,108"/>
+<area shape="rect" id="Node000005" href="$classRWGFun.html#a6d9c854fc60bc02cb51ffb60cf388ccc" title="Get the pointer to the owner Triangle." alt="" coords="169,161,322,189"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="93,110,170,146,188,153,186,158,168,151,91,115"/>
+</map>

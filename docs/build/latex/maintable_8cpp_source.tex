@@ -1,0 +1,82 @@
+\doxysection{maintable.\+cpp}
+\hypertarget{maintable_8cpp_source}{}\label{maintable_8cpp_source}\index{maintable.cpp@{maintable.cpp}}
+\mbox{\hyperlink{maintable_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <blitz/array.h>}}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{CLParser_8h}{CLParser.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mathFunctions_8h}{mathFunctions.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00033}\mbox{\hyperlink{maintable_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{00033}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{maintable_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}\ *argv[])\ \{}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00034}00034\ \ \ \ \ \textcolor{keywordtype}{bool}\ help(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00035}00035\ \ \ \ \ std::string\ fileName1(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00036}00036\ \ \ \ \ std::string\ fileName2(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00037}00037\ \ \ \ \ std::string\ fileName3(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00038}00038\ \ \ \ \ std::string\ fileName4(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00040}00040\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{comment}{//\ Setup\ command\ line\ arguments}}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00042}00042\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00043}00043\ \ \ \ \ std::vector<CLParser\ *>\ clParser;}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00044}00044\ \ \ \ \ clParser.push\_back(\textcolor{keyword}{new}\ \mbox{\hyperlink{classCLStringOption}{CLStringOption}}(\textcolor{stringliteral}{"{}-\/r"{}},\ \&fileName1));}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00045}00045\ \ \ \ \ clParser.push\_back(\textcolor{keyword}{new}\ \mbox{\hyperlink{classCLStringOption}{CLStringOption}}(\textcolor{stringliteral}{"{}-\/w"{}},\ \&fileName2));}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00046}00046\ \ \ \ \ clParser.push\_back(\textcolor{keyword}{new}\ \mbox{\hyperlink{classCLStringOption}{CLStringOption}}(\textcolor{stringliteral}{"{}-\/rb"{}},\ \&fileName3));}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00047}00047\ \ \ \ \ clParser.push\_back(\textcolor{keyword}{new}\ \mbox{\hyperlink{classCLStringOption}{CLStringOption}}(\textcolor{stringliteral}{"{}-\/wb"{}},\ \&fileName4));}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00048}00048\ \ \ \ \ clParser.push\_back(\textcolor{keyword}{new}\ \mbox{\hyperlink{classCLFlag}{CLFlag}}(\textcolor{stringliteral}{"{}-\/-\/help"{}},\ \&help));}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{comment}{//\ Parse\ command\ line\ and\ overwrite\ defaults}}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00051}00051\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::vector<CLParser\ *>::iterator\ pIter\ =\ clParser.begin();}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ pIter\ !=\ clParser.end();\ pIter++)\ \{}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ (*pIter)-\/>Parse(argc,\ argv);}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00054}00054\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{comment}{//\ Dispatch\ modes}}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00059}00059\ \ \ \ \ \textcolor{keywordflow}{if}\ (help)\ \{}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ std::cout}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}HELIOS\ SIE\ periodic\ error\ function\ table\ generation"{}}}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ \ \ read\ text\ table:\ -\/r\ [FILENAME]"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ \ \ write\ text\ table:\ -\/w\ [FILENAME]"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ \ \ read\ binary\ table:\ -\/rb\ [FILENAME]"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ \ \ write\ binary\ table:\ -\/wb\ [FILENAME]"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00067}00067\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (fileName1\ !=\ \textcolor{stringliteral}{"{}"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Loading\ lookup\ table..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classLookupTable}{LookupTable}}*\ t\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classLookupTable}{LookupTable}}(fileName1);}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Size:"{}}\ <<\ t-\/>\mbox{\hyperlink{classLookupTable_a0e16d61af82fd44504de9960825907fc}{sizeRe}}\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ t-\/>\mbox{\hyperlink{classLookupTable_abb858d416dff348b9f247aefd350bf9e}{sizeIm}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Max:"{}}\ <<\ t-\/>\mbox{\hyperlink{classLookupTable_a8cbd9aa7e94d9de1700f11d69609f7a8}{maxRe}}\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ t-\/>\mbox{\hyperlink{classLookupTable_a39f15ca38af6eaa9defcbc4eab24cd0f}{maxIm}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Inc:"{}}\ <<\ t-\/>\mbox{\hyperlink{classLookupTable_a68e4429b3dfa69fa9feb43345ae35235}{incRe}}\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ t-\/>\mbox{\hyperlink{classLookupTable_aa6a2f49d4f7ff001bf2d7bf5cad653c6}{incIm}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}f"{}}\ <<\ t-\/>\mbox{\hyperlink{classLookupTable_a16122241ad91c9d12e064818c7f14431}{arg}}[0][0]\ <<\ \textcolor{stringliteral}{"{}:"{}}\ <<\ t-\/>\mbox{\hyperlink{classLookupTable_ab96a1f939d8f1a7e37dc4d6811bb8a61}{fun}}[0][0]\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00075}00075\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (fileName2\ !=\ \textcolor{stringliteral}{"{}"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ maxRe,\ maxIm,\ incRe,\ incIm;}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Enter\ maxRe\ maxIm\ incRe\ incIm:"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ std::cin\ >>\ maxRe\ >>\ maxIm\ >>\ incRe\ >>\ incIm;}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{mathFunctions_8h_ab5ae92d9600ad72d4c0c18a49f876831}{ErfcLookupTable}}(fileName2,\ maxRe,\ maxIm,\ incRe,\ incIm);}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00082}00082\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (fileName3\ !=\ \textcolor{stringliteral}{"{}"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Loading\ lookup\ table..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classLookupTableBin}{LookupTableBin}}*\ tb\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classLookupTableBin}{LookupTableBin}}(fileName3);}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Size:"{}}\ <<\ tb-\/>\mbox{\hyperlink{classLookupTableBin_a17897e0346bc3357bc7b16433da6229b}{sizeRe}}\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ tb-\/>\mbox{\hyperlink{classLookupTableBin_a667480536aba14eb253df98229d1d3b8}{sizeIm}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Max:"{}}\ <<\ tb-\/>\mbox{\hyperlink{classLookupTableBin_ace7419412cd9a99ebc21e39f77e6dbfc}{maxRe}}\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ tb-\/>\mbox{\hyperlink{classLookupTableBin_a215c8a5987d6fe6227903e45767c2a20}{maxIm}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Inc:"{}}\ <<\ tb-\/>\mbox{\hyperlink{classLookupTableBin_ac90e3df8c8dd9483ed0dfba6deb9c1c3}{incRe}}\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ tb-\/>\mbox{\hyperlink{classLookupTableBin_a037dcf58c2330664bf67dbd5de5e28e2}{incIm}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}f"{}}\ <<\ tb-\/>\mbox{\hyperlink{classLookupTableBin_aaa0009e75e7ed5f97b1e062bb7c7b0d9}{arg}}[0][0]\ <<\ \textcolor{stringliteral}{"{}:"{}}\ <<\ tb-\/>\mbox{\hyperlink{classLookupTableBin_a3911b3d3cc5ae9176b084b2d173f7ccd}{fun}}[0][0]\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00090}00090\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (fileName4\ !=\ \textcolor{stringliteral}{"{}"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ maxRe,\ maxIm,\ incRe,\ incIm;}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Enter\ maxRe\ maxIm\ incRe\ incIm:"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ std::cin\ >>\ maxRe\ >>\ maxIm\ >>\ incRe\ >>\ incIm;}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{mathFunctions_8h_a619bd9a7be3251a7f44191aaeaa6ab7c}{ErfcLookupTableBin}}(fileName4,\ maxRe,\ maxIm,\ incRe,\ incIm);}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00095}00095\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00097}00097\ \}}
+\DoxyCodeLine{\Hypertarget{maintable_8cpp_source_l00098}00098\ }
+
+\end{DoxyCode}

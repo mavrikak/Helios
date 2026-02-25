@@ -1,0 +1,24 @@
+name: Helios
+channels:
+  - conda-forge
+dependencies:
+  # Core compilers (for Linux, use platform-appropriate variants on macOS/Windows)
+  - gxx_linux-64
+  - gfortran_linux-64
+
+  # Math and numerical libs
+  - openblas
+  - blitz
+
+  # Python runtime and analysis tools
+  - python=3.10
+  - numpy
+  - scipy
+  - matplotlib
+  - PySide6
+  - tqdm
+  - miepython
+  
+  # Doxygen and Graphviz
+  - doxygen
+  - graphviz

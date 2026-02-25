@@ -1,0 +1,76 @@
+\doxysection{Domain\+Hom3\+D.\+h}
+\hypertarget{DomainHom3D_8h_source}{}\label{DomainHom3D_8h_source}\index{DomainHom3D.h@{DomainHom3D.h}}
+\mbox{\hyperlink{DomainHom3D_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00011}00011\ \textcolor{preprocessor}{\#ifndef\ DOMAINHOM3D\_H}}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00012}00012\ \textcolor{preprocessor}{\#define\ DOMAINHOM3D\_H}}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Domain_8h}{Domain.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{GreenFHom3D_8h}{GreenFHom3D.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{SurfaceMesh_8h}{SurfaceMesh.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00017}00017\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00031}\mbox{\hyperlink{classDomainHom3D}{00031}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDomainHom3D_ae2c7b0309cdbeda660e9e937de24c2b6}{DomainHom3D}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classDomain_a3f6f9e8ec932680440098679b6fe3300}{Domain}}\ \{}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00032}00032\ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00033}\mbox{\hyperlink{classDomainHom3D_a218194b0bb7ed93132584fe32d8582b0}{00033}}\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classDomainHom3D_a218194b0bb7ed93132584fe32d8582b0}{epsilon}};\ }
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00034}\mbox{\hyperlink{classDomainHom3D_af00d5867cbaffa8a36f0bedf7210def2}{00034}}\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classDomainHom3D_af00d5867cbaffa8a36f0bedf7210def2}{mu}};\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00035}00035\ \ \ }
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00040}00040\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classDomainHom3D_a3877e2d1f2020c251b5e3c74e5c40594}{InitGrnFun}}();}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00042}00042\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00043}00043\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00044}00044\ \ \ \textcolor{comment}{//\ Construction\ \&\ lifetime}}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00045}00045\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00054}00054\ \ \ \mbox{\hyperlink{classDomainHom3D_ae2c7b0309cdbeda660e9e937de24c2b6}{DomainHom3D}}(\mbox{\hyperlink{classSurfaceMesh}{SurfaceMesh}}\ *inMesh,\ \textcolor{keywordtype}{int}\ inDIndex,\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ inEpsilon,\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ inMu,}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ inVacuumWavelength);}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00056}00056\ \ \ }
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00066}00066\ \ \ \mbox{\hyperlink{classDomainHom3D_ae2c7b0309cdbeda660e9e937de24c2b6}{DomainHom3D}}(\mbox{\hyperlink{classSurfaceMesh}{SurfaceMesh}}\ *inMesh,\ \textcolor{keywordtype}{int}\ inDIndex,\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ inEpsilon,\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ inMu,}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ inVacuumWavelength,\ \textcolor{keywordtype}{bool}\ parent);}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00068}00068\ \ \ }
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00070}00070\ \ \ \mbox{\hyperlink{classDomainHom3D_ae574808b6729d8bdbd5aabe6c069eaf8}{\string~DomainHom3D}}();}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00071}00071\ \ \ }
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00072}00072\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00073}00073\ \ \ \textcolor{comment}{//\ Formulation\ \&\ materials}}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00074}00074\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00080}00080\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classDomainHom3D_ae1bfe7c17902aac07736f3070aac748a}{InitFormulation}}(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ inVacWavelength);}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00087}00087\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classDomainHom3D_a2527e53d1a3a3821dfb0b05deb6f685e}{Epsilon}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ pos);}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00088}00088\ \ \ }
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00094}00094\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classDomainHom3D_a341ad7a1fe44cac9debfcae58ae1b142}{Mu}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ pos);}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00099}\mbox{\hyperlink{classDomainHom3D_ab4328b1e3b1fb719590ad088b1e474b9}{00099}}\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classDomainHom3D_ab4328b1e3b1fb719590ad088b1e474b9}{IsLayered}}()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00101}00101\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00102}00102\ \ \ \textcolor{comment}{//\ Layered‑media\ helpers}}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00103}00103\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00108}\mbox{\hyperlink{classDomainHom3D_af63b748ae545711c226bf89934858cd6}{00108}}\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classGreenF}{GreenF}}*\ \mbox{\hyperlink{classDomainHom3D_af63b748ae545711c226bf89934858cd6}{GetGrnFunLayeredFields}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};\ \}}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00109}00109\ \ \ }
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00114}00114\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDomainHom3D_a7f3d22569004c8116270b249012aa762}{newGrnFunLayered}}(std::vector<rvec>\ \&posvec);}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00116}00116\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00117}00117\ \ \ \textcolor{comment}{//\ Cross‑sections\ (post‑processing)}}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00118}00118\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00124}00124\ \ \ \textcolor{keyword}{virtual}\ std::vector<double>\ \mbox{\hyperlink{classDomainHom3D_af51c0166dbce1642b143f7bf910b7c12}{scatteringCS}}(blitz::Array<dcmplx,\ 1>\ *solVector);}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00125}00125\ \ \ }
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00132}00132\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classDomainHom3D_ad19635c8b33f69ebf6cb3cd8788f7f23}{absorptionCS}}(blitz::Array<dcmplx,\ 1>\ *solVector);}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00133}00133\ \ \ }
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00140}00140\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classDomainHom3D_aa6a76dafe56204c15b80e491e6a2b21d}{extinctionCS}}(blitz::Array<dcmplx,\ 1>\ *solVector);}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00142}00142\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00143}00143\ \ \ \textcolor{comment}{//\ Incident\ field\ factories}}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00144}00144\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00152}00152\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classDomainHom3D_ac0c154d55efe4f3819ee764fa58e3e2d}{AddPlaneWave}}(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ wavelength,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ propagationDirection,}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00153}00153\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ polarization);}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00154}00154\ \ \ }
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00161}00161\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classDomainHom3D_a08b2e0c472b20193f23c4dd4b3c3a731}{AddDipole}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ position,\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ polarization);}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00162}00162\ \ \ }
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00172}00172\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classDomainHom3D_addce520ad0085aae8f454c377131fce7}{AddGaussian}}(\textcolor{keywordtype}{double}\ wavelength,\ \textcolor{keywordtype}{double}\ waist,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ focal\_point,}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00173}00173\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ propagationdirection,\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ polarization);}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00174}00174\ \};}
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00175}00175\ }
+\DoxyCodeLine{\Hypertarget{DomainHom3D_8h_source_l00176}00176\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,49 @@
+\doxysection{SIEForm\+PMCHW.\+h File Reference}
+\hypertarget{SIEFormPMCHW_8h}{}\label{SIEFormPMCHW_8h}\index{SIEFormPMCHW.h@{SIEFormPMCHW.h}}
+
+
+Header file for the \doxylink{classSIEFormPMCHW}{SIEForm\+PMCHW} class.  
+
+
+{\ttfamily \#include $<$blitz/array.\+h$>$}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+{\ttfamily \#include "{}Green\+F.\+h"{}}\newline
+{\ttfamily \#include "{}Incident\+Field.\+h"{}}\newline
+{\ttfamily \#include "{}RWGFun.\+h"{}}\newline
+{\ttfamily \#include "{}SIEForm.\+h"{}}\newline
+{\ttfamily \#include "{}globals.\+h"{}}\newline
+Include dependency graph for SIEForm\+PMCHW.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{SIEFormPMCHW_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{SIEFormPMCHW_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classSIEFormPMCHW}{SIEForm\+PMCHW}}
+\begin{DoxyCompactList}\small\item\em PMCHWT formulation for SIE in homogeneous and layered media. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for the \doxylink{classSIEFormPMCHW}{SIEForm\+PMCHW} class. 
+
+PMCHWT (Poggio–\+Miller–\+Chang–\+Harrington–\+Wu-\/\+Tsai) surface-\/integral formulation for penetrable objects. Supports both homogeneous and layered media.
+
+Responsibilities\+:
+\begin{DoxyItemize}
+\item Assemble the linear system matrix A and RHS vector b for PMCHWT.
+\item Provide parallel assembly helpers (thread-\/partitioned over triangles).
+\item In layered media, combine free-\/space and layered Green\textquotesingle{}s contributions. 
+\end{DoxyItemize}
+
+Definition in file \mbox{\hyperlink{SIEFormPMCHW_8h_source}{SIEForm\+PMCHW.\+h}}.
+

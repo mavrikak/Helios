@@ -1,0 +1,14 @@
+# Ignore all contents of build/ and sim_res/
+apps/**
+build/**
+sim_res/**
+sim_data/test/**
+pytools/__pycache__/**
+
+# …but keep a placeholder so the folder exists in git
+!build/.gitkeep
+!sim_res/.gitkeep
+
+# VS Code files #
+.vscode/*
+src/.vscode/*

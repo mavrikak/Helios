@@ -1,0 +1,39 @@
+\doxysection{Green\+FHom3\+DPer.\+cpp}
+\hypertarget{GreenFHom3DPer_8cpp_source}{}\label{GreenFHom3DPer_8cpp_source}\index{GreenFHom3DPer.cpp@{GreenFHom3DPer.cpp}}
+\mbox{\hyperlink{GreenFHom3DPer_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{GreenFHom3DPer_8h}{GreenFHom3DPer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8cpp_source_l00013}00013\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8cpp_source_l00014}00014\ \textcolor{comment}{//\ Construction\ \&\ lifetime}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8cpp_source_l00015}00015\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8cpp_source_l00016}\mbox{\hyperlink{classGreenFHom3DPer_a414d2e05ac1b3d089e2a5556e6e16a93}{00016}}\ \mbox{\hyperlink{classGreenFHom3DPer_a414d2e05ac1b3d089e2a5556e6e16a93}{GreenFHom3DPer::GreenFHom3DPer}}(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ wvl,\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ eps,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ kin)}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8cpp_source_l00017}00017\ \ \ \ \ :\ \mbox{\hyperlink{classGreenFHom3D_ac928f16e6e79c75c002d9a721a8858d8}{GreenFHom3D}}(wvl,\ eps),\ \mbox{\hyperlink{classGreenFHom3DPer_a2fe8eb00a6fb3e3a3cfb5eb3ac1088f9}{k}}(kin),\ \mbox{\hyperlink{classGreenFHom3DPer_a9b7cff56f8284219d88234348791d1cc}{evaluationTerms}}(0)\ \{\}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8cpp_source_l00019}\mbox{\hyperlink{classGreenFHom3DPer_aa37478b09d78cff44338edc1b4be41ac}{00019}}\ \mbox{\hyperlink{classGreenFHom3DPer_a414d2e05ac1b3d089e2a5556e6e16a93}{GreenFHom3DPer::GreenFHom3DPer}}(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ wvl,\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ eps,\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ mu,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ kin)}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8cpp_source_l00020}00020\ \ \ \ \ :\ \mbox{\hyperlink{classGreenFHom3D_ac928f16e6e79c75c002d9a721a8858d8}{GreenFHom3D}}(wvl,\ eps,\ mu),\ \mbox{\hyperlink{classGreenFHom3DPer_a2fe8eb00a6fb3e3a3cfb5eb3ac1088f9}{k}}(kin),\ \mbox{\hyperlink{classGreenFHom3DPer_a9b7cff56f8284219d88234348791d1cc}{evaluationTerms}}(0)\ \{\}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8cpp_source_l00022}\mbox{\hyperlink{classGreenFHom3DPer_a30bf1182b63716f68cfa3e441c0b128c}{00022}}\ \mbox{\hyperlink{classGreenFHom3DPer_a30bf1182b63716f68cfa3e441c0b128c}{GreenFHom3DPer::\string~GreenFHom3DPer}}()\ \{\}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8cpp_source_l00024}00024\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8cpp_source_l00025}00025\ \textcolor{comment}{//\ Thresholding\ helper}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8cpp_source_l00026}00026\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8cpp_source_l00027}\mbox{\hyperlink{classGreenFHom3DPer_af451f0bfd43404b11e5ea97c9ee84c9d}{00027}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGreenFHom3DPer_af451f0bfd43404b11e5ea97c9ee84c9d}{GreenFHom3DPer::Assign}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ r,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rp,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ l,}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::pair<bool,\ rvec>\&\ out)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8cpp_source_l00029}00029\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classGreenFHom3D_a139d04e746cd17d5b738a972dc5128ad}{GreenFHom3D::AboveThreshold}}(r\ -\/\ rp,\ l))\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8cpp_source_l00030}00030\ \ \ \ \ out.first\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8cpp_source_l00031}00031\ \ \ \ \ out.second\ =\ l;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8cpp_source_l00032}00032\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8cpp_source_l00033}00033\ \}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8cpp_source_l00035}00035\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8cpp_source_l00036}00036\ \textcolor{comment}{//\ Controls}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8cpp_source_l00037}00037\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8cpp_source_l00038}\mbox{\hyperlink{classGreenFHom3DPer_a8b1a5f0f63af1baf32caeebbf9b33170}{00038}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGreenFHom3DPer_a8b1a5f0f63af1baf32caeebbf9b33170}{GreenFHom3DPer::EvaluationTerms}}(\textcolor{keywordtype}{int}\ n)\ \{}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8cpp_source_l00039}00039\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Number\ of\ evaluation\ terms:\ "{}}\ <<\ n\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8cpp_source_l00040}00040\ \ \ \mbox{\hyperlink{classGreenFHom3DPer_a9b7cff56f8284219d88234348791d1cc}{evaluationTerms}}\ =\ n;}
+\DoxyCodeLine{\Hypertarget{GreenFHom3DPer_8cpp_source_l00041}00041\ \}}
+
+\end{DoxyCode}

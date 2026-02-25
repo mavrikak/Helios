@@ -1,0 +1,5 @@
+<map id="IntegrandIntra::flattenVector" name="IntegrandIntra::flattenVector">
+<area shape="rect" id="Node000001" title="Helper function to extract selected elements from a 2D vector." alt="" coords="5,5,210,33"/>
+<area shape="rect" id="Node000002" href="$structIntegrandIntra.html#af909e5fd6a7e84bf7688bbec4656326b" title="Helper function to safely access matrix elements." alt="" coords="258,5,436,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="210,16,242,16,242,22,210,22"/>
+</map>

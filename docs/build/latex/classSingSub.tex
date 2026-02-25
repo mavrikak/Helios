@@ -1,0 +1,589 @@
+\doxysection{Sing\+Sub Class Reference}
+\hypertarget{classSingSub}{}\label{classSingSub}\index{SingSub@{SingSub}}
+
+
+Analytic helpers for singularity subtraction on a single triangle.  
+
+
+
+
+{\ttfamily \#include $<$Sing\+Sub.\+h$>$}
+
+
+
+Collaboration diagram for Sing\+Sub\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classSingSub__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSingSub_a4e35167ef3a83526066cafd849baaf20}{Sing\+Sub}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSingSub_ae84ba8e91ca5a0aeee4246d8ee0f033d}{Init}} (\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}rwg\+In, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r\+In)
+\begin{DoxyCompactList}\small\item\em Initialize with triangle from RWG and observation point r. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSingSub_a20337fe20529d26c1775c8ba6d47cad0}{Set\+Triangle\+RWG}} (\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}rwg\+In, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r\+In)
+\begin{DoxyCompactList}\small\item\em Preferred initialization that fills all cached arrays (ILar/\+ISar). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSingSub_a9d74100325023b4d1c156bd97ae240b3}{Change\+Triangle\+RWG}} (\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}rwg\+In)
+\begin{DoxyCompactList}\small\item\em Update only the RWG/triangle; keep the same observation point r. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classSingSub_a446879b799b19a2a606477fd316eb460}{IL}} (int q, int tri\+Edge\+Index)
+\begin{DoxyCompactList}\small\item\em Exact line integral $\int_{edge} R^q\,ds$ along a triangle edge. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classSingSub_a11a285881f5f92df576070e487a69ed0}{IS}} (int q)
+\begin{DoxyCompactList}\small\item\em Exact surface integral $\iint_{triangle} R^q\,dS$. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classSingSub_ac65ad1ad2d03f9de274b24d19f457f6e}{K1}} (int q)
+\begin{DoxyCompactList}\small\item\em K1(q) scalar term. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classSingSub_aed0bb257cd3c94dccd5b6cc0ecdd1c5e}{K2}} (int q)
+\begin{DoxyCompactList}\small\item\em K2(q) vector term. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classSingSub_a3e9e0b5a61df98d8f8138544c7df3da0}{K3}} (int q)
+\begin{DoxyCompactList}\small\item\em K3(q) vector term. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classSingSub_aa4dc7cddb70399aab67741fe6b0a9397}{K3n}} (int q)
+\begin{DoxyCompactList}\small\item\em K3n(q) = normal-\/only contribution of K3(q). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classSingSub_ab61a21e3498d2d6a4c0796254cf126ed}{K4}} (int q)
+\begin{DoxyCompactList}\small\item\em K4(q) vector term. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSingSub_aba7834cbc417431f3b1302a2481051ac}{rwg\+Fun}}
+\begin{DoxyCompactList}\small\item\em RWG function defining the triangle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classSingSub_a054d7dff391f7575494f70a5df27e7ca}{r}}
+\begin{DoxyCompactList}\small\item\em Observation point. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} $>$ \mbox{\hyperlink{classSingSub_aeeab3df2135a12a8fcca03706861d3ad}{edge\+Normals}}
+\begin{DoxyCompactList}\small\item\em Unit normals of triangle\textquotesingle{}s edges. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classSingSub_a4d78ff79f077722d66737a8e8699f6c4}{t}}
+\begin{DoxyCompactList}\small\item\em Signed distances to the three supporting lines. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classSingSub_af93426a24d1988d423c99be23b873b58}{h}}
+\begin{DoxyCompactList}\small\item\em Signed distance from r to the triangle plane. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classSingSub_afad4de2e273885a72ed545af004ce5b6}{omega}}
+\begin{DoxyCompactList}\small\item\em Signed solid angle subtended by the triangle at r. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTriangle}{Triangle}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSingSub_a89036a2faa57e05b8aaab4fbeb3c54d9}{t\+Ptr}}
+\begin{DoxyCompactList}\small\item\em Convenience pointer to the triangle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classSingSub_a0a2a44a6151665cff1c305fbec7e1068}{e\+Nar}} \mbox{[}3\mbox{]}
+\begin{DoxyCompactList}\small\item\em Edge-\/normal directions (unit) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classSingSub_a57cccecd5fac47b5cb507128d1e501a8}{tar}} \mbox{[}3\mbox{]}
+\begin{DoxyCompactList}\small\item\em -\/dot(e\+Nar\mbox{[}i\mbox{]}, a\mbox{[}i\mbox{]}) with a\mbox{[}i\mbox{]} = Node(i) − r \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classSingSub_a2b9ff2ec2079602e13d1c2b2315e1217}{ILar}} \mbox{[}3\mbox{]}\mbox{[}3\mbox{]}
+\begin{DoxyCompactList}\small\item\em Edge integrals (edge index 0...2; columns for q = -\/1, 1, 3 -\/\texorpdfstring{$>$}{>} indices 0,1,2) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classSingSub_a4aa2f73a45f2f4f8dddf3562f7941f8e}{ISar}} \mbox{[}4\mbox{]}
+\begin{DoxyCompactList}\small\item\em Surface integrals for q = -\/3, -\/1, 1, 3 -\/\texorpdfstring{$>$}{>} indices 0..3. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Analytic helpers for singularity subtraction on a single triangle. 
+
+Given a triangle (from a RWG function) and an observation point r, this class computes line and surface integrals of $ R^q (q \in \{-3,-1,1,3\}) $, and the derived vector expressions {\ttfamily K1-\/\+K4} used in PMCHWT kernels.
+
+Typical use\+:
+\begin{DoxyItemize}
+\item Call \doxylink{classSingSub_a20337fe20529d26c1775c8ba6d47cad0}{Set\+Triangle\+RWG()} once for a new triangle/point pair.
+\item Use {\ttfamily K1-\/\+K4} or {\ttfamily IL/\+IS} repeatedly without recomputing geometry.
+\item If only the RWG/triangle changes but r stays the same, call \doxylink{classSingSub_a9d74100325023b4d1c156bd97ae240b3}{Change\+Triangle\+RWG()} and reuse the cached r-\/dependent terms. 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{SingSub_8h_source_l00036}{36}} of file \mbox{\hyperlink{SingSub_8h_source}{Sing\+Sub.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classSingSub_a4e35167ef3a83526066cafd849baaf20}\index{SingSub@{SingSub}!SingSub@{SingSub}}
+\index{SingSub@{SingSub}!SingSub@{SingSub}}
+\doxysubsubsection{\texorpdfstring{SingSub()}{SingSub()}}
+{\footnotesize\ttfamily \label{classSingSub_a4e35167ef3a83526066cafd849baaf20} 
+Sing\+Sub\+::\+Sing\+Sub (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+
+
+Definition at line \mbox{\hyperlink{SingSub_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{SingSub_8cpp_source}{Sing\+Sub.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSingSub_a9d74100325023b4d1c156bd97ae240b3}\index{SingSub@{SingSub}!ChangeTriangleRWG@{ChangeTriangleRWG}}
+\index{ChangeTriangleRWG@{ChangeTriangleRWG}!SingSub@{SingSub}}
+\doxysubsubsection{\texorpdfstring{ChangeTriangleRWG()}{ChangeTriangleRWG()}}
+{\footnotesize\ttfamily \label{classSingSub_a9d74100325023b4d1c156bd97ae240b3} 
+int Sing\+Sub\+::\+Change\+Triangle\+RWG (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{rwg\+In}{}\end{DoxyParamCaption})}
+
+
+
+Update only the RWG/triangle; keep the same observation point r. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rwg\+In} & New RWG function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SingSub_8cpp_source_l00198}{198}} of file \mbox{\hyperlink{SingSub_8cpp_source}{Sing\+Sub.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSingSub_a9d74100325023b4d1c156bd97ae240b3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSingSub_a446879b799b19a2a606477fd316eb460}\index{SingSub@{SingSub}!IL@{IL}}
+\index{IL@{IL}!SingSub@{SingSub}}
+\doxysubsubsection{\texorpdfstring{IL()}{IL()}}
+{\footnotesize\ttfamily \label{classSingSub_a446879b799b19a2a606477fd316eb460} 
+double Sing\+Sub\+::\+IL (\begin{DoxyParamCaption}\item[{int}]{q}{, }\item[{int}]{tri\+Edge\+Index}{}\end{DoxyParamCaption})}
+
+
+
+Exact line integral $\int_{edge} R^q\,ds$ along a triangle edge. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & Power of R (allowed\+: -\/1, 1, 3). \\
+\hline
+{\em tri\+Edge\+Index} & Edge index (0,1,2) in the triangle\textquotesingle{}s local ordering. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value of the integral.
+\end{DoxyReturn}
+Exact line integral of $ R^q $ along edge tri\+Edge\+Index.
+
+Handles endpoints where {\ttfamily Rp==0} or {\ttfamily Rm==0} in a way suitable for singularity subtraction\+: the logarithmic divergence of IL(-\/1) at the vertex is cancelled by its prefactor in the combined expressions; for q\texorpdfstring{$>$}{>}−1, the log term is multiplied by R0\texorpdfstring{$^\wedge$}{\string^}2 which vanishes at those endpoints. 
+
+Definition at line \mbox{\hyperlink{SingSub_8cpp_source_l00250}{250}} of file \mbox{\hyperlink{SingSub_8cpp_source}{Sing\+Sub.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{classSingSub_a446879b799b19a2a606477fd316eb460_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSingSub_ae84ba8e91ca5a0aeee4246d8ee0f033d}\index{SingSub@{SingSub}!Init@{Init}}
+\index{Init@{Init}!SingSub@{SingSub}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily \label{classSingSub_ae84ba8e91ca5a0aeee4246d8ee0f033d} 
+int Sing\+Sub\+::\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{rwg\+In}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r\+In}{}\end{DoxyParamCaption})}
+
+
+
+Initialize with triangle from RWG and observation point r. 
+
+Computes edge normals, distances t\+\_\+i, signed plane distance h, and signed solid angle omega. Use this when you want a single call that refreshes all geometric cache for both triangle and r.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rwg\+In} & RWG function whose triangle is integrated over. \\
+\hline
+{\em r\+In} & Observation point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success.
+\end{DoxyReturn}
+Initialize with triangle from RWG and observation point r.
+
+Computes\+:
+\begin{DoxyItemize}
+\item unit edge-\/normal directions (tangent x Ref\+Normal\+Vector) for each edge,
+\item signed distances t\+\_\+i from r to the three supporting lines,
+\item signed plane distance h = n(r − r0), with n = Ref\+Normal\+Vector(),
+\item signed solid angle omega subtended by the triangle at r.
+\end{DoxyItemize}
+
+The solid angle sign follows the sign of h. 
+
+Definition at line \mbox{\hyperlink{SingSub_8cpp_source_l00033}{33}} of file \mbox{\hyperlink{SingSub_8cpp_source}{Sing\+Sub.\+cpp}}.
+
+\Hypertarget{classSingSub_a11a285881f5f92df576070e487a69ed0}\index{SingSub@{SingSub}!IS@{IS}}
+\index{IS@{IS}!SingSub@{SingSub}}
+\doxysubsubsection{\texorpdfstring{IS()}{IS()}}
+{\footnotesize\ttfamily \label{classSingSub_a11a285881f5f92df576070e487a69ed0} 
+double Sing\+Sub\+::\+IS (\begin{DoxyParamCaption}\item[{int}]{q}{}\end{DoxyParamCaption})}
+
+
+
+Exact surface integral $\iint_{triangle} R^q\,dS$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & Power of R (allowed\+: -\/3, -\/1, 1, 3). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value of the integral. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SingSub_8cpp_source_l00301}{301}} of file \mbox{\hyperlink{SingSub_8cpp_source}{Sing\+Sub.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{classSingSub_a11a285881f5f92df576070e487a69ed0_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSingSub_ac65ad1ad2d03f9de274b24d19f457f6e}\index{SingSub@{SingSub}!K1@{K1}}
+\index{K1@{K1}!SingSub@{SingSub}}
+\doxysubsubsection{\texorpdfstring{K1()}{K1()}}
+{\footnotesize\ttfamily \label{classSingSub_ac65ad1ad2d03f9de274b24d19f457f6e} 
+double Sing\+Sub\+::\+K1 (\begin{DoxyParamCaption}\item[{int}]{q}{}\end{DoxyParamCaption})}
+
+
+
+K1(q) scalar term. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & One of \{-\/3, -\/1, 1, 3\}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Scalar K1 value. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SingSub_8cpp_source_l00204}{204}} of file \mbox{\hyperlink{SingSub_8cpp_source}{Sing\+Sub.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSingSub_ac65ad1ad2d03f9de274b24d19f457f6e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSingSub_aed0bb257cd3c94dccd5b6cc0ecdd1c5e}\index{SingSub@{SingSub}!K2@{K2}}
+\index{K2@{K2}!SingSub@{SingSub}}
+\doxysubsubsection{\texorpdfstring{K2()}{K2()}}
+{\footnotesize\ttfamily \label{classSingSub_aed0bb257cd3c94dccd5b6cc0ecdd1c5e} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} Sing\+Sub\+::\+K2 (\begin{DoxyParamCaption}\item[{int}]{q}{}\end{DoxyParamCaption})}
+
+
+
+K2(q) vector term. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & One of \{-\/3, -\/1, 1, 3\}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector K2 value. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SingSub_8cpp_source_l00207}{207}} of file \mbox{\hyperlink{SingSub_8cpp_source}{Sing\+Sub.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSingSub_aed0bb257cd3c94dccd5b6cc0ecdd1c5e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSingSub_a3e9e0b5a61df98d8f8138544c7df3da0}\index{SingSub@{SingSub}!K3@{K3}}
+\index{K3@{K3}!SingSub@{SingSub}}
+\doxysubsubsection{\texorpdfstring{K3()}{K3()}}
+{\footnotesize\ttfamily \label{classSingSub_a3e9e0b5a61df98d8f8138544c7df3da0} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} Sing\+Sub\+::\+K3 (\begin{DoxyParamCaption}\item[{int}]{q}{}\end{DoxyParamCaption})}
+
+
+
+K3(q) vector term. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & One of \{-\/3, -\/1, 1, 3\}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector K3 value. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SingSub_8cpp_source_l00218}{218}} of file \mbox{\hyperlink{SingSub_8cpp_source}{Sing\+Sub.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSingSub_a3e9e0b5a61df98d8f8138544c7df3da0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSingSub_aa4dc7cddb70399aab67741fe6b0a9397}\index{SingSub@{SingSub}!K3n@{K3n}}
+\index{K3n@{K3n}!SingSub@{SingSub}}
+\doxysubsubsection{\texorpdfstring{K3n()}{K3n()}}
+{\footnotesize\ttfamily \label{classSingSub_aa4dc7cddb70399aab67741fe6b0a9397} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} Sing\+Sub\+::\+K3n (\begin{DoxyParamCaption}\item[{int}]{q}{}\end{DoxyParamCaption})}
+
+
+
+K3n(q) = normal-\/only contribution of K3(q). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & One of \{-\/3, -\/1, 1, 3\}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector aligned with Ref\+Normal\+Vector(). 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SingSub_8cpp_source_l00229}{229}} of file \mbox{\hyperlink{SingSub_8cpp_source}{Sing\+Sub.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSingSub_aa4dc7cddb70399aab67741fe6b0a9397_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSingSub_ab61a21e3498d2d6a4c0796254cf126ed}\index{SingSub@{SingSub}!K4@{K4}}
+\index{K4@{K4}!SingSub@{SingSub}}
+\doxysubsubsection{\texorpdfstring{K4()}{K4()}}
+{\footnotesize\ttfamily \label{classSingSub_ab61a21e3498d2d6a4c0796254cf126ed} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} Sing\+Sub\+::\+K4 (\begin{DoxyParamCaption}\item[{int}]{q}{}\end{DoxyParamCaption})}
+
+
+
+K4(q) vector term. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & One of \{-\/3, -\/1, 1, 3\}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector K4 value. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SingSub_8cpp_source_l00237}{237}} of file \mbox{\hyperlink{SingSub_8cpp_source}{Sing\+Sub.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{classSingSub_ab61a21e3498d2d6a4c0796254cf126ed_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSingSub_ab61a21e3498d2d6a4c0796254cf126ed_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSingSub_a20337fe20529d26c1775c8ba6d47cad0}\index{SingSub@{SingSub}!SetTriangleRWG@{SetTriangleRWG}}
+\index{SetTriangleRWG@{SetTriangleRWG}!SingSub@{SingSub}}
+\doxysubsubsection{\texorpdfstring{SetTriangleRWG()}{SetTriangleRWG()}}
+{\footnotesize\ttfamily \label{classSingSub_a20337fe20529d26c1775c8ba6d47cad0} 
+int Sing\+Sub\+::\+Set\+Triangle\+RWG (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{rwg\+In}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r\+In}{}\end{DoxyParamCaption})}
+
+
+
+Preferred initialization that fills all cached arrays (ILar/\+ISar). 
+
+Precomputes the line integrals along edges and the surface integrals for $q \in \{-3,-1,1,3\}$, saving them in {\ttfamily ILar/\+ISar}; subsequent calls to {\ttfamily K1-\/\+K4/\+IL/\+IS} reuse these values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rwg\+In} & RWG function defining the triangle. \\
+\hline
+{\em r\+In} & Observation point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success.
+\end{DoxyReturn}
+Preferred initialization\+: precompute ILar/\+ISar for the triangle at r.
+
+Sets\+:
+\begin{DoxyItemize}
+\item h and omega as in \doxylink{classSingSub_ae84ba8e91ca5a0aeee4246d8ee0f033d}{Init()},
+\item e\+Nar\mbox{[}i\mbox{]} (unit edge-\/normals) and tar\mbox{[}i\mbox{]} = −e\+Nar\mbox{[}i\mbox{]}·(Node(i)−r),
+\item ILar\mbox{[}i\mbox{]}\mbox{[}k\mbox{]} for q = \{-\/1,1,3\} (k = 0,1,2),
+\item ISar\mbox{[}k\mbox{]} for q = \{-\/3,-\/1,1,3\} (k = 0..3). 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{SingSub_8cpp_source_l00103}{103}} of file \mbox{\hyperlink{SingSub_8cpp_source}{Sing\+Sub.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSingSub_a20337fe20529d26c1775c8ba6d47cad0_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classSingSub_aeeab3df2135a12a8fcca03706861d3ad}\index{SingSub@{SingSub}!edgeNormals@{edgeNormals}}
+\index{edgeNormals@{edgeNormals}!SingSub@{SingSub}}
+\doxysubsubsection{\texorpdfstring{edgeNormals}{edgeNormals}}
+{\footnotesize\ttfamily \label{classSingSub_aeeab3df2135a12a8fcca03706861d3ad} 
+std\+::vector$<$\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}$>$ Sing\+Sub\+::edge\+Normals\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Unit normals of triangle\textquotesingle{}s edges. 
+
+
+
+Definition at line \mbox{\hyperlink{SingSub_8h_source_l00041}{41}} of file \mbox{\hyperlink{SingSub_8h_source}{Sing\+Sub.\+h}}.
+
+\Hypertarget{classSingSub_a0a2a44a6151665cff1c305fbec7e1068}\index{SingSub@{SingSub}!eNar@{eNar}}
+\index{eNar@{eNar}!SingSub@{SingSub}}
+\doxysubsubsection{\texorpdfstring{eNar}{eNar}}
+{\footnotesize\ttfamily \label{classSingSub_a0a2a44a6151665cff1c305fbec7e1068} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} Sing\+Sub\+::e\+Nar\mbox{[}3\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Edge-\/normal directions (unit) 
+
+
+
+Definition at line \mbox{\hyperlink{SingSub_8h_source_l00048}{48}} of file \mbox{\hyperlink{SingSub_8h_source}{Sing\+Sub.\+h}}.
+
+\Hypertarget{classSingSub_af93426a24d1988d423c99be23b873b58}\index{SingSub@{SingSub}!h@{h}}
+\index{h@{h}!SingSub@{SingSub}}
+\doxysubsubsection{\texorpdfstring{h}{h}}
+{\footnotesize\ttfamily \label{classSingSub_af93426a24d1988d423c99be23b873b58} 
+double Sing\+Sub\+::h\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Signed distance from r to the triangle plane. 
+
+
+
+Definition at line \mbox{\hyperlink{SingSub_8h_source_l00043}{43}} of file \mbox{\hyperlink{SingSub_8h_source}{Sing\+Sub.\+h}}.
+
+\Hypertarget{classSingSub_a2b9ff2ec2079602e13d1c2b2315e1217}\index{SingSub@{SingSub}!ILar@{ILar}}
+\index{ILar@{ILar}!SingSub@{SingSub}}
+\doxysubsubsection{\texorpdfstring{ILar}{ILar}}
+{\footnotesize\ttfamily \label{classSingSub_a2b9ff2ec2079602e13d1c2b2315e1217} 
+double Sing\+Sub\+::\+ILar\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Edge integrals (edge index 0...2; columns for q = -\/1, 1, 3 -\/\texorpdfstring{$>$}{>} indices 0,1,2) 
+
+
+
+Definition at line \mbox{\hyperlink{SingSub_8h_source_l00050}{50}} of file \mbox{\hyperlink{SingSub_8h_source}{Sing\+Sub.\+h}}.
+
+\Hypertarget{classSingSub_a4aa2f73a45f2f4f8dddf3562f7941f8e}\index{SingSub@{SingSub}!ISar@{ISar}}
+\index{ISar@{ISar}!SingSub@{SingSub}}
+\doxysubsubsection{\texorpdfstring{ISar}{ISar}}
+{\footnotesize\ttfamily \label{classSingSub_a4aa2f73a45f2f4f8dddf3562f7941f8e} 
+double Sing\+Sub\+::\+ISar\mbox{[}4\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Surface integrals for q = -\/3, -\/1, 1, 3 -\/\texorpdfstring{$>$}{>} indices 0..3. 
+
+
+
+Definition at line \mbox{\hyperlink{SingSub_8h_source_l00051}{51}} of file \mbox{\hyperlink{SingSub_8h_source}{Sing\+Sub.\+h}}.
+
+\Hypertarget{classSingSub_afad4de2e273885a72ed545af004ce5b6}\index{SingSub@{SingSub}!omega@{omega}}
+\index{omega@{omega}!SingSub@{SingSub}}
+\doxysubsubsection{\texorpdfstring{omega}{omega}}
+{\footnotesize\ttfamily \label{classSingSub_afad4de2e273885a72ed545af004ce5b6} 
+double Sing\+Sub\+::omega\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Signed solid angle subtended by the triangle at r. 
+
+
+
+Definition at line \mbox{\hyperlink{SingSub_8h_source_l00044}{44}} of file \mbox{\hyperlink{SingSub_8h_source}{Sing\+Sub.\+h}}.
+
+\Hypertarget{classSingSub_a054d7dff391f7575494f70a5df27e7ca}\index{SingSub@{SingSub}!r@{r}}
+\index{r@{r}!SingSub@{SingSub}}
+\doxysubsubsection{\texorpdfstring{r}{r}}
+{\footnotesize\ttfamily \label{classSingSub_a054d7dff391f7575494f70a5df27e7ca} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} Sing\+Sub\+::r\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Observation point. 
+
+
+
+Definition at line \mbox{\hyperlink{SingSub_8h_source_l00040}{40}} of file \mbox{\hyperlink{SingSub_8h_source}{Sing\+Sub.\+h}}.
+
+\Hypertarget{classSingSub_aba7834cbc417431f3b1302a2481051ac}\index{SingSub@{SingSub}!rwgFun@{rwgFun}}
+\index{rwgFun@{rwgFun}!SingSub@{SingSub}}
+\doxysubsubsection{\texorpdfstring{rwgFun}{rwgFun}}
+{\footnotesize\ttfamily \label{classSingSub_aba7834cbc417431f3b1302a2481051ac} 
+\mbox{\hyperlink{classRWGFun}{RWGFun}}\texorpdfstring{$\ast$}{*} Sing\+Sub\+::rwg\+Fun\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+RWG function defining the triangle. 
+
+
+
+Definition at line \mbox{\hyperlink{SingSub_8h_source_l00039}{39}} of file \mbox{\hyperlink{SingSub_8h_source}{Sing\+Sub.\+h}}.
+
+\Hypertarget{classSingSub_a4d78ff79f077722d66737a8e8699f6c4}\index{SingSub@{SingSub}!t@{t}}
+\index{t@{t}!SingSub@{SingSub}}
+\doxysubsubsection{\texorpdfstring{t}{t}}
+{\footnotesize\ttfamily \label{classSingSub_a4d78ff79f077722d66737a8e8699f6c4} 
+std\+::vector$<$double$>$ Sing\+Sub\+::t\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Signed distances to the three supporting lines. 
+
+
+
+Definition at line \mbox{\hyperlink{SingSub_8h_source_l00042}{42}} of file \mbox{\hyperlink{SingSub_8h_source}{Sing\+Sub.\+h}}.
+
+\Hypertarget{classSingSub_a57cccecd5fac47b5cb507128d1e501a8}\index{SingSub@{SingSub}!tar@{tar}}
+\index{tar@{tar}!SingSub@{SingSub}}
+\doxysubsubsection{\texorpdfstring{tar}{tar}}
+{\footnotesize\ttfamily \label{classSingSub_a57cccecd5fac47b5cb507128d1e501a8} 
+double Sing\+Sub\+::tar\mbox{[}3\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+-\/dot(e\+Nar\mbox{[}i\mbox{]}, a\mbox{[}i\mbox{]}) with a\mbox{[}i\mbox{]} = Node(i) − r 
+
+
+
+Definition at line \mbox{\hyperlink{SingSub_8h_source_l00049}{49}} of file \mbox{\hyperlink{SingSub_8h_source}{Sing\+Sub.\+h}}.
+
+\Hypertarget{classSingSub_a89036a2faa57e05b8aaab4fbeb3c54d9}\index{SingSub@{SingSub}!tPtr@{tPtr}}
+\index{tPtr@{tPtr}!SingSub@{SingSub}}
+\doxysubsubsection{\texorpdfstring{tPtr}{tPtr}}
+{\footnotesize\ttfamily \label{classSingSub_a89036a2faa57e05b8aaab4fbeb3c54d9} 
+\mbox{\hyperlink{classTriangle}{Triangle}}\texorpdfstring{$\ast$}{*} Sing\+Sub\+::t\+Ptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Convenience pointer to the triangle. 
+
+
+
+Definition at line \mbox{\hyperlink{SingSub_8h_source_l00047}{47}} of file \mbox{\hyperlink{SingSub_8h_source}{Sing\+Sub.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{SingSub_8h}{Sing\+Sub.\+h}}\item 
+\mbox{\hyperlink{SingSub_8cpp}{Sing\+Sub.\+cpp}}\end{DoxyCompactItemize}

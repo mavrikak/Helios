@@ -1,0 +1,611 @@
+\doxysection{Gaussian Class Reference}
+\hypertarget{classGaussian}{}\label{classGaussian}\index{Gaussian@{Gaussian}}
+
+
+Paraxial \doxylink{classGaussian}{Gaussian} beam illumination (homogeneous medium).  
+
+
+
+
+{\ttfamily \#include $<$Gaussian.\+h$>$}
+
+
+
+Inheritance diagram for Gaussian\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classGaussian__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Gaussian\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classGaussian__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGaussian_a3621600be0f1a452bc426f15041d4ed4}{Gaussian}} (double wavelength, double waist, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} focal\+\_\+point, double epsilon\+Medium, \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} propagationdirection, \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} polarisation)
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classGaussian}{Gaussian} beam in a homogeneous medium. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classGaussian_a0cccdedf53f0840888d57144566442b4}{EvaluateE}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r)
+\begin{DoxyCompactList}\small\item\em Evaluate the incident electric field $\mathbf{E}^{inc}(\mathbf{r})$. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classGaussian_ad420298383fc00144d4f1dc9e87b8ee7}{EvaluateH}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r)
+\begin{DoxyCompactList}\small\item\em Evaluate the incident magnetic field $\mathbf{H}^{inc}(\mathbf{r})$. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ \mbox{\hyperlink{classGaussian_a92fa8f6f7a12c4b81b446903eb344bc3}{Evaluate\+Layered\+EandH}} (\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} r)
+\begin{DoxyCompactList}\small\item\em Evaluate $(\mathbf{E}^{inc}, \mathbf{H}^{inc})$ in layered media. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGaussian_a7c63c2889ab8b3c019c3d04c568c2ad4}{IntegrateE}} (\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}f)
+\begin{DoxyCompactList}\small\item\em RWG projection of the incident electric field. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{classGaussian_a5a2bbd00d15351a497efe6cd5fb333d3}{IntegrateH}} (\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}f)
+\begin{DoxyCompactList}\small\item\em RWG projection of the incident magnetic field. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ \mbox{\hyperlink{classGaussian_a052cfe5b26791974210c2a3f46a0ea64}{Integrate\+Layered\+EandH}} (\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}f)
+\begin{DoxyCompactList}\small\item\em RWG projection of $(\mathbf{E}^{inc}, \mathbf{H}^{inc})$ in layered media. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classGaussian_a25de64854de917ae29473a55cf09c0be}{Waist}} () const
+\begin{DoxyCompactList}\small\item\em Beam waist $ w_0 $. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classGaussian_a7ea43a8584ebecc5b11f2bd4bde08aa7}{Polarisation}} () const
+\begin{DoxyCompactList}\small\item\em Polarization vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classGaussian_abb1472c6129a7689057b98094d8bc68c}{Propagation}} () const
+\begin{DoxyCompactList}\small\item\em Propagation vector $ k $. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classIncidentField}{Incident\+Field}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classIncidentField_a79ee067f9cdb57c3ec8a82c937541dc5}{\texorpdfstring{$\sim$}{\string~}\+Incident\+Field}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor to allow proper cleanup through base pointer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classGaussian_a4cb678d885117a191d246ecb5e7f595a}{Is\+Plane\+Wave}} ()
+\begin{DoxyCompactList}\small\item\em Type tag\+: this incident field is not a \doxylink{classPlaneWave}{Plane\+Wave}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGaussian_a18fb0a47d0bce2fccb93c2f594f743a6}{Is\+Dipole}} ()
+\begin{DoxyCompactList}\small\item\em Type tag\+: this incident field is not a \doxylink{classDipole}{Dipole}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGaussian_a9a094fdc95225f2ebaf4ade697908d3c}{Is\+Gaussian}} ()
+\begin{DoxyCompactList}\small\item\em Type tag\+: this incident field is a \doxylink{classGaussian}{Gaussian} beam. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGaussian_a045c0864d0ce2062c99cfb14680ccad3}{set\+Grn\+Fun\+Layered}} (\mbox{\hyperlink{classGreenF}{GreenF}} \texorpdfstring{$\ast$}{*}f\+Grn\+Fields, std\+::vector$<$ \mbox{\hyperlink{structGrid}{Grid}} $>$ tab\+Grids)
+\begin{DoxyCompactList}\small\item\em Set layered Green\textquotesingle{}s function and tabulation grids. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classGaussian_a5f0a417475abab2cff7a20518a32c19b}{k}}
+\begin{DoxyCompactList}\small\item\em Wavenumber in medium. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classGaussian_aec7b455b30364a4ad0bd134c77a38718}{prop}}
+\begin{DoxyCompactList}\small\item\em Unit propagation direction. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} \mbox{\hyperlink{classGaussian_a232a8924d6c47879eaf1782b07249769}{p}}
+\begin{DoxyCompactList}\small\item\em Complex polarization vector. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classGaussian_ae3dbd384e89f118dd1eaf222f892c5a5}{w0}}
+\begin{DoxyCompactList}\small\item\em Waist size. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classGaussian_ac46c594c1c022605fe5fbc445afc42b4}{depth}}
+\begin{DoxyCompactList}\small\item\em Focus depth. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} \mbox{\hyperlink{classGaussian_a89214ccbc460ca02bb3841ea828c31c0}{focus}}
+\begin{DoxyCompactList}\small\item\em Focal point position. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classGaussian_a2a40a25156f53c86d40425807a956232}{z}}
+\begin{DoxyCompactList}\small\item\em Medium impedance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGaussQuad}{Gauss\+Quad}}$<$ \mbox{\hyperlink{classGaussian}{Gaussian}} $>$ \mbox{\hyperlink{classGaussian_a02f414f3ba03fac5477122c9668432eb}{gauss}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classTriangle}{Triangle} quadrature helper used by Integrate\+E/H. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classIncidentField}{Incident\+Field}}}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classIncidentField_aa8e0e6dc5e0acf432cc06a76f5d33baf}{Enable\+Accurate}} ()
+\begin{DoxyCompactList}\small\item\em Enable high-\/accuracy integration for excitations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{classIncidentField}{Incident\+Field}}}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classIncidentField_af45c81c859bda7b0a43818eb8fcf5887}{Needs\+Accurate}} = false
+\begin{DoxyCompactList}\small\item\em Global toggle\+: request accurate/expensive integration path. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Paraxial \doxylink{classGaussian}{Gaussian} beam illumination (homogeneous medium). 
+
+Field model\+:    \[E(r) = \mathbf p\, \frac{w_0}{w(z)} \exp\!
+\left(-\frac{\rho^2}{w^2(z)} + i k [\,Z + \tfrac{1}{2} C(Z)\,\rho^2\,] - i\,\zeta(Z)\right),
+\] with standard definitions for beam radius $ w(z) $, curvature $ C(Z) $, Gouy phase $\zeta(Z)$, and cylindrical radius $\rho$ measured wrt the propagation axis. The magnetic field follows from $\mathbf H = (1/Z_m)\,\hat k \times \mathbf E$. 
+
+Definition at line \mbox{\hyperlink{Gaussian_8h_source_l00040}{40}} of file \mbox{\hyperlink{Gaussian_8h_source}{Gaussian.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classGaussian_a3621600be0f1a452bc426f15041d4ed4}\index{Gaussian@{Gaussian}!Gaussian@{Gaussian}}
+\index{Gaussian@{Gaussian}!Gaussian@{Gaussian}}
+\doxysubsubsection{\texorpdfstring{Gaussian()}{Gaussian()}}
+{\footnotesize\ttfamily \label{classGaussian_a3621600be0f1a452bc426f15041d4ed4} 
+Gaussian\+::\+Gaussian (\begin{DoxyParamCaption}\item[{double}]{wavelength}{, }\item[{double}]{waist}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{focal\+\_\+point}{, }\item[{double}]{epsilon\+Medium}{, }\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{propagationdirection}{, }\item[{\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}}]{polarisation}{}\end{DoxyParamCaption})}
+
+
+
+Construct a \doxylink{classGaussian}{Gaussian} beam in a homogeneous medium. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wavelength} & Wavelength in vacuum. \\
+\hline
+{\em waist} & Beam waist $ w_0 $ at the focus. \\
+\hline
+{\em focal\+\_\+point} & Focus position. \\
+\hline
+{\em epsilon\+Medium} & Relative permittivity of the medium. \\
+\hline
+{\em propagationdirection} & Unit vector (not necessarily normalized on input). \\
+\hline
+{\em polarisation} & Complex polarization vector (unit‑like magnitude recommended). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Gaussian_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{Gaussian_8cpp_source}{Gaussian.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{classGaussian_a3621600be0f1a452bc426f15041d4ed4_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classGaussian_a0cccdedf53f0840888d57144566442b4}\index{Gaussian@{Gaussian}!EvaluateE@{EvaluateE}}
+\index{EvaluateE@{EvaluateE}!Gaussian@{Gaussian}}
+\doxysubsubsection{\texorpdfstring{EvaluateE()}{EvaluateE()}}
+{\footnotesize\ttfamily \label{classGaussian_a0cccdedf53f0840888d57144566442b4} 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} Gaussian\+::\+EvaluateE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Evaluate the incident electric field $\mathbf{E}^{inc}(\mathbf{r})$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation point in Cartesian coordinates. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex 3-\/vector (Ex, Ey, Ez). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIncidentField_a2c6e363fff67c453f9ab2b550bb6bb20}{Incident\+Field}}.
+
+
+
+Definition at line \mbox{\hyperlink{Gaussian_8cpp_source_l00038}{38}} of file \mbox{\hyperlink{Gaussian_8cpp_source}{Gaussian.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGaussian_a0cccdedf53f0840888d57144566442b4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGaussian_ad420298383fc00144d4f1dc9e87b8ee7}\index{Gaussian@{Gaussian}!EvaluateH@{EvaluateH}}
+\index{EvaluateH@{EvaluateH}!Gaussian@{Gaussian}}
+\doxysubsubsection{\texorpdfstring{EvaluateH()}{EvaluateH()}}
+{\footnotesize\ttfamily \label{classGaussian_ad420298383fc00144d4f1dc9e87b8ee7} 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} Gaussian\+::\+EvaluateH (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Evaluate the incident magnetic field $\mathbf{H}^{inc}(\mathbf{r})$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation point in Cartesian coordinates. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex 3-\/vector (Hx, Hy, Hz). 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIncidentField_a7f960fdcdeaf381ad12a49c190f180ff}{Incident\+Field}}.
+
+
+
+Definition at line \mbox{\hyperlink{Gaussian_8cpp_source_l00062}{62}} of file \mbox{\hyperlink{Gaussian_8cpp_source}{Gaussian.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{classGaussian_ad420298383fc00144d4f1dc9e87b8ee7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGaussian_ad420298383fc00144d4f1dc9e87b8ee7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGaussian_a92fa8f6f7a12c4b81b446903eb344bc3}\index{Gaussian@{Gaussian}!EvaluateLayeredEandH@{EvaluateLayeredEandH}}
+\index{EvaluateLayeredEandH@{EvaluateLayeredEandH}!Gaussian@{Gaussian}}
+\doxysubsubsection{\texorpdfstring{EvaluateLayeredEandH()}{EvaluateLayeredEandH()}}
+{\footnotesize\ttfamily \label{classGaussian_a92fa8f6f7a12c4b81b446903eb344bc3} 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} $>$ Gaussian\+::\+Evaluate\+Layered\+EandH (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}}]{r}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Evaluate $(\mathbf{E}^{inc}, \mathbf{H}^{inc})$ in layered media. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Observation point in Cartesian coordinates. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A 2-\/element vector\+: \{E\+\_\+inc, H\+\_\+inc\}, each a complex 3-\/vector. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Not implemented yet. 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{classIncidentField_a2fbb18ff29205e11b3c0bff676b15a7e}{Incident\+Field}}.
+
+
+
+Definition at line \mbox{\hyperlink{Gaussian_8cpp_source_l00067}{67}} of file \mbox{\hyperlink{Gaussian_8cpp_source}{Gaussian.\+cpp}}.
+
+\Hypertarget{classGaussian_a7c63c2889ab8b3c019c3d04c568c2ad4}\index{Gaussian@{Gaussian}!IntegrateE@{IntegrateE}}
+\index{IntegrateE@{IntegrateE}!Gaussian@{Gaussian}}
+\doxysubsubsection{\texorpdfstring{IntegrateE()}{IntegrateE()}}
+{\footnotesize\ttfamily \label{classGaussian_a7c63c2889ab8b3c019c3d04c568c2ad4} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Gaussian\+::\+IntegrateE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{f}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+RWG projection of the incident electric field. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Pointer to the RWG basis function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex scalar contribution for the excitation vector.
+\end{DoxyReturn}
+Performs the scalar test integral on the triangle supporting the RWG basis function {\ttfamily f} to assemble the electric-\/field excitation entry. 
+
+Implements \mbox{\hyperlink{classIncidentField_a277e316a752da5fcb0a0c17088c62ba9}{Incident\+Field}}.
+
+
+
+Definition at line \mbox{\hyperlink{Gaussian_8cpp_source_l00074}{74}} of file \mbox{\hyperlink{Gaussian_8cpp_source}{Gaussian.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{classGaussian_a7c63c2889ab8b3c019c3d04c568c2ad4_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGaussian_a5a2bbd00d15351a497efe6cd5fb333d3}\index{Gaussian@{Gaussian}!IntegrateH@{IntegrateH}}
+\index{IntegrateH@{IntegrateH}!Gaussian@{Gaussian}}
+\doxysubsubsection{\texorpdfstring{IntegrateH()}{IntegrateH()}}
+{\footnotesize\ttfamily \label{classGaussian_a5a2bbd00d15351a497efe6cd5fb333d3} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Gaussian\+::\+IntegrateH (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{f}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+RWG projection of the incident magnetic field. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Pointer to the RWG basis function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex scalar contribution for the excitation vector.
+\end{DoxyReturn}
+Performs the scalar test integral on the triangle supporting the RWG basis function {\ttfamily f} to assemble the magnetic-\/field excitation entry. 
+
+Implements \mbox{\hyperlink{classIncidentField_af220ad23b231a3d6d7da35c5799c25cc}{Incident\+Field}}.
+
+
+
+Definition at line \mbox{\hyperlink{Gaussian_8cpp_source_l00082}{82}} of file \mbox{\hyperlink{Gaussian_8cpp_source}{Gaussian.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGaussian_a5a2bbd00d15351a497efe6cd5fb333d3_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classGaussian_a052cfe5b26791974210c2a3f46a0ea64}\index{Gaussian@{Gaussian}!IntegrateLayeredEandH@{IntegrateLayeredEandH}}
+\index{IntegrateLayeredEandH@{IntegrateLayeredEandH}!Gaussian@{Gaussian}}
+\doxysubsubsection{\texorpdfstring{IntegrateLayeredEandH()}{IntegrateLayeredEandH()}}
+{\footnotesize\ttfamily \label{classGaussian_a052cfe5b26791974210c2a3f46a0ea64} 
+std\+::vector$<$ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} $>$ Gaussian\+::\+Integrate\+Layered\+EandH (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRWGFun}{RWGFun}} \texorpdfstring{$\ast$}{*}}]{f}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+RWG projection of $(\mathbf{E}^{inc}, \mathbf{H}^{inc})$ in layered media. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Pointer to the RWG basis function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Two complex scalars\+: \{E\+\_\+exc, H\+\_\+exc\}. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Not implemented yet (throws for layered media). 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{classIncidentField_a7183dd5a80a0b88580fc0969cc25bc25}{Incident\+Field}}.
+
+
+
+Definition at line \mbox{\hyperlink{Gaussian_8cpp_source_l00090}{90}} of file \mbox{\hyperlink{Gaussian_8cpp_source}{Gaussian.\+cpp}}.
+
+\Hypertarget{classGaussian_a18fb0a47d0bce2fccb93c2f594f743a6}\index{Gaussian@{Gaussian}!IsDipole@{IsDipole}}
+\index{IsDipole@{IsDipole}!Gaussian@{Gaussian}}
+\doxysubsubsection{\texorpdfstring{IsDipole()}{IsDipole()}}
+{\footnotesize\ttfamily \label{classGaussian_a18fb0a47d0bce2fccb93c2f594f743a6} 
+bool Gaussian\+::\+Is\+Dipole (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Type tag\+: this incident field is not a \doxylink{classDipole}{Dipole}. 
+
+\begin{DoxyReturn}{Returns}
+false. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIncidentField_ab6e619e10e894f1df66bd1966bb40b21}{Incident\+Field}}.
+
+
+
+Definition at line \mbox{\hyperlink{Gaussian_8h_source_l00150}{150}} of file \mbox{\hyperlink{Gaussian_8h_source}{Gaussian.\+h}}.
+
+\Hypertarget{classGaussian_a9a094fdc95225f2ebaf4ade697908d3c}\index{Gaussian@{Gaussian}!IsGaussian@{IsGaussian}}
+\index{IsGaussian@{IsGaussian}!Gaussian@{Gaussian}}
+\doxysubsubsection{\texorpdfstring{IsGaussian()}{IsGaussian()}}
+{\footnotesize\ttfamily \label{classGaussian_a9a094fdc95225f2ebaf4ade697908d3c} 
+bool Gaussian\+::\+Is\+Gaussian (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Type tag\+: this incident field is a \doxylink{classGaussian}{Gaussian} beam. 
+
+\begin{DoxyReturn}{Returns}
+true. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIncidentField_a16663eb644835d5a7a5979360e5fcbb7}{Incident\+Field}}.
+
+
+
+Definition at line \mbox{\hyperlink{Gaussian_8h_source_l00155}{155}} of file \mbox{\hyperlink{Gaussian_8h_source}{Gaussian.\+h}}.
+
+\Hypertarget{classGaussian_a4cb678d885117a191d246ecb5e7f595a}\index{Gaussian@{Gaussian}!IsPlaneWave@{IsPlaneWave}}
+\index{IsPlaneWave@{IsPlaneWave}!Gaussian@{Gaussian}}
+\doxysubsubsection{\texorpdfstring{IsPlaneWave()}{IsPlaneWave()}}
+{\footnotesize\ttfamily \label{classGaussian_a4cb678d885117a191d246ecb5e7f595a} 
+bool Gaussian\+::\+Is\+Plane\+Wave (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Type tag\+: this incident field is not a \doxylink{classPlaneWave}{Plane\+Wave}. 
+
+\begin{DoxyReturn}{Returns}
+false. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIncidentField_a55dd80cfe4e8c55ae5dfe44c916b2055}{Incident\+Field}}.
+
+
+
+Definition at line \mbox{\hyperlink{Gaussian_8h_source_l00145}{145}} of file \mbox{\hyperlink{Gaussian_8h_source}{Gaussian.\+h}}.
+
+\Hypertarget{classGaussian_a7ea43a8584ebecc5b11f2bd4bde08aa7}\index{Gaussian@{Gaussian}!Polarisation@{Polarisation}}
+\index{Polarisation@{Polarisation}!Gaussian@{Gaussian}}
+\doxysubsubsection{\texorpdfstring{Polarisation()}{Polarisation()}}
+{\footnotesize\ttfamily \label{classGaussian_a7ea43a8584ebecc5b11f2bd4bde08aa7} 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} Gaussian\+::\+Polarisation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Polarization vector. 
+
+\begin{DoxyReturn}{Returns}
+Complex polarization $\mathbf p$. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Gaussian_8cpp_source_l00031}{31}} of file \mbox{\hyperlink{Gaussian_8cpp_source}{Gaussian.\+cpp}}.
+
+\Hypertarget{classGaussian_abb1472c6129a7689057b98094d8bc68c}\index{Gaussian@{Gaussian}!Propagation@{Propagation}}
+\index{Propagation@{Propagation}!Gaussian@{Gaussian}}
+\doxysubsubsection{\texorpdfstring{Propagation()}{Propagation()}}
+{\footnotesize\ttfamily \label{classGaussian_abb1472c6129a7689057b98094d8bc68c} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} Gaussian\+::\+Propagation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Propagation vector $ k $. 
+
+\begin{DoxyReturn}{Returns}
+Real 3-\/vector in the propagation direction scaled by $ k $. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Gaussian_8cpp_source_l00033}{33}} of file \mbox{\hyperlink{Gaussian_8cpp_source}{Gaussian.\+cpp}}.
+
+\Hypertarget{classGaussian_a045c0864d0ce2062c99cfb14680ccad3}\index{Gaussian@{Gaussian}!setGrnFunLayered@{setGrnFunLayered}}
+\index{setGrnFunLayered@{setGrnFunLayered}!Gaussian@{Gaussian}}
+\doxysubsubsection{\texorpdfstring{setGrnFunLayered()}{setGrnFunLayered()}}
+{\footnotesize\ttfamily \label{classGaussian_a045c0864d0ce2062c99cfb14680ccad3} 
+void Gaussian\+::set\+Grn\+Fun\+Layered (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGreenF}{GreenF}} \texorpdfstring{$\ast$}{*}}]{f\+Grn\+Fields}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{structGrid}{Grid}} $>$}]{tab\+Grids}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Set layered Green\textquotesingle{}s function and tabulation grids. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f\+Grn\+Fields} & Pointer to layered Green\textquotesingle{}s function used for field evaluation. \\
+\hline
+{\em tab\+Grids} & Precomputed tabulation grids for layered post-\/processing. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Not implemented yet (throws for layered media). 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{classIncidentField_a03028097aa5da8ba73cd92af43c78cd9}{Incident\+Field}}.
+
+
+
+Definition at line \mbox{\hyperlink{Gaussian_8cpp_source_l00097}{97}} of file \mbox{\hyperlink{Gaussian_8cpp_source}{Gaussian.\+cpp}}.
+
+\Hypertarget{classGaussian_a25de64854de917ae29473a55cf09c0be}\index{Gaussian@{Gaussian}!Waist@{Waist}}
+\index{Waist@{Waist}!Gaussian@{Gaussian}}
+\doxysubsubsection{\texorpdfstring{Waist()}{Waist()}}
+{\footnotesize\ttfamily \label{classGaussian_a25de64854de917ae29473a55cf09c0be} 
+double Gaussian\+::\+Waist (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Beam waist $ w_0 $. 
+
+\begin{DoxyReturn}{Returns}
+Waist radius at focus. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Gaussian_8cpp_source_l00029}{29}} of file \mbox{\hyperlink{Gaussian_8cpp_source}{Gaussian.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classGaussian_ac46c594c1c022605fe5fbc445afc42b4}\index{Gaussian@{Gaussian}!depth@{depth}}
+\index{depth@{depth}!Gaussian@{Gaussian}}
+\doxysubsubsection{\texorpdfstring{depth}{depth}}
+{\footnotesize\ttfamily \label{classGaussian_ac46c594c1c022605fe5fbc445afc42b4} 
+double Gaussian\+::depth\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Focus depth. 
+
+
+
+Definition at line \mbox{\hyperlink{Gaussian_8h_source_l00135}{135}} of file \mbox{\hyperlink{Gaussian_8h_source}{Gaussian.\+h}}.
+
+\Hypertarget{classGaussian_a89214ccbc460ca02bb3841ea828c31c0}\index{Gaussian@{Gaussian}!focus@{focus}}
+\index{focus@{focus}!Gaussian@{Gaussian}}
+\doxysubsubsection{\texorpdfstring{focus}{focus}}
+{\footnotesize\ttfamily \label{classGaussian_a89214ccbc460ca02bb3841ea828c31c0} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} Gaussian\+::focus\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Focal point position. 
+
+
+
+Definition at line \mbox{\hyperlink{Gaussian_8h_source_l00136}{136}} of file \mbox{\hyperlink{Gaussian_8h_source}{Gaussian.\+h}}.
+
+\Hypertarget{classGaussian_a02f414f3ba03fac5477122c9668432eb}\index{Gaussian@{Gaussian}!gauss@{gauss}}
+\index{gauss@{gauss}!Gaussian@{Gaussian}}
+\doxysubsubsection{\texorpdfstring{gauss}{gauss}}
+{\footnotesize\ttfamily \label{classGaussian_a02f414f3ba03fac5477122c9668432eb} 
+\mbox{\hyperlink{classGaussQuad}{Gauss\+Quad}}$<$\mbox{\hyperlink{classGaussian}{Gaussian}}$>$ Gaussian\+::gauss\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{classTriangle}{Triangle} quadrature helper used by Integrate\+E/H. 
+
+
+
+Definition at line \mbox{\hyperlink{Gaussian_8h_source_l00139}{139}} of file \mbox{\hyperlink{Gaussian_8h_source}{Gaussian.\+h}}.
+
+\Hypertarget{classGaussian_a5f0a417475abab2cff7a20518a32c19b}\index{Gaussian@{Gaussian}!k@{k}}
+\index{k@{k}!Gaussian@{Gaussian}}
+\doxysubsubsection{\texorpdfstring{k}{k}}
+{\footnotesize\ttfamily \label{classGaussian_a5f0a417475abab2cff7a20518a32c19b} 
+double Gaussian\+::k\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Wavenumber in medium. 
+
+
+
+Definition at line \mbox{\hyperlink{Gaussian_8h_source_l00131}{131}} of file \mbox{\hyperlink{Gaussian_8h_source}{Gaussian.\+h}}.
+
+\Hypertarget{classGaussian_a232a8924d6c47879eaf1782b07249769}\index{Gaussian@{Gaussian}!p@{p}}
+\index{p@{p}!Gaussian@{Gaussian}}
+\doxysubsubsection{\texorpdfstring{p}{p}}
+{\footnotesize\ttfamily \label{classGaussian_a232a8924d6c47879eaf1782b07249769} 
+\mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}} Gaussian\+::p\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Complex polarization vector. 
+
+
+
+Definition at line \mbox{\hyperlink{Gaussian_8h_source_l00133}{133}} of file \mbox{\hyperlink{Gaussian_8h_source}{Gaussian.\+h}}.
+
+\Hypertarget{classGaussian_aec7b455b30364a4ad0bd134c77a38718}\index{Gaussian@{Gaussian}!prop@{prop}}
+\index{prop@{prop}!Gaussian@{Gaussian}}
+\doxysubsubsection{\texorpdfstring{prop}{prop}}
+{\footnotesize\ttfamily \label{classGaussian_aec7b455b30364a4ad0bd134c77a38718} 
+\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}} Gaussian\+::prop\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Unit propagation direction. 
+
+
+
+Definition at line \mbox{\hyperlink{Gaussian_8h_source_l00132}{132}} of file \mbox{\hyperlink{Gaussian_8h_source}{Gaussian.\+h}}.
+
+\Hypertarget{classGaussian_ae3dbd384e89f118dd1eaf222f892c5a5}\index{Gaussian@{Gaussian}!w0@{w0}}
+\index{w0@{w0}!Gaussian@{Gaussian}}
+\doxysubsubsection{\texorpdfstring{w0}{w0}}
+{\footnotesize\ttfamily \label{classGaussian_ae3dbd384e89f118dd1eaf222f892c5a5} 
+double Gaussian\+::w0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Waist size. 
+
+
+
+Definition at line \mbox{\hyperlink{Gaussian_8h_source_l00134}{134}} of file \mbox{\hyperlink{Gaussian_8h_source}{Gaussian.\+h}}.
+
+\Hypertarget{classGaussian_a2a40a25156f53c86d40425807a956232}\index{Gaussian@{Gaussian}!z@{z}}
+\index{z@{z}!Gaussian@{Gaussian}}
+\doxysubsubsection{\texorpdfstring{z}{z}}
+{\footnotesize\ttfamily \label{classGaussian_a2a40a25156f53c86d40425807a956232} 
+double Gaussian\+::z\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Medium impedance. 
+
+
+
+Definition at line \mbox{\hyperlink{Gaussian_8h_source_l00137}{137}} of file \mbox{\hyperlink{Gaussian_8h_source}{Gaussian.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Gaussian_8h}{Gaussian.\+h}}\item 
+\mbox{\hyperlink{Gaussian_8cpp}{Gaussian.\+cpp}}\end{DoxyCompactItemize}

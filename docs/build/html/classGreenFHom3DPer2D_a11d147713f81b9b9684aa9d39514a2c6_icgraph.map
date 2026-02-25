@@ -1,0 +1,11 @@
+<map id="GreenFHom3DPer2D::GradientEwaldSpatialSmoothed" name="GreenFHom3DPer2D::GradientEwaldSpatialSmoothed">
+<area shape="rect" id="Node000001" title="Spatial part of the smoothed source&#45;gradient ." alt="" coords="545,40,765,85"/>
+<area shape="rect" id="Node000002" href="$classGreenFHom3DPer2D.html#a86d2cbdfe3ecb724651159902fabcdad" title="Ewald&#45;summed smoothed source&#45;gradient." alt="" coords="277,5,497,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="529,49,497,45,498,39,530,43"/>
+<area shape="rect" id="Node000004" href="$classGreenFHom3DPer2D.html#a410f5349268917cf86215e766118032c" title="Smoothed source&#45;gradient for a specific translation." alt="" coords="277,75,497,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="530,81,498,85,497,80,529,76"/>
+<area shape="rect" id="Node000003" href="$classGreenFHom3DPer2D.html#accc5e668a1b137a5279747db2ef0d560" title="Smoothed source&#45;gradient ." alt="" coords="7,5,227,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="261,30,228,30,228,25,261,25"/>
+<area shape="rect" id="Node000005" href="$classGreenFHom3DPer2D.html#aadb534ef4509422e6f3e78a0e3999758" title="term at an observation point." alt="" coords="5,75,229,119"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="261,100,229,100,229,94,261,94"/>
+</map>

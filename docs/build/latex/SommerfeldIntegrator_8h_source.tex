@@ -1,0 +1,126 @@
+\doxysection{Sommerfeld\+Integrator.\+h}
+\hypertarget{SommerfeldIntegrator_8h_source}{}\label{SommerfeldIntegrator_8h_source}\index{SommerfeldIntegrator.h@{SommerfeldIntegrator.h}}
+\mbox{\hyperlink{SommerfeldIntegrator_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00018}00018\ \textcolor{preprocessor}{\#ifndef\ SOMMERFELD\_INTEGRATOR\_H}}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00019}00019\ \textcolor{preprocessor}{\#define\ SOMMERFELD\_INTEGRATOR\_H}}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00021}00021\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00022}00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{DomainHom3D_8h}{DomainHom3D.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00023}00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{SurfaceMesh_8h}{SurfaceMesh.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00024}00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{LayeredMediaUtils_8h}{LayeredMediaUtils.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00025}00025\ \textcolor{preprocessor}{\#include\ <stdexcept>}\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ For\ exception\ handling}}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00026}00026\ \textcolor{preprocessor}{\#include\ <functional>}\ \ \ \ \ \ \ \ \textcolor{comment}{//\ For\ std::function}}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00036}\mbox{\hyperlink{classSommerfeldIntegrator}{00036}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSommerfeldIntegrator_adb166d863ce44245854490c2fe7eb2d4}{SommerfeldIntegrator}}\ \{}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00037}00037\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00038}00038\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/\ Material\ stack\ /\ geometry\ -\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00039}\mbox{\hyperlink{classSommerfeldIntegrator_a64266a1893b6cbb32e73c4849820265b}{00039}}\ \ \ \ \ std::vector<dcmplx>\ \mbox{\hyperlink{classSommerfeldIntegrator_a64266a1893b6cbb32e73c4849820265b}{k\_L}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00040}\mbox{\hyperlink{classSommerfeldIntegrator_a66ed53fa61fb05a945421f959599b983}{00040}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSommerfeldIntegrator_a66ed53fa61fb05a945421f959599b983}{materialIndex}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00041}\mbox{\hyperlink{classSommerfeldIntegrator_abfddd71b30488fd49ba9bf99ddd06de7}{00041}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSommerfeldIntegrator_abfddd71b30488fd49ba9bf99ddd06de7}{sourceIndex}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00042}\mbox{\hyperlink{classSommerfeldIntegrator_a976e97661509a2824da88527735feb31}{00042}}\ \ \ \ \ std::vector<dcmplx>\ \mbox{\hyperlink{classSommerfeldIntegrator_a976e97661509a2824da88527735feb31}{epsilon}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00043}\mbox{\hyperlink{classSommerfeldIntegrator_a46bacb9bf923a73d1e1fe7fa388d1570}{00043}}\ \ \ \ \ std::vector<dcmplx>\ \mbox{\hyperlink{classSommerfeldIntegrator_a46bacb9bf923a73d1e1fe7fa388d1570}{mu}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00044}\mbox{\hyperlink{classSommerfeldIntegrator_aacb5653a0a811c901dad261e65df1f5c}{00044}}\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classSommerfeldIntegrator_aacb5653a0a811c901dad261e65df1f5c}{zValsInterfaces}};\ \ \ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00045}\mbox{\hyperlink{classSommerfeldIntegrator_a633ed9005b28625926216052e3da9fe2}{00045}}\ \ \ \ \ std::vector<double>\ \mbox{\hyperlink{classSommerfeldIntegrator_a633ed9005b28625926216052e3da9fe2}{thickness}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00047}00047\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/\ Contour\ /\ subtraction\ parameters\ -\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00048}\mbox{\hyperlink{classSommerfeldIntegrator_a91cb94cb37cad13f2a6718cfad3f33c5}{00048}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classSommerfeldIntegrator_a91cb94cb37cad13f2a6718cfad3f33c5}{semiReal}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00049}\mbox{\hyperlink{classSommerfeldIntegrator_a6c8a0e8bccc622a7b702866cc7e34013}{00049}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classSommerfeldIntegrator_a6c8a0e8bccc622a7b702866cc7e34013}{semiImag}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00050}\mbox{\hyperlink{classSommerfeldIntegrator_af9f62990284e52a4c800323ba8d6e05b}{00050}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classSommerfeldIntegrator_af9f62990284e52a4c800323ba8d6e05b}{ratio}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00051}\mbox{\hyperlink{classSommerfeldIntegrator_aebb4ff74350e1265490aee95f3e26e97}{00051}}\ \ \ \ \ std::map<std::string,\ double>\ \mbox{\hyperlink{classSommerfeldIntegrator_aebb4ff74350e1265490aee95f3e26e97}{options}};\ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00052}\mbox{\hyperlink{classSommerfeldIntegrator_a70ef4ca7478c32de4212e4e1262bdfc3}{00052}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classSommerfeldIntegrator_a70ef4ca7478c32de4212e4e1262bdfc3}{cutoff}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00054}00054\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/\ Utilities\ -\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00055}\mbox{\hyperlink{classSommerfeldIntegrator_abad8dea1189a3b78a591981e517ed574}{00055}}\ \ \ \ \ \mbox{\hyperlink{classLayeredMediaUtils}{LayeredMediaUtils}}*\ \mbox{\hyperlink{classSommerfeldIntegrator_abad8dea1189a3b78a591981e517ed574}{layeredUtils}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00057}00057\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00075}00075\ \ \ \ \ \mbox{\hyperlink{classSommerfeldIntegrator_adb166d863ce44245854490c2fe7eb2d4}{SommerfeldIntegrator}}(\textcolor{keyword}{const}\ std::vector<dcmplx>\ \mbox{\hyperlink{classSommerfeldIntegrator_a64266a1893b6cbb32e73c4849820265b}{k\_L}},\ \textcolor{keywordtype}{int}\ inMaterialIndex,}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<dcmplx>\&\ inEpsilonMedium,}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<dcmplx>\&\ inMuMedium,}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\&\ inZValsInterfaces,}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\&\ inThickness,}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ inSemiReal\ =\ 4.0,\ \textcolor{keywordtype}{double}\ inSemiImag\ =\ 0.05,}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ inRatio\ =\ 1.0,\ \textcolor{keywordtype}{double}\ inCutoff\ =\ 0.1);}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00082}00082\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00101}00101\ \ \ \ \ \mbox{\hyperlink{classSommerfeldIntegrator_adb166d863ce44245854490c2fe7eb2d4}{SommerfeldIntegrator}}(\textcolor{keyword}{const}\ std::vector<dcmplx>\ \mbox{\hyperlink{classSommerfeldIntegrator_a64266a1893b6cbb32e73c4849820265b}{k\_L}},\ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ inMaterialIndex,\ \textcolor{keywordtype}{int}\ inSourceIndex,\ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<dcmplx>\&\ inEpsilonMedium,}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<dcmplx>\&\ inMuMedium,}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\&\ inZValsInterfaces,}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\&\ inThickness,}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ inSemiReal\ =\ 4.0,\ \textcolor{keywordtype}{double}\ inSemiImag\ =\ 0.05,}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ inRatio\ =\ 0.8,\ \textcolor{keywordtype}{double}\ inCutoff\ =\ 0.1);}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00109}00109\ \ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00111}00111\ \ \ \ \ \mbox{\hyperlink{classSommerfeldIntegrator_a68bb87eee4ea09dedcafc00e41bf6ccd}{\string~SommerfeldIntegrator}}();}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00112}00112\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00113}00113\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Path\ selection\ helpers\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00129}00129\ \ \ \ \ \mbox{\hyperlink{structData2D}{Data2D}}\ \mbox{\hyperlink{classSommerfeldIntegrator_abc3fad85f82353d54bba4336caf1af38}{selectData2D}}(\textcolor{keyword}{const}\ std::vector<std::vector<double>>\&\ r,}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<double>>\&\ z1,}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<double>>\&\ z2,}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ path);}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00133}00133\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00149}00149\ \ \ \ \ \mbox{\hyperlink{structData3D}{Data3D}}\ \mbox{\hyperlink{classSommerfeldIntegrator_a22d5ef6859dfee2cb33c026abeafa091}{selectData3D}}(\textcolor{keyword}{const}\ std::vector<std::vector<std::vector<double>>>\&\ r,}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<std::vector<double>>>\&\ z1,}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<std::vector<double>>>\&\ z2,}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ path);}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00166}00166\ \ \ \ \ std::vector<std::vector<std::vector<double>>>\ \mbox{\hyperlink{classSommerfeldIntegrator_ac555c6dc86d0b7fb03ea49df9668daf8}{interDist}}(}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::vector<std::vector<double>>>\ z,\ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ index,\ \textcolor{keywordtype}{double}\ direction);}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00169}00169\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00188}00188\ \ \ \ \ std::vector<std::vector<std::vector<std::vector<dcmplx>>>>\ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00189}00189\ \ \ \ \ \mbox{\hyperlink{classSommerfeldIntegrator_a81c32ffee2aefc0eecbbbd7235c80e70}{Secondary}}(\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ krho,\ std::vector<std::vector<std::vector<double>>>\ r,}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::vector<std::vector<double>>>\ z1,}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::vector<std::vector<double>>>\ z2,\ \textcolor{keyword}{const}\ std::string\&\ waves);}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00192}00192\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00193}00193\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Integrands\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00212}00212\ \ \ \ \ \mbox{\hyperlink{structIntegrandIntra}{IntegrandIntra}}\ \mbox{\hyperlink{classSommerfeldIntegrator_a0e528bbac3a3c169464f71e1c1196711}{IntraIntegrand}}(\textcolor{keyword}{const}\ std::vector<dcmplx>\&\ rq\_te,\ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<dcmplx>\&\ rq\_tm,}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structData2D}{Data2D}}\&\ inData2D,\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ kr,\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ kz,\ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ mode,\ \textcolor{keyword}{const}\ std::string\&\ op\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00216}00216\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00233}00233\ \ \ \ \ \mbox{\hyperlink{structIntegrandInter}{IntegrandInter}}\ \mbox{\hyperlink{classSommerfeldIntegrator_a9467786ef80af13f1b6f4317fb6ae80a}{InterIntegrand}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\&\ tq\_te,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\&\ tq\_tm,}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structData3D}{Data3D}}\&\ inData3D,\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ kr,\ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ mode);}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00236}00236\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00237}00237\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Integration\ and\ evaluation\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00257}00257\ \ \ \ \ \mbox{\hyperlink{structIntegrandIntra}{IntegrandIntra}}\ \mbox{\hyperlink{classSommerfeldIntegrator_a2c805013bb6091b2010bba9a1e256a4d}{integrationFIntra}}(\textcolor{keyword}{const}\ std::vector<dcmplx>\&\ rq\_te,\ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<dcmplx>\&\ rq\_tm,\ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structData2D}{Data2D}}\&\ inData,\ \textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ k\_max,}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structIntegrandIntra}{IntegrandIntra}}\&\ intZeroKrho,\ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00261}00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ path,\ \textcolor{keyword}{const}\ std::string\&\ op\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00262}00262\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00281}00281\ \ \ \ \ \mbox{\hyperlink{structIntegrandInter}{IntegrandInter}}\ \mbox{\hyperlink{classSommerfeldIntegrator_a5479217de11e54b823a970c39580fa64}{integrationFInter}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\&\ tq\_te,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\&\ tq\_tm,\ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00282}00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structData3D}{Data3D}}\&\ inData,\ \textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ k\_max,}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00283}00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structIntegrandInter}{IntegrandInter}}\&\ intZeroKrho,\ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00284}00284\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ path);}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00285}00285\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00300}00300\ \ \ \ \ \mbox{\hyperlink{structCoeffsIntra}{CoeffsIntra}}\ \mbox{\hyperlink{classSommerfeldIntegrator_a3f148b96c090e06e67fb00aea41e7f94}{Evaluate}}(\textcolor{keyword}{const}\ std::vector<dcmplx>\&\ rq\_te,\ \textcolor{keyword}{const}\ std::vector<dcmplx>\&\ rq\_tm,}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00301}00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<double>>\&\ r,\ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00302}00302\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<double>>\&\ z,\ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00303}00303\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ singular,\ \textcolor{keyword}{const}\ std::string\&\ op\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00304}00304\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00320}00320\ \ \ \ \ \mbox{\hyperlink{structCoeffsInter}{CoeffsInter}}\ \mbox{\hyperlink{classSommerfeldIntegrator_a3f148b96c090e06e67fb00aea41e7f94}{Evaluate}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\&\ tq\_te,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\&\ tq\_tm,}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00321}00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<std::vector<double>>>\&\ r,\ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00322}00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<std::vector<double>>>\&\ z1,\ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00323}00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::vector<std::vector<double>>>\&\ z2,\ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00324}00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ singular,\ \textcolor{keyword}{const}\ std::string\&\ op\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00325}00325\ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00326}00326\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Debugging\ /\ testing\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00332}00332\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSommerfeldIntegrator_aab7ff3d330e81d60b341e937b4dbe2d4}{writeMatrixToFile}}(\textcolor{keyword}{const}\ std::vector<std::vector<dcmplx>>\&\ matrix,\ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00333}00333\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ filename);}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00334}00334\ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00340}00340\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSommerfeldIntegrator_ae6b066494d7f0e8d6dfd9c8e282f9e5a}{write3DMatrixToFile}}(\textcolor{keyword}{const}\ std::vector<std::vector<std::vector<dcmplx>>>\&\ matrix,\ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00341}00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ filename);}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00342}00342\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00343}00343\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Fresnel\ coefficients\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00363}00363\ \ \ \ \ std::vector<dcmplx>\ \mbox{\hyperlink{classSommerfeldIntegrator_afe0d60f6663b012e9004922feac799ee}{FresnelCoeff}}(\textcolor{keywordtype}{int}\ layerIndexI,\ \textcolor{keywordtype}{int}\ layerIndexJ,\ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00364}00364\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ krho,\ \textcolor{keyword}{const}\ std::string\&\ waves)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00365}00365\ \};}
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00366}00366\ }
+\DoxyCodeLine{\Hypertarget{SommerfeldIntegrator_8h_source_l00367}00367\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SOMMERFELD\_INTEGRATOR\_H}}
+
+\end{DoxyCode}

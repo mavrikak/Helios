@@ -1,0 +1,5 @@
+<map id="SurfaceMesh::EdgeCount" name="SurfaceMesh::EdgeCount">
+<area shape="rect" id="Node000001" title="Total number of stored unique edges." alt="" coords="220,5,403,33"/>
+<area shape="rect" id="Node000002" href="$classDomain.html#aab504e2e699c789b209cf0e288b8a389" title="Debug: print all edges and the RWGs that live on them." alt="" coords="5,5,172,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="204,22,172,22,172,16,204,16"/>
+</map>

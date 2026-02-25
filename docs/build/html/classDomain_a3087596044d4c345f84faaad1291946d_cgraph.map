@@ -1,0 +1,9 @@
+<map id="Domain::Power" name="Domain::Power">
+<area shape="rect" id="Node000001" title="Power crossing the domain boundary computed from the RWG solution." alt="" coords="5,68,126,96"/>
+<area shape="rect" id="Node000002" href="$Domain_8cpp.html#abbd88d15240455cf734121fcd73b3a03" title="Compute the element&#45;wise complex conjugate of a 3&#45;vector." alt="" coords="174,29,222,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="114,65,158,52,160,57,116,70"/>
+<area shape="rect" id="Node000003" href="$Domain_8cpp.html#aafa3e4fa6318b2f8740f4dbd50c367e5" title="Extract the real part of each component of a complex 3&#45;vector." alt="" coords="175,105,221,133"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="118,94,160,106,159,111,116,99"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="174,30,170,20,173,11,183,5,198,3,214,5,222,11,219,16,212,10,198,8,185,10,178,14,176,20,179,28"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="174,106,170,96,173,87,183,81,198,79,214,81,222,87,219,92,212,86,198,84,185,86,178,90,176,96,179,104"/>
+</map>

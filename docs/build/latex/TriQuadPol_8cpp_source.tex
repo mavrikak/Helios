@@ -1,0 +1,239 @@
+\doxysection{Tri\+Quad\+Pol.\+cpp}
+\hypertarget{TriQuadPol_8cpp_source}{}\label{TriQuadPol_8cpp_source}\index{TriQuadPol.cpp@{TriQuadPol.cpp}}
+\mbox{\hyperlink{TriQuadPol_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{TriQuadPol_8h}{TriQuadPol.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00011}\mbox{\hyperlink{classTriQuadPol_a4f5e17f2daa1107f7ad126c30a32958c}{00011}}\ \mbox{\hyperlink{classTriQuadPol_a4f5e17f2daa1107f7ad126c30a32958c}{TriQuadPol::TriQuadPol}}(\mbox{\hyperlink{classTriangle}{Triangle}}*\ inTp,\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ inPos,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTriQuadPol_a338801418b047e0327ded7118ba2106c}{nQuadrature}},}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}(*\mbox{\hyperlink{classTriQuadPol_a7ea0ba45c1bba75d2a985f1720c36a99}{xQuadrature}})[2],\ \textcolor{keywordtype}{double}*\ \mbox{\hyperlink{classTriQuadPol_a3c18df1bb2cc09ba59e8fb3ede3aad10}{wQuadrature}})}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00013}00013\ \ \ :\ \mbox{\hyperlink{classTriQuadPol_a00670e48ec20755b8fe3a467adb9a19f}{Tp}}(inTp),\ \mbox{\hyperlink{classTriQuadPol_a53271f2a13494d5716be47be74ff482a}{pos}}(inPos),\ \mbox{\hyperlink{classTriQuadPol_a338801418b047e0327ded7118ba2106c}{nQuadrature}}(\mbox{\hyperlink{classTriQuadPol_a338801418b047e0327ded7118ba2106c}{nQuadrature}}),\ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00014}00014\ \ \ \ \ \mbox{\hyperlink{classTriQuadPol_a7ea0ba45c1bba75d2a985f1720c36a99}{xQuadrature}}(\mbox{\hyperlink{classTriQuadPol_a7ea0ba45c1bba75d2a985f1720c36a99}{xQuadrature}}),\ \mbox{\hyperlink{classTriQuadPol_a3c18df1bb2cc09ba59e8fb3ede3aad10}{wQuadrature}}(\mbox{\hyperlink{classTriQuadPol_a3c18df1bb2cc09ba59e8fb3ede3aad10}{wQuadrature}})\ \{\ \mbox{\hyperlink{classTriQuadPol_abb4388c4a651d097c0c93376c45010e3}{adaptPolar}}();\ \}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00024}\mbox{\hyperlink{classTriQuadPol_abb4388c4a651d097c0c93376c45010e3}{00024}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTriQuadPol_abb4388c4a651d097c0c93376c45010e3}{TriQuadPol::adaptPolar}}()}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00025}00025\ \{\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00026}00026\ \ \ \ \ \mbox{\hyperlink{classTriQuadPol_a3b4071b7c9c552c377effdfbcf077034}{quadPoints}}.clear();\ \ \ \ \ \textcolor{comment}{//\ clear\ previous\ results}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00027}00027\ \ \ \ \ \mbox{\hyperlink{classTriQuadPol_a1f229c4863ade798d530d6ee12d51ba5}{quadWeights}}.clear();\ \ \ \ \textcolor{comment}{//\ clear\ previous\ results}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00028}00028\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00029}00029\ \ \ \ \ \mbox{\hyperlink{classTriQuadPol_aea4deef1068d5095c5c6afbb741be8d7}{transformInPlane}}();\ \ \ \ \ \textcolor{comment}{//\ project\ from\ 3D\ to\ 2D\ triangle\ plane}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{comment}{//\ Center\ of\ the\ triangle\ in\ plane}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00032}00032\ \ \ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ TpCenter(0.0,\ 0.0,\ 0.0);}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ TpCenter\ +=\ \mbox{\hyperlink{classTriQuadPol_ac9915973986ae9f6fc72fe0bb7f375e4}{vertsInPlane}}[i]\ /\ 3.0;}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00035}00035\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{comment}{//\ Angle\ between\ impact\ positions\ and\ boundary\ centroids}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00038}00038\ \ \ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ distVec\ =\ TpCenter\ -\/\ \mbox{\hyperlink{classTriQuadPol_a6f1041382f54d1fe3b124639b8881aa9}{posInPlane}};}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{keywordtype}{double}\ vertsTheta0\ =\ std::atan2(distVec[1],\ distVec[0]);}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{comment}{//\ Expand\ vertices\ in\ rotated\ system}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00042}00042\ \ \ \ \ std::vector<double>\ vertX(3),\ vertY(3);}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00043}00043\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ vertX[i]\ =\ (\mbox{\hyperlink{classTriQuadPol_ac9915973986ae9f6fc72fe0bb7f375e4}{vertsInPlane}}[i][0]\ -\/\ \mbox{\hyperlink{classTriQuadPol_a6f1041382f54d1fe3b124639b8881aa9}{posInPlane}}[0])\ *\ cos(vertsTheta0)\ +}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{classTriQuadPol_ac9915973986ae9f6fc72fe0bb7f375e4}{vertsInPlane}}[i][1]\ -\/\ \mbox{\hyperlink{classTriQuadPol_a6f1041382f54d1fe3b124639b8881aa9}{posInPlane}}[1])\ *\ sin(vertsTheta0);}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ vertY[i]\ =\ (\mbox{\hyperlink{classTriQuadPol_ac9915973986ae9f6fc72fe0bb7f375e4}{vertsInPlane}}[i][1]\ -\/\ \mbox{\hyperlink{classTriQuadPol_a6f1041382f54d1fe3b124639b8881aa9}{posInPlane}}[1])\ *\ cos(vertsTheta0)\ -\/}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{classTriQuadPol_ac9915973986ae9f6fc72fe0bb7f375e4}{vertsInPlane}}[i][0]\ -\/\ \mbox{\hyperlink{classTriQuadPol_a6f1041382f54d1fe3b124639b8881aa9}{posInPlane}}[0])\ *\ sin(vertsTheta0);}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00048}00048\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{comment}{//\ Convert\ vertices\ to\ polar\ coordinates}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00051}00051\ \ \ \ \ std::vector<double>\ vertsRho(3),\ vertsTheta(3);}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ vertsRho[i]\ =\ std::hypot(vertX[i],\ vertY[i]);}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ vertsTheta[i]\ =\ std::atan2(vertY[i],\ vertX[i]);}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00055}00055\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{comment}{//\ Sort\ vertices\ by\ angle}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00058}00058\ \ \ \ \ std::vector<int>\ idx(3);}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00059}00059\ \ \ \ \ std::iota(idx.begin(),\ idx.end(),\ 0);}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00060}00060\ \ \ \ \ std::sort(idx.begin(),\ idx.end(),\ [\&](\textcolor{keywordtype}{int}\ a,\ \textcolor{keywordtype}{int}\ b)\ \{\ return\ vertsTheta[a]\ <\ vertsTheta[b];\ \});}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00061}00061\ \ \ \ \ std::vector<double>\ vertsRhoSorted(3),\ vertsThetaSorted(3);}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00062}00062\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ vertsRhoSorted[i]\ \ \ =\ vertsRho[idx[i]];}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ vertsThetaSorted[i]\ =\ vertsTheta[idx[i]];}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00065}00065\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00066}00066\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00067}00067\ \ \ \ \ \textcolor{comment}{//\ Adapt\ integration\ points\ to\ triangle}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00068}00068\ \ \ \ \ std::vector<double>\ intThetas,\ intWeights,\ minRadius,\ maxRadius;}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00069}00069\ \ \ \ \ \textcolor{keywordtype}{bool}\ isInTriangle\ =\ \mbox{\hyperlink{classTriQuadPol_ad2163791262ee9d63337474eb7bbe8d7}{pointInTriangle}}(\mbox{\hyperlink{classTriQuadPol_a6f1041382f54d1fe3b124639b8881aa9}{posInPlane}},\ \mbox{\hyperlink{classTriQuadPol_ac9915973986ae9f6fc72fe0bb7f375e4}{vertsInPlane}}[0],\ \mbox{\hyperlink{classTriQuadPol_ac9915973986ae9f6fc72fe0bb7f375e4}{vertsInPlane}}[1],\ \mbox{\hyperlink{classTriQuadPol_ac9915973986ae9f6fc72fe0bb7f375e4}{vertsInPlane}}[2]);}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00070}00070\ \ \ \ \ \textcolor{keywordflow}{if}\ (isInTriangle)\ \ \ \ \textcolor{comment}{//\ if\ the\ observation\ point\ is\ within\ the\ triangle}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00071}00071\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Line\ in\ polar\ coordinates:\ r(t)\ =\ d0\ /\ cos(t\ -\/\ t0)\ -\/>\ Output:\ d0,\ t0}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ std::pair<double,\ double>\ line01\ =\ \mbox{\hyperlink{classTriQuadPol_a143954247825794d0dc5c0d0e3d98365}{lineInPolar}}(vertsThetaSorted[0],\ vertsRhoSorted[0],}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vertsThetaSorted[1],\ vertsRhoSorted[1]);}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ std::pair<double,\ double>\ line12\ =\ \mbox{\hyperlink{classTriQuadPol_a143954247825794d0dc5c0d0e3d98365}{lineInPolar}}(vertsThetaSorted[1],\ vertsRhoSorted[1],}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vertsThetaSorted[2],\ vertsRhoSorted[2]);}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ std::pair<double,\ double>\ line20\ =\ \mbox{\hyperlink{classTriQuadPol_a143954247825794d0dc5c0d0e3d98365}{lineInPolar}}(vertsThetaSorted[2],\ vertsRhoSorted[2],}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vertsThetaSorted[0],\ vertsRhoSorted[0]);}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Adapt\ integration\ points\ to\ triangle}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ std::vector<double>\ thetaTemp,\ weightTemp,\ minRadiusTemp,\ maxRadiusTemp;}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTriQuadPol_aa0a0a7af46125d5359ae00fca0621de2}{adaptIn}}(vertsTheta0,\ vertsThetaSorted[0],\ vertsThetaSorted[1],\ line01.first,\ line01.second,}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ thetaTemp,\ weightTemp,\ minRadiusTemp,\ maxRadiusTemp);}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ intThetas.insert(intThetas.end(),\ thetaTemp.begin(),\ thetaTemp.end());}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ intWeights.insert(intWeights.end(),\ weightTemp.begin(),\ weightTemp.end());}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ minRadius.insert(minRadius.end(),\ minRadiusTemp.begin(),\ minRadiusTemp.end());}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ maxRadius.insert(maxRadius.end(),\ maxRadiusTemp.begin(),\ maxRadiusTemp.end());}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTriQuadPol_aa0a0a7af46125d5359ae00fca0621de2}{adaptIn}}(vertsTheta0,\ vertsThetaSorted[1],\ vertsThetaSorted[2],\ line12.first,\ line12.second,}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ thetaTemp,\ weightTemp,\ minRadiusTemp,\ maxRadiusTemp);}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ intThetas.insert(intThetas.end(),\ thetaTemp.begin(),\ thetaTemp.end());}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ intWeights.insert(intWeights.end(),\ weightTemp.begin(),\ weightTemp.end());}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ minRadius.insert(minRadius.end(),\ minRadiusTemp.begin(),\ minRadiusTemp.end());}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ maxRadius.insert(maxRadius.end(),\ maxRadiusTemp.begin(),\ maxRadiusTemp.end());}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTriQuadPol_aa0a0a7af46125d5359ae00fca0621de2}{adaptIn}}(vertsTheta0,\ vertsThetaSorted[2],\ vertsThetaSorted[0],\ line20.first,\ line20.second,}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ thetaTemp,\ weightTemp,\ minRadiusTemp,\ maxRadiusTemp);}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ intThetas.insert(intThetas.end(),\ thetaTemp.begin(),\ thetaTemp.end());}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ intWeights.insert(intWeights.end(),\ weightTemp.begin(),\ weightTemp.end());}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ minRadius.insert(minRadius.end(),\ minRadiusTemp.begin(),\ minRadiusTemp.end());}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ maxRadius.insert(maxRadius.end(),\ maxRadiusTemp.begin(),\ maxRadiusTemp.end());}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00102}00102\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00103}00103\ \ \ \ \ \textcolor{keywordflow}{else}\ \ \ \ \textcolor{comment}{//\ if\ the\ observation\ point\ is\ not\ within\ the\ circumcircle}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00104}00104\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Line\ in\ polar\ coordinates:\ r(t)\ =\ d0\ /\ cos(t\ -\/\ t0)\ -\/>\ Output:\ d0,\ t0}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ std::pair<double,\ double>\ line01\ =\ \mbox{\hyperlink{classTriQuadPol_a143954247825794d0dc5c0d0e3d98365}{lineInPolar}}(vertsThetaSorted[0],\ vertsRhoSorted[0],}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vertsThetaSorted[1],\ vertsRhoSorted[1]);}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ std::pair<double,\ double>\ line02\ =\ \mbox{\hyperlink{classTriQuadPol_a143954247825794d0dc5c0d0e3d98365}{lineInPolar}}(vertsThetaSorted[0],\ vertsRhoSorted[0],}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vertsThetaSorted[2],\ vertsRhoSorted[2]);}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ std::pair<double,\ double>\ line12\ =\ \mbox{\hyperlink{classTriQuadPol_a143954247825794d0dc5c0d0e3d98365}{lineInPolar}}(vertsThetaSorted[1],\ vertsRhoSorted[1],}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vertsThetaSorted[2],\ vertsRhoSorted[2]);}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Adapt\ integration\ points\ to\ triangle}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ std::vector<double>\ thetaTemp,\ weightTemp,\ minRadiusTemp,\ maxRadiusTemp;}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTriQuadPol_a3f18d2c370480a52cb1364f9dd95ed06}{adaptOut}}(vertsTheta0,\ vertsThetaSorted[0],\ vertsThetaSorted[1],}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ line01.first,\ line01.second,\ line02.first,\ line02.second,}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ thetaTemp,\ weightTemp,\ minRadiusTemp,\ maxRadiusTemp);}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ intThetas.insert(intThetas.end(),\ thetaTemp.begin(),\ thetaTemp.end());}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ intWeights.insert(intWeights.end(),\ weightTemp.begin(),\ weightTemp.end());}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ minRadius.insert(minRadius.end(),\ minRadiusTemp.begin(),\ minRadiusTemp.end());}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ maxRadius.insert(maxRadius.end(),\ maxRadiusTemp.begin(),\ maxRadiusTemp.end());}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTriQuadPol_a3f18d2c370480a52cb1364f9dd95ed06}{adaptOut}}(vertsTheta0,\ vertsThetaSorted[1],\ vertsThetaSorted[2],}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ line12.first,\ line12.second,\ line02.first,\ line02.second,}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ thetaTemp,\ weightTemp,\ minRadiusTemp,\ maxRadiusTemp);}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ intThetas.insert(intThetas.end(),\ thetaTemp.begin(),\ thetaTemp.end());}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ intWeights.insert(intWeights.end(),\ weightTemp.begin(),\ weightTemp.end());}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ minRadius.insert(minRadius.end(),\ minRadiusTemp.begin(),\ minRadiusTemp.end());}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ maxRadius.insert(maxRadius.end(),\ maxRadiusTemp.begin(),\ maxRadiusTemp.end());}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00130}00130\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00131}00131\ \ \ \ \ \textcolor{comment}{//\ Assemble\ quadrature\ points}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00132}00132\ \ \ \ \ \mbox{\hyperlink{classTriQuadPol_a70845b7e565aa1befcffd099f850215b}{assembleFromPolar}}(intThetas,\ intWeights,\ minRadius,\ maxRadius);}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00133}00133\ \}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00139}\mbox{\hyperlink{classTriQuadPol_aea4deef1068d5095c5c6afbb741be8d7}{00139}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTriQuadPol_aea4deef1068d5095c5c6afbb741be8d7}{TriQuadPol::transformInPlane}}()\ \{}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00140}00140\ \ \ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ rp[3];}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00141}00141\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ ++i)\ rp[i]\ =\ \mbox{\hyperlink{classTriQuadPol_a00670e48ec20755b8fe3a467adb9a19f}{Tp}}-\/>Node(i);}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00143}00143\ \ \ \ \ \textcolor{comment}{//\ unit\ vectors}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00144}00144\ \ \ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ e1\ =\ rp[1]\ -\/\ rp[0];\ e1\ /=\ sqrt(\ dot(e1,\ e1)\ );}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00145}00145\ \ \ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ temp\ =\ rp[2]\ -\/\ rp[0];}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00146}00146\ \ \ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ e3\ =\ cross(e1,\ temp);\ e3\ /=\ sqrt(\ dot(e3,\ e3)\ );}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00147}00147\ \ \ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ e2\ =\ cross(e3,\ e1);}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00149}00149\ \ \ \ \ \textcolor{comment}{//\ vertices\ in\ triangle\ plane}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00150}00150\ \ \ \ \ \mbox{\hyperlink{classTriQuadPol_ac9915973986ae9f6fc72fe0bb7f375e4}{vertsInPlane}}.push\_back(\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}(\ 0.0,\ 0.0,\ 0.0\ )\ );\ \textcolor{comment}{//\ rp[0]\ in\ plane}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00151}00151\ \ \ \ \ temp\ =\ rp[1]\ -\/\ rp[0];}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00152}00152\ \ \ \ \ \mbox{\hyperlink{classTriQuadPol_ac9915973986ae9f6fc72fe0bb7f375e4}{vertsInPlane}}.push\_back(\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}(\ \mbox{\hyperlink{classTriQuadPol_ad0a8c886e263961bc2935f21ef14dcf7}{clean}}(\ dot(temp,\ e1)\ ),\ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTriQuadPol_ad0a8c886e263961bc2935f21ef14dcf7}{clean}}(\ dot(temp,\ e2)\ ),\ 0.0\ )\ );\ \textcolor{comment}{//\ rp[1]\ in\ plane}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00154}00154\ \ \ \ \ temp\ =\ rp[2]\ -\/\ rp[0];}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00155}00155\ \ \ \ \ \mbox{\hyperlink{classTriQuadPol_ac9915973986ae9f6fc72fe0bb7f375e4}{vertsInPlane}}.push\_back(\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}(\ \mbox{\hyperlink{classTriQuadPol_ad0a8c886e263961bc2935f21ef14dcf7}{clean}}(\ dot(temp,\ e1)\ ),\ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTriQuadPol_ad0a8c886e263961bc2935f21ef14dcf7}{clean}}(\ dot(temp,\ e2)\ ),\ 0.0\ )\ );\ \textcolor{comment}{//\ rp[2]\ in\ plane}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00157}00157\ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00158}00158\ \ \ \ \ \textcolor{comment}{//\ Origin\ in\ triangle\ plane}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00159}00159\ \ \ \ \ \mbox{\hyperlink{classTriQuadPol_a6f1041382f54d1fe3b124639b8881aa9}{posInPlane}}\ =\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}(\ \mbox{\hyperlink{classTriQuadPol_ad0a8c886e263961bc2935f21ef14dcf7}{clean}}(\ dot(e1,\ \mbox{\hyperlink{classTriQuadPol_a53271f2a13494d5716be47be74ff482a}{pos}}\ -\/\ rp[0])\ ),\ \mbox{\hyperlink{classTriQuadPol_ad0a8c886e263961bc2935f21ef14dcf7}{clean}}(\ dot(e2,\ \mbox{\hyperlink{classTriQuadPol_a53271f2a13494d5716be47be74ff482a}{pos}}\ -\/\ rp[0])\ ),\ 0.0\ );}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00160}00160\ \}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00167}\mbox{\hyperlink{classTriQuadPol_a143954247825794d0dc5c0d0e3d98365}{00167}}\ std::pair<double,\ double>\ \mbox{\hyperlink{classTriQuadPol_a143954247825794d0dc5c0d0e3d98365}{TriQuadPol::lineInPolar}}(\textcolor{keywordtype}{double}\ theta1,\ \textcolor{keywordtype}{double}\ rho1,\ \textcolor{keywordtype}{double}\ theta2,\ \textcolor{keywordtype}{double}\ rho2)\ \{}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00168}00168\ \ \ \ \ \textcolor{keywordflow}{if}\ (theta1\ ==\ theta2)\ theta2\ +=\ 1e-\/10;\ \textcolor{comment}{//\ avoid\ division\ by\ zero}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00169}00169\ \ \ \ \ \textcolor{keywordtype}{double}\ sinSign\ =\ std::sin(theta2\ -\/\ theta1)\ >\ 0\ ?\ 1.0\ :\ -\/1.0;}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00170}00170\ \ \ \ \ \textcolor{keywordtype}{double}\ R\ =\ std::sqrt(rho1\ *\ rho1\ +\ rho2\ *\ rho2\ -\/\ 2.0\ *\ rho1\ *\ rho2\ *\ std::cos(theta2\ -\/\ theta1));}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00171}00171\ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00172}00172\ \ \ \ \ \textcolor{comment}{//\ line\ parameters}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00173}00173\ \ \ \ \ \textcolor{keywordtype}{double}\ coeff0\ =\ sinSign\ /\ R\ *\ rho1\ *\ rho2\ *\ std::sin(theta2\ -\/\ theta1);}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00174}00174\ \ \ \ \ \textcolor{keywordtype}{double}\ theta0\ =\ std::atan2(-\/sinSign\ *\ (rho2\ *\ std::cos(theta2)\ -\/\ rho1\ *\ std::cos(theta1)),}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sinSign\ *\ (rho2\ *\ std::sin(theta2)\ -\/\ rho1\ *\ std::sin(theta1))\ );}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00176}00176\ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_pair(theta0,\ coeff0);}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00177}00177\ \}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00178}00178\ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00185}\mbox{\hyperlink{classTriQuadPol_aa0a0a7af46125d5359ae00fca0621de2}{00185}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTriQuadPol_aa0a0a7af46125d5359ae00fca0621de2}{TriQuadPol::adaptIn}}(\textcolor{keywordtype}{double}\ theta0,\ \textcolor{keywordtype}{double}\ thetaStart,\ \textcolor{keywordtype}{double}\ thetaEnd,\ \textcolor{keywordtype}{double}\ tLine,\ \textcolor{keywordtype}{double}\ dLine,}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<double>\&\ intThetas,\ std::vector<double>\&\ intWeights,}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<double>\&\ minRadius,\ std::vector<double>\&\ maxRadius)}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00188}00188\ \{}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00189}00189\ \ \ \ \ \textcolor{comment}{//\ clear\ previous\ results}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00190}00190\ \ \ \ \ intThetas.clear();\ intWeights.clear();\ minRadius.clear();\ maxRadius.clear();}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00191}00191\ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00192}00192\ \ \ \ \ \textcolor{comment}{//\ Wrap-\/around\ for\ negative\ angle\ spans}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00193}00193\ \ \ \ \ \textcolor{keywordflow}{if}\ (thetaEnd\ <\ thetaStart)\ thetaEnd\ +=\ 2.0\ *\ M\_PI;}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00194}00194\ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00195}00195\ \ \ \ \ \textcolor{comment}{//\ Allocate\ and\ compute}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00196}00196\ \ \ \ \ intThetas.resize(\mbox{\hyperlink{classTriQuadPol_a338801418b047e0327ded7118ba2106c}{nQuadrature}});\ intWeights.resize(\mbox{\hyperlink{classTriQuadPol_a338801418b047e0327ded7118ba2106c}{nQuadrature}});}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00197}00197\ \ \ \ \ minRadius.resize(\mbox{\hyperlink{classTriQuadPol_a338801418b047e0327ded7118ba2106c}{nQuadrature}},\ 0.0);\ maxRadius.resize(\mbox{\hyperlink{classTriQuadPol_a338801418b047e0327ded7118ba2106c}{nQuadrature}});}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00198}00198\ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00199}00199\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classTriQuadPol_a338801418b047e0327ded7118ba2106c}{nQuadrature}};\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00200}00200\ \ \ \ \ \ \ \ \ intThetas[i]\ =\ thetaStart\ +\ (thetaEnd\ -\/\ thetaStart)\ *\ \mbox{\hyperlink{classTriQuadPol_a7ea0ba45c1bba75d2a985f1720c36a99}{xQuadrature}}[i][0];}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ maxRadius[i]\ =\ dLine\ /\ std::cos(intThetas[i]\ -\/\ tLine);}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ intWeights[i]\ =\ (thetaEnd\ -\/\ thetaStart)\ *\ \mbox{\hyperlink{classTriQuadPol_a3c18df1bb2cc09ba59e8fb3ede3aad10}{wQuadrature}}[i];}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00203}00203\ \ \ \ \ \ \ \ \ intThetas[i]\ +=\ theta0;}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00204}00204\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00205}00205\ \}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00206}00206\ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00212}\mbox{\hyperlink{classTriQuadPol_a3f18d2c370480a52cb1364f9dd95ed06}{00212}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTriQuadPol_a3f18d2c370480a52cb1364f9dd95ed06}{TriQuadPol::adaptOut}}(\textcolor{keywordtype}{double}\ theta0,\ \textcolor{keywordtype}{double}\ thetaStart,\ \textcolor{keywordtype}{double}\ thetaEnd,}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ tLineFirst,\ \textcolor{keywordtype}{double}\ dLineFirst,\ \textcolor{keywordtype}{double}\ tLineSecond,\ \textcolor{keywordtype}{double}\ dLineSecond,}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<double>\&\ intThetas,\ std::vector<double>\&\ intWeights,}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<double>\&\ minRadius,\ std::vector<double>\&\ maxRadius)}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00216}00216\ \{}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00217}00217\ \ \ \ \ \textcolor{comment}{//\ clear\ previous\ results}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00218}00218\ \ \ \ \ intThetas.clear();\ intWeights.clear();\ minRadius.clear();\ maxRadius.clear();}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00219}00219\ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00220}00220\ \ \ \ \ \textcolor{comment}{//\ Allocate\ and\ compute}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00221}00221\ \ \ \ \ intThetas.resize(\mbox{\hyperlink{classTriQuadPol_a338801418b047e0327ded7118ba2106c}{nQuadrature}});\ intWeights.resize(\mbox{\hyperlink{classTriQuadPol_a338801418b047e0327ded7118ba2106c}{nQuadrature}});}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00222}00222\ \ \ \ \ minRadius.resize(\mbox{\hyperlink{classTriQuadPol_a338801418b047e0327ded7118ba2106c}{nQuadrature}},\ 0.0);\ maxRadius.resize(\mbox{\hyperlink{classTriQuadPol_a338801418b047e0327ded7118ba2106c}{nQuadrature}});}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00223}00223\ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00224}00224\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classTriQuadPol_a338801418b047e0327ded7118ba2106c}{nQuadrature}};\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ intThetas[i]\ =\ thetaStart\ +\ (thetaEnd\ -\/\ thetaStart)\ *\ \mbox{\hyperlink{classTriQuadPol_a7ea0ba45c1bba75d2a985f1720c36a99}{xQuadrature}}[i][0];}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ minRadius[i]\ =\ dLineFirst\ \ /\ std::cos(intThetas[i]\ -\/\ tLineFirst);}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00227}00227\ \ \ \ \ \ \ \ \ maxRadius[i]\ =\ dLineSecond\ /\ std::cos(intThetas[i]\ -\/\ tLineSecond);}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00228}00228\ \ \ \ \ \ \ \ \ intWeights[i]\ =\ (thetaEnd\ -\/\ thetaStart)\ *\ \mbox{\hyperlink{classTriQuadPol_a3c18df1bb2cc09ba59e8fb3ede3aad10}{wQuadrature}}[i];}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00229}00229\ \ \ \ \ \ \ \ \ intThetas[i]\ +=\ theta0;}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (minRadius[i]\ >\ maxRadius[i])\ std::swap(minRadius[i],\ maxRadius[i]);}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00231}00231\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00232}00232\ \}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00233}00233\ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00240}\mbox{\hyperlink{classTriQuadPol_a70845b7e565aa1befcffd099f850215b}{00240}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTriQuadPol_a70845b7e565aa1befcffd099f850215b}{TriQuadPol::assembleFromPolar}}(\textcolor{keyword}{const}\ std::vector<double>\&\ inThetas,\ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\&\ inWeights,}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\&\ inMinRadii,}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<double>\&\ inMaxRadii)}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00244}00244\ \{}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00245}00245\ \ \ \ \ \textcolor{comment}{//\ triangle\ vertices}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00246}00246\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\&\ vertex1\ =\ \mbox{\hyperlink{classTriQuadPol_ac9915973986ae9f6fc72fe0bb7f375e4}{vertsInPlane}}[0];}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00247}00247\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\&\ vertex2\ =\ \mbox{\hyperlink{classTriQuadPol_ac9915973986ae9f6fc72fe0bb7f375e4}{vertsInPlane}}[1];}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00248}00248\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\&\ vertex3\ =\ \mbox{\hyperlink{classTriQuadPol_ac9915973986ae9f6fc72fe0bb7f375e4}{vertsInPlane}}[2];}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00249}00249\ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00250}00250\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ inThetas.size();\ ++j)\ \{}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00251}00251\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classTriQuadPol_a338801418b047e0327ded7118ba2106c}{nQuadrature}};\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ expand\ integration\ points\ and\ weights\ along\ radial\ direction}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ r\ =\ inMinRadii[j]\ +\ \mbox{\hyperlink{classTriQuadPol_a7ea0ba45c1bba75d2a985f1720c36a99}{xQuadrature}}[i][0]\ *\ (inMaxRadii[j]\ -\/\ inMinRadii[j]);}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ weight\ =\ inWeights[j]\ *\ \mbox{\hyperlink{classTriQuadPol_a3c18df1bb2cc09ba59e8fb3ede3aad10}{wQuadrature}}[i]\ *\ (inMaxRadii[j]\ -\/\ inMinRadii[j])\ *\ r;}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ convert\ integration\ points\ to\ Cartesian\ coordinates}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ x\ =\ \mbox{\hyperlink{classTriQuadPol_a6f1041382f54d1fe3b124639b8881aa9}{posInPlane}}[0]\ +\ r\ *\ std::cos(inThetas[j]);}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ y\ =\ \mbox{\hyperlink{classTriQuadPol_a6f1041382f54d1fe3b124639b8881aa9}{posInPlane}}[1]\ +\ r\ *\ std::sin(inThetas[j]);}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00259}00259\ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ convert\ from\ Cartesian\ to\ triangle\ coordinates}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00261}00261\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ a\ =\ (vertex2[1]\ -\/\ vertex3[1])\ *\ (vertex1[0]\ -\/\ vertex3[0])\ +\ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (vertex3[0]\ -\/\ vertex2[0])\ *\ (vertex1[1]\ -\/\ vertex3[1]);}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ xt\ =\ (\ (vertex2[1]\ -\/\ vertex3[1])\ *\ (x\ -\/\ vertex3[0])\ +\ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (vertex3[0]\ -\/\ vertex2[0])\ *\ (y\ -\/\ vertex3[1])\ )\ /\ a;}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ yt\ =\ (\ (vertex3[1]\ -\/\ vertex1[1])\ *\ (x\ -\/\ vertex3[0])\ +\ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (vertex1[0]\ -\/\ vertex3[0])\ *\ (y\ -\/\ vertex3[1]))\ /\ a;}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00267}00267\ }
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ pt(3);\ pt[0]\ =\ xt;\ pt[1]\ =\ yt;\ pt[2]\ =\ 1.0\ -\/\ xt\ -\/\ yt;}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00269}00269\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTriQuadPol_a3b4071b7c9c552c377effdfbcf077034}{quadPoints}}.push\_back(pt);}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00270}00270\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTriQuadPol_a1f229c4863ade798d530d6ee12d51ba5}{quadWeights}}.push\_back(weight);}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00271}00271\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00272}00272\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TriQuadPol_8cpp_source_l00273}00273\ \}}
+
+\end{DoxyCode}

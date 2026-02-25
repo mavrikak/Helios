@@ -1,0 +1,8 @@
+<map id="Bsp3D" name="Bsp3D">
+<area shape="rect" id="Node000001" title="Minimal 3D BSP tree for triangle meshes." alt="" coords="44,704,160,1313"/>
+<area shape="poly" id="edge3_Node000001_Node000001" title=" " alt="" coords="162,944,172,951,180,965,185,984,187,1009,184,1040,176,1061,171,1059,179,1038,182,1008,180,985,175,967,168,955,159,949"/>
+<area shape="rect" id="Node000002" href="$structbspPolygon.html" title="Polygon wrapper carried through BSP splitting." alt="" coords="60,545,145,639"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,639,105,687,100,687,100,639"/>
+<area shape="rect" id="Node000003" href="$classTriangle.html" title="Triangular surface element with cached geometry and utilities." alt="" coords="5,5,199,480"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="105,479,105,528,100,528,100,479"/>
+</map>

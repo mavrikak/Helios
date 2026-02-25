@@ -1,0 +1,17 @@
+<map id="GaussQuad::IntegrateK" name="GaussQuad::IntegrateK">
+<area shape="rect" id="Node000001" title="Two‑triangle integral for the K operator (Eq." alt="" coords="5,103,177,130"/>
+<area shape="rect" id="Node000002" href="$classTriangle.html#a1d3d08deeb999f339d2e821a877521ba" title="Surface area of the triangle." alt="" coords="410,5,520,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="125,100,224,65,312,43,394,27,395,33,313,48,225,70,127,105"/>
+<area shape="rect" id="Node000003" href="$classTriangle.html#ab78508a340ec5d345adf114b43563dbf" title="Centroid of the triangle." alt="" coords="403,60,526,88"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="159,99,224,89,388,74,388,80,225,94,160,105"/>
+<area shape="rect" id="Node000004" href="$classRWGFun.html#a7540ce2f84c6b42a29c2808504c47d42" title="Evaluate the RWG vector shape function at a point on the triangle." alt="" coords="394,117,535,145"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="155,128,225,139,282,142,340,139,378,137,379,142,340,144,282,147,224,144,155,134"/>
+<area shape="rect" id="Node000005" href="$classGaussQuad.html#aa2f7019adfbd7b78e6f91e5554b526b7" title="I4: vector kernel crossed with RWG at the centroid." alt="" coords="225,103,340,130"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="177,114,209,114,209,119,177,119"/>
+<area shape="rect" id="Node000006" href="$classRWGFun.html#a6d9c854fc60bc02cb51ffb60cf388ccc" title="Get the pointer to the owner Triangle." alt="" coords="388,181,541,209"/>
+<area shape="poly" id="edge9_Node000001_Node000006" title=" " alt="" coords="147,128,225,147,374,177,373,182,224,152,146,133"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="301,100,340,74,387,46,407,37,409,42,389,51,343,78,304,104"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="340,100,387,89,388,94,341,106"/>
+<area shape="poly" id="edge7_Node000005_Node000004" title=" " alt="" coords="341,118,379,122,378,127,340,124"/>
+<area shape="poly" id="edge8_Node000005_Node000006" title=" " alt="" coords="318,128,418,172,416,177,316,133"/>
+</map>

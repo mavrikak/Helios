@@ -1,0 +1,88 @@
+\doxysection{casimir.\+cpp File Reference}
+\hypertarget{casimir_8cpp}{}\label{casimir_8cpp}\index{casimir.cpp@{casimir.cpp}}
+
+
+Main entry point for the HELIOS Casimir force routine.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include "{}CLParser.\+h"{}}\newline
+{\ttfamily \#include "{}Green\+F.\+h"{}}\newline
+{\ttfamily \#include "{}Job\+Parser.\+h"{}}\newline
+{\ttfamily \#include "{}SIEForm\+PMCHW.\+h"{}}\newline
+{\ttfamily \#include "{}Sim\+Job.\+h"{}}\newline
+{\ttfamily \#include "{}Surface\+Mesh.\+h"{}}\newline
+Include dependency graph for casimir.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{casimir_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{casimir_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Main driver routine for the simulation program. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main entry point for the HELIOS Casimir force routine. 
+
+This executable drives the computation of Casimir forces via the surface integral equation (SIE) solver infrastructure. Command line arguments control the input job file, output prefix, solver variant, accuracy settings, and threading configuration. 
+
+Definition in file \mbox{\hyperlink{casimir_8cpp_source}{casimir.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{casimir_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\index{casimir.cpp@{casimir.cpp}!main@{main}}
+\index{main@{main}!casimir.cpp@{casimir.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{casimir_8cpp_a0ddf1224851353fc92bfbff6f499fa97} 
+int main (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{argv}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+Main driver routine for the simulation program. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Argument count. \\
+\hline
+{\em argv} & Argument vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success.
+\end{DoxyReturn}
+Parses command line arguments, determines job type, and runs the requested simulation or mesh conversion. Provides help text when requested.
+
+Supported command line switches\+: -\/j FILE \+: Specify job file (default\+: input.\+job) -\/op PREFIX\+: Output prefix for result files -\/l \mbox{[}0,1,2\mbox{]}\+: Solver type (0=direct, 1=cgsqr, 2=LU \mbox{[}default\mbox{]}) -\/t FILE \+: Look-\/up table for error functions (optional) -\/a \+: Enable high-\/accuracy integration for matrix/vector elements -\/etm N \+: Number of evaluation terms in periodic simulation (default 1) -\/th N \+: Number of threads (0=all cores, default=1) --help \+: Print usage message \texorpdfstring{$<$}{<} Input job specification
+
+\texorpdfstring{$<$}{<} Prefix for output files
+
+\texorpdfstring{$<$}{<} Help flag
+
+\texorpdfstring{$<$}{<} Request high-\/accuracy quadrature
+
+\texorpdfstring{$<$}{<} Solver index (default\+: LU=2)
+
+\texorpdfstring{$<$}{<} Number of periodic evaluation terms
+
+\texorpdfstring{$<$}{<} Lookup table filename (optional)
+
+\texorpdfstring{$<$}{<} Number of parallel threads
+
+Definition at line \mbox{\hyperlink{casimir_8cpp_source_l00041}{41}} of file \mbox{\hyperlink{casimir_8cpp_source}{casimir.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{casimir_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}

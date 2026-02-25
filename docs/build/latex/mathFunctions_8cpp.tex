@@ -1,0 +1,307 @@
+\doxysection{math\+Functions.\+cpp File Reference}
+\hypertarget{mathFunctions_8cpp}{}\label{mathFunctions_8cpp}\index{mathFunctions.cpp@{mathFunctions.cpp}}
+{\ttfamily \#include "{}math\+Functions.\+h"{}}\newline
+{\ttfamily \#include $<$blitz/tvecglobs.\+h$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include "{}iofunctions.\+h"{}}\newline
+Include dependency graph for math\+Functions.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mathFunctions_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{mathFunctions_8cpp_abc57cde75234d7e165a9ebcdb45f2c29}{cerf}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} arg)
+\begin{DoxyCompactList}\small\item\em Error function for complex arguments. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{mathFunctions_8cpp_a7916c6b62310fe9cf38ec2a2890aaad4}{cerfc}} (\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} arg)
+\begin{DoxyCompactList}\small\item\em Complementary error function for complex arguments. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{mathFunctions_8cpp_a08aa713aa80e71c4c0e2c81ff7d1df50}{Ei}} (const double \&x)
+\begin{DoxyCompactList}\small\item\em Exponential integral function {\ttfamily E1/\+Ei}(x). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} \mbox{\hyperlink{mathFunctions_8cpp_ad467dbbc9a8479eecf74b3c13d1384d9}{Ep}} (const double \&x, int p)
+\begin{DoxyCompactList}\small\item\em Exponential integral of $ p^{th} $ order. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{mathFunctions_8cpp_a7ca0205c081d7fe4c5b2d7637e556e2b}{factorial}} (int num)
+\begin{DoxyCompactList}\small\item\em Factorial. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{globals_8h_ac062d767acbc2b8149a4039dc4a1a18f}{cdyad}} \mbox{\hyperlink{mathFunctions_8cpp_a3e09d80ae5d4038d0acf33eaa605bfe6}{transpose}} (\mbox{\hyperlink{globals_8h_ac062d767acbc2b8149a4039dc4a1a18f}{cdyad}} d)
+\begin{DoxyCompactList}\small\item\em Complex 3x3 dyadic and dot products. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{mathFunctions_8cpp_ab5ae92d9600ad72d4c0c18a49f876831}{Erfc\+Lookup\+Table}} (std\+::string filename, double max\+Re, double max\+Im, double inc\+Re, double inc\+Im)
+\begin{DoxyCompactList}\small\item\em Generate and save a text lookup table for {\ttfamily cerfc} over a complex grid. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{mathFunctions_8cpp_a619bd9a7be3251a7f44191aaeaa6ab7c}{Erfc\+Lookup\+Table\+Bin}} (std\+::string filename, double max\+Re, double max\+Im, double inc\+Re, double inc\+Im)
+\begin{DoxyCompactList}\small\item\em Generate and save a binary lookup table for {\ttfamily cerfc} over a complex grid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{mathFunctions_8cpp_abc57cde75234d7e165a9ebcdb45f2c29}\index{mathFunctions.cpp@{mathFunctions.cpp}!cerf@{cerf}}
+\index{cerf@{cerf}!mathFunctions.cpp@{mathFunctions.cpp}}
+\doxysubsubsection{\texorpdfstring{cerf()}{cerf()}}
+{\footnotesize\ttfamily \label{mathFunctions_8cpp_abc57cde75234d7e165a9ebcdb45f2c29} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} cerf (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{arg}{}\end{DoxyParamCaption})}
+
+
+
+Error function for complex arguments. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & Complex argument of {\ttfamily \doxylink{mathFunctions_8h_abc57cde75234d7e165a9ebcdb45f2c29}{cerf()}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex result. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{mathFunctions_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{mathFunctions_8cpp_source}{math\+Functions.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mathFunctions_8cpp_abc57cde75234d7e165a9ebcdb45f2c29_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mathFunctions_8cpp_a7916c6b62310fe9cf38ec2a2890aaad4}\index{mathFunctions.cpp@{mathFunctions.cpp}!cerfc@{cerfc}}
+\index{cerfc@{cerfc}!mathFunctions.cpp@{mathFunctions.cpp}}
+\doxysubsubsection{\texorpdfstring{cerfc()}{cerfc()}}
+{\footnotesize\ttfamily \label{mathFunctions_8cpp_a7916c6b62310fe9cf38ec2a2890aaad4} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} cerfc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}}]{arg}{}\end{DoxyParamCaption})}
+
+
+
+Complementary error function for complex arguments. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & Complex argument of {\ttfamily \doxylink{mathFunctions_8h_a7916c6b62310fe9cf38ec2a2890aaad4}{cerfc()}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex result. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{mathFunctions_8cpp_source_l00057}{57}} of file \mbox{\hyperlink{mathFunctions_8cpp_source}{math\+Functions.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{mathFunctions_8cpp_a7916c6b62310fe9cf38ec2a2890aaad4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mathFunctions_8cpp_a7916c6b62310fe9cf38ec2a2890aaad4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mathFunctions_8cpp_a08aa713aa80e71c4c0e2c81ff7d1df50}\index{mathFunctions.cpp@{mathFunctions.cpp}!Ei@{Ei}}
+\index{Ei@{Ei}!mathFunctions.cpp@{mathFunctions.cpp}}
+\doxysubsubsection{\texorpdfstring{Ei()}{Ei()}}
+{\footnotesize\ttfamily \label{mathFunctions_8cpp_a08aa713aa80e71c4c0e2c81ff7d1df50} 
+double Ei (\begin{DoxyParamCaption}\item[{const double \&}]{x}{}\end{DoxyParamCaption})}
+
+
+
+Exponential integral function {\ttfamily E1/\+Ei}(x). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Real argument of {\ttfamily \doxylink{mathFunctions_8h_a7916c6b62310fe9cf38ec2a2890aaad4}{cerfc()}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Real result. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{mathFunctions_8cpp_source_l00063}{63}} of file \mbox{\hyperlink{mathFunctions_8cpp_source}{math\+Functions.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=109pt]{mathFunctions_8cpp_a08aa713aa80e71c4c0e2c81ff7d1df50_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{mathFunctions_8cpp_a08aa713aa80e71c4c0e2c81ff7d1df50_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mathFunctions_8cpp_ad467dbbc9a8479eecf74b3c13d1384d9}\index{mathFunctions.cpp@{mathFunctions.cpp}!Ep@{Ep}}
+\index{Ep@{Ep}!mathFunctions.cpp@{mathFunctions.cpp}}
+\doxysubsubsection{\texorpdfstring{Ep()}{Ep()}}
+{\footnotesize\ttfamily \label{mathFunctions_8cpp_ad467dbbc9a8479eecf74b3c13d1384d9} 
+\mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}} Ep (\begin{DoxyParamCaption}\item[{const double \&}]{x}{, }\item[{int}]{p}{}\end{DoxyParamCaption})}
+
+
+
+Exponential integral of $ p^{th} $ order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Real argument of integral. \\
+\hline
+{\em p} & Order of integral. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex result. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{mathFunctions_8cpp_source_l00083}{83}} of file \mbox{\hyperlink{mathFunctions_8cpp_source}{math\+Functions.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{mathFunctions_8cpp_ad467dbbc9a8479eecf74b3c13d1384d9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=109pt]{mathFunctions_8cpp_ad467dbbc9a8479eecf74b3c13d1384d9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mathFunctions_8cpp_ab5ae92d9600ad72d4c0c18a49f876831}\index{mathFunctions.cpp@{mathFunctions.cpp}!ErfcLookupTable@{ErfcLookupTable}}
+\index{ErfcLookupTable@{ErfcLookupTable}!mathFunctions.cpp@{mathFunctions.cpp}}
+\doxysubsubsection{\texorpdfstring{ErfcLookupTable()}{ErfcLookupTable()}}
+{\footnotesize\ttfamily \label{mathFunctions_8cpp_ab5ae92d9600ad72d4c0c18a49f876831} 
+int Erfc\+Lookup\+Table (\begin{DoxyParamCaption}\item[{std\+::string}]{filename}{, }\item[{double}]{max\+Re}{, }\item[{double}]{max\+Im}{, }\item[{double}]{inc\+Re}{, }\item[{double}]{inc\+Im}{}\end{DoxyParamCaption})}
+
+
+
+Generate and save a text lookup table for {\ttfamily cerfc} over a complex grid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Output text file name. \\
+\hline
+{\em max\+Re} & Maximum real value of the grid. \\
+\hline
+{\em max\+Im} & Maximum imaginary value of the grid. \\
+\hline
+{\em inc\+Re} & Increment along the real axis. \\
+\hline
+{\em inc\+Im} & Increment along the imaginary axis. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, nonzero on failure. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{mathFunctions_8cpp_source_l00130}{130}} of file \mbox{\hyperlink{mathFunctions_8cpp_source}{math\+Functions.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{mathFunctions_8cpp_ab5ae92d9600ad72d4c0c18a49f876831_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{mathFunctions_8cpp_ab5ae92d9600ad72d4c0c18a49f876831_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mathFunctions_8cpp_a619bd9a7be3251a7f44191aaeaa6ab7c}\index{mathFunctions.cpp@{mathFunctions.cpp}!ErfcLookupTableBin@{ErfcLookupTableBin}}
+\index{ErfcLookupTableBin@{ErfcLookupTableBin}!mathFunctions.cpp@{mathFunctions.cpp}}
+\doxysubsubsection{\texorpdfstring{ErfcLookupTableBin()}{ErfcLookupTableBin()}}
+{\footnotesize\ttfamily \label{mathFunctions_8cpp_a619bd9a7be3251a7f44191aaeaa6ab7c} 
+int Erfc\+Lookup\+Table\+Bin (\begin{DoxyParamCaption}\item[{std\+::string}]{filename}{, }\item[{double}]{max\+Re}{, }\item[{double}]{max\+Im}{, }\item[{double}]{inc\+Re}{, }\item[{double}]{inc\+Im}{}\end{DoxyParamCaption})}
+
+
+
+Generate and save a binary lookup table for {\ttfamily cerfc} over a complex grid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Output binary file name. \\
+\hline
+{\em max\+Re} & Maximum real value of the grid. \\
+\hline
+{\em max\+Im} & Maximum imaginary value of the grid. \\
+\hline
+{\em inc\+Re} & Increment along the real axis. \\
+\hline
+{\em inc\+Im} & Increment along the imaginary axis. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, nonzero on failure. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{mathFunctions_8cpp_source_l00198}{198}} of file \mbox{\hyperlink{mathFunctions_8cpp_source}{math\+Functions.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{mathFunctions_8cpp_a619bd9a7be3251a7f44191aaeaa6ab7c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{mathFunctions_8cpp_a619bd9a7be3251a7f44191aaeaa6ab7c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mathFunctions_8cpp_a7ca0205c081d7fe4c5b2d7637e556e2b}\index{mathFunctions.cpp@{mathFunctions.cpp}!factorial@{factorial}}
+\index{factorial@{factorial}!mathFunctions.cpp@{mathFunctions.cpp}}
+\doxysubsubsection{\texorpdfstring{factorial()}{factorial()}}
+{\footnotesize\ttfamily \label{mathFunctions_8cpp_a7ca0205c081d7fe4c5b2d7637e556e2b} 
+int factorial (\begin{DoxyParamCaption}\item[{int}]{num}{}\end{DoxyParamCaption})}
+
+
+
+Factorial. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & Integer argument of factorial. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Integer result. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{mathFunctions_8cpp_source_l00114}{114}} of file \mbox{\hyperlink{mathFunctions_8cpp_source}{math\+Functions.\+cpp}}.
+
+\Hypertarget{mathFunctions_8cpp_a3e09d80ae5d4038d0acf33eaa605bfe6}\index{mathFunctions.cpp@{mathFunctions.cpp}!transpose@{transpose}}
+\index{transpose@{transpose}!mathFunctions.cpp@{mathFunctions.cpp}}
+\doxysubsubsection{\texorpdfstring{transpose()}{transpose()}}
+{\footnotesize\ttfamily \label{mathFunctions_8cpp_a3e09d80ae5d4038d0acf33eaa605bfe6} 
+\mbox{\hyperlink{globals_8h_ac062d767acbc2b8149a4039dc4a1a18f}{cdyad}} transpose (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{globals_8h_ac062d767acbc2b8149a4039dc4a1a18f}{cdyad}}}]{d}{}\end{DoxyParamCaption})}
+
+
+
+Complex 3x3 dyadic and dot products. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & Complex dyadic. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Transposed complex dyadic. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{mathFunctions_8cpp_source_l00121}{121}} of file \mbox{\hyperlink{mathFunctions_8cpp_source}{math\+Functions.\+cpp}}.
+

@@ -1,0 +1,7 @@
+<map id="SingCancellation::commonFacet" name="SingCancellation::commonFacet">
+<area shape="rect" id="Node000001" title="Build paired quadrature for identical triangles (common facet)." alt="" coords="5,40,201,85"/>
+<area shape="rect" id="Node000002" href="$classSingCancellation.html#a671bbe3bcc58c21a3fa62e605fd36be8" title="Write a single matrix column (chosen component) as a MATLAB style vector." alt="" coords="249,5,465,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,46,233,42,234,47,201,52"/>
+<area shape="rect" id="Node000003" href="$classSingCancellation.html#a099933b83efb63d62f2b5d1c26b6b7e8" title="Write a real vector as a MATLAB style column vector." alt="" coords="249,75,465,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="201,73,234,77,233,83,201,78"/>
+</map>

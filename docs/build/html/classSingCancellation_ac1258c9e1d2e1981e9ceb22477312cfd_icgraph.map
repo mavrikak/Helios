@@ -1,0 +1,6 @@
+<map id="SingCancellation::commonVertex" name="SingCancellation::commonVertex">
+<area shape="rect" id="Node000001" title="Build paired quadrature for triangles sharing a single vertex." alt="" coords="301,29,496,74"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="442,16,426,10,398,8,373,10,357,15,351,21,353,28,347,29,346,19,354,10,372,5,398,3,427,5,444,11"/>
+<area shape="rect" id="Node000002" href="$classSingCancellation.html#a8931df16b2dd06d74b1aa8a78eab4363" title="Construct and immediately generate the paired quadrature for a triangle pair." alt="" coords="5,38,253,66"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="285,54,253,54,253,49,285,49"/>
+</map>

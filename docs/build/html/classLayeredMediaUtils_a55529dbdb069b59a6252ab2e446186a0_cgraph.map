@@ -1,0 +1,20 @@
+<map id="LayeredMediaUtils::totalFresnelCoeffs" name="LayeredMediaUtils::totalFresnelCoeffs">
+<area shape="rect" id="Node000001" title="Computes reflection and transmission coefficients for the entire layered structure." alt="" coords="5,75,157,119"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="43,74,41,65,48,56,61,50,81,48,102,50,115,57,113,61,101,56,81,53,63,55,51,60,47,66,48,74"/>
+<area shape="rect" id="Node000002" href="$classLayeredMediaUtils.html#a796d55e02d56c610cae065557bc64c10" title="Computes the total transfer matrix for the entire layered structure." alt="" coords="205,75,356,119"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="157,94,189,94,189,100,157,100"/>
+<area shape="rect" id="Node000003" href="$classLayeredMediaUtils.html#a00598e0f83472fd9128419b9dddc7e09" title="Computes the interface transfer matrix for TE or TM waves." alt="" coords="404,5,577,50"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="349,72,406,53,407,58,351,77"/>
+<area shape="rect" id="Node000007" href="$classLayeredMediaUtils.html#ad48ebb179e3349bad58b015022cbff46" title="Performs matrix multiplication for 2D complex matrices." alt="" coords="415,75,566,119"/>
+<area shape="poly" id="edge8_Node000002_Node000007" title=" " alt="" coords="357,94,399,94,399,100,357,100"/>
+<area shape="rect" id="Node000008" href="$classLayeredMediaUtils.html#ac9168dd49348197009d483b94ff715a4" title="Computes the propagation matrix for a given layer." alt="" coords="625,105,777,150"/>
+<area shape="poly" id="edge9_Node000002_Node000008" title=" " alt="" coords="350,117,404,129,511,136,610,133,610,139,511,141,404,134,349,122"/>
+<area shape="rect" id="Node000004" href="$classLayeredMediaUtils.html#a212943a3dd5bdeaaa5c92ed21fad87a9" title="Computes Fresnel reflection and transmission coefficients at an interface." alt="" coords="625,21,777,66"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="578,32,610,34,609,39,577,37"/>
+<area shape="rect" id="Node000005" href="$LayeredMediaUtils_8cpp.html#a50405603197731a46c864b0f39744ed0" title="Computes the square root of a complex number with proper handling of negative imaginary parts." alt="" coords="825,79,928,107"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="778,62,811,72,809,77,776,68"/>
+<area shape="rect" id="Node000006" href="$Domain_8cpp.html#aafa3e4fa6318b2f8740f4dbd50c367e5" title="Extract the real part of each component of a complex 3&#45;vector." alt="" coords="976,79,1022,107"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="929,90,960,90,960,96,929,96"/>
+<area shape="poly" id="edge7_Node000006_Node000006" title=" " alt="" coords="977,80,973,70,976,61,985,55,999,53,1014,55,1022,61,1019,66,1012,60,999,58,987,60,981,64,979,70,982,78"/>
+<area shape="poly" id="edge10_Node000008_Node000005" title=" " alt="" coords="777,110,809,104,810,109,778,115"/>
+</map>

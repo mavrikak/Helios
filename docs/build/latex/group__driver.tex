@@ -1,0 +1,158 @@
+\doxysubsection{Driver \& Jobs}
+\hypertarget{group__driver}{}\label{group__driver}\index{Driver \& Jobs@{Driver \& Jobs}}
+Collaboration diagram for Driver \& Jobs\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{group__driver}
+\end{center}
+\end{figure}
+\doxysubsubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classCLParser}{CLParser}}
+\begin{DoxyCompactList}\small\item\em Abstract base for all command-\/line option parsers. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classCLOption}{CLOption$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em Typed option expecting a value (e.\+g., "{}-\/th 8"{}, "{}-\/l 2"{}). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classCLStringOption}{CLString\+Option}}
+\begin{DoxyCompactList}\small\item\em Option that captures a string argument. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classCLFlag}{CLFlag}}
+\begin{DoxyCompactList}\small\item\em Boolean flag option with no argument. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classJobParser}{Job\+Parser}}
+\begin{DoxyCompactList}\small\item\em Streaming, stack-\/based reader for simple tag-\/delimited job files. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classSimJob}{Sim\+Job}}
+\begin{DoxyCompactList}\small\item\em High-\/level driver for SIE simulations and field evaluation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T$>$ }\\int \mbox{\hyperlink{group__driver_ga3859b179ce92396b3d9187e4437d8826}{Read\+Commented}} (std\+::ifstream \texorpdfstring{$\ast$}{*}in\+Stream, T \texorpdfstring{$\ast$}{*}target)
+\begin{DoxyCompactList}\small\item\em Read a value of type {\ttfamily T} from a text stream, skipping lines beginning with \textquotesingle{}\#\textquotesingle{}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T$>$ }\\int \mbox{\hyperlink{group__driver_ga3842e19dc8aa8af24b8d124aaed5b296}{Read\+CommentedG}} (std\+::ifstream \texorpdfstring{$\ast$}{*}in\+Stream, T \texorpdfstring{$\ast$}{*}target)
+\begin{DoxyCompactList}\small\item\em Read a value of type {\ttfamily T} from a text stream, skipping lines beginning with \textquotesingle{}\$\textquotesingle{}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T$>$ }\\int \mbox{\hyperlink{group__driver_ga3b2ef62f0ee5a558bf60dfa50d961d7a}{Read\+And\+Print}} (std\+::ifstream \texorpdfstring{$\ast$}{*}in\+Stream)
+\begin{DoxyCompactList}\small\item\em Debug helper\+: read a value of type {\ttfamily T} and print it to std\+::cout. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Orchestration, file I/O, and batch runs. 
+
+\doxysubsubsection{Function Documentation}
+\Hypertarget{group__driver_ga3b2ef62f0ee5a558bf60dfa50d961d7a}\index{Driver \& Jobs@{Driver \& Jobs}!ReadAndPrint@{ReadAndPrint}}
+\index{ReadAndPrint@{ReadAndPrint}!Driver \& Jobs@{Driver \& Jobs}}
+\doxysubsubsubsection{\texorpdfstring{ReadAndPrint()}{ReadAndPrint()}}
+{\footnotesize\ttfamily \label{group__driver_ga3b2ef62f0ee5a558bf60dfa50d961d7a} 
+template$<$class T$>$ \\
+int Read\+And\+Print (\begin{DoxyParamCaption}\item[{std\+::ifstream \texorpdfstring{$\ast$}{*}}]{in\+Stream}{}\end{DoxyParamCaption})}
+
+
+
+Debug helper\+: read a value of type {\ttfamily T} and print it to std\+::cout. 
+
+Uses \doxylink{group__driver_ga3859b179ce92396b3d9187e4437d8826}{Read\+Commented} to attempt a read from {\ttfamily in\+Stream}; prints "{}\+Error!"{} if no value could be read/parsed, otherwise prints the value followed by a newline. The function always returns 0 (it is intended for quick debugging).
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Destination type (must be stream-\/extractable via operator\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>}). \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em in\+Stream} & Pointer to an open std\+::ifstream to read from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Always 0. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{iofunctions_8h_source_l00118}{118}} of file \mbox{\hyperlink{iofunctions_8h_source}{iofunctions.\+h}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{group__driver_ga3b2ef62f0ee5a558bf60dfa50d961d7a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{group__driver_ga3859b179ce92396b3d9187e4437d8826}\index{Driver \& Jobs@{Driver \& Jobs}!ReadCommented@{ReadCommented}}
+\index{ReadCommented@{ReadCommented}!Driver \& Jobs@{Driver \& Jobs}}
+\doxysubsubsubsection{\texorpdfstring{ReadCommented()}{ReadCommented()}}
+{\footnotesize\ttfamily \label{group__driver_ga3859b179ce92396b3d9187e4437d8826} 
+template$<$class T$>$ \\
+int Read\+Commented (\begin{DoxyParamCaption}\item[{std\+::ifstream \texorpdfstring{$\ast$}{*}}]{in\+Stream}{, }\item[{T \texorpdfstring{$\ast$}{*}}]{target}{}\end{DoxyParamCaption})}
+
+
+
+Read a value of type {\ttfamily T} from a text stream, skipping lines beginning with \textquotesingle{}\#\textquotesingle{}. 
+
+Attempts to extract the next non-\/comment token from {\ttfamily in\+Stream} and parse it into {\ttfamily target} using operator\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} on a temporary std\+::stringstream. If the next token starts with \textquotesingle{}\#\textquotesingle{}, the remainder of that line is discarded and the search continues. The function returns immediately after parsing a single value or if end-\/of-\/file/error is reached.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Destination type (must be stream-\/extractable via operator\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>}). \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em in\+Stream} & Pointer to an open std\+::ifstream to read from. \\
+\hline
+\mbox{\texttt{ out}}  & {\em target} & Pointer to the destination variable to receive the value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success; 1 on failure to parse or on reaching EOF without reading a value.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Behavior}
+
+\begin{DoxyItemize}
+\item Skips tokens that begin with \textquotesingle{}\#\textquotesingle{}, consuming the rest of that line.
+\item Accepts multiple values per line; stops after extracting the first valid value.
+\item Leaves the stream positioned after the consumed token (or end of file on failure).
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyWarning}{Warning}
+This function assumes that comment markers appear as the first character of a token. Comments that appear {\itshape after} a value on the same line must be separated by whitespace (e.\+g., "{}42 \# note"{}). 
+\end{DoxyWarning}
+
+
+Definition at line \mbox{\hyperlink{iofunctions_8h_source_l00054}{54}} of file \mbox{\hyperlink{iofunctions_8h_source}{iofunctions.\+h}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__driver_ga3859b179ce92396b3d9187e4437d8826_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{group__driver_ga3842e19dc8aa8af24b8d124aaed5b296}\index{Driver \& Jobs@{Driver \& Jobs}!ReadCommentedG@{ReadCommentedG}}
+\index{ReadCommentedG@{ReadCommentedG}!Driver \& Jobs@{Driver \& Jobs}}
+\doxysubsubsubsection{\texorpdfstring{ReadCommentedG()}{ReadCommentedG()}}
+{\footnotesize\ttfamily \label{group__driver_ga3842e19dc8aa8af24b8d124aaed5b296} 
+template$<$class T$>$ \\
+int Read\+CommentedG (\begin{DoxyParamCaption}\item[{std\+::ifstream \texorpdfstring{$\ast$}{*}}]{in\+Stream}{, }\item[{T \texorpdfstring{$\ast$}{*}}]{target}{}\end{DoxyParamCaption})}
+
+
+
+Read a value of type {\ttfamily T} from a text stream, skipping lines beginning with \textquotesingle{}\$\textquotesingle{}. 
+
+Identical semantics to \doxylink{group__driver_ga3859b179ce92396b3d9187e4437d8826}{Read\+Commented} except that lines whose first token starts with \textquotesingle{}\$\textquotesingle{} are treated as comments.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Destination type (must be stream-\/extractable via operator\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>}). \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em in\+Stream} & Pointer to an open std\+::ifstream to read from. \\
+\hline
+\mbox{\texttt{ out}}  & {\em target} & Pointer to the destination variable to receive the value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success; 1 on failure to parse or on reaching EOF without reading a value. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{iofunctions_8h_source_l00086}{86}} of file \mbox{\hyperlink{iofunctions_8h_source}{iofunctions.\+h}}.
+

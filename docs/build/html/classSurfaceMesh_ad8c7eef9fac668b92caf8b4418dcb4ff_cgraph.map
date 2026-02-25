@@ -1,0 +1,7 @@
+<map id="SurfaceMesh::AddEdgeTested" name="SurfaceMesh::AddEdgeTested">
+<area shape="rect" id="Node000001" title="Insert edge (n1,n2) if not already present (directly or via BC image)." alt="" coords="5,32,218,60"/>
+<area shape="rect" id="Node000002" href="$classSurfaceMesh.html#a7c57c7085e749775a96cb25a5424834e" title="Find the index of an edge mapped between n1,n2 via a stored symmetry op." alt="" coords="266,5,456,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="218,32,250,28,250,34,218,37"/>
+<area shape="rect" id="Node000003" href="$classSurfaceMesh.html#a45445ddd5776f8236dc72058cc1c7b18" title="Find the index of an existing edge between two nodes (direct match)." alt="" coords="266,57,456,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="218,54,251,57,250,63,218,59"/>
+</map>

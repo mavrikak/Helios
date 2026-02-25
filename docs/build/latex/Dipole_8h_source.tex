@@ -1,0 +1,88 @@
+\doxysection{Dipole.\+h}
+\hypertarget{Dipole_8h_source}{}\label{Dipole_8h_source}\index{Dipole.h@{Dipole.h}}
+\mbox{\hyperlink{Dipole_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00013}00013\ \textcolor{preprocessor}{\#ifndef\ DIPOLE\_H}}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00014}00014\ \textcolor{preprocessor}{\#define\ DIPOLE\_H}}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{GaussQuad_8h}{GaussQuad.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{GreenFLayered3D_8h}{GreenFLayered3D.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00018}00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{IncidentField_8h}{IncidentField.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00019}00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{globals_8h}{globals.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00020}00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{LayeredMediaUtils_8h}{LayeredMediaUtils.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00034}\mbox{\hyperlink{classDipole}{00034}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDipole_a0649c906cc011322eb38c42d86543f29}{Dipole}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classIncidentField}{IncidentField}}\ \{}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00035}00035\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00036}00036\ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Physical\ dipole\ parameters\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00037}\mbox{\hyperlink{classDipole_aba20b25654611d13c1c19c864c81f5bc}{00037}}\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ \mbox{\hyperlink{classDipole_aba20b25654611d13c1c19c864c81f5bc}{p}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00038}\mbox{\hyperlink{classDipole_a11919a062b4040f8009cb06311605148}{00038}}\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ \mbox{\hyperlink{classDipole_a11919a062b4040f8009cb06311605148}{r0}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00039}\mbox{\hyperlink{classDipole_ac2a421dd9a02e0a3a763cee52f4df5f7}{00039}}\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classDipole_ac2a421dd9a02e0a3a763cee52f4df5f7}{omega}};\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00040}00040\ \ \ }
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00041}00041\ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Background\ medium\ (homogeneous)\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00042}\mbox{\hyperlink{classDipole_a94da534906aac15e1abc6e80d3b83e98}{00042}}\ \ \ \mbox{\hyperlink{classGreenF}{GreenF}}*\ \mbox{\hyperlink{classDipole_a94da534906aac15e1abc6e80d3b83e98}{grnFun}};\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00043}\mbox{\hyperlink{classDipole_a057019005d78f7fd73fd2f01b27246e1}{00043}}\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classDipole_a057019005d78f7fd73fd2f01b27246e1}{muMedium}};\ \ \ }
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00045}00045\ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Tabulation\ data\ (layered)\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00046}\mbox{\hyperlink{classDipole_af3eb8faa0e08d236f47cf623c2d52f2c}{00046}}\ \ \ std::vector<Grid>\ \mbox{\hyperlink{classDipole_af3eb8faa0e08d236f47cf623c2d52f2c}{tabulationGrids}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00047}\mbox{\hyperlink{classDipole_a2c16bd3d938248ed055857c348ea77c6}{00047}}\ \ \ std::vector<Grid>\ \mbox{\hyperlink{classDipole_a2c16bd3d938248ed055857c348ea77c6}{tabulationGridsFields}};\ }
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00048}00048\ \ \ }
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00049}00049\ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Layered‑medium\ state\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00050}\mbox{\hyperlink{classDipole_ac4fe58389c6851319547c866c205940c}{00050}}\ \ \ \mbox{\hyperlink{classGreenF}{GreenF}}\ *\mbox{\hyperlink{classDipole_ac4fe58389c6851319547c866c205940c}{grnFunLayered}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00051}\mbox{\hyperlink{classDipole_abd0ff6142ade5410fb2653de867f1a53}{00051}}\ \ \ \mbox{\hyperlink{classGreenF}{GreenF}}\ *\mbox{\hyperlink{classDipole_abd0ff6142ade5410fb2653de867f1a53}{grnFunLayeredFields}};\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00052}\mbox{\hyperlink{classDipole_a838c697f42b297a69e6417400fbf944d}{00052}}\ \ \ \mbox{\hyperlink{classLayeredMediaUtils}{LayeredMediaUtils}}*\ \mbox{\hyperlink{classDipole_a838c697f42b297a69e6417400fbf944d}{layeredUtils}};\ }
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00054}00054\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00055}00055\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00056}00056\ \ \ \textcolor{comment}{//\ Construction}}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00057}00057\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00068}00068\ \ \ \mbox{\hyperlink{classDipole_a0649c906cc011322eb38c42d86543f29}{Dipole}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ location,\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ polarization,\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ vacuumWavelength,}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classDipole_a057019005d78f7fd73fd2f01b27246e1}{muMedium}},\ \mbox{\hyperlink{classGreenF}{GreenF}}*\ fHom);}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00082}00082\ \ \ \mbox{\hyperlink{classDipole_a0649c906cc011322eb38c42d86543f29}{Dipole}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ location,\ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ polarization,\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ vacuumWavelength,\ }
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGreenF}{GreenF}}*\ fHom,\ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classDipole_a057019005d78f7fd73fd2f01b27246e1}{muMedium}},\ std::vector<Grid>\ tabGrids,\ }
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGreenF}{GreenF}}*\ fLayered,\ \mbox{\hyperlink{classLayeredMediaUtils}{LayeredMediaUtils}}*\ utils);}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00086}00086\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00087}00087\ \ \ \textcolor{comment}{//\ Pointwise\ field\ evaluation}}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00088}00088\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00094}00094\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ \mbox{\hyperlink{classDipole_ab4873557b39cc8d504446c35392ab2a0}{EvaluateE}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ position);}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00095}00095\ \ \ }
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00101}00101\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ \mbox{\hyperlink{classDipole_a4d85fde503ac7167f832503d5256c5e9}{EvaluateH}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ position);}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00111}00111\ \ \ std::vector<cvec>\ \mbox{\hyperlink{classDipole_a5ffb98d7b929694cd41ec4e3a9593864}{EvaluateLayeredEandH}}(\mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ position);}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00112}00112\ \ \ }
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00113}00113\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00114}00114\ \ \ \textcolor{comment}{//\ RWG\ integrations\ (MoM\ right‑hand‑sides)}}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00115}00115\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00121}00121\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classDipole_a212daff5bb4e371b91e138e128722edd}{IntegrateE}}(\mbox{\hyperlink{classRWGFun}{RWGFun}}*\ f);}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00128}00128\ \ \ \mbox{\hyperlink{globals_8h_a52196b4b274b585226e0614490f7defc}{dcmplx}}\ \mbox{\hyperlink{classDipole_a1dd3ce01913b5cff62ea44cc9590e49d}{IntegrateH}}(\mbox{\hyperlink{classRWGFun}{RWGFun}}*\ f);}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00135}00135\ \ \ std::vector<dcmplx>\ \mbox{\hyperlink{classDipole_ad6b98d59b3e4e25f5715c0d55f7802a4}{IntegrateLayeredEandH}}(\mbox{\hyperlink{classRWGFun}{RWGFun}}*\ f);}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00136}00136\ \ \ }
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00137}00137\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00138}00138\ \ \ \textcolor{comment}{//\ Accessors}}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00139}00139\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00143}00143\ \ \ \mbox{\hyperlink{globals_8h_a876530d0f199e8f774203e2998d14f7f}{cvec}}\ \mbox{\hyperlink{classDipole_a6dfe13a5697de45442ea2366a77753be}{Polarization}}();}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00144}00144\ \ \ }
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00148}00148\ \ \ \mbox{\hyperlink{globals_8h_ae4271193b04e5d22237184d4fad54fb0}{rvec}}\ \mbox{\hyperlink{classDipole_af0be5b4af0cd662c8684b01255b92433}{Location}}();}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00150}00150\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00151}00151\ \ \ \textcolor{comment}{//\ Type\ traits\ (for\ polymorphic\ \#IncidentField\ handling)}}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00152}00152\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00153}\mbox{\hyperlink{classDipole_a056558ea28c9ae3bea6e49e409f75c9b}{00153}}\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classDipole_a056558ea28c9ae3bea6e49e409f75c9b}{IsPlaneWave}}()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00154}\mbox{\hyperlink{classDipole_a5cbd149068ebf7d40f1776285124c390}{00154}}\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classDipole_a5cbd149068ebf7d40f1776285124c390}{IsDipole}}()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \}}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00155}\mbox{\hyperlink{classDipole_a40f2ba72f8dccd762a8c4084a58a12df}{00155}}\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classDipole_a40f2ba72f8dccd762a8c4084a58a12df}{IsGaussian}}()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00157}00157\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00158}00158\ \ \ \textcolor{comment}{//\ Layered‑media\ configuration}}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00159}00159\ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00166}00166\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDipole_a2e30bf49055a001b5d8c3e695f103e3d}{setGrnFunLayered}}(\mbox{\hyperlink{classGreenF}{GreenF}}\ *fGrnFields,\ std::vector<Grid>\ tabGrids);}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00167}00167\ \};}
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{Dipole_8h_source_l00169}00169\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

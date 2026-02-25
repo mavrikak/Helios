@@ -1,0 +1,15 @@
+<map id="CLParser::CLParser" name="CLParser::CLParser">
+<area shape="rect" id="Node000001" title="Construct with an option token." alt="" coords="234,136,375,164"/>
+<area shape="rect" id="Node000002" href="$classCLFlag.html#a5bc94e73d6b20d467223406a2633a159" title="Construct a flag option bound to a bool." alt="" coords="37,5,154,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="279,126,237,86,184,48,154,35,156,30,187,44,241,82,282,122"/>
+<area shape="rect" id="Node000003" href="$classCLFlag.html#abf908121289adb95e2775fa130ea15a1" title="Construct a flag option bound to a bool." alt="" coords="37,57,154,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="259,132,185,100,148,88,150,83,187,95,261,127"/>
+<area shape="rect" id="Node000004" href="$classCLOption.html#a7037b52c35d80fbcb5fc904f0a355eb0" title="Construct a typed option bound to a user variable." alt="" coords="22,109,169,137"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="218,141,169,135,170,130,218,136"/>
+<area shape="rect" id="Node000005" href="$classCLOption.html#ac0b0b5639205ec8c053fecf8d68cc469" title="Construct a typed option bound to a user variable." alt="" coords="22,161,169,189"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="218,163,170,169,169,164,218,158"/>
+<area shape="rect" id="Node000006" href="$classCLStringOption.html#af7e84e8bff6743836766864e69df4432" title="Construct a string option bound to a user string." alt="" coords="5,213,186,258"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="258,172,187,203,157,215,155,210,185,198,256,168"/>
+<area shape="rect" id="Node000007" href="$classCLStringOption.html#a1b34fe91547f81abac032eee3c94e72e" title="Construct a string option bound to a user string." alt="" coords="5,282,186,327"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="285,178,243,225,216,250,187,272,166,284,163,279,184,268,213,246,239,221,281,174"/>
+</map>

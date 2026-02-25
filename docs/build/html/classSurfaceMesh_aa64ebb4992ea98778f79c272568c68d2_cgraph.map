@@ -1,0 +1,21 @@
+<map id="SurfaceMesh::LoadFromFile" name="SurfaceMesh::LoadFromFile">
+<area shape="rect" id="Node000001" title="Load a mesh from file by extension." alt="" coords="5,57,206,85"/>
+<area shape="rect" id="Node000002" href="$classSurfaceMesh.html#ad8ac4a9fe716d917b92e245d091ab553" title="Read mesh from the custom &quot;.mesh&quot; text format." alt="" coords="259,5,494,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,54,285,34,286,39,182,59"/>
+<area shape="rect" id="Node000007" href="$classSurfaceMesh.html#ab392f262cacf93c286ef49cbe95f2a66" title="Read mesh from a COMSOL &quot;.mphtxt&quot; file." alt="" coords="254,57,500,85"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="206,68,238,68,238,74,206,74"/>
+<area shape="rect" id="Node000008" href="$classSurfaceMesh.html#ae7486b3dfa647ae8ee6063bd6297f5ff" title="Read mesh from a Gmsh &quot;.msh&quot; file (v2 text)." alt="" coords="263,109,490,137"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="182,83,286,103,285,108,181,88"/>
+<area shape="rect" id="Node000003" href="$classSurfaceMesh.html#ad8c7eef9fac668b92caf8b4418dcb4ff" title="Insert edge (n1,n2) if not already present (directly or via BC image)." alt="" coords="548,32,760,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="495,28,533,31,532,37,495,33"/>
+<area shape="rect" id="Node000006" href="$group__driver.html#ga3859b179ce92396b3d9187e4437d8826" title="Read a value of type T from a text stream, skipping lines beginning with &#39;#&#39;." alt="" coords="587,84,721,112"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="460,31,501,43,525,56,549,69,573,77,571,82,547,74,523,61,499,48,458,36"/>
+<area shape="rect" id="Node000004" href="$classSurfaceMesh.html#a7c57c7085e749775a96cb25a5424834e" title="Find the index of an edge mapped between n1,n2 via a stored symmetry op." alt="" coords="808,7,999,34"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="761,32,792,29,793,34,761,38"/>
+<area shape="rect" id="Node000005" href="$classSurfaceMesh.html#a45445ddd5776f8236dc72058cc1c7b18" title="Find the index of an existing edge between two nodes (direct match)." alt="" coords="809,59,998,86"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="761,55,794,58,793,63,761,60"/>
+<area shape="poly" id="edge7_Node000007_Node000003" title=" " alt="" coords="500,57,532,54,532,60,501,63"/>
+<area shape="poly" id="edge8_Node000007_Node000006" title=" " alt="" coords="501,80,572,87,571,93,500,86"/>
+<area shape="poly" id="edge10_Node000008_Node000003" title=" " alt="" coords="457,106,499,94,523,82,547,70,572,62,574,67,549,75,525,87,501,99,458,111"/>
+<area shape="poly" id="edge11_Node000008_Node000006" title=" " alt="" coords="491,110,571,103,571,108,491,115"/>
+</map>

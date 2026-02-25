@@ -1,0 +1,9 @@
+<map id="Domain" name="Domain">
+<area shape="rect" id="Node000001" title="Abstract base class for domains." alt="" coords="110,5,312,524"/>
+<area shape="rect" id="Node000002" href="$classDomainHom3D.html" title="Concrete domain for homogeneous 3D media." alt="" coords="5,650,201,1080"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="165,539,144,651,139,650,159,538"/>
+<area shape="rect" id="Node000004" href="$classDomainLayered3D.html" title="3D stratified (layered) medium domain." alt="" coords="225,572,414,1158"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="263,538,269,572,264,573,258,539"/>
+<area shape="rect" id="Node000003" href="$classDomainHom3DPer.html" title="Homogeneous medium with Bloch‑periodic excitation/Green&#39;s function." alt="" coords="19,1206,188,1301"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="106,1095,106,1206,101,1206,101,1095"/>
+</map>
