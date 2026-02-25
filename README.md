@@ -160,7 +160,7 @@ conda activate Helios
 
 ```bash
 sudo apt install git git-lfs && git lfs install
-git clone git@github.com:mavrikak/Helios.git
+git clone https://github.com/mavrikak/Helios.git
 ```
 
 2. Create a conda environment with [Miniconda](https://www.anaconda.com/docs/getting-started/miniconda/install#linux-2) and activate it:
