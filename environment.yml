@@ -2,9 +2,11 @@ name: Helios
 channels:
   - conda-forge
 dependencies:
+  # Build tools
+  - make
   # Core compilers (for Linux, use platform-appropriate variants on macOS/Windows)
-  - gxx_linux-64
-  - gfortran_linux-64
+  - gxx_linux-64=11.4.0
+  - gfortran_linux-64=11.4.0
 
   # Math and numerical libs
   - openblas

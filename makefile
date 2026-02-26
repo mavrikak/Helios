@@ -1,9 +1,14 @@
 ##### =================================================================================================
 ##### Toolchains
 ##### =================================================================================================
-FC  = gfortran
-CPP = g++ -std=c++11
-LL  = g++
+# Conda sets $FC and $CXX automatically. 
+# ?= ensures we use Conda's compilers if active, or system defaults if not.
+FC  ?= gfortran
+CXX ?= g++
+
+# Point custom variables to the resolved CXX compiler
+CPP = $(CXX) -std=c++11
+LL  = $(CXX)
 
 ##### =================================================================================================
 ##### Warnings & Optimization
