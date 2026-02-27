@@ -22,9 +22,9 @@ HELIOS is a C++ / Python toolkit for simulating electromagnetic scattering from 
 
 ## 📝 Citations
 
-- Parmenion S. Mavrikakis and Olivier J. F. Martin, "HELIOS: A surface integral equation software for light scattering in homogeneous, periodic, and stratified environments," In Preparation.
-- Andreas M. Kern and Olivier J. F. Martin, "Surface integral formulation for 3D simulations of plasmonic and high permittivity nanostructures," J. Opt. Soc. Am. A 26, 732-740 (2009). https://doi.org/10.1364/JOSAA.26.000732.
-- Benjamin Gallinet, Andreas M. Kern, and Olivier J. F. Martin, "Accurate and versatile modeling of electromagnetic scattering on periodic nanostructures with a surface integral approach," J. Opt. Soc. Am. A 27, 2261-2271 (2010). https://doi.org/10.1364/JOSAA.27.002261.
+- P.S. Mavrikakis, O.J.F. Martin, arXiv (2026). https://doi.org/10.48550/arXiv.2602.23097.
+- A.M. Kern, O.J.F. Martin, J. Opt. Soc. Am. A 26 (2009) 732–740. https://doi.org/10.1364/JOSAA.26.000732.
+- B. Gallinet, A.M. Kern, O.J.F. Martin, J. Opt. Soc. Am. A Opt. Image Sci. Vis. 27 (2010) 2261–2271. https://doi.org/10.1364/JOSAA.27.002261.
 
 ---
 
