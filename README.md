@@ -25,6 +25,7 @@ HELIOS is a C++ / Python toolkit for simulating electromagnetic scattering from 
 - P.S. Mavrikakis, O.J.F. Martin, arXiv (2026). https://doi.org/10.48550/arXiv.2602.23097.
 - A.M. Kern, O.J.F. Martin, J. Opt. Soc. Am. A 26 (2009) 732–740. https://doi.org/10.1364/JOSAA.26.000732.
 - B. Gallinet, A.M. Kern, O.J.F. Martin, J. Opt. Soc. Am. A Opt. Image Sci. Vis. 27 (2010) 2261–2271. https://doi.org/10.1364/JOSAA.27.002261.
+- T.V. Raziman, W.R.C. Somerville, O.J.F. Martin, E.C. Le Ru, J. Opt. Soc. Am. B 32 (2015) 485–492. https://doi.org/10.1364/JOSAB.32.000485.
 
 ---
 
