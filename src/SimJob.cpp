@@ -132,6 +132,15 @@ int SimJob::LoadFromFile() {
         }
         LoadDipole();
       }
+      if (jobParser.getTag() == "waveguide") {
+        if (isCasimirJob) {
+          std::cout << "Error: Casimir force computation does not support "
+                      "illumination."
+                    << std::endl;
+          return 1;
+        }
+        LoadWaveguide();
+      }
       if (jobParser.getTag() == "gaussian") {
         if (isCasimirJob) {
           std::cout << "Error: Casimir force computation does not support "
@@ -175,6 +184,9 @@ int SimJob::LoadSubjobFromFile() {
       }
       if (jobParser.getTag() == "gaussian") {
         LoadGaussian();
+      }
+      if (jobParser.getTag() == "waveguide") {
+        LoadWaveguide();
       }
     }
     if (!hasLabel) {
@@ -418,6 +430,38 @@ int SimJob::LoadGaussian() {
                                     focus_position, propagation, polarisation);
   std::cout << "Adding paraxial Gaussian to the domain " << domainIndex
             << std::endl;
+  return 0;
+}
+
+// Read @f$<waveguide>@f$ block and attach to a domain.
+int SimJob::LoadWaveguide() {
+  jobParser.readTag();
+  double phi(0);
+  std::string pol("TE");
+  int mode(0);
+  int domainIndex(0);
+  while (jobParser.lastRead() != "/waveguide") {
+    if (jobParser.getTag() == "phi") {
+      phi = jobParser.read<double>();
+      jobParser.readTag();
+    }
+    if (jobParser.getTag() == "polarization") {
+      pol = jobParser.read<std::string>();
+      jobParser.readTag();
+    }
+    if (jobParser.getTag() == "mode") {
+      mode = jobParser.read<int>();
+      jobParser.readTag();
+    }
+    if (jobParser.getTag() == "domain") {
+      domainIndex = jobParser.read<int>();
+      jobParser.readTag();
+    }
+    jobParser.readTag();
+  }
+
+  domains[domainIndex]->AddWaveguide(phi, pol, mode);
+  std::cout << "Adding waveguide mode to domain " << domainIndex << std::endl;
   return 0;
 }
 
