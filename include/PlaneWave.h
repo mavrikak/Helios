@@ -186,6 +186,12 @@ class PlaneWave : public IncidentField {
    * @return False.
    */
   bool IsGaussian() { return false; }
+
+  /** 
+   * @brief Identify field as not a Waveguide Mode. 
+   * @return False.
+   */
+  bool IsWaveguideMode() { return false; }  
   
   /**
    * @brief Provide layered-medium Green's function and its tabulation grids.

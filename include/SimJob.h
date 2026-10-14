@@ -120,6 +120,12 @@ class SimJob {
   int LoadGaussian();
 
   /**
+   * @brief Parse and load waveguide excitation from @f$<waveguide>...</waveguide>@f$.
+   * @return 0 on success; non-zero on parse error.
+   */
+  int LoadWaveguide();
+
+  /**
    * @brief Parse and load periodicity parameters from @f$<periodic>...</periodic>@f$.
    * @return 0 on success; non-zero on parse error.
    */

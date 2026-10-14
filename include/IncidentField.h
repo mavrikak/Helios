@@ -116,6 +116,11 @@ protected:
    */
   virtual bool IsGaussian() = 0;
 
+  /** @brief True if this excitation is a Waveguide mode.
+   * @return True if Waveguide mode illumination exists.
+   */
+  virtual bool IsWaveguideMode() = 0;
+
   // ---------------------------------------------------------------------------
   // Layered-media configuration
   // ---------------------------------------------------------------------------

@@ -153,6 +153,11 @@ class Gaussian : public IncidentField {
    *  @return true. 
    */
   bool IsGaussian()  { return true;  }
+
+  /** @brief Identify field as not a Waveguide Mode.
+   *  @return False.
+   */
+  bool IsWaveguideMode() { return false; }
   
   // --- Layered GF wiring (unsupported for this class) ---
   /**

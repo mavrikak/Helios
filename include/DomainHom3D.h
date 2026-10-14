@@ -169,8 +169,16 @@ class DomainHom3D : public Domain {
    * @param polarization Complex polarization vector.
    * @return 0 on success; non-zero otherwise.
    */
-  virtual int AddGaussian(double wavelength, double waist, rvec focal_point,
-  rvec propagationdirection, cvec polarization);
+  virtual int AddGaussian(double wavelength, double waist, rvec focal_point, rvec propagationdirection, cvec polarization);
+
+  /**
+   * @brief Add a waveguide mode excitation.
+   * @param phi Propagation angle.
+   * @param pol Polarization (TE or TM).
+   * @param mode Mode index.
+   * @return 0 on success; non-zero otherwise.
+   */
+  virtual int AddWaveguide(double phi, std::string pol, int mode);
 };
 
 #endif
