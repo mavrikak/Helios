@@ -2697,9 +2697,9 @@ void GreenFLayered3D::FillIntraInside(const std::vector<dcmplx>& rq_te,
   size_t nr = inGrid.r.size();                          // Number of r values
   size_t nz = inGrid.z1.size();                         // Number of z1-z2 values
 
-  rtab.resize(nz, std::vector<double>(nr));  // Initialize r grid
-  z1tab.resize(nz, std::vector<double>(nr)); // Initialize z1 grid
-  z2tab.resize(nz, std::vector<double>(nr)); // Initialize z2 grid
+  rtab.resize(nr, std::vector<double>(nz));  // Initialize r grid
+  z1tab.resize(nr, std::vector<double>(nz)); // Initialize z1 grid
+  z2tab.resize(nr, std::vector<double>(nz)); // Initialize z2 grid
 
   // Generate grids
   for (size_t i = 0; i < nr; ++i) {
@@ -2732,9 +2732,9 @@ void GreenFLayered3D::FillInter(const dcmplx& tq_te, const dcmplx& tq_tm,
   size_t nz2 = inGrid.z2.size();                                    // Number of z2 values
   
   // Resize to 3D shape (nz2, nz1, nr)
-  rtab.resize(nz2, std::vector<std::vector<double>>(nz1, std::vector<double>(nr)));
-  ztab1.resize(nz2, std::vector<std::vector<double>>(nz1, std::vector<double>(nr)));
-  ztab2.resize(nz2, std::vector<std::vector<double>>(nz1, std::vector<double>(nr)));
+  rtab.resize(nr, std::vector<std::vector<double>>(nz1, std::vector<double>(nz2)));
+  ztab1.resize(nr, std::vector<std::vector<double>>(nz1, std::vector<double>(nz2)));
+  ztab2.resize(nr, std::vector<std::vector<double>>(nz1, std::vector<double>(nz2)));
 
   // Generate 3D grids
   for (size_t i = 0; i < nr; ++i) {       // Iterate over r dimension
@@ -2789,6 +2789,10 @@ void GreenFLayered3D::FillGreenFTable() {
       bool revZ = tabulationGrids[i].z1.front() > tabulationGrids[i].z1.back();
       if (revR) std::reverse(tabulationGrids[i].r.begin(),  tabulationGrids[i].r.end());
       if (revZ) std::reverse(tabulationGrids[i].z1.begin(), tabulationGrids[i].z1.end());
+      std::cout << "Filling Green's function table for layer " << tabulationGrids[i].i1 << " (top/bottom layer) " 
+                << "with r-range [" << tabulationGrids[i].r.front() << ", " << tabulationGrids[i].r.back() << "], "
+                << "z1-range [" << tabulationGrids[i].z1.front() << ", " << tabulationGrids[i].z1.back() << "]"
+                << std::endl;
 
       // Fill the Green's function table for the top and bottom layers
       FillIntraTopBottom(fresnelQS[0], fresnelQS[1], tabulationGrids[i]);
@@ -2815,6 +2819,11 @@ void GreenFLayered3D::FillGreenFTable() {
       if (revR)  std::reverse(tabulationGrids[i].r.begin(),  tabulationGrids[i].r.end());
       if (revZ1) std::reverse(tabulationGrids[i].z1.begin(), tabulationGrids[i].z1.end());
       if (revZ2) std::reverse(tabulationGrids[i].z2.begin(), tabulationGrids[i].z2.end());
+      std::cout << "Filling Green's function table for layer " << tabulationGrids[i].i1 << " (internal layer) " 
+                << "with r-range [" << tabulationGrids[i].r.front() << ", " << tabulationGrids[i].r.back() << "], "
+                << "z1-range [" << tabulationGrids[i].z1.front() << ", " << tabulationGrids[i].z1.back() << "], "
+                << "z2-range [" << tabulationGrids[i].z2.front() << ", " << tabulationGrids[i].z2.back() << "]"
+                << std::endl;
 
       // Fill the Green's function table for the inside layers
       FillIntraInside({fresnelQS[0], fresnelQS[1]}, {fresnelQS[2], fresnelQS[3]}, tabulationGrids[i]);
@@ -2841,6 +2850,12 @@ void GreenFLayered3D::FillGreenFTable() {
       if (revR)  std::reverse(tabulationGrids[i].r.begin(),  tabulationGrids[i].r.end());
       if (revZ1) std::reverse(tabulationGrids[i].z1.begin(), tabulationGrids[i].z1.end());
       if (revZ2) std::reverse(tabulationGrids[i].z2.begin(), tabulationGrids[i].z2.end());
+      std::cout << "Filling Green's function table for layers " << tabulationGrids[i].i1 
+                << " and " << tabulationGrids[i].i2 << " (inter-layer) " 
+                << "with r-range [" << tabulationGrids[i].r.front() << ", " << tabulationGrids[i].r.back() << "], "
+                << "z1-range [" << tabulationGrids[i].z1.front() << ", " << tabulationGrids[i].z1.back() << "], "
+                << "z2-range [" << tabulationGrids[i].z2.front() << ", " << tabulationGrids[i].z2.back() << "]"
+                << std::endl;
 
       // Fill the Green's function table for the inter-layer interactions
       FillInter(fresnelQS[0], fresnelQS[1], tabulationGrids[i]);

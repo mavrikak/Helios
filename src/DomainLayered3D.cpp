@@ -12,6 +12,7 @@
 #include "SommerfeldIntegrator.h"
 #include "iofunctions.h"
 #include "Gaussian.h"
+#include "WaveguideMode.h"
 #include <limits>
 
 
@@ -389,6 +390,14 @@ int DomainLayered3D::AddGaussian(double wavelength, double waist, rvec focal_poi
   return 0;
 }
 
+int DomainLayered3D::AddWaveguide(double phi, std::string pol, int mode) {
+  IncidentField *ptr =
+      new WaveguideMode(vacuumWavelength, k_L, epsilon, mu,
+                        zValsInterfaces, thickness, pol, phi, mode);
+  incidentFields.push_back(ptr);
+  return 0;
+}
+
 // -----------------------------------------------------------------------------
 // Tabulation utilities (slice / ranges / grids)
 // -----------------------------------------------------------------------------
@@ -598,20 +607,32 @@ std::vector<Grid> DomainLayered3D::computeGrid(const std::vector<PositionGroup>&
         Grid grid;
         grid.i1 = range.i1;
         grid.i2 = range.i2;
-        int nr_ = nr, nz_ = nz;
-        if (!range.z2.empty()) { nr_ = nr / 2; nz_ = nz / 2; }
 
-        // Compute radial grid
+        // Extract bounds early to calculate physical lengths
         double r_start = range.r[0];
         double r_end = range.r[1];
+        double z1_start = range.z1[0];
+        double z1_end = range.z1[1];
+
+        // Since vacuumWavelength is complex, we need its real-valued magnitude 
+        // to do physical spatial calculations.
+        double lambda = std::abs(vacuumWavelength);
+
+        // Dynamically calculate grid points using nr/2.0 and nz/2.0 as points_per_wavelength.
+        int nr_ = std::max(nr, static_cast<int>(std::ceil(std::abs(r_end - r_start) * (nr / 2.0) / lambda)) + 1);
+        int nz_ = std::max(nz, static_cast<int>(std::ceil(std::abs(z1_end - z1_start) * (nz / 2.0) / lambda)) + 1);
+        std::cout << "Computed grid points: nr_ = " << nr_ << ", nz_ = " << nz_ << std::endl;
+        
+        // Retain original halving logic
+        if (!range.z2.empty()) { nr_ /= 2; nz_ /= 2; }
+
+        // Compute radial grid
         grid.r.resize(nr_);
         for (int i = 0; i < nr_; ++i) {
             grid.r[i] = r_start + i * (r_end - r_start) / (nr_ - 1);
         }
 
         // Compute Z1 grid
-        double z1_start = range.z1[0];
-        double z1_end = range.z1[1];
         grid.z1.resize(nz_);
         for (int i = 0; i < nz_; ++i) {
             grid.z1[i] = z1_start + i * (z1_end - z1_start) / (nz_ - 1);
