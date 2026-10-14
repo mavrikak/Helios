@@ -400,3 +400,8 @@ int DomainHom3D::AddGaussian(double wavelength, double waist, rvec focal_point,
   incidentFields.push_back(ptr);
   return 0;
 }
+
+int DomainHom3D::AddWaveguide(double phi, std::string pol, int mode) {
+  std::cerr << "Error: Waveguide mode excitation is only supported in layered media." << std::endl;
+  return 1;
+}
