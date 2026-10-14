@@ -131,6 +131,7 @@ import re
 import shutil
 import sys, time
 from tqdm import tqdm
+import math
 from pathlib import Path
 from typing import List, Optional, Tuple
 import subprocess
@@ -408,6 +409,124 @@ def write_pos_grid(sim: str, plane: str,
                 pts.append((float(x0), yi, zp))
     else:
         die(f"Unknown plane '{plane}' (choose from xz, xy, yz)")
+
+    with out_path.open("a" if append else "w") as f:
+        for xp, yp, zp in pts:
+            f.write(f"{xp:.6f} {yp:.6f} {zp:.6f}\n")
+
+    print(f"[points] Wrote {len(pts)} points -> {out_path}")
+
+def plot_pos_file(pos_path: Path, title: str, save_path: str | None, show: bool) -> None:
+    """Read a .pos file and plot it in 3D. Requires matplotlib."""
+    if not show and not save_path:
+        return
+    try:
+        import matplotlib.pyplot as plt
+    except ImportError:
+        print("[points] Warning: 'matplotlib' is required for plotting. "
+              "Install via 'pip install matplotlib'. Skipping visualization.")
+        return
+
+    xs, ys, zs = [], [], []
+    try:
+        with pos_path.open("r") as f:
+            for line in f:
+                parts = line.split()
+                if len(parts) >= 3:
+                    xs.append(float(parts[0]))
+                    ys.append(float(parts[1]))
+                    zs.append(float(parts[2]))
+    except Exception as e:
+        print(f"[points] Failed to read {pos_path} for plotting: {e}")
+        return
+
+    if not xs:
+        print("[points] No points to plot.")
+        return
+
+    fig = plt.figure()
+    ax = fig.add_subplot(111, projection='3d')
+    ax.scatter(xs, ys, zs, s=2)
+    ax.set_xlabel('X')
+    ax.set_ylabel('Y')
+    ax.set_zlabel('Z')
+    ax.set_title(title)
+
+    if save_path:
+        plt.savefig(save_path, bbox_inches='tight')
+        print(f"[points] Saved plot to {save_path}")
+    if show:
+        plt.show()
+    plt.close(fig)
+
+def write_pos_circle(sim: str, plane: str, center: tuple[float, float, float],
+                     radius: float, phi_range: tuple[float, float, float], out_name: str,
+                     interfaces: set[float] = frozenset(), append: bool = False) -> None:
+    """Generate points on a circle and save to sim_res/<sim>/points/<out_name>.pos"""
+    res_dir = ROOT / "sim_res" / sim
+    ensure_exists(res_dir, "sim_res/<sim> folder")
+    pts_dir = res_dir / "points"
+    pts_dir.mkdir(parents=True, exist_ok=True)
+    out_path = pts_dir / out_name
+    mesh_path = res_dir / "mesh.mesh"
+    z_limits = get_mesh_z_limits(mesh_path)
+
+    cx, cy, cz = center
+    p_min, p_max, p_step = phi_range
+    phis = _frange(p_min, p_max, p_step)
+
+    pts = []
+    for phi_deg in phis:
+        rad = math.radians(phi_deg)
+        if plane == "xy":
+            x = cx + radius * math.cos(rad)
+            y = cy + radius * math.sin(rad)
+            z = nudge_z_if_interface(cz, interfaces, z_limits)
+        elif plane == "xz":
+            x = cx + radius * math.cos(rad)
+            y = cy
+            z = cz + radius * math.sin(rad)
+            z = nudge_z_if_interface(z, interfaces, z_limits)
+        else:  # yz
+            x = cx
+            y = cy + radius * math.cos(rad)
+            z = cz + radius * math.sin(rad)
+            z = nudge_z_if_interface(z, interfaces, z_limits)
+        pts.append((x, y, z))
+
+    with out_path.open("a" if append else "w") as f:
+        for xp, yp, zp in pts:
+            f.write(f"{xp:.6f} {yp:.6f} {zp:.6f}\n")
+
+    print(f"[points] Wrote {len(pts)} points -> {out_path}")
+
+def write_pos_sphere(sim: str, center: tuple[float, float, float], radius: float,
+                     theta_range: tuple[float, float, float],
+                     phi_range: tuple[float, float, float], out_name: str,
+                     interfaces: set[float] = frozenset(), append: bool = False) -> None:
+    """Generate points on a sphere and save to sim_res/<sim>/points/<out_name>.pos"""
+    res_dir = ROOT / "sim_res" / sim
+    ensure_exists(res_dir, "sim_res/<sim> folder")
+    pts_dir = res_dir / "points"
+    pts_dir.mkdir(parents=True, exist_ok=True)
+    out_path = pts_dir / out_name
+    mesh_path = res_dir / "mesh.mesh"
+    z_limits = get_mesh_z_limits(mesh_path)
+
+    cx, cy, cz = center
+    thetas = _frange(theta_range[0], theta_range[1], theta_range[2])
+    phis = _frange(phi_range[0], phi_range[1], phi_range[2])
+
+    pts = []
+    for t_deg in thetas:
+        t_rad = math.radians(t_deg)
+        for p_deg in phis:
+            p_rad = math.radians(p_deg)
+            x = cx + radius * math.sin(t_rad) * math.cos(p_rad)
+            y = cy + radius * math.sin(t_rad) * math.sin(p_rad)
+            z = cz + radius * math.cos(t_rad)
+            z = nudge_z_if_interface(z, interfaces, z_limits)
+            pts.append((x, y, z))
 
     with out_path.open("a" if append else "w") as f:
         for xp, yp, zp in pts:
@@ -1414,6 +1533,33 @@ def main():
     p_pts.add_argument("--y0", type=str, help="fixed y value(s) for xz plane (comma/space separated)")
     p_pts.add_argument("--z0", type=str, help="fixed z value(s) for xy plane (comma/space separated)")
     p_pts.add_argument("-o", "--output", default=None, help="output filename (.pos)")
+    p_pts.add_argument("--plot", action="store_true", help="Show an interactive 3D scatter plot of the generated points")
+    p_pts.add_argument("--save-plot", type=str, default=None, metavar="FILE", help="Save the plot to the given filename (e.g., grid.png)")
+    p_pts.add_argument("--append", action="store_true", help="Append to the output file instead of overwriting")
+
+    # <subcommand>: generate points on a circle
+    p_circ = sub.add_parser("make-circle", help="Generate circular grid .pos files")
+    p_circ.add_argument("sim", help="sim_data/<sim> subfolder name")
+    p_circ.add_argument("plane", choices=("xz", "xy", "yz"), help="plane for the circle")
+    p_circ.add_argument("--center", nargs=3, type=float, required=True, metavar=("X", "Y", "Z"), help="Center coordinates")
+    p_circ.add_argument("--radius", type=float, required=True, help="Radius of the circle")
+    p_circ.add_argument("--phi", nargs=3, type=float, required=True, metavar=("MIN", "MAX", "STEP"), help="Phi angle in degrees [0, 360]")
+    p_circ.add_argument("-o", "--output", default="circle.pos", help="output filename (.pos)")
+    p_circ.add_argument("--plot", action="store_true", help="Show an interactive 3D scatter plot of the generated points")
+    p_circ.add_argument("--save-plot", type=str, default=None, metavar="FILE", help="Save the plot to the given filename")
+    p_circ.add_argument("--append", action="store_true", help="Append to the output file instead of overwriting")
+
+    # <subcommand>: generate points on a sphere
+    p_sph = sub.add_parser("make-sphere", help="Generate spherical grid .pos files")
+    p_sph.add_argument("sim", help="sim_data/<sim> subfolder name")
+    p_sph.add_argument("--center", nargs=3, type=float, required=True, metavar=("X", "Y", "Z"), help="Center coordinates")
+    p_sph.add_argument("--radius", type=float, required=True, help="Radius of the sphere")
+    p_sph.add_argument("--theta", nargs=3, type=float, required=True, metavar=("MIN", "MAX", "STEP"), help="Theta angle in degrees [0, 180]")
+    p_sph.add_argument("--phi", nargs=3, type=float, required=True, metavar=("MIN", "MAX", "STEP"), help="Phi angle in degrees [0, 360]")
+    p_sph.add_argument("-o", "--output", default="sphere.pos", help="output filename (.pos)")
+    p_sph.add_argument("--plot", action="store_true", help="Show an interactive 3D scatter plot of the generated points")
+    p_sph.add_argument("--save-plot", type=str, default=None, metavar="FILE", help="Save the plot to the given filename")
+    p_sph.add_argument("--append", action="store_true", help="Append to the output file instead of overwriting")
 
     # <subcommand>: generate lookup tables
     p_tab = sub.add_parser("make-table", help="Generate an erfc lookup table (binary or text)")
@@ -1516,8 +1662,28 @@ def main():
                 out_name=out_name,
                 stepx=sx, stepy=sy, stepz=sz,
                 interfaces=interfaces,
-                append=(i > 0)
+                append=(args.append or i > 0)
             )
+
+        # Plot final accumulated grid
+        out_path = ROOT / "sim_res" / args.sim / "points" / out_name
+        plot_pos_file(out_path, out_name, args.save_plot, args.plot)
+    
+    elif args.cmd == "make-circle":
+        res_dir = ROOT / "sim_res" / args.sim
+        interfaces = load_interface_z(res_dir)
+        write_pos_circle(args.sim, args.plane, tuple(args.center), args.radius,
+                         tuple(args.phi), args.output, interfaces=interfaces, append=args.append)
+        out_path = res_dir / "points" / args.output
+        plot_pos_file(out_path, args.output, args.save_plot, args.plot)
+
+    elif args.cmd == "make-sphere":
+        res_dir = ROOT / "sim_res" / args.sim
+        interfaces = load_interface_z(res_dir)
+        write_pos_sphere(args.sim, tuple(args.center), args.radius,
+                         tuple(args.theta), tuple(args.phi), args.output, interfaces=interfaces, append=args.append)
+        out_path = res_dir / "points" / args.output
+        plot_pos_file(out_path, args.output, args.save_plot, args.plot)
 
     elif args.cmd == "post":
         pos_files = [Path(s) for s in args.pos]
