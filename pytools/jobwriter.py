@@ -320,6 +320,21 @@ def build_dipole(loc_xyz: Tuple[float,float,float],
     pv[abs(pv) < EPS] = 0.0
     return ('dipole', np.array(loc_xyz, dtype=float), pv)
 
+def build_gaussian(theta_deg: float, phi_deg: float, pol: str,
+                   focus_xyz: Tuple[float,float,float], waist: float):
+    """
+    Return ('gaussian', kdir, polvec, focus_xyz, waist).
+    """
+    _, kdir, polvec = build_incident(theta_deg, phi_deg, pol)
+    return ('gaussian', kdir, polvec, np.array(focus_xyz, dtype=float), float(waist))
+
+def build_waveguide(phi_deg: float, pol: str, mode_nr: int):
+    """
+    Return ('waveguide', phi_deg, pol, mode_nr).
+    Note: phi is stored in radians in the XML.
+    """
+    return ('waveguide', float(phi_deg), pol.upper(), int(mode_nr))
+
 def emit_dipole_block(dip: tuple) -> str:
     kind, r0, pv = dip
     if kind != 'dipole':
@@ -408,6 +423,31 @@ def emit_incident_block(inc: tuple, inci_domain: int) -> str:
     s += "\t</planewave>\n"
     return s
 
+def emit_gaussian_block(inc: tuple, inci_domain: int) -> str:
+    kind, kdir, polvec, focus, waist = inc
+    s = "\t<gaussian>\n"
+    s += f"\t\t<domain> {inci_domain} </domain>\n"
+    s += f"\t\t<propagation> {kdir[0]:.12f} {kdir[1]:.12f} {kdir[2]:.12f} </propagation>\n"
+    pv = np.asarray(polvec)
+    if np.iscomplexobj(pv):
+        s += f"\t\t<polarization> ({pv[0].real:.12f},{pv[0].imag:.12f}) ({pv[1].real:.12f},{pv[1].imag:.12f}) ({pv[2].real:.12f},{pv[2].imag:.12f}) </polarization>\n"
+    else:
+        s += f"\t\t<polarization> {pv[0]:.12f} {pv[1]:.12f} {pv[2]:.12f} </polarization>\n"
+    s += f"\t\t<focus_position> {focus[0]:.12f} {focus[1]:.12f} {focus[2]:.12f} </focus_position>\n"
+    s += f"\t\t<waist_size> {waist:.12f} </waist_size>\n"
+    s += "\t</gaussian>\n"
+    return s
+
+def emit_waveguide_block(inc: tuple, inci_domain: int) -> str:
+    kind, phi, pol, mode = inc
+    s = "\t<waveguide>\n"
+    s += f"\t\t<domain> {inci_domain} </domain>\n"
+    s += f"\t\t<phi> {(phi * pi / 180.0):.12f} </phi>\n"
+    s += f"\t\t<polarization> {pol} </polarization>\n"
+    s += f"\t\t<mode> {mode} </mode>\n"
+    s += "\t</waveguide>\n"
+    return s
+
 def job_iso_hom(job_idx: int, mesh_name: str, wl: float,
                 eps_domains: np.ndarray,
                 main_incs: List[Tuple], subjob_map: Dict[int, List[Tuple]],
@@ -425,6 +465,10 @@ def job_iso_hom(job_idx: int, mesh_name: str, wl: float,
     for inc in main_incs:
         if inc[0] == 'planewave':
             s += emit_incident_block(inc, inci_domain)
+        elif inc[0] == 'gaussian':
+            s += emit_gaussian_block(inc, inci_domain)
+        elif inc[0] == 'waveguide':
+            s += emit_waveguide_block(inc, inci_domain)
         else:
             s += emit_dipole_block(inc)
     s += "</job>\n"
@@ -435,6 +479,10 @@ def job_iso_hom(job_idx: int, mesh_name: str, wl: float,
         for inc in subjob_map[sub_idx]:
             if inc[0] == 'planewave':
                 s += emit_incident_block(inc, inci_domain)
+            elif inc[0] == 'gaussian':
+                s += emit_gaussian_block(inc, inci_domain)
+            elif inc[0] == 'waveguide':
+                s += emit_waveguide_block(inc, inci_domain)
             else:
                 s += emit_dipole_block(inc)
         s += "</subjob>\n"
@@ -466,6 +514,10 @@ def job_per_hom(job_idx: int, mesh_name: str, wl: float,
     for inc in main_incs:
         if inc[0] == 'planewave':
             s += emit_incident_block(inc, inci_domain)
+        elif inc[0] == 'gaussian':
+            s += emit_gaussian_block(inc, inci_domain)
+        elif inc[0] == 'waveguide':
+            s += emit_waveguide_block(inc, inci_domain)
         else:
             s += emit_dipole_block(inc)
     s += "</job>\n"
@@ -475,6 +527,10 @@ def job_per_hom(job_idx: int, mesh_name: str, wl: float,
         for inc in subjob_map[sub_idx]:
             if inc[0] == 'planewave':
                 s += emit_incident_block(inc, inci_domain)
+            elif inc[0] == 'gaussian':
+                s += emit_gaussian_block(inc, inci_domain)
+            elif inc[0] == 'waveguide':
+                s += emit_waveguide_block(inc, inci_domain)
             else:
                 s += emit_dipole_block(inc)
         s += "</subjob>\n"
@@ -521,6 +577,10 @@ def job_iso_layered(job_idx: int, mesh_name: str, wl: float,
     for inc in main_incs:
         if inc[0] == 'planewave':
             s += emit_incident_block(inc, inci_domain)
+        elif inc[0] == 'gaussian':
+            s += emit_gaussian_block(inc, inci_domain)
+        elif inc[0] == 'waveguide':
+            s += emit_waveguide_block(inc, inci_domain)
         else:
             s += emit_dipole_block(inc)
     s += "</job>\n"
@@ -530,6 +590,10 @@ def job_iso_layered(job_idx: int, mesh_name: str, wl: float,
         for inc in subjob_map[sub_idx]:
             if inc[0] == 'planewave':
                 s += emit_incident_block(inc, inci_domain)
+            elif inc[0] == 'gaussian':
+                s += emit_gaussian_block(inc, inci_domain)
+            elif inc[0] == 'waveguide':
+                s += emit_waveguide_block(inc, inci_domain)
             else:
                 s += emit_dipole_block(inc)
         s += "</subjob>\n"
@@ -737,6 +801,40 @@ def main():
                                 dips.append(build_dipole((float(X),float(Y),float(Z)), (float(TH),float(PH)), 'ang'))
             pending_directives.append((subs, dips))
             continue
+        #   GB theta phi pol focus=x,y,z waist=w subs=2-8,10
+        if t.upper().startswith('GB '):
+            parts = t.split()
+            _, th, ph, ppol, *rest = parts
+            subs = [1]
+            focus = (0.0, 0.0, 0.0)
+            waist = 1000.0
+            for tok in rest:
+                tl = tok.lower()
+                if tl.startswith('subs='):
+                    subs = _parse_sub_ranges(tl.split('=',1)[1])
+                elif tl.startswith('focus='):
+                    a,b,c = tl.split('=',1)[1].split(',',2)
+                    focus = (float(a), float(b), float(c))
+                elif tl.startswith('waist='):
+                    waist = float(tl.split('=',1)[1])
+            inc = build_gaussian(float(th), float(ph), ppol, focus, waist)
+            pending_directives.append((subs, [inc]))
+            continue
+        #   WG phi pol mode=n subs=2-8,10
+        if t.upper().startswith('WG '):
+            parts = t.split()
+            _, ph, ppol, *rest = parts
+            subs = [1]
+            mode = 0
+            for tok in rest:
+                tl = tok.lower()
+                if tl.startswith('subs='):
+                    subs = _parse_sub_ranges(tl.split('=',1)[1])
+                elif tl.startswith('mode='):
+                    mode = int(tl.split('=',1)[1])
+            inc = build_waveguide(float(ph), ppol, mode)
+            pending_directives.append((subs, [inc]))
+            continue
 
     # Collect unique plain (homogeneous) materials from domain_tokens
     plain_materials = [tok for tok in domain_tokens if not tok.startswith("LayeredM")]
@@ -773,6 +871,13 @@ def main():
     main_incs.append(sweep_incs[0])
     for k, inc in enumerate(sweep_incs[1:], start=2):
         sub_map.setdefault(k, []).append(inc)
+
+    # If overwriting, clear the baseline sweep before applying directives
+    if illum_mode == 'overwrite' and pending_directives:
+        main_incs.clear()
+        sub_map.clear()
+        # Switch to 'add' so consecutive directives stack on each other
+        illum_mode = 'add'
 
     # THEN apply all directives with the chosen mode
     for subs, incs in pending_directives:
