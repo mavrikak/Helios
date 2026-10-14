@@ -4,6 +4,7 @@ channels:
 dependencies:
   # Build tools
   - make
+  - binutils_linux-64
   # Core compilers (for Linux, use platform-appropriate variants on macOS/Windows)
   - gxx_linux-64=11.4.0
   - gfortran_linux-64=11.4.0
