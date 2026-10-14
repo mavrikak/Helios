@@ -153,6 +153,7 @@ class Dipole : public IncidentField {
   bool IsPlaneWave() { return false; }
   bool IsDipole() { return true; }
   bool IsGaussian() { return false; }
+  bool IsWaveguideMode() { return false; }
 
   // ---------------------------------------------------------------------------
   // Layered‑media configuration
