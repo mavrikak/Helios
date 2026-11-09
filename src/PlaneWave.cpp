@@ -126,7 +126,7 @@ std::vector<cvec> PlaneWave::EvaluateLayeredEandH(rvec r) {
         H = cross(dirNew, E) / ( Z0 * sqrt( this->layeredUtils->getMu(obsLayerIndex) / 
                                             this->layeredUtils->getEps(obsLayerIndex) ) );
       } else if (name == "TM") {
-        H = amplitude[name] * sec(i, 0) * exp(I * xpar) * cross(dir, p);
+        H = te * amplitude[name] * sec(i, 0) * exp(I * xpar);
         E = -cross(dirNew, H) * ( Z0 * sqrt( this->layeredUtils->getMu(obsLayerIndex) / 
                                              this->layeredUtils->getEps(obsLayerIndex) ) );
       }
